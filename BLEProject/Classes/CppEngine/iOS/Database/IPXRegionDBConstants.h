@@ -1,13 +1,13 @@
 //
-//  NPXRegionDBConstants.h
+//  IPXRegionDBConstants.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/4/13.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef BLEProject_NPXRegionDBConstants_h
-#define BLEProject_NPXRegionDBConstants_h
+#ifndef BLEProject_IPXRegionDBConstants_h
+#define BLEProject_IPXRegionDBConstants_h
 
 #define REGION_IDENTIFIER @"Innerpeacer"
 

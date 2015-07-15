@@ -9,7 +9,7 @@
 #import "NPBuildingMonitor.h"
 #import "NPBeaconManager.h"
 #import "NPLocationFileManager.h"
-#import "NPXRegionDBAdapter.h"
+#import "IPXRegionDBAdapter.h"
 #import "TYRegionManager.h"
 
 
@@ -36,7 +36,7 @@
         beaconManager = [[NPBeaconManager alloc] init];
         beaconManager.delegate = self;
         
-        NPXRegionDBAdapter *regionDBAdapter = [[NPXRegionDBAdapter alloc] initWithDBFile:[NPLocationFileManager getBeaconRegionDBPath]];
+        IPXRegionDBAdapter *regionDBAdapter = [[IPXRegionDBAdapter alloc] initWithDBFile:[NPLocationFileManager getBeaconRegionDBPath]];
         [regionDBAdapter open];
         beaconRegionDict = [regionDBAdapter getAllBuildAndRegions];
         [regionDBAdapter close];

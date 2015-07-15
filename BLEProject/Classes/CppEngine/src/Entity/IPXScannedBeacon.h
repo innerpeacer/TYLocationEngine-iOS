@@ -5,8 +5,8 @@
  *      Author: innerpeacer
  */
 
-#ifndef NPXSCANNEDBEACON_H_
-#define NPXSCANNEDBEACON_H_
+#ifndef IPXSCANNEDBEACON_H_
+#define IPXSCANNEDBEACON_H_
 
 #include "IPXBeacon.h"
 
@@ -16,13 +16,13 @@ namespace Innerpeacer {
 namespace BLELocationEngine {
 
 typedef enum {
-	NPXProximityUnknwon = 0, NPXProximityImmediate, NPXProximityNear, NPXProximityFar
-} NPXProximity;
+	IPXProximityUnknwon = 0, IPXProximityImmediate, IPXProximityNear, IPXProximityFar
+} IPXProximity;
 
 class IPXScannedBeacon: public IPXBeacon {
 public:
 	IPXScannedBeacon(const char *uuid, uint16_t major, uint16_t minor, int rssi,
-			double accuracy, NPXProximity proximity) :
+			double accuracy, IPXProximity proximity) :
 			IPXBeacon(uuid, major, minor), rssi(rssi), accuracy(accuracy), proximity(
 					proximity) {
 
@@ -39,16 +39,16 @@ public:
 		return accuracy;
 	}
 
-	NPXProximity getProximity() const {
+	IPXProximity getProximity() const {
 		return proximity;
 	}
 
 private:
 	int rssi;
 	double accuracy;
-	NPXProximity proximity;
+	IPXProximity proximity;
 };
 }
 }
 
-#endif /* NPXSCANNEDBEACON_H_ */
+#endif /* IPXSCANNEDBEACON_H_ */

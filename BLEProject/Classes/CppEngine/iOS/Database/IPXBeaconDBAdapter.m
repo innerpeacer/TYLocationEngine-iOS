@@ -1,10 +1,10 @@
 
-#import "NPXBeaconDBAdapter.h"
+#import "IPXBeaconDBAdapter.h"
 #import <sqlite3.h>
 #import "NPPointConverter.h"
-#import "NPXBeaconDBConstants.h"
+#import "IPXBeaconDBConstants.h"
 
-@interface NPXBeaconDBAdapter()
+@interface IPXBeaconDBAdapter()
 {
     sqlite3 *_database;
     NSString *_dbPath;
@@ -12,7 +12,7 @@
 
 @end
 
-@implementation NPXBeaconDBAdapter
+@implementation IPXBeaconDBAdapter
 
 - (BOOL)open
 {

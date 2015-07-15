@@ -1,5 +1,5 @@
 //
-//  NPXRegionDBAdapter.h
+//  IPXRegionDBAdapter.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/4/13.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface NPXRegionDBAdapter : NSObject
+@interface IPXRegionDBAdapter : NSObject
 
 - (id)initWithDBFile:(NSString *)path;
 

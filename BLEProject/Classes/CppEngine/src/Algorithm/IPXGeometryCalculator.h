@@ -5,8 +5,8 @@
  *      Author: innerpeacer
  */
 
-#ifndef NPXGEOMETRYCALCULATOR_H_
-#define NPXGEOMETRYCALCULATOR_H_
+#ifndef IPXGEOMETRYCALCULATOR_H_
+#define IPXGEOMETRYCALCULATOR_H_
 
 #include "IPXPoint.h"
 
@@ -15,4 +15,4 @@ using namespace Innerpeacer::BLELocationEngine;
 IPXPoint scalePointWithCenter(IPXPoint center, IPXPoint scaledPoint,
 		double length);
 
-#endif /* NPXGEOMETRYCALCULATOR_H_ */
+#endif /* IPXGEOMETRYCALCULATOR_H_ */

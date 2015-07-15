@@ -53,8 +53,8 @@
 		575CD1B91B564E7300B1E77C /* NPVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD12D1B564E7300B1E77C /* NPVector2.m */; };
 		575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1301B564E7300B1E77C /* DoubleRounder.m */; };
 		575CD1BB1B564E7300B1E77C /* NPPointConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1321B564E7300B1E77C /* NPPointConverter.m */; };
-		575CD1BC1B564E7300B1E77C /* NPXBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1371B564E7300B1E77C /* NPXBeaconDBAdapter.m */; };
-		575CD1BD1B564E7300B1E77C /* NPXRegionDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13A1B564E7300B1E77C /* NPXRegionDBAdapter.m */; };
+		575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1371B564E7300B1E77C /* IPXBeaconDBAdapter.m */; };
+		575CD1BD1B564E7300B1E77C /* IPXRegionDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13A1B564E7300B1E77C /* IPXRegionDBAdapter.m */; };
 		575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13E1B564E7300B1E77C /* IPXLocationEngine.mm */; };
 		575CD1BF1B564E7300B1E77C /* NPBeaconKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1411B564E7300B1E77C /* NPBeaconKey.m */; };
 		575CD1C01B564E7300B1E77C /* NPBuildingMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1441B564E7300B1E77C /* NPBuildingMonitor.m */; };
@@ -207,12 +207,12 @@
 		575CD1301B564E7300B1E77C /* DoubleRounder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleRounder.m; sourceTree = "<group>"; };
 		575CD1311B564E7300B1E77C /* NPPointConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPointConverter.h; sourceTree = "<group>"; };
 		575CD1321B564E7300B1E77C /* NPPointConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPointConverter.m; sourceTree = "<group>"; };
-		575CD1361B564E7300B1E77C /* NPXBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXBeaconDBAdapter.h; sourceTree = "<group>"; };
-		575CD1371B564E7300B1E77C /* NPXBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPXBeaconDBAdapter.m; sourceTree = "<group>"; };
-		575CD1381B564E7300B1E77C /* NPXBeaconDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXBeaconDBConstants.h; sourceTree = "<group>"; };
-		575CD1391B564E7300B1E77C /* NPXRegionDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXRegionDBAdapter.h; sourceTree = "<group>"; };
-		575CD13A1B564E7300B1E77C /* NPXRegionDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPXRegionDBAdapter.m; sourceTree = "<group>"; };
-		575CD13B1B564E7300B1E77C /* NPXRegionDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXRegionDBConstants.h; sourceTree = "<group>"; };
+		575CD1361B564E7300B1E77C /* IPXBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXBeaconDBAdapter.h; sourceTree = "<group>"; };
+		575CD1371B564E7300B1E77C /* IPXBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPXBeaconDBAdapter.m; sourceTree = "<group>"; };
+		575CD1381B564E7300B1E77C /* IPXBeaconDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXBeaconDBConstants.h; sourceTree = "<group>"; };
+		575CD1391B564E7300B1E77C /* IPXRegionDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXRegionDBAdapter.h; sourceTree = "<group>"; };
+		575CD13A1B564E7300B1E77C /* IPXRegionDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPXRegionDBAdapter.m; sourceTree = "<group>"; };
+		575CD13B1B564E7300B1E77C /* IPXRegionDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXRegionDBConstants.h; sourceTree = "<group>"; };
 		575CD13D1B564E7300B1E77C /* IPXLocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXLocationEngine.h; sourceTree = "<group>"; };
 		575CD13E1B564E7300B1E77C /* IPXLocationEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IPXLocationEngine.mm; sourceTree = "<group>"; };
 		575CD1401B564E7300B1E77C /* NPBeaconKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconKey.h; sourceTree = "<group>"; };
@@ -609,12 +609,12 @@
 		575CD1351B564E7300B1E77C /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1361B564E7300B1E77C /* NPXBeaconDBAdapter.h */,
-				575CD1371B564E7300B1E77C /* NPXBeaconDBAdapter.m */,
-				575CD1381B564E7300B1E77C /* NPXBeaconDBConstants.h */,
-				575CD1391B564E7300B1E77C /* NPXRegionDBAdapter.h */,
-				575CD13A1B564E7300B1E77C /* NPXRegionDBAdapter.m */,
-				575CD13B1B564E7300B1E77C /* NPXRegionDBConstants.h */,
+				575CD1361B564E7300B1E77C /* IPXBeaconDBAdapter.h */,
+				575CD1371B564E7300B1E77C /* IPXBeaconDBAdapter.m */,
+				575CD1381B564E7300B1E77C /* IPXBeaconDBConstants.h */,
+				575CD1391B564E7300B1E77C /* IPXRegionDBAdapter.h */,
+				575CD13A1B564E7300B1E77C /* IPXRegionDBAdapter.m */,
+				575CD13B1B564E7300B1E77C /* IPXRegionDBConstants.h */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -1096,7 +1096,7 @@
 				575CD0F31B564DE200B1E77C /* MultiLocationTestVC.m in Sources */,
 				575CD1C81B564E7300B1E77C /* IPXPoint.cpp in Sources */,
 				575CD1C91B564E7300B1E77C /* IPXPublicBeacon.cpp in Sources */,
-				575CD1BD1B564E7300B1E77C /* NPXRegionDBAdapter.m in Sources */,
+				575CD1BD1B564E7300B1E77C /* IPXRegionDBAdapter.m in Sources */,
 				575CD1D01B564E7300B1E77C /* NPBeaconPool.m in Sources */,
 				575CD1AE1B564E7300B1E77C /* NPBeaconManager.m in Sources */,
 				575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */,
@@ -1149,7 +1149,7 @@
 				575CD1B11B564E7300B1E77C /* NPMovingAverage.m in Sources */,
 				575CD1DF1B564E7300B1E77C /* NPTestResult.m in Sources */,
 				575CD1D61B564E7300B1E77C /* NPTriangulationAlgorithm.m in Sources */,
-				575CD1BC1B564E7300B1E77C /* NPXBeaconDBAdapter.m in Sources */,
+				575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */,
 				575CD1CA1B564E7300B1E77C /* IPXScannedBeacon.cpp in Sources */,
 				575CD1CF1B564E7300B1E77C /* NPBeaconFilter.m in Sources */,
 				575CD0F21B564DE200B1E77C /* LocationEngineTestVC.m in Sources */,

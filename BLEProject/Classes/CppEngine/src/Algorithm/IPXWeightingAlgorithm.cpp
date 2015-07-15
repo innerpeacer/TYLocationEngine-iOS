@@ -11,14 +11,14 @@
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXLinearWeightingAlgorithm : public IPXWeightingAlgorithm {
+        class IPXLinearWeightingAlgorithm : public IPXWeightingAlgorithm {
         public:
-            NPXLinearWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXWeightingAlgorithm(beacons, NPXLinearWeighting) {}
+            IPXLinearWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXWeightingAlgorithm(beacons, IPXLinearWeighting) {}
             const IPXPoint calculationLocation();
 
         };
         
-        const IPXPoint NPXLinearWeightingAlgorithm::calculationLocation()
+        const IPXPoint IPXLinearWeightingAlgorithm::calculationLocation()
         {
             vector<double> weightingArray;
             vector<IPXPoint> pointArray;
@@ -54,13 +54,13 @@ namespace Innerpeacer {
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXQuadraticWeightingAlgorithm : public IPXWeightingAlgorithm {
+        class IPXQuadraticWeightingAlgorithm : public IPXWeightingAlgorithm {
         public:
-            NPXQuadraticWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXWeightingAlgorithm(beacons, NPXQuadraticWeighting) {}
+            IPXQuadraticWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXWeightingAlgorithm(beacons, IPXQuadraticWeighting) {}
             const IPXPoint calculationLocation();
         };
         
-        const IPXPoint NPXQuadraticWeightingAlgorithm::calculationLocation()
+        const IPXPoint IPXQuadraticWeightingAlgorithm::calculationLocation()
         {
             vector<double> weightingArray;
             vector<IPXPoint> pointArray;
@@ -97,12 +97,12 @@ namespace Innerpeacer {
 IPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type)
 {
     switch (type) {
-        case NPXLinearWeighting:
-            return new NPXLinearWeightingAlgorithm(beacons);
+        case IPXLinearWeighting:
+            return new IPXLinearWeightingAlgorithm(beacons);
             break;
             
-        case NPXQuadraticWeighting:
-            return new NPXQuadraticWeightingAlgorithm(beacons);
+        case IPXQuadraticWeighting:
+            return new IPXQuadraticWeightingAlgorithm(beacons);
             break;
             
         default:

@@ -5,8 +5,8 @@
  *      Author: innerpeacer
  */
 
-#ifndef NPXMOVINGAVERAGE_H_
-#define NPXMOVINGAVERAGE_H_
+#ifndef IPXMOVINGAVERAGE_H_
+#define IPXMOVINGAVERAGE_H_
 
 #include <queue>
 
@@ -41,4 +41,4 @@ private:
 
 } /* namespace BLELocationEngine */
 } /* namespace Innerpeacer */
-#endif /* NPXMOVINGAVERAGE_H_ */
+#endif /* IPXMOVINGAVERAGE_H_ */

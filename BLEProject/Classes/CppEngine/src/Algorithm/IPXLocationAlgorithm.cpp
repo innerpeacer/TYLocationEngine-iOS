@@ -33,15 +33,15 @@ void IPXLocationAlgorithm::setNearestBeacons(const vector<const Innerpeacer::BLE
 Innerpeacer::BLELocationEngine::IPXLocationAlgorithm *CreateLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type)
 {
     switch (type) {
-        case NPXSingle:
-        case NPXTripple:
-        case NPXHybridSingle:
-        case NPXHybridTripple:
+        case IPXSingle:
+        case IPXTripple:
+        case IPXHybridSingle:
+        case IPXHybridTripple:
             return CreateTriangulationAlgorithm(beacons, type);
             break;
             
-        case NPXLinearWeighting:
-        case NPXQuadraticWeighting:
+        case IPXLinearWeighting:
+        case IPXQuadraticWeighting:
             return CreateWeighintAlgorithm(beacons, type);
             break;
             

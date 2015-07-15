@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "NPPublicBeacon.h"
 
-@interface NPXBeaconDBAdapter : NSObject
+@interface IPXBeaconDBAdapter : NSObject
 
 - (id)initWithDBFile:(NSString *)path;
 

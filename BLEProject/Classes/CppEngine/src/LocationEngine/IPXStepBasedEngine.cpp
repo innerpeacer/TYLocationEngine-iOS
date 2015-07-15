@@ -11,7 +11,7 @@
 
 using namespace Innerpeacer::BLELocationEngine;
 
-ILocationEngine *CreateNPXStepBaseTriangulationEngine(IPXAlgorithmType type)
+ILocationEngine *CreateIPXStepBaseTriangulationEngine(IPXAlgorithmType type)
 {
     return new IPXStepBasedEngine(type);
 }
@@ -28,14 +28,14 @@ void IPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::
     
     stepCount = DefaultStep;
     
-    printf("NPXStepBasedTEngine::Initilize OK!");
+    printf("IPXStepBasedTEngine::Initilize OK!");
 }
 
 
 void IPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEngine::IPXScannedBeacon *> &beacons) {
     algorithm->setNearestBeacons(beacons);
     
-//    printf("NPXStepBasedTEngine: Here OK!");
+//    printf("IPXStepBasedTEngine: Here OK!");
     
     IPXPoint newLocation = getIndependentLocation();
     

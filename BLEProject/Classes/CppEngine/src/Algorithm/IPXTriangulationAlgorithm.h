@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __BLEProject__NPXTriangulationAlgorithm__
-#define __BLEProject__NPXTriangulationAlgorithm__
+#ifndef __BLEProject__IPXTriangulationAlgorithm__
+#define __BLEProject__IPXTriangulationAlgorithm__
 
 #include <stdio.h>
 #include "IPXLocationAlgorithm.h"
@@ -38,4 +38,4 @@ namespace Innerpeacer {
 IPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type);
 
 
-#endif /* defined(__BLEProject__NPXTriangulationAlgorithm__) */
+#endif /* defined(__BLEProject__IPXTriangulationAlgorithm__) */

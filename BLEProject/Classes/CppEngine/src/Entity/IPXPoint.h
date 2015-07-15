@@ -5,8 +5,8 @@
  *      Author: innerpeacer
  */
 
-#ifndef NPXPOINT_H_
-#define NPXPOINT_H_
+#ifndef IPXPOINT_H_
+#define IPXPOINT_H_
 
 namespace Innerpeacer {
 namespace BLELocationEngine {
@@ -89,4 +89,4 @@ static IPXPoint INVALID_POINT(-1000000.0, -1000000.0, -1000000);
 }
 }
 
-#endif /* NPXPOINT_H_ */
+#endif /* IPXPOINT_H_ */

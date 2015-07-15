@@ -34,8 +34,8 @@ IPXPoint IPXTriangulationAlgorithm::calculateBeaconLessThanThree()
 
 IPXPoint IPXTriangulationAlgorithm::calculateOneBeacon(const IPXScannedBeacon *beacon)
 {
-    if (beacon->getProximity() == NPXProximityImmediate
-        || beacon->getProximity() == NPXProximityNear) {
+    if (beacon->getProximity() == IPXProximityImmediate
+        || beacon->getProximity() == IPXProximityNear) {
         IPXPublicBeacon pb = GetPublicBeacon(*beacon);
         IPXPoint location = pb.getLocation();
         return IPXPoint(location);
@@ -89,16 +89,16 @@ IPXPoint IPXTriangulationAlgorithm::tripleTriangulation(const IPXScannedBeacon *
 namespace Innerpeacer {
     namespace BLELocationEngine {
 
-        class NPXSingleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
+        class IPXSingleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
         public:
-            NPXSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, NPXSingle) {}
+            IPXSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, IPXSingle) {}
             const IPXPoint calculationLocation();
             
         protected:
             
         };
         
-        const IPXPoint NPXSingleTriangulationAlgorithm::calculationLocation()
+        const IPXPoint IPXSingleTriangulationAlgorithm::calculationLocation()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -115,13 +115,13 @@ namespace Innerpeacer {
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXTrippleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
+        class IPXTrippleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
         public:
-            NPXTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, NPXTripple) {}
+            IPXTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, IPXTripple) {}
             const IPXPoint calculationLocation();
         };
         
-        const IPXPoint NPXTrippleTriangulationAlgorithm::calculationLocation()
+        const IPXPoint IPXTrippleTriangulationAlgorithm::calculationLocation()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -136,9 +136,9 @@ namespace Innerpeacer {
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXHybridSingleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
+        class IPXHybridSingleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
         public:
-            NPXHybridSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, NPXHybridSingle) {}
+            IPXHybridSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, IPXHybridSingle) {}
             const IPXPoint calculationLocation();
             
         private:
@@ -146,7 +146,7 @@ namespace Innerpeacer {
             IPXPoint calculateLocationWithAverage4();
         };
         
-        const IPXPoint NPXHybridSingleTriangulationAlgorithm::calculationLocation()
+        const IPXPoint IPXHybridSingleTriangulationAlgorithm::calculationLocation()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -163,7 +163,7 @@ namespace Innerpeacer {
             return INVALID_POINT;
         }
         
-        IPXPoint NPXHybridSingleTriangulationAlgorithm::calculateLocationWithAverage3()
+        IPXPoint IPXHybridSingleTriangulationAlgorithm::calculateLocationWithAverage3()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -200,7 +200,7 @@ namespace Innerpeacer {
             return INVALID_POINT;
         }
         
-        IPXPoint NPXHybridSingleTriangulationAlgorithm::calculateLocationWithAverage4()
+        IPXPoint IPXHybridSingleTriangulationAlgorithm::calculateLocationWithAverage4()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -242,9 +242,9 @@ namespace Innerpeacer {
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXHybridTrippleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
+        class IPXHybridTrippleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
         public:
-            NPXHybridTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, NPXHybridTripple) {}
+            IPXHybridTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, IPXHybridTripple) {}
             const IPXPoint calculationLocation();
             
         private:
@@ -253,7 +253,7 @@ namespace Innerpeacer {
 
         };
         
-        const IPXPoint NPXHybridTrippleTriangulationAlgorithm::calculationLocation()
+        const IPXPoint IPXHybridTrippleTriangulationAlgorithm::calculationLocation()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -270,7 +270,7 @@ namespace Innerpeacer {
             return INVALID_POINT;
         }
         
-        const IPXPoint NPXHybridTrippleTriangulationAlgorithm::calculateLocationUsingTripleWithAverage3()
+        const IPXPoint IPXHybridTrippleTriangulationAlgorithm::calculateLocationUsingTripleWithAverage3()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -306,7 +306,7 @@ namespace Innerpeacer {
             return INVALID_POINT;
         }
         
-        const IPXPoint NPXHybridTrippleTriangulationAlgorithm::calculateLocationUsingTripleWithAverage4()
+        const IPXPoint IPXHybridTrippleTriangulationAlgorithm::calculateLocationUsingTripleWithAverage4()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -347,20 +347,20 @@ namespace Innerpeacer {
 IPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type)
 {
     switch (type) {
-        case NPXSingle:
-            return new NPXSingleTriangulationAlgorithm(beacons);
+        case IPXSingle:
+            return new IPXSingleTriangulationAlgorithm(beacons);
             break;
             
-        case NPXTripple:
-            return new NPXTrippleTriangulationAlgorithm(beacons);
+        case IPXTripple:
+            return new IPXTrippleTriangulationAlgorithm(beacons);
             break;
             
-        case NPXHybridSingle:
-            return new NPXHybridSingleTriangulationAlgorithm(beacons);
+        case IPXHybridSingle:
+            return new IPXHybridSingleTriangulationAlgorithm(beacons);
             break;
             
-        case NPXHybridTripple:
-            return new NPXHybridTrippleTriangulationAlgorithm(beacons);
+        case IPXHybridTripple:
+            return new IPXHybridTrippleTriangulationAlgorithm(beacons);
             break;
             
         default:

@@ -12,7 +12,7 @@
 #import "ILocationEngine.h"
 #import "IPXStepBasedEngine.h"
 #import "IPXScannedBeacon.h"
-#import "NPXBeaconDBAdapter.h"
+#import "IPXBeaconDBAdapter.h"
 #import "NPBeaconKey.h"
 #import "NPBeaconManager.h"
 
@@ -60,8 +60,8 @@
         scannedBeacons = [[NSMutableArray alloc] init];
         allBeacons = [[NSMutableDictionary alloc] init];
         
-//        locationEngine = CreateNPXStepBaseTriangulationEngine(NPXHybridSingle);
-        locationEngine = CreateNPXStepBaseTriangulationEngine(NPXQuadraticWeighting);
+//        locationEngine = CreateIPXStepBaseTriangulationEngine(IPXHybridSingle);
+        locationEngine = CreateIPXStepBaseTriangulationEngine(IPXQuadraticWeighting);
         pScannedBeacons = new vector<const IPXScannedBeacon *>();
         
         rssiThreshold = RSSI_LEVEL_THRESHOLD;
@@ -75,7 +75,7 @@
 
 - (void)loadBeaconDatabase:(NSString *)dbPath
 {
-    NPXBeaconDBAdapter *db = [[NPXBeaconDBAdapter alloc] initWithDBFile:dbPath];
+    IPXBeaconDBAdapter *db = [[IPXBeaconDBAdapter alloc] initWithDBFile:dbPath];
     [db open];
     NSArray *array = [db getAllNephogramBeacons];
     
@@ -198,7 +198,7 @@
     locationEngine->processBeacons(*pScannedBeacons);
     IPXPoint currentLocation = locationEngine->getLocation();
     
-//    NSLog(@"NPX: %f, %f", currentLocation.getX(), currentLocation.getY());
+//    NSLog(@"IPX: %f, %f", currentLocation.getX(), currentLocation.getY());
     
     int currentFloor = [self calculateCurrentFloor];
     
@@ -299,24 +299,24 @@
     
 }
 
-- (NPXProximity)convertProximity:(CLProximity)proxmity
+- (IPXProximity)convertProximity:(CLProximity)proxmity
 {
-    NPXProximity pro;
+    IPXProximity pro;
     switch (proxmity) {
         case CLProximityImmediate:
-            pro = NPXProximityImmediate;
+            pro = IPXProximityImmediate;
             break;
             
         case CLProximityNear:
-            pro = NPXProximityNear;
+            pro = IPXProximityNear;
             break;
             
         case CLProximityFar:
-            pro = NPXProximityFar;
+            pro = IPXProximityFar;
             break;
             
         case CLProximityUnknown:
-            pro = NPXProximityUnknwon;
+            pro = IPXProximityUnknwon;
             break;
             
         default:

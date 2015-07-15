@@ -13,7 +13,7 @@
 #define CHECK_INTERVAL 1.0
 #define DEFAULT_REQUEST_TIME_OUT 4.0
 
-@interface NPLocationManager() <NPXLocationEngineDelegate>
+@interface NPLocationManager() <IPXLocationEngineDelegate>
 {
     IPXLocationEngine *locationEngine;
     CLBeaconRegion *beaconRegion;

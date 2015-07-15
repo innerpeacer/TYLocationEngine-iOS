@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __BLEProject__NPXAlgorithmType__
-#define __BLEProject__NPXAlgorithmType__
+#ifndef __BLEProject__IPXAlgorithmType__
+#define __BLEProject__IPXAlgorithmType__
 
 typedef enum {
-    NPXSingle, NPXTripple, NPXHybridSingle, NPXHybridTripple, NPXLinearWeighting, NPXQuadraticWeighting
+    IPXSingle, IPXTripple, IPXHybridSingle, IPXHybridTripple, IPXLinearWeighting, IPXQuadraticWeighting
 } IPXAlgorithmType;
 
-#endif /* defined(__BLEProject__NPXAlgorithmType__) */
+#endif /* defined(__BLEProject__IPXAlgorithmType__) */

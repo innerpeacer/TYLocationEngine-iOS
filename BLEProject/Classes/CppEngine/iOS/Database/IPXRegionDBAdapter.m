@@ -1,24 +1,24 @@
 //
-//  NPXRegionDBAdapter.m
+//  IPXRegionDBAdapter.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/4/13.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#import "NPXRegionDBAdapter.h"
-#import "NPXRegionDBConstants.h"
+#import "IPXRegionDBAdapter.h"
+#import "IPXRegionDBConstants.h"
 
 #import <sqlite3.h>
 
-@interface NPXRegionDBAdapter()
+@interface IPXRegionDBAdapter()
 {
     sqlite3 *_database;
     NSString *_dbPath;
 }
 @end
 
-@implementation NPXRegionDBAdapter
+@implementation IPXRegionDBAdapter
 
 - (id)initWithDBFile:(NSString *)path
 {

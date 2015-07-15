@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __BLEProject__NPXLocationAlgorithm__
-#define __BLEProject__NPXLocationAlgorithm__
+#ifndef __BLEProject__IPXLocationAlgorithm__
+#define __BLEProject__IPXLocationAlgorithm__
 
 #include <stdio.h>
 
@@ -61,4 +61,4 @@ Innerpeacer::BLELocationEngine::IPXLocationAlgorithm *CreateLocationAlgorithm(co
 
 
 
-#endif /* defined(__BLEProject__NPXLocationAlgorithm__) */
+#endif /* defined(__BLEProject__IPXLocationAlgorithm__) */

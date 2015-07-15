@@ -11,7 +11,7 @@
 #import <TYMapData/TYMapData.h>
 
 @class IPXLocationEngine;
-@protocol NPXLocationEngineDelegate <NSObject>
+@protocol IPXLocationEngineDelegate <NSObject>
 
 @optional
 - (void)IPXLocationEngine:(IPXLocationEngine *)engine locationChanged:(TYLocalPoint *)newLocation;
@@ -32,6 +32,6 @@
 
 - (void)setRssiThreshold:(int)threshold;
 
-@property (nonatomic, assign) id<NPXLocationEngineDelegate> delegate;
+@property (nonatomic, assign) id<IPXLocationEngineDelegate> delegate;
 
 @end

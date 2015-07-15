@@ -5,8 +5,8 @@
  *      Author: innerpeacer
  */
 
-#ifndef NPXBEACON_H_
-#define NPXBEACON_H_
+#ifndef IPXBEACON_H_
+#define IPXBEACON_H_
 
 #include <string>
 
@@ -75,4 +75,4 @@ public:
 }
 }
 
-#endif /* NPXBEACON_H_ */
+#endif /* IPXBEACON_H_ */

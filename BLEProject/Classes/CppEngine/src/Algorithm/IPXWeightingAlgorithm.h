@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __BLEProject__NPXWeightingAlgorithm__
-#define __BLEProject__NPXWeightingAlgorithm__
+#ifndef __BLEProject__IPXWeightingAlgorithm__
+#define __BLEProject__IPXWeightingAlgorithm__
 
 #include <stdio.h>
 #include "IPXLocationAlgorithm.h"
@@ -33,4 +33,4 @@ namespace Innerpeacer {
 
 IPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type);
 
-#endif /* defined(__BLEProject__NPXWeightingAlgorithm__) */
+#endif /* defined(__BLEProject__IPXWeightingAlgorithm__) */

@@ -1,6 +1,6 @@
 
-#ifndef NPX_BeaconDBConstants_h
-#define NPX_BeaconDBConstants_h
+#ifndef IPX_BeaconDBConstants_h
+#define IPX_BeaconDBConstants_h
 
 #define FILE_NP_BEACON_DBFILE @"beacon.db"
 

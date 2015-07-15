@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __BLEProject__NPXStepBasedEngine__
-#define __BLEProject__NPXStepBasedEngine__
+#ifndef __BLEProject__IPXStepBasedEngine__
+#define __BLEProject__IPXStepBasedEngine__
 
 #include <stdio.h>
 
@@ -61,4 +61,4 @@ namespace Innerpeacer {
 }
 
 
-#endif /* defined(__BLEProject__NPXStepBasedEngine__) */
+#endif /* defined(__BLEProject__IPXStepBasedEngine__) */

@@ -31,6 +31,6 @@ namespace Innerpeacer {
     }
 }
 
-ILocationEngine *CreateNPXStepBaseTriangulationEngine(IPXAlgorithmType type);
+ILocationEngine *CreateIPXStepBaseTriangulationEngine(IPXAlgorithmType type);
 
 #endif /* ILOCATIONENGINE_H_ */
