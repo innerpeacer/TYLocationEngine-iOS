@@ -11,7 +11,7 @@
 #import "TYMotionDetector.h"
 #import "TYBeaconKey.h"
 
-@interface BaseLocationTestVC () <NPBeaconManagerDelegate, TYMotionDetectorDelegate>
+@interface BaseLocationTestVC () <TYBeaconManagerDelegate, TYMotionDetectorDelegate>
 {
     TYGraphicsLayer *publicBeaconLayer;
 }
@@ -68,7 +68,7 @@
         [db open];
         NSArray *array = [db getAllNephogramBeacons];
         for(TYPublicBeacon *pb in array){
-            NSNumber *key = [TYBeaconKey beaconKeyForNPBeacon:pb];
+            NSNumber *key = [TYBeaconKey beaconKeyForTYBeacon:pb];
             [self.allBeacons setObject:pb forKey:key];
         }
         [db close];

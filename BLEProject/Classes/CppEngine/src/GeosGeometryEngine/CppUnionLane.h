@@ -1,7 +1,7 @@
 
 
-#ifndef __NPTestProject__CppLaneManager__
-#define __NPTestProject__CppLaneManager__
+#ifndef __TYTestProject__CppLaneManager__
+#define __TYTestProject__CppLaneManager__
 
 #include <string>
 
@@ -51,4 +51,4 @@ namespace BLELocationEngine {
 }
 }
 
-#endif /* defined(__NPTestProject__CppLaneManager__) */
+#endif /* defined(__TYTestProject__CppLaneManager__) */

@@ -11,7 +11,7 @@
 
 #define REGION_IDENTIFIER @"Innerpeacer"
 
-#define FILE_NP_REGION_DBFILE @"BeaconRegion.db"
+#define FILE_TY_REGION_DBFILE @"BeaconRegion.db"
 
 #define TABLE_LOCATION_REGION @"LocationRegion"
 

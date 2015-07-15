@@ -1,5 +1,5 @@
 //
-//  NPBuildingMonitor.m
+//  TYBuildingMonitor.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/4/13.
@@ -16,7 +16,7 @@
 #import "TYLocationManager.h"
 #import "TYUserDefaults.h"
 
-@interface TYBuildingMonitor() <NPBeaconManagerDelegate>
+@interface TYBuildingMonitor() <TYBeaconManagerDelegate>
 {
     TYBeaconManager *beaconManager;
     NSDictionary *beaconRegionDict;
@@ -31,7 +31,7 @@
 {
     self = [super init];
     if (self) {
-        NSLog(@"NPBuildingMonitor initMonitor");
+        NSLog(@"TYBuildingMonitor initMonitor");
         
         beaconManager = [[TYBeaconManager alloc] init];
         beaconManager.delegate = self;

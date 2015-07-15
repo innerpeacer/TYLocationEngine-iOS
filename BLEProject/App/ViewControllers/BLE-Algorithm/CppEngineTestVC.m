@@ -127,9 +127,9 @@
     [self.mapView processDeviceRotation:newHeading];
 }
 
-- (void)NPLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager
+- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager
 {
-    NSLog(@"NPLocationManagerdidFailUpdateLocation");
+    NSLog(@"TYLocationManagerdidFailUpdateLocation");
     [self.mapView removeLocation];
 }
 

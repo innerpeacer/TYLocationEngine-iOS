@@ -18,7 +18,7 @@
 
 #define DEFAULT_MAX_BEACON_NUMBER_FOR_PROCESSING 9
 
-@interface IPXLocationEngine() <TYMotionDetectorDelegate, NPBeaconManagerDelegate>
+@interface IPXLocationEngine() <TYMotionDetectorDelegate, TYBeaconManagerDelegate>
 {
     TYBeaconManager *beaconManager;
     CLBeaconRegion *beaconRegion;
@@ -83,7 +83,7 @@
     vector<IPXPublicBeacon> publicBeacons;
     
     for(TYPublicBeacon *pb in array){
-        NSNumber *bkey = [TYBeaconKey beaconKeyForNPBeacon:pb];
+        NSNumber *bkey = [TYBeaconKey beaconKeyForTYBeacon:pb];
         
         [allBeacons setObject:pb forKey:bkey];
         

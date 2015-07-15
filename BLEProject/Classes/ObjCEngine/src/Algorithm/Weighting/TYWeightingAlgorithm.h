@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NPLocationAlgorithm.h"
+#import "TYLocationAlgorithm.h"
 #import "AlgorithmType.h"
 
 /**
  *  加权定位子算法，父类为CALocationAlgorithm
  */
-@interface NPWeightingAlgorithm : NPLocationAlgorithm
+@interface TYWeightingAlgorithm : TYLocationAlgorithm
 
-+ (NPWeightingAlgorithm *)algorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type;
++ (TYWeightingAlgorithm *)algorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type;
 
 @end

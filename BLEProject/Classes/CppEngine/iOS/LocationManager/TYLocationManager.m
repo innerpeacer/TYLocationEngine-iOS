@@ -94,8 +94,8 @@
 - (void)checkLocationUpdating
 {
     if (ABS([lastTimeLocationUpdated timeIntervalSinceNow]) > _requestTimeOut) {
-        if ([self.delegate respondsToSelector:@selector(NPLocationManagerdidFailUpdateLocation:)]) {
-            [self.delegate NPLocationManagerdidFailUpdateLocation:self];
+        if ([self.delegate respondsToSelector:@selector(TYLocationManagerdidFailUpdateLocation:)]) {
+            [self.delegate TYLocationManagerdidFailUpdateLocation:self];
         }
     }
 }

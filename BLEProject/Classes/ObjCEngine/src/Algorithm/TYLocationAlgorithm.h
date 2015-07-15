@@ -11,7 +11,7 @@
 /**
  *  定位算法类
  */
-@interface NPLocationAlgorithm : NSObject
+@interface TYLocationAlgorithm : NSObject
 
 /**
  *  当前部署的Beacon信息: {NSNumber: CAPublicBeacon}

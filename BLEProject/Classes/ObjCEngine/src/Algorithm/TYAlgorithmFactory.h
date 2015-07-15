@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NPLocationAlgorithm.h"
-#import "NPWeightingAlgorithm.h"
+#import "TYLocationAlgorithm.h"
+#import "TYWeightingAlgorithm.h"
 #import "AlgorithmType.h"
 
 /**
  *  算法工厂，根据特定类型返回相应的算法实例
  */
-@interface NPAlgorithmFactory : NSObject
+@interface TYAlgorithmFactory : NSObject
 
 /**
  *  算法实例静态工厂方法
@@ -24,6 +24,6 @@
  *
  *  @return 对应于type的算法实例
  */
-+ (NPLocationAlgorithm *)locationAlgorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type;
++ (TYLocationAlgorithm *)locationAlgorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type;
 
 @end

@@ -17,7 +17,7 @@
 {
     TYStepDetector *_stepDetector;
     TYHeadingDetector *_headingDetector;
-//    NPMagHeadingDetector *_magHeadingDetector;
+//    TYMagHeadingDetector *_magHeadingDetector;
 
     CMMotionManager *_motionManager;
 }
@@ -41,7 +41,7 @@
         _headingDetector = [TYHeadingDetector newDefaultHeadingDetector];
         _headingDetector.delegate = self;
         
-//        _magHeadingDetector = [NPMagHeadingDetector newDefaultMagHeadingDetector];
+//        _magHeadingDetector = [TYMagHeadingDetector newDefaultMagHeadingDetector];
 //        _magHeadingDetector.delegate = self;
         
     }

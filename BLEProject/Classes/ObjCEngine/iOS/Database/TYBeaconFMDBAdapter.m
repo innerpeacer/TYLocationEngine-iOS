@@ -62,7 +62,7 @@
     NSMutableString *sql = [NSMutableString stringWithFormat:@"Insert into %@", TABLE_BEACON];
     NSMutableArray *arguments = [[NSMutableArray alloc] init];
     
-    NSString *fields = [NSString stringWithFormat:@" ( %@, %@, %@, %@, %@ , %@) ", FIELD_GEOM, FIELD_UUID, FIELD_BEACON_MAJOR, FIELD_BEACON_MINOR, FIELD_FLOOR,FIELD_NP_BEACON_SHOPID];
+    NSString *fields = [NSString stringWithFormat:@" ( %@, %@, %@, %@, %@ , %@) ", FIELD_GEOM, FIELD_UUID, FIELD_BEACON_MAJOR, FIELD_BEACON_MINOR, FIELD_FLOOR,FIELD_TY_BEACON_SHOPID];
     NSString *values = @" ( ?, ?, ?, ?, ?, ?) ";
     
     [arguments addObject:[TYPointConverter dataFromX:x Y:y Z:z]];
@@ -79,7 +79,7 @@
 - (BOOL)updateNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor X:(double)x Y:(double)y Z:(double)z Floor:(int)f ShopGid:(NSString *)shopid
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"UPDATE %@ SET ",TABLE_BEACON];
-    NSString *fields = [NSString stringWithFormat:@" %@ = ?, %@ = ?, %@ = ?", FIELD_GEOM, FIELD_FLOOR, FIELD_NP_BEACON_SHOPID];
+    NSString *fields = [NSString stringWithFormat:@" %@ = ?, %@ = ?, %@ = ?", FIELD_GEOM, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID];
     NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d and %@ = %d ", FIELD_BEACON_MAJOR, major.intValue, FIELD_BEACON_MINOR, minor.intValue];
 
     [sql appendString:fields];
@@ -105,7 +105,7 @@
 
 - (NSArray *)getAllNephogramBeacons
 {
-    NSString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_BEACON_MAJOR, FIELD_BEACON_MINOR, FIELD_FLOOR, FIELD_NP_BEACON_SHOPID, FIELD_BEACON_TAG, TABLE_BEACON];
+    NSString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_BEACON_MAJOR, FIELD_BEACON_MINOR, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID, FIELD_BEACON_TAG, TABLE_BEACON];
     
     FMResultSet *rs = [_database executeQuery:sql];
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -134,7 +134,7 @@
 
 - (TYPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
 {
-    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_FLOOR, FIELD_NP_BEACON_SHOPID, TABLE_BEACON];
+    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID, TABLE_BEACON];
     NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d and %@ = %d ",FIELD_BEACON_MAJOR, major.intValue, FIELD_BEACON_MINOR, minor.intValue];
     [sql appendString:whereClause];
     
@@ -152,7 +152,7 @@
         TYLocalPoint *location;
         location = [TYLocalPoint pointWithX:x Y:y Floor:floor];
         
-        NSString *shopId = [rs stringForColumn:FIELD_NP_BEACON_SHOPID];
+        NSString *shopId = [rs stringForColumn:FIELD_TY_BEACON_SHOPID];
         beacon = [TYPublicBeacon beaconWithUUID:uuid Major:major Minor:minor Tag:nil Location:location ShopGid:shopId];
     }
     

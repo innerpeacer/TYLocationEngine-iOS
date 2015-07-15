@@ -75,11 +75,11 @@
 		575CD1CF1B564E7300B1E77C /* TYBeaconFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD16E1B564E7300B1E77C /* TYBeaconFilter.m */; };
 		575CD1D11B564E7300B1E77C /* TYBeaconFMDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1741B564E7300B1E77C /* TYBeaconFMDBAdapter.m */; };
 		575CD1D21B564E7300B1E77C /* TYLocationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1791B564E7300B1E77C /* TYLocationEngine.m */; };
-		575CD1D31B564E7300B1E77C /* NPAlgorithmFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD17D1B564E7300B1E77C /* NPAlgorithmFactory.m */; };
-		575CD1D41B564E7300B1E77C /* NPGeometryCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD17F1B564E7300B1E77C /* NPGeometryCalculator.m */; };
-		575CD1D51B564E7300B1E77C /* NPLocationAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1811B564E7300B1E77C /* NPLocationAlgorithm.m */; };
-		575CD1D61B564E7300B1E77C /* NPTriangulationAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1841B564E7300B1E77C /* NPTriangulationAlgorithm.m */; };
-		575CD1D71B564E7300B1E77C /* NPWeightingAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1871B564E7300B1E77C /* NPWeightingAlgorithm.m */; };
+		575CD1D31B564E7300B1E77C /* TYAlgorithmFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD17D1B564E7300B1E77C /* TYAlgorithmFactory.m */; };
+		575CD1D41B564E7300B1E77C /* TYGeometryCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD17F1B564E7300B1E77C /* TYGeometryCalculator.m */; };
+		575CD1D51B564E7300B1E77C /* TYLocationAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1811B564E7300B1E77C /* TYLocationAlgorithm.m */; };
+		575CD1D61B564E7300B1E77C /* TYTriangulationAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1841B564E7300B1E77C /* TYTriangulationAlgorithm.m */; };
+		575CD1D71B564E7300B1E77C /* TYWeightingAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1871B564E7300B1E77C /* TYWeightingAlgorithm.m */; };
 		575CD1D81B564E7300B1E77C /* TYGeometryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD18B1B564E7300B1E77C /* TYGeometryFactory.m */; };
 		575CD1D91B564E7300B1E77C /* TYVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD18D1B564E7300B1E77C /* TYVector2.m */; };
 		575CD1DA1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1901B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m */; };
@@ -258,16 +258,16 @@
 		575CD1771B564E7300B1E77C /* AlgorithmType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlgorithmType.h; sourceTree = "<group>"; };
 		575CD1781B564E7300B1E77C /* TYLocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLocationEngine.h; sourceTree = "<group>"; };
 		575CD1791B564E7300B1E77C /* TYLocationEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLocationEngine.m; sourceTree = "<group>"; };
-		575CD17C1B564E7300B1E77C /* NPAlgorithmFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPAlgorithmFactory.h; sourceTree = "<group>"; };
-		575CD17D1B564E7300B1E77C /* NPAlgorithmFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPAlgorithmFactory.m; sourceTree = "<group>"; };
-		575CD17E1B564E7300B1E77C /* NPGeometryCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPGeometryCalculator.h; sourceTree = "<group>"; };
-		575CD17F1B564E7300B1E77C /* NPGeometryCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPGeometryCalculator.m; sourceTree = "<group>"; };
-		575CD1801B564E7300B1E77C /* NPLocationAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPLocationAlgorithm.h; sourceTree = "<group>"; };
-		575CD1811B564E7300B1E77C /* NPLocationAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPLocationAlgorithm.m; sourceTree = "<group>"; };
-		575CD1831B564E7300B1E77C /* NPTriangulationAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPTriangulationAlgorithm.h; sourceTree = "<group>"; };
-		575CD1841B564E7300B1E77C /* NPTriangulationAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPTriangulationAlgorithm.m; sourceTree = "<group>"; };
-		575CD1861B564E7300B1E77C /* NPWeightingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPWeightingAlgorithm.h; sourceTree = "<group>"; };
-		575CD1871B564E7300B1E77C /* NPWeightingAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPWeightingAlgorithm.m; sourceTree = "<group>"; };
+		575CD17C1B564E7300B1E77C /* TYAlgorithmFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYAlgorithmFactory.h; sourceTree = "<group>"; };
+		575CD17D1B564E7300B1E77C /* TYAlgorithmFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYAlgorithmFactory.m; sourceTree = "<group>"; };
+		575CD17E1B564E7300B1E77C /* TYGeometryCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYGeometryCalculator.h; sourceTree = "<group>"; };
+		575CD17F1B564E7300B1E77C /* TYGeometryCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYGeometryCalculator.m; sourceTree = "<group>"; };
+		575CD1801B564E7300B1E77C /* TYLocationAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLocationAlgorithm.h; sourceTree = "<group>"; };
+		575CD1811B564E7300B1E77C /* TYLocationAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLocationAlgorithm.m; sourceTree = "<group>"; };
+		575CD1831B564E7300B1E77C /* TYTriangulationAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTriangulationAlgorithm.h; sourceTree = "<group>"; };
+		575CD1841B564E7300B1E77C /* TYTriangulationAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTriangulationAlgorithm.m; sourceTree = "<group>"; };
+		575CD1861B564E7300B1E77C /* TYWeightingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYWeightingAlgorithm.h; sourceTree = "<group>"; };
+		575CD1871B564E7300B1E77C /* TYWeightingAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYWeightingAlgorithm.m; sourceTree = "<group>"; };
 		575CD18A1B564E7300B1E77C /* TYGeometryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYGeometryFactory.h; sourceTree = "<group>"; };
 		575CD18B1B564E7300B1E77C /* TYGeometryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYGeometryFactory.m; sourceTree = "<group>"; };
 		575CD18C1B564E7300B1E77C /* TYVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVector2.h; sourceTree = "<group>"; };
@@ -792,12 +792,12 @@
 		575CD17B1B564E7300B1E77C /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
-				575CD17C1B564E7300B1E77C /* NPAlgorithmFactory.h */,
-				575CD17D1B564E7300B1E77C /* NPAlgorithmFactory.m */,
-				575CD17E1B564E7300B1E77C /* NPGeometryCalculator.h */,
-				575CD17F1B564E7300B1E77C /* NPGeometryCalculator.m */,
-				575CD1801B564E7300B1E77C /* NPLocationAlgorithm.h */,
-				575CD1811B564E7300B1E77C /* NPLocationAlgorithm.m */,
+				575CD17C1B564E7300B1E77C /* TYAlgorithmFactory.h */,
+				575CD17D1B564E7300B1E77C /* TYAlgorithmFactory.m */,
+				575CD17E1B564E7300B1E77C /* TYGeometryCalculator.h */,
+				575CD17F1B564E7300B1E77C /* TYGeometryCalculator.m */,
+				575CD1801B564E7300B1E77C /* TYLocationAlgorithm.h */,
+				575CD1811B564E7300B1E77C /* TYLocationAlgorithm.m */,
 				575CD1821B564E7300B1E77C /* Triangulation */,
 				575CD1851B564E7300B1E77C /* Weighting */,
 			);
@@ -807,8 +807,8 @@
 		575CD1821B564E7300B1E77C /* Triangulation */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1831B564E7300B1E77C /* NPTriangulationAlgorithm.h */,
-				575CD1841B564E7300B1E77C /* NPTriangulationAlgorithm.m */,
+				575CD1831B564E7300B1E77C /* TYTriangulationAlgorithm.h */,
+				575CD1841B564E7300B1E77C /* TYTriangulationAlgorithm.m */,
 			);
 			path = Triangulation;
 			sourceTree = "<group>";
@@ -816,8 +816,8 @@
 		575CD1851B564E7300B1E77C /* Weighting */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1861B564E7300B1E77C /* NPWeightingAlgorithm.h */,
-				575CD1871B564E7300B1E77C /* NPWeightingAlgorithm.m */,
+				575CD1861B564E7300B1E77C /* TYWeightingAlgorithm.h */,
+				575CD1871B564E7300B1E77C /* TYWeightingAlgorithm.m */,
 			);
 			path = Weighting;
 			sourceTree = "<group>";
@@ -1067,7 +1067,7 @@
 				575CD1C51B564E7300B1E77C /* IPXTriangulationAlgorithm.cpp in Sources */,
 				575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */,
 				575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */,
-				575CD1D71B564E7300B1E77C /* NPWeightingAlgorithm.m in Sources */,
+				575CD1D71B564E7300B1E77C /* TYWeightingAlgorithm.m in Sources */,
 				575CD1B31B564E7300B1E77C /* TYHeadingDetector.m in Sources */,
 				575CD1D21B564E7300B1E77C /* TYLocationEngine.m in Sources */,
 				575CD1DD1B564E7300B1E77C /* TYDistributionResult.m in Sources */,
@@ -1085,7 +1085,7 @@
 				57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */,
 				575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */,
 				575CD1E31B564E7300B1E77C /* FMDatabasePool.m in Sources */,
-				575CD1D51B564E7300B1E77C /* NPLocationAlgorithm.m in Sources */,
+				575CD1D51B564E7300B1E77C /* TYLocationAlgorithm.m in Sources */,
 				575CD1E11B564E7300B1E77C /* FMDatabase.m in Sources */,
 				575CD1AD1B564E7300B1E77C /* TYBeacon.m in Sources */,
 				575CD1D91B564E7300B1E77C /* TYVector2.m in Sources */,
@@ -1097,7 +1097,7 @@
 				575CD0FE1B564DE200B1E77C /* SettingTableVC.m in Sources */,
 				575CD1C41B564E7300B1E77C /* IPXLocationAlgorithm.cpp in Sources */,
 				575CD0FF1B564DE200B1E77C /* BuildingTableVC.m in Sources */,
-				575CD1D31B564E7300B1E77C /* NPAlgorithmFactory.m in Sources */,
+				575CD1D31B564E7300B1E77C /* TYAlgorithmFactory.m in Sources */,
 				575CD0F71B564DE200B1E77C /* MapVC.m in Sources */,
 				575CD1D11B564E7300B1E77C /* TYBeaconFMDBAdapter.m in Sources */,
 				575CD0F51B564DE200B1E77C /* BeaconListForChoosingTableVC.m in Sources */,
@@ -1132,13 +1132,13 @@
 				575CD1B61B564E7300B1E77C /* TYSample.m in Sources */,
 				575CD1B11B564E7300B1E77C /* TYMovingAverage.m in Sources */,
 				575CD1DF1B564E7300B1E77C /* TYTestResult.m in Sources */,
-				575CD1D61B564E7300B1E77C /* NPTriangulationAlgorithm.m in Sources */,
+				575CD1D61B564E7300B1E77C /* TYTriangulationAlgorithm.m in Sources */,
 				575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */,
 				575CD1CA1B564E7300B1E77C /* IPXScannedBeacon.cpp in Sources */,
 				575CD1CF1B564E7300B1E77C /* TYBeaconFilter.m in Sources */,
 				575CD0F21B564DE200B1E77C /* LocationEngineTestVC.m in Sources */,
 				575CD1B41B564E7300B1E77C /* TYMagHeadingDetector.m in Sources */,
-				575CD1D41B564E7300B1E77C /* NPGeometryCalculator.m in Sources */,
+				575CD1D41B564E7300B1E77C /* TYGeometryCalculator.m in Sources */,
 				575CD1E41B564E7300B1E77C /* FMDatabaseQueue.m in Sources */,
 				575CD1C21B564E7300B1E77C /* TYLocationManager.m in Sources */,
 				575CD1DA1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m in Sources */,

@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NPLocationAlgorithm.h"
+#import "TYLocationAlgorithm.h"
 #import "AlgorithmType.h"
 
 /**
  *  三角定位子算法，父类为CALocationAlgorithm
  */
-@interface NPTriangulationAlgorithm : NPLocationAlgorithm
+@interface TYTriangulationAlgorithm : TYLocationAlgorithm
 
-+ (NPTriangulationAlgorithm *)algorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type;
++ (TYTriangulationAlgorithm *)algorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type;
 
 @end
 

@@ -6,15 +6,15 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#import "NPLocationAlgorithm.h"
+#import "TYLocationAlgorithm.h"
 
-@interface NPLocationAlgorithm()
+@interface TYLocationAlgorithm()
 {
 }
 
 @end
 
-@implementation NPLocationAlgorithm
+@implementation TYLocationAlgorithm
 
 - (id)initWithBeaconDictionary:(NSDictionary *)dict
 {

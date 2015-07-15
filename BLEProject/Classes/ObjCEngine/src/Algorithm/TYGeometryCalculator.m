@@ -1,6 +1,6 @@
-#import "NPGeometryCalculator.h"
+#import "TYGeometryCalculator.h"
 
-@implementation NPGeometryCalculator
+@implementation TYGeometryCalculator
 
 + (TYLocalPoint *)scalePointWithCenter:(TYLocalPoint *)center scaled:(TYLocalPoint *)scaledPoint ForLength:(double)length
 {

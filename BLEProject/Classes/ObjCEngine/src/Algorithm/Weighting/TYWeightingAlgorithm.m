@@ -6,20 +6,20 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#import "NPWeightingAlgorithm.h"
+#import "TYWeightingAlgorithm.h"
 #import <CoreLocation/CoreLocation.h>
 #import "TYPublicBeacon.h"
 #import "BLELocationEngineConstants.h"
 
-@interface NPLinearWeightingAlgorithm : NPWeightingAlgorithm
+@interface TYLinearWeightingAlgorithm : TYWeightingAlgorithm
 
 @end
 
-@interface NPQuadraticWeightingAlgorithm : NPWeightingAlgorithm
+@interface TYQuadraticWeightingAlgorithm : TYWeightingAlgorithm
 
 @end
 
-@implementation NPWeightingAlgorithm
+@implementation TYWeightingAlgorithm
 
 - (id)initWithBeaconDictionary:(NSDictionary *)dict
 {
@@ -30,15 +30,15 @@
     return self;
 }
 
-+ (NPWeightingAlgorithm *)algorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type
++ (TYWeightingAlgorithm *)algorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type
 {
     switch (type) {
         case LinearWeighting:
-            return [[NPLinearWeightingAlgorithm alloc] initWithBeaconDictionary:dict];
+            return [[TYLinearWeightingAlgorithm alloc] initWithBeaconDictionary:dict];
             break;
             
         case QuadraticWeighting:
-            return [[NPQuadraticWeightingAlgorithm alloc] initWithBeaconDictionary:dict];
+            return [[TYQuadraticWeightingAlgorithm alloc] initWithBeaconDictionary:dict];
             break;
             
         default:
@@ -49,7 +49,7 @@
 
 @end
 
-@implementation NPLinearWeightingAlgorithm
+@implementation TYLinearWeightingAlgorithm
 
 - (TYLocalPoint *)calculationLocation
 {
@@ -83,7 +83,7 @@
 
 @end
 
-@implementation NPQuadraticWeightingAlgorithm
+@implementation TYQuadraticWeightingAlgorithm
 
 - (TYLocalPoint *)calculationLocation
 {

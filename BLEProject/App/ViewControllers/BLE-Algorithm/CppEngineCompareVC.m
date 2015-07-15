@@ -117,7 +117,7 @@
     
 }
 
-- (void)NPLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager
+- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager
 {
 
 }

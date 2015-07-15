@@ -13,6 +13,6 @@
 @interface TYBeaconKey : NSObject
 
 + (NSNumber *)beaconKeyForCLBeacon:(CLBeacon *)beacon;
-+ (NSNumber *)beaconKeyForNPBeacon:(TYBeacon *)beacon;
++ (NSNumber *)beaconKeyForTYBeacon:(TYBeacon *)beacon;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#import "NPTriangulationAlgorithm.h"
+#import "TYTriangulationAlgorithm.h"
 #import <CoreLocation/CoreLocation.h>
 #import "TYPublicBeacon.h"
 #import "BLELocationEngineConstants.h"
@@ -14,7 +14,7 @@
 #define DEFAULT_NUM_FOR_TRIANGULATION 4
 
 
-@interface NPTriangulationAlgorithm()
+@interface TYTriangulationAlgorithm()
 {
     
 }
@@ -27,24 +27,24 @@
 
 @end
 
-@interface NPSingleTriangulationAlgorithm : NPTriangulationAlgorithm
+@interface TYSingleTriangulationAlgorithm : TYTriangulationAlgorithm
 
 @end
 
-@interface NPTrippleTriangulationAlgorithm : NPTriangulationAlgorithm
+@interface TYTrippleTriangulationAlgorithm : TYTriangulationAlgorithm
 
 @end
 
-@interface NPHybridSingleTriangulationAlgorithm : NPTriangulationAlgorithm
+@interface TYHybridSingleTriangulationAlgorithm : TYTriangulationAlgorithm
 
 @end
 
-@interface NPHybridTrippleTriangulationAlgorithm : NPTriangulationAlgorithm
+@interface TYHybridTrippleTriangulationAlgorithm : TYTriangulationAlgorithm
 
 @end
 
 
-@implementation NPTriangulationAlgorithm
+@implementation TYTriangulationAlgorithm
 
 - (id)initWithBeaconDictionary:(NSDictionary *)dict
 {
@@ -55,27 +55,27 @@
     return self;
 }
 
-+ (NPTriangulationAlgorithm *)algorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type
++ (TYTriangulationAlgorithm *)algorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type
 {
     switch (type) {
         case Single:
-            return [[NPSingleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
+            return [[TYSingleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
             break;
             
         case Tripple:
-            return [[NPTrippleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
+            return [[TYTrippleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
             break;
             
         case HybridSingle:
-            return [[NPHybridSingleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
+            return [[TYHybridSingleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
             break;
             
         case HybridTriple:
-            return [[NPHybridTrippleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
+            return [[TYHybridTrippleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
             break;
             
         default:
-            return [[NPSingleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
+            return [[TYSingleTriangulationAlgorithm alloc] initWithBeaconDictionary:dict];
             break;
     }
 }
@@ -176,7 +176,7 @@
 
 @end
 
-@implementation NPSingleTriangulationAlgorithm
+@implementation TYSingleTriangulationAlgorithm
 
 - (TYLocalPoint *)calculationLocation
 {
@@ -197,7 +197,7 @@
 
 
 
-@implementation NPTrippleTriangulationAlgorithm
+@implementation TYTrippleTriangulationAlgorithm
 
 - (TYLocalPoint *)calculationLocation
 {
@@ -217,7 +217,7 @@
 @end
 
 
-@implementation NPHybridSingleTriangulationAlgorithm
+@implementation TYHybridSingleTriangulationAlgorithm
 
 - (TYLocalPoint *)calculationLocation
 {
@@ -321,7 +321,7 @@
 
 
 
-@implementation NPHybridTrippleTriangulationAlgorithm
+@implementation TYHybridTrippleTriangulationAlgorithm
 
 - (TYLocalPoint *)calculationLocation
 {

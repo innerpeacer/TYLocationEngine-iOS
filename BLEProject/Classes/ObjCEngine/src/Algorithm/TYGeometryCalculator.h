@@ -3,7 +3,7 @@
 /**
  *  辅助几何计算类
  */
-@interface NPGeometryCalculator : NSObject
+@interface TYGeometryCalculator : NSObject
 
 /**
  *  对特定点P以特定中心C和特定距离L进行限幅：

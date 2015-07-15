@@ -15,7 +15,7 @@
 @protocol TYLocationManagerDelegate <NSObject>
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation;
-- (void)NPLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager;
+- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager;
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading;
 @end
 

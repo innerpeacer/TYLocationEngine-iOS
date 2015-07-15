@@ -6,22 +6,22 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#import "NPAlgorithmFactory.h"
-#import "NPTriangulationAlgorithm.h"
-@implementation NPAlgorithmFactory
+#import "TYAlgorithmFactory.h"
+#import "TYTriangulationAlgorithm.h"
+@implementation TYAlgorithmFactory
 
-+ (NPLocationAlgorithm *)locationAlgorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type
++ (TYLocationAlgorithm *)locationAlgorithmWithBeaconDictionary:(NSDictionary *)dict Type:(AlgorithmType)type
 {
     switch (type) {
         case Single:
         case Tripple:
         case HybridSingle:
         case HybridTriple:
-            return [NPTriangulationAlgorithm algorithmWithBeaconDictionary:dict Type:type];
+            return [TYTriangulationAlgorithm algorithmWithBeaconDictionary:dict Type:type];
             
         case LinearWeighting:
         case QuadraticWeighting:
-            return [NPWeightingAlgorithm algorithmWithBeaconDictionary:dict Type:type];
+            return [TYWeightingAlgorithm algorithmWithBeaconDictionary:dict Type:type];
             
         default:
             return nil;

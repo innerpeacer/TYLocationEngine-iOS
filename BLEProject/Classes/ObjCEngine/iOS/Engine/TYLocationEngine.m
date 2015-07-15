@@ -8,8 +8,8 @@
 
 #import "TYLocationEngine.h"
 #import "TYMovingAverage.h"
-#import "NPAlgorithmFactory.h"
-#import "NPGeometryCalculator.h"
+#import "TYAlgorithmFactory.h"
+#import "TYGeometryCalculator.h"
 
 #define DEFAULT_STEP 1
 #define DEFAULT_STEP_LENGTH 0.5
@@ -17,7 +17,7 @@
 
 @interface TYLocationEngine()
 {
-    NPLocationAlgorithm *algorithm;
+    TYLocationAlgorithm *algorithm;
     AlgorithmType type;
     
     NSDictionary *publicBeaconDict;
@@ -56,7 +56,7 @@
         yMovingAverage = [[TYMovingAverage alloc] initWithWindow:MOVING_AVERAGE_WINDOW];
         
         publicBeaconDict = dict;
-        algorithm = [NPAlgorithmFactory locationAlgorithmWithBeaconDictionary:publicBeaconDict Type:aType];
+        algorithm = [TYAlgorithmFactory locationAlgorithmWithBeaconDictionary:publicBeaconDict Type:aType];
         type = aType;
         stepCount = DEFAULT_STEP;
     }
@@ -101,7 +101,7 @@
                 xMovingAverage = [[TYMovingAverage alloc] initWithWindow:MOVING_AVERAGE_WINDOW];
                 yMovingAverage = [[TYMovingAverage alloc] initWithWindow:MOVING_AVERAGE_WINDOW];
             } else {
-                currentDisplayLocation = [NPGeometryCalculator scalePointWithCenter:currentAnchorLocation scaled:newLocation ForLength:length];
+                currentDisplayLocation = [TYGeometryCalculator scalePointWithCenter:currentAnchorLocation scaled:newLocation ForLength:length];
             }
         }
     }

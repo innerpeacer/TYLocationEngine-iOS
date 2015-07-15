@@ -11,7 +11,7 @@
 
 #import "TYRegionManager.h"
 
-@interface ConfigureBeaconsVC () <BeaconSelectedDelegate, NPBeaconManagerDelegate>
+@interface ConfigureBeaconsVC () <BeaconSelectedDelegate, TYBeaconManagerDelegate>
 {
     TYGraphicsLayer *hintLayer;
     TYGraphicsLayer *publicBeaconLayer;

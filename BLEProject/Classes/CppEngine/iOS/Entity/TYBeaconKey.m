@@ -16,7 +16,7 @@
     return @(beacon.major.intValue * CONSTANT_HUNDRED_THROUSAND + beacon.minor.intValue);
 }
 
-+ (NSNumber *)beaconKeyForNPBeacon:(TYBeacon *)beacon
++ (NSNumber *)beaconKeyForTYBeacon:(TYBeacon *)beacon
 {
     return @(beacon.major.intValue * CONSTANT_HUNDRED_THROUSAND + beacon.minor.intValue);
 }

@@ -11,7 +11,7 @@
 
 @class TYBeaconManager;
 
-@protocol NPBeaconManagerDelegate <NSObject>
+@protocol TYBeaconManagerDelegate <NSObject>
 
 @required
 - (void)beaconManager:(TYBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region;
@@ -29,7 +29,7 @@
  */
 @interface TYBeaconManager : NSObject
 
-@property (nonatomic, weak) id<NPBeaconManagerDelegate> delegate;
+@property (nonatomic, weak) id<TYBeaconManagerDelegate> delegate;
 
 - (void)startRanging:(CLBeaconRegion *)region;
 - (void)stopRanging:(CLBeaconRegion *)region;

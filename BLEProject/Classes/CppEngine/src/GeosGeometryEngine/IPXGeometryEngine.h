@@ -1,7 +1,7 @@
 
 
-#ifndef __NPTestProject__IPXGeometryEngine__
-#define __NPTestProject__IPXGeometryEngine__
+#ifndef __TYTestProject__IPXGeometryEngine__
+#define __TYTestProject__IPXGeometryEngine__
 
 #include <geos.h>
 
@@ -45,4 +45,4 @@ namespace Innerpeacer {
     }
 }
 
-#endif /* defined(__NPTestProject__IPXGeometryEngine__) */
+#endif /* defined(__TYTestProject__IPXGeometryEngine__) */

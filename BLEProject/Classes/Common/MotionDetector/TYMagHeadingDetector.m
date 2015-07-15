@@ -1,5 +1,5 @@
 //
-//  NPMagHeadingDetector.m
+//  TYMagHeadingDetector.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/4/17.
