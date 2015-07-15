@@ -1,0 +1,1349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5713C6F81B56414200DA3083 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5713C6F61B56414200DA3083 /* TYMapData.framework */; };
+		5713C6F91B56414200DA3083 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5713C6F71B56414200DA3083 /* TYMapSDK.framework */; };
+		575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AD1B564DE200B1E77C /* TYRegionManager.m */; };
+		575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */; };
+		575CD0EC1B564DE200B1E77C /* BaseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B21B564DE200B1E77C /* BaseMapVC.m */; };
+		575CD0ED1B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B51B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m */; };
+		575CD0EE1B564DE200B1E77C /* BaseLocationTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B71B564DE200B1E77C /* BaseLocationTestVC.m */; };
+		575CD0EF1B564DE200B1E77C /* BeaconFilterTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B91B564DE200B1E77C /* BeaconFilterTestVC.m */; };
+		575CD0F01B564DE200B1E77C /* CppEngineCompareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0BB1B564DE200B1E77C /* CppEngineCompareVC.m */; };
+		575CD0F11B564DE200B1E77C /* CppEngineTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0BD1B564DE200B1E77C /* CppEngineTestVC.m */; };
+		575CD0F21B564DE200B1E77C /* LocationEngineTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0BF1B564DE200B1E77C /* LocationEngineTestVC.m */; };
+		575CD0F31B564DE200B1E77C /* MultiLocationTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0C11B564DE200B1E77C /* MultiLocationTestVC.m */; };
+		575CD0F41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0C41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m */; };
+		575CD0F51B564DE200B1E77C /* BeaconListForChoosingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0C61B564DE200B1E77C /* BeaconListForChoosingTableVC.m */; };
+		575CD0F61B564DE200B1E77C /* ConfigureBeaconsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0C91B564DE200B1E77C /* ConfigureBeaconsVC.m */; };
+		575CD0F71B564DE200B1E77C /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0CC1B564DE200B1E77C /* MapVC.m */; };
+		575CD0F81B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0CE1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m */; };
+		575CD0F91B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D01B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m */; };
+		575CD0FA1B564DE200B1E77C /* BaseControllerTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D31B564DE200B1E77C /* BaseControllerTableVC.m */; };
+		575CD0FB1B564DE200B1E77C /* BLEAlgorithmTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D51B564DE200B1E77C /* BLEAlgorithmTableVC.m */; };
+		575CD0FC1B564DE200B1E77C /* BLEToolTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D71B564DE200B1E77C /* BLEToolTableVC.m */; };
+		575CD0FD1B564DE200B1E77C /* MapTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D91B564DE200B1E77C /* MapTableVC.m */; };
+		575CD0FE1B564DE200B1E77C /* SettingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0DB1B564DE200B1E77C /* SettingTableVC.m */; };
+		575CD0FF1B564DE200B1E77C /* BuildingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0DE1B564DE200B1E77C /* BuildingTableVC.m */; };
+		575CD1001B564DE200B1E77C /* CityTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0E01B564DE200B1E77C /* CityTableVC.m */; };
+		575CD1011B564DE200B1E77C /* CreateMapJsonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0E21B564DE200B1E77C /* CreateMapJsonVC.m */; };
+		575CD1021B564DE200B1E77C /* FloorMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0E41B564DE200B1E77C /* FloorMapVC.m */; };
+		575CD1031B564DE200B1E77C /* SetCurrentPlaceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0E71B564DE200B1E77C /* SetCurrentPlaceVC.m */; };
+		575CD1041B564DE200B1E77C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0E91B564DE200B1E77C /* AppDelegate.m */; };
+		575CD10C1B564E2C00B1E77C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1081B564E2C00B1E77C /* InfoPlist.strings */; };
+		575CD10D1B564E2C00B1E77C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD10A1B564E2C00B1E77C /* main.m */; };
+		575CD1AD1B564E7300B1E77C /* NPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1131B564E7300B1E77C /* NPBeacon.m */; };
+		575CD1AE1B564E7300B1E77C /* NPBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1151B564E7300B1E77C /* NPBeaconManager.m */; };
+		575CD1AF1B564E7300B1E77C /* NPPublicBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1171B564E7300B1E77C /* NPPublicBeacon.m */; };
+		575CD1B01B564E7300B1E77C /* NPCumulativeSingalPowerTD.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11A1B564E7300B1E77C /* NPCumulativeSingalPowerTD.m */; };
+		575CD1B11B564E7300B1E77C /* NPMovingAverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11C1B564E7300B1E77C /* NPMovingAverage.m */; };
+		575CD1B21B564E7300B1E77C /* NPMovingAverageTD.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11E1B564E7300B1E77C /* NPMovingAverageTD.m */; };
+		575CD1B31B564E7300B1E77C /* NPHeadingDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1211B564E7300B1E77C /* NPHeadingDetector.m */; };
+		575CD1B41B564E7300B1E77C /* NPMagHeadingDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1231B564E7300B1E77C /* NPMagHeadingDetector.m */; };
+		575CD1B51B564E7300B1E77C /* NPMotionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1251B564E7300B1E77C /* NPMotionDetector.m */; };
+		575CD1B61B564E7300B1E77C /* NPSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1271B564E7300B1E77C /* NPSample.m */; };
+		575CD1B71B564E7300B1E77C /* NPStepDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1291B564E7300B1E77C /* NPStepDetector.m */; };
+		575CD1B81B564E7300B1E77C /* NPStepEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD12B1B564E7300B1E77C /* NPStepEvent.m */; };
+		575CD1B91B564E7300B1E77C /* NPVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD12D1B564E7300B1E77C /* NPVector2.m */; };
+		575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1301B564E7300B1E77C /* DoubleRounder.m */; };
+		575CD1BB1B564E7300B1E77C /* NPPointConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1321B564E7300B1E77C /* NPPointConverter.m */; };
+		575CD1BC1B564E7300B1E77C /* NPXBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1371B564E7300B1E77C /* NPXBeaconDBAdapter.m */; };
+		575CD1BD1B564E7300B1E77C /* NPXRegionDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13A1B564E7300B1E77C /* NPXRegionDBAdapter.m */; };
+		575CD1BE1B564E7300B1E77C /* NPXLocationEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13E1B564E7300B1E77C /* NPXLocationEngine.mm */; };
+		575CD1BF1B564E7300B1E77C /* NPBeaconKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1411B564E7300B1E77C /* NPBeaconKey.m */; };
+		575CD1C01B564E7300B1E77C /* NPBuildingMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1441B564E7300B1E77C /* NPBuildingMonitor.m */; };
+		575CD1C11B564E7300B1E77C /* NPLocationFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1461B564E7300B1E77C /* NPLocationFileManager.m */; };
+		575CD1C21B564E7300B1E77C /* NPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1481B564E7300B1E77C /* NPLocationManager.m */; };
+		575CD1C31B564E7300B1E77C /* NPXGeometryCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD14C1B564E7300B1E77C /* NPXGeometryCalculator.cpp */; };
+		575CD1C41B564E7300B1E77C /* NPXLocationAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD14E1B564E7300B1E77C /* NPXLocationAlgorithm.cpp */; };
+		575CD1C51B564E7300B1E77C /* NPXTriangulationAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1501B564E7300B1E77C /* NPXTriangulationAlgorithm.cpp */; };
+		575CD1C61B564E7300B1E77C /* NPXWeightingAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1521B564E7300B1E77C /* NPXWeightingAlgorithm.cpp */; };
+		575CD1C71B564E7300B1E77C /* NPXBeacon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1551B564E7300B1E77C /* NPXBeacon.cpp */; };
+		575CD1C81B564E7300B1E77C /* NPXPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1571B564E7300B1E77C /* NPXPoint.cpp */; };
+		575CD1C91B564E7300B1E77C /* NPXPublicBeacon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1591B564E7300B1E77C /* NPXPublicBeacon.cpp */; };
+		575CD1CA1B564E7300B1E77C /* NPXScannedBeacon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD15B1B564E7300B1E77C /* NPXScannedBeacon.cpp */; };
+		575CD1CB1B564E7300B1E77C /* NPXMovingAverage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD15E1B564E7300B1E77C /* NPXMovingAverage.cpp */; };
+		575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1611B564E7300B1E77C /* CppUnionLane.cpp */; };
+		575CD1CD1B564E7300B1E77C /* NPXGeometryEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1631B564E7300B1E77C /* NPXGeometryEngine.cpp */; };
+		575CD1CE1B564E7300B1E77C /* NPXStepBasedEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1671B564E7300B1E77C /* NPXStepBasedEngine.cpp */; };
+		575CD1CF1B564E7300B1E77C /* NPBeaconFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD16E1B564E7300B1E77C /* NPBeaconFilter.m */; };
+		575CD1D01B564E7300B1E77C /* NPBeaconPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1701B564E7300B1E77C /* NPBeaconPool.m */; };
+		575CD1D11B564E7300B1E77C /* NPBeaconFMDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1741B564E7300B1E77C /* NPBeaconFMDBAdapter.m */; };
+		575CD1D21B564E7300B1E77C /* NPLocationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1791B564E7300B1E77C /* NPLocationEngine.m */; };
+		575CD1D31B564E7300B1E77C /* NPAlgorithmFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD17D1B564E7300B1E77C /* NPAlgorithmFactory.m */; };
+		575CD1D41B564E7300B1E77C /* NPGeometryCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD17F1B564E7300B1E77C /* NPGeometryCalculator.m */; };
+		575CD1D51B564E7300B1E77C /* NPLocationAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1811B564E7300B1E77C /* NPLocationAlgorithm.m */; };
+		575CD1D61B564E7300B1E77C /* NPTriangulationAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1841B564E7300B1E77C /* NPTriangulationAlgorithm.m */; };
+		575CD1D71B564E7300B1E77C /* NPWeightingAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1871B564E7300B1E77C /* NPWeightingAlgorithm.m */; };
+		575CD1D81B564E7300B1E77C /* NPGeometryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD18B1B564E7300B1E77C /* NPGeometryFactory.m */; };
+		575CD1D91B564E7300B1E77C /* NPVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD18D1B564E7300B1E77C /* NPVector2.m */; };
+		575CD1DA1B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1901B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m */; };
+		575CD1DB1B564E7300B1E77C /* NPSampeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1941B564E7300B1E77C /* NPSampeData.m */; };
+		575CD1DC1B564E7300B1E77C /* NPStaticSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1961B564E7300B1E77C /* NPStaticSample.m */; };
+		575CD1DD1B564E7300B1E77C /* NPDistributionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19B1B564E7300B1E77C /* NPDistributionResult.m */; };
+		575CD1DE1B564E7300B1E77C /* NPPointTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19D1B564E7300B1E77C /* NPPointTester.m */; };
+		575CD1DF1B564E7300B1E77C /* NPTestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19F1B564E7300B1E77C /* NPTestResult.m */; };
+		575CD1E01B564E7300B1E77C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1A01B564E7300B1E77C /* Images.xcassets */; };
+		575CD1E11B564E7300B1E77C /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1A41B564E7300B1E77C /* FMDatabase.m */; };
+		575CD1E21B564E7300B1E77C /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1A61B564E7300B1E77C /* FMDatabaseAdditions.m */; };
+		575CD1E31B564E7300B1E77C /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1A81B564E7300B1E77C /* FMDatabasePool.m */; };
+		575CD1E41B564E7300B1E77C /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1AA1B564E7300B1E77C /* FMDatabaseQueue.m */; };
+		575CD1E51B564E7300B1E77C /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1AC1B564E7300B1E77C /* FMResultSet.m */; };
+		575CD2AF1B564ED400B1E77C /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1EB1B564ED400B1E77C /* ArcGIS.bundle */; };
+		575CD2B01B564ED400B1E77C /* AOI.json in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1ED1B564ED400B1E77C /* AOI.json */; };
+		575CD2B11B564ED400B1E77C /* beacon-hm.db in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1EE1B564ED400B1E77C /* beacon-hm.db */; };
+		575CD2B21B564ED400B1E77C /* beacon-jz.db in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1EF1B564ED400B1E77C /* beacon-jz.db */; };
+		575CD2B31B564ED400B1E77C /* beacon-of.db in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1F01B564ED400B1E77C /* beacon-of.db */; };
+		575CD3641B564EF000B1E77C /* MapResource in Resources */ = {isa = PBXBuildFile; fileRef = 575CD3631B564EF000B1E77C /* MapResource */; };
+		575CD3681B564F1500B1E77C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 575CD3671B564F1500B1E77C /* Settings.bundle */; };
+		575CD3701B564F2900B1E77C /* BLE-Algorithm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36A1B564F2900B1E77C /* BLE-Algorithm.storyboard */; };
+		575CD3711B564F2900B1E77C /* BLE-Tool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36B1B564F2900B1E77C /* BLE-Tool.storyboard */; };
+		575CD3721B564F2900B1E77C /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36C1B564F2900B1E77C /* Launch Screen.xib */; };
+		575CD3731B564F2900B1E77C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36D1B564F2900B1E77C /* Main.storyboard */; };
+		575CD3741B564F2900B1E77C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36E1B564F2900B1E77C /* Map.storyboard */; };
+		575CD3751B564F2900B1E77C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36F1B564F2900B1E77C /* Setting.storyboard */; };
+		57B396DE1A6361B800E72FF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B396DD1A6361B800E72FF5 /* Foundation.framework */; };
+		57B396E01A6361B800E72FF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B396DF1A6361B800E72FF5 /* CoreGraphics.framework */; };
+		57B396E21A6361B800E72FF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B396E11A6361B800E72FF5 /* UIKit.framework */; };
+		57B3989E1A6364D900E72FF5 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989D1A6364D900E72FF5 /* libgeos.a */; };
+		57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5713C6F61B56414200DA3083 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYMapData.framework; path = ../../../../../Desktop/TYMapData.framework; sourceTree = "<group>"; };
+		5713C6F71B56414200DA3083 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYMapSDK.framework; path = ../../../../../Desktop/TYMapSDK.framework; sourceTree = "<group>"; };
+		575CD0AB1B564DE200B1E77C /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
+		575CD0AC1B564DE200B1E77C /* TYRegionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRegionManager.h; sourceTree = "<group>"; };
+		575CD0AD1B564DE200B1E77C /* TYRegionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRegionManager.m; sourceTree = "<group>"; };
+		575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYUserDefaults.h; sourceTree = "<group>"; };
+		575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYUserDefaults.m; sourceTree = "<group>"; };
+		575CD0B11B564DE200B1E77C /* BaseMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapVC.h; sourceTree = "<group>"; };
+		575CD0B21B564DE200B1E77C /* BaseMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapVC.m; sourceTree = "<group>"; };
+		575CD0B41B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoSwitchLocationEngineTestVC.h; sourceTree = "<group>"; };
+		575CD0B51B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoSwitchLocationEngineTestVC.m; sourceTree = "<group>"; };
+		575CD0B61B564DE200B1E77C /* BaseLocationTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLocationTestVC.h; sourceTree = "<group>"; };
+		575CD0B71B564DE200B1E77C /* BaseLocationTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLocationTestVC.m; sourceTree = "<group>"; };
+		575CD0B81B564DE200B1E77C /* BeaconFilterTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconFilterTestVC.h; sourceTree = "<group>"; };
+		575CD0B91B564DE200B1E77C /* BeaconFilterTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconFilterTestVC.m; sourceTree = "<group>"; };
+		575CD0BA1B564DE200B1E77C /* CppEngineCompareVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppEngineCompareVC.h; sourceTree = "<group>"; };
+		575CD0BB1B564DE200B1E77C /* CppEngineCompareVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CppEngineCompareVC.m; sourceTree = "<group>"; };
+		575CD0BC1B564DE200B1E77C /* CppEngineTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppEngineTestVC.h; sourceTree = "<group>"; };
+		575CD0BD1B564DE200B1E77C /* CppEngineTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CppEngineTestVC.m; sourceTree = "<group>"; };
+		575CD0BE1B564DE200B1E77C /* LocationEngineTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationEngineTestVC.h; sourceTree = "<group>"; };
+		575CD0BF1B564DE200B1E77C /* LocationEngineTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationEngineTestVC.m; sourceTree = "<group>"; };
+		575CD0C01B564DE200B1E77C /* MultiLocationTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLocationTestVC.h; sourceTree = "<group>"; };
+		575CD0C11B564DE200B1E77C /* MultiLocationTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLocationTestVC.m; sourceTree = "<group>"; };
+		575CD0C31B564DE200B1E77C /* AddPrimitiveBeaconsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPrimitiveBeaconsVC.h; sourceTree = "<group>"; };
+		575CD0C41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPrimitiveBeaconsVC.m; sourceTree = "<group>"; };
+		575CD0C51B564DE200B1E77C /* BeaconListForChoosingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconListForChoosingTableVC.h; sourceTree = "<group>"; };
+		575CD0C61B564DE200B1E77C /* BeaconListForChoosingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconListForChoosingTableVC.m; sourceTree = "<group>"; };
+		575CD0C81B564DE200B1E77C /* ConfigureBeaconsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureBeaconsVC.h; sourceTree = "<group>"; };
+		575CD0C91B564DE200B1E77C /* ConfigureBeaconsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureBeaconsVC.m; sourceTree = "<group>"; };
+		575CD0CB1B564DE200B1E77C /* MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
+		575CD0CC1B564DE200B1E77C /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
+		575CD0CD1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowConfiguredBeaconsTableVC.h; sourceTree = "<group>"; };
+		575CD0CE1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowConfiguredBeaconsTableVC.m; sourceTree = "<group>"; };
+		575CD0CF1B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPrimitiveBeaconTableVC.h; sourceTree = "<group>"; };
+		575CD0D01B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPrimitiveBeaconTableVC.m; sourceTree = "<group>"; };
+		575CD0D21B564DE200B1E77C /* BaseControllerTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseControllerTableVC.h; sourceTree = "<group>"; };
+		575CD0D31B564DE200B1E77C /* BaseControllerTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseControllerTableVC.m; sourceTree = "<group>"; };
+		575CD0D41B564DE200B1E77C /* BLEAlgorithmTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEAlgorithmTableVC.h; sourceTree = "<group>"; };
+		575CD0D51B564DE200B1E77C /* BLEAlgorithmTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEAlgorithmTableVC.m; sourceTree = "<group>"; };
+		575CD0D61B564DE200B1E77C /* BLEToolTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEToolTableVC.h; sourceTree = "<group>"; };
+		575CD0D71B564DE200B1E77C /* BLEToolTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEToolTableVC.m; sourceTree = "<group>"; };
+		575CD0D81B564DE200B1E77C /* MapTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTableVC.h; sourceTree = "<group>"; };
+		575CD0D91B564DE200B1E77C /* MapTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableVC.m; sourceTree = "<group>"; };
+		575CD0DA1B564DE200B1E77C /* SettingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableVC.h; sourceTree = "<group>"; };
+		575CD0DB1B564DE200B1E77C /* SettingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableVC.m; sourceTree = "<group>"; };
+		575CD0DD1B564DE200B1E77C /* BuildingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingTableVC.h; sourceTree = "<group>"; };
+		575CD0DE1B564DE200B1E77C /* BuildingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingTableVC.m; sourceTree = "<group>"; };
+		575CD0DF1B564DE200B1E77C /* CityTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableVC.h; sourceTree = "<group>"; };
+		575CD0E01B564DE200B1E77C /* CityTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableVC.m; sourceTree = "<group>"; };
+		575CD0E11B564DE200B1E77C /* CreateMapJsonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateMapJsonVC.h; sourceTree = "<group>"; };
+		575CD0E21B564DE200B1E77C /* CreateMapJsonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateMapJsonVC.m; sourceTree = "<group>"; };
+		575CD0E31B564DE200B1E77C /* FloorMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorMapVC.h; sourceTree = "<group>"; };
+		575CD0E41B564DE200B1E77C /* FloorMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorMapVC.m; sourceTree = "<group>"; };
+		575CD0E61B564DE200B1E77C /* SetCurrentPlaceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCurrentPlaceVC.h; sourceTree = "<group>"; };
+		575CD0E71B564DE200B1E77C /* SetCurrentPlaceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCurrentPlaceVC.m; sourceTree = "<group>"; };
+		575CD0E81B564DE200B1E77C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		575CD0E91B564DE200B1E77C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		575CD1051B564E2C00B1E77C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		575CD1061B564E2C00B1E77C /* BLEProject-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLEProject-Prefix.pch"; sourceTree = "<group>"; };
+		575CD1091B564E2C00B1E77C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		575CD10A1B564E2C00B1E77C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		575CD1121B564E7300B1E77C /* NPBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeacon.h; sourceTree = "<group>"; };
+		575CD1131B564E7300B1E77C /* NPBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeacon.m; sourceTree = "<group>"; };
+		575CD1141B564E7300B1E77C /* NPBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconManager.h; sourceTree = "<group>"; };
+		575CD1151B564E7300B1E77C /* NPBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconManager.m; sourceTree = "<group>"; };
+		575CD1161B564E7300B1E77C /* NPPublicBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPublicBeacon.h; sourceTree = "<group>"; };
+		575CD1171B564E7300B1E77C /* NPPublicBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPublicBeacon.m; sourceTree = "<group>"; };
+		575CD1191B564E7300B1E77C /* NPCumulativeSingalPowerTD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCumulativeSingalPowerTD.h; sourceTree = "<group>"; };
+		575CD11A1B564E7300B1E77C /* NPCumulativeSingalPowerTD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPCumulativeSingalPowerTD.m; sourceTree = "<group>"; };
+		575CD11B1B564E7300B1E77C /* NPMovingAverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPMovingAverage.h; sourceTree = "<group>"; };
+		575CD11C1B564E7300B1E77C /* NPMovingAverage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPMovingAverage.m; sourceTree = "<group>"; };
+		575CD11D1B564E7300B1E77C /* NPMovingAverageTD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPMovingAverageTD.h; sourceTree = "<group>"; };
+		575CD11E1B564E7300B1E77C /* NPMovingAverageTD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPMovingAverageTD.m; sourceTree = "<group>"; };
+		575CD1201B564E7300B1E77C /* NPHeadingDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPHeadingDetector.h; sourceTree = "<group>"; };
+		575CD1211B564E7300B1E77C /* NPHeadingDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPHeadingDetector.m; sourceTree = "<group>"; };
+		575CD1221B564E7300B1E77C /* NPMagHeadingDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPMagHeadingDetector.h; sourceTree = "<group>"; };
+		575CD1231B564E7300B1E77C /* NPMagHeadingDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPMagHeadingDetector.m; sourceTree = "<group>"; };
+		575CD1241B564E7300B1E77C /* NPMotionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPMotionDetector.h; sourceTree = "<group>"; };
+		575CD1251B564E7300B1E77C /* NPMotionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPMotionDetector.m; sourceTree = "<group>"; };
+		575CD1261B564E7300B1E77C /* NPSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPSample.h; sourceTree = "<group>"; };
+		575CD1271B564E7300B1E77C /* NPSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPSample.m; sourceTree = "<group>"; };
+		575CD1281B564E7300B1E77C /* NPStepDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPStepDetector.h; sourceTree = "<group>"; };
+		575CD1291B564E7300B1E77C /* NPStepDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPStepDetector.m; sourceTree = "<group>"; };
+		575CD12A1B564E7300B1E77C /* NPStepEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPStepEvent.h; sourceTree = "<group>"; };
+		575CD12B1B564E7300B1E77C /* NPStepEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPStepEvent.m; sourceTree = "<group>"; };
+		575CD12C1B564E7300B1E77C /* NPVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPVector2.h; sourceTree = "<group>"; };
+		575CD12D1B564E7300B1E77C /* NPVector2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPVector2.m; sourceTree = "<group>"; };
+		575CD12F1B564E7300B1E77C /* DoubleRounder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleRounder.h; sourceTree = "<group>"; };
+		575CD1301B564E7300B1E77C /* DoubleRounder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleRounder.m; sourceTree = "<group>"; };
+		575CD1311B564E7300B1E77C /* NPPointConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPointConverter.h; sourceTree = "<group>"; };
+		575CD1321B564E7300B1E77C /* NPPointConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPointConverter.m; sourceTree = "<group>"; };
+		575CD1361B564E7300B1E77C /* NPXBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXBeaconDBAdapter.h; sourceTree = "<group>"; };
+		575CD1371B564E7300B1E77C /* NPXBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPXBeaconDBAdapter.m; sourceTree = "<group>"; };
+		575CD1381B564E7300B1E77C /* NPXBeaconDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXBeaconDBConstants.h; sourceTree = "<group>"; };
+		575CD1391B564E7300B1E77C /* NPXRegionDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXRegionDBAdapter.h; sourceTree = "<group>"; };
+		575CD13A1B564E7300B1E77C /* NPXRegionDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPXRegionDBAdapter.m; sourceTree = "<group>"; };
+		575CD13B1B564E7300B1E77C /* NPXRegionDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXRegionDBConstants.h; sourceTree = "<group>"; };
+		575CD13D1B564E7300B1E77C /* NPXLocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXLocationEngine.h; sourceTree = "<group>"; };
+		575CD13E1B564E7300B1E77C /* NPXLocationEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NPXLocationEngine.mm; sourceTree = "<group>"; };
+		575CD1401B564E7300B1E77C /* NPBeaconKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconKey.h; sourceTree = "<group>"; };
+		575CD1411B564E7300B1E77C /* NPBeaconKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconKey.m; sourceTree = "<group>"; };
+		575CD1431B564E7300B1E77C /* NPBuildingMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBuildingMonitor.h; sourceTree = "<group>"; };
+		575CD1441B564E7300B1E77C /* NPBuildingMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBuildingMonitor.m; sourceTree = "<group>"; };
+		575CD1451B564E7300B1E77C /* NPLocationFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPLocationFileManager.h; sourceTree = "<group>"; };
+		575CD1461B564E7300B1E77C /* NPLocationFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPLocationFileManager.m; sourceTree = "<group>"; };
+		575CD1471B564E7300B1E77C /* NPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPLocationManager.h; sourceTree = "<group>"; };
+		575CD1481B564E7300B1E77C /* NPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPLocationManager.m; sourceTree = "<group>"; };
+		575CD14B1B564E7300B1E77C /* NPXAlgorithmType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXAlgorithmType.h; sourceTree = "<group>"; };
+		575CD14C1B564E7300B1E77C /* NPXGeometryCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXGeometryCalculator.cpp; sourceTree = "<group>"; };
+		575CD14D1B564E7300B1E77C /* NPXGeometryCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXGeometryCalculator.h; sourceTree = "<group>"; };
+		575CD14E1B564E7300B1E77C /* NPXLocationAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXLocationAlgorithm.cpp; sourceTree = "<group>"; };
+		575CD14F1B564E7300B1E77C /* NPXLocationAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXLocationAlgorithm.h; sourceTree = "<group>"; };
+		575CD1501B564E7300B1E77C /* NPXTriangulationAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXTriangulationAlgorithm.cpp; sourceTree = "<group>"; };
+		575CD1511B564E7300B1E77C /* NPXTriangulationAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXTriangulationAlgorithm.h; sourceTree = "<group>"; };
+		575CD1521B564E7300B1E77C /* NPXWeightingAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXWeightingAlgorithm.cpp; sourceTree = "<group>"; };
+		575CD1531B564E7300B1E77C /* NPXWeightingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXWeightingAlgorithm.h; sourceTree = "<group>"; };
+		575CD1551B564E7300B1E77C /* NPXBeacon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXBeacon.cpp; sourceTree = "<group>"; };
+		575CD1561B564E7300B1E77C /* NPXBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXBeacon.h; sourceTree = "<group>"; };
+		575CD1571B564E7300B1E77C /* NPXPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXPoint.cpp; sourceTree = "<group>"; };
+		575CD1581B564E7300B1E77C /* NPXPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXPoint.h; sourceTree = "<group>"; };
+		575CD1591B564E7300B1E77C /* NPXPublicBeacon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXPublicBeacon.cpp; sourceTree = "<group>"; };
+		575CD15A1B564E7300B1E77C /* NPXPublicBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXPublicBeacon.h; sourceTree = "<group>"; };
+		575CD15B1B564E7300B1E77C /* NPXScannedBeacon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXScannedBeacon.cpp; sourceTree = "<group>"; };
+		575CD15C1B564E7300B1E77C /* NPXScannedBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXScannedBeacon.h; sourceTree = "<group>"; };
+		575CD15E1B564E7300B1E77C /* NPXMovingAverage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXMovingAverage.cpp; sourceTree = "<group>"; };
+		575CD15F1B564E7300B1E77C /* NPXMovingAverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXMovingAverage.h; sourceTree = "<group>"; };
+		575CD1611B564E7300B1E77C /* CppUnionLane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppUnionLane.cpp; sourceTree = "<group>"; };
+		575CD1621B564E7300B1E77C /* CppUnionLane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppUnionLane.h; sourceTree = "<group>"; };
+		575CD1631B564E7300B1E77C /* NPXGeometryEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXGeometryEngine.cpp; sourceTree = "<group>"; };
+		575CD1641B564E7300B1E77C /* NPXGeometryEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXGeometryEngine.h; sourceTree = "<group>"; };
+		575CD1661B564E7300B1E77C /* ILocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILocationEngine.h; sourceTree = "<group>"; };
+		575CD1671B564E7300B1E77C /* NPXStepBasedEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPXStepBasedEngine.cpp; sourceTree = "<group>"; };
+		575CD1681B564E7300B1E77C /* NPXStepBasedEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPXStepBasedEngine.h; sourceTree = "<group>"; };
+		575CD1691B564E7300B1E77C /* NephogramConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NephogramConstants.h; sourceTree = "<group>"; };
+		575CD16D1B564E7300B1E77C /* NPBeaconFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconFilter.h; sourceTree = "<group>"; };
+		575CD16E1B564E7300B1E77C /* NPBeaconFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconFilter.m; sourceTree = "<group>"; };
+		575CD16F1B564E7300B1E77C /* NPBeaconPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconPool.h; sourceTree = "<group>"; };
+		575CD1701B564E7300B1E77C /* NPBeaconPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconPool.m; sourceTree = "<group>"; };
+		575CD1731B564E7300B1E77C /* NPBeaconFMDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconFMDBAdapter.h; sourceTree = "<group>"; };
+		575CD1741B564E7300B1E77C /* NPBeaconFMDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconFMDBAdapter.m; sourceTree = "<group>"; };
+		575CD1751B564E7300B1E77C /* NPBeaconFMDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconFMDBConstants.h; sourceTree = "<group>"; };
+		575CD1771B564E7300B1E77C /* AlgorithmType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlgorithmType.h; sourceTree = "<group>"; };
+		575CD1781B564E7300B1E77C /* NPLocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPLocationEngine.h; sourceTree = "<group>"; };
+		575CD1791B564E7300B1E77C /* NPLocationEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPLocationEngine.m; sourceTree = "<group>"; };
+		575CD17C1B564E7300B1E77C /* NPAlgorithmFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPAlgorithmFactory.h; sourceTree = "<group>"; };
+		575CD17D1B564E7300B1E77C /* NPAlgorithmFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPAlgorithmFactory.m; sourceTree = "<group>"; };
+		575CD17E1B564E7300B1E77C /* NPGeometryCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPGeometryCalculator.h; sourceTree = "<group>"; };
+		575CD17F1B564E7300B1E77C /* NPGeometryCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPGeometryCalculator.m; sourceTree = "<group>"; };
+		575CD1801B564E7300B1E77C /* NPLocationAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPLocationAlgorithm.h; sourceTree = "<group>"; };
+		575CD1811B564E7300B1E77C /* NPLocationAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPLocationAlgorithm.m; sourceTree = "<group>"; };
+		575CD1831B564E7300B1E77C /* NPTriangulationAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPTriangulationAlgorithm.h; sourceTree = "<group>"; };
+		575CD1841B564E7300B1E77C /* NPTriangulationAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPTriangulationAlgorithm.m; sourceTree = "<group>"; };
+		575CD1861B564E7300B1E77C /* NPWeightingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPWeightingAlgorithm.h; sourceTree = "<group>"; };
+		575CD1871B564E7300B1E77C /* NPWeightingAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPWeightingAlgorithm.m; sourceTree = "<group>"; };
+		575CD18A1B564E7300B1E77C /* NPGeometryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPGeometryFactory.h; sourceTree = "<group>"; };
+		575CD18B1B564E7300B1E77C /* NPGeometryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPGeometryFactory.m; sourceTree = "<group>"; };
+		575CD18C1B564E7300B1E77C /* NPVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPVector2.h; sourceTree = "<group>"; };
+		575CD18D1B564E7300B1E77C /* NPVector2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPVector2.m; sourceTree = "<group>"; };
+		575CD18F1B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPrimitiveBeaconDBAdapter.h; sourceTree = "<group>"; };
+		575CD1901B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPrimitiveBeaconDBAdapter.m; sourceTree = "<group>"; };
+		575CD1911B564E7300B1E77C /* NPPrimitiveBeaconDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPrimitiveBeaconDBConstants.h; sourceTree = "<group>"; };
+		575CD1931B564E7300B1E77C /* NPSampeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPSampeData.h; sourceTree = "<group>"; };
+		575CD1941B564E7300B1E77C /* NPSampeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPSampeData.m; sourceTree = "<group>"; };
+		575CD1951B564E7300B1E77C /* NPStaticSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPStaticSample.h; sourceTree = "<group>"; };
+		575CD1961B564E7300B1E77C /* NPStaticSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPStaticSample.m; sourceTree = "<group>"; };
+		575CD19A1B564E7300B1E77C /* NPDistributionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPDistributionResult.h; sourceTree = "<group>"; };
+		575CD19B1B564E7300B1E77C /* NPDistributionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPDistributionResult.m; sourceTree = "<group>"; };
+		575CD19C1B564E7300B1E77C /* NPPointTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPointTester.h; sourceTree = "<group>"; };
+		575CD19D1B564E7300B1E77C /* NPPointTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPointTester.m; sourceTree = "<group>"; };
+		575CD19E1B564E7300B1E77C /* NPTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPTestResult.h; sourceTree = "<group>"; };
+		575CD19F1B564E7300B1E77C /* NPTestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPTestResult.m; sourceTree = "<group>"; };
+		575CD1A01B564E7300B1E77C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		575CD1A31B564E7300B1E77C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		575CD1A41B564E7300B1E77C /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		575CD1A51B564E7300B1E77C /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		575CD1A61B564E7300B1E77C /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		575CD1A71B564E7300B1E77C /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		575CD1A81B564E7300B1E77C /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		575CD1A91B564E7300B1E77C /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		575CD1AA1B564E7300B1E77C /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		575CD1AB1B564E7300B1E77C /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		575CD1AC1B564E7300B1E77C /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		575CD1EB1B564ED400B1E77C /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ArcGIS.bundle; sourceTree = "<group>"; };
+		575CD1ED1B564ED400B1E77C /* AOI.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AOI.json; sourceTree = "<group>"; };
+		575CD1EE1B564ED400B1E77C /* beacon-hm.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beacon-hm.db"; sourceTree = "<group>"; };
+		575CD1EF1B564ED400B1E77C /* beacon-jz.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beacon-jz.db"; sourceTree = "<group>"; };
+		575CD1F01B564ED400B1E77C /* beacon-of.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beacon-of.db"; sourceTree = "<group>"; };
+		575CD3631B564EF000B1E77C /* MapResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MapResource; sourceTree = "<group>"; };
+		575CD3671B564F1500B1E77C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		575CD36A1B564F2900B1E77C /* BLE-Algorithm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "BLE-Algorithm.storyboard"; sourceTree = "<group>"; };
+		575CD36B1B564F2900B1E77C /* BLE-Tool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "BLE-Tool.storyboard"; sourceTree = "<group>"; };
+		575CD36C1B564F2900B1E77C /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		575CD36D1B564F2900B1E77C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		575CD36E1B564F2900B1E77C /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		575CD36F1B564F2900B1E77C /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		57B396DA1A6361B800E72FF5 /* BLEProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B396DD1A6361B800E72FF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		57B396DF1A6361B800E72FF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		57B396E11A6361B800E72FF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		57B3989D1A6364D900E72FF5 /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos.a; path = ../../../../goeslib/libgeos.a; sourceTree = "<group>"; };
+		57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57B396D71A6361B800E72FF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */,
+				57B396E01A6361B800E72FF5 /* CoreGraphics.framework in Frameworks */,
+				5713C6F81B56414200DA3083 /* TYMapData.framework in Frameworks */,
+				5713C6F91B56414200DA3083 /* TYMapSDK.framework in Frameworks */,
+				57B3989E1A6364D900E72FF5 /* libgeos.a in Frameworks */,
+				57B396E21A6361B800E72FF5 /* UIKit.framework in Frameworks */,
+				57B396DE1A6361B800E72FF5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		575CD0A81B564DE200B1E77C /* BLEProject */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0E81B564DE200B1E77C /* AppDelegate.h */,
+				575CD0E91B564DE200B1E77C /* AppDelegate.m */,
+				575CD0A91B564DE200B1E77C /* App */,
+				575CD10F1B564E7300B1E77C /* Classes */,
+				575CD1A01B564E7300B1E77C /* Images.xcassets */,
+				575CD3691B564F2900B1E77C /* storyboard */,
+				575CD1EA1B564ED400B1E77C /* Resources */,
+				575CD1A11B564E7300B1E77C /* libs */,
+				575CD10E1B564E3E00B1E77C /* Supporting Files */,
+			);
+			path = BLEProject;
+			sourceTree = "<group>";
+		};
+		575CD0A91B564DE200B1E77C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0AA1B564DE200B1E77C /* GlobalSettings */,
+				575CD0B01B564DE200B1E77C /* ViewControllers */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		575CD0AA1B564DE200B1E77C /* GlobalSettings */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0AB1B564DE200B1E77C /* AppConstants.h */,
+				575CD0AC1B564DE200B1E77C /* TYRegionManager.h */,
+				575CD0AD1B564DE200B1E77C /* TYRegionManager.m */,
+				575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */,
+				575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */,
+			);
+			path = GlobalSettings;
+			sourceTree = "<group>";
+		};
+		575CD0B01B564DE200B1E77C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0B11B564DE200B1E77C /* BaseMapVC.h */,
+				575CD0B21B564DE200B1E77C /* BaseMapVC.m */,
+				575CD0B31B564DE200B1E77C /* BLE-Algorithm */,
+				575CD0C21B564DE200B1E77C /* BLE-Tool */,
+				575CD0D11B564DE200B1E77C /* MainList */,
+				575CD0DC1B564DE200B1E77C /* MapHierachy */,
+				575CD0E51B564DE200B1E77C /* Setting */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		575CD0B31B564DE200B1E77C /* BLE-Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0B41B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.h */,
+				575CD0B51B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m */,
+				575CD0B61B564DE200B1E77C /* BaseLocationTestVC.h */,
+				575CD0B71B564DE200B1E77C /* BaseLocationTestVC.m */,
+				575CD0B81B564DE200B1E77C /* BeaconFilterTestVC.h */,
+				575CD0B91B564DE200B1E77C /* BeaconFilterTestVC.m */,
+				575CD0BA1B564DE200B1E77C /* CppEngineCompareVC.h */,
+				575CD0BB1B564DE200B1E77C /* CppEngineCompareVC.m */,
+				575CD0BC1B564DE200B1E77C /* CppEngineTestVC.h */,
+				575CD0BD1B564DE200B1E77C /* CppEngineTestVC.m */,
+				575CD0BE1B564DE200B1E77C /* LocationEngineTestVC.h */,
+				575CD0BF1B564DE200B1E77C /* LocationEngineTestVC.m */,
+				575CD0C01B564DE200B1E77C /* MultiLocationTestVC.h */,
+				575CD0C11B564DE200B1E77C /* MultiLocationTestVC.m */,
+			);
+			path = "BLE-Algorithm";
+			sourceTree = "<group>";
+		};
+		575CD0C21B564DE200B1E77C /* BLE-Tool */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0C31B564DE200B1E77C /* AddPrimitiveBeaconsVC.h */,
+				575CD0C41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m */,
+				575CD0C51B564DE200B1E77C /* BeaconListForChoosingTableVC.h */,
+				575CD0C61B564DE200B1E77C /* BeaconListForChoosingTableVC.m */,
+				575CD0C71B564DE200B1E77C /* Configure */,
+				575CD0C81B564DE200B1E77C /* ConfigureBeaconsVC.h */,
+				575CD0C91B564DE200B1E77C /* ConfigureBeaconsVC.m */,
+				575CD0CA1B564DE200B1E77C /* Explore */,
+				575CD0CB1B564DE200B1E77C /* MapVC.h */,
+				575CD0CC1B564DE200B1E77C /* MapVC.m */,
+				575CD0CD1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.h */,
+				575CD0CE1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m */,
+				575CD0CF1B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.h */,
+				575CD0D01B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m */,
+			);
+			path = "BLE-Tool";
+			sourceTree = "<group>";
+		};
+		575CD0C71B564DE200B1E77C /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configure;
+			sourceTree = "<group>";
+		};
+		575CD0CA1B564DE200B1E77C /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		575CD0D11B564DE200B1E77C /* MainList */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0D21B564DE200B1E77C /* BaseControllerTableVC.h */,
+				575CD0D31B564DE200B1E77C /* BaseControllerTableVC.m */,
+				575CD0D41B564DE200B1E77C /* BLEAlgorithmTableVC.h */,
+				575CD0D51B564DE200B1E77C /* BLEAlgorithmTableVC.m */,
+				575CD0D61B564DE200B1E77C /* BLEToolTableVC.h */,
+				575CD0D71B564DE200B1E77C /* BLEToolTableVC.m */,
+				575CD0D81B564DE200B1E77C /* MapTableVC.h */,
+				575CD0D91B564DE200B1E77C /* MapTableVC.m */,
+				575CD0DA1B564DE200B1E77C /* SettingTableVC.h */,
+				575CD0DB1B564DE200B1E77C /* SettingTableVC.m */,
+			);
+			path = MainList;
+			sourceTree = "<group>";
+		};
+		575CD0DC1B564DE200B1E77C /* MapHierachy */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0DD1B564DE200B1E77C /* BuildingTableVC.h */,
+				575CD0DE1B564DE200B1E77C /* BuildingTableVC.m */,
+				575CD0DF1B564DE200B1E77C /* CityTableVC.h */,
+				575CD0E01B564DE200B1E77C /* CityTableVC.m */,
+				575CD0E11B564DE200B1E77C /* CreateMapJsonVC.h */,
+				575CD0E21B564DE200B1E77C /* CreateMapJsonVC.m */,
+				575CD0E31B564DE200B1E77C /* FloorMapVC.h */,
+				575CD0E41B564DE200B1E77C /* FloorMapVC.m */,
+			);
+			path = MapHierachy;
+			sourceTree = "<group>";
+		};
+		575CD0E51B564DE200B1E77C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0E61B564DE200B1E77C /* SetCurrentPlaceVC.h */,
+				575CD0E71B564DE200B1E77C /* SetCurrentPlaceVC.m */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		575CD1071B564E2C00B1E77C /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1081B564E2C00B1E77C /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		575CD10E1B564E3E00B1E77C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				575CD3671B564F1500B1E77C /* Settings.bundle */,
+				575CD1051B564E2C00B1E77C /* Info.plist */,
+				575CD1061B564E2C00B1E77C /* BLEProject-Prefix.pch */,
+				575CD1071B564E2C00B1E77C /* en.lproj */,
+				575CD10A1B564E2C00B1E77C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		575CD10F1B564E7300B1E77C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1101B564E7300B1E77C /* Common */,
+				575CD1331B564E7300B1E77C /* CppEngine */,
+				575CD1691B564E7300B1E77C /* NephogramConstants.h */,
+				575CD16A1B564E7300B1E77C /* ObjCEngine */,
+				575CD1881B564E7300B1E77C /* Private */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		575CD1101B564E7300B1E77C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1111B564E7300B1E77C /* Beacon */,
+				575CD1181B564E7300B1E77C /* Filter */,
+				575CD11F1B564E7300B1E77C /* MotionDetector */,
+				575CD12E1B564E7300B1E77C /* Other */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		575CD1111B564E7300B1E77C /* Beacon */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1121B564E7300B1E77C /* NPBeacon.h */,
+				575CD1131B564E7300B1E77C /* NPBeacon.m */,
+				575CD1141B564E7300B1E77C /* NPBeaconManager.h */,
+				575CD1151B564E7300B1E77C /* NPBeaconManager.m */,
+				575CD1161B564E7300B1E77C /* NPPublicBeacon.h */,
+				575CD1171B564E7300B1E77C /* NPPublicBeacon.m */,
+			);
+			path = Beacon;
+			sourceTree = "<group>";
+		};
+		575CD1181B564E7300B1E77C /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1191B564E7300B1E77C /* NPCumulativeSingalPowerTD.h */,
+				575CD11A1B564E7300B1E77C /* NPCumulativeSingalPowerTD.m */,
+				575CD11B1B564E7300B1E77C /* NPMovingAverage.h */,
+				575CD11C1B564E7300B1E77C /* NPMovingAverage.m */,
+				575CD11D1B564E7300B1E77C /* NPMovingAverageTD.h */,
+				575CD11E1B564E7300B1E77C /* NPMovingAverageTD.m */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		575CD11F1B564E7300B1E77C /* MotionDetector */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1201B564E7300B1E77C /* NPHeadingDetector.h */,
+				575CD1211B564E7300B1E77C /* NPHeadingDetector.m */,
+				575CD1221B564E7300B1E77C /* NPMagHeadingDetector.h */,
+				575CD1231B564E7300B1E77C /* NPMagHeadingDetector.m */,
+				575CD1241B564E7300B1E77C /* NPMotionDetector.h */,
+				575CD1251B564E7300B1E77C /* NPMotionDetector.m */,
+				575CD1261B564E7300B1E77C /* NPSample.h */,
+				575CD1271B564E7300B1E77C /* NPSample.m */,
+				575CD1281B564E7300B1E77C /* NPStepDetector.h */,
+				575CD1291B564E7300B1E77C /* NPStepDetector.m */,
+				575CD12A1B564E7300B1E77C /* NPStepEvent.h */,
+				575CD12B1B564E7300B1E77C /* NPStepEvent.m */,
+				575CD12C1B564E7300B1E77C /* NPVector2.h */,
+				575CD12D1B564E7300B1E77C /* NPVector2.m */,
+			);
+			path = MotionDetector;
+			sourceTree = "<group>";
+		};
+		575CD12E1B564E7300B1E77C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				575CD12F1B564E7300B1E77C /* DoubleRounder.h */,
+				575CD1301B564E7300B1E77C /* DoubleRounder.m */,
+				575CD1311B564E7300B1E77C /* NPPointConverter.h */,
+				575CD1321B564E7300B1E77C /* NPPointConverter.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		575CD1331B564E7300B1E77C /* CppEngine */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1341B564E7300B1E77C /* iOS */,
+				575CD1491B564E7300B1E77C /* src */,
+			);
+			path = CppEngine;
+			sourceTree = "<group>";
+		};
+		575CD1341B564E7300B1E77C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1351B564E7300B1E77C /* Database */,
+				575CD13C1B564E7300B1E77C /* Engine */,
+				575CD13F1B564E7300B1E77C /* Entity */,
+				575CD1421B564E7300B1E77C /* LocationManager */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		575CD1351B564E7300B1E77C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1361B564E7300B1E77C /* NPXBeaconDBAdapter.h */,
+				575CD1371B564E7300B1E77C /* NPXBeaconDBAdapter.m */,
+				575CD1381B564E7300B1E77C /* NPXBeaconDBConstants.h */,
+				575CD1391B564E7300B1E77C /* NPXRegionDBAdapter.h */,
+				575CD13A1B564E7300B1E77C /* NPXRegionDBAdapter.m */,
+				575CD13B1B564E7300B1E77C /* NPXRegionDBConstants.h */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		575CD13C1B564E7300B1E77C /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				575CD13D1B564E7300B1E77C /* NPXLocationEngine.h */,
+				575CD13E1B564E7300B1E77C /* NPXLocationEngine.mm */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		575CD13F1B564E7300B1E77C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1401B564E7300B1E77C /* NPBeaconKey.h */,
+				575CD1411B564E7300B1E77C /* NPBeaconKey.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		575CD1421B564E7300B1E77C /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1431B564E7300B1E77C /* NPBuildingMonitor.h */,
+				575CD1441B564E7300B1E77C /* NPBuildingMonitor.m */,
+				575CD1451B564E7300B1E77C /* NPLocationFileManager.h */,
+				575CD1461B564E7300B1E77C /* NPLocationFileManager.m */,
+				575CD1471B564E7300B1E77C /* NPLocationManager.h */,
+				575CD1481B564E7300B1E77C /* NPLocationManager.m */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		575CD1491B564E7300B1E77C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				575CD14A1B564E7300B1E77C /* Algorithm */,
+				575CD1541B564E7300B1E77C /* Entity */,
+				575CD15D1B564E7300B1E77C /* Filter */,
+				575CD1601B564E7300B1E77C /* GeosGeometryEngine */,
+				575CD1651B564E7300B1E77C /* LocationEngine */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		575CD14A1B564E7300B1E77C /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				575CD14B1B564E7300B1E77C /* NPXAlgorithmType.h */,
+				575CD14C1B564E7300B1E77C /* NPXGeometryCalculator.cpp */,
+				575CD14D1B564E7300B1E77C /* NPXGeometryCalculator.h */,
+				575CD14E1B564E7300B1E77C /* NPXLocationAlgorithm.cpp */,
+				575CD14F1B564E7300B1E77C /* NPXLocationAlgorithm.h */,
+				575CD1501B564E7300B1E77C /* NPXTriangulationAlgorithm.cpp */,
+				575CD1511B564E7300B1E77C /* NPXTriangulationAlgorithm.h */,
+				575CD1521B564E7300B1E77C /* NPXWeightingAlgorithm.cpp */,
+				575CD1531B564E7300B1E77C /* NPXWeightingAlgorithm.h */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		575CD1541B564E7300B1E77C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1551B564E7300B1E77C /* NPXBeacon.cpp */,
+				575CD1561B564E7300B1E77C /* NPXBeacon.h */,
+				575CD1571B564E7300B1E77C /* NPXPoint.cpp */,
+				575CD1581B564E7300B1E77C /* NPXPoint.h */,
+				575CD1591B564E7300B1E77C /* NPXPublicBeacon.cpp */,
+				575CD15A1B564E7300B1E77C /* NPXPublicBeacon.h */,
+				575CD15B1B564E7300B1E77C /* NPXScannedBeacon.cpp */,
+				575CD15C1B564E7300B1E77C /* NPXScannedBeacon.h */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		575CD15D1B564E7300B1E77C /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				575CD15E1B564E7300B1E77C /* NPXMovingAverage.cpp */,
+				575CD15F1B564E7300B1E77C /* NPXMovingAverage.h */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		575CD1601B564E7300B1E77C /* GeosGeometryEngine */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1611B564E7300B1E77C /* CppUnionLane.cpp */,
+				575CD1621B564E7300B1E77C /* CppUnionLane.h */,
+				575CD1631B564E7300B1E77C /* NPXGeometryEngine.cpp */,
+				575CD1641B564E7300B1E77C /* NPXGeometryEngine.h */,
+			);
+			path = GeosGeometryEngine;
+			sourceTree = "<group>";
+		};
+		575CD1651B564E7300B1E77C /* LocationEngine */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1661B564E7300B1E77C /* ILocationEngine.h */,
+				575CD1671B564E7300B1E77C /* NPXStepBasedEngine.cpp */,
+				575CD1681B564E7300B1E77C /* NPXStepBasedEngine.h */,
+			);
+			path = LocationEngine;
+			sourceTree = "<group>";
+		};
+		575CD16A1B564E7300B1E77C /* ObjCEngine */ = {
+			isa = PBXGroup;
+			children = (
+				575CD16B1B564E7300B1E77C /* iOS */,
+				575CD17A1B564E7300B1E77C /* src */,
+			);
+			path = ObjCEngine;
+			sourceTree = "<group>";
+		};
+		575CD16B1B564E7300B1E77C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				575CD16C1B564E7300B1E77C /* BeaconFilter */,
+				575CD1711B564E7300B1E77C /* BeaconPool */,
+				575CD1721B564E7300B1E77C /* Database */,
+				575CD1761B564E7300B1E77C /* Engine */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		575CD16C1B564E7300B1E77C /* BeaconFilter */ = {
+			isa = PBXGroup;
+			children = (
+				575CD16D1B564E7300B1E77C /* NPBeaconFilter.h */,
+				575CD16E1B564E7300B1E77C /* NPBeaconFilter.m */,
+				575CD16F1B564E7300B1E77C /* NPBeaconPool.h */,
+				575CD1701B564E7300B1E77C /* NPBeaconPool.m */,
+			);
+			path = BeaconFilter;
+			sourceTree = "<group>";
+		};
+		575CD1711B564E7300B1E77C /* BeaconPool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BeaconPool;
+			sourceTree = "<group>";
+		};
+		575CD1721B564E7300B1E77C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1731B564E7300B1E77C /* NPBeaconFMDBAdapter.h */,
+				575CD1741B564E7300B1E77C /* NPBeaconFMDBAdapter.m */,
+				575CD1751B564E7300B1E77C /* NPBeaconFMDBConstants.h */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		575CD1761B564E7300B1E77C /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1771B564E7300B1E77C /* AlgorithmType.h */,
+				575CD1781B564E7300B1E77C /* NPLocationEngine.h */,
+				575CD1791B564E7300B1E77C /* NPLocationEngine.m */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		575CD17A1B564E7300B1E77C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				575CD17B1B564E7300B1E77C /* Algorithm */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		575CD17B1B564E7300B1E77C /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				575CD17C1B564E7300B1E77C /* NPAlgorithmFactory.h */,
+				575CD17D1B564E7300B1E77C /* NPAlgorithmFactory.m */,
+				575CD17E1B564E7300B1E77C /* NPGeometryCalculator.h */,
+				575CD17F1B564E7300B1E77C /* NPGeometryCalculator.m */,
+				575CD1801B564E7300B1E77C /* NPLocationAlgorithm.h */,
+				575CD1811B564E7300B1E77C /* NPLocationAlgorithm.m */,
+				575CD1821B564E7300B1E77C /* Triangulation */,
+				575CD1851B564E7300B1E77C /* Weighting */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		575CD1821B564E7300B1E77C /* Triangulation */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1831B564E7300B1E77C /* NPTriangulationAlgorithm.h */,
+				575CD1841B564E7300B1E77C /* NPTriangulationAlgorithm.m */,
+			);
+			path = Triangulation;
+			sourceTree = "<group>";
+		};
+		575CD1851B564E7300B1E77C /* Weighting */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1861B564E7300B1E77C /* NPWeightingAlgorithm.h */,
+				575CD1871B564E7300B1E77C /* NPWeightingAlgorithm.m */,
+			);
+			path = Weighting;
+			sourceTree = "<group>";
+		};
+		575CD1881B564E7300B1E77C /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1891B564E7300B1E77C /* ArcGISMap */,
+				575CD18E1B564E7300B1E77C /* Database */,
+				575CD1921B564E7300B1E77C /* Entity */,
+				575CD1971B564E7300B1E77C /* NephogramMap */,
+				575CD1991B564E7300B1E77C /* Test */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		575CD1891B564E7300B1E77C /* ArcGISMap */ = {
+			isa = PBXGroup;
+			children = (
+				575CD18A1B564E7300B1E77C /* NPGeometryFactory.h */,
+				575CD18B1B564E7300B1E77C /* NPGeometryFactory.m */,
+				575CD18C1B564E7300B1E77C /* NPVector2.h */,
+				575CD18D1B564E7300B1E77C /* NPVector2.m */,
+			);
+			path = ArcGISMap;
+			sourceTree = "<group>";
+		};
+		575CD18E1B564E7300B1E77C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				575CD18F1B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.h */,
+				575CD1901B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m */,
+				575CD1911B564E7300B1E77C /* NPPrimitiveBeaconDBConstants.h */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		575CD1921B564E7300B1E77C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1931B564E7300B1E77C /* NPSampeData.h */,
+				575CD1941B564E7300B1E77C /* NPSampeData.m */,
+				575CD1951B564E7300B1E77C /* NPStaticSample.h */,
+				575CD1961B564E7300B1E77C /* NPStaticSample.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		575CD1971B564E7300B1E77C /* NephogramMap */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1981B564E7300B1E77C /* POI */,
+			);
+			path = NephogramMap;
+			sourceTree = "<group>";
+		};
+		575CD1981B564E7300B1E77C /* POI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = POI;
+			sourceTree = "<group>";
+		};
+		575CD1991B564E7300B1E77C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				575CD19A1B564E7300B1E77C /* NPDistributionResult.h */,
+				575CD19B1B564E7300B1E77C /* NPDistributionResult.m */,
+				575CD19C1B564E7300B1E77C /* NPPointTester.h */,
+				575CD19D1B564E7300B1E77C /* NPPointTester.m */,
+				575CD19E1B564E7300B1E77C /* NPTestResult.h */,
+				575CD19F1B564E7300B1E77C /* NPTestResult.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		575CD1A11B564E7300B1E77C /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				57B3989D1A6364D900E72FF5 /* libgeos.a */,
+				5713C6F71B56414200DA3083 /* TYMapSDK.framework */,
+				5713C6F61B56414200DA3083 /* TYMapData.framework */,
+				575CD1A21B564E7300B1E77C /* FMDB */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		575CD1A21B564E7300B1E77C /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1A31B564E7300B1E77C /* FMDatabase.h */,
+				575CD1A41B564E7300B1E77C /* FMDatabase.m */,
+				575CD1A51B564E7300B1E77C /* FMDatabaseAdditions.h */,
+				575CD1A61B564E7300B1E77C /* FMDatabaseAdditions.m */,
+				575CD1A71B564E7300B1E77C /* FMDatabasePool.h */,
+				575CD1A81B564E7300B1E77C /* FMDatabasePool.m */,
+				575CD1A91B564E7300B1E77C /* FMDatabaseQueue.h */,
+				575CD1AA1B564E7300B1E77C /* FMDatabaseQueue.m */,
+				575CD1AB1B564E7300B1E77C /* FMResultSet.h */,
+				575CD1AC1B564E7300B1E77C /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		575CD1EA1B564ED400B1E77C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				575CD3631B564EF000B1E77C /* MapResource */,
+				575CD1EB1B564ED400B1E77C /* ArcGIS.bundle */,
+				575CD1EC1B564ED400B1E77C /* MapFiles */,
+				575CD2AE1B564ED400B1E77C /* MapTool */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		575CD1EC1B564ED400B1E77C /* MapFiles */ = {
+			isa = PBXGroup;
+			children = (
+				575CD1ED1B564ED400B1E77C /* AOI.json */,
+				575CD1EE1B564ED400B1E77C /* beacon-hm.db */,
+				575CD1EF1B564ED400B1E77C /* beacon-jz.db */,
+				575CD1F01B564ED400B1E77C /* beacon-of.db */,
+			);
+			path = MapFiles;
+			sourceTree = "<group>";
+		};
+		575CD2AE1B564ED400B1E77C /* MapTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapTool;
+			sourceTree = "<group>";
+		};
+		575CD3691B564F2900B1E77C /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				575CD36A1B564F2900B1E77C /* BLE-Algorithm.storyboard */,
+				575CD36B1B564F2900B1E77C /* BLE-Tool.storyboard */,
+				575CD36C1B564F2900B1E77C /* Launch Screen.xib */,
+				575CD36D1B564F2900B1E77C /* Main.storyboard */,
+				575CD36E1B564F2900B1E77C /* Map.storyboard */,
+				575CD36F1B564F2900B1E77C /* Setting.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		57B396D11A6361B800E72FF5 = {
+			isa = PBXGroup;
+			children = (
+				575CD0A81B564DE200B1E77C /* BLEProject */,
+				57B396DC1A6361B800E72FF5 /* Frameworks */,
+				57B396DB1A6361B800E72FF5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57B396DB1A6361B800E72FF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57B396DA1A6361B800E72FF5 /* BLEProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57B396DC1A6361B800E72FF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */,
+				57B396DD1A6361B800E72FF5 /* Foundation.framework */,
+				57B396DF1A6361B800E72FF5 /* CoreGraphics.framework */,
+				57B396E11A6361B800E72FF5 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57B396D91A6361B800E72FF5 /* BLEProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57B3970C1A6361B800E72FF5 /* Build configuration list for PBXNativeTarget "BLEProject" */;
+			buildPhases = (
+				57B396D61A6361B800E72FF5 /* Sources */,
+				57B396D71A6361B800E72FF5 /* Frameworks */,
+				57B396D81A6361B800E72FF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BLEProject;
+			productName = CloudAtlasTestProject;
+			productReference = 57B396DA1A6361B800E72FF5 /* BLEProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57B396D21A6361B800E72FF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = innerpeacer;
+				TargetAttributes = {
+					57B396D91A6361B800E72FF5 = {
+						DevelopmentTeam = FT485C4QQ7;
+					};
+				};
+			};
+			buildConfigurationList = 57B396D51A6361B800E72FF5 /* Build configuration list for PBXProject "BLEProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57B396D11A6361B800E72FF5;
+			productRefGroup = 57B396DB1A6361B800E72FF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57B396D91A6361B800E72FF5 /* BLEProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57B396D81A6361B800E72FF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575CD3751B564F2900B1E77C /* Setting.storyboard in Resources */,
+				575CD3641B564EF000B1E77C /* MapResource in Resources */,
+				575CD2B21B564ED400B1E77C /* beacon-jz.db in Resources */,
+				575CD10C1B564E2C00B1E77C /* InfoPlist.strings in Resources */,
+				575CD3741B564F2900B1E77C /* Map.storyboard in Resources */,
+				575CD2B11B564ED400B1E77C /* beacon-hm.db in Resources */,
+				575CD3721B564F2900B1E77C /* Launch Screen.xib in Resources */,
+				575CD3731B564F2900B1E77C /* Main.storyboard in Resources */,
+				575CD2B01B564ED400B1E77C /* AOI.json in Resources */,
+				575CD3711B564F2900B1E77C /* BLE-Tool.storyboard in Resources */,
+				575CD3701B564F2900B1E77C /* BLE-Algorithm.storyboard in Resources */,
+				575CD2AF1B564ED400B1E77C /* ArcGIS.bundle in Resources */,
+				575CD2B31B564ED400B1E77C /* beacon-of.db in Resources */,
+				575CD1E01B564E7300B1E77C /* Images.xcassets in Resources */,
+				575CD3681B564F1500B1E77C /* Settings.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57B396D61A6361B800E72FF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575CD0FA1B564DE200B1E77C /* BaseControllerTableVC.m in Sources */,
+				575CD1CD1B564E7300B1E77C /* NPXGeometryEngine.cpp in Sources */,
+				575CD0F41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m in Sources */,
+				575CD1BB1B564E7300B1E77C /* NPPointConverter.m in Sources */,
+				575CD1001B564DE200B1E77C /* CityTableVC.m in Sources */,
+				575CD1DE1B564E7300B1E77C /* NPPointTester.m in Sources */,
+				575CD1C51B564E7300B1E77C /* NPXTriangulationAlgorithm.cpp in Sources */,
+				575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */,
+				575CD1BE1B564E7300B1E77C /* NPXLocationEngine.mm in Sources */,
+				575CD1D71B564E7300B1E77C /* NPWeightingAlgorithm.m in Sources */,
+				575CD1B31B564E7300B1E77C /* NPHeadingDetector.m in Sources */,
+				575CD1D21B564E7300B1E77C /* NPLocationEngine.m in Sources */,
+				575CD1DD1B564E7300B1E77C /* NPDistributionResult.m in Sources */,
+				575CD1C71B564E7300B1E77C /* NPXBeacon.cpp in Sources */,
+				575CD1B01B564E7300B1E77C /* NPCumulativeSingalPowerTD.m in Sources */,
+				575CD0F91B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m in Sources */,
+				575CD1B21B564E7300B1E77C /* NPMovingAverageTD.m in Sources */,
+				575CD1AF1B564E7300B1E77C /* NPPublicBeacon.m in Sources */,
+				575CD0EE1B564DE200B1E77C /* BaseLocationTestVC.m in Sources */,
+				575CD0F31B564DE200B1E77C /* MultiLocationTestVC.m in Sources */,
+				575CD1C81B564E7300B1E77C /* NPXPoint.cpp in Sources */,
+				575CD1C91B564E7300B1E77C /* NPXPublicBeacon.cpp in Sources */,
+				575CD1BD1B564E7300B1E77C /* NPXRegionDBAdapter.m in Sources */,
+				575CD1D01B564E7300B1E77C /* NPBeaconPool.m in Sources */,
+				575CD1AE1B564E7300B1E77C /* NPBeaconManager.m in Sources */,
+				575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */,
+				575CD1E31B564E7300B1E77C /* FMDatabasePool.m in Sources */,
+				575CD1D51B564E7300B1E77C /* NPLocationAlgorithm.m in Sources */,
+				575CD1E11B564E7300B1E77C /* FMDatabase.m in Sources */,
+				575CD1AD1B564E7300B1E77C /* NPBeacon.m in Sources */,
+				575CD1D91B564E7300B1E77C /* NPVector2.m in Sources */,
+				575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */,
+				575CD1BF1B564E7300B1E77C /* NPBeaconKey.m in Sources */,
+				575CD1C61B564E7300B1E77C /* NPXWeightingAlgorithm.cpp in Sources */,
+				575CD1011B564DE200B1E77C /* CreateMapJsonVC.m in Sources */,
+				575CD1041B564DE200B1E77C /* AppDelegate.m in Sources */,
+				575CD0FE1B564DE200B1E77C /* SettingTableVC.m in Sources */,
+				575CD1C41B564E7300B1E77C /* NPXLocationAlgorithm.cpp in Sources */,
+				575CD0FF1B564DE200B1E77C /* BuildingTableVC.m in Sources */,
+				575CD1D31B564E7300B1E77C /* NPAlgorithmFactory.m in Sources */,
+				575CD0F71B564DE200B1E77C /* MapVC.m in Sources */,
+				575CD1D11B564E7300B1E77C /* NPBeaconFMDBAdapter.m in Sources */,
+				575CD0F51B564DE200B1E77C /* BeaconListForChoosingTableVC.m in Sources */,
+				575CD1CE1B564E7300B1E77C /* NPXStepBasedEngine.cpp in Sources */,
+				575CD1021B564DE200B1E77C /* FloorMapVC.m in Sources */,
+				575CD0ED1B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m in Sources */,
+				575CD0EF1B564DE200B1E77C /* BeaconFilterTestVC.m in Sources */,
+				575CD1DB1B564E7300B1E77C /* NPSampeData.m in Sources */,
+				575CD0FD1B564DE200B1E77C /* MapTableVC.m in Sources */,
+				575CD0F81B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m in Sources */,
+				575CD0FB1B564DE200B1E77C /* BLEAlgorithmTableVC.m in Sources */,
+				575CD1B51B564E7300B1E77C /* NPMotionDetector.m in Sources */,
+				575CD1B81B564E7300B1E77C /* NPStepEvent.m in Sources */,
+				575CD1B71B564E7300B1E77C /* NPStepDetector.m in Sources */,
+				575CD1E21B564E7300B1E77C /* FMDatabaseAdditions.m in Sources */,
+				575CD1CB1B564E7300B1E77C /* NPXMovingAverage.cpp in Sources */,
+				575CD0EC1B564DE200B1E77C /* BaseMapVC.m in Sources */,
+				575CD0FC1B564DE200B1E77C /* BLEToolTableVC.m in Sources */,
+				575CD1B91B564E7300B1E77C /* NPVector2.m in Sources */,
+				575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */,
+				575CD0F01B564DE200B1E77C /* CppEngineCompareVC.m in Sources */,
+				575CD0F11B564DE200B1E77C /* CppEngineTestVC.m in Sources */,
+				575CD1C31B564E7300B1E77C /* NPXGeometryCalculator.cpp in Sources */,
+				575CD1C01B564E7300B1E77C /* NPBuildingMonitor.m in Sources */,
+				575CD1DC1B564E7300B1E77C /* NPStaticSample.m in Sources */,
+				575CD1031B564DE200B1E77C /* SetCurrentPlaceVC.m in Sources */,
+				575CD1C11B564E7300B1E77C /* NPLocationFileManager.m in Sources */,
+				575CD1E51B564E7300B1E77C /* FMResultSet.m in Sources */,
+				575CD0F61B564DE200B1E77C /* ConfigureBeaconsVC.m in Sources */,
+				575CD1D81B564E7300B1E77C /* NPGeometryFactory.m in Sources */,
+				575CD10D1B564E2C00B1E77C /* main.m in Sources */,
+				575CD1B61B564E7300B1E77C /* NPSample.m in Sources */,
+				575CD1B11B564E7300B1E77C /* NPMovingAverage.m in Sources */,
+				575CD1DF1B564E7300B1E77C /* NPTestResult.m in Sources */,
+				575CD1D61B564E7300B1E77C /* NPTriangulationAlgorithm.m in Sources */,
+				575CD1BC1B564E7300B1E77C /* NPXBeaconDBAdapter.m in Sources */,
+				575CD1CA1B564E7300B1E77C /* NPXScannedBeacon.cpp in Sources */,
+				575CD1CF1B564E7300B1E77C /* NPBeaconFilter.m in Sources */,
+				575CD0F21B564DE200B1E77C /* LocationEngineTestVC.m in Sources */,
+				575CD1B41B564E7300B1E77C /* NPMagHeadingDetector.m in Sources */,
+				575CD1D41B564E7300B1E77C /* NPGeometryCalculator.m in Sources */,
+				575CD1E41B564E7300B1E77C /* FMDatabaseQueue.m in Sources */,
+				575CD1C21B564E7300B1E77C /* NPLocationManager.m in Sources */,
+				575CD1DA1B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		575CD1081B564E2C00B1E77C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				575CD1091B564E2C00B1E77C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57B3970A1A6361B800E72FF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 5.1.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/Users/innerpeacer/wsForIOS/goeslib/i386/include,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		57B3970B1A6361B800E72FF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 5.1.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/Users/innerpeacer/wsForIOS/goeslib/i386/include,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57B3970D1A6361B800E72FF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/innerpeacer/Desktop,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BLEProject/BLEProject-Prefix.pch";
+				INFOPLIST_FILE = BLEProject/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/innerpeacer/wsForIOS/goeslib,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.innerpeacer.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = BLEProject;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		57B3970E1A6361B800E72FF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/innerpeacer/Desktop,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BLEProject/BLEProject-Prefix.pch";
+				INFOPLIST_FILE = BLEProject/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/innerpeacer/wsForIOS/goeslib,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.innerpeacer.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = BLEProject;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57B396D51A6361B800E72FF5 /* Build configuration list for PBXProject "BLEProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57B3970A1A6361B800E72FF5 /* Debug */,
+				57B3970B1A6361B800E72FF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57B3970C1A6361B800E72FF5 /* Build configuration list for PBXNativeTarget "BLEProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57B3970D1A6361B800E72FF5 /* Debug */,
+				57B3970E1A6361B800E72FF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57B396D21A6361B800E72FF5 /* Project object */;
+}
