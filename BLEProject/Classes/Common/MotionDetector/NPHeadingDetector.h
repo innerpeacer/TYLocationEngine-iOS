@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NephogramConstants.h"
+#import "BLELocationEngineConstants.h"
 #import <CoreMotion/CoreMotion.h>
 
 @class NPHeadingDetector;

@@ -7,7 +7,7 @@
 //
 
 #import "NPBeaconKey.h"
-#import "NephogramConstants.h"
+#import "BLELocationEngineConstants.h"
 
 @implementation NPBeaconKey
 

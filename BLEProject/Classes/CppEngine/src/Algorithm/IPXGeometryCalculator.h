@@ -1,5 +1,5 @@
 /*
- * NPXGeometryCalculator.h
+ * IPXGeometryCalculator.h
  *
  *  Created on: 2014-9-5
  *      Author: innerpeacer

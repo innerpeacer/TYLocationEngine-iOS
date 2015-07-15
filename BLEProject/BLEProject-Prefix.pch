@@ -17,6 +17,6 @@
 #import <TYMapData/TYMapData.h>
 
 #import "NPBeaconKey.h"
-#import "NephogramConstants.h"
+#import "BLELocationEngineConstants.h"
 
 #endif

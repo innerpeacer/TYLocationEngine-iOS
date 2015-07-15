@@ -9,7 +9,7 @@
 #import "NPBeaconFilter.h"
 #import <CoreLocation/CoreLocation.h>
 #import "NPPublicBeacon.h"
-#import "NephogramConstants.h"
+#import "BLELocationEngineConstants.h"
 
 @interface CAEmptyFilter : NPBeaconFilter
 

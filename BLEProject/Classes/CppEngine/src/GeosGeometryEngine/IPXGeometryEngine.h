@@ -13,19 +13,19 @@ using namespace geos::geom;
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXGeometryEngine
+        class IPXGeometryEngine
         {
         private:
             GeometryFactory *factory;
             
             
         public:
-            NPXGeometryEngine()
+            IPXGeometryEngine()
             {
                 factory = new GeometryFactory();
             }
             
-            virtual ~NPXGeometryEngine()
+            virtual ~IPXGeometryEngine()
             {
                 delete factory;
             }

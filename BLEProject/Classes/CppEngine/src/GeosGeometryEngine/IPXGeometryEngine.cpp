@@ -1,4 +1,4 @@
-#include "NPXGeometryEngine.h"
+#include "IPXGeometryEngine.h"
 
 #include <geos/opBuffer.h>
 
@@ -16,18 +16,18 @@ using namespace geos::operation::distance;
 
 using namespace Innerpeacer::BLELocationEngine;
 
-Polygon * NPXGeometryEngine::bufferGeometry(geos::geom::Geometry *geometry, double distance)
+Polygon * IPXGeometryEngine::bufferGeometry(geos::geom::Geometry *geometry, double distance)
 {
     return dynamic_cast<Polygon *>(BufferOp::bufferOp(geometry, distance));
 }
 
-MultiPolygon * NPXGeometryEngine::unionPolygons(vector<geos::geom::Polygon *> polygonArray)
+MultiPolygon * IPXGeometryEngine::unionPolygons(vector<geos::geom::Polygon *> polygonArray)
 {
     MultiPolygon *resultPolygon = dynamic_cast<MultiPolygon *>(CascadedPolygonUnion::Union(&polygonArray));
     return resultPolygon;
 }
 
-MultiLineString *NPXGeometryEngine::unionPolylines(vector<LineString *> polylineArray)
+MultiLineString *IPXGeometryEngine::unionPolylines(vector<LineString *> polylineArray)
 {
     vector<Geometry *> geomArray;
     
@@ -40,7 +40,7 @@ MultiLineString *NPXGeometryEngine::unionPolylines(vector<LineString *> polyline
     return resultLineString;
 }
 
-MultiPoint *NPXGeometryEngine::unionPoints(vector<geos::geom::Point *> pointArray)
+MultiPoint *IPXGeometryEngine::unionPoints(vector<geos::geom::Point *> pointArray)
 {
     vector<Geometry *> geomArray;
     vector<geos::geom::Point *>::iterator iter;
@@ -52,13 +52,13 @@ MultiPoint *NPXGeometryEngine::unionPoints(vector<geos::geom::Point *> pointArra
     return resultMultiPoint;
 }
 
-bool NPXGeometryEngine::geometryContains(geos::geom::Geometry *geometry1, geos::geom::Geometry *geometry2)
+bool IPXGeometryEngine::geometryContains(geos::geom::Geometry *geometry1, geos::geom::Geometry *geometry2)
 {
     PreparedPolygon polygon1(geometry1);
     return polygon1.contains(geometry2);
 }
 
-Point *NPXGeometryEngine::snapToLane(Geometry *line, geos::geom::Point *point)
+Point *IPXGeometryEngine::snapToLane(Geometry *line, geos::geom::Point *point)
 {
     CoordinateSequence *sequences = DistanceOp::nearestPoints(line, point);
     
@@ -77,7 +77,7 @@ Point *NPXGeometryEngine::snapToLane(Geometry *line, geos::geom::Point *point)
     
 }
 
-Point *NPXGeometryEngine::createPoint(double x, double y)
+Point *IPXGeometryEngine::createPoint(double x, double y)
 {
     Coordinate c;
     c.x = x;

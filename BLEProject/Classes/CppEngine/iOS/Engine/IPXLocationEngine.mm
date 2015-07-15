@@ -1,16 +1,16 @@
 //
-//  NPXLocationEngine.m
+//  IPXLocationEngine.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#import "NPXLocationEngine.h"
+#import "IPXLocationEngine.h"
 #import "NPMotionDetector.h"
 
 #import "ILocationEngine.h"
-#import "NPXStepBasedEngine.h"
+#import "IPXStepBasedEngine.h"
 #import "IPXScannedBeacon.h"
 #import "NPXBeaconDBAdapter.h"
 #import "NPBeaconKey.h"
@@ -18,7 +18,7 @@
 
 #define DEFAULT_MAX_BEACON_NUMBER_FOR_PROCESSING 9
 
-@interface NPXLocationEngine() <NPMotionDetectorDelegate, NPBeaconManagerDelegate>
+@interface IPXLocationEngine() <NPMotionDetectorDelegate, NPBeaconManagerDelegate>
 {
     NPBeaconManager *beaconManager;
     CLBeaconRegion *beaconRegion;
@@ -42,7 +42,7 @@
 #define RSSI_LEVEL_THRESHOLD -75
 #define BEACON_NUMBER_FOR_LEVEL_CHECK 3
 
-@implementation NPXLocationEngine
+@implementation IPXLocationEngine
 
 - (id)initEngineWithBeaconDBPath:(NSString *)beaconDBPath
 {
@@ -203,8 +203,8 @@
     int currentFloor = [self calculateCurrentFloor];
     
     if (currentLocation != INVALID_POINT) {
-        if ([self.delegate respondsToSelector:@selector(NPXLocationEngine:locationChanged:)]) {
-            [self.delegate NPXLocationEngine:self locationChanged:[TYLocalPoint pointWithX:currentLocation.getX() Y:currentLocation.getY() Floor:currentFloor]];
+        if ([self.delegate respondsToSelector:@selector(IPXLocationEngine:locationChanged:)]) {
+            [self.delegate IPXLocationEngine:self locationChanged:[TYLocalPoint pointWithX:currentLocation.getX() Y:currentLocation.getY() Floor:currentFloor]];
         }
     }
 
@@ -279,8 +279,8 @@
 
 - (void)motionDetector:(NPMotionDetector *)detector onHeadingChanged:(double)heading
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(NPXLocationEngine:headingChanged:)]) {
-        [self.delegate NPXLocationEngine:self headingChanged:heading];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(IPXLocationEngine:headingChanged:)]) {
+        [self.delegate IPXLocationEngine:self headingChanged:heading];
     }
 }
 

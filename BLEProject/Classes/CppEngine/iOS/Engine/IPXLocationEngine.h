@@ -1,5 +1,5 @@
 //
-//  NPXLocationEngine.h
+//  IPXLocationEngine.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
@@ -10,16 +10,16 @@
 #import <CoreLocation/CoreLocation.h>
 #import <TYMapData/TYMapData.h>
 
-@class NPXLocationEngine;
+@class IPXLocationEngine;
 @protocol NPXLocationEngineDelegate <NSObject>
 
 @optional
-- (void)NPXLocationEngine:(NPXLocationEngine *)engine locationChanged:(TYLocalPoint *)newLocation;
-- (void)NPXLocationEngine:(NPXLocationEngine *)engine headingChanged:(double)newHeading;
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine locationChanged:(TYLocalPoint *)newLocation;
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine headingChanged:(double)newHeading;
 @end
 
 
-@interface NPXLocationEngine : NSObject
+@interface IPXLocationEngine : NSObject
 
 - (id)initEngineWithBeaconDBPath:(NSString *)beaconDBPath;
 

@@ -1,5 +1,5 @@
 //
-//  NPXStepBasedEngine.h
+//  IPXStepBasedEngine.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
@@ -24,9 +24,9 @@ using namespace Innerpeacer::BLELocationEngine;
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXStepBasedEngine : public ILocationEngine {
+        class IPXStepBasedEngine : public ILocationEngine {
         public:
-            NPXStepBasedEngine(IPXAlgorithmType type):algorithmType(type) {
+            IPXStepBasedEngine(IPXAlgorithmType type):algorithmType(type) {
                 algorithm = NULL;
             }
             
@@ -36,7 +36,7 @@ namespace Innerpeacer {
             void reset();
             IPXPoint getLocation() const;
             
-            ~NPXStepBasedEngine() {
+            ~IPXStepBasedEngine() {
                 if (algorithm)
                     delete algorithm;
             }

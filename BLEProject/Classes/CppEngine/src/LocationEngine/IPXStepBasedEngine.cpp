@@ -1,22 +1,22 @@
 //
-//  NPXStepBasedEngine.cpp
+//  IPXStepBasedEngine.cpp
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#include "NPXStepBasedEngine.h"
-#include "NPXGeometryCalculator.h"
+#include "IPXStepBasedEngine.h"
+#include "IPXGeometryCalculator.h"
 
 using namespace Innerpeacer::BLELocationEngine;
 
 ILocationEngine *CreateNPXStepBaseTriangulationEngine(IPXAlgorithmType type)
 {
-    return new NPXStepBasedEngine(type);
+    return new IPXStepBasedEngine(type);
 }
 
-void NPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::IPXPublicBeacon> &beacons ) {
+void IPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::IPXPublicBeacon> &beacons ) {
     if (algorithm) {
         delete algorithm;
     }
@@ -32,7 +32,7 @@ void NPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::
 }
 
 
-void NPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEngine::IPXScannedBeacon *> &beacons) {
+void IPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEngine::IPXScannedBeacon *> &beacons) {
     algorithm->setNearestBeacons(beacons);
     
 //    printf("NPXStepBasedTEngine: Here OK!");
@@ -74,11 +74,11 @@ void NPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEng
     }
 }
 
-void NPXStepBasedEngine::addStepEvent() {
+void IPXStepBasedEngine::addStepEvent() {
     stepCount++;
 }
 
-void NPXStepBasedEngine::reset()
+void IPXStepBasedEngine::reset()
 {
     stepCount = DefaultStep;
     xMovingAverage.clear();
@@ -87,11 +87,11 @@ void NPXStepBasedEngine::reset()
     currentDisplayLocation = INVALID_POINT;
 }
 
-IPXPoint NPXStepBasedEngine::getLocation() const {
+IPXPoint IPXStepBasedEngine::getLocation() const {
     return currentDisplayLocation;
 }
 
-IPXPoint NPXStepBasedEngine::getIndependentLocation() {
+IPXPoint IPXStepBasedEngine::getIndependentLocation() {
     IPXPoint currentLocation = algorithm->calculationLocation();
     return currentLocation;
 }

@@ -1,11 +1,11 @@
 /*
- * NPXGeometryCalculator.cpp
+ * IPXGeometryCalculator.cpp
  *
  *  Created on: 2014-9-5
  *      Author: innerpeacer
  */
 
-#include "NPXGeometryCalculator.h"
+#include "IPXGeometryCalculator.h"
 
 IPXPoint scalePointWithCenter(IPXPoint center, IPXPoint scaledPoint,
 		double length) {

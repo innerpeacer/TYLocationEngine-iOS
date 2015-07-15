@@ -7,7 +7,7 @@
 //
 
 #import "BaseLocationTestVC.h"
-#import "NephogramConstants.h"
+#import "BLELocationEngineConstants.h"
 #import "NPMotionDetector.h"
 #import "NPBeaconKey.h"
 

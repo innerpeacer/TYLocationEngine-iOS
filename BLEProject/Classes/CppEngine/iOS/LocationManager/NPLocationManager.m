@@ -7,7 +7,7 @@
 //
 
 #import "NPLocationManager.h"
-#import "NPXLocationEngine.h"
+#import "IPXLocationEngine.h"
 #import "NPLocationFileManager.h"
 
 #define CHECK_INTERVAL 1.0
@@ -15,7 +15,7 @@
 
 @interface NPLocationManager() <NPXLocationEngineDelegate>
 {
-    NPXLocationEngine *locationEngine;
+    IPXLocationEngine *locationEngine;
     CLBeaconRegion *beaconRegion;
     
     NSString *beaconPath;
@@ -38,7 +38,7 @@
     if (self) {
         beaconPath = beaconDB;
         floorPathDictionary = floorDict;
-        locationEngine = [[NPXLocationEngine alloc] initEngineWithBeaconDBPath:beaconPath];
+        locationEngine = [[IPXLocationEngine alloc] initEngineWithBeaconDBPath:beaconPath];
         locationEngine.delegate = self;
         _requestTimeOut = DEFAULT_REQUEST_TIME_OUT;
         lastFloor = 1;
@@ -110,7 +110,7 @@
     lastTimeLocationUpdated = nil;
 }
 
-- (void)NPXLocationEngine:(NPXLocationEngine *)engine locationChanged:(TYLocalPoint *)newLocation
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine locationChanged:(TYLocalPoint *)newLocation
 {
 //    NSLog(@"locationChanged");
     lastTimeLocationUpdated = [NSDate date];
@@ -131,7 +131,7 @@
 
 }
 
-- (void)NPXLocationEngine:(NPXLocationEngine *)engine headingChanged:(double)newHeading
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine headingChanged:(double)newHeading
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(NPLocationManager:didUpdateDeviceHeading:)]) {
         [self.delegate NPLocationManager:self didUpdateDeviceHeading:newHeading];

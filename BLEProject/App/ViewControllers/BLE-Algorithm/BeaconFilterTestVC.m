@@ -9,7 +9,7 @@
 #import "BeaconFilterTestVC.h"
 #import "NPGeometryFactory.h"
 #import "NPBeaconFilter.h"
-#import "NephogramConstants.h"
+#import "BLELocationEngineConstants.h"
 #import "NPBeaconPool.h"
 #import "NPBeaconKey.h"
 
