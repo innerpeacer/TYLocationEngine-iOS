@@ -16,7 +16,7 @@
 
 #import <TYMapData/TYMapData.h>
 
-#import "NPBeaconKey.h"
+#import "TYBeaconKey.h"
 #import "BLELocationEngineConstants.h"
 
 #endif

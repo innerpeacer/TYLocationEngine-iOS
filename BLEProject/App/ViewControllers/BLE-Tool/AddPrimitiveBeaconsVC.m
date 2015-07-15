@@ -1,6 +1,6 @@
 #import "AddPrimitiveBeaconsVC.h"
-#import "NPBeacon.h"
-#import "NPPrimitiveBeaconDBAdapter.h"
+#import "TYBeacon.h"
+#import "TYPrimitiveBeaconDBAdapter.h"
 #import "ShowPrimitiveBeaconTableVC.h"
 #import "TYUserDefaults.h"
 
@@ -35,11 +35,11 @@
             NSNumber *major = [NSNumber numberWithInt:majorString.intValue];
             NSNumber *minor = [NSNumber numberWithInt:minorString.intValue];
 
-            NPPrimitiveBeaconDBAdapter *db = [[NPPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuilding];
+            TYPrimitiveBeaconDBAdapter *db = [[TYPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuilding];
             [db open];
 
             BOOL success = false;
-            NPBeacon *beacon = [db getPrimitiveBeaconWithMajor:major Minor:minor];
+            TYBeacon *beacon = [db getPrimitiveBeaconWithMajor:major Minor:minor];
             if (beacon == nil) {
                 success = [db insertPrimitiveBeaconWithMajor:major Minor:minor Tag:tagString];
             } else {

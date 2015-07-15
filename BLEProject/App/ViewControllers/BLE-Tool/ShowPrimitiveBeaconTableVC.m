@@ -1,6 +1,6 @@
 #import "ShowPrimitiveBeaconTableVC.h"
-#import "NPBeacon.h"
-#import "NPPrimitiveBeaconDBAdapter.h"
+#import "TYBeacon.h"
+#import "TYPrimitiveBeaconDBAdapter.h"
 #import "TYUserDefaults.h"
 
 @interface ShowPrimitiveBeaconTableVC ()
@@ -23,14 +23,14 @@
     
     currentBuiliding  = [TYUserDefaults getDefaultBuilding];
     
-    NPPrimitiveBeaconDBAdapter *db = [[NPPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuiliding];
+    TYPrimitiveBeaconDBAdapter *db = [[TYPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuiliding];
     [db open];
     NSArray *primitiveBeacons = [db getAllPrimitiveBeacons];
     [db close];
     
     NSArray *sorted = [primitiveBeacons sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NPBeacon *b1 = (NPBeacon *)obj1;
-        NPBeacon *b2 = (NPBeacon *)obj2;
+        TYBeacon *b1 = (TYBeacon *)obj1;
+        TYBeacon *b2 = (TYBeacon *)obj2;
         
         if (b1.major.intValue != b2.major.intValue) {
             return b1.major.intValue > b2.major.intValue;
@@ -67,8 +67,8 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NPPrimitiveBeaconDBAdapter *db = [[NPPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuiliding];
-        NPBeacon *beacon = [allPrimitiveBeacons objectAtIndex:indexPath.row];
+        TYPrimitiveBeaconDBAdapter *db = [[TYPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuiliding];
+        TYBeacon *beacon = [allPrimitiveBeacons objectAtIndex:indexPath.row];
         [db open];
         [db deletePrimitiveBeacon:beacon];
         [db close];
@@ -85,7 +85,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     
-    NPBeacon *beacon = [allPrimitiveBeacons objectAtIndex:indexPath.row];
+    TYBeacon *beacon = [allPrimitiveBeacons objectAtIndex:indexPath.row];
     
     NSString *str = [NSString stringWithFormat:@"Major: %d, Minor: %d, Tag: %@", beacon.major.intValue, beacon.minor.intValue, beacon.tag];
     

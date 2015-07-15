@@ -1,7 +1,7 @@
 #import "ShowConfiguredBeaconsTableVC.h"
-#import "NPBeaconFMDBAdapter.h"
+#import "TYBeaconFMDBAdapter.h"
 #import "TYUserDefaults.h"
-#import "NPBeaconFMDBAdapter.h"
+#import "TYBeaconFMDBAdapter.h"
 
 @interface ShowConfiguredBeaconsTableVC ()
 {
@@ -36,15 +36,15 @@
     
     currentBuilding = [TYUserDefaults getDefaultBuilding];
     
-    NPBeaconFMDBAdapter *db = [[NPBeaconFMDBAdapter alloc] initWithBuilding:currentBuilding];
+    TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:currentBuilding];
     [db open];
     
     NSArray *publicArray = [db getAllNephogramBeacons];
     if (publicArray.count > 0) {
         
         publicArray = [publicArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            NPBeacon *b1 = (NPBeacon *)obj1;
-            NPBeacon *b2 = (NPBeacon *)obj2;
+            TYBeacon *b1 = (TYBeacon *)obj1;
+            TYBeacon *b2 = (TYBeacon *)obj2;
             
             if (b1.major.intValue != b2.major.intValue) {
                 return b1.major.intValue > b2.major.intValue;
@@ -84,10 +84,10 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        NPBeaconFMDBAdapter *db = [[NPBeaconFMDBAdapter alloc] initWithBuilding:currentBuilding];
+        TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:currentBuilding];
         [db open];
         
-        NPBeacon *beacon = [[groups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        TYBeacon *beacon = [[groups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         if ([[groupTitles objectAtIndex:indexPath.section] isEqualToString:@"Beacons"]) {
             [db deleteNephogramBeaconWithMajor:beacon.major.intValue Minor:beacon.minor.intValue];
         }
@@ -106,11 +106,11 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    NPBeacon *beacon = [[groups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    TYBeacon *beacon = [[groups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     NSString *str;
     
     if (beacon.type == PUBLIC) {
-        NPPublicBeacon *pb = (NPPublicBeacon *)beacon;
+        TYPublicBeacon *pb = (TYPublicBeacon *)beacon;
        
         str = [NSString stringWithFormat:@"Major: %d, Minor: %d, Floor: %d", pb.major.intValue, pb.minor.intValue, pb.location.floor];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f, %.2f", pb.location.x, pb.location.y];

@@ -1,12 +1,12 @@
 #import "LocationEngineTestVC.h"
-#import "NPLocationEngine.h"
+#import "TYLocationEngine.h"
 
-#import "NPGeometryFactory.h"
+#import "TYGeometryFactory.h"
 
 @interface LocationEngineTestVC()
 {
-    NPLocationEngine *singleLocationEngine;
-    NPLocationEngine *trippleLocationEngine;
+    TYLocationEngine *singleLocationEngine;
+    TYLocationEngine *trippleLocationEngine;
 }
 
 @property (weak, nonatomic) IBOutlet UISwitch *publicSwitch;
@@ -18,8 +18,8 @@
 {
     [super viewDidLoad];
     
-    singleLocationEngine = [NPLocationEngine locationEngineWithBeacons:self.allBeacons Type:HybridSingle];
-    trippleLocationEngine = [NPLocationEngine locationEngineWithBeacons:self.allBeacons Type:HybridTriple];
+    singleLocationEngine = [TYLocationEngine locationEngineWithBeacons:self.allBeacons Type:HybridSingle];
+    trippleLocationEngine = [TYLocationEngine locationEngineWithBeacons:self.allBeacons Type:HybridTriple];
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
@@ -37,7 +37,7 @@
     for (int i = 0; i < count; i++) {
         CLBeacon *cb = [beacons objectAtIndex:i];
         
-        for (NPPublicBeacon *pb in self.allBeacons.allValues) {
+        for (TYPublicBeacon *pb in self.allBeacons.allValues) {
             if (cb.minor.integerValue == pb.minor.integerValue) {
                 
                 NSString *rssi = [NSString stringWithFormat:@"%.2f, %d", cb.accuracy,(int) cb.rssi];
@@ -58,12 +58,12 @@
     }
     
     [self.hintPolygonLayer removeAllGraphics];
-    AGSPolygon *polygon = [NPGeometryFactory convexHullFromPoints:usedBeaconPoints];
+    AGSPolygon *polygon = [TYGeometryFactory convexHullFromPoints:usedBeaconPoints];
     AGSSimpleFillSymbol *sfs = [AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:0.5] outlineColor:[UIColor redColor]];
     [self.hintPolygonLayer addGraphic:[AGSGraphic graphicWithGeometry:polygon symbol:sfs attributes:nil]];
 }
 
-- (void)onStepEvent:(NPStepEvent *)stepEvent
+- (void)onStepEvent:(TYStepEvent *)stepEvent
 {
     NSLog(@"onStepEvent");
     

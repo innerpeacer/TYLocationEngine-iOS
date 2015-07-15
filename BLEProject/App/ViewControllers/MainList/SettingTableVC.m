@@ -1,6 +1,6 @@
 #import "SettingTableVC.h"
 
-#import "NPBuildingMonitor.h"
+#import "TYBuildingMonitor.h"
 
 @implementation SettingTableVC
 
@@ -19,7 +19,7 @@
 //    [self.controllerDict setObject:@"resetPointTestController" forKey:@"重置定点测试数据"];
     
     NSLog(@"monitor");
-    NPBuildingMonitor *monitor = [[NPBuildingMonitor alloc] init];
+    TYBuildingMonitor *monitor = [[TYBuildingMonitor alloc] init];
     [monitor start];
 }
 

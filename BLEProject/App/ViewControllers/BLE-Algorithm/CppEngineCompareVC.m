@@ -7,16 +7,16 @@
 //
 
 #import "CppEngineCompareVC.h"
-#import "NPBeaconFMDBAdapter.h"
+#import "TYBeaconFMDBAdapter.h"
 #import <TYMapSDK/TYMapSDK.h>
 
 
 #import "TYRegionManager.h"
-#import "NPLocationManager.h"
+#import "TYLocationManager.h"
 #import "AppConstants.h"
 #import "TYUserDefaults.h"
 
-@interface CppEngineCompareVC() <NPLocationManagerDelegate>
+@interface CppEngineCompareVC() <TYLocationManagerDelegate>
 {
     TYGraphicsLayer *hintLayer;
     TYGraphicsLayer *np2ResultLayer;
@@ -25,8 +25,8 @@
     
     CLBeaconRegion *publicBeaconRegion;
     
-    NPLocationManager *np2LocationManager;
-    NPLocationManager *npLocationManager;
+    TYLocationManager *np2LocationManager;
+    TYLocationManager *npLocationManager;
 }
 
 @property (weak, nonatomic) IBOutlet UISwitch *publicSwitch;
@@ -79,19 +79,19 @@
 {
     publicBeaconRegion = [TYRegionManager defaultRegion];
     
-    np2LocationManager = [[NPLocationManager alloc] initWithBuilding:self.currentBuilding];
+    np2LocationManager = [[TYLocationManager alloc] initWithBuilding:self.currentBuilding];
     np2LocationManager.delegate = self;
     [np2LocationManager setBeaconRegion:publicBeaconRegion];
     [np2LocationManager startUpdateLocation];
     
-    npLocationManager = [[NPLocationManager alloc] initWithBuilding:self.currentBuilding];
+    npLocationManager = [[TYLocationManager alloc] initWithBuilding:self.currentBuilding];
     npLocationManager.delegate = self;
     [npLocationManager setBeaconRegion:publicBeaconRegion];
     [npLocationManager startUpdateLocation];
     
 }
 
-- (void)NPLocationManager:(NPLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
 {
     [npResultLayer removeAllGraphics];
     
@@ -112,12 +112,12 @@
     [npResultLayer addGraphic:[AGSGraphic graphicWithGeometry:pos symbol:sms attributes:nil]];
 }
 
-- (void)NPLocationManager:(NPLocationManager *)manager didUpdateDeviceHeading:(double)newHeading
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading
 {
     
 }
 
-- (void)NPLocationManagerdidFailUpdateLocation:(NPLocationManager *)manager
+- (void)NPLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager
 {
 
 }
@@ -125,11 +125,11 @@
 - (IBAction)publicSwitchToggled:(id)sender {
     if (self.publicSwitch.on) {
         
-        NPBeaconFMDBAdapter *pdb = [[NPBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
+        TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [pdb open];
         
         NSArray *array = [pdb getAllNephogramBeacons];
-        for (NPPublicBeacon *pb in array)
+        for (TYPublicBeacon *pb in array)
         {
             if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {
                 continue;

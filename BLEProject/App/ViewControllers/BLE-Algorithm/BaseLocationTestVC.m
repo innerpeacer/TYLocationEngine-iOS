@@ -8,16 +8,16 @@
 
 #import "BaseLocationTestVC.h"
 #import "BLELocationEngineConstants.h"
-#import "NPMotionDetector.h"
-#import "NPBeaconKey.h"
+#import "TYMotionDetector.h"
+#import "TYBeaconKey.h"
 
-@interface BaseLocationTestVC () <NPBeaconManagerDelegate, NPMotionDetectorDelegate>
+@interface BaseLocationTestVC () <NPBeaconManagerDelegate, TYMotionDetectorDelegate>
 {
     TYGraphicsLayer *publicBeaconLayer;
 }
 
-@property (nonatomic, strong) NPMotionDetector *motionDetector;
-@property (nonatomic, strong) NPBeaconManager *beaconManager;
+@property (nonatomic, strong) TYMotionDetector *motionDetector;
+@property (nonatomic, strong) TYBeaconManager *beaconManager;
 
 @property (weak, nonatomic) IBOutlet UISwitch *publicSwitch;
 - (IBAction)publicSwitchToggled:(id)sender;
@@ -34,7 +34,7 @@
     [self addLayers];
     [self initLocationSettings];
     
-    self.motionDetector = [[NPMotionDetector alloc] init];
+    self.motionDetector = [[TYMotionDetector alloc] init];
     self.motionDetector.delegate = self;
 }
 
@@ -55,7 +55,7 @@
 
 - (void)initLocationSettings
 {
-    self.beaconManager = [[NPBeaconManager alloc] init];
+    self.beaconManager = [[TYBeaconManager alloc] init];
     self.beaconManager.delegate = self;
     
     self.publicBeaconRegion = [TYRegionManager defaultRegion];
@@ -64,11 +64,11 @@
     self.allBeacons = [[NSMutableDictionary alloc] init];
     
     if (self.currentBuilding != nil) {
-        NPBeaconFMDBAdapter *db = [[NPBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
+        TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [db open];
         NSArray *array = [db getAllNephogramBeacons];
-        for(NPPublicBeacon *pb in array){
-            NSNumber *key = [NPBeaconKey beaconKeyForNPBeacon:pb];
+        for(TYPublicBeacon *pb in array){
+            NSNumber *key = [TYBeaconKey beaconKeyForNPBeacon:pb];
             [self.allBeacons setObject:pb forKey:key];
         }
         [db close];
@@ -84,12 +84,12 @@
 - (IBAction)publicSwitchToggled:(id)sender {
     if (self.publicSwitch.on) {
                 
-        NPBeaconFMDBAdapter *pdb = [[NPBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
+        TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [pdb open];
         
         NSArray *array = [pdb getAllNephogramBeacons];
         
-        for (NPPublicBeacon *pb in array)
+        for (TYPublicBeacon *pb in array)
         {
             if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {
                 continue;
@@ -111,7 +111,7 @@
         {
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         NSMutableArray *beaconArray = [NSMutableArray array];
-        for (NPPublicBeacon *pb in array) {
+        for (TYPublicBeacon *pb in array) {
             NSMutableDictionary *beaconDict = [NSMutableDictionary dictionary];
             [beaconDict setObject:pb.UUID forKey:@"uuid"];
             [beaconDict setObject:pb.major forKey:@"major"];
@@ -171,9 +171,9 @@
     
     NSMutableArray *toRemove = [[NSMutableArray alloc] init];
     for (CLBeacon *b in self.scannedBeacons) {
-        NSNumber *key = [NPBeaconKey beaconKeyForCLBeacon:b];
+        NSNumber *key = [TYBeaconKey beaconKeyForCLBeacon:b];
         
-        NPBeacon *sb = [self.allBeacons objectForKey:key];
+        TYBeacon *sb = [self.allBeacons objectForKey:key];
         
         if (sb == nil) {
             [toRemove addObject:b];
@@ -187,17 +187,17 @@
 
 }
 
-- (void)motionDetector:(NPMotionDetector *)detector onStepEvent:(NPStepEvent *)stepEvent
+- (void)motionDetector:(TYMotionDetector *)detector onStepEvent:(TYStepEvent *)stepEvent
 {
     [self onStepEvent:stepEvent];
 }
 
-- (void)onStepEvent:(NPStepEvent *)stepEvent
+- (void)onStepEvent:(TYStepEvent *)stepEvent
 {
 
 }
 
-- (void)beaconManager:(NPBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+- (void)beaconManager:(TYBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     if (beacons.count == 0) {
         return;

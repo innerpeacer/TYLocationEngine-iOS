@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "NPPublicBeacon.h"
+#import "TYPublicBeacon.h"
 
 @interface IPXBeaconDBAdapter : NSObject
 
@@ -10,6 +10,6 @@
 - (BOOL)close;
 
 - (NSArray *)getAllNephogramBeacons;
-- (NPPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor;
+- (TYPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor;
 
 @end

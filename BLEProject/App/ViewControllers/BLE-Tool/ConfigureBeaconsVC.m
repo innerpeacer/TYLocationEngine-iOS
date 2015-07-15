@@ -4,10 +4,10 @@
 #import <TYMapSDK/TYMapSDK.h>
 
 #import "TYUserDefaults.h"
-#import "NPBeaconFMDBAdapter.h"
-#import "NPBeacon.h"
+#import "TYBeaconFMDBAdapter.h"
+#import "TYBeacon.h"
 #import "AppConstants.h"
-#import "NPBeaconManager.h"
+#import "TYBeaconManager.h"
 
 #import "TYRegionManager.h"
 
@@ -16,11 +16,11 @@
     TYGraphicsLayer *hintLayer;
     TYGraphicsLayer *publicBeaconLayer;
     
-    NPBeacon *currentBeacon;
+    TYBeacon *currentBeacon;
     TYLocalPoint *currentLocation;
     
     // ============================================
-    NPBeaconManager *beaconManager;
+    TYBeaconManager *beaconManager;
     int currentMaxRSSI;
     CLBeaconRegion *beaconRegion;
     BOOL isBinding;
@@ -58,7 +58,7 @@
 
 - (void)initLocationManager
 {
-    beaconManager = [[NPBeaconManager alloc] init];
+    beaconManager = [[TYBeaconManager alloc] init];
     beaconManager.delegate = self;
     
     beaconRegion = [TYRegionManager defaultRegion];
@@ -97,7 +97,7 @@
     currentMaxRSSI = -100;
 }
 
-- (void)beaconManager:(NPBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+- (void)beaconManager:(TYBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     if (!isBinding) {
         return;
@@ -134,7 +134,7 @@
     if (currentRSSI > currentMaxRSSI) {
         currentMaxRSSI = currentRSSI;
         
-        currentBeacon = [NPBeacon beaconWithUUID:nearestBeacon.proximityUUID.UUIDString Major:nearestBeacon.major Minor:nearestBeacon.minor Tag:[NSString stringWithFormat:@"%@", nearestBeacon.minor]];
+        currentBeacon = [TYBeacon beaconWithUUID:nearestBeacon.proximityUUID.UUIDString Major:nearestBeacon.major Minor:nearestBeacon.minor Tag:[NSString stringWithFormat:@"%@", nearestBeacon.minor]];
         self.hintLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@, RSSI: %d", nearestBeacon.major, nearestBeacon.minor, (int)nearestBeacon.rssi];
     }
 
@@ -170,16 +170,16 @@
         NSNumber *minor = currentBeacon.minor;
         NSString *tag = currentBeacon.tag;
         
-        NPBeaconFMDBAdapter *pdb = [[NPBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
+        TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [pdb open];
-        NPBeacon *pBeacon;
+        TYBeacon *pBeacon;
         
         pBeacon = [pdb getNephogramBeaconWithMajor:major Minor:minor];
         if (pBeacon == nil) {
-            NPPublicBeacon *pb = [NPPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation ShopGid:nil];
+            TYPublicBeacon *pb = [TYPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation ShopGid:nil];
             [pdb insertNephogramBeacon:pb];
         } else {
-            [pdb updateNephogramBeacon:[NPPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation]];
+            [pdb updateNephogramBeacon:[TYPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation]];
         }
         
         [pdb close];
@@ -209,7 +209,7 @@
 }
 
 
-- (void)didSelectBeacon:(NPBeacon *)beacon
+- (void)didSelectBeacon:(TYBeacon *)beacon
 {
     currentBeacon = beacon;
     
@@ -218,13 +218,13 @@
 
 - (IBAction)publicSwtichToggled:(id)sender {
     if (self.publicSwitch.on) {
-        NPBeaconFMDBAdapter *db = [[NPBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
+        TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [db open];
         
         NSArray *array = [db getAllNephogramBeacons];
         NSLog(@"%d beacons", (int)array.count);
         
-        for (NPPublicBeacon *pb in array)
+        for (TYPublicBeacon *pb in array)
         {
             if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {
                 continue;

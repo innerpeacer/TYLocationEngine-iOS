@@ -8,7 +8,7 @@
 
 #import "NPTriangulationAlgorithm.h"
 #import <CoreLocation/CoreLocation.h>
-#import "NPPublicBeacon.h"
+#import "TYPublicBeacon.h"
 #import "BLELocationEngineConstants.h"
 
 #define DEFAULT_NUM_FOR_TRIANGULATION 4
@@ -84,14 +84,14 @@
 {
     TYLocalPoint *result = nil;
     
-    NSNumber *bkey1 = [NPBeaconKey beaconKeyForCLBeacon:b1];
-    NSNumber *bkey2 = [NPBeaconKey beaconKeyForCLBeacon:b2];
-    NSNumber *bkey3 = [NPBeaconKey beaconKeyForCLBeacon:b3];
+    NSNumber *bkey1 = [TYBeaconKey beaconKeyForCLBeacon:b1];
+    NSNumber *bkey2 = [TYBeaconKey beaconKeyForCLBeacon:b2];
+    NSNumber *bkey3 = [TYBeaconKey beaconKeyForCLBeacon:b3];
     
     
-    NPPublicBeacon *sb1 = [self.beaconDictionary objectForKey:bkey1];
-    NPPublicBeacon *sb2 = [self.beaconDictionary objectForKey:bkey2];
-    NPPublicBeacon *sb3 = [self.beaconDictionary objectForKey:bkey3];
+    TYPublicBeacon *sb1 = [self.beaconDictionary objectForKey:bkey1];
+    TYPublicBeacon *sb2 = [self.beaconDictionary objectForKey:bkey2];
+    TYPublicBeacon *sb3 = [self.beaconDictionary objectForKey:bkey3];
     
     TYLocalPoint *lp1 = sb1.location;
     TYLocalPoint *lp2 = sb2.location;
@@ -139,8 +139,8 @@
     TYLocalPoint *result = nil;
     
     if (b.proximity == CLProximityImmediate || b.proximity == CLProximityNear) {
-        NSNumber *bkey1 = [NPBeaconKey beaconKeyForCLBeacon:b];;
-        NPPublicBeacon *pb = [self.beaconDictionary objectForKey:bkey1];
+        NSNumber *bkey1 = [TYBeaconKey beaconKeyForCLBeacon:b];;
+        TYPublicBeacon *pb = [self.beaconDictionary objectForKey:bkey1];
         result = pb.location;
     }
     return result;
@@ -150,11 +150,11 @@
 {
     TYLocalPoint *result = nil;
     
-    NSNumber *bkey1 = [NPBeaconKey beaconKeyForCLBeacon:b1];;
-    NSNumber *bkey2 = [NPBeaconKey beaconKeyForCLBeacon:b2];;
+    NSNumber *bkey1 = [TYBeaconKey beaconKeyForCLBeacon:b1];;
+    NSNumber *bkey2 = [TYBeaconKey beaconKeyForCLBeacon:b2];;
     
-    NPPublicBeacon *sb1 = [self.beaconDictionary objectForKey:bkey1];
-    NPPublicBeacon *sb2 = [self.beaconDictionary objectForKey:bkey2];
+    TYPublicBeacon *sb1 = [self.beaconDictionary objectForKey:bkey1];
+    TYPublicBeacon *sb2 = [self.beaconDictionary objectForKey:bkey2];
     
     TYLocalPoint *lp1 = sb1.location;
     TYLocalPoint *lp2 = sb2.location;
@@ -267,8 +267,8 @@
         }
         
         CLBeacon *nb = [self.nearestBeacons objectAtIndex:0];
-        NSNumber *bkey = [NPBeaconKey beaconKeyForCLBeacon:nb];;
-        NPPublicBeacon *npb = [self.beaconDictionary objectForKey:bkey];
+        NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:nb];;
+        TYPublicBeacon *npb = [self.beaconDictionary objectForKey:bkey];
         
         result = [TYLocalPoint pointWithX:xSum/pointCount Y:ySum/pointCount Floor:npb.location.floor];
     }
@@ -307,8 +307,8 @@
         }
         
         CLBeacon *nb = [self.nearestBeacons objectAtIndex:0];
-        NSNumber *bkey = [NPBeaconKey beaconKeyForCLBeacon:nb];;
-        NPPublicBeacon *npb = [self.beaconDictionary objectForKey:bkey];
+        NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:nb];;
+        TYPublicBeacon *npb = [self.beaconDictionary objectForKey:bkey];
         
         result = [TYLocalPoint pointWithX:xSum/pointCount Y:ySum/pointCount Floor:npb.location.floor];
     }
@@ -370,8 +370,8 @@
         }
         
         CLBeacon *nb = [self.nearestBeacons objectAtIndex:0];
-        NSNumber *bkey = [NPBeaconKey beaconKeyForCLBeacon:nb];;
-        NPPublicBeacon *npb = [self.beaconDictionary objectForKey:bkey];
+        NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:nb];;
+        TYPublicBeacon *npb = [self.beaconDictionary objectForKey:bkey];
         
         result = [TYLocalPoint pointWithX:xSum/pointCount Y:ySum/pointCount Floor:npb.location.floor];
     }
@@ -410,7 +410,7 @@
         }
         
         CLBeacon *nb = [self.nearestBeacons objectAtIndex:0];
-        NPPublicBeacon *npb = [self.beaconDictionary objectForKey:nb.minor];
+        TYPublicBeacon *npb = [self.beaconDictionary objectForKey:nb.minor];
         
         result = [TYLocalPoint pointWithX:xSum/pointCount Y:ySum/pointCount Floor:npb.location.floor];
     }

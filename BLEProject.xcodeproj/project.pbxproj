@@ -38,28 +38,28 @@
 		575CD1041B564DE200B1E77C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0E91B564DE200B1E77C /* AppDelegate.m */; };
 		575CD10C1B564E2C00B1E77C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1081B564E2C00B1E77C /* InfoPlist.strings */; };
 		575CD10D1B564E2C00B1E77C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD10A1B564E2C00B1E77C /* main.m */; };
-		575CD1AD1B564E7300B1E77C /* NPBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1131B564E7300B1E77C /* NPBeacon.m */; };
-		575CD1AE1B564E7300B1E77C /* NPBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1151B564E7300B1E77C /* NPBeaconManager.m */; };
-		575CD1AF1B564E7300B1E77C /* NPPublicBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1171B564E7300B1E77C /* NPPublicBeacon.m */; };
-		575CD1B01B564E7300B1E77C /* NPCumulativeSingalPowerTD.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11A1B564E7300B1E77C /* NPCumulativeSingalPowerTD.m */; };
-		575CD1B11B564E7300B1E77C /* NPMovingAverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11C1B564E7300B1E77C /* NPMovingAverage.m */; };
-		575CD1B21B564E7300B1E77C /* NPMovingAverageTD.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11E1B564E7300B1E77C /* NPMovingAverageTD.m */; };
-		575CD1B31B564E7300B1E77C /* NPHeadingDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1211B564E7300B1E77C /* NPHeadingDetector.m */; };
-		575CD1B41B564E7300B1E77C /* NPMagHeadingDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1231B564E7300B1E77C /* NPMagHeadingDetector.m */; };
-		575CD1B51B564E7300B1E77C /* NPMotionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1251B564E7300B1E77C /* NPMotionDetector.m */; };
-		575CD1B61B564E7300B1E77C /* NPSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1271B564E7300B1E77C /* NPSample.m */; };
-		575CD1B71B564E7300B1E77C /* NPStepDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1291B564E7300B1E77C /* NPStepDetector.m */; };
-		575CD1B81B564E7300B1E77C /* NPStepEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD12B1B564E7300B1E77C /* NPStepEvent.m */; };
-		575CD1B91B564E7300B1E77C /* NPVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD12D1B564E7300B1E77C /* NPVector2.m */; };
+		575CD1AD1B564E7300B1E77C /* TYBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1131B564E7300B1E77C /* TYBeacon.m */; };
+		575CD1AE1B564E7300B1E77C /* TYBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1151B564E7300B1E77C /* TYBeaconManager.m */; };
+		575CD1AF1B564E7300B1E77C /* TYPublicBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1171B564E7300B1E77C /* TYPublicBeacon.m */; };
+		575CD1B01B564E7300B1E77C /* TYCumulativeSingalPowerTD.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11A1B564E7300B1E77C /* TYCumulativeSingalPowerTD.m */; };
+		575CD1B11B564E7300B1E77C /* TYMovingAverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11C1B564E7300B1E77C /* TYMovingAverage.m */; };
+		575CD1B21B564E7300B1E77C /* TYMovingAverageTD.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD11E1B564E7300B1E77C /* TYMovingAverageTD.m */; };
+		575CD1B31B564E7300B1E77C /* TYHeadingDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1211B564E7300B1E77C /* TYHeadingDetector.m */; };
+		575CD1B41B564E7300B1E77C /* TYMagHeadingDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1231B564E7300B1E77C /* TYMagHeadingDetector.m */; };
+		575CD1B51B564E7300B1E77C /* TYMotionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1251B564E7300B1E77C /* TYMotionDetector.m */; };
+		575CD1B61B564E7300B1E77C /* TYSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1271B564E7300B1E77C /* TYSample.m */; };
+		575CD1B71B564E7300B1E77C /* TYStepDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1291B564E7300B1E77C /* TYStepDetector.m */; };
+		575CD1B81B564E7300B1E77C /* TYStepEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD12B1B564E7300B1E77C /* TYStepEvent.m */; };
+		575CD1B91B564E7300B1E77C /* TYVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD12D1B564E7300B1E77C /* TYVector2.m */; };
 		575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1301B564E7300B1E77C /* DoubleRounder.m */; };
-		575CD1BB1B564E7300B1E77C /* NPPointConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1321B564E7300B1E77C /* NPPointConverter.m */; };
+		575CD1BB1B564E7300B1E77C /* TYPointConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1321B564E7300B1E77C /* TYPointConverter.m */; };
 		575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1371B564E7300B1E77C /* IPXBeaconDBAdapter.m */; };
 		575CD1BD1B564E7300B1E77C /* IPXRegionDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13A1B564E7300B1E77C /* IPXRegionDBAdapter.m */; };
 		575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13E1B564E7300B1E77C /* IPXLocationEngine.mm */; };
-		575CD1BF1B564E7300B1E77C /* NPBeaconKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1411B564E7300B1E77C /* NPBeaconKey.m */; };
-		575CD1C01B564E7300B1E77C /* NPBuildingMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1441B564E7300B1E77C /* NPBuildingMonitor.m */; };
-		575CD1C11B564E7300B1E77C /* NPLocationFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1461B564E7300B1E77C /* NPLocationFileManager.m */; };
-		575CD1C21B564E7300B1E77C /* NPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1481B564E7300B1E77C /* NPLocationManager.m */; };
+		575CD1BF1B564E7300B1E77C /* TYBeaconKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1411B564E7300B1E77C /* TYBeaconKey.m */; };
+		575CD1C01B564E7300B1E77C /* TYBuildingMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1441B564E7300B1E77C /* TYBuildingMonitor.m */; };
+		575CD1C11B564E7300B1E77C /* TYLocationFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1461B564E7300B1E77C /* TYLocationFileManager.m */; };
+		575CD1C21B564E7300B1E77C /* TYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1481B564E7300B1E77C /* TYLocationManager.m */; };
 		575CD1C31B564E7300B1E77C /* IPXGeometryCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD14C1B564E7300B1E77C /* IPXGeometryCalculator.cpp */; };
 		575CD1C41B564E7300B1E77C /* IPXLocationAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD14E1B564E7300B1E77C /* IPXLocationAlgorithm.cpp */; };
 		575CD1C51B564E7300B1E77C /* IPXTriangulationAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1501B564E7300B1E77C /* IPXTriangulationAlgorithm.cpp */; };
@@ -72,23 +72,22 @@
 		575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1611B564E7300B1E77C /* CppUnionLane.cpp */; };
 		575CD1CD1B564E7300B1E77C /* IPXGeometryEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1631B564E7300B1E77C /* IPXGeometryEngine.cpp */; };
 		575CD1CE1B564E7300B1E77C /* IPXStepBasedEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1671B564E7300B1E77C /* IPXStepBasedEngine.cpp */; };
-		575CD1CF1B564E7300B1E77C /* NPBeaconFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD16E1B564E7300B1E77C /* NPBeaconFilter.m */; };
-		575CD1D01B564E7300B1E77C /* NPBeaconPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1701B564E7300B1E77C /* NPBeaconPool.m */; };
-		575CD1D11B564E7300B1E77C /* NPBeaconFMDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1741B564E7300B1E77C /* NPBeaconFMDBAdapter.m */; };
-		575CD1D21B564E7300B1E77C /* NPLocationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1791B564E7300B1E77C /* NPLocationEngine.m */; };
+		575CD1CF1B564E7300B1E77C /* TYBeaconFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD16E1B564E7300B1E77C /* TYBeaconFilter.m */; };
+		575CD1D11B564E7300B1E77C /* TYBeaconFMDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1741B564E7300B1E77C /* TYBeaconFMDBAdapter.m */; };
+		575CD1D21B564E7300B1E77C /* TYLocationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1791B564E7300B1E77C /* TYLocationEngine.m */; };
 		575CD1D31B564E7300B1E77C /* NPAlgorithmFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD17D1B564E7300B1E77C /* NPAlgorithmFactory.m */; };
 		575CD1D41B564E7300B1E77C /* NPGeometryCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD17F1B564E7300B1E77C /* NPGeometryCalculator.m */; };
 		575CD1D51B564E7300B1E77C /* NPLocationAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1811B564E7300B1E77C /* NPLocationAlgorithm.m */; };
 		575CD1D61B564E7300B1E77C /* NPTriangulationAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1841B564E7300B1E77C /* NPTriangulationAlgorithm.m */; };
 		575CD1D71B564E7300B1E77C /* NPWeightingAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1871B564E7300B1E77C /* NPWeightingAlgorithm.m */; };
-		575CD1D81B564E7300B1E77C /* NPGeometryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD18B1B564E7300B1E77C /* NPGeometryFactory.m */; };
-		575CD1D91B564E7300B1E77C /* NPVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD18D1B564E7300B1E77C /* NPVector2.m */; };
-		575CD1DA1B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1901B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m */; };
-		575CD1DB1B564E7300B1E77C /* NPSampeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1941B564E7300B1E77C /* NPSampeData.m */; };
-		575CD1DC1B564E7300B1E77C /* NPStaticSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1961B564E7300B1E77C /* NPStaticSample.m */; };
-		575CD1DD1B564E7300B1E77C /* NPDistributionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19B1B564E7300B1E77C /* NPDistributionResult.m */; };
-		575CD1DE1B564E7300B1E77C /* NPPointTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19D1B564E7300B1E77C /* NPPointTester.m */; };
-		575CD1DF1B564E7300B1E77C /* NPTestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19F1B564E7300B1E77C /* NPTestResult.m */; };
+		575CD1D81B564E7300B1E77C /* TYGeometryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD18B1B564E7300B1E77C /* TYGeometryFactory.m */; };
+		575CD1D91B564E7300B1E77C /* TYVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD18D1B564E7300B1E77C /* TYVector2.m */; };
+		575CD1DA1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1901B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m */; };
+		575CD1DB1B564E7300B1E77C /* TYSampeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1941B564E7300B1E77C /* TYSampeData.m */; };
+		575CD1DC1B564E7300B1E77C /* TYStaticSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1961B564E7300B1E77C /* TYStaticSample.m */; };
+		575CD1DD1B564E7300B1E77C /* TYDistributionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19B1B564E7300B1E77C /* TYDistributionResult.m */; };
+		575CD1DE1B564E7300B1E77C /* TYPointTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19D1B564E7300B1E77C /* TYPointTester.m */; };
+		575CD1DF1B564E7300B1E77C /* TYTestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD19F1B564E7300B1E77C /* TYTestResult.m */; };
 		575CD1E01B564E7300B1E77C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1A01B564E7300B1E77C /* Images.xcassets */; };
 		575CD1E11B564E7300B1E77C /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1A41B564E7300B1E77C /* FMDatabase.m */; };
 		575CD1E21B564E7300B1E77C /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1A61B564E7300B1E77C /* FMDatabaseAdditions.m */; };
@@ -113,6 +112,7 @@
 		57B396E21A6361B800E72FF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B396E11A6361B800E72FF5 /* UIKit.framework */; };
 		57B3989E1A6364D900E72FF5 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989D1A6364D900E72FF5 /* libgeos.a */; };
 		57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */; };
+		57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,36 +177,36 @@
 		575CD1061B564E2C00B1E77C /* BLEProject-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLEProject-Prefix.pch"; sourceTree = "<group>"; };
 		575CD1091B564E2C00B1E77C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		575CD10A1B564E2C00B1E77C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		575CD1121B564E7300B1E77C /* NPBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeacon.h; sourceTree = "<group>"; };
-		575CD1131B564E7300B1E77C /* NPBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeacon.m; sourceTree = "<group>"; };
-		575CD1141B564E7300B1E77C /* NPBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconManager.h; sourceTree = "<group>"; };
-		575CD1151B564E7300B1E77C /* NPBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconManager.m; sourceTree = "<group>"; };
-		575CD1161B564E7300B1E77C /* NPPublicBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPublicBeacon.h; sourceTree = "<group>"; };
-		575CD1171B564E7300B1E77C /* NPPublicBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPublicBeacon.m; sourceTree = "<group>"; };
-		575CD1191B564E7300B1E77C /* NPCumulativeSingalPowerTD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCumulativeSingalPowerTD.h; sourceTree = "<group>"; };
-		575CD11A1B564E7300B1E77C /* NPCumulativeSingalPowerTD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPCumulativeSingalPowerTD.m; sourceTree = "<group>"; };
-		575CD11B1B564E7300B1E77C /* NPMovingAverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPMovingAverage.h; sourceTree = "<group>"; };
-		575CD11C1B564E7300B1E77C /* NPMovingAverage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPMovingAverage.m; sourceTree = "<group>"; };
-		575CD11D1B564E7300B1E77C /* NPMovingAverageTD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPMovingAverageTD.h; sourceTree = "<group>"; };
-		575CD11E1B564E7300B1E77C /* NPMovingAverageTD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPMovingAverageTD.m; sourceTree = "<group>"; };
-		575CD1201B564E7300B1E77C /* NPHeadingDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPHeadingDetector.h; sourceTree = "<group>"; };
-		575CD1211B564E7300B1E77C /* NPHeadingDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPHeadingDetector.m; sourceTree = "<group>"; };
-		575CD1221B564E7300B1E77C /* NPMagHeadingDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPMagHeadingDetector.h; sourceTree = "<group>"; };
-		575CD1231B564E7300B1E77C /* NPMagHeadingDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPMagHeadingDetector.m; sourceTree = "<group>"; };
-		575CD1241B564E7300B1E77C /* NPMotionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPMotionDetector.h; sourceTree = "<group>"; };
-		575CD1251B564E7300B1E77C /* NPMotionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPMotionDetector.m; sourceTree = "<group>"; };
-		575CD1261B564E7300B1E77C /* NPSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPSample.h; sourceTree = "<group>"; };
-		575CD1271B564E7300B1E77C /* NPSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPSample.m; sourceTree = "<group>"; };
-		575CD1281B564E7300B1E77C /* NPStepDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPStepDetector.h; sourceTree = "<group>"; };
-		575CD1291B564E7300B1E77C /* NPStepDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPStepDetector.m; sourceTree = "<group>"; };
-		575CD12A1B564E7300B1E77C /* NPStepEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPStepEvent.h; sourceTree = "<group>"; };
-		575CD12B1B564E7300B1E77C /* NPStepEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPStepEvent.m; sourceTree = "<group>"; };
-		575CD12C1B564E7300B1E77C /* NPVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPVector2.h; sourceTree = "<group>"; };
-		575CD12D1B564E7300B1E77C /* NPVector2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPVector2.m; sourceTree = "<group>"; };
+		575CD1121B564E7300B1E77C /* TYBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeacon.h; sourceTree = "<group>"; };
+		575CD1131B564E7300B1E77C /* TYBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeacon.m; sourceTree = "<group>"; };
+		575CD1141B564E7300B1E77C /* TYBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconManager.h; sourceTree = "<group>"; };
+		575CD1151B564E7300B1E77C /* TYBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconManager.m; sourceTree = "<group>"; };
+		575CD1161B564E7300B1E77C /* TYPublicBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPublicBeacon.h; sourceTree = "<group>"; };
+		575CD1171B564E7300B1E77C /* TYPublicBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPublicBeacon.m; sourceTree = "<group>"; };
+		575CD1191B564E7300B1E77C /* TYCumulativeSingalPowerTD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCumulativeSingalPowerTD.h; sourceTree = "<group>"; };
+		575CD11A1B564E7300B1E77C /* TYCumulativeSingalPowerTD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCumulativeSingalPowerTD.m; sourceTree = "<group>"; };
+		575CD11B1B564E7300B1E77C /* TYMovingAverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYMovingAverage.h; sourceTree = "<group>"; };
+		575CD11C1B564E7300B1E77C /* TYMovingAverage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYMovingAverage.m; sourceTree = "<group>"; };
+		575CD11D1B564E7300B1E77C /* TYMovingAverageTD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYMovingAverageTD.h; sourceTree = "<group>"; };
+		575CD11E1B564E7300B1E77C /* TYMovingAverageTD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYMovingAverageTD.m; sourceTree = "<group>"; };
+		575CD1201B564E7300B1E77C /* TYHeadingDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHeadingDetector.h; sourceTree = "<group>"; };
+		575CD1211B564E7300B1E77C /* TYHeadingDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHeadingDetector.m; sourceTree = "<group>"; };
+		575CD1221B564E7300B1E77C /* TYMagHeadingDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYMagHeadingDetector.h; sourceTree = "<group>"; };
+		575CD1231B564E7300B1E77C /* TYMagHeadingDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYMagHeadingDetector.m; sourceTree = "<group>"; };
+		575CD1241B564E7300B1E77C /* TYMotionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYMotionDetector.h; sourceTree = "<group>"; };
+		575CD1251B564E7300B1E77C /* TYMotionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYMotionDetector.m; sourceTree = "<group>"; };
+		575CD1261B564E7300B1E77C /* TYSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYSample.h; sourceTree = "<group>"; };
+		575CD1271B564E7300B1E77C /* TYSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYSample.m; sourceTree = "<group>"; };
+		575CD1281B564E7300B1E77C /* TYStepDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYStepDetector.h; sourceTree = "<group>"; };
+		575CD1291B564E7300B1E77C /* TYStepDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYStepDetector.m; sourceTree = "<group>"; };
+		575CD12A1B564E7300B1E77C /* TYStepEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYStepEvent.h; sourceTree = "<group>"; };
+		575CD12B1B564E7300B1E77C /* TYStepEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYStepEvent.m; sourceTree = "<group>"; };
+		575CD12C1B564E7300B1E77C /* TYVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVector2.h; sourceTree = "<group>"; };
+		575CD12D1B564E7300B1E77C /* TYVector2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVector2.m; sourceTree = "<group>"; };
 		575CD12F1B564E7300B1E77C /* DoubleRounder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleRounder.h; sourceTree = "<group>"; };
 		575CD1301B564E7300B1E77C /* DoubleRounder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleRounder.m; sourceTree = "<group>"; };
-		575CD1311B564E7300B1E77C /* NPPointConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPointConverter.h; sourceTree = "<group>"; };
-		575CD1321B564E7300B1E77C /* NPPointConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPointConverter.m; sourceTree = "<group>"; };
+		575CD1311B564E7300B1E77C /* TYPointConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPointConverter.h; sourceTree = "<group>"; };
+		575CD1321B564E7300B1E77C /* TYPointConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPointConverter.m; sourceTree = "<group>"; };
 		575CD1361B564E7300B1E77C /* IPXBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXBeaconDBAdapter.h; sourceTree = "<group>"; };
 		575CD1371B564E7300B1E77C /* IPXBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPXBeaconDBAdapter.m; sourceTree = "<group>"; };
 		575CD1381B564E7300B1E77C /* IPXBeaconDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXBeaconDBConstants.h; sourceTree = "<group>"; };
@@ -215,14 +215,14 @@
 		575CD13B1B564E7300B1E77C /* IPXRegionDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXRegionDBConstants.h; sourceTree = "<group>"; };
 		575CD13D1B564E7300B1E77C /* IPXLocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXLocationEngine.h; sourceTree = "<group>"; };
 		575CD13E1B564E7300B1E77C /* IPXLocationEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IPXLocationEngine.mm; sourceTree = "<group>"; };
-		575CD1401B564E7300B1E77C /* NPBeaconKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconKey.h; sourceTree = "<group>"; };
-		575CD1411B564E7300B1E77C /* NPBeaconKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconKey.m; sourceTree = "<group>"; };
-		575CD1431B564E7300B1E77C /* NPBuildingMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBuildingMonitor.h; sourceTree = "<group>"; };
-		575CD1441B564E7300B1E77C /* NPBuildingMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBuildingMonitor.m; sourceTree = "<group>"; };
-		575CD1451B564E7300B1E77C /* NPLocationFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPLocationFileManager.h; sourceTree = "<group>"; };
-		575CD1461B564E7300B1E77C /* NPLocationFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPLocationFileManager.m; sourceTree = "<group>"; };
-		575CD1471B564E7300B1E77C /* NPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPLocationManager.h; sourceTree = "<group>"; };
-		575CD1481B564E7300B1E77C /* NPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPLocationManager.m; sourceTree = "<group>"; };
+		575CD1401B564E7300B1E77C /* TYBeaconKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconKey.h; sourceTree = "<group>"; };
+		575CD1411B564E7300B1E77C /* TYBeaconKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconKey.m; sourceTree = "<group>"; };
+		575CD1431B564E7300B1E77C /* TYBuildingMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBuildingMonitor.h; sourceTree = "<group>"; };
+		575CD1441B564E7300B1E77C /* TYBuildingMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBuildingMonitor.m; sourceTree = "<group>"; };
+		575CD1451B564E7300B1E77C /* TYLocationFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLocationFileManager.h; sourceTree = "<group>"; };
+		575CD1461B564E7300B1E77C /* TYLocationFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLocationFileManager.m; sourceTree = "<group>"; };
+		575CD1471B564E7300B1E77C /* TYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLocationManager.h; sourceTree = "<group>"; };
+		575CD1481B564E7300B1E77C /* TYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLocationManager.m; sourceTree = "<group>"; };
 		575CD14B1B564E7300B1E77C /* IPXAlgorithmType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXAlgorithmType.h; sourceTree = "<group>"; };
 		575CD14C1B564E7300B1E77C /* IPXGeometryCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPXGeometryCalculator.cpp; sourceTree = "<group>"; };
 		575CD14D1B564E7300B1E77C /* IPXGeometryCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXGeometryCalculator.h; sourceTree = "<group>"; };
@@ -250,16 +250,14 @@
 		575CD1671B564E7300B1E77C /* IPXStepBasedEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPXStepBasedEngine.cpp; sourceTree = "<group>"; };
 		575CD1681B564E7300B1E77C /* IPXStepBasedEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXStepBasedEngine.h; sourceTree = "<group>"; };
 		575CD1691B564E7300B1E77C /* BLELocationEngineConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLELocationEngineConstants.h; sourceTree = "<group>"; };
-		575CD16D1B564E7300B1E77C /* NPBeaconFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconFilter.h; sourceTree = "<group>"; };
-		575CD16E1B564E7300B1E77C /* NPBeaconFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconFilter.m; sourceTree = "<group>"; };
-		575CD16F1B564E7300B1E77C /* NPBeaconPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconPool.h; sourceTree = "<group>"; };
-		575CD1701B564E7300B1E77C /* NPBeaconPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconPool.m; sourceTree = "<group>"; };
-		575CD1731B564E7300B1E77C /* NPBeaconFMDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconFMDBAdapter.h; sourceTree = "<group>"; };
-		575CD1741B564E7300B1E77C /* NPBeaconFMDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPBeaconFMDBAdapter.m; sourceTree = "<group>"; };
-		575CD1751B564E7300B1E77C /* NPBeaconFMDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPBeaconFMDBConstants.h; sourceTree = "<group>"; };
+		575CD16D1B564E7300B1E77C /* TYBeaconFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconFilter.h; sourceTree = "<group>"; };
+		575CD16E1B564E7300B1E77C /* TYBeaconFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconFilter.m; sourceTree = "<group>"; };
+		575CD1731B564E7300B1E77C /* TYBeaconFMDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconFMDBAdapter.h; sourceTree = "<group>"; };
+		575CD1741B564E7300B1E77C /* TYBeaconFMDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconFMDBAdapter.m; sourceTree = "<group>"; };
+		575CD1751B564E7300B1E77C /* TYBeaconFMDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconFMDBConstants.h; sourceTree = "<group>"; };
 		575CD1771B564E7300B1E77C /* AlgorithmType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlgorithmType.h; sourceTree = "<group>"; };
-		575CD1781B564E7300B1E77C /* NPLocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPLocationEngine.h; sourceTree = "<group>"; };
-		575CD1791B564E7300B1E77C /* NPLocationEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPLocationEngine.m; sourceTree = "<group>"; };
+		575CD1781B564E7300B1E77C /* TYLocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLocationEngine.h; sourceTree = "<group>"; };
+		575CD1791B564E7300B1E77C /* TYLocationEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLocationEngine.m; sourceTree = "<group>"; };
 		575CD17C1B564E7300B1E77C /* NPAlgorithmFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPAlgorithmFactory.h; sourceTree = "<group>"; };
 		575CD17D1B564E7300B1E77C /* NPAlgorithmFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPAlgorithmFactory.m; sourceTree = "<group>"; };
 		575CD17E1B564E7300B1E77C /* NPGeometryCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPGeometryCalculator.h; sourceTree = "<group>"; };
@@ -270,23 +268,23 @@
 		575CD1841B564E7300B1E77C /* NPTriangulationAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPTriangulationAlgorithm.m; sourceTree = "<group>"; };
 		575CD1861B564E7300B1E77C /* NPWeightingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPWeightingAlgorithm.h; sourceTree = "<group>"; };
 		575CD1871B564E7300B1E77C /* NPWeightingAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPWeightingAlgorithm.m; sourceTree = "<group>"; };
-		575CD18A1B564E7300B1E77C /* NPGeometryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPGeometryFactory.h; sourceTree = "<group>"; };
-		575CD18B1B564E7300B1E77C /* NPGeometryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPGeometryFactory.m; sourceTree = "<group>"; };
-		575CD18C1B564E7300B1E77C /* NPVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPVector2.h; sourceTree = "<group>"; };
-		575CD18D1B564E7300B1E77C /* NPVector2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPVector2.m; sourceTree = "<group>"; };
-		575CD18F1B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPrimitiveBeaconDBAdapter.h; sourceTree = "<group>"; };
-		575CD1901B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPrimitiveBeaconDBAdapter.m; sourceTree = "<group>"; };
-		575CD1911B564E7300B1E77C /* NPPrimitiveBeaconDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPrimitiveBeaconDBConstants.h; sourceTree = "<group>"; };
-		575CD1931B564E7300B1E77C /* NPSampeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPSampeData.h; sourceTree = "<group>"; };
-		575CD1941B564E7300B1E77C /* NPSampeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPSampeData.m; sourceTree = "<group>"; };
-		575CD1951B564E7300B1E77C /* NPStaticSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPStaticSample.h; sourceTree = "<group>"; };
-		575CD1961B564E7300B1E77C /* NPStaticSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPStaticSample.m; sourceTree = "<group>"; };
-		575CD19A1B564E7300B1E77C /* NPDistributionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPDistributionResult.h; sourceTree = "<group>"; };
-		575CD19B1B564E7300B1E77C /* NPDistributionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPDistributionResult.m; sourceTree = "<group>"; };
-		575CD19C1B564E7300B1E77C /* NPPointTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPointTester.h; sourceTree = "<group>"; };
-		575CD19D1B564E7300B1E77C /* NPPointTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPointTester.m; sourceTree = "<group>"; };
-		575CD19E1B564E7300B1E77C /* NPTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPTestResult.h; sourceTree = "<group>"; };
-		575CD19F1B564E7300B1E77C /* NPTestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPTestResult.m; sourceTree = "<group>"; };
+		575CD18A1B564E7300B1E77C /* TYGeometryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYGeometryFactory.h; sourceTree = "<group>"; };
+		575CD18B1B564E7300B1E77C /* TYGeometryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYGeometryFactory.m; sourceTree = "<group>"; };
+		575CD18C1B564E7300B1E77C /* TYVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVector2.h; sourceTree = "<group>"; };
+		575CD18D1B564E7300B1E77C /* TYVector2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVector2.m; sourceTree = "<group>"; };
+		575CD18F1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPrimitiveBeaconDBAdapter.h; sourceTree = "<group>"; };
+		575CD1901B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPrimitiveBeaconDBAdapter.m; sourceTree = "<group>"; };
+		575CD1911B564E7300B1E77C /* TYPrimitiveBeaconDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPrimitiveBeaconDBConstants.h; sourceTree = "<group>"; };
+		575CD1931B564E7300B1E77C /* TYSampeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYSampeData.h; sourceTree = "<group>"; };
+		575CD1941B564E7300B1E77C /* TYSampeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYSampeData.m; sourceTree = "<group>"; };
+		575CD1951B564E7300B1E77C /* TYStaticSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYStaticSample.h; sourceTree = "<group>"; };
+		575CD1961B564E7300B1E77C /* TYStaticSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYStaticSample.m; sourceTree = "<group>"; };
+		575CD19A1B564E7300B1E77C /* TYDistributionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDistributionResult.h; sourceTree = "<group>"; };
+		575CD19B1B564E7300B1E77C /* TYDistributionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDistributionResult.m; sourceTree = "<group>"; };
+		575CD19C1B564E7300B1E77C /* TYPointTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPointTester.h; sourceTree = "<group>"; };
+		575CD19D1B564E7300B1E77C /* TYPointTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPointTester.m; sourceTree = "<group>"; };
+		575CD19E1B564E7300B1E77C /* TYTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTestResult.h; sourceTree = "<group>"; };
+		575CD19F1B564E7300B1E77C /* TYTestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTestResult.m; sourceTree = "<group>"; };
 		575CD1A01B564E7300B1E77C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		575CD1A31B564E7300B1E77C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		575CD1A41B564E7300B1E77C /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
@@ -317,6 +315,8 @@
 		57B396E11A6361B800E72FF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		57B3989D1A6364D900E72FF5 /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos.a; path = ../../../../goeslib/libgeos.a; sourceTree = "<group>"; };
 		57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		57B5C5DB1B565EB200189FE8 /* TYBeaconPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconPool.h; sourceTree = "<group>"; };
+		57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconPool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,12 +531,12 @@
 		575CD1111B564E7300B1E77C /* Beacon */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1121B564E7300B1E77C /* NPBeacon.h */,
-				575CD1131B564E7300B1E77C /* NPBeacon.m */,
-				575CD1141B564E7300B1E77C /* NPBeaconManager.h */,
-				575CD1151B564E7300B1E77C /* NPBeaconManager.m */,
-				575CD1161B564E7300B1E77C /* NPPublicBeacon.h */,
-				575CD1171B564E7300B1E77C /* NPPublicBeacon.m */,
+				575CD1121B564E7300B1E77C /* TYBeacon.h */,
+				575CD1131B564E7300B1E77C /* TYBeacon.m */,
+				575CD1141B564E7300B1E77C /* TYBeaconManager.h */,
+				575CD1151B564E7300B1E77C /* TYBeaconManager.m */,
+				575CD1161B564E7300B1E77C /* TYPublicBeacon.h */,
+				575CD1171B564E7300B1E77C /* TYPublicBeacon.m */,
 			);
 			path = Beacon;
 			sourceTree = "<group>";
@@ -544,12 +544,12 @@
 		575CD1181B564E7300B1E77C /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1191B564E7300B1E77C /* NPCumulativeSingalPowerTD.h */,
-				575CD11A1B564E7300B1E77C /* NPCumulativeSingalPowerTD.m */,
-				575CD11B1B564E7300B1E77C /* NPMovingAverage.h */,
-				575CD11C1B564E7300B1E77C /* NPMovingAverage.m */,
-				575CD11D1B564E7300B1E77C /* NPMovingAverageTD.h */,
-				575CD11E1B564E7300B1E77C /* NPMovingAverageTD.m */,
+				575CD1191B564E7300B1E77C /* TYCumulativeSingalPowerTD.h */,
+				575CD11A1B564E7300B1E77C /* TYCumulativeSingalPowerTD.m */,
+				575CD11B1B564E7300B1E77C /* TYMovingAverage.h */,
+				575CD11C1B564E7300B1E77C /* TYMovingAverage.m */,
+				575CD11D1B564E7300B1E77C /* TYMovingAverageTD.h */,
+				575CD11E1B564E7300B1E77C /* TYMovingAverageTD.m */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -557,20 +557,20 @@
 		575CD11F1B564E7300B1E77C /* MotionDetector */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1201B564E7300B1E77C /* NPHeadingDetector.h */,
-				575CD1211B564E7300B1E77C /* NPHeadingDetector.m */,
-				575CD1221B564E7300B1E77C /* NPMagHeadingDetector.h */,
-				575CD1231B564E7300B1E77C /* NPMagHeadingDetector.m */,
-				575CD1241B564E7300B1E77C /* NPMotionDetector.h */,
-				575CD1251B564E7300B1E77C /* NPMotionDetector.m */,
-				575CD1261B564E7300B1E77C /* NPSample.h */,
-				575CD1271B564E7300B1E77C /* NPSample.m */,
-				575CD1281B564E7300B1E77C /* NPStepDetector.h */,
-				575CD1291B564E7300B1E77C /* NPStepDetector.m */,
-				575CD12A1B564E7300B1E77C /* NPStepEvent.h */,
-				575CD12B1B564E7300B1E77C /* NPStepEvent.m */,
-				575CD12C1B564E7300B1E77C /* NPVector2.h */,
-				575CD12D1B564E7300B1E77C /* NPVector2.m */,
+				575CD1201B564E7300B1E77C /* TYHeadingDetector.h */,
+				575CD1211B564E7300B1E77C /* TYHeadingDetector.m */,
+				575CD1221B564E7300B1E77C /* TYMagHeadingDetector.h */,
+				575CD1231B564E7300B1E77C /* TYMagHeadingDetector.m */,
+				575CD1241B564E7300B1E77C /* TYMotionDetector.h */,
+				575CD1251B564E7300B1E77C /* TYMotionDetector.m */,
+				575CD1261B564E7300B1E77C /* TYSample.h */,
+				575CD1271B564E7300B1E77C /* TYSample.m */,
+				575CD1281B564E7300B1E77C /* TYStepDetector.h */,
+				575CD1291B564E7300B1E77C /* TYStepDetector.m */,
+				575CD12A1B564E7300B1E77C /* TYStepEvent.h */,
+				575CD12B1B564E7300B1E77C /* TYStepEvent.m */,
+				575CD12C1B564E7300B1E77C /* TYVector2.h */,
+				575CD12D1B564E7300B1E77C /* TYVector2.m */,
 			);
 			path = MotionDetector;
 			sourceTree = "<group>";
@@ -580,8 +580,8 @@
 			children = (
 				575CD12F1B564E7300B1E77C /* DoubleRounder.h */,
 				575CD1301B564E7300B1E77C /* DoubleRounder.m */,
-				575CD1311B564E7300B1E77C /* NPPointConverter.h */,
-				575CD1321B564E7300B1E77C /* NPPointConverter.m */,
+				575CD1311B564E7300B1E77C /* TYPointConverter.h */,
+				575CD1321B564E7300B1E77C /* TYPointConverter.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -631,8 +631,8 @@
 		575CD13F1B564E7300B1E77C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1401B564E7300B1E77C /* NPBeaconKey.h */,
-				575CD1411B564E7300B1E77C /* NPBeaconKey.m */,
+				575CD1401B564E7300B1E77C /* TYBeaconKey.h */,
+				575CD1411B564E7300B1E77C /* TYBeaconKey.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -640,12 +640,12 @@
 		575CD1421B564E7300B1E77C /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1431B564E7300B1E77C /* NPBuildingMonitor.h */,
-				575CD1441B564E7300B1E77C /* NPBuildingMonitor.m */,
-				575CD1451B564E7300B1E77C /* NPLocationFileManager.h */,
-				575CD1461B564E7300B1E77C /* NPLocationFileManager.m */,
-				575CD1471B564E7300B1E77C /* NPLocationManager.h */,
-				575CD1481B564E7300B1E77C /* NPLocationManager.m */,
+				575CD1431B564E7300B1E77C /* TYBuildingMonitor.h */,
+				575CD1441B564E7300B1E77C /* TYBuildingMonitor.m */,
+				575CD1451B564E7300B1E77C /* TYLocationFileManager.h */,
+				575CD1461B564E7300B1E77C /* TYLocationFileManager.m */,
+				575CD1471B564E7300B1E77C /* TYLocationManager.h */,
+				575CD1481B564E7300B1E77C /* TYLocationManager.m */,
 			);
 			path = LocationManager;
 			sourceTree = "<group>";
@@ -746,10 +746,8 @@
 		575CD16C1B564E7300B1E77C /* BeaconFilter */ = {
 			isa = PBXGroup;
 			children = (
-				575CD16D1B564E7300B1E77C /* NPBeaconFilter.h */,
-				575CD16E1B564E7300B1E77C /* NPBeaconFilter.m */,
-				575CD16F1B564E7300B1E77C /* NPBeaconPool.h */,
-				575CD1701B564E7300B1E77C /* NPBeaconPool.m */,
+				575CD16D1B564E7300B1E77C /* TYBeaconFilter.h */,
+				575CD16E1B564E7300B1E77C /* TYBeaconFilter.m */,
 			);
 			path = BeaconFilter;
 			sourceTree = "<group>";
@@ -757,6 +755,8 @@
 		575CD1711B564E7300B1E77C /* BeaconPool */ = {
 			isa = PBXGroup;
 			children = (
+				57B5C5DB1B565EB200189FE8 /* TYBeaconPool.h */,
+				57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */,
 			);
 			path = BeaconPool;
 			sourceTree = "<group>";
@@ -764,9 +764,9 @@
 		575CD1721B564E7300B1E77C /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1731B564E7300B1E77C /* NPBeaconFMDBAdapter.h */,
-				575CD1741B564E7300B1E77C /* NPBeaconFMDBAdapter.m */,
-				575CD1751B564E7300B1E77C /* NPBeaconFMDBConstants.h */,
+				575CD1731B564E7300B1E77C /* TYBeaconFMDBAdapter.h */,
+				575CD1741B564E7300B1E77C /* TYBeaconFMDBAdapter.m */,
+				575CD1751B564E7300B1E77C /* TYBeaconFMDBConstants.h */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -775,8 +775,8 @@
 			isa = PBXGroup;
 			children = (
 				575CD1771B564E7300B1E77C /* AlgorithmType.h */,
-				575CD1781B564E7300B1E77C /* NPLocationEngine.h */,
-				575CD1791B564E7300B1E77C /* NPLocationEngine.m */,
+				575CD1781B564E7300B1E77C /* TYLocationEngine.h */,
+				575CD1791B564E7300B1E77C /* TYLocationEngine.m */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -828,7 +828,6 @@
 				575CD1891B564E7300B1E77C /* ArcGISMap */,
 				575CD18E1B564E7300B1E77C /* Database */,
 				575CD1921B564E7300B1E77C /* Entity */,
-				575CD1971B564E7300B1E77C /* NephogramMap */,
 				575CD1991B564E7300B1E77C /* Test */,
 			);
 			path = Private;
@@ -837,10 +836,10 @@
 		575CD1891B564E7300B1E77C /* ArcGISMap */ = {
 			isa = PBXGroup;
 			children = (
-				575CD18A1B564E7300B1E77C /* NPGeometryFactory.h */,
-				575CD18B1B564E7300B1E77C /* NPGeometryFactory.m */,
-				575CD18C1B564E7300B1E77C /* NPVector2.h */,
-				575CD18D1B564E7300B1E77C /* NPVector2.m */,
+				575CD18A1B564E7300B1E77C /* TYGeometryFactory.h */,
+				575CD18B1B564E7300B1E77C /* TYGeometryFactory.m */,
+				575CD18C1B564E7300B1E77C /* TYVector2.h */,
+				575CD18D1B564E7300B1E77C /* TYVector2.m */,
 			);
 			path = ArcGISMap;
 			sourceTree = "<group>";
@@ -848,9 +847,9 @@
 		575CD18E1B564E7300B1E77C /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				575CD18F1B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.h */,
-				575CD1901B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m */,
-				575CD1911B564E7300B1E77C /* NPPrimitiveBeaconDBConstants.h */,
+				575CD18F1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.h */,
+				575CD1901B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m */,
+				575CD1911B564E7300B1E77C /* TYPrimitiveBeaconDBConstants.h */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -858,38 +857,23 @@
 		575CD1921B564E7300B1E77C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1931B564E7300B1E77C /* NPSampeData.h */,
-				575CD1941B564E7300B1E77C /* NPSampeData.m */,
-				575CD1951B564E7300B1E77C /* NPStaticSample.h */,
-				575CD1961B564E7300B1E77C /* NPStaticSample.m */,
+				575CD1931B564E7300B1E77C /* TYSampeData.h */,
+				575CD1941B564E7300B1E77C /* TYSampeData.m */,
+				575CD1951B564E7300B1E77C /* TYStaticSample.h */,
+				575CD1961B564E7300B1E77C /* TYStaticSample.m */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		575CD1971B564E7300B1E77C /* NephogramMap */ = {
-			isa = PBXGroup;
-			children = (
-				575CD1981B564E7300B1E77C /* POI */,
-			);
-			path = NephogramMap;
-			sourceTree = "<group>";
-		};
-		575CD1981B564E7300B1E77C /* POI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = POI;
 			sourceTree = "<group>";
 		};
 		575CD1991B564E7300B1E77C /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				575CD19A1B564E7300B1E77C /* NPDistributionResult.h */,
-				575CD19B1B564E7300B1E77C /* NPDistributionResult.m */,
-				575CD19C1B564E7300B1E77C /* NPPointTester.h */,
-				575CD19D1B564E7300B1E77C /* NPPointTester.m */,
-				575CD19E1B564E7300B1E77C /* NPTestResult.h */,
-				575CD19F1B564E7300B1E77C /* NPTestResult.m */,
+				575CD19A1B564E7300B1E77C /* TYDistributionResult.h */,
+				575CD19B1B564E7300B1E77C /* TYDistributionResult.m */,
+				575CD19C1B564E7300B1E77C /* TYPointTester.h */,
+				575CD19D1B564E7300B1E77C /* TYPointTester.m */,
+				575CD19E1B564E7300B1E77C /* TYTestResult.h */,
+				575CD19F1B564E7300B1E77C /* TYTestResult.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1077,36 +1061,36 @@
 				575CD0FA1B564DE200B1E77C /* BaseControllerTableVC.m in Sources */,
 				575CD1CD1B564E7300B1E77C /* IPXGeometryEngine.cpp in Sources */,
 				575CD0F41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m in Sources */,
-				575CD1BB1B564E7300B1E77C /* NPPointConverter.m in Sources */,
+				575CD1BB1B564E7300B1E77C /* TYPointConverter.m in Sources */,
 				575CD1001B564DE200B1E77C /* CityTableVC.m in Sources */,
-				575CD1DE1B564E7300B1E77C /* NPPointTester.m in Sources */,
+				575CD1DE1B564E7300B1E77C /* TYPointTester.m in Sources */,
 				575CD1C51B564E7300B1E77C /* IPXTriangulationAlgorithm.cpp in Sources */,
 				575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */,
 				575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */,
 				575CD1D71B564E7300B1E77C /* NPWeightingAlgorithm.m in Sources */,
-				575CD1B31B564E7300B1E77C /* NPHeadingDetector.m in Sources */,
-				575CD1D21B564E7300B1E77C /* NPLocationEngine.m in Sources */,
-				575CD1DD1B564E7300B1E77C /* NPDistributionResult.m in Sources */,
+				575CD1B31B564E7300B1E77C /* TYHeadingDetector.m in Sources */,
+				575CD1D21B564E7300B1E77C /* TYLocationEngine.m in Sources */,
+				575CD1DD1B564E7300B1E77C /* TYDistributionResult.m in Sources */,
 				575CD1C71B564E7300B1E77C /* IPXBeacon.cpp in Sources */,
-				575CD1B01B564E7300B1E77C /* NPCumulativeSingalPowerTD.m in Sources */,
+				575CD1B01B564E7300B1E77C /* TYCumulativeSingalPowerTD.m in Sources */,
 				575CD0F91B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m in Sources */,
-				575CD1B21B564E7300B1E77C /* NPMovingAverageTD.m in Sources */,
-				575CD1AF1B564E7300B1E77C /* NPPublicBeacon.m in Sources */,
+				575CD1B21B564E7300B1E77C /* TYMovingAverageTD.m in Sources */,
+				575CD1AF1B564E7300B1E77C /* TYPublicBeacon.m in Sources */,
 				575CD0EE1B564DE200B1E77C /* BaseLocationTestVC.m in Sources */,
 				575CD0F31B564DE200B1E77C /* MultiLocationTestVC.m in Sources */,
 				575CD1C81B564E7300B1E77C /* IPXPoint.cpp in Sources */,
 				575CD1C91B564E7300B1E77C /* IPXPublicBeacon.cpp in Sources */,
 				575CD1BD1B564E7300B1E77C /* IPXRegionDBAdapter.m in Sources */,
-				575CD1D01B564E7300B1E77C /* NPBeaconPool.m in Sources */,
-				575CD1AE1B564E7300B1E77C /* NPBeaconManager.m in Sources */,
+				575CD1AE1B564E7300B1E77C /* TYBeaconManager.m in Sources */,
+				57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */,
 				575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */,
 				575CD1E31B564E7300B1E77C /* FMDatabasePool.m in Sources */,
 				575CD1D51B564E7300B1E77C /* NPLocationAlgorithm.m in Sources */,
 				575CD1E11B564E7300B1E77C /* FMDatabase.m in Sources */,
-				575CD1AD1B564E7300B1E77C /* NPBeacon.m in Sources */,
-				575CD1D91B564E7300B1E77C /* NPVector2.m in Sources */,
+				575CD1AD1B564E7300B1E77C /* TYBeacon.m in Sources */,
+				575CD1D91B564E7300B1E77C /* TYVector2.m in Sources */,
 				575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */,
-				575CD1BF1B564E7300B1E77C /* NPBeaconKey.m in Sources */,
+				575CD1BF1B564E7300B1E77C /* TYBeaconKey.m in Sources */,
 				575CD1C61B564E7300B1E77C /* IPXWeightingAlgorithm.cpp in Sources */,
 				575CD1011B564DE200B1E77C /* CreateMapJsonVC.m in Sources */,
 				575CD1041B564DE200B1E77C /* AppDelegate.m in Sources */,
@@ -1115,49 +1099,49 @@
 				575CD0FF1B564DE200B1E77C /* BuildingTableVC.m in Sources */,
 				575CD1D31B564E7300B1E77C /* NPAlgorithmFactory.m in Sources */,
 				575CD0F71B564DE200B1E77C /* MapVC.m in Sources */,
-				575CD1D11B564E7300B1E77C /* NPBeaconFMDBAdapter.m in Sources */,
+				575CD1D11B564E7300B1E77C /* TYBeaconFMDBAdapter.m in Sources */,
 				575CD0F51B564DE200B1E77C /* BeaconListForChoosingTableVC.m in Sources */,
 				575CD1CE1B564E7300B1E77C /* IPXStepBasedEngine.cpp in Sources */,
 				575CD1021B564DE200B1E77C /* FloorMapVC.m in Sources */,
 				575CD0ED1B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m in Sources */,
 				575CD0EF1B564DE200B1E77C /* BeaconFilterTestVC.m in Sources */,
-				575CD1DB1B564E7300B1E77C /* NPSampeData.m in Sources */,
+				575CD1DB1B564E7300B1E77C /* TYSampeData.m in Sources */,
 				575CD0FD1B564DE200B1E77C /* MapTableVC.m in Sources */,
 				575CD0F81B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m in Sources */,
 				575CD0FB1B564DE200B1E77C /* BLEAlgorithmTableVC.m in Sources */,
-				575CD1B51B564E7300B1E77C /* NPMotionDetector.m in Sources */,
-				575CD1B81B564E7300B1E77C /* NPStepEvent.m in Sources */,
-				575CD1B71B564E7300B1E77C /* NPStepDetector.m in Sources */,
+				575CD1B51B564E7300B1E77C /* TYMotionDetector.m in Sources */,
+				575CD1B81B564E7300B1E77C /* TYStepEvent.m in Sources */,
+				575CD1B71B564E7300B1E77C /* TYStepDetector.m in Sources */,
 				575CD1E21B564E7300B1E77C /* FMDatabaseAdditions.m in Sources */,
 				575CD1CB1B564E7300B1E77C /* IPXMovingAverage.cpp in Sources */,
 				575CD0EC1B564DE200B1E77C /* BaseMapVC.m in Sources */,
 				575CD0FC1B564DE200B1E77C /* BLEToolTableVC.m in Sources */,
-				575CD1B91B564E7300B1E77C /* NPVector2.m in Sources */,
+				575CD1B91B564E7300B1E77C /* TYVector2.m in Sources */,
 				575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */,
 				575CD0F01B564DE200B1E77C /* CppEngineCompareVC.m in Sources */,
 				575CD0F11B564DE200B1E77C /* CppEngineTestVC.m in Sources */,
 				575CD1C31B564E7300B1E77C /* IPXGeometryCalculator.cpp in Sources */,
-				575CD1C01B564E7300B1E77C /* NPBuildingMonitor.m in Sources */,
-				575CD1DC1B564E7300B1E77C /* NPStaticSample.m in Sources */,
+				575CD1C01B564E7300B1E77C /* TYBuildingMonitor.m in Sources */,
+				575CD1DC1B564E7300B1E77C /* TYStaticSample.m in Sources */,
 				575CD1031B564DE200B1E77C /* SetCurrentPlaceVC.m in Sources */,
-				575CD1C11B564E7300B1E77C /* NPLocationFileManager.m in Sources */,
+				575CD1C11B564E7300B1E77C /* TYLocationFileManager.m in Sources */,
 				575CD1E51B564E7300B1E77C /* FMResultSet.m in Sources */,
 				575CD0F61B564DE200B1E77C /* ConfigureBeaconsVC.m in Sources */,
-				575CD1D81B564E7300B1E77C /* NPGeometryFactory.m in Sources */,
+				575CD1D81B564E7300B1E77C /* TYGeometryFactory.m in Sources */,
 				575CD10D1B564E2C00B1E77C /* main.m in Sources */,
-				575CD1B61B564E7300B1E77C /* NPSample.m in Sources */,
-				575CD1B11B564E7300B1E77C /* NPMovingAverage.m in Sources */,
-				575CD1DF1B564E7300B1E77C /* NPTestResult.m in Sources */,
+				575CD1B61B564E7300B1E77C /* TYSample.m in Sources */,
+				575CD1B11B564E7300B1E77C /* TYMovingAverage.m in Sources */,
+				575CD1DF1B564E7300B1E77C /* TYTestResult.m in Sources */,
 				575CD1D61B564E7300B1E77C /* NPTriangulationAlgorithm.m in Sources */,
 				575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */,
 				575CD1CA1B564E7300B1E77C /* IPXScannedBeacon.cpp in Sources */,
-				575CD1CF1B564E7300B1E77C /* NPBeaconFilter.m in Sources */,
+				575CD1CF1B564E7300B1E77C /* TYBeaconFilter.m in Sources */,
 				575CD0F21B564DE200B1E77C /* LocationEngineTestVC.m in Sources */,
-				575CD1B41B564E7300B1E77C /* NPMagHeadingDetector.m in Sources */,
+				575CD1B41B564E7300B1E77C /* TYMagHeadingDetector.m in Sources */,
 				575CD1D41B564E7300B1E77C /* NPGeometryCalculator.m in Sources */,
 				575CD1E41B564E7300B1E77C /* FMDatabaseQueue.m in Sources */,
-				575CD1C21B564E7300B1E77C /* NPLocationManager.m in Sources */,
-				575CD1DA1B564E7300B1E77C /* NPPrimitiveBeaconDBAdapter.m in Sources */,
+				575CD1C21B564E7300B1E77C /* TYLocationManager.m in Sources */,
+				575CD1DA1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

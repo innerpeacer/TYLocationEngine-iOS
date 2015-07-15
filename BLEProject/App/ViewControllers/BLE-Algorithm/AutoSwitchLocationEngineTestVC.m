@@ -1,10 +1,10 @@
 #import "AutoSwitchLocationEngineTestVC.h"
-#import "NPBeaconManager.h"
+#import "TYBeaconManager.h"
 
 @interface AutoSwitchLocationEngineTestVC ()
 {
-    NPLocationEngine *singleLocationEngine;
-    NPLocationEngine *trippleLocationEngine;
+    TYLocationEngine *singleLocationEngine;
+    TYLocationEngine *trippleLocationEngine;
     
     // ==================================
     int currentFloor;
@@ -22,8 +22,8 @@
 {
     [super viewDidLoad];
     
-    singleLocationEngine = [NPLocationEngine locationEngineWithBeacons:self.allBeacons Type:HybridSingle];
-    trippleLocationEngine = [NPLocationEngine locationEngineWithBeacons:self.allBeacons Type:HybridTriple];
+    singleLocationEngine = [TYLocationEngine locationEngineWithBeacons:self.allBeacons Type:HybridSingle];
+    trippleLocationEngine = [TYLocationEngine locationEngineWithBeacons:self.allBeacons Type:HybridTriple];
     
     allowAutoSwitch = YES;
     if (allowAutoSwitch) {
@@ -38,7 +38,7 @@
     for (int i = 0; i < count; i++) {
         CLBeacon *cb = [beacons objectAtIndex:i];
         
-        for (NPPublicBeacon *pb in self.allBeacons.allValues) {
+        for (TYPublicBeacon *pb in self.allBeacons.allValues) {
             if (cb.minor.integerValue == pb.minor.integerValue) {
                 NSString *rssi = [NSString stringWithFormat:@"%.2f, %d", cb.accuracy,(int) cb.rssi];
                 
@@ -64,7 +64,7 @@
 }
 
 
-- (void)onStepEvent:(NPStepEvent *)stepEvent
+- (void)onStepEvent:(TYStepEvent *)stepEvent
 {
     NSLog(@"onStepEvent");
     [singleLocationEngine addStepEvent:stepEvent];

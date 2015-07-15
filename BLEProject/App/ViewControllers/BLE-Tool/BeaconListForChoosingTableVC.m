@@ -1,5 +1,5 @@
 #import "BeaconListForChoosingTableVC.h"
-#import "NPPrimitiveBeaconDBAdapter.h"
+#import "TYPrimitiveBeaconDBAdapter.h"
 #import "TYUserDefaults.h"
 
 @interface BeaconListForChoosingTableVC ()
@@ -17,14 +17,14 @@
     
     currentBuilding = [TYUserDefaults getDefaultBuilding];
     
-    NPPrimitiveBeaconDBAdapter *db = [[NPPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuilding];
+    TYPrimitiveBeaconDBAdapter *db = [[TYPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuilding];
     [db open];
     NSArray *primitiveBeacons = [db getAllPrimitiveBeacons];
     [db close];
     
     beacons = [primitiveBeacons sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NPBeacon *b1 = (NPBeacon *)obj1;
-        NPBeacon *b2 = (NPBeacon *)obj2;
+        TYBeacon *b1 = (TYBeacon *)obj1;
+        TYBeacon *b2 = (TYBeacon *)obj2;
         
         if (b1.major.intValue != b2.major.intValue) {
             return b1.major.intValue > b2.major.intValue;
@@ -43,7 +43,7 @@
     }
     
     if (self.delegate) {
-        NPBeacon *beacon = [beacons objectAtIndex:indexPath.row];
+        TYBeacon *beacon = [beacons objectAtIndex:indexPath.row];
         [self.delegate didSelectBeacon:beacon];
     }
     
@@ -74,7 +74,7 @@
         return cell;
     }
     
-    NPBeacon *beacon = [beacons objectAtIndex:indexPath.row];
+    TYBeacon *beacon = [beacons objectAtIndex:indexPath.row];
     
     NSString *str = [NSString stringWithFormat:@"Major: %d, Minor: %d, Tag: %@", beacon.major.intValue, beacon.minor.intValue, beacon.tag];
     cell.textLabel.text = str;

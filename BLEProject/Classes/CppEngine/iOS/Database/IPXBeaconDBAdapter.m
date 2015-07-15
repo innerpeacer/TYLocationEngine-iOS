@@ -1,7 +1,7 @@
 
 #import "IPXBeaconDBAdapter.h"
 #import <sqlite3.h>
-#import "NPPointConverter.h"
+#import "TYPointConverter.h"
 #import "IPXBeaconDBConstants.h"
 
 @interface IPXBeaconDBAdapter()
@@ -50,7 +50,7 @@
     if (sqlite3_prepare_v2(_database, selectSql, -1, &statement, nil) == SQLITE_OK) {
         while (sqlite3_step(statement) == SQLITE_ROW) {
             NSData *geoData = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 0) length:sqlite3_column_bytes(statement, 0)];
-            double* xyz = [NPPointConverter xyzFromNSData:geoData];
+            double* xyz = [TYPointConverter xyzFromNSData:geoData];
             double x = xyz[0];
             double y = xyz[1];
             
@@ -61,7 +61,7 @@
             int floor = sqlite3_column_int(statement, 4);
             
             TYLocalPoint *location = [TYLocalPoint pointWithX:x Y:y Floor:floor];
-            NPPublicBeacon *beacon = [NPPublicBeacon beaconWithUUID:uuid Major:@(major) Minor:@(minor) Tag:nil Location:location ShopGid:nil];
+            TYPublicBeacon *beacon = [TYPublicBeacon beaconWithUUID:uuid Major:@(major) Minor:@(minor) Tag:nil Location:location ShopGid:nil];
             [array addObject:beacon];
         }
     }
@@ -70,7 +70,7 @@
     return array;
 }
 
-- (NPPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
+- (TYPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_FLOOR, FIELD_NP_BEACON_SHOPID, TABLE_BEACON];
     NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d and %@ = %d ",FIELD_BEACON_MAJOR, major.intValue, FIELD_BEACON_MINOR, minor.intValue];
@@ -79,11 +79,11 @@
     const char *selectSql = [sql UTF8String];
     sqlite3_stmt *statement;
 
-    NPPublicBeacon *beacon = nil;
+    TYPublicBeacon *beacon = nil;
     if (sqlite3_prepare_v2(_database, selectSql, -1, &statement, nil) == SQLITE_OK) {
         if (sqlite3_step(statement) == SQLITE_ROW) {
             NSData *geoData = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 0) length:sqlite3_column_bytes(statement, 0)];
-            double* xyz = [NPPointConverter xyzFromNSData:geoData];
+            double* xyz = [TYPointConverter xyzFromNSData:geoData];
             double x = xyz[0];
             double y = xyz[1];
             
@@ -92,7 +92,7 @@
             int floor = sqlite3_column_int(statement, 2);
             
             TYLocalPoint *location = [TYLocalPoint pointWithX:x Y:y Floor:floor];
-            beacon = [NPPublicBeacon beaconWithUUID:uuid Major:major Minor:minor Tag:nil Location:location ShopGid:nil];
+            beacon = [TYPublicBeacon beaconWithUUID:uuid Major:major Minor:minor Tag:nil Location:location ShopGid:nil];
         }
     }
     sqlite3_finalize(statement);

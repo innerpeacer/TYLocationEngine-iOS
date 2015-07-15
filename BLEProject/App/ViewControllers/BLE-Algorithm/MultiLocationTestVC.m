@@ -7,13 +7,13 @@
 //
 
 #import "MultiLocationTestVC.h"
-#import "NPLocationEngine.h"
-#import "NPGeometryFactory.h"
+#import "TYLocationEngine.h"
+#import "TYGeometryFactory.h"
 
 @interface MultiLocationTestVC()
 {
-    NPLocationEngine *quadraticLocationEngine;
-    NPLocationEngine *linearLocationEngine;
+    TYLocationEngine *quadraticLocationEngine;
+    TYLocationEngine *linearLocationEngine;
 }
 
 @end
@@ -24,8 +24,8 @@
 {
     [super viewDidLoad];
     
-    quadraticLocationEngine = [NPLocationEngine locationEngineWithBeacons:self.allBeacons Type:QuadraticWeighting];
-    linearLocationEngine = [NPLocationEngine locationEngineWithBeacons:self.allBeacons Type:LinearWeighting];
+    quadraticLocationEngine = [TYLocationEngine locationEngineWithBeacons:self.allBeacons Type:QuadraticWeighting];
+    linearLocationEngine = [TYLocationEngine locationEngineWithBeacons:self.allBeacons Type:LinearWeighting];
 }
 
 - (void)showHintRssiForBeacons:(NSArray *)beacons
@@ -33,7 +33,7 @@
 
 }
 
-- (void)onStepEvent:(NPStepEvent *)stepEvent
+- (void)onStepEvent:(TYStepEvent *)stepEvent
 {
     NSLog(@"onStepEvent");
     
@@ -48,7 +48,7 @@
     [self showSimpleResultForLocationEngine:quadraticLocationEngine withColor:[UIColor greenColor] Size:CGSizeMake(5, 5)];    
 }
 
-- (void)showSimpleResultForLocationEngine:(NPLocationEngine *)engine withColor:(UIColor *)color  Size:(CGSize)size
+- (void)showSimpleResultForLocationEngine:(TYLocationEngine *)engine withColor:(UIColor *)color  Size:(CGSize)size
 {
     [engine processBeacons:self.scannedBeacons];
     TYLocalPoint *location = [engine getLocation];
@@ -60,7 +60,7 @@
 
 }
 
-- (void)showBufferedResultForLocationEngine:(NPLocationEngine *)engine Size:(CGSize)size
+- (void)showBufferedResultForLocationEngine:(TYLocationEngine *)engine Size:(CGSize)size
 {
     [engine processBeacons:self.scannedBeacons];
     TYLocalPoint *location = [engine getLocation];

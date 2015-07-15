@@ -7,18 +7,18 @@
 //
 
 #import "CppEngineTestVC.h"
-#import "NPBeaconFMDBAdapter.h"
+#import "TYBeaconFMDBAdapter.h"
 
 #import <TYMapSDK/TYMapSDK.h>
 
-#import "NPLocationManager.h"
+#import "TYLocationManager.h"
 #import "TYRegionManager.h"
 #import "TYUserDefaults.h"
 #import "AppConstants.h"
 
-#import "NPBuildingMonitor.h"
+#import "TYBuildingMonitor.h"
 
-@interface CppEngineTestVC () <NPLocationManagerDelegate>
+@interface CppEngineTestVC () <TYLocationManagerDelegate>
 {
     TYGraphicsLayer *hintLayer;
     TYGraphicsLayer *resultLayer;
@@ -26,7 +26,7 @@
     
     CLBeaconRegion *publicBeaconRegion;
 
-    NPLocationManager *locationManager;
+    TYLocationManager *locationManager;
     
     TYPictureMarkerSymbol *pms;
     TYPathCalibration *pathCalibration;
@@ -88,7 +88,7 @@
 - (void)initLocationSettings
 {
     publicBeaconRegion = [TYRegionManager defaultRegion];
-    locationManager = [[NPLocationManager alloc] initWithBuilding:[TYUserDefaults getDefaultBuilding]];
+    locationManager = [[TYLocationManager alloc] initWithBuilding:[TYUserDefaults getDefaultBuilding]];
 
     
     [locationManager setLimitBeaconNumber:YES];
@@ -101,7 +101,7 @@
 
 }
 
-- (void)NPLocationManager:(NPLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
 {
     [resultLayer removeAllGraphics];
     
@@ -122,12 +122,12 @@
     NSLog(@"didClickAtPoint: %f, %f", mappoint.x, mappoint.y);
 }
 
-- (void)NPLocationManager:(NPLocationManager *)manager didUpdateDeviceHeading:(double)newHeading
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading
 {
     [self.mapView processDeviceRotation:newHeading];
 }
 
-- (void)NPLocationManagerdidFailUpdateLocation:(NPLocationManager *)manager
+- (void)NPLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager
 {
     NSLog(@"NPLocationManagerdidFailUpdateLocation");
     [self.mapView removeLocation];
@@ -136,11 +136,11 @@
 - (IBAction)publicSwitchToggled:(id)sender {
     if (self.publicSwitch.on) {
         
-        NPBeaconFMDBAdapter *pdb = [[NPBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
+        TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [pdb open];
         
         NSArray *array = [pdb getAllNephogramBeacons];
-        for (NPPublicBeacon *pb in array)
+        for (TYPublicBeacon *pb in array)
         {
             if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {
                 continue;

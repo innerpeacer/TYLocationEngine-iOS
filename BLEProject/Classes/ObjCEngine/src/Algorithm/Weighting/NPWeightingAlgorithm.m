@@ -8,7 +8,7 @@
 
 #import "NPWeightingAlgorithm.h"
 #import <CoreLocation/CoreLocation.h>
-#import "NPPublicBeacon.h"
+#import "TYPublicBeacon.h"
 #import "BLELocationEngineConstants.h"
 
 @interface NPLinearWeightingAlgorithm : NPWeightingAlgorithm
@@ -61,8 +61,8 @@
 
     for (int i = 0; i < self.nearestBeacons.count; ++i) {
         CLBeacon *b = self.nearestBeacons[i];
-        NSNumber *bkey = [NPBeaconKey beaconKeyForCLBeacon:b];;
-        NPPublicBeacon *pb = [self.beaconDictionary objectForKey:bkey];
+        NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:b];;
+        TYPublicBeacon *pb = [self.beaconDictionary objectForKey:bkey];
         
         double weighting = 1.0/b.accuracy;
         [weightingArray addObject:@(weighting)];
@@ -95,8 +95,8 @@
     
     for (int i = 0; i < self.nearestBeacons.count; ++i) {
         CLBeacon *b = self.nearestBeacons[i];
-        NSNumber *bkey = [NPBeaconKey beaconKeyForCLBeacon:b];;
-        NPPublicBeacon *pb = [self.beaconDictionary objectForKey:bkey];
+        NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:b];;
+        TYPublicBeacon *pb = [self.beaconDictionary objectForKey:bkey];
         
         double weighting = 1.0/pow(b.accuracy, 2);
         [weightingArray addObject:@(weighting)];

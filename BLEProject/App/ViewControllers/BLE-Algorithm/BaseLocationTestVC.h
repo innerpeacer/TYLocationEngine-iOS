@@ -11,14 +11,14 @@
 #import <TYMapSDK/TYMapSDK.h>
 #import "BaseMapVC.h"
 
-#import "NPBeaconFMDBAdapter.h"
+#import "TYBeaconFMDBAdapter.h"
 
-#import "NPStepEvent.h"
+#import "TYStepEvent.h"
 
 #import "TYRegionManager.h"
-#import "NPLocationEngine.h"
+#import "TYLocationEngine.h"
 
-#import "NPBeaconManager.h"
+#import "TYBeaconManager.h"
 
 @interface BaseLocationTestVC : BaseMapVC
 
@@ -33,7 +33,7 @@
 
 
 - (void)processLocationResult;
-- (void)onStepEvent:(NPStepEvent *)stepEvent;
+- (void)onStepEvent:(TYStepEvent *)stepEvent;
 - (void)showHintRssiForBeacons:(NSArray *)beacons;
 
 @end

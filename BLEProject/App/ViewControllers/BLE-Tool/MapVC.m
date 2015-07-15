@@ -2,8 +2,8 @@
 
 #import <TYMapSDK/TYMapSDK.h>
 
-#import "NPGeometryFactory.h"
-#import "NPVector2.h"
+#import "TYGeometryFactory.h"
+#import "TYVector2.h"
 
 @interface MapVC()
 {
@@ -43,7 +43,7 @@
     
     [graphicLayer removeAllGraphics];
     
-    AGSPolygon *polygon = [NPGeometryFactory convexHullFromPoints:pointsArray];
+    AGSPolygon *polygon = [TYGeometryFactory convexHullFromPoints:pointsArray];
     if (polygon != nil) {
         AGSSimpleFillSymbol *sfs = [AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:0.5] outlineColor:[UIColor redColor]];
         [graphicLayer addGraphic:[AGSGraphic graphicWithGeometry:polygon symbol:sfs attributes:nil]];

@@ -6,11 +6,11 @@
 
 #define DEFAULT_MAP_ROOT @"Map"
 
-#import "NPBuildingMonitor.h"
+#import "TYBuildingMonitor.h"
 
 @interface AppDelegate()
 {
-    NPBuildingMonitor *monitor;
+    TYBuildingMonitor *monitor;
 }
 
 @end
@@ -33,7 +33,7 @@
 
 - (void)testMonitor
 {
-    monitor = [[NPBuildingMonitor alloc] initMonitor];
+    monitor = [[TYBuildingMonitor alloc] initMonitor];
     [monitor start];
 }
 

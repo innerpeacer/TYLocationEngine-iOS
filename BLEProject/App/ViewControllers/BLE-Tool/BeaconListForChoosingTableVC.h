@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "NPBeacon.h"
+#import "TYBeacon.h"
 
 @protocol BeaconSelectedDelegate <NSObject>
 
-- (void)didSelectBeacon:(NPBeacon *)beacon;
+- (void)didSelectBeacon:(TYBeacon *)beacon;
 
 @end
 

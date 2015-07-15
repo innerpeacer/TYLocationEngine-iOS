@@ -7,20 +7,20 @@
 //
 
 #import "IPXLocationEngine.h"
-#import "NPMotionDetector.h"
+#import "TYMotionDetector.h"
 
 #import "ILocationEngine.h"
 #import "IPXStepBasedEngine.h"
 #import "IPXScannedBeacon.h"
 #import "IPXBeaconDBAdapter.h"
-#import "NPBeaconKey.h"
-#import "NPBeaconManager.h"
+#import "TYBeaconKey.h"
+#import "TYBeaconManager.h"
 
 #define DEFAULT_MAX_BEACON_NUMBER_FOR_PROCESSING 9
 
-@interface IPXLocationEngine() <NPMotionDetectorDelegate, NPBeaconManagerDelegate>
+@interface IPXLocationEngine() <TYMotionDetectorDelegate, NPBeaconManagerDelegate>
 {
-    NPBeaconManager *beaconManager;
+    TYBeaconManager *beaconManager;
     CLBeaconRegion *beaconRegion;
     
     NSMutableArray *scannedBeacons;
@@ -28,7 +28,7 @@
     
     ILocationEngine *locationEngine;
     vector<const IPXScannedBeacon *> *pScannedBeacons;
-    NPMotionDetector *motionDetector;
+    TYMotionDetector *motionDetector;
 
     BOOL isStarted;
     
@@ -51,10 +51,10 @@
         limitBeaconNumber = YES;
         maxBeaconNumberForProcessing = DEFAULT_MAX_BEACON_NUMBER_FOR_PROCESSING;
         
-        beaconManager = [[NPBeaconManager alloc] init];
+        beaconManager = [[TYBeaconManager alloc] init];
         beaconManager.delegate = self;
         
-        motionDetector = [[NPMotionDetector alloc] init];
+        motionDetector = [[TYMotionDetector alloc] init];
         motionDetector.delegate = self;
         
         scannedBeacons = [[NSMutableArray alloc] init];
@@ -82,8 +82,8 @@
     allBeacons = [[NSMutableDictionary alloc] init];
     vector<IPXPublicBeacon> publicBeacons;
     
-    for(NPPublicBeacon *pb in array){
-        NSNumber *bkey = [NPBeaconKey beaconKeyForNPBeacon:pb];
+    for(TYPublicBeacon *pb in array){
+        NSNumber *bkey = [TYBeaconKey beaconKeyForNPBeacon:pb];
         
         [allBeacons setObject:pb forKey:bkey];
         
@@ -145,7 +145,7 @@
 }
 
 
-- (void)beaconManager:(NPBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+- (void)beaconManager:(TYBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     if (beacons.count == 0) {
         return;
@@ -219,7 +219,7 @@
     for (int i = 0; i < index; ++i) {
         CLBeacon *beacon = [scannedBeacons objectAtIndex:i];
         NSNumber *bKey = @(beacon.major.intValue * 100000 + beacon.minor.intValue);
-        NPPublicBeacon *pb = [allBeacons objectForKey:bKey];
+        TYPublicBeacon *pb = [allBeacons objectForKey:bKey];
         
         if (![frequencyMap.allKeys containsObject:@(pb.location.floor)]) {
             [frequencyMap setObject:@(0) forKey:@(pb.location.floor)];
@@ -261,9 +261,9 @@
     
     NSMutableArray *toRemove = [[NSMutableArray alloc] init];
     for (CLBeacon *b in scannedBeacons) {
-        NSNumber *bkey = [NPBeaconKey beaconKeyForCLBeacon:b];
+        NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:b];
         
-        NPBeacon *sb = [allBeacons objectForKey:bkey];
+        TYBeacon *sb = [allBeacons objectForKey:bkey];
         if (sb == nil) {
             [toRemove addObject:b];
         }
@@ -272,12 +272,12 @@
 }
 
 
-- (void)motionDetector:(NPMotionDetector *)detector onStepEvent:(NPStepEvent *)stepEvent
+- (void)motionDetector:(TYMotionDetector *)detector onStepEvent:(TYStepEvent *)stepEvent
 {
     locationEngine->addStepEvent();
 }
 
-- (void)motionDetector:(NPMotionDetector *)detector onHeadingChanged:(double)heading
+- (void)motionDetector:(TYMotionDetector *)detector onHeadingChanged:(double)heading
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(IPXLocationEngine:headingChanged:)]) {
         [self.delegate IPXLocationEngine:self headingChanged:heading];
