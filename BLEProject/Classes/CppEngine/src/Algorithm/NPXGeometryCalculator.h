@@ -8,11 +8,11 @@
 #ifndef NPXGEOMETRYCALCULATOR_H_
 #define NPXGEOMETRYCALCULATOR_H_
 
-#include "NPXPoint.h"
+#include "IPXPoint.h"
 
 using namespace Innerpeacer::BLELocationEngine;
 
-NPXPoint scalePointWithCenter(NPXPoint center, NPXPoint scaledPoint,
+IPXPoint scalePointWithCenter(IPXPoint center, IPXPoint scaledPoint,
 		double length);
 
 #endif /* NPXGEOMETRYCALCULATOR_H_ */

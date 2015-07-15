@@ -16,15 +16,15 @@ ILocationEngine *CreateNPXStepBaseTriangulationEngine(NPXAlgorithmType type)
     return new NPXStepBasedEngine(type);
 }
 
-void NPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::NPXPublicBeacon> &beacons ) {
+void NPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::IPXPublicBeacon> &beacons ) {
     if (algorithm) {
         delete algorithm;
     }
     
     algorithm = CreateLocationAlgorithm(beacons, algorithmType);
     
-    xMovingAverage = NPXMovingAverage(DefaultMovingAverageWindow);
-    yMovingAverage = NPXMovingAverage(DefaultMovingAverageWindow);
+    xMovingAverage = IPXMovingAverage(DefaultMovingAverageWindow);
+    yMovingAverage = IPXMovingAverage(DefaultMovingAverageWindow);
     
     stepCount = DefaultStep;
     
@@ -32,12 +32,12 @@ void NPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::
 }
 
 
-void NPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEngine::NPXScannedBeacon *> &beacons) {
+void NPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEngine::IPXScannedBeacon *> &beacons) {
     algorithm->setNearestBeacons(beacons);
     
 //    printf("NPXStepBasedTEngine: Here OK!");
     
-    NPXPoint newLocation = getIndependentLocation();
+    IPXPoint newLocation = getIndependentLocation();
     
     if (newLocation == INVALID_POINT) {
         return;
@@ -54,11 +54,11 @@ void NPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEng
         if (stepCount == DefaultStep) {
             xMovingAverage.push(newLocation.getX());
             yMovingAverage.push(newLocation.getY());
-            currentDisplayLocation = NPXPoint(xMovingAverage.getAverage(),
+            currentDisplayLocation = IPXPoint(xMovingAverage.getAverage(),
                                               yMovingAverage.getAverage(), newLocation.getFloor());
         } else {
             double length = stepCount * DefaultStepLength;
-            double distance = NPXPoint::DistanceBetween(newLocation,
+            double distance = IPXPoint::DistanceBetween(newLocation,
                                                         currentAnchorLocation);
             
             if (distance < length) {
@@ -87,11 +87,11 @@ void NPXStepBasedEngine::reset()
     currentDisplayLocation = INVALID_POINT;
 }
 
-NPXPoint NPXStepBasedEngine::getLocation() const {
+IPXPoint NPXStepBasedEngine::getLocation() const {
     return currentDisplayLocation;
 }
 
-NPXPoint NPXStepBasedEngine::getIndependentLocation() {
-    NPXPoint currentLocation = algorithm->calculationLocation();
+IPXPoint NPXStepBasedEngine::getIndependentLocation() {
+    IPXPoint currentLocation = algorithm->calculationLocation();
     return currentLocation;
 }

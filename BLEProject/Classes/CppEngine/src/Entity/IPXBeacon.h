@@ -1,5 +1,5 @@
 /*
- * NPXBeacon.h
+ * IPXBeacon.h
  *
  *  Created on: 2014-9-2
  *      Author: innerpeacer
@@ -15,26 +15,26 @@ using namespace std;
 namespace Innerpeacer {
 namespace BLELocationEngine {
 
-class NPXBeacon {
+class IPXBeacon {
 protected:
 	string uuid;
 	uint16_t major;
 	uint16_t minor;
 
 public:
-    NPXBeacon()
+    IPXBeacon()
     {
         
     }
     
-	NPXBeacon(const char *uuid, uint16_t major, uint16_t minor) :
+	IPXBeacon(const char *uuid, uint16_t major, uint16_t minor) :
 			uuid(uuid), major(major), minor(minor) {
 		for (int i = 0; i < this->uuid.size(); ++i) {
 			this->uuid[i] = toupper((int) this->uuid[i]);
 		}
 	}
 
-	virtual ~NPXBeacon() {
+	virtual ~IPXBeacon() {
 	}
 
 	uint16_t getMajor() const {
@@ -55,7 +55,7 @@ public:
 
 class hash_beacon_key {
 public:
-	size_t operator()(const NPXBeacon &key) const {
+	size_t operator()(const IPXBeacon &key) const {
 		hash<string> hash;
 		size_t h = hash(key.uuid) * 31;
 		h += key.major * 31;
@@ -66,7 +66,7 @@ public:
 
 class equal_beacon_key {
 public:
-	bool operator()(const NPXBeacon &key1, const NPXBeacon &key2) const {
+	bool operator()(const IPXBeacon &key1, const IPXBeacon &key2) const {
 		return strcasecmp(key1.uuid.c_str(), key2.uuid.c_str()) == 0
 				&& key1.major == key2.major && key1.minor == key2.minor;
 	}

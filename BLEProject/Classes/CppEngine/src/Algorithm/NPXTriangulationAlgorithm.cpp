@@ -11,16 +11,16 @@
 #define DEFAULT_NUM_FOR_TRIANGULATION 4
 
 
-NPXPoint NPXTriangulationAlgorithm::pointFor(const NPXPoint &p1, double a1,const NPXPoint &p2, double a2)
+IPXPoint NPXTriangulationAlgorithm::pointFor(const IPXPoint &p1, double a1,const IPXPoint &p2, double a2)
 {
     double sum = a1 + a2;
     double x = (a1 * p2.getX() + a2 * p1.getX()) / sum;
     double y = (a1 * p2.getY() + a2 * p1.getY()) / sum;
     
-    return NPXPoint(x, y, p1.getFloor());
+    return IPXPoint(x, y, p1.getFloor());
 }
 
-NPXPoint NPXTriangulationAlgorithm::calculateBeaconLessThanThree()
+IPXPoint NPXTriangulationAlgorithm::calculateBeaconLessThanThree()
 {
     if (nearestBeacons.size() == 1) {
         return calculateOneBeacon(nearestBeacons.at(0));
@@ -32,57 +32,57 @@ NPXPoint NPXTriangulationAlgorithm::calculateBeaconLessThanThree()
     return INVALID_POINT;
 }
 
-NPXPoint NPXTriangulationAlgorithm::calculateOneBeacon(const NPXScannedBeacon *beacon)
+IPXPoint NPXTriangulationAlgorithm::calculateOneBeacon(const IPXScannedBeacon *beacon)
 {
     if (beacon->getProximity() == NPXProximityImmediate
         || beacon->getProximity() == NPXProximityNear) {
-        NPXPublicBeacon pb = GetPublicBeacon(*beacon);
-        NPXPoint location = pb.getLocation();
-        return NPXPoint(location);
+        IPXPublicBeacon pb = GetPublicBeacon(*beacon);
+        IPXPoint location = pb.getLocation();
+        return IPXPoint(location);
     }
     return INVALID_POINT;
 }
 
-NPXPoint NPXTriangulationAlgorithm::calculateTwoBeacons(const NPXScannedBeacon *b1, const NPXScannedBeacon *b2)
+IPXPoint NPXTriangulationAlgorithm::calculateTwoBeacons(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2)
 {
-    const NPXPublicBeacon pb1 = GetPublicBeacon(*b1);
-    const NPXPublicBeacon pb2 = GetPublicBeacon(*b2);
+    const IPXPublicBeacon pb1 = GetPublicBeacon(*b1);
+    const IPXPublicBeacon pb2 = GetPublicBeacon(*b2);
     
-    NPXPoint p1 = pb1.getLocation();
-    NPXPoint p2 = pb2.getLocation();
+    IPXPoint p1 = pb1.getLocation();
+    IPXPoint p2 = pb2.getLocation();
     
     return pointFor(p1, b1->getAccuracy(), p2, b2->getAccuracy());
 }
 
-NPXPoint NPXTriangulationAlgorithm::singleTriangulation(const NPXScannedBeacon *b1, const NPXScannedBeacon *b2,const NPXScannedBeacon *b3)
+IPXPoint NPXTriangulationAlgorithm::singleTriangulation(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2,const IPXScannedBeacon *b3)
 {
-    const NPXPublicBeacon pb1 = GetPublicBeacon(*b1);
-    const NPXPublicBeacon pb2 = GetPublicBeacon(*b2);
-    const NPXPublicBeacon pb3 = GetPublicBeacon(*b3);
+    const IPXPublicBeacon pb1 = GetPublicBeacon(*b1);
+    const IPXPublicBeacon pb2 = GetPublicBeacon(*b2);
+    const IPXPublicBeacon pb3 = GetPublicBeacon(*b3);
     
-    NPXPoint p1 = pb1.getLocation();
-    NPXPoint p2 = pb2.getLocation();
-    NPXPoint p3 = pb3.getLocation();
+    IPXPoint p1 = pb1.getLocation();
+    IPXPoint p2 = pb2.getLocation();
+    IPXPoint p3 = pb3.getLocation();
     
-    NPXPoint p12 = pointFor(p1, b1->getAccuracy(), p2, b2->getAccuracy());
-    NPXPoint p13 = pointFor(p1, b1->getAccuracy(), p3, b3->getAccuracy());
+    IPXPoint p12 = pointFor(p1, b1->getAccuracy(), p2, b2->getAccuracy());
+    IPXPoint p13 = pointFor(p1, b1->getAccuracy(), p3, b3->getAccuracy());
     
-    NPXPoint result = pointFor(p12, b2->getAccuracy(), p13, b3->getAccuracy());
+    IPXPoint result = pointFor(p12, b2->getAccuracy(), p13, b3->getAccuracy());
     result.setFloor(pb1.getLocation().getFloor());
     
     return result;
 }
 
-NPXPoint NPXTriangulationAlgorithm::tripleTriangulation(const NPXScannedBeacon *b1, const NPXScannedBeacon *b2, const NPXScannedBeacon *b3)
+IPXPoint NPXTriangulationAlgorithm::tripleTriangulation(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2, const IPXScannedBeacon *b3)
 {
-    NPXPoint t123 = singleTriangulation(b1, b2, b3);
-    NPXPoint t231 = singleTriangulation(b2, b3, b1);
-    NPXPoint t312 = singleTriangulation(b3, b1, b2);
+    IPXPoint t123 = singleTriangulation(b1, b2, b3);
+    IPXPoint t231 = singleTriangulation(b2, b3, b1);
+    IPXPoint t312 = singleTriangulation(b3, b1, b2);
     
     double x = (t123.getX() + t231.getX() + t312.getX()) / 3.0;
     double y = (t123.getY() + t231.getY() + t312.getY()) / 3.0;
     
-    return NPXPoint(x, y, t123.getFloor());
+    return IPXPoint(x, y, t123.getFloor());
 }
 
 
@@ -91,14 +91,14 @@ namespace Innerpeacer {
 
         class NPXSingleTriangulationAlgorithm : public NPXTriangulationAlgorithm {
         public:
-            NPXSingleTriangulationAlgorithm(const vector<NPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXSingle) {}
-            const NPXPoint calculationLocation();
+            NPXSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXSingle) {}
+            const IPXPoint calculationLocation();
             
         protected:
             
         };
         
-        const NPXPoint NPXSingleTriangulationAlgorithm::calculationLocation()
+        const IPXPoint NPXSingleTriangulationAlgorithm::calculationLocation()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -117,16 +117,16 @@ namespace Innerpeacer {
         
         class NPXTrippleTriangulationAlgorithm : public NPXTriangulationAlgorithm {
         public:
-            NPXTrippleTriangulationAlgorithm(const vector<NPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXTripple) {}
-            const NPXPoint calculationLocation();
+            NPXTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXTripple) {}
+            const IPXPoint calculationLocation();
         };
         
-        const NPXPoint NPXTrippleTriangulationAlgorithm::calculationLocation()
+        const IPXPoint NPXTrippleTriangulationAlgorithm::calculationLocation()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
             } else {
-                return tripleTriangulation((NPXScannedBeacon *)nearestBeacons.at(0), (NPXScannedBeacon *)nearestBeacons.at(1), (NPXScannedBeacon *)nearestBeacons.at(2));
+                return tripleTriangulation((IPXScannedBeacon *)nearestBeacons.at(0), (IPXScannedBeacon *)nearestBeacons.at(1), (IPXScannedBeacon *)nearestBeacons.at(2));
             }
             return INVALID_POINT;
         }
@@ -138,21 +138,21 @@ namespace Innerpeacer {
         
         class NPXHybridSingleTriangulationAlgorithm : public NPXTriangulationAlgorithm {
         public:
-            NPXHybridSingleTriangulationAlgorithm(const vector<NPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXHybridSingle) {}
-            const NPXPoint calculationLocation();
+            NPXHybridSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXHybridSingle) {}
+            const IPXPoint calculationLocation();
             
         private:
-            NPXPoint calculateLocationWithAverage3();
-            NPXPoint calculateLocationWithAverage4();
+            IPXPoint calculateLocationWithAverage3();
+            IPXPoint calculateLocationWithAverage4();
         };
         
-        const NPXPoint NPXHybridSingleTriangulationAlgorithm::calculationLocation()
+        const IPXPoint NPXHybridSingleTriangulationAlgorithm::calculationLocation()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
             } else {
-                const NPXScannedBeacon *b1 = nearestBeacons.at(0);
-                const NPXScannedBeacon *b2 = nearestBeacons.at(1);
+                const IPXScannedBeacon *b1 = nearestBeacons.at(0);
+                const IPXScannedBeacon *b2 = nearestBeacons.at(1);
                 
                 if (b1->getAccuracy() / b2->getAccuracy() < 0.33) {
                     return calculateLocationWithAverage3();
@@ -163,7 +163,7 @@ namespace Innerpeacer {
             return INVALID_POINT;
         }
         
-        NPXPoint NPXHybridSingleTriangulationAlgorithm::calculateLocationWithAverage3()
+        IPXPoint NPXHybridSingleTriangulationAlgorithm::calculateLocationWithAverage3()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -172,11 +172,11 @@ namespace Innerpeacer {
             if (nearestBeacons.size() >= 3) {
                 int count = (int)std::min((int)DEFAULT_NUM_FOR_TRIANGULATION,(int)nearestBeacons.size());
                 
-                vector<NPXPoint> pointVector;
+                vector<IPXPoint> pointVector;
                 for (int i = 0; i < 1; ++i) {
                     for (int j = i + 1; j < count; ++j) {
                         for (int k = j + 1; k < count; ++k) {
-                            NPXPoint p = singleTriangulation(nearestBeacons.at(i), nearestBeacons.at(j), nearestBeacons.at(k));
+                            IPXPoint p = singleTriangulation(nearestBeacons.at(i), nearestBeacons.at(j), nearestBeacons.at(k));
                             pointVector.insert(pointVector.end(), p);
                         }
                     }
@@ -186,21 +186,21 @@ namespace Innerpeacer {
                 double ySum = 0.0;
                 int pointCount = (int) pointVector.size();
                 
-                vector<NPXPoint>::iterator iter;
+                vector<IPXPoint>::iterator iter;
                 for (iter = pointVector.begin(); iter != pointVector.end(); ++iter) {
                     xSum += iter->getX();
                     ySum += iter->getY();
                 }
                 
-                NPXPublicBeacon npb = GetPublicBeacon(*(nearestBeacons.at(0)));
+                IPXPublicBeacon npb = GetPublicBeacon(*(nearestBeacons.at(0)));
                 
-                return NPXPoint(xSum/pointCount, ySum/pointCount, npb.getLocation().getFloor());
+                return IPXPoint(xSum/pointCount, ySum/pointCount, npb.getLocation().getFloor());
             }
             
             return INVALID_POINT;
         }
         
-        NPXPoint NPXHybridSingleTriangulationAlgorithm::calculateLocationWithAverage4()
+        IPXPoint NPXHybridSingleTriangulationAlgorithm::calculateLocationWithAverage4()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -209,11 +209,11 @@ namespace Innerpeacer {
             if (nearestBeacons.size() >= 3) {
                 int count = (int)std::min((int)DEFAULT_NUM_FOR_TRIANGULATION,(int)nearestBeacons.size());
                 
-                vector<NPXPoint> pointVector;
+                vector<IPXPoint> pointVector;
                 for (int i = 0; i < count; ++i) {
                     for (int j = i + 1; j < count; ++j) {
                         for (int k = j + 1; k < count; ++k) {
-                            NPXPoint p = singleTriangulation(nearestBeacons.at(i), nearestBeacons.at(j), nearestBeacons.at(k));
+                            IPXPoint p = singleTriangulation(nearestBeacons.at(i), nearestBeacons.at(j), nearestBeacons.at(k));
                             pointVector.insert(pointVector.end(), p);
                         }
                     }
@@ -223,15 +223,15 @@ namespace Innerpeacer {
                 double ySum = 0.0;
                 int pointCount = (int) pointVector.size();
                 
-                vector<NPXPoint>::iterator iter;
+                vector<IPXPoint>::iterator iter;
                 for (iter = pointVector.begin(); iter != pointVector.end(); ++iter) {
                     xSum += iter->getX();
                     ySum += iter->getY();
                 }
                 
-                NPXPublicBeacon npb = GetPublicBeacon(*(nearestBeacons.at(0)));
+                IPXPublicBeacon npb = GetPublicBeacon(*(nearestBeacons.at(0)));
                 
-                return NPXPoint(xSum/pointCount, ySum/pointCount, npb.getLocation().getFloor());
+                return IPXPoint(xSum/pointCount, ySum/pointCount, npb.getLocation().getFloor());
             }
             
             return INVALID_POINT;
@@ -244,22 +244,22 @@ namespace Innerpeacer {
         
         class NPXHybridTrippleTriangulationAlgorithm : public NPXTriangulationAlgorithm {
         public:
-            NPXHybridTrippleTriangulationAlgorithm(const vector<NPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXHybridTripple) {}
-            const NPXPoint calculationLocation();
+            NPXHybridTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXHybridTripple) {}
+            const IPXPoint calculationLocation();
             
         private:
-            const NPXPoint calculateLocationUsingTripleWithAverage3();
-            const NPXPoint calculateLocationUsingTripleWithAverage4();
+            const IPXPoint calculateLocationUsingTripleWithAverage3();
+            const IPXPoint calculateLocationUsingTripleWithAverage4();
 
         };
         
-        const NPXPoint NPXHybridTrippleTriangulationAlgorithm::calculationLocation()
+        const IPXPoint NPXHybridTrippleTriangulationAlgorithm::calculationLocation()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
             } else {
-                const NPXScannedBeacon *b1 = nearestBeacons.at(0);
-                const NPXScannedBeacon *b2 = nearestBeacons.at(1);
+                const IPXScannedBeacon *b1 = nearestBeacons.at(0);
+                const IPXScannedBeacon *b2 = nearestBeacons.at(1);
                 
                 if (b1->getAccuracy() / b2->getAccuracy() < 0.33) {
                     return calculateLocationUsingTripleWithAverage3();
@@ -270,7 +270,7 @@ namespace Innerpeacer {
             return INVALID_POINT;
         }
         
-        const NPXPoint NPXHybridTrippleTriangulationAlgorithm::calculateLocationUsingTripleWithAverage3()
+        const IPXPoint NPXHybridTrippleTriangulationAlgorithm::calculateLocationUsingTripleWithAverage3()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -279,11 +279,11 @@ namespace Innerpeacer {
             if (nearestBeacons.size() >= 3) {
                 int count = (int)std::min((int)DEFAULT_NUM_FOR_TRIANGULATION,(int)nearestBeacons.size());
                 
-                vector<NPXPoint> pointVector;
+                vector<IPXPoint> pointVector;
                 for (int i = 0; i < 1; ++i) {
                     for (int j = i + 1; j < count; ++j) {
                         for (int k = j + 1; k < count; ++k) {
-                            NPXPoint p = tripleTriangulation(nearestBeacons.at(i), nearestBeacons.at(j), nearestBeacons.at(k));
+                            IPXPoint p = tripleTriangulation(nearestBeacons.at(i), nearestBeacons.at(j), nearestBeacons.at(k));
                             pointVector.insert(pointVector.end(), p);
                         }
                     }
@@ -293,20 +293,20 @@ namespace Innerpeacer {
                 double ySum = 0.0;
                 int pointCount = (int) pointVector.size();
                 
-                vector<NPXPoint>::iterator iter;
+                vector<IPXPoint>::iterator iter;
                 for (iter = pointVector.begin(); iter != pointVector.end(); ++iter) {
                     xSum += iter->getX();
                     ySum += iter->getY();
                 }
                 
-                NPXPublicBeacon npb = GetPublicBeacon(*(nearestBeacons.at(0)));
+                IPXPublicBeacon npb = GetPublicBeacon(*(nearestBeacons.at(0)));
                 
-                return NPXPoint(xSum/pointCount, ySum/pointCount, npb.getLocation().getFloor());
+                return IPXPoint(xSum/pointCount, ySum/pointCount, npb.getLocation().getFloor());
             }
             return INVALID_POINT;
         }
         
-        const NPXPoint NPXHybridTrippleTriangulationAlgorithm::calculateLocationUsingTripleWithAverage4()
+        const IPXPoint NPXHybridTrippleTriangulationAlgorithm::calculateLocationUsingTripleWithAverage4()
         {
             if (nearestBeacons.size() < 3) {
                 return calculateBeaconLessThanThree();
@@ -314,11 +314,11 @@ namespace Innerpeacer {
             
             if (nearestBeacons.size() >= 3) {
                 int count = (int)std::min((int)DEFAULT_NUM_FOR_TRIANGULATION,(int)nearestBeacons.size());
-                vector<NPXPoint> pointVector;
+                vector<IPXPoint> pointVector;
                 for (int i = 0; i < count; ++i) {
                     for (int j = i + 1; j < count; ++j) {
                         for (int k = j + 1; k < count; ++k) {
-                            NPXPoint p = tripleTriangulation(nearestBeacons.at(i), nearestBeacons.at(j), nearestBeacons.at(k));
+                            IPXPoint p = tripleTriangulation(nearestBeacons.at(i), nearestBeacons.at(j), nearestBeacons.at(k));
                             pointVector.insert(pointVector.end(), p);
                         }
                     }
@@ -328,15 +328,15 @@ namespace Innerpeacer {
                 double ySum = 0.0;
                 int pointCount = (int) pointVector.size();
                 
-                vector<NPXPoint>::iterator iter;
+                vector<IPXPoint>::iterator iter;
                 for (iter = pointVector.begin(); iter != pointVector.end(); ++iter) {
                     xSum += iter->getX();
                     ySum += iter->getY();
                 }
                 
-                NPXPublicBeacon npb = GetPublicBeacon(*(nearestBeacons.at(0)));
+                IPXPublicBeacon npb = GetPublicBeacon(*(nearestBeacons.at(0)));
                 
-                return NPXPoint(xSum/pointCount, ySum/pointCount, npb.getLocation().getFloor());
+                return IPXPoint(xSum/pointCount, ySum/pointCount, npb.getLocation().getFloor());
             }
             return INVALID_POINT;
         }
@@ -344,7 +344,7 @@ namespace Innerpeacer {
     }
 }
 
-NPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type)
+NPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type)
 {
     switch (type) {
         case NPXSingle:

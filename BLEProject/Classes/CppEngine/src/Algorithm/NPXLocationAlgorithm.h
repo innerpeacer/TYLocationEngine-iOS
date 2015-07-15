@@ -14,15 +14,15 @@
 #include <unordered_map>
 #include <map>
 #include <vector>
-#include "NPXPoint.h"
-#include "NPXScannedBeacon.h"
-#include "NPXPublicBeacon.h"
+#include "IPXPoint.h"
+#include "IPXScannedBeacon.h"
+#include "IPXPublicBeacon.h"
 #include "NPXAlgorithmType.h"
 
 using namespace std;
 using namespace Innerpeacer::BLELocationEngine;
 
-typedef unordered_map<NPXBeacon, NPXPublicBeacon, hash_beacon_key, equal_beacon_key> BeaconHashMap;
+typedef unordered_map<IPXBeacon, IPXPublicBeacon, hash_beacon_key, equal_beacon_key> BeaconHashMap;
 
 namespace Innerpeacer {
     namespace BLELocationEngine {
@@ -31,25 +31,25 @@ namespace Innerpeacer {
         class NPXLocationAlgorithm {
             
         public:
-            NPXLocationAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type);
-            void setNearestBeacons(const vector<const NPXScannedBeacon *> &beacons);
-            virtual const NPXPoint calculationLocation() = 0;
+            NPXLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type);
+            void setNearestBeacons(const vector<const IPXScannedBeacon *> &beacons);
+            virtual const IPXPoint calculationLocation() = 0;
             virtual ~NPXLocationAlgorithm() {};
             
         protected:
             NPXAlgorithmType algorithmType;
-            vector<const NPXScannedBeacon *> nearestBeacons;
+            vector<const IPXScannedBeacon *> nearestBeacons;
             BeaconHashMap publicBeaconMap;
 
-            const bool HasPublicBeacon(const NPXBeacon &key) const {
+            const bool HasPublicBeacon(const IPXBeacon &key) const {
                 return publicBeaconMap.find(key) != publicBeaconMap.end();
             }
             
-            const NPXPublicBeacon & GetPublicBeacon(const NPXBeacon &key) const {
+            const IPXPublicBeacon & GetPublicBeacon(const IPXBeacon &key) const {
                 return publicBeaconMap.at(key);
             }
             
-            NPXPublicBeacon & GetPublicBeacon(const NPXBeacon &key) {
+            IPXPublicBeacon & GetPublicBeacon(const IPXBeacon &key) {
                 return publicBeaconMap.at(key);
             }
             
@@ -57,7 +57,7 @@ namespace Innerpeacer {
     }
 }
 
-Innerpeacer::BLELocationEngine::NPXLocationAlgorithm *CreateLocationAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type);
+Innerpeacer::BLELocationEngine::NPXLocationAlgorithm *CreateLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type);
 
 
 

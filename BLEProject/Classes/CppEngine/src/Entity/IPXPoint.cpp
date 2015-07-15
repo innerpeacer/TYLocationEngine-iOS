@@ -1,18 +1,18 @@
 /*
- * NPXPoint.cpp
+ * IPXPoint.cpp
  *
  *  Created on: 2014-9-2
  *      Author: innerpeacer
  */
 
-#include "NPXPoint.h"
+#include "IPXPoint.h"
 #include <math.h>
 
 #define LARGE_DISTANCE 100000000000
 
 using namespace Innerpeacer::BLELocationEngine;
 
-double NPXPoint::DistanceBetween(const NPXPoint &p1, const NPXPoint &p2) {
+double IPXPoint::DistanceBetween(const IPXPoint &p1, const IPXPoint &p2) {
 	if (p1.floor != p2.floor) {
 		return LARGE_DISTANCE;
 	}
@@ -20,7 +20,7 @@ double NPXPoint::DistanceBetween(const NPXPoint &p1, const NPXPoint &p2) {
 
 }
 
-double NPXPoint::distanceBetween(const NPXPoint &p2) {
+double IPXPoint::distanceBetween(const IPXPoint &p2) {
 	if (floor != p2.floor) {
 		return LARGE_DISTANCE;
 	}

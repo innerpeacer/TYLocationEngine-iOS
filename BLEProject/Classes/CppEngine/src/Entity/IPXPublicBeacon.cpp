@@ -5,5 +5,5 @@
  *      Author: innerpeacer
  */
 
-#include "NPXPublicBeacon.h"
+#include "IPXPublicBeacon.h"
 

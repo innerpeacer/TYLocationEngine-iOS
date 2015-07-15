@@ -20,8 +20,8 @@ namespace Innerpeacer {
         class NPXWeightingAlgorithm : public NPXLocationAlgorithm {
             
         public:
-            NPXWeightingAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type) : NPXLocationAlgorithm(beacons, type) {}
-            virtual const NPXPoint calculationLocation() = 0;
+            NPXWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type) : NPXLocationAlgorithm(beacons, type) {}
+            virtual const IPXPoint calculationLocation() = 0;
 
         protected:
             
@@ -31,6 +31,6 @@ namespace Innerpeacer {
     }
 }
 
-NPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type);
+NPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type);
 
 #endif /* defined(__BLEProject__NPXWeightingAlgorithm__) */

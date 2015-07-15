@@ -10,40 +10,40 @@
 
 #include <string>
 
-#include "NPXBeacon.h"
-#include "NPXPoint.h"
+#include "IPXBeacon.h"
+#include "IPXPoint.h"
 
 using namespace std;
 
 namespace Innerpeacer {
 namespace BLELocationEngine {
 
-class NPXPublicBeacon: public NPXBeacon {
+class IPXPublicBeacon: public IPXBeacon {
 public:
-    NPXPublicBeacon()
+    IPXPublicBeacon()
     {
         
     }
     
-	NPXPublicBeacon(const char *uuid, uint16_t major, uint16_t minor,
-			NPXPoint &location) :
-			NPXBeacon(uuid, major, minor), location(location) {
+	IPXPublicBeacon(const char *uuid, uint16_t major, uint16_t minor,
+			IPXPoint &location) :
+			IPXBeacon(uuid, major, minor), location(location) {
 	}
 
-	virtual ~NPXPublicBeacon() {
+	virtual ~IPXPublicBeacon() {
 
 	}
 
-	NPXPoint getLocation() const {
+	IPXPoint getLocation() const {
 		return location;
 	}
 
-	void setLocation(NPXPoint lp) {
+	void setLocation(IPXPoint lp) {
 		location = lp;
 	}
 
 private:
-	NPXPoint location;
+	IPXPoint location;
 };
 }
 }

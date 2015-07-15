@@ -1,5 +1,5 @@
 /*
- * NPXMovingAverage.h
+ * IPXMovingAverage.h
  *
  *  Created on: 2014-9-5
  *      Author: innerpeacer
@@ -15,14 +15,14 @@ namespace BLELocationEngine {
 
 const int DEFAULT_WINDOW = 10;
     
-class NPXMovingAverage {
+class IPXMovingAverage {
 public:
-    NPXMovingAverage()
+    IPXMovingAverage()
     {
         window = DEFAULT_WINDOW;
     }
     
-	NPXMovingAverage(int w)
+	IPXMovingAverage(int w)
     {
         window = w;
     }
@@ -31,7 +31,7 @@ public:
     void clear();
     double getAverage() const;
     
-	virtual ~NPXMovingAverage(){}
+	virtual ~IPXMovingAverage(){}
     
 private:
     std::queue<double> doubleQueue;

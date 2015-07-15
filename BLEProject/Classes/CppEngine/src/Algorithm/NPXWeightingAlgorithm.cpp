@@ -13,22 +13,22 @@ namespace Innerpeacer {
         
         class NPXLinearWeightingAlgorithm : public NPXWeightingAlgorithm {
         public:
-            NPXLinearWeightingAlgorithm(const vector<NPXPublicBeacon> &beacons) : NPXWeightingAlgorithm(beacons, NPXLinearWeighting) {}
-            const NPXPoint calculationLocation();
+            NPXLinearWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXWeightingAlgorithm(beacons, NPXLinearWeighting) {}
+            const IPXPoint calculationLocation();
 
         };
         
-        const NPXPoint NPXLinearWeightingAlgorithm::calculationLocation()
+        const IPXPoint NPXLinearWeightingAlgorithm::calculationLocation()
         {
             vector<double> weightingArray;
-            vector<NPXPoint> pointArray;
+            vector<IPXPoint> pointArray;
             double totalWeighting = 0.0;
             double totalWeightingX = 0.0;
             double totalWeightingY = 0.0;
             
             for (int i = 0; i < nearestBeacons.size(); ++i) {
-                const NPXScannedBeacon *sb = nearestBeacons.at(i);
-                const NPXPublicBeacon pb = GetPublicBeacon(*sb);
+                const IPXScannedBeacon *sb = nearestBeacons.at(i);
+                const IPXPublicBeacon pb = GetPublicBeacon(*sb);
                 
                 double weighting = 1.0/sb->getAccuracy();
                 weightingArray.insert(weightingArray.end(), weighting);
@@ -38,13 +38,13 @@ namespace Innerpeacer {
             }
             
             for (int i = 0; i < weightingArray.size(); ++i) {
-                NPXPoint point = pointArray.at(i);
+                IPXPoint point = pointArray.at(i);
                 
                 totalWeightingX += point.getX() * weightingArray.at(i);
                 totalWeightingY += point.getY() * weightingArray.at(i);
             }
             
-            return NPXPoint(totalWeightingX/totalWeighting, totalWeightingY/totalWeighting);
+            return IPXPoint(totalWeightingX/totalWeighting, totalWeightingY/totalWeighting);
         }
 
     }
@@ -56,21 +56,21 @@ namespace Innerpeacer {
         
         class NPXQuadraticWeightingAlgorithm : public NPXWeightingAlgorithm {
         public:
-            NPXQuadraticWeightingAlgorithm(const vector<NPXPublicBeacon> &beacons) : NPXWeightingAlgorithm(beacons, NPXQuadraticWeighting) {}
-            const NPXPoint calculationLocation();
+            NPXQuadraticWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXWeightingAlgorithm(beacons, NPXQuadraticWeighting) {}
+            const IPXPoint calculationLocation();
         };
         
-        const NPXPoint NPXQuadraticWeightingAlgorithm::calculationLocation()
+        const IPXPoint NPXQuadraticWeightingAlgorithm::calculationLocation()
         {
             vector<double> weightingArray;
-            vector<NPXPoint> pointArray;
+            vector<IPXPoint> pointArray;
             double totalWeighting = 0.0;
             double totalWeightingX = 0.0;
             double totalWeightingY = 0.0;
             
             for (int i = 0; i < nearestBeacons.size(); ++i) {
-                const NPXScannedBeacon *sb = nearestBeacons.at(i);
-                const NPXPublicBeacon pb = GetPublicBeacon(*sb);
+                const IPXScannedBeacon *sb = nearestBeacons.at(i);
+                const IPXPublicBeacon pb = GetPublicBeacon(*sb);
                 
                 double weighting = 1.0/pow(sb->getAccuracy(), 2);
                 weightingArray.insert(weightingArray.end(), weighting);
@@ -80,13 +80,13 @@ namespace Innerpeacer {
             }
             
             for (int i = 0; i < weightingArray.size(); ++i) {
-                NPXPoint point = pointArray.at(i);
+                IPXPoint point = pointArray.at(i);
                 
                 totalWeightingX += point.getX() * weightingArray.at(i);
                 totalWeightingY += point.getY() * weightingArray.at(i);
             }
             
-            return NPXPoint(totalWeightingX/totalWeighting, totalWeightingY/totalWeighting);
+            return IPXPoint(totalWeightingX/totalWeighting, totalWeightingY/totalWeighting);
 
         }
         
@@ -94,7 +94,7 @@ namespace Innerpeacer {
 }
 
 
-NPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type)
+NPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type)
 {
     switch (type) {
         case NPXLinearWeighting:

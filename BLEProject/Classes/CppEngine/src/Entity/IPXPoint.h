@@ -1,5 +1,5 @@
 /*
- * NPXPoint.h
+ * IPXPoint.h
  *
  *  Created on: 2014-9-2
  *      Author: innerpeacer
@@ -11,7 +11,7 @@
 namespace Innerpeacer {
 namespace BLELocationEngine {
     
-class NPXPoint {
+class IPXPoint {
 private:
 	double x;
 	double y;
@@ -19,30 +19,30 @@ private:
 
 public:
     
-    NPXPoint()
+    IPXPoint()
     {
         x = -1000000.0;
         y = -1000000.0;
         floor = -1000000;
     }
     
-	NPXPoint(double px, double py) :
+	IPXPoint(double px, double py) :
 			x(px), y(py) {
 		floor = 1;
 	}
 
-	NPXPoint(double px, double py, int pf) :
+	IPXPoint(double px, double py, int pf) :
 			x(px), y(py), floor(pf) {
 
 	}
 
-	NPXPoint(const NPXPoint &p) {
+	IPXPoint(const IPXPoint &p) {
 		x = p.x;
 		y = p.y;
 		floor = p.floor;
 	}
     
-    NPXPoint operator=(const NPXPoint &p)
+    IPXPoint operator=(const IPXPoint &p)
     {
         x = p.x;
 		y = p.y;
@@ -50,7 +50,7 @@ public:
         return *this;
     }
 
-	virtual ~NPXPoint() {
+	virtual ~IPXPoint() {
         
     }
 
@@ -70,21 +70,21 @@ public:
 		return y;
 	}
 
-	static double DistanceBetween(const NPXPoint &p1, const NPXPoint &p2);
-	double distanceBetween(const NPXPoint &p2);
+	static double DistanceBetween(const IPXPoint &p1, const IPXPoint &p2);
+	double distanceBetween(const IPXPoint &p2);
     
-    bool operator==(const NPXPoint &aPoint)
+    bool operator==(const IPXPoint &aPoint)
     {
         return (x == aPoint.x) && (y == aPoint.y) && (floor == aPoint.floor);
     }
     
-    bool operator!=(const NPXPoint &aPoint)
+    bool operator!=(const IPXPoint &aPoint)
     {
         return !((*this)==aPoint);
     }
 };
     
-static NPXPoint INVALID_POINT(-1000000.0, -1000000.0, -1000000);
+static IPXPoint INVALID_POINT(-1000000.0, -1000000.0, -1000000);
 
 }
 }

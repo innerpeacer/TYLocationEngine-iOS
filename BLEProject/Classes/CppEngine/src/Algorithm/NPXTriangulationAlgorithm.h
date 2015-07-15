@@ -20,22 +20,22 @@ namespace Innerpeacer {
         class NPXTriangulationAlgorithm: public NPXLocationAlgorithm {
             
         public:
-            NPXTriangulationAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type) : NPXLocationAlgorithm(beacons, type) {}
-            virtual const NPXPoint calculationLocation() = 0;
+            NPXTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type) : NPXLocationAlgorithm(beacons, type) {}
+            virtual const IPXPoint calculationLocation() = 0;
             
         protected:
-            NPXPoint pointFor(const NPXPoint &p1, double a1,const NPXPoint &p2, double a2);
+            IPXPoint pointFor(const IPXPoint &p1, double a1,const IPXPoint &p2, double a2);
 
-            NPXPoint calculateBeaconLessThanThree();
-            NPXPoint calculateOneBeacon(const NPXScannedBeacon *beacon);
-            NPXPoint calculateTwoBeacons(const NPXScannedBeacon *b1, const NPXScannedBeacon *b2);
-            NPXPoint singleTriangulation(const NPXScannedBeacon *b1, const NPXScannedBeacon *b2,const NPXScannedBeacon *b3);
-            NPXPoint tripleTriangulation(const NPXScannedBeacon *b1, const NPXScannedBeacon *b2, const NPXScannedBeacon *b3);
+            IPXPoint calculateBeaconLessThanThree();
+            IPXPoint calculateOneBeacon(const IPXScannedBeacon *beacon);
+            IPXPoint calculateTwoBeacons(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2);
+            IPXPoint singleTriangulation(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2,const IPXScannedBeacon *b3);
+            IPXPoint tripleTriangulation(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2, const IPXScannedBeacon *b3);
         };
     }
 }
 
-NPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type);
+NPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type);
 
 
 #endif /* defined(__BLEProject__NPXTriangulationAlgorithm__) */

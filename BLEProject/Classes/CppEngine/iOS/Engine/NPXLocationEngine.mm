@@ -11,7 +11,7 @@
 
 #import "ILocationEngine.h"
 #import "NPXStepBasedEngine.h"
-#import "NPXScannedBeacon.h"
+#import "IPXScannedBeacon.h"
 #import "NPXBeaconDBAdapter.h"
 #import "NPBeaconKey.h"
 #import "NPBeaconManager.h"
@@ -27,7 +27,7 @@
     NSMutableDictionary *allBeacons;
     
     ILocationEngine *locationEngine;
-    vector<const NPXScannedBeacon *> *pScannedBeacons;
+    vector<const IPXScannedBeacon *> *pScannedBeacons;
     NPMotionDetector *motionDetector;
 
     BOOL isStarted;
@@ -62,7 +62,7 @@
         
 //        locationEngine = CreateNPXStepBaseTriangulationEngine(NPXHybridSingle);
         locationEngine = CreateNPXStepBaseTriangulationEngine(NPXQuadraticWeighting);
-        pScannedBeacons = new vector<const NPXScannedBeacon *>();
+        pScannedBeacons = new vector<const IPXScannedBeacon *>();
         
         rssiThreshold = RSSI_LEVEL_THRESHOLD;
         
@@ -80,15 +80,15 @@
     NSArray *array = [db getAllNephogramBeacons];
     
     allBeacons = [[NSMutableDictionary alloc] init];
-    vector<NPXPublicBeacon> publicBeacons;
+    vector<IPXPublicBeacon> publicBeacons;
     
     for(NPPublicBeacon *pb in array){
         NSNumber *bkey = [NPBeaconKey beaconKeyForNPBeacon:pb];
         
         [allBeacons setObject:pb forKey:bkey];
         
-        NPXPoint location(pb.location.x, pb.location.y, pb.location.floor);
-        NPXPublicBeacon pBeacon([pb.UUID UTF8String], pb.major.intValue, pb.minor.intValue, location);
+        IPXPoint location(pb.location.x, pb.location.y, pb.location.floor);
+        IPXPublicBeacon pBeacon([pb.UUID UTF8String], pb.major.intValue, pb.minor.intValue, location);
         publicBeacons.insert(publicBeacons.end(), pBeacon);
     }
     [db close];
@@ -167,7 +167,7 @@
 //    int index = MIN((int)scannedBeacons.count, BEACON_NUMBER_FOR_LEVEL_CHECK);
     
     if (pScannedBeacons) {
-        vector<const NPXScannedBeacon *>::iterator iter;
+        vector<const IPXScannedBeacon *>::iterator iter;
         for (iter = pScannedBeacons->begin(); iter != pScannedBeacons->end(); ++iter) {
             delete (*iter);
         }
@@ -179,13 +179,13 @@
         for(int i = 0; i < index; ++i)
         {
             CLBeacon *b = [scannedBeacons objectAtIndex:i];
-            NPXScannedBeacon *pBeacon = new NPXScannedBeacon([b.proximityUUID.UUIDString UTF8String], b.major.intValue, b.minor.intValue,(int) b.rssi, b.accuracy, [self convertProximity:b.proximity]);
+            IPXScannedBeacon *pBeacon = new IPXScannedBeacon([b.proximityUUID.UUIDString UTF8String], b.major.intValue, b.minor.intValue,(int) b.rssi, b.accuracy, [self convertProximity:b.proximity]);
             pScannedBeacons->insert(pScannedBeacons->end(), pBeacon);
         }
         
     } else {
         for (CLBeacon *b in scannedBeacons) {
-            NPXScannedBeacon *pBeacon = new NPXScannedBeacon([b.proximityUUID.UUIDString UTF8String], b.major.intValue, b.minor.intValue,(int) b.rssi, b.accuracy, [self convertProximity:b.proximity]);
+            IPXScannedBeacon *pBeacon = new IPXScannedBeacon([b.proximityUUID.UUIDString UTF8String], b.major.intValue, b.minor.intValue,(int) b.rssi, b.accuracy, [self convertProximity:b.proximity]);
             pScannedBeacons->insert(pScannedBeacons->end(), pBeacon);
         }
     }
@@ -196,7 +196,7 @@
 //    }
     
     locationEngine->processBeacons(*pScannedBeacons);
-    NPXPoint currentLocation = locationEngine->getLocation();
+    IPXPoint currentLocation = locationEngine->getLocation();
     
 //    NSLog(@"NPX: %f, %f", currentLocation.getX(), currentLocation.getY());
     
@@ -289,7 +289,7 @@
 {
     delete locationEngine;
     if (pScannedBeacons) {
-        vector<const NPXScannedBeacon *>::iterator iter;
+        vector<const IPXScannedBeacon *>::iterator iter;
         for (iter = pScannedBeacons->begin(); iter != pScannedBeacons->end(); ++iter) {
             delete (*iter);
         }

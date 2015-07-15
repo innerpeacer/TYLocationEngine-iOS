@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 #include "ILocationEngine.h"
-#include "NPXMovingAverage.h"
+#include "IPXMovingAverage.h"
 #include "NPXLocationAlgorithm.h"
 
 const int DefaultMovingAverageWindow = 10;
@@ -30,11 +30,11 @@ namespace Innerpeacer {
                 algorithm = NULL;
             }
             
-            void Initilize(const vector<NPXPublicBeacon> &beacons);
-            void processBeacons(vector<const NPXScannedBeacon *> &beacons);
+            void Initilize(const vector<IPXPublicBeacon> &beacons);
+            void processBeacons(vector<const IPXScannedBeacon *> &beacons);
             void addStepEvent();
             void reset();
-            NPXPoint getLocation() const;
+            IPXPoint getLocation() const;
             
             ~NPXStepBasedEngine() {
                 if (algorithm)
@@ -45,15 +45,15 @@ namespace Innerpeacer {
             NPXLocationAlgorithm *algorithm;
             NPXAlgorithmType algorithmType;
             
-            NPXPoint currentDisplayLocation;
-            NPXPoint currentAnchorLocation;
+            IPXPoint currentDisplayLocation;
+            IPXPoint currentAnchorLocation;
             
-            NPXMovingAverage xMovingAverage;
-            NPXMovingAverage yMovingAverage;
+            IPXMovingAverage xMovingAverage;
+            IPXMovingAverage yMovingAverage;
             
             int stepCount;
             
-            NPXPoint getIndependentLocation();
+            IPXPoint getIndependentLocation();
 
         };
         

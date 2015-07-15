@@ -9,9 +9,9 @@
 #define ILOCATIONENGINE_H_
 
 #include <vector>
-#include "NPXScannedBeacon.h"
-#include "NPXPoint.h"
-#include "NPXPublicBeacon.h"
+#include "IPXScannedBeacon.h"
+#include "IPXPoint.h"
+#include "IPXPublicBeacon.h"
 #include "NPXAlgorithmType.h"
 
 using namespace Innerpeacer::BLELocationEngine;
@@ -21,11 +21,11 @@ namespace Innerpeacer {
         struct ILocationEngine {
         public:
             ILocationEngine() {};
-            virtual void Initilize(const vector<NPXPublicBeacon> &beacons) = 0;
-            virtual void processBeacons(vector<const NPXScannedBeacon *> &beacons) = 0;
+            virtual void Initilize(const vector<IPXPublicBeacon> &beacons) = 0;
+            virtual void processBeacons(vector<const IPXScannedBeacon *> &beacons) = 0;
             virtual void addStepEvent() = 0;
             virtual void reset() = 0;
-            virtual NPXPoint getLocation() const = 0;
+            virtual IPXPoint getLocation() const = 0;
             virtual ~ILocationEngine() {};
         };
     }

@@ -1,16 +1,16 @@
 /*
- * NPXMovingAverage.cpp
+ * IPXMovingAverage.cpp
  *
  *  Created on: 2014-9-5
  *      Author: innerpeacer
  */
 
-#include "NPXMovingAverage.h"
+#include "IPXMovingAverage.h"
 
 namespace Innerpeacer {
 namespace BLELocationEngine {
 
-void NPXMovingAverage::push(double value) {
+void IPXMovingAverage::push(double value) {
     int size = (int)doubleQueue.size();
     
     double sum = average * size;
@@ -27,11 +27,11 @@ void NPXMovingAverage::push(double value) {
     doubleQueue.push(value);
 }
 
-double NPXMovingAverage::getAverage() const {
+double IPXMovingAverage::getAverage() const {
 	return average;
 }
 
-void NPXMovingAverage::clear() {
+void IPXMovingAverage::clear() {
     while (!doubleQueue.empty()) {
         doubleQueue.pop();
     }

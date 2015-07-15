@@ -1,5 +1,5 @@
 /*
- * NPXScannedBeacon.h
+ * IPXScannedBeacon.h
  *
  *  Created on: 2014-9-2
  *      Author: innerpeacer
@@ -8,7 +8,7 @@
 #ifndef NPXSCANNEDBEACON_H_
 #define NPXSCANNEDBEACON_H_
 
-#include "NPXBeacon.h"
+#include "IPXBeacon.h"
 
 using namespace std;
 
@@ -19,15 +19,15 @@ typedef enum {
 	NPXProximityUnknwon = 0, NPXProximityImmediate, NPXProximityNear, NPXProximityFar
 } NPXProximity;
 
-class NPXScannedBeacon: public NPXBeacon {
+class IPXScannedBeacon: public IPXBeacon {
 public:
-	NPXScannedBeacon(const char *uuid, uint16_t major, uint16_t minor, int rssi,
+	IPXScannedBeacon(const char *uuid, uint16_t major, uint16_t minor, int rssi,
 			double accuracy, NPXProximity proximity) :
-			NPXBeacon(uuid, major, minor), rssi(rssi), accuracy(accuracy), proximity(
+			IPXBeacon(uuid, major, minor), rssi(rssi), accuracy(accuracy), proximity(
 					proximity) {
 
 	}
-	virtual ~NPXScannedBeacon() {
+	virtual ~IPXScannedBeacon() {
         
     }
 

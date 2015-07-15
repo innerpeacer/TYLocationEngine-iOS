@@ -7,9 +7,9 @@
 
 #include "NPXGeometryCalculator.h"
 
-NPXPoint scalePointWithCenter(NPXPoint center, NPXPoint scaledPoint,
+IPXPoint scalePointWithCenter(IPXPoint center, IPXPoint scaledPoint,
 		double length) {
-	double distance = NPXPoint::DistanceBetween(center, scaledPoint);
+	double distance = IPXPoint::DistanceBetween(center, scaledPoint);
 
 	if (distance <= length) {
 		return scaledPoint;
@@ -20,5 +20,5 @@ NPXPoint scalePointWithCenter(NPXPoint center, NPXPoint scaledPoint,
 	double x = scale * scaledPoint.getX() + (1 - scale) * center.getX();
 	double y = scale * scaledPoint.getY() + (1 - scale) * center.getY();
 
-	return NPXPoint(x, y, scaledPoint.getFloor());
+	return IPXPoint(x, y, scaledPoint.getFloor());
 }
