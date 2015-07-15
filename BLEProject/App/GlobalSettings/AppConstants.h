@@ -1,13 +1,13 @@
 //
 //  AppConstants.h
-//  CloudAtlasTestProject
+//  BLEProject
 //
 //  Created by innerpeacer on 15/2/3.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef CloudAtlasTestProject_AppConstants_h
-#define CloudAtlasTestProject_AppConstants_h
+#ifndef BLEProject_AppConstants_h
+#define BLEProject_AppConstants_h
 
 #define BEACON_REGION_IDENTIFIER @"Innerpeacer"
 

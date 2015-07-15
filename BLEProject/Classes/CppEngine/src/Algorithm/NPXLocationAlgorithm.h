@@ -1,13 +1,13 @@
 //
 //  NPXLocationAlgorithm.h
-//  CloudAtlasTestProject
+//  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __CloudAtlasTestProject__NPXLocationAlgorithm__
-#define __CloudAtlasTestProject__NPXLocationAlgorithm__
+#ifndef __BLEProject__NPXLocationAlgorithm__
+#define __BLEProject__NPXLocationAlgorithm__
 
 #include <stdio.h>
 
@@ -61,4 +61,4 @@ Innerpeacer::BLELocationEngine::NPXLocationAlgorithm *CreateLocationAlgorithm(co
 
 
 
-#endif /* defined(__CloudAtlasTestProject__NPXLocationAlgorithm__) */
+#endif /* defined(__BLEProject__NPXLocationAlgorithm__) */

@@ -1,13 +1,13 @@
 //
 //  NPXWeightingAlgorithm.h
-//  CloudAtlasTestProject
+//  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __CloudAtlasTestProject__NPXWeightingAlgorithm__
-#define __CloudAtlasTestProject__NPXWeightingAlgorithm__
+#ifndef __BLEProject__NPXWeightingAlgorithm__
+#define __BLEProject__NPXWeightingAlgorithm__
 
 #include <stdio.h>
 #include "NPXLocationAlgorithm.h"
@@ -33,4 +33,4 @@ namespace Innerpeacer {
 
 NPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<NPXPublicBeacon> &beacons, NPXAlgorithmType type);
 
-#endif /* defined(__CloudAtlasTestProject__NPXWeightingAlgorithm__) */
+#endif /* defined(__BLEProject__NPXWeightingAlgorithm__) */

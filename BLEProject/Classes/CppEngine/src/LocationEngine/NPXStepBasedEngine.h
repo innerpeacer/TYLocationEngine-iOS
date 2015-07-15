@@ -1,13 +1,13 @@
 //
 //  NPXStepBasedEngine.h
-//  CloudAtlasTestProject
+//  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __CloudAtlasTestProject__NPXStepBasedEngine__
-#define __CloudAtlasTestProject__NPXStepBasedEngine__
+#ifndef __BLEProject__NPXStepBasedEngine__
+#define __BLEProject__NPXStepBasedEngine__
 
 #include <stdio.h>
 
@@ -61,4 +61,4 @@ namespace Innerpeacer {
 }
 
 
-#endif /* defined(__CloudAtlasTestProject__NPXStepBasedEngine__) */
+#endif /* defined(__BLEProject__NPXStepBasedEngine__) */

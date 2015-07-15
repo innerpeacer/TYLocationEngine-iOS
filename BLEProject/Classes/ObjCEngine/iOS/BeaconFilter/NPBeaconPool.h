@@ -1,6 +1,6 @@
 //
 //  CABeaconPool.h
-//  CloudAtlasTestProject
+//  BLEProject
 //
 //  Created by innerpeacer on 15/2/2.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.

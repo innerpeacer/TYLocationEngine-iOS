@@ -1,16 +1,16 @@
 //
 //  NPXAlgorithmType.h
-//  CloudAtlasTestProject
+//  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#ifndef __CloudAtlasTestProject__NPXAlgorithmType__
-#define __CloudAtlasTestProject__NPXAlgorithmType__
+#ifndef __BLEProject__NPXAlgorithmType__
+#define __BLEProject__NPXAlgorithmType__
 
 typedef enum {
     NPXSingle, NPXTripple, NPXHybridSingle, NPXHybridTripple, NPXLinearWeighting, NPXQuadraticWeighting
 } NPXAlgorithmType;
 
-#endif /* defined(__CloudAtlasTestProject__NPXAlgorithmType__) */
+#endif /* defined(__BLEProject__NPXAlgorithmType__) */
