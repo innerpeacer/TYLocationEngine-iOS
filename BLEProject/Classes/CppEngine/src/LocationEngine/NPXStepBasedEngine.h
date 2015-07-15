@@ -13,7 +13,7 @@
 
 #include "ILocationEngine.h"
 #include "IPXMovingAverage.h"
-#include "NPXLocationAlgorithm.h"
+#include "IPXLocationAlgorithm.h"
 
 const int DefaultMovingAverageWindow = 10;
 const int DefaultStep = 1;
@@ -26,7 +26,7 @@ namespace Innerpeacer {
         
         class NPXStepBasedEngine : public ILocationEngine {
         public:
-            NPXStepBasedEngine(NPXAlgorithmType type):algorithmType(type) {
+            NPXStepBasedEngine(IPXAlgorithmType type):algorithmType(type) {
                 algorithm = NULL;
             }
             
@@ -42,8 +42,8 @@ namespace Innerpeacer {
             }
             
         private:
-            NPXLocationAlgorithm *algorithm;
-            NPXAlgorithmType algorithmType;
+            IPXLocationAlgorithm *algorithm;
+            IPXAlgorithmType algorithmType;
             
             IPXPoint currentDisplayLocation;
             IPXPoint currentAnchorLocation;

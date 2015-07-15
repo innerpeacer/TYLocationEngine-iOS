@@ -1,19 +1,19 @@
 //
-//  NPXWeightingAlgorithm.cpp
+//  IPXWeightingAlgorithm.cpp
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#include "NPXWeightingAlgorithm.h"
+#include "IPXWeightingAlgorithm.h"
 
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXLinearWeightingAlgorithm : public NPXWeightingAlgorithm {
+        class NPXLinearWeightingAlgorithm : public IPXWeightingAlgorithm {
         public:
-            NPXLinearWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXWeightingAlgorithm(beacons, NPXLinearWeighting) {}
+            NPXLinearWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXWeightingAlgorithm(beacons, NPXLinearWeighting) {}
             const IPXPoint calculationLocation();
 
         };
@@ -54,9 +54,9 @@ namespace Innerpeacer {
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXQuadraticWeightingAlgorithm : public NPXWeightingAlgorithm {
+        class NPXQuadraticWeightingAlgorithm : public IPXWeightingAlgorithm {
         public:
-            NPXQuadraticWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXWeightingAlgorithm(beacons, NPXQuadraticWeighting) {}
+            NPXQuadraticWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXWeightingAlgorithm(beacons, NPXQuadraticWeighting) {}
             const IPXPoint calculationLocation();
         };
         
@@ -94,7 +94,7 @@ namespace Innerpeacer {
 }
 
 
-NPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type)
+IPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type)
 {
     switch (type) {
         case NPXLinearWeighting:

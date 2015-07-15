@@ -1,17 +1,17 @@
 //
-//  NPXTriangulationAlgorithm.cpp
+//  IPXTriangulationAlgorithm.cpp
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#include "NPXTriangulationAlgorithm.h"
+#include "IPXTriangulationAlgorithm.h"
 
 #define DEFAULT_NUM_FOR_TRIANGULATION 4
 
 
-IPXPoint NPXTriangulationAlgorithm::pointFor(const IPXPoint &p1, double a1,const IPXPoint &p2, double a2)
+IPXPoint IPXTriangulationAlgorithm::pointFor(const IPXPoint &p1, double a1,const IPXPoint &p2, double a2)
 {
     double sum = a1 + a2;
     double x = (a1 * p2.getX() + a2 * p1.getX()) / sum;
@@ -20,7 +20,7 @@ IPXPoint NPXTriangulationAlgorithm::pointFor(const IPXPoint &p1, double a1,const
     return IPXPoint(x, y, p1.getFloor());
 }
 
-IPXPoint NPXTriangulationAlgorithm::calculateBeaconLessThanThree()
+IPXPoint IPXTriangulationAlgorithm::calculateBeaconLessThanThree()
 {
     if (nearestBeacons.size() == 1) {
         return calculateOneBeacon(nearestBeacons.at(0));
@@ -32,7 +32,7 @@ IPXPoint NPXTriangulationAlgorithm::calculateBeaconLessThanThree()
     return INVALID_POINT;
 }
 
-IPXPoint NPXTriangulationAlgorithm::calculateOneBeacon(const IPXScannedBeacon *beacon)
+IPXPoint IPXTriangulationAlgorithm::calculateOneBeacon(const IPXScannedBeacon *beacon)
 {
     if (beacon->getProximity() == NPXProximityImmediate
         || beacon->getProximity() == NPXProximityNear) {
@@ -43,7 +43,7 @@ IPXPoint NPXTriangulationAlgorithm::calculateOneBeacon(const IPXScannedBeacon *b
     return INVALID_POINT;
 }
 
-IPXPoint NPXTriangulationAlgorithm::calculateTwoBeacons(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2)
+IPXPoint IPXTriangulationAlgorithm::calculateTwoBeacons(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2)
 {
     const IPXPublicBeacon pb1 = GetPublicBeacon(*b1);
     const IPXPublicBeacon pb2 = GetPublicBeacon(*b2);
@@ -54,7 +54,7 @@ IPXPoint NPXTriangulationAlgorithm::calculateTwoBeacons(const IPXScannedBeacon *
     return pointFor(p1, b1->getAccuracy(), p2, b2->getAccuracy());
 }
 
-IPXPoint NPXTriangulationAlgorithm::singleTriangulation(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2,const IPXScannedBeacon *b3)
+IPXPoint IPXTriangulationAlgorithm::singleTriangulation(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2,const IPXScannedBeacon *b3)
 {
     const IPXPublicBeacon pb1 = GetPublicBeacon(*b1);
     const IPXPublicBeacon pb2 = GetPublicBeacon(*b2);
@@ -73,7 +73,7 @@ IPXPoint NPXTriangulationAlgorithm::singleTriangulation(const IPXScannedBeacon *
     return result;
 }
 
-IPXPoint NPXTriangulationAlgorithm::tripleTriangulation(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2, const IPXScannedBeacon *b3)
+IPXPoint IPXTriangulationAlgorithm::tripleTriangulation(const IPXScannedBeacon *b1, const IPXScannedBeacon *b2, const IPXScannedBeacon *b3)
 {
     IPXPoint t123 = singleTriangulation(b1, b2, b3);
     IPXPoint t231 = singleTriangulation(b2, b3, b1);
@@ -89,9 +89,9 @@ IPXPoint NPXTriangulationAlgorithm::tripleTriangulation(const IPXScannedBeacon *
 namespace Innerpeacer {
     namespace BLELocationEngine {
 
-        class NPXSingleTriangulationAlgorithm : public NPXTriangulationAlgorithm {
+        class NPXSingleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
         public:
-            NPXSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXSingle) {}
+            NPXSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, NPXSingle) {}
             const IPXPoint calculationLocation();
             
         protected:
@@ -115,9 +115,9 @@ namespace Innerpeacer {
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXTrippleTriangulationAlgorithm : public NPXTriangulationAlgorithm {
+        class NPXTrippleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
         public:
-            NPXTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXTripple) {}
+            NPXTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, NPXTripple) {}
             const IPXPoint calculationLocation();
         };
         
@@ -136,9 +136,9 @@ namespace Innerpeacer {
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXHybridSingleTriangulationAlgorithm : public NPXTriangulationAlgorithm {
+        class NPXHybridSingleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
         public:
-            NPXHybridSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXHybridSingle) {}
+            NPXHybridSingleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, NPXHybridSingle) {}
             const IPXPoint calculationLocation();
             
         private:
@@ -242,9 +242,9 @@ namespace Innerpeacer {
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXHybridTrippleTriangulationAlgorithm : public NPXTriangulationAlgorithm {
+        class NPXHybridTrippleTriangulationAlgorithm : public IPXTriangulationAlgorithm {
         public:
-            NPXHybridTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : NPXTriangulationAlgorithm(beacons, NPXHybridTripple) {}
+            NPXHybridTrippleTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons) : IPXTriangulationAlgorithm(beacons, NPXHybridTripple) {}
             const IPXPoint calculationLocation();
             
         private:
@@ -344,7 +344,7 @@ namespace Innerpeacer {
     }
 }
 
-NPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type)
+IPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type)
 {
     switch (type) {
         case NPXSingle:

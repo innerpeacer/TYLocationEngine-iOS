@@ -1,5 +1,5 @@
 //
-//  NPXAlgorithmType.h
+//  IPXAlgorithmType.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
@@ -11,6 +11,6 @@
 
 typedef enum {
     NPXSingle, NPXTripple, NPXHybridSingle, NPXHybridTripple, NPXLinearWeighting, NPXQuadraticWeighting
-} NPXAlgorithmType;
+} IPXAlgorithmType;
 
 #endif /* defined(__BLEProject__NPXAlgorithmType__) */

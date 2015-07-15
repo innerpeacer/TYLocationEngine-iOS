@@ -1,5 +1,5 @@
 //
-//  NPXLocationAlgorithm.h
+//  IPXLocationAlgorithm.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
@@ -17,7 +17,7 @@
 #include "IPXPoint.h"
 #include "IPXScannedBeacon.h"
 #include "IPXPublicBeacon.h"
-#include "NPXAlgorithmType.h"
+#include "IPXAlgorithmType.h"
 
 using namespace std;
 using namespace Innerpeacer::BLELocationEngine;
@@ -28,16 +28,16 @@ namespace Innerpeacer {
     namespace BLELocationEngine {
         
         
-        class NPXLocationAlgorithm {
+        class IPXLocationAlgorithm {
             
         public:
-            NPXLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type);
+            IPXLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type);
             void setNearestBeacons(const vector<const IPXScannedBeacon *> &beacons);
             virtual const IPXPoint calculationLocation() = 0;
-            virtual ~NPXLocationAlgorithm() {};
+            virtual ~IPXLocationAlgorithm() {};
             
         protected:
-            NPXAlgorithmType algorithmType;
+            IPXAlgorithmType algorithmType;
             vector<const IPXScannedBeacon *> nearestBeacons;
             BeaconHashMap publicBeaconMap;
 
@@ -57,7 +57,7 @@ namespace Innerpeacer {
     }
 }
 
-Innerpeacer::BLELocationEngine::NPXLocationAlgorithm *CreateLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type);
+Innerpeacer::BLELocationEngine::IPXLocationAlgorithm *CreateLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type);
 
 
 

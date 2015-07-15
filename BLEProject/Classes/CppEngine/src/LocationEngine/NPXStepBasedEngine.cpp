@@ -11,7 +11,7 @@
 
 using namespace Innerpeacer::BLELocationEngine;
 
-ILocationEngine *CreateNPXStepBaseTriangulationEngine(NPXAlgorithmType type)
+ILocationEngine *CreateNPXStepBaseTriangulationEngine(IPXAlgorithmType type)
 {
     return new NPXStepBasedEngine(type);
 }

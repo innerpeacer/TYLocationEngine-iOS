@@ -12,7 +12,7 @@
 #include "IPXScannedBeacon.h"
 #include "IPXPoint.h"
 #include "IPXPublicBeacon.h"
-#include "NPXAlgorithmType.h"
+#include "IPXAlgorithmType.h"
 
 using namespace Innerpeacer::BLELocationEngine;
 
@@ -31,6 +31,6 @@ namespace Innerpeacer {
     }
 }
 
-ILocationEngine *CreateNPXStepBaseTriangulationEngine(NPXAlgorithmType type);
+ILocationEngine *CreateNPXStepBaseTriangulationEngine(IPXAlgorithmType type);
 
 #endif /* ILOCATIONENGINE_H_ */

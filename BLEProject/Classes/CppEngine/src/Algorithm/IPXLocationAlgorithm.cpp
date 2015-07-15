@@ -1,19 +1,19 @@
 //
-//  NPXLocationAlgorithm.cpp
+//  IPXLocationAlgorithm.cpp
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#include "NPXLocationAlgorithm.h"
+#include "IPXLocationAlgorithm.h"
 
-#include "NPXTriangulationAlgorithm.h"
-#include "NPXWeightingAlgorithm.h"
+#include "IPXTriangulationAlgorithm.h"
+#include "IPXWeightingAlgorithm.h"
 
 using namespace Innerpeacer::BLELocationEngine;
 
-NPXLocationAlgorithm::NPXLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type) {
+IPXLocationAlgorithm::IPXLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type) {
     vector<IPXPublicBeacon>::const_iterator iter;
     for (iter = beacons.begin(); iter != beacons.end(); ++iter) {
         publicBeaconMap.insert(BeaconHashMap::value_type((*iter), (*iter)));
@@ -21,7 +21,7 @@ NPXLocationAlgorithm::NPXLocationAlgorithm(const vector<IPXPublicBeacon> &beacon
     algorithmType = type;
 }
 
-void NPXLocationAlgorithm::setNearestBeacons(const vector<const Innerpeacer::BLELocationEngine::IPXScannedBeacon *> &beacons)
+void IPXLocationAlgorithm::setNearestBeacons(const vector<const Innerpeacer::BLELocationEngine::IPXScannedBeacon *> &beacons)
 {
     nearestBeacons.clear();
     vector<const IPXScannedBeacon *>::const_iterator iter;
@@ -30,7 +30,7 @@ void NPXLocationAlgorithm::setNearestBeacons(const vector<const Innerpeacer::BLE
     }
 }
 
-Innerpeacer::BLELocationEngine::NPXLocationAlgorithm *CreateLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type)
+Innerpeacer::BLELocationEngine::IPXLocationAlgorithm *CreateLocationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type)
 {
     switch (type) {
         case NPXSingle:

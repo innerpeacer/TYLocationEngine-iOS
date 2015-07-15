@@ -1,5 +1,5 @@
 //
-//  NPXTriangulationAlgorithm.h
+//  IPXTriangulationAlgorithm.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
@@ -10,17 +10,17 @@
 #define __BLEProject__NPXTriangulationAlgorithm__
 
 #include <stdio.h>
-#include "NPXLocationAlgorithm.h"
+#include "IPXLocationAlgorithm.h"
 
 using namespace Innerpeacer::BLELocationEngine;
 
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXTriangulationAlgorithm: public NPXLocationAlgorithm {
+        class IPXTriangulationAlgorithm: public IPXLocationAlgorithm {
             
         public:
-            NPXTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type) : NPXLocationAlgorithm(beacons, type) {}
+            IPXTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type) : IPXLocationAlgorithm(beacons, type) {}
             virtual const IPXPoint calculationLocation() = 0;
             
         protected:
@@ -35,7 +35,7 @@ namespace Innerpeacer {
     }
 }
 
-NPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type);
+IPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type);
 
 
 #endif /* defined(__BLEProject__NPXTriangulationAlgorithm__) */

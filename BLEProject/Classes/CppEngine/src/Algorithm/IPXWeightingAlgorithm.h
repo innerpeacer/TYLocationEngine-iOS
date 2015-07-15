@@ -1,5 +1,5 @@
 //
-//  NPXWeightingAlgorithm.h
+//  IPXWeightingAlgorithm.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/11.
@@ -10,17 +10,17 @@
 #define __BLEProject__NPXWeightingAlgorithm__
 
 #include <stdio.h>
-#include "NPXLocationAlgorithm.h"
+#include "IPXLocationAlgorithm.h"
 
 using namespace Innerpeacer::BLELocationEngine;
 
 namespace Innerpeacer {
     namespace BLELocationEngine {
         
-        class NPXWeightingAlgorithm : public NPXLocationAlgorithm {
+        class IPXWeightingAlgorithm : public IPXLocationAlgorithm {
             
         public:
-            NPXWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type) : NPXLocationAlgorithm(beacons, type) {}
+            IPXWeightingAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type) : IPXLocationAlgorithm(beacons, type) {}
             virtual const IPXPoint calculationLocation() = 0;
 
         protected:
@@ -31,6 +31,6 @@ namespace Innerpeacer {
     }
 }
 
-NPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &beacons, NPXAlgorithmType type);
+IPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &beacons, IPXAlgorithmType type);
 
 #endif /* defined(__BLEProject__NPXWeightingAlgorithm__) */
