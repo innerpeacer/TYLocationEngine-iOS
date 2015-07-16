@@ -1,5 +1,5 @@
 //
-//  CAStepDetector.h
+//  TYStepDetector.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/30.

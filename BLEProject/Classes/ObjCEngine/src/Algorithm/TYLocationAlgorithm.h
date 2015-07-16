@@ -1,5 +1,5 @@
 //
-//  CALocationAlgorithm.h
+//  TYLocationAlgorithm.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/28.
@@ -14,7 +14,7 @@
 @interface TYLocationAlgorithm : NSObject
 
 /**
- *  当前部署的Beacon信息: {NSNumber: CAPublicBeacon}
+ *  当前部署的Beacon信息: {NSNumber: TYPublicBeacon}
  */
 @property (nonatomic, strong) NSDictionary *beaconDictionary;
 
@@ -26,7 +26,7 @@
 /**
  *  初始化定位算法
  *
- *  @param dict 当前部署的Beacon信息: {NSNumber: CAPublicBeacon}
+ *  @param dict 当前部署的Beacon信息: {NSNumber: TYPublicBeacon}
  *
  */
 - (id)initWithBeaconDictionary:(NSDictionary *)dict;

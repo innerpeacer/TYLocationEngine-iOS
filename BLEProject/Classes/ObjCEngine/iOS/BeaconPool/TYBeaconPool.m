@@ -1,5 +1,5 @@
 //
-//  CABeaconPool.m
+//  TYBeaconPool.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/2.
@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #define DEFAULT_VALID_PERIOD 3
 
-@interface CABeaconPoolEntity : NSObject
+@interface TYBeaconPoolEntity : NSObject
 
 //@property (nonatomic, strong) NSNumber *major;
 //@property (nonatomic, strong) NSNumber *minor;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation CABeaconPoolEntity
+@implementation TYBeaconPoolEntity
 
 @end
 
@@ -60,11 +60,11 @@
         NSNumber *bKey = [TYBeaconKey beaconKeyForCLBeacon:beacon];
         
         if ([beaconDict.allKeys containsObject:bKey]) {
-            CABeaconPoolEntity *entity = beaconDict[bKey];
+            TYBeaconPoolEntity *entity = beaconDict[bKey];
             entity.timeInterval = now;
             entity.beacon = beacon;
         } else {
-            CABeaconPoolEntity *entity = [[CABeaconPoolEntity alloc] init];
+            TYBeaconPoolEntity *entity = [[TYBeaconPoolEntity alloc] init];
             entity.timeInterval= now;
             entity.beacon = beacon;
             
@@ -74,7 +74,7 @@
     
     NSMutableArray *toRemove = [NSMutableArray array];
     for (NSNumber *key in beaconDict.allKeys) {
-        CABeaconPoolEntity *entity = beaconDict[key];
+        TYBeaconPoolEntity *entity = beaconDict[key];
         if(ABS(now - entity.timeInterval) > _validityPeriod) {
             [toRemove addObject:key];
         }
@@ -86,7 +86,7 @@
 - (NSArray *)getScannedBeaconsInPool
 {
     NSMutableArray *array = [NSMutableArray array];
-    for (CABeaconPoolEntity *entity in beaconDict.allValues) {
+    for (TYBeaconPoolEntity *entity in beaconDict.allValues) {
         [array addObject:entity.beacon];
     }
     return array;

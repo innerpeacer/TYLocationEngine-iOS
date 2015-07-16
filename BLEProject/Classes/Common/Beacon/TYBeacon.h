@@ -48,7 +48,7 @@ typedef enum type {
 + (TYBeacon *)beaconWithUUID:(NSString *)uuid Major:(NSNumber *)major Minor:(NSNumber *)minor Tag:(NSString *)tag;
 
 /**
- *  Class method for creating a CABeacon
+ *  Class method for creating a TYBeacon
  *
  *  @param uuid  Beacon UUID
  *  @param uuid  Beacon UUID

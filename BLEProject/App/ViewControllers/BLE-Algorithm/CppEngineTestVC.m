@@ -120,6 +120,8 @@
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(TYPoint *)mappoint
 {
     NSLog(@"didClickAtPoint: %f, %f", mappoint.x, mappoint.y);
+    
+    NSLog(@"%f", self.mapView.mapScale);
 }
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading
@@ -150,9 +152,16 @@
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
             
             
-            AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@\n%@", pb.minor, pb.tag] color:[UIColor magentaColor]];
-            [ts setOffset:CGPointMake(5, -20)];
-            [publicBeaconLayer addGraphic:[AGSGraphic graphicWithGeometry:p symbol:ts attributes:nil]];
+//            AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@\n%@", pb.minor, pb.tag] color:[UIColor magentaColor]];
+//            [ts setOffset:CGPointMake(5, -20)];
+//            [publicBeaconLayer addGraphic:[AGSGraphic graphicWithGeometry:p symbol:ts attributes:nil]];
+            AGSTextSymbol *minorTs = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@", pb.minor] color:[UIColor magentaColor]];
+            [minorTs setOffset:CGPointMake(5, -12)];
+            [publicBeaconLayer addGraphic:[AGSGraphic graphicWithGeometry:p symbol:minorTs attributes:nil]];
+            
+            AGSTextSymbol *tagTs = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@", pb.tag] color:[UIColor magentaColor]];
+            [tagTs setOffset:CGPointMake(5, -24)];
+            [publicBeaconLayer addGraphic:[AGSGraphic graphicWithGeometry:p symbol:tagTs attributes:nil]];
             
         }
         [pdb close];

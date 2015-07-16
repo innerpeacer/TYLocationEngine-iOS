@@ -1,5 +1,5 @@
 //
-//  CALTSTriangulationAlgorithm.h
+//  TYLTSTriangulationAlgorithm.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/29.
@@ -11,7 +11,7 @@
 #import "AlgorithmType.h"
 
 /**
- *  三角定位子算法，父类为CALocationAlgorithm
+ *  三角定位子算法，父类为TYLocationAlgorithm
  */
 @interface TYTriangulationAlgorithm : TYLocationAlgorithm
 

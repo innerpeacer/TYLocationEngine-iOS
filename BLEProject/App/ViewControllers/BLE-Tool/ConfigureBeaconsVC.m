@@ -230,6 +230,9 @@
                 continue;
             }
             
+            NSLog(@"Tag: %@", pb.tag);
+
+            
             TYPoint *p = [TYPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
             
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];

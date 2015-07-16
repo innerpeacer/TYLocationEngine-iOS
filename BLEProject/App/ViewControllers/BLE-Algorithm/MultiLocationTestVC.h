@@ -1,5 +1,5 @@
 //
-//  CAMultiLocationTestVC.h
+//  MultiLocationTestVC.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/29.

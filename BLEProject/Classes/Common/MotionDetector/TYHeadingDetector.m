@@ -1,5 +1,5 @@
 //
-//  CAHeadingDetector.m
+//  TYHeadingDetector.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/30.
@@ -33,7 +33,7 @@
 }
 
 // =======================
-// CAAtitude
+// CMAtitude
 //
 // Head West = 0;
 // Head North = -90

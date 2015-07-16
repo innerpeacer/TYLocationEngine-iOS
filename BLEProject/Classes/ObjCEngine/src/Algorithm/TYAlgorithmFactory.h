@@ -1,5 +1,5 @@
 //
-//  CAAlgorithmFactory.h
+//  TYAlgorithmFactory.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/29.
@@ -19,7 +19,7 @@
 /**
  *  算法实例静态工厂方法
  *
- *  @param dict 当前部署的Beacon信息: {NSNumber: CAPublicBeacon}
+ *  @param dict 当前部署的Beacon信息: {NSNumber: TYPublicBeacon}
  *  @param type 当前算法类型
  *
  *  @return 对应于type的算法实例

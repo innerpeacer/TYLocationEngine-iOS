@@ -62,7 +62,7 @@
     [self.hintPolygonLayer removeAllGraphics];
     
     {
-        CABeaconFilterType rangeFilterType = RANGE;
+        TYBeaconFilterType rangeFilterType = RANGE;
         TYBeaconFilter *rangeBeaconFilter = [TYBeaconFilter beaconFilterWithType:rangeFilterType];
         NSArray *beaconsWithRangeFilter = [rangeBeaconFilter filterBeaconFrom:beaconFromPool withBeaconDict:self.allBeacons];
         NSMutableArray *pointsWithRangeFilter = [NSMutableArray array];
@@ -79,7 +79,7 @@
     }
     
     {
-        CABeaconFilterType rssiFilterType = RSSI;
+        TYBeaconFilterType rssiFilterType = RSSI;
         TYBeaconFilter *rssiBeaconFilter = [TYBeaconFilter beaconFilterWithType:rssiFilterType];
         NSArray *beaconsWithRssiFilter = [rssiBeaconFilter filterBeaconFrom:beaconFromPool withBeaconDict:self.allBeacons];
         NSMutableArray *pointsWithRssiFilter = [NSMutableArray array];

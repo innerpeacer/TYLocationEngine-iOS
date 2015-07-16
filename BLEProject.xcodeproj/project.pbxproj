@@ -95,11 +95,6 @@
 		575CD1E41B564E7300B1E77C /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1AA1B564E7300B1E77C /* FMDatabaseQueue.m */; };
 		575CD1E51B564E7300B1E77C /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1AC1B564E7300B1E77C /* FMResultSet.m */; };
 		575CD2AF1B564ED400B1E77C /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1EB1B564ED400B1E77C /* ArcGIS.bundle */; };
-		575CD2B01B564ED400B1E77C /* AOI.json in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1ED1B564ED400B1E77C /* AOI.json */; };
-		575CD2B11B564ED400B1E77C /* beacon-hm.db in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1EE1B564ED400B1E77C /* beacon-hm.db */; };
-		575CD2B21B564ED400B1E77C /* beacon-jz.db in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1EF1B564ED400B1E77C /* beacon-jz.db */; };
-		575CD2B31B564ED400B1E77C /* beacon-of.db in Resources */ = {isa = PBXBuildFile; fileRef = 575CD1F01B564ED400B1E77C /* beacon-of.db */; };
-		575CD3641B564EF000B1E77C /* MapResource in Resources */ = {isa = PBXBuildFile; fileRef = 575CD3631B564EF000B1E77C /* MapResource */; };
 		575CD3681B564F1500B1E77C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 575CD3671B564F1500B1E77C /* Settings.bundle */; };
 		575CD3701B564F2900B1E77C /* BLE-Algorithm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36A1B564F2900B1E77C /* BLE-Algorithm.storyboard */; };
 		575CD3711B564F2900B1E77C /* BLE-Tool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36B1B564F2900B1E77C /* BLE-Tool.storyboard */; };
@@ -297,11 +292,6 @@
 		575CD1AB1B564E7300B1E77C /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		575CD1AC1B564E7300B1E77C /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		575CD1EB1B564ED400B1E77C /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ArcGIS.bundle; sourceTree = "<group>"; };
-		575CD1ED1B564ED400B1E77C /* AOI.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AOI.json; sourceTree = "<group>"; };
-		575CD1EE1B564ED400B1E77C /* beacon-hm.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beacon-hm.db"; sourceTree = "<group>"; };
-		575CD1EF1B564ED400B1E77C /* beacon-jz.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beacon-jz.db"; sourceTree = "<group>"; };
-		575CD1F01B564ED400B1E77C /* beacon-of.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beacon-of.db"; sourceTree = "<group>"; };
-		575CD3631B564EF000B1E77C /* MapResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MapResource; sourceTree = "<group>"; };
 		575CD3671B564F1500B1E77C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		575CD36A1B564F2900B1E77C /* BLE-Algorithm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "BLE-Algorithm.storyboard"; sourceTree = "<group>"; };
 		575CD36B1B564F2900B1E77C /* BLE-Tool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "BLE-Tool.storyboard"; sourceTree = "<group>"; };
@@ -909,30 +899,9 @@
 		575CD1EA1B564ED400B1E77C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				575CD3631B564EF000B1E77C /* MapResource */,
 				575CD1EB1B564ED400B1E77C /* ArcGIS.bundle */,
-				575CD1EC1B564ED400B1E77C /* MapFiles */,
-				575CD2AE1B564ED400B1E77C /* MapTool */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		575CD1EC1B564ED400B1E77C /* MapFiles */ = {
-			isa = PBXGroup;
-			children = (
-				575CD1ED1B564ED400B1E77C /* AOI.json */,
-				575CD1EE1B564ED400B1E77C /* beacon-hm.db */,
-				575CD1EF1B564ED400B1E77C /* beacon-jz.db */,
-				575CD1F01B564ED400B1E77C /* beacon-of.db */,
-			);
-			path = MapFiles;
-			sourceTree = "<group>";
-		};
-		575CD2AE1B564ED400B1E77C /* MapTool */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MapTool;
 			sourceTree = "<group>";
 		};
 		575CD3691B564F2900B1E77C /* storyboard */ = {
@@ -1034,18 +1003,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				575CD3751B564F2900B1E77C /* Setting.storyboard in Resources */,
-				575CD3641B564EF000B1E77C /* MapResource in Resources */,
-				575CD2B21B564ED400B1E77C /* beacon-jz.db in Resources */,
 				575CD10C1B564E2C00B1E77C /* InfoPlist.strings in Resources */,
 				575CD3741B564F2900B1E77C /* Map.storyboard in Resources */,
-				575CD2B11B564ED400B1E77C /* beacon-hm.db in Resources */,
 				575CD3721B564F2900B1E77C /* Launch Screen.xib in Resources */,
 				575CD3731B564F2900B1E77C /* Main.storyboard in Resources */,
-				575CD2B01B564ED400B1E77C /* AOI.json in Resources */,
 				575CD3711B564F2900B1E77C /* BLE-Tool.storyboard in Resources */,
 				575CD3701B564F2900B1E77C /* BLE-Algorithm.storyboard in Resources */,
 				575CD2AF1B564ED400B1E77C /* ArcGIS.bundle in Resources */,
-				575CD2B31B564ED400B1E77C /* beacon-of.db in Resources */,
 				575CD1E01B564E7300B1E77C /* Images.xcassets in Resources */,
 				575CD3681B564F1500B1E77C /* Settings.bundle in Resources */,
 			);
@@ -1263,6 +1227,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/innerpeacer/Desktop,
@@ -1288,6 +1253,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/innerpeacer/Desktop,

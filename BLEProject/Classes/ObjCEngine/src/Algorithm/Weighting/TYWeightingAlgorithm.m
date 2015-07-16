@@ -1,5 +1,5 @@
 //
-//  CAWeightingAlgorithm.m
+//  TYWeightingAlgorithm.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/29.

@@ -10,12 +10,12 @@
 
 typedef enum {
     EMPTY, RSSI, ACCURACY, RANGE
-} CABeaconFilterType;
+} TYBeaconFilterType;
 
 @interface TYBeaconFilter : NSObject
 
 - (NSArray *)filterBeaconFrom:(NSArray *)beaconArray withBeaconDict:(NSDictionary *)dict;
 
-+ (TYBeaconFilter *)beaconFilterWithType:(CABeaconFilterType)type;
++ (TYBeaconFilter *)beaconFilterWithType:(TYBeaconFilterType)type;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  CAWeightingAlgorithm.h
+//  TYWeightingAlgorithm.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/29.
@@ -11,7 +11,7 @@
 #import "AlgorithmType.h"
 
 /**
- *  加权定位子算法，父类为CALocationAlgorithm
+ *  加权定位子算法，父类为TYLocationAlgorithm
  */
 @interface TYWeightingAlgorithm : TYLocationAlgorithm
 

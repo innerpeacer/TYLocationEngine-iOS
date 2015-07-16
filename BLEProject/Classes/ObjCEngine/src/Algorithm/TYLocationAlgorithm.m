@@ -1,5 +1,5 @@
 //
-//  CALocationAlgorithm.m
+//  TYLocationAlgorithm.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/1/28.

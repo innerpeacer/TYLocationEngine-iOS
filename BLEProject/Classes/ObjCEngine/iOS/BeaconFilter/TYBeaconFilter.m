@@ -11,25 +11,25 @@
 #import "TYPublicBeacon.h"
 #import "BLELocationEngineConstants.h"
 
-@interface CAEmptyFilter : TYBeaconFilter
+@interface TYEmptyFilter : TYBeaconFilter
 
 - (id)init;
 
 @end
 
-@interface CARssiFilter : TYBeaconFilter
+@interface TYRssiFilter : TYBeaconFilter
 
 - (id)init;
 
 @end
 
-@interface CAAccuracyFilter : TYBeaconFilter
+@interface TYAccuracyFilter : TYBeaconFilter
 
 - (id)init;
 
 @end
 
-@interface CARangeFilter : TYBeaconFilter
+@interface TYRangeFilter : TYBeaconFilter
 
 - (id)init;
 
@@ -37,28 +37,28 @@
 
 @implementation TYBeaconFilter
 
-+ (TYBeaconFilter *)beaconFilterWithType:(CABeaconFilterType)type
++ (TYBeaconFilter *)beaconFilterWithType:(TYBeaconFilterType)type
 {
     TYBeaconFilter *filter;
     switch (type) {
         case EMPTY:
-            filter = [[CAEmptyFilter alloc] init];
+            filter = [[TYEmptyFilter alloc] init];
             break;
             
         case RSSI:
-            filter = [[CARssiFilter alloc] init];
+            filter = [[TYRssiFilter alloc] init];
             break;
             
         case ACCURACY:
-            filter = [[CAAccuracyFilter alloc] init];
+            filter = [[TYAccuracyFilter alloc] init];
             break;
             
         case RANGE:
-            filter = [[CARangeFilter alloc] init];
+            filter = [[TYRangeFilter alloc] init];
             break;
             
         default:
-            filter = [[CAEmptyFilter alloc] init];
+            filter = [[TYEmptyFilter alloc] init];
             break;
     }
     return filter;
@@ -73,7 +73,7 @@
 
 
 
-@implementation CAEmptyFilter
+@implementation TYEmptyFilter
 
 - (id)init
 {
@@ -91,7 +91,7 @@
 
 @end
 
-@implementation CARssiFilter
+@implementation TYRssiFilter
 
 - (id)init
 {
@@ -120,7 +120,7 @@
 
 @end
 
-@implementation CAAccuracyFilter
+@implementation TYAccuracyFilter
 
 - (id)init
 {
@@ -150,7 +150,7 @@
 
 @end
 
-@implementation CARangeFilter
+@implementation TYRangeFilter
 
 - (id)init
 {

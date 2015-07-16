@@ -1,5 +1,5 @@
 //
-//  CABeaconPool.h
+//  TYBeaconPool.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/2/2.
