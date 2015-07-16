@@ -174,12 +174,12 @@
         [pdb open];
         TYBeacon *pBeacon;
         
-        pBeacon = [pdb getNephogramBeaconWithMajor:major Minor:minor];
+        pBeacon = [pdb getLocationingBeaconWithMajor:major Minor:minor];
         if (pBeacon == nil) {
             TYPublicBeacon *pb = [TYPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation ShopGid:nil];
-            [pdb insertNephogramBeacon:pb];
+            [pdb insertLocationingBeacon:pb];
         } else {
-            [pdb updateNephogramBeacon:[TYPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation]];
+            [pdb updateLocationingBeacon:[TYPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation]];
         }
         
         [pdb close];
@@ -221,7 +221,7 @@
         TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [db open];
         
-        NSArray *array = [db getAllNephogramBeacons];
+        NSArray *array = [db getAllLocationingBeacons];
         NSLog(@"%d beacons", (int)array.count);
         
         for (TYPublicBeacon *pb in array)

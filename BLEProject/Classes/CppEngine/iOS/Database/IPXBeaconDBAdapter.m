@@ -40,7 +40,7 @@
     return self;
 }
 
-- (NSArray *)getAllNephogramBeacons
+- (NSArray *)getAllLocationingBeacons
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
 
@@ -70,7 +70,7 @@
     return array;
 }
 
-- (TYPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
+- (TYPublicBeacon *)getLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID, TABLE_BEACON];
     NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d and %@ = %d ",FIELD_BEACON_MAJOR, major.intValue, FIELD_BEACON_MINOR, minor.intValue];

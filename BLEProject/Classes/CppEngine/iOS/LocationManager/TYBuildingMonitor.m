@@ -12,7 +12,6 @@
 #import "IPXRegionDBAdapter.h"
 #import "TYRegionManager.h"
 
-
 #import "TYLocationManager.h"
 #import "TYUserDefaults.h"
 

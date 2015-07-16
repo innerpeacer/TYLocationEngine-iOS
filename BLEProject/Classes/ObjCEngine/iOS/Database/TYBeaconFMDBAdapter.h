@@ -12,15 +12,15 @@
 - (BOOL)open;
 - (BOOL)close;
 
-- (BOOL)deleteNephogramBeacon:(TYBeacon *)beacon;
-- (BOOL)deleteNephogramBeaconWithMajor:(int)major Minor:(int)minor;
-- (BOOL)eraseNephogramBeaconTable;
+- (BOOL)deleteLocationingBeacon:(TYBeacon *)beacon;
+- (BOOL)deleteLocationingBeaconWithMajor:(int)major Minor:(int)minor;
+- (BOOL)eraseLocationingBeaconTable;
 
-- (BOOL)insertNephogramBeacon:(TYPublicBeacon *)beacon;
-- (BOOL)updateNephogramBeacon:(TYPublicBeacon *)beacon;
-- (BOOL)updateNephogramBeacon:(TYBeacon *)beacon WithLocation:(TYLocalPoint *)lp ShopGid:(NSString *)shopID;
+- (BOOL)insertLocationingBeacon:(TYPublicBeacon *)beacon;
+- (BOOL)updateLocationingBeacon:(TYPublicBeacon *)beacon;
+- (BOOL)updateLocationingBeacon:(TYBeacon *)beacon WithLocation:(TYLocalPoint *)lp ShopGid:(NSString *)shopID;
 
-- (NSArray *)getAllNephogramBeacons;
-- (TYPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor;
+- (NSArray *)getAllLocationingBeacons;
+- (TYPublicBeacon *)getLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor;
 
 @end

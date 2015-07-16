@@ -66,7 +66,7 @@
     if (self.currentBuilding != nil) {
         TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [db open];
-        NSArray *array = [db getAllNephogramBeacons];
+        NSArray *array = [db getAllLocationingBeacons];
         for(TYPublicBeacon *pb in array){
             NSNumber *key = [TYBeaconKey beaconKeyForTYBeacon:pb];
             [self.allBeacons setObject:pb forKey:key];
@@ -87,7 +87,7 @@
         TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [pdb open];
         
-        NSArray *array = [pdb getAllNephogramBeacons];
+        NSArray *array = [pdb getAllLocationingBeacons];
         
         for (TYPublicBeacon *pb in array)
         {

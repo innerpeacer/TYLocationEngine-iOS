@@ -77,7 +77,7 @@
 {
     IPXBeaconDBAdapter *db = [[IPXBeaconDBAdapter alloc] initWithDBFile:dbPath];
     [db open];
-    NSArray *array = [db getAllNephogramBeacons];
+    NSArray *array = [db getAllLocationingBeacons];
     
     allBeacons = [[NSMutableDictionary alloc] init];
     vector<IPXPublicBeacon> publicBeacons;

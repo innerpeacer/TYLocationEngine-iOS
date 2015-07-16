@@ -7,6 +7,7 @@
 //
 
 #import "TYVector2.h"
+#import "BLELocationEngineConstants.h"
 
 @implementation TYVector2
 

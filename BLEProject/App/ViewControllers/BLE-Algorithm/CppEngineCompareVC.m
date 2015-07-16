@@ -128,7 +128,7 @@
         TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [pdb open];
         
-        NSArray *array = [pdb getAllNephogramBeacons];
+        NSArray *array = [pdb getAllLocationingBeacons];
         for (TYPublicBeacon *pb in array)
         {
             if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {

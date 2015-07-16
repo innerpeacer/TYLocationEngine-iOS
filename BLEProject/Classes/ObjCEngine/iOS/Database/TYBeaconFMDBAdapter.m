@@ -35,29 +35,29 @@
     return self;
 }
 
-- (BOOL)deleteNephogramBeacon:(TYBeacon *)beacon
+- (BOOL)deleteLocationingBeacon:(TYBeacon *)beacon
 {
-    return [self deleteNephogramBeaconWithMajor:beacon.major.intValue Minor:beacon.minor.intValue];
+    return [self deleteLocationingBeaconWithMajor:beacon.major.intValue Minor:beacon.minor.intValue];
 }
 
-- (BOOL)deleteNephogramBeaconWithMajor:(int)major Minor:(int)minor
+- (BOOL)deleteLocationingBeaconWithMajor:(int)major Minor:(int)minor
 {
     NSString * sql = [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = %d and %@ = %d ", TABLE_BEACON, FIELD_BEACON_MAJOR, major, FIELD_BEACON_MINOR, minor];
     return [_database executeUpdate:sql];
 }
 
-- (BOOL)eraseNephogramBeaconTable
+- (BOOL)eraseLocationingBeaconTable
 {
     NSString * sql = [NSString stringWithFormat:@"DELETE FROM %@", TABLE_BEACON];
     return [_database executeUpdate:sql];
 }
 
-- (BOOL)insertNephogramBeacon:(TYPublicBeacon *)beacon
+- (BOOL)insertLocationingBeacon:(TYPublicBeacon *)beacon
 {
-    return [self insertNephogramBeaconWithUUID:beacon.UUID Major:beacon.major Minor:beacon.minor X:beacon.location.x Y:beacon.location.y Z:0.0 Floor:beacon.location.floor ShopGid:beacon.shopGid];
+    return [self insertLocationingBeaconWithUUID:beacon.UUID Major:beacon.major Minor:beacon.minor X:beacon.location.x Y:beacon.location.y Z:0.0 Floor:beacon.location.floor ShopGid:beacon.shopGid];
 }
 
-- (BOOL)insertNephogramBeaconWithUUID:(NSString *)uuid Major:(NSNumber *)major Minor:(NSNumber *)minor X:(double)x Y:(double)y Z:(double)z Floor:(int)f ShopGid:(NSString *)shopid
+- (BOOL)insertLocationingBeaconWithUUID:(NSString *)uuid Major:(NSNumber *)major Minor:(NSNumber *)minor X:(double)x Y:(double)y Z:(double)z Floor:(int)f ShopGid:(NSString *)shopid
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"Insert into %@", TABLE_BEACON];
     NSMutableArray *arguments = [[NSMutableArray alloc] init];
@@ -76,7 +76,7 @@
     return [_database executeUpdate:sql withArgumentsInArray:arguments];
 }
 
-- (BOOL)updateNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor X:(double)x Y:(double)y Z:(double)z Floor:(int)f ShopGid:(NSString *)shopid
+- (BOOL)updateLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor X:(double)x Y:(double)y Z:(double)z Floor:(int)f ShopGid:(NSString *)shopid
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"UPDATE %@ SET ",TABLE_BEACON];
     NSString *fields = [NSString stringWithFormat:@" %@ = ?, %@ = ?, %@ = ?", FIELD_GEOM, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID];
@@ -93,17 +93,17 @@
     return [_database executeUpdate:sql withArgumentsInArray:arguments];
 }
 
-- (BOOL)updateNephogramBeacon:(TYPublicBeacon *)beacon
+- (BOOL)updateLocationingBeacon:(TYPublicBeacon *)beacon
 {
-    return [self updateNephogramBeaconWithMajor:beacon.major Minor:beacon.minor X:beacon.location.x Y:beacon.location.y Z:0.0 Floor:beacon.location.floor ShopGid:beacon.shopGid];
+    return [self updateLocationingBeaconWithMajor:beacon.major Minor:beacon.minor X:beacon.location.x Y:beacon.location.y Z:0.0 Floor:beacon.location.floor ShopGid:beacon.shopGid];
 }
 
-- (BOOL)updateNephogramBeacon:(TYBeacon *)beacon WithLocation:(TYLocalPoint *)lp ShopGid:(NSString *)shopID
+- (BOOL)updateLocationingBeacon:(TYBeacon *)beacon WithLocation:(TYLocalPoint *)lp ShopGid:(NSString *)shopID
 {
-    return [self updateNephogramBeaconWithMajor:beacon.major Minor:beacon.minor X:lp.x Y:lp.y Z:0.0 Floor:lp.floor ShopGid:shopID];
+    return [self updateLocationingBeaconWithMajor:beacon.major Minor:beacon.minor X:lp.x Y:lp.y Z:0.0 Floor:lp.floor ShopGid:shopID];
 }
 
-- (NSArray *)getAllNephogramBeacons
+- (NSArray *)getAllLocationingBeacons
 {
     NSString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_BEACON_MAJOR, FIELD_BEACON_MINOR, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID, FIELD_BEACON_TAG, TABLE_BEACON];
     
@@ -132,7 +132,7 @@
 
 }
 
-- (TYPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
+- (TYPublicBeacon *)getLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID, TABLE_BEACON];
     NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d and %@ = %d ",FIELD_BEACON_MAJOR, major.intValue, FIELD_BEACON_MINOR, minor.intValue];

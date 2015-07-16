@@ -39,7 +39,7 @@
     TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:currentBuilding];
     [db open];
     
-    NSArray *publicArray = [db getAllNephogramBeacons];
+    NSArray *publicArray = [db getAllLocationingBeacons];
     if (publicArray.count > 0) {
         
         publicArray = [publicArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -89,7 +89,7 @@
         
         TYBeacon *beacon = [[groups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         if ([[groupTitles objectAtIndex:indexPath.section] isEqualToString:@"Beacons"]) {
-            [db deleteNephogramBeaconWithMajor:beacon.major.intValue Minor:beacon.minor.intValue];
+            [db deleteLocationingBeaconWithMajor:beacon.major.intValue Minor:beacon.minor.intValue];
         }
         
         [[groups objectAtIndex:indexPath.section] removeObjectAtIndex:indexPath.row];

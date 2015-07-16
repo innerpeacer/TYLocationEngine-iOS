@@ -9,7 +9,7 @@
 - (BOOL)open;
 - (BOOL)close;
 
-- (NSArray *)getAllNephogramBeacons;
-- (TYPublicBeacon *)getNephogramBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor;
+- (NSArray *)getAllLocationingBeacons;
+- (TYPublicBeacon *)getLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor;
 
 @end
