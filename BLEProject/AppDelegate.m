@@ -20,11 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self initArcGISEnvironment];
-    
     [self copyMapFilesIfNeeded];
-    
     [self setDefaultPlaceIfNeeded];
-    
     [self registerDefaultsFromSettingsBundle];
     
     return YES;
@@ -39,7 +36,6 @@
 - (void)initArcGISEnvironment
 {
     [TYMapEnvironment initMapEnvironment];
-    [TYMapEnvironment setEncryptionEnabled:NO];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
@@ -50,8 +46,10 @@
 
 - (void)setDefaultPlaceIfNeeded
 {
-    [TYUserDefaults setDefaultCity:DEFAULT_CITY];
-    [TYUserDefaults setDefaultBuilding:DEFAULT_BUILDING];
+    if ([TYUserDefaults getDefaultBuilding] == nil) {
+        [TYUserDefaults setDefaultCity:DEFAULT_CITY];
+        [TYUserDefaults setDefaultBuilding:DEFAULT_BUILDING];
+    }
 }
 
 - (void)copyMapFilesIfNeeded
@@ -62,7 +60,7 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     NSString *targetRootDir = [TYMapEnvironment getRootDirectoryForMapFiles];
-    NSString *sourceRootDir = [[NSBundle mainBundle] pathForResource:@"MapResource" ofType:nil];
+    NSString *sourceRootDir = [[NSBundle mainBundle] pathForResource:@"MapEncrypted" ofType:nil];
     
     NSDirectoryEnumerator *enumerator;
     enumerator = [fileManager enumeratorAtPath:sourceRootDir];

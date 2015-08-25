@@ -102,7 +102,7 @@
 		575CD3731B564F2900B1E77C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36D1B564F2900B1E77C /* Main.storyboard */; };
 		575CD3741B564F2900B1E77C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36E1B564F2900B1E77C /* Map.storyboard */; };
 		575CD3751B564F2900B1E77C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36F1B564F2900B1E77C /* Setting.storyboard */; };
-		577605141B581513005F30B1 /* MapResource in Resources */ = {isa = PBXBuildFile; fileRef = 577605131B581513005F30B1 /* MapResource */; };
+		577605141B581513005F30B1 /* MapEncrypted in Resources */ = {isa = PBXBuildFile; fileRef = 577605131B581513005F30B1 /* MapEncrypted */; };
 		57B396DE1A6361B800E72FF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B396DD1A6361B800E72FF5 /* Foundation.framework */; };
 		57B396E01A6361B800E72FF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B396DF1A6361B800E72FF5 /* CoreGraphics.framework */; };
 		57B396E21A6361B800E72FF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B396E11A6361B800E72FF5 /* UIKit.framework */; };
@@ -300,7 +300,7 @@
 		575CD36D1B564F2900B1E77C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		575CD36E1B564F2900B1E77C /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		575CD36F1B564F2900B1E77C /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
-		577605131B581513005F30B1 /* MapResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MapResource; sourceTree = "<group>"; };
+		577605131B581513005F30B1 /* MapEncrypted */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MapEncrypted; sourceTree = "<group>"; };
 		57B396DA1A6361B800E72FF5 /* BLEProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B396DD1A6361B800E72FF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		57B396DF1A6361B800E72FF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -901,7 +901,7 @@
 		575CD1EA1B564ED400B1E77C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				577605131B581513005F30B1 /* MapResource */,
+				577605131B581513005F30B1 /* MapEncrypted */,
 				575CD1EB1B564ED400B1E77C /* ArcGIS.bundle */,
 			);
 			path = Resources;
@@ -1015,7 +1015,7 @@
 				575CD2AF1B564ED400B1E77C /* ArcGIS.bundle in Resources */,
 				575CD1E01B564E7300B1E77C /* Images.xcassets in Resources */,
 				575CD3681B564F1500B1E77C /* Settings.bundle in Resources */,
-				577605141B581513005F30B1 /* MapResource in Resources */,
+				577605141B581513005F30B1 /* MapEncrypted in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
