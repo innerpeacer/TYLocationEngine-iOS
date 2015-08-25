@@ -6,7 +6,6 @@
 #import "TYUserDefaults.h"
 #import "TYBeaconFMDBAdapter.h"
 #import "TYBeacon.h"
-#import "AppConstants.h"
 #import "TYBeaconManager.h"
 
 #import "TYRegionManager.h"
@@ -61,7 +60,7 @@
     beaconManager = [[TYBeaconManager alloc] init];
     beaconManager.delegate = self;
     
-    beaconRegion = [TYRegionManager defaultRegion];
+    beaconRegion =  [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
 }
 
 - (IBAction)bindingButtonClicked:(id)sender {
@@ -176,10 +175,10 @@
         
         pBeacon = [pdb getLocationingBeaconWithMajor:major Minor:minor];
         if (pBeacon == nil) {
-            TYPublicBeacon *pb = [TYPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation ShopGid:nil];
+            TYPublicBeacon *pb = [TYPublicBeacon beaconWithUUID:beaconRegion.proximityUUID.UUIDString Major:major Minor:minor Tag:tag Location:currentLocation ShopGid:nil];
             [pdb insertLocationingBeacon:pb];
         } else {
-            [pdb updateLocationingBeacon:[TYPublicBeacon beaconWithUUID:BEACON_SERVICE_UUID Major:major Minor:minor Tag:tag Location:currentLocation]];
+            [pdb updateLocationingBeacon:[TYPublicBeacon beaconWithUUID:beaconRegion.proximityUUID.UUIDString Major:major Minor:minor Tag:tag Location:currentLocation]];
         }
         
         [pdb close];

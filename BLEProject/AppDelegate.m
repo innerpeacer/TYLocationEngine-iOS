@@ -2,7 +2,6 @@
 
 #import <TYMapSDK/TYMapSDK.h>
 #import "TYUserDefaults.h"
-#import "AppConstants.h"
 
 #define DEFAULT_MAP_ROOT @"Map"
 
@@ -47,8 +46,8 @@
 - (void)setDefaultPlaceIfNeeded
 {
     if ([TYUserDefaults getDefaultBuilding] == nil) {
-        [TYUserDefaults setDefaultCity:DEFAULT_CITY];
-        [TYUserDefaults setDefaultBuilding:DEFAULT_BUILDING];
+        [TYUserDefaults setDefaultCity:@"0021"];
+        [TYUserDefaults setDefaultBuilding:@"00210100"];
     }
 }
 

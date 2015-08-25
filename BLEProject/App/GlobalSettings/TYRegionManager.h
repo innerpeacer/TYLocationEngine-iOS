@@ -1,9 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "TYBeaconRegion.h"
+
 @interface TYRegionManager : NSObject
 
-+ (NSUUID *)defaultUUID;
-+ (CLBeaconRegion *)defaultRegion;
++ (CLBeaconRegion *)getBeaconRegionForBuilding:(NSString *)buildingID;
 
 @end

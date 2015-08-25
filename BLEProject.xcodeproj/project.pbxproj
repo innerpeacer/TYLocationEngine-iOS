@@ -109,12 +109,13 @@
 		57B3989E1A6364D900E72FF5 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989D1A6364D900E72FF5 /* libgeos.a */; };
 		57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */; };
 		57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */; };
+		57E6BCC01B8C1B88002226FB /* BeaconRegion.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */; };
+		57E6BCC31B8C1C5D002226FB /* TYBeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		574EE2F41B7247F5005A6482 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
 		574EE2F61B724809005A6482 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYMapData.framework; path = ../../../../../../../../../Users/innerpeacer/Desktop/TYMapData.framework; sourceTree = "<group>"; };
-		575CD0AB1B564DE200B1E77C /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		575CD0AC1B564DE200B1E77C /* TYRegionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRegionManager.h; sourceTree = "<group>"; };
 		575CD0AD1B564DE200B1E77C /* TYRegionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRegionManager.m; sourceTree = "<group>"; };
 		575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYUserDefaults.h; sourceTree = "<group>"; };
@@ -309,6 +310,9 @@
 		57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		57B5C5DB1B565EB200189FE8 /* TYBeaconPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconPool.h; sourceTree = "<group>"; };
 		57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconPool.m; sourceTree = "<group>"; };
+		57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BeaconRegion.json; sourceTree = "<group>"; };
+		57E6BCC11B8C1C5D002226FB /* TYBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegion.h; sourceTree = "<group>"; };
+		57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,11 +361,13 @@
 		575CD0AA1B564DE200B1E77C /* GlobalSettings */ = {
 			isa = PBXGroup;
 			children = (
-				575CD0AB1B564DE200B1E77C /* AppConstants.h */,
+				57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */,
 				575CD0AC1B564DE200B1E77C /* TYRegionManager.h */,
 				575CD0AD1B564DE200B1E77C /* TYRegionManager.m */,
 				575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */,
 				575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */,
+				57E6BCC11B8C1C5D002226FB /* TYBeaconRegion.h */,
+				57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */,
 			);
 			path = GlobalSettings;
 			sourceTree = "<group>";
@@ -1014,6 +1020,7 @@
 				575CD3701B564F2900B1E77C /* BLE-Algorithm.storyboard in Resources */,
 				575CD2AF1B564ED400B1E77C /* ArcGIS.bundle in Resources */,
 				575CD1E01B564E7300B1E77C /* Images.xcassets in Resources */,
+				57E6BCC01B8C1B88002226FB /* BeaconRegion.json in Resources */,
 				575CD3681B564F1500B1E77C /* Settings.bundle in Resources */,
 				577605141B581513005F30B1 /* MapEncrypted in Resources */,
 			);
@@ -1110,6 +1117,7 @@
 				575CD1E41B564E7300B1E77C /* FMDatabaseQueue.m in Sources */,
 				575CD1C21B564E7300B1E77C /* TYLocationManager.m in Sources */,
 				575CD1DA1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m in Sources */,
+				57E6BCC31B8C1C5D002226FB /* TYBeaconRegion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

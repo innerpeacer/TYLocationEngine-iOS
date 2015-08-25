@@ -14,8 +14,6 @@
 #import "TYLocationManager.h"
 #import "TYRegionManager.h"
 #import "TYUserDefaults.h"
-#import "AppConstants.h"
-
 #import "TYBuildingMonitor.h"
 
 @interface CppEngineTestVC () <TYLocationManagerDelegate>
@@ -87,7 +85,9 @@
 
 - (void)initLocationSettings
 {
-    publicBeaconRegion = [TYRegionManager defaultRegion];
+//    publicBeaconRegion = [TYRegionManager defaultRegion];
+    publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
+
     locationManager = [[TYLocationManager alloc] initWithBuilding:[TYUserDefaults getDefaultBuilding]];
 
     

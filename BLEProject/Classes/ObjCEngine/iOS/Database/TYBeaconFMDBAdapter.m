@@ -3,7 +3,6 @@
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 #import "TYPointConverter.h"
-#import "AppConstants.h"
 #import "TYLocationFileManager.h"
 
 @interface TYBeaconFMDBAdapter()
@@ -66,7 +65,7 @@
     NSString *values = @" ( ?, ?, ?, ?, ?, ?) ";
     
     [arguments addObject:[TYPointConverter dataFromX:x Y:y Z:z]];
-    [arguments addObject:BEACON_SERVICE_UUID];
+    [arguments addObject:uuid];
     [arguments addObject:[NSString stringWithFormat:@"%d", major.intValue]];
     [arguments addObject:[NSString stringWithFormat:@"%d", minor.intValue]];
     [arguments addObject:[NSString stringWithFormat:@"%d", f]];
