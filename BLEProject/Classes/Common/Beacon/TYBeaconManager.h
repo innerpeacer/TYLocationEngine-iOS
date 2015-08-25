@@ -24,7 +24,7 @@
 - (void)beaconManagerAuthorized:(TYBeaconManager *)manager;
 @end
 
-/**
+/*
  *  BLE Beacon管理
  */
 @interface TYBeaconManager : NSObject

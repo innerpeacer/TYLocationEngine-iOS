@@ -27,11 +27,22 @@
 {
     self = [super init];
     if (self) {
-        NSString *dbPath = [TYMapFileManager getPrimitiveDBPath:building];
+        NSString *dbPath = [self getPrimitiveDBPath:building];
         _database = [FMDatabase databaseWithPath:dbPath];
         [self checkDatabase];
     }
     return self;
+}
+
+#define FILE_PRIMITIVE_DB @"%@_Primitive.db"
+- (NSString *)getPrimitiveDBPath:(TYBuilding *)building
+{
+    NSString *mapRootDir = [TYMapEnvironment getRootDirectoryForMapFiles];
+    NSString *cityDir = [mapRootDir stringByAppendingPathComponent:building.cityID];
+    NSString *buildingDir = [cityDir stringByAppendingPathComponent:building.buildingID];
+    NSString *fileName = [NSString stringWithFormat:FILE_PRIMITIVE_DB, building.buildingID];
+    
+    return [buildingDir stringByAppendingPathComponent:fileName];
 }
 
 - (void)checkDatabase

@@ -27,7 +27,6 @@
     
     [self registerDefaultsFromSettingsBundle];
     
-    
     return YES;
 }
 
@@ -40,8 +39,7 @@
 - (void)initArcGISEnvironment
 {
     [TYMapEnvironment initMapEnvironment];
-    
-    [TYMapEnvironment setMapLanguage:TYTraditionalChinese];
+    [TYMapEnvironment setEncryptionEnabled:NO];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];

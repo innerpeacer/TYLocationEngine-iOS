@@ -623,9 +623,12 @@
                                             <action selector="bindingButtonClicked:" destination="TGZ-ah-x8r" eventType="touchUpInside" id="F4J-tx-oC9"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJt-Kq-QdJ">
-                                        <rect key="frame" x="20" y="114" width="280" height="37"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJt-Kq-QdJ">
+                                        <rect key="frame" x="8" y="114" width="304" height="37"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="PzX-AO-2kB"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -634,12 +637,15 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="uJt-Kq-QdJ" firstAttribute="leading" secondItem="Mun-H4-wZT" secondAttribute="leading" constant="8" id="12C-Ps-hS3"/>
                                     <constraint firstAttribute="bottom" secondItem="GGD-0y-jGx" secondAttribute="bottom" constant="59" id="1AZ-TX-PoV"/>
                                     <constraint firstAttribute="trailing" secondItem="GGD-0y-jGx" secondAttribute="trailing" constant="42" id="7BE-zJ-QHE"/>
                                     <constraint firstItem="v8L-7p-HGK" firstAttribute="leading" secondItem="Mun-H4-wZT" secondAttribute="leading" constant="20" id="95N-cT-BGq"/>
                                     <constraint firstAttribute="trailing" secondItem="lPF-YD-sei" secondAttribute="trailing" constant="27" id="Di7-64-NlB"/>
                                     <constraint firstItem="661-ju-pVD" firstAttribute="leading" secondItem="Mun-H4-wZT" secondAttribute="leading" constant="20" id="JzO-Z4-wCq"/>
                                     <constraint firstAttribute="bottom" secondItem="661-ju-pVD" secondAttribute="bottom" constant="59" id="Jza-X8-EcY"/>
+                                    <constraint firstAttribute="trailing" secondItem="uJt-Kq-QdJ" secondAttribute="trailing" constant="8" id="Pew-5w-VTk"/>
+                                    <constraint firstItem="uJt-Kq-QdJ" firstAttribute="top" secondItem="Mun-H4-wZT" secondAttribute="top" constant="114" id="kx7-Bm-eKu"/>
                                     <constraint firstItem="661-ju-pVD" firstAttribute="top" secondItem="v8L-7p-HGK" secondAttribute="bottom" constant="9" id="pHj-Nb-Vp6"/>
                                     <constraint firstItem="GGD-0y-jGx" firstAttribute="top" secondItem="lPF-YD-sei" secondAttribute="bottom" constant="8" id="yYM-te-ijQ"/>
                                 </constraints>

@@ -52,7 +52,7 @@
     
     pathCalibration = [[TYPathCalibration alloc] initWithFloorID:@"002100002F20"];
     
-    pms = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locationArrow"];
+    pms = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"l7"];
     [self.mapView setLocationSymbol:(TYMarkerSymbol *)pms];
     
     [self.mapView setMapMode:TYMapViewModeDefault];
@@ -105,6 +105,12 @@
 {
     [resultLayer removeAllGraphics];
     
+    if (newLocation.floor != self.mapView.currentMapInfo.floorNumber) {
+        [self.mapView setFloorWithInfo:[TYMapInfo searchMapInfoFromArray:self.allMapInfos Floor:newLocation.floor]];
+        self.title = self.mapView.currentMapInfo.floorName;
+    }
+    
+    
     TYPoint *pos = [TYPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
     
     [self.mapView showLocation:newLocation];
@@ -131,7 +137,7 @@
 
 - (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager
 {
-    NSLog(@"TYLocationManagerdidFailUpdateLocation");
+//    NSLog(@"TYLocationManagerdidFailUpdateLocation");
     [self.mapView removeLocation];
 }
 

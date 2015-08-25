@@ -43,6 +43,10 @@
         CLBeacon *cb = [beaconFromPool objectAtIndex:i];
         
         for (TYPublicBeacon *pb in self.allBeacons.allValues) {
+            if (pb.location.floor != self.mapView.currentMapInfo.floorNumber) {
+                continue;
+            }
+            
             if (cb.minor.integerValue == pb.minor.integerValue) {
                 NSString *rssi = [NSString stringWithFormat:@"%.2f, %d", cb.accuracy,(int) cb.rssi];
                 AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:rssi color:[UIColor blueColor]];

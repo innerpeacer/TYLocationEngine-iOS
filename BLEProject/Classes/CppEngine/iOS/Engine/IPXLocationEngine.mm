@@ -113,7 +113,7 @@
 
 - (void)start
 {
-    NSLog(@"CppEngine Start");
+//    NSLog(@"CppEngine Start");
     if (isStarted) {
         return;
     }
@@ -126,7 +126,7 @@
 
 - (void)stop
 {
-    NSLog(@"CppEngine Stop");
+//    NSLog(@"CppEngine Stop");
     
     if (!isStarted) {
         return;
@@ -147,6 +147,7 @@
 
 - (void)beaconManager:(TYBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
+//    NSLog(@"didRangeBeacons: %d", (int)beacons.count);
     if (beacons.count == 0) {
         return;
     }
@@ -243,6 +244,7 @@
 
 - (void)preprocessBeacons:(NSArray *)beacons
 {
+//    NSLog(@"preprocessBeacons: %d", (int)beacons.count);
     [scannedBeacons removeAllObjects];
     
     for(CLBeacon *beacon in beacons) {
@@ -269,6 +271,8 @@
         }
     }
     [scannedBeacons removeObjectsInArray:toRemove];
+    
+//    NSLog(@"scannedBeacons: %d", (int)scannedBeacons.count);
 }
 
 

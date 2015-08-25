@@ -21,6 +21,18 @@
     [super viewDidLoad];
     
     currentBuilding = [TYUserDefaults getDefaultBuilding];
+    
+//    TYPrimitiveBeaconDBAdapter *db = [[TYPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuilding];
+//    [db open];
+//    [db erasePrimitiveBeaconTable];
+//    int major = 10018;
+//    int minor = 34262;
+//    for (int i = 1; i <= 20 ; ++i) {
+//        [db insertPrimitiveBeaconWithMajor:@(major) Minor:@(minor + i) Tag:[NSString stringWithFormat:@"%d", i]];
+//    }
+//    
+//    [db close];
+    
 }
 
 - (IBAction)addBeaconClicked:(id)sender {

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5713C6F81B56414200DA3083 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5713C6F61B56414200DA3083 /* TYMapData.framework */; };
-		5713C6F91B56414200DA3083 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5713C6F71B56414200DA3083 /* TYMapSDK.framework */; };
+		574EE2F51B7247F5005A6482 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574EE2F41B7247F5005A6482 /* TYMapSDK.framework */; };
+		574EE2F71B724809005A6482 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574EE2F61B724809005A6482 /* TYMapData.framework */; };
 		575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AD1B564DE200B1E77C /* TYRegionManager.m */; };
 		575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */; };
 		575CD0EC1B564DE200B1E77C /* BaseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B21B564DE200B1E77C /* BaseMapVC.m */; };
@@ -112,8 +112,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5713C6F61B56414200DA3083 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYMapData.framework; path = ../../../../../Desktop/TYMapData.framework; sourceTree = "<group>"; };
-		5713C6F71B56414200DA3083 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYMapSDK.framework; path = ../../../../../Desktop/TYMapSDK.framework; sourceTree = "<group>"; };
+		574EE2F41B7247F5005A6482 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
+		574EE2F61B724809005A6482 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYMapData.framework; path = ../../../../../../../../../Users/innerpeacer/Desktop/TYMapData.framework; sourceTree = "<group>"; };
 		575CD0AB1B564DE200B1E77C /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		575CD0AC1B564DE200B1E77C /* TYRegionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRegionManager.h; sourceTree = "<group>"; };
 		575CD0AD1B564DE200B1E77C /* TYRegionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRegionManager.m; sourceTree = "<group>"; };
@@ -317,9 +317,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */,
+				574EE2F71B724809005A6482 /* TYMapData.framework in Frameworks */,
 				57B396E01A6361B800E72FF5 /* CoreGraphics.framework in Frameworks */,
-				5713C6F81B56414200DA3083 /* TYMapData.framework in Frameworks */,
-				5713C6F91B56414200DA3083 /* TYMapSDK.framework in Frameworks */,
+				574EE2F51B7247F5005A6482 /* TYMapSDK.framework in Frameworks */,
 				57B3989E1A6364D900E72FF5 /* libgeos.a in Frameworks */,
 				57B396E21A6361B800E72FF5 /* UIKit.framework in Frameworks */,
 				57B396DE1A6361B800E72FF5 /* Foundation.framework in Frameworks */,
@@ -873,9 +873,9 @@
 		575CD1A11B564E7300B1E77C /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				574EE2F61B724809005A6482 /* TYMapData.framework */,
+				574EE2F41B7247F5005A6482 /* TYMapSDK.framework */,
 				57B3989D1A6364D900E72FF5 /* libgeos.a */,
-				5713C6F71B56414200DA3083 /* TYMapSDK.framework */,
-				5713C6F61B56414200DA3083 /* TYMapData.framework */,
 				575CD1A21B564E7300B1E77C /* FMDB */,
 			);
 			path = libs;
@@ -1235,6 +1235,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/innerpeacer/Desktop,
+					"$(PROJECT_DIR)/BLEProject/libs",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLEProject/BLEProject-Prefix.pch";
@@ -1246,6 +1247,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.innerpeacer.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = BLEProject;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1261,6 +1263,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/innerpeacer/Desktop,
+					"$(PROJECT_DIR)/BLEProject/libs",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLEProject/BLEProject-Prefix.pch";
@@ -1272,6 +1275,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.innerpeacer.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = BLEProject;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

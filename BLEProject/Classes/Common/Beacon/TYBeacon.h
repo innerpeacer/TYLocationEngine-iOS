@@ -5,62 +5,73 @@ typedef enum type {
 } TYPE;
 
 /**
- *  Beacon
+ *  Beacon类
  */
 @interface TYBeacon : NSObject
 
 /**
- *  Beacon UUID
+ *  UUID
  */
 @property (readonly, strong) NSString *UUID;
 
 /**
- *  Beacon Major
+ *  Major
  */
 @property (readonly, strong) NSNumber *major;
 
 /**
- *  Beacon Minor
+ *  Minor
  */
 @property (readonly, strong) NSNumber *minor;
 
 /**
- *  Beacon Tag
+ *  Beacon的Tag，用于标识Beacon，如Mac地址，序列号等
  */
 @property (readonly, strong) NSString *tag;
 
 
 /**
- *  Beacon Type
+ *  Beacon用途类型，如用于定位、营销等
  */
 @property (assign) TYPE type;
 
+
 /**
- *  Class method for creating a TYBeacon
+ *  初始化Beacon的类方法
  *
- *  @param uuid  Beacon UUID
- *  @param major Beacon Major
- *  @param minor Beacon Minor
- *  @param tag   Beacon Tag
+ *  @param uuid  UUID
+ *  @param major Major
+ *  @param minor Minor
+ *  @param tag   标识
  *
- *  @return TYBeacon
+ *  @return Beacon实例
  */
 + (TYBeacon *)beaconWithUUID:(NSString *)uuid Major:(NSNumber *)major Minor:(NSNumber *)minor Tag:(NSString *)tag;
 
 /**
- *  Class method for creating a TYBeacon
+ *  初始化Beacon的类方法
  *
- *  @param uuid  Beacon UUID
- *  @param uuid  Beacon UUID
- *  @param major Beacon Major
- *  @param minor Beacon Minor
- *  @param tag   Beacon Tag
+ *  @param uuid  UUID
+ *  @param major Major
+ *  @param minor Minor
+ *  @param tag   标识
+ *  @param type  类型
  *
- *  @return TYBeacon
+ *  @return Beacon实例
  */
 + (TYBeacon *)beaconWithUUID:(NSString *)uuid Major:(NSNumber *)major Minor:(NSNumber *)minor Tag:(NSString *)tag Type:(TYPE) type;
 
-
+/**
+ *  初始化Beacon的方法
+ *
+ *  @param uuid  UUID
+ *  @param major Major
+ *  @param minor Minor
+ *  @param tag   标识
+ *  @param type  类型
+ *
+ *  @return Beacon实例
+ */
 - (id)initWithUUID:(NSString *)uuid Major:(NSNumber *)major Minor:(NSNumber *)minor Tag:(NSString *)tag Type:(TYPE)type;
 
 @end

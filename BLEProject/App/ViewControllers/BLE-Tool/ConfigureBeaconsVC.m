@@ -230,9 +230,7 @@
                 continue;
             }
             
-            NSLog(@"Tag: %@", pb.tag);
-
-            
+//            NSLog(@"Tag: %@", pb.tag);            
             TYPoint *p = [TYPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
             
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
@@ -243,9 +241,55 @@
             [publicBeaconLayer addGraphic:[AGSGraphic graphicWithGeometry:p symbol:ts attributes:nil]];
         }
         [db close];
+        
+//        NSLog(@"%@", array);
+        [self encodeBeaconArrayToJson:array];
     } else {
         [publicBeaconLayer removeAllGraphics];
     }
+}
+
+- (void)encodeBeaconArrayToJson:(NSArray *)array
+{
+    NSMutableDictionary *rootDict = [[NSMutableDictionary alloc] init];
+    NSMutableArray *beaconArray = [[NSMutableArray alloc] init];
+    
+    [rootDict setObject:beaconArray forKey:@"beacons"];
+    
+    for (TYPublicBeacon *pb in array) {
+        NSMutableDictionary *beaconDict = [[NSMutableDictionary alloc] init];
+        [beaconDict setObject:pb.UUID forKey:@"uuid"];
+        [beaconDict setObject:pb.major forKey:@"major"];
+        [beaconDict setObject:pb.minor forKey:@"minor"];
+        [beaconDict setObject:@(pb.location.x) forKey:@"x"];
+        [beaconDict setObject:@(pb.location.y) forKey:@"y"];
+        
+        [beaconArray addObject:beaconDict];
+    }
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:rootDict options:NSJSONWritingPrettyPrinted error:nil];
+    
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *path = [documentDirectory stringByAppendingPathComponent:@"beacon.json"];
+    NSLog(@"%@", documentDirectory);
+    [data writeToFile:path atomically:YES];
+    
+//    NSString *labelFilePath = [TYMapFileManager getLabelLayerPath:self.currentMapInfo];
+//    AGSFeatureSet *lableSet = [labelGroupLayer getTextFeatureSet];
+//    
+//    NSDictionary *labelJsonDict = [lableSet encodeToJSON];
+//    NSData *labelData = [NSJSONSerialization dataWithJSONObject:labelJsonDict options:NSJSONWritingPrettyPrinted error:nil];
+//    [labelData writeToFile:labelFilePath atomically:YES];
+//    
+//    
+//    NSString *roomFilePath = [TYMapFileManager getRoomLayerPath:self.currentMapInfo];
+//    AGSFeatureSet *roomSet = [structureGroupLayer getRoomFeatureSet];
+//    
+//    NSDictionary *roomJsonDict = [roomSet encodeToJSON];
+//    NSData *roomData = [NSJSONSerialization dataWithJSONObject:roomJsonDict options:NSJSONWritingPrettyPrinted error:nil];
+//    [roomData writeToFile:roomFilePath atomically:YES];
+    
+
 }
 
 - (IBAction)showConfiguredBeacons:(id)sender {

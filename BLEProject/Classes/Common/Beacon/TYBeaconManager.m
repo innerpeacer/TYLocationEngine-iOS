@@ -50,7 +50,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-//    NSLog(@"didRangeBeacons");
+//    NSLog(@"didRangeBeacons: %d", (int)beacons.count);
     if (self.delegate && [self.delegate respondsToSelector:@selector(beaconManager:didRangeBeacons:inRegion:)]) {
         [self.delegate beaconManager:self didRangeBeacons:beacons inRegion:region];
     }

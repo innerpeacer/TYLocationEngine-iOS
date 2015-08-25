@@ -17,6 +17,7 @@ static CLBeaconRegion *_defaultRegion;
 + (CLBeaconRegion *)defaultRegion
 {
     if (_defaultRegion == nil) {
+//        _defaultRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[TYRegionManager defaultUUID] major:BEACON_REGION_MAJOR identifier:BEACON_REGION_IDENTIFIER];
         _defaultRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[TYRegionManager defaultUUID] identifier:BEACON_REGION_IDENTIFIER];
     }
     return _defaultRegion;
