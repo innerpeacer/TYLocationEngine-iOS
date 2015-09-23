@@ -28,7 +28,7 @@ void IPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::
     
     stepCount = DefaultStep;
     
-    printf("IPXStepBasedTEngine::Initilize OK!");
+//    printf("IPXStepBasedTEngine::Initilize OK!");
 }
 
 

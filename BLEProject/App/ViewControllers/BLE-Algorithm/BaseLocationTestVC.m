@@ -140,13 +140,17 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.beaconManager startRanging:self.publicBeaconRegion];
+    if (self.publicBeaconRegion) {
+        [self.beaconManager startRanging:self.publicBeaconRegion];
+    }
     [self.motionDetector startStepDetector];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [self.beaconManager stopRanging:self.publicBeaconRegion];
+    if (self.publicBeaconRegion) {
+        [self.beaconManager stopRanging:self.publicBeaconRegion];
+    }
     [self.motionDetector stopStepDetector];
 }
 

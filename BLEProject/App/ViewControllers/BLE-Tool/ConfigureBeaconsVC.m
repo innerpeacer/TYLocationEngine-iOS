@@ -61,6 +61,9 @@
     beaconManager.delegate = self;
     
     beaconRegion =  [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
+    
+//    NSLog(@"%@", [TYUserDefaults getDefaultBuilding]);
+//    NSLog(@"%@", beaconRegion);
 }
 
 - (IBAction)bindingButtonClicked:(id)sender {
@@ -106,8 +109,9 @@
         return;
     }
     
-    NSLog(@"%d beacon ranged",(int) beacons.count);
-    
+    NSLog(@"%d beacon ranged", (int)beacons.count);
+
+
     NSMutableArray *sortedArray = [NSMutableArray arrayWithArray:[beacons sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         CLBeacon *b1 = (CLBeacon *)obj1;
         CLBeacon *b2 = (CLBeacon *)obj2;
@@ -117,14 +121,21 @@
         return ![l1 compare:l2];
     }]];
     
+
     NSMutableArray *toRemove = [[NSMutableArray alloc] init];
     for (CLBeacon *b in sortedArray) {
         if (b.rssi >= -10) {
             [toRemove addObject:b];
+            NSLog(@"RSSI: %d", (int)b.rssi);
+            NSLog(@"Accuracy: %f", b.accuracy);
         }
     }
     
     [sortedArray removeObjectsInArray:toRemove];
+
+    if (sortedArray.count == 0) {
+        return;
+    }
     
     CLBeacon *nearestBeacon = [sortedArray objectAtIndex:0];
     
@@ -204,7 +215,9 @@
     BeaconListForChoosingTableVC *controller = [storyboard instantiateViewControllerWithIdentifier:identifier];
     controller.delegate = self;
     
-    [self presentViewController:controller animated:YES completion:nil];
+//    [self presentViewController:controller animated:YES completion:nil];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:controller] animated:YES completion:nil];
+
 }
 
 
@@ -243,6 +256,7 @@
         
 //        NSLog(@"%@", array);
         [self encodeBeaconArrayToJson:array];
+        [self encodeBeaconJsonForServer:array];
     } else {
         [publicBeaconLayer removeAllGraphics];
     }
@@ -262,6 +276,7 @@
         [beaconDict setObject:pb.minor forKey:@"minor"];
         [beaconDict setObject:@(pb.location.x) forKey:@"x"];
         [beaconDict setObject:@(pb.location.y) forKey:@"y"];
+        [beaconDict setObject:@(pb.location.floor) forKey:@"floor"];
         
         [beaconArray addObject:beaconDict];
     }
@@ -272,23 +287,41 @@
     NSString *path = [documentDirectory stringByAppendingPathComponent:@"beacon.json"];
     NSLog(@"%@", documentDirectory);
     [data writeToFile:path atomically:YES];
-    
-//    NSString *labelFilePath = [TYMapFileManager getLabelLayerPath:self.currentMapInfo];
-//    AGSFeatureSet *lableSet = [labelGroupLayer getTextFeatureSet];
-//    
-//    NSDictionary *labelJsonDict = [lableSet encodeToJSON];
-//    NSData *labelData = [NSJSONSerialization dataWithJSONObject:labelJsonDict options:NSJSONWritingPrettyPrinted error:nil];
-//    [labelData writeToFile:labelFilePath atomically:YES];
-//    
-//    
-//    NSString *roomFilePath = [TYMapFileManager getRoomLayerPath:self.currentMapInfo];
-//    AGSFeatureSet *roomSet = [structureGroupLayer getRoomFeatureSet];
-//    
-//    NSDictionary *roomJsonDict = [roomSet encodeToJSON];
-//    NSData *roomData = [NSJSONSerialization dataWithJSONObject:roomJsonDict options:NSJSONWritingPrettyPrinted error:nil];
-//    [roomData writeToFile:roomFilePath atomically:YES];
-    
+}
 
+- (void)encodeBeaconJsonForServer:(NSArray *)array
+{
+    NSMutableDictionary *rootDict = [[NSMutableDictionary alloc] init];
+    NSMutableArray *beaconArray = [[NSMutableArray alloc] init];
+    
+    [rootDict setObject:beaconArray forKey:@"beacons"];
+    
+    for (TYPublicBeacon *pb in array) {
+        NSMutableDictionary *beaconDict = [[NSMutableDictionary alloc] init];
+        [beaconDict setObject:pb.UUID forKey:@"uuid"];
+        [beaconDict setObject:pb.major forKey:@"major"];
+        [beaconDict setObject:pb.minor forKey:@"minor"];
+        [beaconDict setObject:@(pb.location.x) forKey:@"x"];
+        [beaconDict setObject:@(pb.location.y) forKey:@"y"];
+        [beaconDict setObject:@(pb.location.floor) forKey:@"floor"];
+        
+        [beaconDict setObject:self.currentBuilding.cityID forKey:@"cityID"];
+        [beaconDict setObject:self.currentBuilding.buildingID forKey:@"buildingID"];
+        for (TYMapInfo *info in self.allMapInfos) {
+            if (info.floorNumber == pb.location.floor) {
+                [beaconDict setObject:info.mapID forKey:@"mapID"];
+            }
+        }
+        
+        [beaconArray addObject:beaconDict];
+    }
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:rootDict options:NSJSONWritingPrettyPrinted error:nil];
+    
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *path = [documentDirectory stringByAppendingPathComponent:@"beaconForServer.json"];
+    NSLog(@"%@", documentDirectory);
+    [data writeToFile:path atomically:YES];
 }
 
 - (IBAction)showConfiguredBeacons:(id)sender {

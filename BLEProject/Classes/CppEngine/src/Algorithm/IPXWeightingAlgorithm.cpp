@@ -106,7 +106,8 @@ IPXWeightingAlgorithm *CreateWeighintAlgorithm(const vector<IPXPublicBeacon> &be
             break;
             
         default:
-            return nullptr;
+            return NULL;
             break;
     }
+    return NULL;
 }

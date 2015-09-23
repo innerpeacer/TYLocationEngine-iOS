@@ -17,10 +17,10 @@
 - (BOOL)open
 {
     if (sqlite3_open([_dbPath UTF8String], &_database) == SQLITE_OK) {
-        NSLog(@"db open success!");
+//        NSLog(@"db open success!");
         return YES;
     } else {
-        NSLog(@"db open failed!");
+//        NSLog(@"db open failed!");
         return NO;
     }
 }

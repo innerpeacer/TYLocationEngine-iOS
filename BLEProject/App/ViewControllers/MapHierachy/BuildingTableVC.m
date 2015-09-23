@@ -21,7 +21,7 @@
     
     allBuilding = [[NSArray alloc] init];
     if (self.currentCity) {
-        allBuilding = [TYBuilding parseAllBuildings:self.currentCity];
+        allBuilding = [TYBuildingManager parseAllBuildings:self.currentCity];
     }
 }
 

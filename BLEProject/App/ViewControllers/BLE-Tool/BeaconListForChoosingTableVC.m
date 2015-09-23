@@ -15,6 +15,8 @@
 {
     [super viewDidLoad];
     
+    self.title = @"待配置Beacon";
+    
     currentBuilding = [TYUserDefaults getDefaultBuilding];
     
     TYPrimitiveBeaconDBAdapter *db = [[TYPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuilding];

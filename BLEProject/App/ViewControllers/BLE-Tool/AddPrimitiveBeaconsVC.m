@@ -41,11 +41,15 @@
     NSString *minorString = self.minorField.text;
     NSString *tagString = self.tagField.text;
 
-    if (majorString != nil && minorString != nil && tagString != nil) {
+    if (majorString != nil && minorString != nil) {
 
-        if ([self validateValue:majorString] && [self validateValue:minorString] && tagString.length > 0) {
+        if ([self validateValue:majorString] && [self validateValue:minorString]) {
             NSNumber *major = [NSNumber numberWithInt:majorString.intValue];
             NSNumber *minor = [NSNumber numberWithInt:minorString.intValue];
+            
+            if (tagString == nil || tagString.length == 0) {
+                tagString = @"";
+            }
 
             TYPrimitiveBeaconDBAdapter *db = [[TYPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuilding];
             [db open];

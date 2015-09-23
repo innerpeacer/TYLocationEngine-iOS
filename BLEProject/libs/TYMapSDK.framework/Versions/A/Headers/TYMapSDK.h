@@ -13,6 +13,10 @@
 
 #import <TYMapSDK/TYMapEnviroment.h>
 
+#import <TYMapSDK/TYCityManager.h>
+#import <TYMapSDK/TYBuildingManager.h>
+
+
 #import <TYMapSDK/TYMapView.h>
 #import <TYMapSDK/TYMapInfo.h>
 #import <TYMapSDK/TYRenderingScheme.h>
@@ -36,8 +40,6 @@
 
 
 #import <TYMapSDK/TYPoi.h>
-#import <TYMapSDK/TYBuilding.h>
-#import <TYMapSDK/TYCity.h>
 
 #import <TYMapSDK/TYCredential.h>
 #import <TYMapSDK/TYSpatialReference.h>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		574EE2F51B7247F5005A6482 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574EE2F41B7247F5005A6482 /* TYMapSDK.framework */; };
 		574EE2F71B724809005A6482 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574EE2F61B724809005A6482 /* TYMapData.framework */; };
 		575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AD1B564DE200B1E77C /* TYRegionManager.m */; };
 		575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */; };
@@ -111,10 +110,25 @@
 		57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */; };
 		57E6BCC01B8C1B88002226FB /* BeaconRegion.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */; };
 		57E6BCC31B8C1C5D002226FB /* TYBeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */; };
+		57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC61B8C41D0002226FB /* RADataObject.m */; };
+		57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC91B8C41D0002226FB /* RATreeNode.m */; };
+		57E6BCDE1B8C41D0002226FB /* RATreeNodeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCCB1B8C41D0002226FB /* RATreeNodeCollectionController.m */; };
+		57E6BCDF1B8C41D0002226FB /* RATreeNodeInfo+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCCD1B8C41D0002226FB /* RATreeNodeInfo+Private.m */; };
+		57E6BCE01B8C41D0002226FB /* RATreeNodeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCCF1B8C41D0002226FB /* RATreeNodeInfo.m */; };
+		57E6BCE11B8C41D0002226FB /* RATreeView+Enums.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD11B8C41D0002226FB /* RATreeView+Enums.m */; };
+		57E6BCE21B8C41D0002226FB /* RATreeView+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD31B8C41D0002226FB /* RATreeView+Private.m */; };
+		57E6BCE31B8C41D0002226FB /* RATreeView+TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD51B8C41D0002226FB /* RATreeView+TableViewDataSource.m */; };
+		57E6BCE41B8C41D0002226FB /* RATreeView+TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD71B8C41D0002226FB /* RATreeView+TableViewDelegate.m */; };
+		57E6BCE51B8C41D0002226FB /* RATreeView+UIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD91B8C41D0002226FB /* RATreeView+UIScrollView.m */; };
+		57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCDB1B8C41D0002226FB /* RATreeView.m */; };
+		57E6BCE91B8C41DC002226FB /* CityBuildingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */; };
+		57E6BCEC1B8C43DD002226FB /* SelectBuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */; };
+		57F878B81B9E8D1100D27CE4 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F878B71B9E8D1100D27CE4 /* TYMapSDK.framework */; };
+		57FC97BA1BB12F5B006D6D00 /* Licenses.json in Resources */ = {isa = PBXBuildFile; fileRef = 57FC97B91BB12F5B006D6D00 /* Licenses.json */; };
+		57FC97BD1BB12F87006D6D00 /* LicenseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC97BC1BB12F87006D6D00 /* LicenseManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		574EE2F41B7247F5005A6482 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
 		574EE2F61B724809005A6482 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYMapData.framework; path = ../../../../../../../../../Users/innerpeacer/Desktop/TYMapData.framework; sourceTree = "<group>"; };
 		575CD0AC1B564DE200B1E77C /* TYRegionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRegionManager.h; sourceTree = "<group>"; };
 		575CD0AD1B564DE200B1E77C /* TYRegionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRegionManager.m; sourceTree = "<group>"; };
@@ -313,6 +327,36 @@
 		57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BeaconRegion.json; sourceTree = "<group>"; };
 		57E6BCC11B8C1C5D002226FB /* TYBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegion.h; sourceTree = "<group>"; };
 		57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegion.m; sourceTree = "<group>"; };
+		57E6BCC51B8C41D0002226FB /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
+		57E6BCC61B8C41D0002226FB /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
+		57E6BCC81B8C41D0002226FB /* RATreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNode.h; sourceTree = "<group>"; };
+		57E6BCC91B8C41D0002226FB /* RATreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeNode.m; sourceTree = "<group>"; };
+		57E6BCCA1B8C41D0002226FB /* RATreeNodeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNodeCollectionController.h; sourceTree = "<group>"; };
+		57E6BCCB1B8C41D0002226FB /* RATreeNodeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeNodeCollectionController.m; sourceTree = "<group>"; };
+		57E6BCCC1B8C41D0002226FB /* RATreeNodeInfo+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeNodeInfo+Private.h"; sourceTree = "<group>"; };
+		57E6BCCD1B8C41D0002226FB /* RATreeNodeInfo+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeNodeInfo+Private.m"; sourceTree = "<group>"; };
+		57E6BCCE1B8C41D0002226FB /* RATreeNodeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNodeInfo.h; sourceTree = "<group>"; };
+		57E6BCCF1B8C41D0002226FB /* RATreeNodeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeNodeInfo.m; sourceTree = "<group>"; };
+		57E6BCD01B8C41D0002226FB /* RATreeView+Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+Enums.h"; sourceTree = "<group>"; };
+		57E6BCD11B8C41D0002226FB /* RATreeView+Enums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+Enums.m"; sourceTree = "<group>"; };
+		57E6BCD21B8C41D0002226FB /* RATreeView+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+Private.h"; sourceTree = "<group>"; };
+		57E6BCD31B8C41D0002226FB /* RATreeView+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+Private.m"; sourceTree = "<group>"; };
+		57E6BCD41B8C41D0002226FB /* RATreeView+TableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+TableViewDataSource.h"; sourceTree = "<group>"; };
+		57E6BCD51B8C41D0002226FB /* RATreeView+TableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+TableViewDataSource.m"; sourceTree = "<group>"; };
+		57E6BCD61B8C41D0002226FB /* RATreeView+TableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+TableViewDelegate.h"; sourceTree = "<group>"; };
+		57E6BCD71B8C41D0002226FB /* RATreeView+TableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+TableViewDelegate.m"; sourceTree = "<group>"; };
+		57E6BCD81B8C41D0002226FB /* RATreeView+UIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+UIScrollView.h"; sourceTree = "<group>"; };
+		57E6BCD91B8C41D0002226FB /* RATreeView+UIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+UIScrollView.m"; sourceTree = "<group>"; };
+		57E6BCDA1B8C41D0002226FB /* RATreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView.h; sourceTree = "<group>"; };
+		57E6BCDB1B8C41D0002226FB /* RATreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeView.m; sourceTree = "<group>"; };
+		57E6BCE71B8C41DC002226FB /* CityBuildingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityBuildingTableVC.h; sourceTree = "<group>"; };
+		57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityBuildingTableVC.m; sourceTree = "<group>"; };
+		57E6BCEA1B8C43DD002226FB /* SelectBuildingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBuildingVC.h; sourceTree = "<group>"; };
+		57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBuildingVC.m; sourceTree = "<group>"; };
+		57F878B71B9E8D1100D27CE4 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
+		57FC97B91BB12F5B006D6D00 /* Licenses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Licenses.json; sourceTree = "<group>"; };
+		57FC97BB1BB12F87006D6D00 /* LicenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenseManager.h; sourceTree = "<group>"; };
+		57FC97BC1BB12F87006D6D00 /* LicenseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicenseManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,7 +367,7 @@
 				57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */,
 				574EE2F71B724809005A6482 /* TYMapData.framework in Frameworks */,
 				57B396E01A6361B800E72FF5 /* CoreGraphics.framework in Frameworks */,
-				574EE2F51B7247F5005A6482 /* TYMapSDK.framework in Frameworks */,
+				57F878B81B9E8D1100D27CE4 /* TYMapSDK.framework in Frameworks */,
 				57B3989E1A6364D900E72FF5 /* libgeos.a in Frameworks */,
 				57B396E21A6361B800E72FF5 /* UIKit.framework in Frameworks */,
 				57B396DE1A6361B800E72FF5 /* Foundation.framework in Frameworks */,
@@ -338,6 +382,7 @@
 			children = (
 				575CD0E81B564DE200B1E77C /* AppDelegate.h */,
 				575CD0E91B564DE200B1E77C /* AppDelegate.m */,
+				57FC97B91BB12F5B006D6D00 /* Licenses.json */,
 				575CD0A91B564DE200B1E77C /* App */,
 				575CD10F1B564E7300B1E77C /* Classes */,
 				575CD1A01B564E7300B1E77C /* Images.xcassets */,
@@ -352,6 +397,7 @@
 		575CD0A91B564DE200B1E77C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				57E6BCC41B8C41D0002226FB /* UI */,
 				575CD0AA1B564DE200B1E77C /* GlobalSettings */,
 				575CD0B01B564DE200B1E77C /* ViewControllers */,
 			);
@@ -364,6 +410,8 @@
 				57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */,
 				575CD0AC1B564DE200B1E77C /* TYRegionManager.h */,
 				575CD0AD1B564DE200B1E77C /* TYRegionManager.m */,
+				57FC97BB1BB12F87006D6D00 /* LicenseManager.h */,
+				57FC97BC1BB12F87006D6D00 /* LicenseManager.m */,
 				575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */,
 				575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */,
 				57E6BCC11B8C1C5D002226FB /* TYBeaconRegion.h */,
@@ -375,6 +423,10 @@
 		575CD0B01B564DE200B1E77C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				57E6BCEA1B8C43DD002226FB /* SelectBuildingVC.h */,
+				57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */,
+				57E6BCE71B8C41DC002226FB /* CityBuildingTableVC.h */,
+				57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */,
 				575CD0B11B564DE200B1E77C /* BaseMapVC.h */,
 				575CD0B21B564DE200B1E77C /* BaseMapVC.m */,
 				575CD0B31B564DE200B1E77C /* BLE-Algorithm */,
@@ -414,7 +466,6 @@
 				575CD0C41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m */,
 				575CD0C51B564DE200B1E77C /* BeaconListForChoosingTableVC.h */,
 				575CD0C61B564DE200B1E77C /* BeaconListForChoosingTableVC.m */,
-				575CD0C71B564DE200B1E77C /* Configure */,
 				575CD0C81B564DE200B1E77C /* ConfigureBeaconsVC.h */,
 				575CD0C91B564DE200B1E77C /* ConfigureBeaconsVC.m */,
 				575CD0CA1B564DE200B1E77C /* Explore */,
@@ -426,13 +477,6 @@
 				575CD0D01B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m */,
 			);
 			path = "BLE-Tool";
-			sourceTree = "<group>";
-		};
-		575CD0C71B564DE200B1E77C /* Configure */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Configure;
 			sourceTree = "<group>";
 		};
 		575CD0CA1B564DE200B1E77C /* Explore */ = {
@@ -715,8 +759,8 @@
 			isa = PBXGroup;
 			children = (
 				575CD1661B564E7300B1E77C /* ILocationEngine.h */,
-				575CD1671B564E7300B1E77C /* IPXStepBasedEngine.cpp */,
 				575CD1681B564E7300B1E77C /* IPXStepBasedEngine.h */,
+				575CD1671B564E7300B1E77C /* IPXStepBasedEngine.cpp */,
 			);
 			path = LocationEngine;
 			sourceTree = "<group>";
@@ -879,8 +923,8 @@
 		575CD1A11B564E7300B1E77C /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				57F878B71B9E8D1100D27CE4 /* TYMapSDK.framework */,
 				574EE2F61B724809005A6482 /* TYMapData.framework */,
-				574EE2F41B7247F5005A6482 /* TYMapSDK.framework */,
 				57B3989D1A6364D900E72FF5 /* libgeos.a */,
 				575CD1A21B564E7300B1E77C /* FMDB */,
 			);
@@ -954,6 +998,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		57E6BCC41B8C41D0002226FB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				57E6BCC51B8C41D0002226FB /* RADataObject.h */,
+				57E6BCC61B8C41D0002226FB /* RADataObject.m */,
+				57E6BCC71B8C41D0002226FB /* RATreeView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		57E6BCC71B8C41D0002226FB /* RATreeView */ = {
+			isa = PBXGroup;
+			children = (
+				57E6BCC81B8C41D0002226FB /* RATreeNode.h */,
+				57E6BCC91B8C41D0002226FB /* RATreeNode.m */,
+				57E6BCCA1B8C41D0002226FB /* RATreeNodeCollectionController.h */,
+				57E6BCCB1B8C41D0002226FB /* RATreeNodeCollectionController.m */,
+				57E6BCCC1B8C41D0002226FB /* RATreeNodeInfo+Private.h */,
+				57E6BCCD1B8C41D0002226FB /* RATreeNodeInfo+Private.m */,
+				57E6BCCE1B8C41D0002226FB /* RATreeNodeInfo.h */,
+				57E6BCCF1B8C41D0002226FB /* RATreeNodeInfo.m */,
+				57E6BCD01B8C41D0002226FB /* RATreeView+Enums.h */,
+				57E6BCD11B8C41D0002226FB /* RATreeView+Enums.m */,
+				57E6BCD21B8C41D0002226FB /* RATreeView+Private.h */,
+				57E6BCD31B8C41D0002226FB /* RATreeView+Private.m */,
+				57E6BCD41B8C41D0002226FB /* RATreeView+TableViewDataSource.h */,
+				57E6BCD51B8C41D0002226FB /* RATreeView+TableViewDataSource.m */,
+				57E6BCD61B8C41D0002226FB /* RATreeView+TableViewDelegate.h */,
+				57E6BCD71B8C41D0002226FB /* RATreeView+TableViewDelegate.m */,
+				57E6BCD81B8C41D0002226FB /* RATreeView+UIScrollView.h */,
+				57E6BCD91B8C41D0002226FB /* RATreeView+UIScrollView.m */,
+				57E6BCDA1B8C41D0002226FB /* RATreeView.h */,
+				57E6BCDB1B8C41D0002226FB /* RATreeView.m */,
+			);
+			path = RATreeView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1014,6 +1095,7 @@
 				575CD3751B564F2900B1E77C /* Setting.storyboard in Resources */,
 				575CD10C1B564E2C00B1E77C /* InfoPlist.strings in Resources */,
 				575CD3741B564F2900B1E77C /* Map.storyboard in Resources */,
+				57FC97BA1BB12F5B006D6D00 /* Licenses.json in Resources */,
 				575CD3721B564F2900B1E77C /* Launch Screen.xib in Resources */,
 				575CD3731B564F2900B1E77C /* Main.storyboard in Resources */,
 				575CD3711B564F2900B1E77C /* BLE-Tool.storyboard in Resources */,
@@ -1035,12 +1117,17 @@
 			files = (
 				575CD0FA1B564DE200B1E77C /* BaseControllerTableVC.m in Sources */,
 				575CD1CD1B564E7300B1E77C /* IPXGeometryEngine.cpp in Sources */,
+				57E6BCEC1B8C43DD002226FB /* SelectBuildingVC.m in Sources */,
 				575CD0F41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m in Sources */,
 				575CD1BB1B564E7300B1E77C /* TYPointConverter.m in Sources */,
 				575CD1001B564DE200B1E77C /* CityTableVC.m in Sources */,
+				57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */,
 				575CD1DE1B564E7300B1E77C /* TYPointTester.m in Sources */,
+				57E6BCDF1B8C41D0002226FB /* RATreeNodeInfo+Private.m in Sources */,
 				575CD1C51B564E7300B1E77C /* IPXTriangulationAlgorithm.cpp in Sources */,
+				57E6BCE01B8C41D0002226FB /* RATreeNodeInfo.m in Sources */,
 				575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */,
+				57E6BCDE1B8C41D0002226FB /* RATreeNodeCollectionController.m in Sources */,
 				575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */,
 				575CD1D71B564E7300B1E77C /* TYWeightingAlgorithm.m in Sources */,
 				575CD1B31B564E7300B1E77C /* TYHeadingDetector.m in Sources */,
@@ -1061,6 +1148,7 @@
 				575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */,
 				575CD1E31B564E7300B1E77C /* FMDatabasePool.m in Sources */,
 				575CD1D51B564E7300B1E77C /* TYLocationAlgorithm.m in Sources */,
+				57E6BCE51B8C41D0002226FB /* RATreeView+UIScrollView.m in Sources */,
 				575CD1E11B564E7300B1E77C /* FMDatabase.m in Sources */,
 				575CD1AD1B564E7300B1E77C /* TYBeacon.m in Sources */,
 				575CD1D91B564E7300B1E77C /* TYVector2.m in Sources */,
@@ -1082,6 +1170,9 @@
 				575CD0EF1B564DE200B1E77C /* BeaconFilterTestVC.m in Sources */,
 				575CD1DB1B564E7300B1E77C /* TYSampeData.m in Sources */,
 				575CD0FD1B564DE200B1E77C /* MapTableVC.m in Sources */,
+				57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */,
+				57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */,
+				57E6BCE31B8C41D0002226FB /* RATreeView+TableViewDataSource.m in Sources */,
 				575CD0F81B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m in Sources */,
 				575CD0FB1B564DE200B1E77C /* BLEAlgorithmTableVC.m in Sources */,
 				575CD1B51B564E7300B1E77C /* TYMotionDetector.m in Sources */,
@@ -1107,16 +1198,21 @@
 				575CD1B61B564E7300B1E77C /* TYSample.m in Sources */,
 				575CD1B11B564E7300B1E77C /* TYMovingAverage.m in Sources */,
 				575CD1DF1B564E7300B1E77C /* TYTestResult.m in Sources */,
+				57E6BCE21B8C41D0002226FB /* RATreeView+Private.m in Sources */,
+				57E6BCE91B8C41DC002226FB /* CityBuildingTableVC.m in Sources */,
 				575CD1D61B564E7300B1E77C /* TYTriangulationAlgorithm.m in Sources */,
 				575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */,
 				575CD1CA1B564E7300B1E77C /* IPXScannedBeacon.cpp in Sources */,
+				57FC97BD1BB12F87006D6D00 /* LicenseManager.m in Sources */,
 				575CD1CF1B564E7300B1E77C /* TYBeaconFilter.m in Sources */,
 				575CD0F21B564DE200B1E77C /* LocationEngineTestVC.m in Sources */,
+				57E6BCE11B8C41D0002226FB /* RATreeView+Enums.m in Sources */,
 				575CD1B41B564E7300B1E77C /* TYMagHeadingDetector.m in Sources */,
 				575CD1D41B564E7300B1E77C /* TYGeometryCalculator.m in Sources */,
 				575CD1E41B564E7300B1E77C /* FMDatabaseQueue.m in Sources */,
 				575CD1C21B564E7300B1E77C /* TYLocationManager.m in Sources */,
 				575CD1DA1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m in Sources */,
+				57E6BCE41B8C41D0002226FB /* RATreeView+TableViewDelegate.m in Sources */,
 				57E6BCC31B8C1C5D002226FB /* TYBeaconRegion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

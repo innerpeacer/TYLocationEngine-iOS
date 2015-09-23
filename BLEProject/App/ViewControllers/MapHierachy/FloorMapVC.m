@@ -1,6 +1,8 @@
 #import "FloorMapVC.h"
 #import <TYMapSDK/TYMapSDK.h>
 
+#import "LicenseManager.h"
+
 @interface FloorMapVC ()
 {
     NSArray *allMapInfos;
@@ -18,7 +20,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     allMapInfos = [[NSArray alloc] init];
     if (self.currentBuilding) {
@@ -63,7 +64,9 @@
 
 - (void)initMap
 {
-    [self.mapView initMapViewWithBuilding:_currentBuilding];
+    NSDictionary *dict = [LicenseManager getLicenseForBuilding:_currentBuilding.buildingID];
+    
+    [self.mapView initMapViewWithBuilding:_currentBuilding UserID:dict[@"UserID"] License:dict[@"License"]];
     self.mapView.mapDelegate = self;
 
     [self.mapView setAllowRotationByPinching:YES];

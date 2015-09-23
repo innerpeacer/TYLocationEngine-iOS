@@ -23,7 +23,7 @@
 
 #import <TYMapData/TYMapData.h>
 
-#import "TYBuilding.h"
+#import <TYMapData/TYMapData.h>
 
 /**
     地图模式类型：默认模式和跟随模式
@@ -282,6 +282,9 @@ typedef enum {
  *  @param buidling 地图显示的目标建筑
  */
 - (void)initMapViewWithBuilding:(TYBuilding *)buidling;
+
+- (void)switchBuilding:(TYBuilding *)b;
+
 
 /**
  *  移动地图将特定坐标限定在特定屏幕范围内

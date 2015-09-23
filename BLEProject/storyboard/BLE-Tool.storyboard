@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="15A216g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hfN-JX-PC4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hfN-JX-PC4">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--MapVC-->
@@ -337,52 +337,6 @@
             </objects>
             <point key="canvasLocation" x="-200" y="24"/>
         </scene>
-        <!--Show Point Test ResultVC-->
-        <scene sceneID="w78-6V-QnU">
-            <objects>
-                <viewController storyboardIdentifier="showPointTestResultController" id="way-GO-R5J" customClass="ShowPointTestResultVC" colorLabel="IBBuiltInLabel-Green" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BjH-1q-PrG"/>
-                        <viewControllerLayoutGuide type="bottom" id="mRF-3S-tev"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1ts-yn-1Md">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="di3-nL-YWY" customClass="TYMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="测试结果：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGX-a9-FBg">
-                                        <rect key="frame" x="25" y="483" width="85" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTy-yc-IXI">
-                                        <rect key="frame" x="106" y="478" width="51" height="31"/>
-                                        <animations/>
-                                        <connections>
-                                            <action selector="testResultSwitchToggled:" destination="way-GO-R5J" eventType="valueChanged" id="M1q-JL-In1"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="EhI-CX-SRB"/>
-                    <connections>
-                        <outlet property="mapView" destination="di3-nL-YWY" id="TX1-En-5B8"/>
-                        <outlet property="testResultSwitch" destination="uTy-yc-IXI" id="2gq-O9-lPV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mem-uy-k6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="625" y="656"/>
-        </scene>
         <!--Location TestVC Native-->
         <scene sceneID="HDw-IH-kDW">
             <objects>
@@ -672,4 +626,9 @@
             <point key="canvasLocation" x="625" y="1281"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

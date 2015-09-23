@@ -19,7 +19,7 @@
     
     self.title = @"城市列表";
     
-    allCities = [TYCity parseAllCities];
+    allCities = [TYCityManager parseAllCities];
 }
 
 - (void)didReceiveMemoryWarning

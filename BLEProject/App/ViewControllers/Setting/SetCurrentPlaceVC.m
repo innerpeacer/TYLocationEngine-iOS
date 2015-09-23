@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
 
-    cityArray = [TYCity parseAllCities];
+    cityArray = [TYCityManager parseAllCities];
 
     TYBuilding *building = [TYUserDefaults getDefaultBuilding];
     self.title = [NSString stringWithFormat:@"当前建筑：%@", building.name];
@@ -62,7 +62,7 @@
 
     if (component == CITY_PICKER) {
         TYCity *selectedCity = [cityArray objectAtIndex:row];
-        buildingArray = [NSMutableArray arrayWithArray:[TYBuilding parseAllBuildings:selectedCity]];
+        buildingArray = [NSMutableArray arrayWithArray:[TYBuildingManager parseAllBuildings:selectedCity]];
 
         [pickerView selectRow:0 inComponent:BUILDING_PICKER animated:YES];
         [pickerView reloadComponent:BUILDING_PICKER];

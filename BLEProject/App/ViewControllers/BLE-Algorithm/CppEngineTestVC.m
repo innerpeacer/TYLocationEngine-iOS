@@ -61,13 +61,19 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [locationManager startUpdateLocation];
+    if (publicBeaconRegion) {
+        [locationManager startUpdateLocation];
+        locationManager.delegate = self;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [locationManager stopUpdateLocation];
+    if (publicBeaconRegion) {
+        [locationManager stopUpdateLocation];
+        locationManager.delegate = nil;
+    }
 }
 
 
@@ -97,7 +103,7 @@
     
     locationManager.delegate = self;
     [locationManager setBeaconRegion:publicBeaconRegion];
-    [locationManager startUpdateLocation];
+//    [locationManager startUpdateLocation];
 
 }
 

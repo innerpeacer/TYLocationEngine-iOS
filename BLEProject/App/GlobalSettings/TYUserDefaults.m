@@ -26,8 +26,8 @@
         NSString *buildingID = [defaults objectForKey:KEY_BUILDING_ID];
     
     if (cityID && buildingID) {
-        TYCity *city = [TYCity parseCity:cityID];
-        building = [TYBuilding parseBuilding:buildingID InCity:city];
+        TYCity *city = [TYCityManager parseCity:cityID];
+        building = [TYBuildingManager parseBuilding:buildingID InCity:city];
     }
     return building;
 }
@@ -39,7 +39,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *cityID = [defaults objectForKey:KEY_CITY_ID];
     if (cityID) {
-        city = [TYCity parseCity:cityID];
+        city = [TYCityManager parseCity:cityID];
     }
     return city;
 }

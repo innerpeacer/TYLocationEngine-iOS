@@ -7,6 +7,8 @@
 #define KEY_UUID @"uuid"
 #define KEY_MAJOR @"major"
 
+
+
 @implementation TYRegionManager
 
 static NSDictionary *allBeaconRegionDictionary;

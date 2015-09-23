@@ -4,6 +4,7 @@
 #import "TYUserDefaults.h"
 
 #import <TYMapSDK/TYMapSDK.h>
+#import "LicenseManager.h"
 
 @interface BaseMapVC() 
 {
@@ -82,7 +83,10 @@
 
 - (void)initMap
 {
-    [self.mapView initMapViewWithBuilding:_currentBuilding];
+    NSDictionary *dict = [LicenseManager getLicenseForBuilding:_currentBuilding.buildingID];
+    NSLog(@"%@", dict);
+    
+    [self.mapView initMapViewWithBuilding:_currentBuilding UserID:dict[@"UserID"] License:dict[@"License"]];
     self.mapView.mapDelegate = self;
 
     self.mapView.backgroundColor = [UIColor lightGrayColor];

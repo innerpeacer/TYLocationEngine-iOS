@@ -18,7 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.title = @"Beacon列表";
+
     [self fetchData];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back:)];

@@ -128,9 +128,10 @@
 - (BOOL)updatePrimitiveBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor Tag:(NSString *)tag
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"UPDATE %@ SET ",TABLE_PRIMITIVE_BEACON];
+
     NSString *fields = [NSString stringWithFormat:@" %@ = '%@'", FIELD_BEACON_TAG, tag];
     NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d and %@ = %d ", FIELD_BEACON_MAJOR, major.intValue, FIELD_BEACON_MINOR, minor.intValue];
-    
+
     [sql appendString:fields];
     [sql appendString:whereClause];
     

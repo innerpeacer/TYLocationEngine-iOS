@@ -47,15 +47,21 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [np2LocationManager startUpdateLocation];
-    [npLocationManager startUpdateLocation];
+    if (publicBeaconRegion) {
+        [np2LocationManager startUpdateLocation];
+        [npLocationManager startUpdateLocation];
+    }
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [np2LocationManager stopUpdateLocation];
-    [npLocationManager stopUpdateLocation];
+    if (publicBeaconRegion) {
+        [np2LocationManager stopUpdateLocation];
+        [npLocationManager stopUpdateLocation];
+    }
+
 }
 
 
