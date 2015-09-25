@@ -65,4 +65,3 @@ static NSDictionary *allBeaconRegionDictionary;
 }
 
 @end
-
