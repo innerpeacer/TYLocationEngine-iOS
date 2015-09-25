@@ -23,4 +23,9 @@
 - (NSArray *)getAllLocationingBeacons;
 - (TYPublicBeacon *)getLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor;
 
+- (BOOL)insertCheckCode:(NSString *)code;
+- (BOOL)updateCheckCode:(NSString *)code;
+- (BOOL)eraseCheckCodeTable;
+- (NSString *)getCheckCode;
+
 @end

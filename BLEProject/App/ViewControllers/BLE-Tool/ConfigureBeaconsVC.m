@@ -9,6 +9,7 @@
 #import "TYBeaconManager.h"
 
 #import "TYRegionManager.h"
+#import "TYBeaconDBCodeChecker.h"
 
 @interface ConfigureBeaconsVC () <BeaconSelectedDelegate, TYBeaconManagerDelegate>
 {
@@ -62,8 +63,8 @@
     
     beaconRegion =  [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
     
-//    NSLog(@"%@", [TYUserDefaults getDefaultBuilding]);
-//    NSLog(@"%@", beaconRegion);
+    //    NSLog(@"%@", [TYUserDefaults getDefaultBuilding]);
+    //    NSLog(@"%@", beaconRegion);
 }
 
 - (IBAction)bindingButtonClicked:(id)sender {
@@ -81,7 +82,7 @@
 {
     NSLog(@"Start Binding");
     isBinding = YES;
-
+    
     [beaconManager startRanging:beaconRegion];
     
     currentMaxRSSI = -100;
@@ -91,7 +92,7 @@
 {
     NSLog(@"Stop Binding");
     isBinding = NO;
-
+    
     [beaconManager stopRanging:beaconRegion];
     self.hintLabel.text = @"";
     currentBeacon = nil;
@@ -110,8 +111,8 @@
     }
     
     NSLog(@"%d beacon ranged", (int)beacons.count);
-
-
+    
+    
     NSMutableArray *sortedArray = [NSMutableArray arrayWithArray:[beacons sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         CLBeacon *b1 = (CLBeacon *)obj1;
         CLBeacon *b2 = (CLBeacon *)obj2;
@@ -121,7 +122,7 @@
         return ![l1 compare:l2];
     }]];
     
-
+    
     NSMutableArray *toRemove = [[NSMutableArray alloc] init];
     for (CLBeacon *b in sortedArray) {
         if (b.rssi >= -10) {
@@ -132,7 +133,7 @@
     }
     
     [sortedArray removeObjectsInArray:toRemove];
-
+    
     if (sortedArray.count == 0) {
         return;
     }
@@ -147,7 +148,7 @@
         currentBeacon = [TYBeacon beaconWithUUID:nearestBeacon.proximityUUID.UUIDString Major:nearestBeacon.major Minor:nearestBeacon.minor Tag:[NSString stringWithFormat:@"%@", nearestBeacon.minor]];
         self.hintLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@, RSSI: %d", nearestBeacon.major, nearestBeacon.minor, (int)nearestBeacon.rssi];
     }
-
+    
 }
 
 - (void)addLayers
@@ -215,9 +216,9 @@
     BeaconListForChoosingTableVC *controller = [storyboard instantiateViewControllerWithIdentifier:identifier];
     controller.delegate = self;
     
-//    [self presentViewController:controller animated:YES completion:nil];
+    //    [self presentViewController:controller animated:YES completion:nil];
     [self presentViewController:[[UINavigationController alloc] initWithRootViewController:controller] animated:YES completion:nil];
-
+    
 }
 
 
@@ -236,17 +237,26 @@
         NSArray *array = [db getAllLocationingBeacons];
         NSLog(@"%d beacons", (int)array.count);
         
+        if (array && array.count > 0) {
+            NSString *code = [TYBeaconDBCodeChecker checkBeacons:array];
+            if ([db getCheckCode]) {
+                [db updateCheckCode:code];
+            } else {
+                [db insertCheckCode:code];
+            }
+        }
+        
         for (TYPublicBeacon *pb in array)
         {
             if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {
                 continue;
             }
             
-//            NSLog(@"Tag: %@", pb.tag);            
+            //            NSLog(@"Tag: %@", pb.tag);
             TYPoint *p = [TYPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
             
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
-
+            
             
             AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@", pb.minor] color:[UIColor magentaColor]];
             [ts setOffset:CGPointMake(5, -10)];
@@ -254,7 +264,7 @@
         }
         [db close];
         
-//        NSLog(@"%@", array);
+        //        NSLog(@"%@", array);
         [self encodeBeaconArrayToJson:array];
         [self encodeBeaconJsonForServer:array];
     } else {

@@ -78,6 +78,7 @@
     IPXBeaconDBAdapter *db = [[IPXBeaconDBAdapter alloc] initWithDBFile:dbPath];
     [db open];
     NSArray *array = [db getAllLocationingBeacons];
+    NSString *checkCode = [db getCode];
     
     allBeacons = [[NSMutableDictionary alloc] init];
     vector<IPXPublicBeacon> publicBeacons;
@@ -93,7 +94,12 @@
     }
     [db close];
     
-    locationEngine->Initilize(publicBeacons);
+    std::string code = "";
+    if (checkCode) {
+        code = [checkCode UTF8String];
+    }
+    
+    locationEngine->Initilize(publicBeacons, code);
 }
 
 - (void)setBeaconRegion:(CLBeaconRegion *)region

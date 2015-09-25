@@ -12,4 +12,6 @@
 - (NSArray *)getAllLocationingBeacons;
 - (TYPublicBeacon *)getLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor;
 
+- (NSString *)getCode;
+
 @end

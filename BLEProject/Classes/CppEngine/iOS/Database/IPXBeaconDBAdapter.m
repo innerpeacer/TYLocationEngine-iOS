@@ -99,4 +99,22 @@
     
     return beacon;
 }
+
+- (NSString *)getCode
+{
+    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@ FROM %@", FIELD_CODE, TABLE_CODE];
+    const char *selectSql = [sql UTF8String];
+    sqlite3_stmt *statement;
+    
+    NSString *code = nil;
+    if (sqlite3_prepare_v2(_database, selectSql, -1, &statement, nil) == SQLITE_OK) {
+        if (sqlite3_step(statement) == SQLITE_ROW) {
+            code = [[NSString alloc] initWithCString:(char *)sqlite3_column_text(statement, 0)  encoding:NSUTF8StringEncoding];
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return code;
+}
+
 @end

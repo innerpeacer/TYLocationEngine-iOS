@@ -9,6 +9,8 @@
 #include "IPXStepBasedEngine.h"
 #include "IPXGeometryCalculator.h"
 
+#include "IPXBeaconDBChecker.hpp"
+
 using namespace Innerpeacer::BLELocationEngine;
 
 ILocationEngine *CreateIPXStepBaseTriangulationEngine(IPXAlgorithmType type)
@@ -16,9 +18,16 @@ ILocationEngine *CreateIPXStepBaseTriangulationEngine(IPXAlgorithmType type)
     return new IPXStepBasedEngine(type);
 }
 
-void IPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::IPXPublicBeacon> &beacons ) {
+void IPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::IPXPublicBeacon> &beacons, std::string checkCode) {
     if (algorithm) {
         delete algorithm;
+    }
+    
+    isBeaconDataComplete = checkBeaconDB(beacons, checkCode);
+    if (isBeaconDataComplete) {
+        printf("Complete Beacon Database\n");
+    } else {
+        printf("Incomplete Beacon Database\n");
     }
     
     algorithm = CreateLocationAlgorithm(beacons, algorithmType);
@@ -36,6 +45,10 @@ void IPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEng
     algorithm->setNearestBeacons(beacons);
     
 //    printf("IPXStepBasedTEngine: Here OK!");
+    
+    if (!isBeaconDataComplete) {
+        return;
+    }
     
     IPXPoint newLocation = getIndependentLocation();
     

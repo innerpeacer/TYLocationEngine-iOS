@@ -51,6 +51,8 @@
     return [_database executeUpdate:sql];
 }
 
+
+
 - (BOOL)insertLocationingBeacon:(TYPublicBeacon *)beacon
 {
     return [self insertLocationingBeaconWithUUID:beacon.UUID Major:beacon.major Minor:beacon.minor X:beacon.location.x Y:beacon.location.y Z:0.0 Floor:beacon.location.floor ShopGid:beacon.shopGid];
@@ -123,12 +125,10 @@
         TYLocalPoint *location = [TYLocalPoint pointWithX:x Y:y Floor:floor];
         TYPublicBeacon *beacon = [TYPublicBeacon beaconWithUUID:uuid Major:@(major) Minor:@(minor) Tag:tag Location:location ShopGid:nil];
         [array addObject:beacon];
-        
     }
     
     [rs close];
     return array;
-
 }
 
 - (TYPublicBeacon *)getLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
@@ -157,6 +157,52 @@
     
     [rs close];
     return beacon;
+}
+
+#pragma mark CHECK_CODE
+- (BOOL)eraseCheckCodeTable
+{
+    NSString * sql = [NSString stringWithFormat:@"DELETE FROM %@", TABLE_CODE];
+    return [_database executeUpdate:sql];
+}
+
+- (BOOL)updateCheckCode:(NSString *)code
+{
+    NSMutableString *sql = [NSMutableString stringWithFormat:@"UPDATE %@ SET ",TABLE_CODE];
+    NSString *fields = [NSString stringWithFormat:@" %@ = ? ", FIELD_CODE];
+    
+    [sql appendString:fields];
+    
+    NSMutableArray *arguments = [[NSMutableArray alloc] init];
+    [arguments addObject:code == nil ? [NSNull null] : code];
+    
+    return [_database executeUpdate:sql withArgumentsInArray:arguments];
+}
+
+- (BOOL)insertCheckCode:(NSString *)code
+{
+    NSMutableString *sql = [NSMutableString stringWithFormat:@"Insert into %@", TABLE_CODE];
+    NSMutableArray *arguments = [[NSMutableArray alloc] init];
+    
+    NSString *fields = [NSString stringWithFormat:@" ( %@ ) ", FIELD_CODE];
+    NSString *values = @" ( ? ) ";
+    
+    [arguments addObject:code];
+    
+    [sql appendFormat:@" %@ VALUES %@", fields, values];
+    return [_database executeUpdate:sql withArgumentsInArray:arguments];
+}
+
+- (NSString *)getCheckCode
+{
+    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@ FROM %@", FIELD_CODE, TABLE_CODE];
+    
+    NSString *code = nil;
+    FMResultSet * rs = [_database executeQuery:sql];
+    if ([rs next]) {
+        code = [rs stringForColumn:FIELD_CODE];
+    }
+    return code;
 }
 
 @end
