@@ -127,6 +127,8 @@
 		57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCDB1B8C41D0002226FB /* RATreeView.m */; };
 		57E6BCE91B8C41DC002226FB /* CityBuildingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */; };
 		57E6BCEC1B8C43DD002226FB /* SelectBuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */; };
+		57F85C8B1BB5167B005D28CF /* BaseLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8A1BB5167B005D28CF /* BaseLogVC.m */; settings = {ASSET_TAGS = (); }; };
+		57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */; settings = {ASSET_TAGS = (); }; };
 		57F878B81B9E8D1100D27CE4 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F878B71B9E8D1100D27CE4 /* TYMapSDK.framework */; };
 		57FC97BA1BB12F5B006D6D00 /* Licenses.json in Resources */ = {isa = PBXBuildFile; fileRef = 57FC97B91BB12F5B006D6D00 /* Licenses.json */; };
 		57FC97BD1BB12F87006D6D00 /* LicenseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC97BC1BB12F87006D6D00 /* LicenseManager.m */; };
@@ -365,6 +367,10 @@
 		57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityBuildingTableVC.m; sourceTree = "<group>"; };
 		57E6BCEA1B8C43DD002226FB /* SelectBuildingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBuildingVC.h; sourceTree = "<group>"; };
 		57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBuildingVC.m; sourceTree = "<group>"; };
+		57F85C891BB5167B005D28CF /* BaseLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLogVC.h; sourceTree = "<group>"; };
+		57F85C8A1BB5167B005D28CF /* BaseLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLogVC.m; sourceTree = "<group>"; };
+		57F85C8C1BB51695005D28CF /* CheckBeaconDatabaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBeaconDatabaseVC.h; sourceTree = "<group>"; };
+		57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBeaconDatabaseVC.m; sourceTree = "<group>"; };
 		57F878B71B9E8D1100D27CE4 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
 		57FC97B91BB12F5B006D6D00 /* Licenses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Licenses.json; sourceTree = "<group>"; };
 		57FC97BB1BB12F87006D6D00 /* LicenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenseManager.h; sourceTree = "<group>"; };
@@ -455,6 +461,8 @@
 		575CD0B01B564DE200B1E77C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				57F85C891BB5167B005D28CF /* BaseLogVC.h */,
+				57F85C8A1BB5167B005D28CF /* BaseLogVC.m */,
 				57E6BCEA1B8C43DD002226FB /* SelectBuildingVC.h */,
 				57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */,
 				57E6BCE71B8C41DC002226FB /* CityBuildingTableVC.h */,
@@ -507,6 +515,8 @@
 				575CD0CE1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m */,
 				575CD0CF1B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.h */,
 				575CD0D01B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m */,
+				57F85C8C1BB51695005D28CF /* CheckBeaconDatabaseVC.h */,
+				57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */,
 			);
 			path = "BLE-Tool";
 			sourceTree = "<group>";
@@ -1198,6 +1208,7 @@
 				575CD1041B564DE200B1E77C /* AppDelegate.m in Sources */,
 				575CD0FE1B564DE200B1E77C /* SettingTableVC.m in Sources */,
 				575CD1C41B564E7300B1E77C /* IPXLocationAlgorithm.cpp in Sources */,
+				57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */,
 				575CD0FF1B564DE200B1E77C /* BuildingTableVC.m in Sources */,
 				575CD1D31B564E7300B1E77C /* TYAlgorithmFactory.m in Sources */,
 				575CD0F71B564DE200B1E77C /* MapVC.m in Sources */,
@@ -1211,6 +1222,7 @@
 				575CD0FD1B564DE200B1E77C /* MapTableVC.m in Sources */,
 				57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */,
 				57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */,
+				57F85C8B1BB5167B005D28CF /* BaseLogVC.m in Sources */,
 				57E6BCE31B8C41D0002226FB /* RATreeView+TableViewDataSource.m in Sources */,
 				575CD0F81B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m in Sources */,
 				575CD0FB1B564DE200B1E77C /* BLEAlgorithmTableVC.m in Sources */,

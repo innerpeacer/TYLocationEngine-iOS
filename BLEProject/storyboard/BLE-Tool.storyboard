@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hfN-JX-PC4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hfN-JX-PC4">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--MapVC-->
@@ -625,10 +625,40 @@
             </objects>
             <point key="canvasLocation" x="625" y="1281"/>
         </scene>
+        <!--Check Beacon DatabaseVC-->
+        <scene sceneID="4Ab-tq-XBG">
+            <objects>
+                <viewController storyboardIdentifier="CheckBeaconDatabaseVC" id="YZV-Mb-Ydq" customClass="CheckBeaconDatabaseVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bQH-oQ-Xe7"/>
+                        <viewControllerLayoutGuide type="bottom" id="aSk-0Z-2YY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HtS-r4-dmp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nq6-Pn-9HT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aSk-0Z-2YY" firstAttribute="top" secondItem="Nq6-Pn-9HT" secondAttribute="bottom" id="597-3f-HIr"/>
+                            <constraint firstItem="Nq6-Pn-9HT" firstAttribute="top" secondItem="HtS-r4-dmp" secondAttribute="top" id="6Wc-WJ-bpL"/>
+                            <constraint firstItem="Nq6-Pn-9HT" firstAttribute="leading" secondItem="HtS-r4-dmp" secondAttribute="leading" id="bTB-DH-Ovw"/>
+                            <constraint firstAttribute="trailing" secondItem="Nq6-Pn-9HT" secondAttribute="trailing" id="itF-Be-hi8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logView" destination="Nq6-Pn-9HT" id="kBh-sT-by6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTR-LN-uSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1441" y="19"/>
+        </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

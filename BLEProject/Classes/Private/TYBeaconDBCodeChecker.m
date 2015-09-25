@@ -28,10 +28,10 @@
     sum = sum * count;
     
     NSString *beaconString = [NSString stringWithFormat:@"%ld", sum];
-    NSLog(@"%@", beaconString);
+//    NSLog(@"%@", beaconString);
     
     NSString *code = [BLEMD5Utils md5:beaconString];
-    NSLog(@"Code: %@", code);
+//    NSLog(@"Code: %@", code);
     
     return code;
 }

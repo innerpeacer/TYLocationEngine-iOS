@@ -20,6 +20,10 @@
     [self.objects addObject:@"配置信标"];
     [self.controllerDict setObject:@"configureBeaconController" forKey:@"配置信标"];
     
+    [self.objects addObject:@"验证Beacon数据"];
+    [self.controllerDict setObject:@"CheckBeaconDatabaseVC" forKey:@"验证Beacon数据"];
+
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
