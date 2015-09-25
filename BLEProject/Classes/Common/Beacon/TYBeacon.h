@@ -5,7 +5,7 @@ typedef enum type {
 } TYPE;
 
 /**
- *  Beacon类
+ *  图呀Beacon类
  */
 @interface TYBeacon : NSObject
 
