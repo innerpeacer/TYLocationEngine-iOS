@@ -85,6 +85,12 @@
   },
   {
   "UserID" : "ty4e13f85911a44a75",
+  "BuildingID" : "07550002",
+  "License" : "f2dd57111c0g31di60dcanffdddb2c32",
+  "Expiration Date" : "20160601"
+  },
+  {
+  "UserID" : "ty4e13f85911a44a75",
   "BuildingID" : "04520001",
   "License" : "a3843b26b`37b80me0g40g2a33f7da66",
   "Expiration Date" : "20160601"
@@ -105,6 +111,12 @@
   "UserID" : "ty4e13f85911a44a75",
   "BuildingID" : "05190001",
   "License" : "1a5090f1b3437=50ebd;eb7<3e92fd30",
+  "Expiration Date" : "20160601"
+  },
+  {
+  "UserID" : "ty4e13f85911a44a75",
+  "BuildingID" : "05910001",
+  "License" : "947cbb9d2am1205>5051`o72f5757488",
   "Expiration Date" : "20160601"
   }
   ]

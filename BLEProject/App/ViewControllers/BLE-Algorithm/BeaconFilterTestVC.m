@@ -31,7 +31,7 @@
 
 - (void)showHintRssiForBeacons:(NSArray *)scannedBeacons
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
     [self.hintLayer removeAllGraphics];
     
     [beaconPool pushBeacons:scannedBeacons];

@@ -71,8 +71,6 @@
     return self;
 }
 
-
-
 - (void)loadBeaconDatabase:(NSString *)dbPath
 {
     IPXBeaconDBAdapter *db = [[IPXBeaconDBAdapter alloc] initWithDBFile:dbPath];
@@ -151,6 +149,55 @@
 }
 
 
+//[scannedBeacons removeAllObjects];
+//
+//for(CLBeacon *beacon in beacons) {
+//    if (beacon.accuracy > 0) {
+//        [scannedBeacons addObject:beacon];
+//    }
+//}
+//
+//[scannedBeacons sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+//    CLBeacon *b1 = (CLBeacon *)obj1;
+//    CLBeacon *b2 = (CLBeacon *)obj2;
+//    NSNumber *l1 = [NSNumber numberWithDouble:b1.accuracy];
+//    NSNumber *l2 = [NSNumber numberWithDouble:b2.accuracy];
+//    return [l1 compare:l2];
+//}];
+//
+//NSMutableArray *toRemove = [[NSMutableArray alloc] init];
+//for (CLBeacon *b in scannedBeacons) {
+//    NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:b];
+//    
+//    TYBeacon *sb = [allBeacons objectForKey:bkey];
+//    if (sb == nil) {
+//        [toRemove addObject:b];
+//    }
+//}
+//[scannedBeacons removeObjectsInArray:toRemove];
+
+- (TYProximity)proximityFrom:(CLProximity)p
+{
+    TYProximity result = TYProximityUnknown;
+    switch (p) {
+        case CLProximityFar:
+            result = TYProximityFar;
+            break;
+            
+        case CLProximityImmediate:
+            result = TYProximityImmediate;
+            break;
+            
+        case CLProximityNear:
+            result = TYProximityNear;
+            break;
+            
+        default:
+            break;
+    }
+    return result;
+}
+
 - (void)beaconManager:(TYBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
 //    NSLog(@"didRangeBeacons: %d", (int)beacons.count);
@@ -158,10 +205,42 @@
         return;
     }
     
+    // 返回扫描到的Beacon
+    if ([self.delegate respondsToSelector:@selector(IPXLocationEngine:didRangeBeacons:)]) {
+        NSMutableArray *beaconArray = [NSMutableArray array];
+        for(CLBeacon *b in beacons) {
+            if (b.accuracy > 0) {
+                TYBeacon *beacon = [TYBeacon beaconWithUUID:b.proximityUUID.UUIDString Major:b.major Minor:b.minor Tag:nil];
+                beacon.accuracy = b.accuracy;
+                beacon.rssi = (int)b.rssi;
+                beacon.proximity = [self proximityFrom:b.proximity];
+                
+                [beaconArray addObject:beacon];
+            }
+        }
+        [self.delegate IPXLocationEngine:self didRangeBeacons:beaconArray];
+    }
+    
     [self preprocessBeacons:beacons];
     
     if (scannedBeacons.count == 0) {
         return;
+    }
+    
+    // 返回扫描到的Beacon
+    if ([self.delegate respondsToSelector:@selector(IPXLocationEngine:didRangeLocationBeacons:)]) {
+        NSMutableArray *locationBeaconArray = [NSMutableArray array];
+        for (CLBeacon *b in scannedBeacons) {
+            NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:b];
+            TYPublicBeacon *pb = [allBeacons objectForKey:bkey];
+            TYPublicBeacon *publicBeacon = [TYPublicBeacon beaconWithUUID:pb.UUID Major:pb.major Minor:pb.minor Tag:pb.tag Location:pb.location];
+            publicBeacon.accuracy = b.accuracy;
+            publicBeacon.rssi = (int)b.rssi;
+            publicBeacon.proximity = [self proximityFrom:b.proximity];
+            
+            [locationBeaconArray addObject:publicBeacon];
+        }
+        [self.delegate IPXLocationEngine:self didRangeLocationBeacons:locationBeaconArray];
     }
     
     {

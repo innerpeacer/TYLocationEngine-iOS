@@ -127,6 +127,22 @@
 
 }
 
+//- (void)TYLocationManager:(TYLocationManager *)manager didRangedBeacons:(NSArray *)beacons
+//{
+//    NSLog(@"TYLocationManager:didRangedBeacons: %d", (int)beacons.count);
+//    for (TYBeacon *b in beacons) {
+//        NSLog(@"%@", b);
+//    }
+//}
+//
+//- (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons
+//{
+//    NSLog(@"TYLocationManager:didRangedLocationBeacons: %d", (int)beacons.count);
+//    for (TYPublicBeacon *b in beacons) {
+//        NSLog(@"%@", b);
+//    }
+//}
+
 - (IBAction)publicSwitchToggled:(id)sender {
     if (self.publicSwitch.on) {
         

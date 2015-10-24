@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		574EE2F71B724809005A6482 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574EE2F61B724809005A6482 /* TYMapData.framework */; };
-		5754EDEF1BB43D0E00D63B13 /* BLEMD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDED1BB43D0E00D63B13 /* BLEMD5.cpp */; settings = {ASSET_TAGS = (); }; };
-		5754EDF31BB43E5700D63B13 /* BLEMD5Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF21BB43E5700D63B13 /* BLEMD5Utils.mm */; settings = {ASSET_TAGS = (); }; };
-		5754EDF61BB4487C00D63B13 /* TYBeaconDBCodeChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF51BB4487C00D63B13 /* TYBeaconDBCodeChecker.m */; settings = {ASSET_TAGS = (); }; };
-		5754EDF91BB44D9500D63B13 /* IPXBeaconDBChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF71BB44D9500D63B13 /* IPXBeaconDBChecker.cpp */; settings = {ASSET_TAGS = (); }; };
+		5754EDEF1BB43D0E00D63B13 /* BLEMD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDED1BB43D0E00D63B13 /* BLEMD5.cpp */; };
+		5754EDF31BB43E5700D63B13 /* BLEMD5Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF21BB43E5700D63B13 /* BLEMD5Utils.mm */; };
+		5754EDF61BB4487C00D63B13 /* TYBeaconDBCodeChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF51BB4487C00D63B13 /* TYBeaconDBCodeChecker.m */; };
+		5754EDF91BB44D9500D63B13 /* IPXBeaconDBChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF71BB44D9500D63B13 /* IPXBeaconDBChecker.cpp */; };
 		575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AD1B564DE200B1E77C /* TYRegionManager.m */; };
 		575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */; };
 		575CD0EC1B564DE200B1E77C /* BaseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B21B564DE200B1E77C /* BaseMapVC.m */; };
@@ -127,8 +127,8 @@
 		57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCDB1B8C41D0002226FB /* RATreeView.m */; };
 		57E6BCE91B8C41DC002226FB /* CityBuildingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */; };
 		57E6BCEC1B8C43DD002226FB /* SelectBuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */; };
-		57F85C8B1BB5167B005D28CF /* BaseLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8A1BB5167B005D28CF /* BaseLogVC.m */; settings = {ASSET_TAGS = (); }; };
-		57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */; settings = {ASSET_TAGS = (); }; };
+		57F85C8B1BB5167B005D28CF /* BaseLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8A1BB5167B005D28CF /* BaseLogVC.m */; };
+		57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */; };
 		57F878B81B9E8D1100D27CE4 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F878B71B9E8D1100D27CE4 /* TYMapSDK.framework */; };
 		57FC97BA1BB12F5B006D6D00 /* Licenses.json in Resources */ = {isa = PBXBuildFile; fileRef = 57FC97B91BB12F5B006D6D00 /* Licenses.json */; };
 		57FC97BD1BB12F87006D6D00 /* LicenseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC97BC1BB12F87006D6D00 /* LicenseManager.m */; };
@@ -1322,7 +1322,7 @@
 					"/Applications/Xcode\\ 5.1.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					/Users/innerpeacer/wsForIOS/goeslib/i386/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1367,7 +1367,7 @@
 					"/Applications/Xcode\\ 5.1.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					/Users/innerpeacer/wsForIOS/goeslib/i386/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",

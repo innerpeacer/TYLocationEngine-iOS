@@ -83,6 +83,13 @@
                      "name": "高德汇",
                      "uuid": "24AE132F-65E3-4769-8675-2B9DBD154262",
                      "major": 1
+                     },
+                     {
+                     "cityID": "0591",
+                     "buildingID": "05910001",
+                     "name": "诺亚科技",
+                     "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",
+                     "major": null
                      }
                      ]
 }

@@ -14,6 +14,10 @@
 @protocol IPXLocationEngineDelegate <NSObject>
 
 @optional
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine didRangeBeacons:(NSArray *)beacons;
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine didRangeLocationBeacons:(NSArray *)beacons;
+
+@optional
 - (void)IPXLocationEngine:(IPXLocationEngine *)engine locationChanged:(TYLocalPoint *)newLocation;
 - (void)IPXLocationEngine:(IPXLocationEngine *)engine headingChanged:(double)newHeading;
 @end

@@ -28,8 +28,6 @@
     
     TYPictureMarkerSymbol *pms;
     TYPathCalibration *pathCalibration;
-    
-    
 }
 
 @property (weak, nonatomic) IBOutlet UISwitch *publicSwitch;
@@ -48,7 +46,7 @@
     [self addLayers];
     [self initLocationSettings];
     
-    pathCalibration = [[TYPathCalibration alloc] initWithFloorID:@"002100002F20"];
+//    pathCalibration = [[TYPathCalibration alloc] initWithFloorID:@"002100002F20"];
     
     pms = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"l7"];
     [self.mapView setLocationSymbol:(TYMarkerSymbol *)pms];
@@ -91,17 +89,12 @@
 
 - (void)initLocationSettings
 {
-//    publicBeaconRegion = [TYRegionManager defaultRegion];
     publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
-
     locationManager = [[TYLocationManager alloc] initWithBuilding:[TYUserDefaults getDefaultBuilding]];
-
-    
     [locationManager setLimitBeaconNumber:YES];
 //    [locationManager setLimitBeaconNumber:NO];
     [locationManager setRssiThreshold:-90];
-    
-    locationManager.delegate = self;
+        locationManager.delegate = self;
     [locationManager setBeaconRegion:publicBeaconRegion];
 //    [locationManager startUpdateLocation];
 
@@ -118,7 +111,6 @@
     
     
     TYPoint *pos = [TYPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
-    
     [self.mapView showLocation:newLocation];
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
@@ -126,13 +118,11 @@
     CGRect restrictRange = CGRectMake(screenBound.origin.x + PADDING, screenBound.origin.y + PADDING, screenBound.size.width - PADDING * 2, screenBound.size.height - PADDING * 2);
     
     [self.mapView restrictLocation:pos toScreenRange:restrictRange];
-
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(TYPoint *)mappoint
 {
     NSLog(@"didClickAtPoint: %f, %f", mappoint.x, mappoint.y);
-    
     NSLog(@"%f", self.mapView.mapScale);
 }
 
@@ -147,12 +137,27 @@
     [self.mapView removeLocation];
 }
 
+- (void)TYLocationManager:(TYLocationManager *)manager didRangedBeacons:(NSArray *)beacons
+{
+//    NSLog(@"TYLocationManager:didRangedBeacons: %d", (int)beacons.count);
+//    for (TYBeacon *b in beacons) {
+//        NSLog(@"%@", b);
+//    }
+}
+
+- (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons
+{
+//    NSLog(@"TYLocationManager:didRangedLocationBeacons: %d", (int)beacons.count);
+//    for (TYPublicBeacon *b in beacons) {
+//        NSLog(@"%@", b);
+//    }
+    [self showHintRssiForLocationBeacons:beacons];
+}
+
 - (IBAction)publicSwitchToggled:(id)sender {
     if (self.publicSwitch.on) {
-        
         TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [pdb open];
-        
         NSArray *array = [pdb getAllLocationingBeacons];
         for (TYPublicBeacon *pb in array)
         {
@@ -162,7 +167,6 @@
             
             TYPoint *p = [TYPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
-            
             
 //            AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@\n%@", pb.minor, pb.tag] color:[UIColor magentaColor]];
 //            [ts setOffset:CGPointMake(5, -20)];
@@ -189,5 +193,29 @@
         [self.mapView setMapMode:TYMapViewModeDefault];
     }
 }
+
+- (void)showHintRssiForLocationBeacons:(NSArray *)beacons
+{
+    [hintLayer removeAllGraphics];
+    
+    for (TYPublicBeacon *pb in beacons) {
+        if (pb.location.floor == self.currentMapInfo.floorNumber) {
+            NSString *rssi = [NSString stringWithFormat:@"%.2f, %d", pb.accuracy,(int) pb.rssi];
+            AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:rssi color:[UIColor blueColor]];
+            [ts setOffset:CGPointMake(5, 10)];
+            AGSPoint *pos = [AGSPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
+            AGSGraphic *graphic = [AGSGraphic graphicWithGeometry:pos symbol:ts attributes:nil];
+            [hintLayer addGraphic:graphic];
+            
+            AGSSimpleMarkerSymbol *sms = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor redColor]];
+            sms.size = CGSizeMake(5, 5);
+            [hintLayer addGraphic:[AGSGraphic graphicWithGeometry:pos symbol:sms attributes:nil]];
+        }
+    }
+    
+    
+}
+
+
 
 @end

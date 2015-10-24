@@ -60,37 +60,11 @@
         return nil;
     }
     
-//    if (![building.buildingID isEqualToString:@"00210004"]) {
-//        //        NSLog(@"抱歉，当前SDK不支持此建筑，请联系开发者");
-//        //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误！" message:@"抱歉，当前SDK不支持此建筑，请联系开发者" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        //        [alert show];
-//        return nil;
-//    }
-    
     return [[TYLocationManager alloc] initWithBeaconDB:[TYLocationFileManager getBeaconDBPath:building] FloorPathDict:nil];
 }
 
 - (void)setBeaconRegion:(CLBeaconRegion *)region
 {
-//    if (![region.proximityUUID.UUIDString isEqualToString:@"4A280348-E1B1-4901-9DC0-17203C8000B4"] || region.major.intValue != 1) {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误！" message:@"抱歉，定位引擎不支持此Beacon参数，请联系开发者。" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alert show];
-//        
-//        beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:[self generateRandomUUID]] major:0 minor:0 identifier:@""];
-//        [locationEngine setBeaconRegion:beaconRegion];
-//        
-//        return;
-//    }
-
-//    if (![region.proximityUUID.UUIDString isEqualToString:@"4A280348-E1B1-4901-9DC0-17203C8000B4"]) {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误！" message:@"抱歉，定位引擎不支持此Beacon参数，请联系开发者。" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alert show];
-//        
-//        beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:[self generateRandomUUID]] major:0 minor:0 identifier:@""];
-//        [locationEngine setBeaconRegion:beaconRegion];
-//        return;
-//    }
-    
     beaconRegion = region;
     [locationEngine setBeaconRegion:region];
 }
@@ -184,6 +158,20 @@
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(TYLocationManager:didUpdateDeviceHeading:)]) {
         [self.delegate TYLocationManager:self didUpdateDeviceHeading:newHeading];
+    }
+}
+
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine didRangeBeacons:(NSArray *)beacons
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(TYLocationManager:didRangedBeacons:)]) {
+        [self.delegate TYLocationManager:self didRangedBeacons:beacons];
+    }
+}
+
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine didRangeLocationBeacons:(NSArray *)beacons
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(TYLocationManager:didRangedLocationBeacons:)]) {
+        [self.delegate TYLocationManager:self didRangedLocationBeacons:beacons];
     }
 }
 
