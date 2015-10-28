@@ -227,7 +227,7 @@
         return;
     }
     
-    // 返回扫描到的Beacon
+    // 返回扫描到的PublicBeacon
     if ([self.delegate respondsToSelector:@selector(IPXLocationEngine:didRangeLocationBeacons:)]) {
         NSMutableArray *locationBeaconArray = [NSMutableArray array];
         for (CLBeacon *b in scannedBeacons) {
