@@ -3,15 +3,23 @@
 @implementation MapTableVC
 
 - (void)viewDidLoad
-{    
-    self.objects = [[NSMutableArray alloc] init];
-    self.controllerDict = [[NSMutableDictionary alloc] init];
-    
+{
     self.title = @"地图";
     
-    [self.objects addObject:@"ArcGIS地图"];
-    [self.controllerDict setObject:@"cityListController" forKey:@"ArcGIS地图"];
-    
+    NSArray *viewControllers = @[
+                                 @[@"ArcGIS地图", @"cityListController"],
+                                 ];
+    self.objects = [[NSMutableArray alloc] init];
+    self.controllerDict = [[NSMutableDictionary alloc] init];
+
+    for (int i = 0; i < viewControllers.count; ++i) {
+        NSArray *controller = viewControllers[i];
+        NSString *name = [NSString stringWithFormat:@"%d. %@",i, controller[0]];
+        NSString *storyboardID = controller[1];
+        [self.objects addObject:name];
+        [self.controllerDict setObject:storyboardID forKey:name];
+    }
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

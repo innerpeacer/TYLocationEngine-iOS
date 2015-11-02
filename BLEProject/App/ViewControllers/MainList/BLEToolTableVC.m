@@ -4,26 +4,25 @@
 
 - (void)viewDidLoad
 {
+    self.title = @"BLE工具";
+    
+    NSArray *viewControllers = @[
+                                 @[@"商场地图", @"mapViewController"],
+                                 @[@"添加原始信标", @"addPrimitiveController"],
+                                 @[@"配置信标", @"configureBeaconController"],
+                                 @[@"验证Beacon数据", @"CheckBeaconDatabaseVC"],
+                                                                  ];
     
     self.objects = [[NSMutableArray alloc] init];
     self.controllerDict = [[NSMutableDictionary alloc] init];
     
-    self.title = @"BLE工具";
-
-   
-    [self.objects addObject:@"商场地图"];
-    [self.controllerDict setObject:@"mapViewController" forKey:@"商场地图"];
-    
-    [self.objects addObject:@"添加原始信标"];
-    [self.controllerDict setObject:@"addPrimitiveController" forKey:@"添加原始信标"];
-    
-    [self.objects addObject:@"配置信标"];
-    [self.controllerDict setObject:@"configureBeaconController" forKey:@"配置信标"];
-    
-    [self.objects addObject:@"验证Beacon数据"];
-    [self.controllerDict setObject:@"CheckBeaconDatabaseVC" forKey:@"验证Beacon数据"];
-
-    
+    for (int i = 0; i < viewControllers.count; ++i) {
+        NSArray *controller = viewControllers[i];
+        NSString *name = [NSString stringWithFormat:@"%d. %@",i, controller[0]];
+        NSString *storyboardID = controller[1];
+        [self.objects addObject:name];
+        [self.controllerDict setObject:storyboardID forKey:name];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -4,28 +4,28 @@
 
 - (void)viewDidLoad
 {
+    self.title = @"BLE算法";
+
+    NSArray *viewControllers = @[
+                                @[@"Base Location Test",@"baseLocatingController"],
+                                @[@"Location Engine Test",@"locationEngineTestController"],
+                                @[@"Multi Location Engine Test",@"multiTestController"],
+                                @[@"Beacon Filter 测试",@"beaconFilterController"],
+                                @[@"Cpp Engine 测试",@"cppEngineController"],
+                                @[@"Cpp Engine 对比测试",@"cppEngineCompareController" ],
+                                 ];
+    
     self.objects = [[NSMutableArray alloc] init];
     self.controllerDict = [[NSMutableDictionary alloc] init];
     
-    self.title = @"BLE算法";
-    
-    [self.objects addObject:@"Base Location Test"];
-    [self.controllerDict setObject:@"baseLocatingController" forKey:@"Base Location Test"];
-    
-    [self.objects addObject:@"Location Engine Test"];
-    [self.controllerDict setObject:@"locationEngineTestController" forKey:@"Location Engine Test"];
-    
-    [self.objects addObject:@"Multi Location Engine Test"];
-    [self.controllerDict setObject:@"multiTestController" forKey:@"Multi Location Engine Test"];
-    
-    [self.objects addObject:@"Beacon Filter 测试"];
-    [self.controllerDict setObject:@"beaconFilterController" forKey:@"Beacon Filter 测试"];
-    
-    [self.objects addObject:@"Cpp Engine 测试"];
-    [self.controllerDict setObject:@"cppEngineController" forKey:@"Cpp Engine 测试"];
-    
-    [self.objects addObject:@"Cpp Engine 对比测试"];
-    [self.controllerDict setObject:@"cppEngineCompareController" forKey:@"Cpp Engine 对比测试"];
+    for (int i = 0; i < viewControllers.count; ++i) {
+        NSArray *controller = viewControllers[i];
+        NSString *name = [NSString stringWithFormat:@"%d. %@",i, controller[0]];
+        NSString *storyboardID = controller[1];
+        [self.objects addObject:name];
+        [self.controllerDict setObject:storyboardID forKey:name];
+    }
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
