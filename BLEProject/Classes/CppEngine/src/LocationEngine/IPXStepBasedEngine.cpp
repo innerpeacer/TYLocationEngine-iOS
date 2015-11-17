@@ -51,6 +51,7 @@ void IPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEng
     }
     
     IPXPoint newLocation = getIndependentLocation();
+    currentImmediationLocation = newLocation;
     
     if (newLocation == INVALID_POINT) {
         return;
@@ -107,4 +108,9 @@ IPXPoint IPXStepBasedEngine::getLocation() const {
 IPXPoint IPXStepBasedEngine::getIndependentLocation() {
     IPXPoint currentLocation = algorithm->calculationLocation();
     return currentLocation;
+}
+
+IPXPoint IPXStepBasedEngine::getImmediateLocation() const
+{
+    return currentImmediationLocation;
 }

@@ -151,7 +151,21 @@
     }
     
     lastLocation = newLocation;
+}
+
+- (void)IPXLocationEngine:(IPXLocationEngine *)engine immediateLocationChanged:(TYLocalPoint *)immediateLocation
+{
+    if (immediateLocation.floor == 0) {
+        if (lastLocation == nil) {
+            immediateLocation.floor = 1;
+        } else {
+            immediateLocation.floor = lastLocation.floor;
+        }
+    }
     
+    if ([self.delegate respondsToSelector:@selector(TYLocationManager:didUpdateImmediateLocation:)]) {
+        [self.delegate TYLocationManager:self didUpdateImmediateLocation:immediateLocation];
+    }
 }
 
 - (void)IPXLocationEngine:(IPXLocationEngine *)engine headingChanged:(double)newHeading

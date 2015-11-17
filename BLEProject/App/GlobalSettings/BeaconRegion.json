@@ -9,7 +9,7 @@
                      },
                      {
                      "cityID": "0021",
-                     "buildingID": "002100002",
+                     "buildingID": "00210002",
                      "name": "金钟广场",
                      "uuid": "A640BA53-68A6-4A9B-80AE-6F3E8E59D31F",
                      "major": 1
@@ -23,6 +23,20 @@
                      },
                      {
                      "cityID": "0021",
+                     "buildingID": "00210009",
+                     "name": "外滩金融中心BFC",
+                     "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",
+                     "major": null
+                     },
+                     {
+                     "cityID": "0021",
+                     "buildingID": "00210010",
+                     "name": "外滩金融中心展区",
+                     "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",
+                     "major": null
+                     },
+                     {
+                     "cityID": "0021",
                      "buildingID": "00210005",
                      "name": "汇纳",
                      "uuid": "9195B3AD-A9D0-4500-85FF-9FB0F65A5200",
@@ -30,10 +44,17 @@
                      },
                      {
                      "cityID": "H852",
-                     "buildingID": "H85200001",
+                     "buildingID": "H8520001",
                      "name": "香港机场",
                      "uuid": "E2879308-4FA3-4F30-AC22-19ECDCB0D8C8",
                      "major": 7
+                     },
+                     {
+                     "cityID": "M853",
+                     "buildingID": "M8530001",
+                     "name": "澳门万国集团",
+                     "uuid": "24AE132F-65E3-4769-8675-2B9DBD154262",
+                     "major": 2
                      },
                      {
                      "cityID": "0452",
@@ -65,10 +86,17 @@
                      },
                      {
                      "cityID": "0021",
-                     "buildingID": "00210011",
+                     "buildingID": "00210001",
                      "name": "周浦绿地",
                      "uuid": "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0",
                      "major": 2015
+                     },
+                     {
+                     "cityID": "0021",
+                     "buildingID": "00210011",
+                     "name": "阿斯利康办公室",
+                     "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",
+                     "major": null
                      },
                      {
                      "cityID": "0021",
@@ -82,6 +110,13 @@
                      "buildingID": "002199999",
                      "name": "成山路",
                      "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",
+                     "major": null
+                     },
+                     {
+                     "cityID": "0021",
+                     "buildingID": "00218888",
+                     "name": "测试环境",
+                     "uuid": "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0",
                      "major": null
                      },
                      {

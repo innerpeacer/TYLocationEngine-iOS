@@ -63,8 +63,8 @@
     
     beaconRegion =  [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
     
-    //    NSLog(@"%@", [TYUserDefaults getDefaultBuilding]);
-    //    NSLog(@"%@", beaconRegion);
+        NSLog(@"%@", [TYUserDefaults getDefaultBuilding]);
+        NSLog(@"%@", beaconRegion);
 }
 
 - (IBAction)bindingButtonClicked:(id)sender {
@@ -192,7 +192,6 @@
         } else {
             [pdb updateLocationingBeacon:[TYPublicBeacon beaconWithUUID:beaconRegion.proximityUUID.UUIDString Major:major Minor:minor Tag:tag Location:currentLocation]];
         }
-        
         [pdb close];
         
         currentBeacon = nil;

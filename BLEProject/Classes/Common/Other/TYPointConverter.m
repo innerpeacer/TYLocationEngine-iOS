@@ -19,7 +19,7 @@ static NSData *headData;
     NSMutableData *data = [NSMutableData dataWithData:head];
     double xyz[]= {x, y, z};
     
-    NSLog(@"dataFromX:(double)x Y:(double)y Z:(double)z");
+//    NSLog(@"dataFromX:(double)x Y:(double)y Z:(double)z");
     
     NSData *xyzData = [NSData dataWithBytes:(const void *)xyz length:sizeof(xyz)];
     [data appendData:xyzData];

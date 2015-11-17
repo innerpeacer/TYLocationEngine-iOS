@@ -148,34 +148,6 @@
     rssiThreshold = threshold;
 }
 
-
-//[scannedBeacons removeAllObjects];
-//
-//for(CLBeacon *beacon in beacons) {
-//    if (beacon.accuracy > 0) {
-//        [scannedBeacons addObject:beacon];
-//    }
-//}
-//
-//[scannedBeacons sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-//    CLBeacon *b1 = (CLBeacon *)obj1;
-//    CLBeacon *b2 = (CLBeacon *)obj2;
-//    NSNumber *l1 = [NSNumber numberWithDouble:b1.accuracy];
-//    NSNumber *l2 = [NSNumber numberWithDouble:b2.accuracy];
-//    return [l1 compare:l2];
-//}];
-//
-//NSMutableArray *toRemove = [[NSMutableArray alloc] init];
-//for (CLBeacon *b in scannedBeacons) {
-//    NSNumber *bkey = [TYBeaconKey beaconKeyForCLBeacon:b];
-//    
-//    TYBeacon *sb = [allBeacons objectForKey:bkey];
-//    if (sb == nil) {
-//        [toRemove addObject:b];
-//    }
-//}
-//[scannedBeacons removeObjectsInArray:toRemove];
-
 - (TYProximity)proximityFrom:(CLProximity)p
 {
     TYProximity result = TYProximityUnknown;
@@ -283,6 +255,7 @@
     
     locationEngine->processBeacons(*pScannedBeacons);
     IPXPoint currentLocation = locationEngine->getLocation();
+    IPXPoint immediateLocation = locationEngine->getImmediateLocation();
     
 //    NSLog(@"IPX: %f, %f", currentLocation.getX(), currentLocation.getY());
     
@@ -291,6 +264,12 @@
     if (currentLocation != INVALID_POINT) {
         if ([self.delegate respondsToSelector:@selector(IPXLocationEngine:locationChanged:)]) {
             [self.delegate IPXLocationEngine:self locationChanged:[TYLocalPoint pointWithX:currentLocation.getX() Y:currentLocation.getY() Floor:currentFloor]];
+        }
+    }
+    
+    if (immediateLocation != INVALID_POINT) {
+        if ([self.delegate respondsToSelector:@selector(IPXLocationEngine:immediateLocationChanged:)]) {
+            [self.delegate IPXLocationEngine:self immediateLocationChanged:[TYLocalPoint pointWithX:immediateLocation.getX() Y:immediateLocation.getY() Floor:currentFloor]];
         }
     }
 

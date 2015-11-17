@@ -20,6 +20,7 @@
 {
     TYGraphicsLayer *hintLayer;
     TYGraphicsLayer *resultLayer;
+    TYGraphicsLayer *immediateLayer;
     TYGraphicsLayer *publicBeaconLayer;
     
     CLBeaconRegion *publicBeaconRegion;
@@ -85,6 +86,9 @@
     
     resultLayer = [TYGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:resultLayer];
+    
+    immediateLayer = [TYGraphicsLayer graphicsLayer];
+    [self.mapView addMapLayer:immediateLayer];
 }
 
 - (void)initLocationSettings
@@ -102,22 +106,49 @@
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
 {
+//    [resultLayer removeAllGraphics];
+//    
+//    if (newLocation.floor != self.mapView.currentMapInfo.floorNumber) {
+//        [self.mapView setFloorWithInfo:[TYMapInfo searchMapInfoFromArray:self.allMapInfos Floor:newLocation.floor]];
+//        self.title = self.mapView.currentMapInfo.floorName;
+//    }
+//    
+//    TYPoint *pos = [TYPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
+//    [self.mapView showLocation:newLocation];
+//    
+//    CGRect screenBound = [[UIScreen mainScreen] bounds];
+//#define PADDING 30
+//    CGRect restrictRange = CGRectMake(screenBound.origin.x + PADDING, screenBound.origin.y + PADDING, screenBound.size.width - PADDING * 2, screenBound.size.height - PADDING * 2);
+//    
+//    [self.mapView restrictLocation:pos toScreenRange:restrictRange];
+}
+
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation
+{
+//    [immediateLayer removeAllGraphics];
+//    
+//    TYPoint *pos = [TYPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:self.mapView.spatialReference];
+//    AGSSimpleMarkerSymbol *sms = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor greenColor]];
+//    sms.size = CGSizeMake(8, 8);
+//    [immediateLayer addGraphic:[AGSGraphic graphicWithGeometry:pos symbol:sms attributes:nil]];
+    
     [resultLayer removeAllGraphics];
     
-    if (newLocation.floor != self.mapView.currentMapInfo.floorNumber) {
-        [self.mapView setFloorWithInfo:[TYMapInfo searchMapInfoFromArray:self.allMapInfos Floor:newLocation.floor]];
+    if (newImmediateLocation.floor != self.mapView.currentMapInfo.floorNumber) {
+        [self.mapView setFloorWithInfo:[TYMapInfo searchMapInfoFromArray:self.allMapInfos Floor:newImmediateLocation.floor]];
         self.title = self.mapView.currentMapInfo.floorName;
     }
     
-    
-    TYPoint *pos = [TYPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
-    [self.mapView showLocation:newLocation];
+    TYPoint *pos = [TYPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:self.mapView.spatialReference];
+    [self.mapView showLocation:newImmediateLocation];
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
 #define PADDING 30
     CGRect restrictRange = CGRectMake(screenBound.origin.x + PADDING, screenBound.origin.y + PADDING, screenBound.size.width - PADDING * 2, screenBound.size.height - PADDING * 2);
     
     [self.mapView restrictLocation:pos toScreenRange:restrictRange];
+    
+    [self.mapView centerAtPoint:pos animated:YES];
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(TYPoint *)mappoint
@@ -147,10 +178,10 @@
 
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons
 {
-//    NSLog(@"TYLocationManager:didRangedLocationBeacons: %d", (int)beacons.count);
-//    for (TYPublicBeacon *b in beacons) {
-//        NSLog(@"%@", b);
-//    }
+    NSLog(@"TYLocationManager:didRangedLocationBeacons: %d", (int)beacons.count);
+    for (TYPublicBeacon *b in beacons) {
+        NSLog(@"%@", b);
+    }
     [self showHintRssiForLocationBeacons:beacons];
 }
 

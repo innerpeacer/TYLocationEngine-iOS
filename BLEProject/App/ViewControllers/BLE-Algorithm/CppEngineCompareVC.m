@@ -117,6 +117,11 @@
     [npResultLayer addGraphic:[AGSGraphic graphicWithGeometry:pos symbol:sms attributes:nil]];
 }
 
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation
+{
+    
+}
+
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading
 {
     

@@ -35,7 +35,8 @@ namespace Innerpeacer {
             void addStepEvent();
             void reset();
             IPXPoint getLocation() const;
-            
+            IPXPoint getImmediateLocation() const;
+
             ~IPXStepBasedEngine() {
                 if (algorithm)
                     delete algorithm;
@@ -47,6 +48,7 @@ namespace Innerpeacer {
             
             IPXPoint currentDisplayLocation;
             IPXPoint currentAnchorLocation;
+            IPXPoint currentImmediationLocation;
             
             IPXMovingAverage xMovingAverage;
             IPXMovingAverage yMovingAverage;

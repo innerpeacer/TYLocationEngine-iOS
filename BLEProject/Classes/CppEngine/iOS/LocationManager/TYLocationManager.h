@@ -26,6 +26,8 @@
  */
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation;
 
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation;
+
 /**
  *  位置更新失败事件回调
  *
