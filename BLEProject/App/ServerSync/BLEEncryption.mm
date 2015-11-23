@@ -8,17 +8,20 @@
 
 #import "BLEEncryption.h"
 #import "IPXEncryption.hpp"
+
+using namespace Innerpeacer::BLETool;
+
 @implementation BLEEncryption
 
 
 + (NSString *)decryptString:(NSString *)string
 {
-    return [NSString stringWithCString:ble_encryptString([string UTF8String]).c_str() encoding:NSUTF8StringEncoding];
+    return [NSString stringWithCString:encryptString([string UTF8String]).c_str() encoding:NSUTF8StringEncoding];
 }
 
 + (NSString *)decryptString:(NSString *)string withKey:(NSString *)key
 {
-    return [NSString stringWithCString:ble_encryptString([string UTF8String], [key UTF8String]).c_str() encoding:NSUTF8StringEncoding];
+    return [NSString stringWithCString:encryptString([string UTF8String], [key UTF8String]).c_str() encoding:NSUTF8StringEncoding];
 }
 
 + (NSString *)encryptString:(NSString *)string

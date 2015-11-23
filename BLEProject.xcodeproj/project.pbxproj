@@ -16,6 +16,7 @@
 		57410F1A1BF8BEA100D5405F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57410F191BF8BEA100D5405F /* ImageIO.framework */; };
 		57410F1C1BF8BEA900D5405F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57410F1B1BF8BEA900D5405F /* SystemConfiguration.framework */; };
 		57410F1E1BF8BEBA00D5405F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57410F1D1BF8BEBA00D5405F /* CFNetwork.framework */; };
+		574B31A31C02B73200882360 /* CppUnionLane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 574B31A11C02B73200882360 /* CppUnionLane.cpp */; };
 		574EE2F71B724809005A6482 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574EE2F61B724809005A6482 /* TYMapData.framework */; };
 		5754EDEF1BB43D0E00D63B13 /* BLEMD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDED1BB43D0E00D63B13 /* BLEMD5.cpp */; };
 		5754EDF31BB43E5700D63B13 /* BLEMD5Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF21BB43E5700D63B13 /* BLEMD5Utils.mm */; };
@@ -81,7 +82,6 @@
 		575CD1C91B564E7300B1E77C /* IPXPublicBeacon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1591B564E7300B1E77C /* IPXPublicBeacon.cpp */; };
 		575CD1CA1B564E7300B1E77C /* IPXScannedBeacon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD15B1B564E7300B1E77C /* IPXScannedBeacon.cpp */; };
 		575CD1CB1B564E7300B1E77C /* IPXMovingAverage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD15E1B564E7300B1E77C /* IPXMovingAverage.cpp */; };
-		575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1611B564E7300B1E77C /* CppUnionLane.cpp */; };
 		575CD1CD1B564E7300B1E77C /* IPXGeometryEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1631B564E7300B1E77C /* IPXGeometryEngine.cpp */; };
 		575CD1CE1B564E7300B1E77C /* IPXStepBasedEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1671B564E7300B1E77C /* IPXStepBasedEngine.cpp */; };
 		575CD1CF1B564E7300B1E77C /* TYBeaconFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD16E1B564E7300B1E77C /* TYBeaconFilter.m */; };
@@ -157,6 +157,8 @@
 		57410F191BF8BEA100D5405F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		57410F1B1BF8BEA900D5405F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		57410F1D1BF8BEBA00D5405F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		574B31A11C02B73200882360 /* CppUnionLane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppUnionLane.cpp; sourceTree = "<group>"; };
+		574B31A21C02B73200882360 /* CppUnionLane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppUnionLane.h; sourceTree = "<group>"; };
 		574EE2F61B724809005A6482 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYMapData.framework; path = ../../../../../../../../../Users/innerpeacer/Desktop/TYMapData.framework; sourceTree = "<group>"; };
 		5754EDED1BB43D0E00D63B13 /* BLEMD5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BLEMD5.cpp; sourceTree = "<group>"; };
 		5754EDEE1BB43D0E00D63B13 /* BLEMD5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BLEMD5.hpp; sourceTree = "<group>"; };
@@ -289,8 +291,6 @@
 		575CD15C1B564E7300B1E77C /* IPXScannedBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXScannedBeacon.h; sourceTree = "<group>"; };
 		575CD15E1B564E7300B1E77C /* IPXMovingAverage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPXMovingAverage.cpp; sourceTree = "<group>"; };
 		575CD15F1B564E7300B1E77C /* IPXMovingAverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXMovingAverage.h; sourceTree = "<group>"; };
-		575CD1611B564E7300B1E77C /* CppUnionLane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppUnionLane.cpp; sourceTree = "<group>"; };
-		575CD1621B564E7300B1E77C /* CppUnionLane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppUnionLane.h; sourceTree = "<group>"; };
 		575CD1631B564E7300B1E77C /* IPXGeometryEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPXGeometryEngine.cpp; sourceTree = "<group>"; };
 		575CD1641B564E7300B1E77C /* IPXGeometryEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXGeometryEngine.h; sourceTree = "<group>"; };
 		575CD1661B564E7300B1E77C /* ILocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILocationEngine.h; sourceTree = "<group>"; };
@@ -834,8 +834,8 @@
 		575CD1601B564E7300B1E77C /* GeosGeometryEngine */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1611B564E7300B1E77C /* CppUnionLane.cpp */,
-				575CD1621B564E7300B1E77C /* CppUnionLane.h */,
+				574B31A11C02B73200882360 /* CppUnionLane.cpp */,
+				574B31A21C02B73200882360 /* CppUnionLane.h */,
 				575CD1631B564E7300B1E77C /* IPXGeometryEngine.cpp */,
 				575CD1641B564E7300B1E77C /* IPXGeometryEngine.h */,
 			);
@@ -1222,6 +1222,7 @@
 				575CD1C51B564E7300B1E77C /* IPXTriangulationAlgorithm.cpp in Sources */,
 				57E6BCE01B8C41D0002226FB /* RATreeNodeInfo.m in Sources */,
 				575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */,
+				574B31A31C02B73200882360 /* CppUnionLane.cpp in Sources */,
 				57E6BCDE1B8C41D0002226FB /* RATreeNodeCollectionController.m in Sources */,
 				575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */,
 				575CD1D71B564E7300B1E77C /* TYWeightingAlgorithm.m in Sources */,
@@ -1242,7 +1243,6 @@
 				5754EDF61BB4487C00D63B13 /* TYBeaconDBCodeChecker.m in Sources */,
 				575CD1AE1B564E7300B1E77C /* TYBeaconManager.m in Sources */,
 				57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */,
-				575CD1CC1B564E7300B1E77C /* CppUnionLane.cpp in Sources */,
 				575CD1E31B564E7300B1E77C /* FMDatabasePool.m in Sources */,
 				575CD1D51B564E7300B1E77C /* TYLocationAlgorithm.m in Sources */,
 				57E6BCE51B8C41D0002226FB /* RATreeView+UIScrollView.m in Sources */,

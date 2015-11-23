@@ -7,25 +7,28 @@
 //
 
 #include "IPXEncryption.hpp"
+
+using namespace Innerpeacer::BLETool;
+
 const char *BLE_KEY = "6^)(9-p35@%3#4S!4S0)$Y%%^&5(j.&^&o(*0)$Y%!#O@*GpG@=+@j.&6^)(0-=+";
 const char *BLE_PASSWORD_FOR_CONTENT = "innerpeacer-content";
 
-std::string ble_decryptString(std::string str)
+std::string Innerpeacer::BLETool::decryptString(std::string str)
 {
-    return ble_encryptString(str, BLE_KEY);
+    return encryptString(str, BLE_KEY);
 }
 
-std::string ble_encryptString(std::string originalString)
+std::string Innerpeacer::BLETool::encryptString(std::string originalString)
 {
-    return ble_encryptString(originalString, BLE_KEY);
+    return encryptString(originalString, BLE_KEY);
 }
 
-std::string ble_decryptString(std::string str, std::string key)
+std::string Innerpeacer::BLETool::decryptString(std::string str, std::string key)
 {
-    return ble_encryptString(str, key);
+    return encryptString(str, key);
 }
 
-std::string ble_encryptString(std::string originalString, std::string key)
+std::string Innerpeacer::BLETool::encryptString(std::string originalString, std::string key)
 {
     int passLength = (int)strlen(BLE_PASSWORD_FOR_CONTENT);
     int keyLength = (int)key.length();
@@ -66,12 +69,12 @@ std::string ble_encryptString(std::string originalString, std::string key)
     return result;
 }
 
-void ble_encryptBytes(const char *originalBytes, char *encryptedByte, int length)
+void Innerpeacer::BLETool::encryptBytes(const char *originalBytes, char *encryptedByte, int length)
 {
-    ble_encryptBytes(originalBytes, encryptedByte, length, BLE_KEY);
+    encryptBytes(originalBytes, encryptedByte, length, BLE_KEY);
 }
 
-void ble_encryptBytes(const char *originalBytes, char *encryptedByte, int length, const char *key)
+void Innerpeacer::BLETool::encryptBytes(const char *originalBytes, char *encryptedByte, int length, const char *key)
 {
     int passLength = (int)strlen(BLE_PASSWORD_FOR_CONTENT);
     int keyLength = (int)strlen(key);
@@ -108,12 +111,12 @@ void ble_encryptBytes(const char *originalBytes, char *encryptedByte, int length
     
 }
 
-void ble_decryptBytes(const char *encryptedBytes, char *originalBytes, int length)
+void Innerpeacer::BLETool::decryptBytes(const char *encryptedBytes, char *originalBytes, int length)
 {
-    ble_decryptBytes(encryptedBytes, originalBytes, length, BLE_KEY);
+    decryptBytes(encryptedBytes, originalBytes, length, BLE_KEY);
 }
 
-void ble_decryptBytes(const char *encryptedBytes, char *originalBytes, int length, const char *key)
+void Innerpeacer::BLETool::decryptBytes(const char *encryptedBytes, char *originalBytes, int length, const char *key)
 {
-    ble_encryptBytes(encryptedBytes, originalBytes, length, key);
+    encryptBytes(encryptedBytes, originalBytes, length, key);
 }
