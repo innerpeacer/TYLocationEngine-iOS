@@ -11,56 +11,10 @@
 #import <TYMapData/TYMapData.h>
 #import <TYMapSDK/TYMapSDK.h>
 
-@class TYLocationManager;
+//@class TYLocationManager;
 
-/**
- *  定位引擎代理协议
- */
-@protocol TYLocationManagerDelegate <NSObject>
 
-/**
- *  位置更新事件回调，位置更新并返回新的位置结果
- *
- *  @param manager     定位引擎实例
- *  @param newLocation 新的位置结果
- */
-- (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation;
-
-- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation;
-
-/**
- *  位置更新失败事件回调
- *
- *  @param manager 定位引擎实例
- */
-- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager;
-
-@optional
-/**
- *  Beacon扫描结果事件回调，返回符合扫描参数的所有Beacon
- *
- *  @param manager 定位引擎实例
- *  @param beacons Beacon数组，[TYBeacon]
- */
-- (void)TYLocationManager:(TYLocationManager *)manager didRangedBeacons:(NSArray *)beacons;
-
-/**
- *  定位Beacon扫描结果事件回调，返回符合扫描参数的定位Beacon，定位Beacon包含坐标信息。
- *
- *  @param manager 定位引擎实例
- *  @param beacons 定位Beacon数组，[TYPublicBeacon]
- */
-- (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons;
-
-/**
- *  设备方向改变事件回调
- *
- *  @param manager    定位引擎实例
- *  @param newHeading 新的设备方向结果
- */
-- (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading;
-
-@end
+@protocol TYLocationManagerDelegate;
 
 @interface TYLocationManager : NSObject
 
@@ -127,5 +81,54 @@
  *  定位引擎协议代理
  */
 @property (nonatomic, assign) id<TYLocationManagerDelegate> delegate;
+
+@end
+
+/**
+ *  定位引擎代理协议
+ */
+@protocol TYLocationManagerDelegate <NSObject>
+
+/**
+ *  位置更新事件回调，位置更新并返回新的位置结果
+ *
+ *  @param manager     定位引擎实例
+ *  @param newLocation 新的位置结果
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation;
+
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation;
+
+/**
+ *  位置更新失败事件回调
+ *
+ *  @param manager 定位引擎实例
+ */
+- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager;
+
+@optional
+/**
+ *  Beacon扫描结果事件回调，返回符合扫描参数的所有Beacon
+ *
+ *  @param manager 定位引擎实例
+ *  @param beacons Beacon数组，[TYBeacon]
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didRangedBeacons:(NSArray *)beacons;
+
+/**
+ *  定位Beacon扫描结果事件回调，返回符合扫描参数的定位Beacon，定位Beacon包含坐标信息。
+ *
+ *  @param manager 定位引擎实例
+ *  @param beacons 定位Beacon数组，[TYPublicBeacon]
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons;
+
+/**
+ *  设备方向改变事件回调
+ *
+ *  @param manager    定位引擎实例
+ *  @param newHeading 新的设备方向结果
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading;
 
 @end

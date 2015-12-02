@@ -30,7 +30,6 @@
 //    for (int i = 1; i <= 20 ; ++i) {
 //        [db insertPrimitiveBeaconWithMajor:@(major) Minor:@(minor + i) Tag:[NSString stringWithFormat:@"%d", i]];
 //    }
-//    
 //    [db close];
     
 }
@@ -61,7 +60,6 @@
             } else {
                 success = [db updatePrimitiveBeaconWithMajor:major Minor:minor Tag:tagString];
             }
-
             [db close];
 
             if (success) {

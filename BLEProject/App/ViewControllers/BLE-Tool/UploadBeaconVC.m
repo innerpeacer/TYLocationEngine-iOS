@@ -53,6 +53,7 @@
     license = [BLELicenseGenerator generateLicenseForUserID:userID Building:buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
     
 //    hostName = @"localhost:8112";
+//    hostName = LOCAL_HOST_NAME;
     hostName = SERVER_HOST_NAME;
     apiPath = [[NSString alloc] initWithFormat:@"/TYMapServerManager/manager/beacon/UploadLocatingBeacons"];
     
@@ -75,33 +76,16 @@
     NSMutableArray *beaconArray = [NSMutableArray array];
     
     for (TYPublicBeacon *pb in allBeaconArray) {
-        NSMutableDictionary *beaconObject = [NSMutableDictionary dictionary];
         
         TYMapInfo *mapInfo = [TYMapInfo searchMapInfoFromArray:allMapInfos Floor:pb.location.floor];
         if (mapInfo == nil) {
             mapInfo = allMapInfos[0];
         }
+        pb.mapID = mapInfo.mapID;
+        pb.buildingID = mapInfo.buildingID;
+        pb.cityID = mapInfo.buildingID;
         
-        [beaconObject setObject:pb.UUID forKey:@"uuid"];
-        [beaconObject setObject:pb.major forKey:@"major"];
-        [beaconObject setObject:pb.minor forKey:@"minor"];
-        
-        [beaconObject setObject:@(pb.location.floor) forKey:@"floor"];
-        [beaconObject setObject:@(pb.location.x) forKey:@"x"];
-        [beaconObject setObject:@(pb.location.y) forKey:@"y"];
-        
-        [beaconObject setObject:mapInfo.mapID forKey:@"mapID"];
-        [beaconObject setObject:currentBuilding.buildingID forKey:@"buildingID"];
-        [beaconObject setObject:currentBuilding.cityID forKey:@"cityID"];
-        
-        NSData *geometryData = [TYPointConverter dataFromX:pb.location.x Y:pb.location.y Z:0];
-        NSMutableArray *geometryByteArray = [NSMutableArray array];
-        Byte *bytes = (Byte *)geometryData.bytes;
-        for (int i = 0; i < geometryData.length; ++i) {
-            [geometryByteArray addObject:@(bytes[i])];
-        }
-        [beaconObject setObject:geometryByteArray forKey:@"geometry"];
-        
+        NSDictionary *beaconObject = [TYPublicBeacon buildBeaconObject:pb];
         [beaconArray addObject:beaconObject];
     }
     
@@ -118,7 +102,7 @@
     
     NSArray *beaconArray = [self prepareBeaconArray];
     NSData *beaconData = [NSJSONSerialization dataWithJSONObject:beaconArray options:NSJSONWritingPrettyPrinted error:nil];
-    NSString *beaconString = [NSString stringWithCString:beaconData.bytes encoding:NSUTF8StringEncoding];
+    NSString *beaconString = [[NSString alloc] initWithData:beaconData encoding:NSUTF8StringEncoding];
     [param setValue:beaconString forKey:@"beacons"];
     
     MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:hostName];

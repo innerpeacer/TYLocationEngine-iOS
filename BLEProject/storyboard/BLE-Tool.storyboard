@@ -74,7 +74,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqp-z4-f3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="656"/>
+            <point key="canvasLocation" x="-298" y="732"/>
         </scene>
         <!--Show Configured Beacons TableVC-->
         <scene sceneID="p6h-r7-0lS">
@@ -124,7 +124,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qz-HY-4ES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="656"/>
+            <point key="canvasLocation" x="193" y="732"/>
         </scene>
         <!--Beacon List For Choosing TableVC-->
         <scene sceneID="6Dy-oa-hb1">
@@ -156,7 +156,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Kd-UY-8f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2049" y="1281"/>
+            <point key="canvasLocation" x="2581" y="1281"/>
         </scene>
         <!--Show Primitive Beacon TableVC-->
         <scene sceneID="YBu-Po-Eji">
@@ -491,7 +491,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wx-FT-yGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1523" y="1281"/>
+            <point key="canvasLocation" x="2055" y="1281"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="srt-xl-Hy8">
@@ -510,7 +510,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40l-0X-Rmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="1281"/>
+            <point key="canvasLocation" x="1644" y="1281"/>
         </scene>
         <!--Configure BeaconsVC-->
         <scene sceneID="4nk-1k-7Eb">
@@ -623,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44l-1Q-Hgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="625" y="1281"/>
+            <point key="canvasLocation" x="1157" y="1281"/>
         </scene>
         <!--Check Beacon DatabaseVC-->
         <scene sceneID="4Ab-tq-XBG">
@@ -698,6 +698,154 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P7-hQ-Qa6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1441" y="19"/>
+        </scene>
+        <!--Configure Point PositionVC-->
+        <scene sceneID="upq-88-Aum">
+            <objects>
+                <viewController storyboardIdentifier="ConfigurePointPositionVC" id="Ct6-fe-dy9" customClass="ConfigurePointPositionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0q8-nq-bsj"/>
+                        <viewControllerLayoutGuide type="bottom" id="EGj-hf-1pX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TYs-7Z-dUy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRk-9e-KqK" customClass="TYMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcd-95-9fa">
+                                        <rect key="frame" x="153" y="439" width="140" height="31"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="Uxr-nc-NZZ"/>
+                                            <constraint firstAttribute="width" constant="140" id="c9j-Ld-5fA"/>
+                                        </constraints>
+                                        <state key="normal" title="添加当前信标">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addCurrentBeacon:" destination="Ct6-fe-dy9" eventType="touchUpInside" id="JyM-gF-ile"/>
+                                        </connections>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TmQ-Qg-JrH">
+                                        <rect key="frame" x="229" y="478" width="51" height="31"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="publicSwtichToggled:" destination="Ct6-fe-dy9" eventType="valueChanged" id="eAU-5a-m2q"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-gq-TdS">
+                                        <rect key="frame" x="8" y="114" width="304" height="37"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="9yh-Pf-fIn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="TmQ-Qg-JrH" firstAttribute="top" secondItem="Rcd-95-9fa" secondAttribute="bottom" constant="8" id="2PL-Li-voq"/>
+                                    <constraint firstAttribute="bottom" secondItem="TmQ-Qg-JrH" secondAttribute="bottom" constant="59" id="47f-2v-2Vv"/>
+                                    <constraint firstItem="Mr2-gq-TdS" firstAttribute="top" secondItem="dRk-9e-KqK" secondAttribute="top" constant="114" id="GwW-92-lKc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rcd-95-9fa" secondAttribute="trailing" constant="27" id="OwA-w3-AWl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mr2-gq-TdS" secondAttribute="trailing" constant="8" id="Qxl-n0-XmI"/>
+                                    <constraint firstItem="Mr2-gq-TdS" firstAttribute="leading" secondItem="dRk-9e-KqK" secondAttribute="leading" constant="8" id="Ylr-s3-5pn"/>
+                                    <constraint firstAttribute="trailing" secondItem="TmQ-Qg-JrH" secondAttribute="trailing" constant="42" id="aEy-DX-XSb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EGj-hf-1pX" firstAttribute="top" secondItem="dRk-9e-KqK" secondAttribute="bottom" id="8J2-3U-NCg"/>
+                            <constraint firstAttribute="trailing" secondItem="dRk-9e-KqK" secondAttribute="trailing" id="PNe-Cg-jlB"/>
+                            <constraint firstItem="dRk-9e-KqK" firstAttribute="top" secondItem="TYs-7Z-dUy" secondAttribute="top" id="QIM-hq-3pQ"/>
+                            <constraint firstItem="dRk-9e-KqK" firstAttribute="leading" secondItem="TYs-7Z-dUy" secondAttribute="leading" id="fM3-Z4-3Dw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hintLabel" destination="Mr2-gq-TdS" id="GR1-mk-sMP"/>
+                        <outlet property="mapView" destination="dRk-9e-KqK" id="grc-75-LQf"/>
+                        <outlet property="publicSwitch" destination="TmQ-Qg-JrH" id="Dlq-Pa-0pQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qb8-sJ-PKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="1281"/>
+        </scene>
+        <!--Show Point Position TableVC-->
+        <scene sceneID="eKJ-lm-iiM">
+            <objects>
+                <tableViewController storyboardIdentifier="ShowPointPositionTableVC" id="T0C-w3-MOr" customClass="ShowPointPositionTableVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jkd-Gj-D1a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Ds6-n3-bX7" detailTextLabel="fmY-I3-INj" style="IBUITableViewCellStyleSubtitle" id="Trp-a2-e63">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Trp-a2-e63" id="nSQ-kV-V4Q">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ds6-n3-bX7">
+                                            <rect key="frame" x="15" y="4" width="35.5" height="21.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fmY-I3-INj">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="T0C-w3-MOr" id="aZF-vc-1gM"/>
+                            <outlet property="delegate" destination="T0C-w3-MOr" id="JPe-uL-zbV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lUE-eP-fMj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvF-dc-UAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205" y="1472"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mii-Kn-JCf">
+            <objects>
+                <navigationController storyboardIdentifier="ShowPointPositionRootController" automaticallyAdjustsScrollViewInsets="NO" id="MWF-SL-6Gy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gTI-Px-xB6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="T0C-w3-MOr" kind="relationship" relationship="rootViewController" id="4VP-Yu-cNQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZ4-dD-dIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-327" y="1472"/>
         </scene>
     </scenes>
 </document>

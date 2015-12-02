@@ -37,6 +37,13 @@
                      },
                      {
                      "cityID": "0021",
+                     "buildingID": "00210012",
+                     "name": "虹桥电子广场",
+                     "uuid": "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0",
+                     "major": 1
+                     },
+                     {
+                     "cityID": "0021",
                      "buildingID": "00210005",
                      "name": "汇纳",
                      "uuid": "9195B3AD-A9D0-4500-85FF-9FB0F65A5200",
@@ -132,6 +139,13 @@
                      "name": "诺亚科技",
                      "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",
                      "major": null
+                     },
+                     {
+                     "cityID": "0755",
+                     "buildingID": "07550002",
+                     "name": "深圳市万科前海企业公馆交易中心",
+                     "uuid": "E5430ADC-59EC-4815-90E1-9A19970B9F16",
+                     "major": 100
                      }
                      ]
 }

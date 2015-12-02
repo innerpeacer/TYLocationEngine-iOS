@@ -30,10 +30,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *hintLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *bindingButton;
+
 - (IBAction)bindingButtonClicked:(id)sender;
-
-
-
 - (IBAction)addCurrentBeacon:(id)sender;
 - (IBAction)chooseBeacon:(id)sender;
 
