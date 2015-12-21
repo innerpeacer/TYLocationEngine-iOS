@@ -13,7 +13,7 @@
 
 @interface BaseLocationTestVC () <TYBeaconManagerDelegate, TYMotionDetectorDelegate>
 {
-    TYGraphicsLayer *publicBeaconLayer;
+    AGSGraphicsLayer *publicBeaconLayer;
 }
 
 @property (nonatomic, strong) TYMotionDetector *motionDetector;
@@ -40,16 +40,16 @@
 
 - (void)addLayers
 {
-    self.hintLayer = [TYGraphicsLayer graphicsLayer];
+    self.hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:self.hintLayer];
     
-    self.hintPolygonLayer = [TYGraphicsLayer graphicsLayer];
+    self.hintPolygonLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:self.hintPolygonLayer];
     
-    publicBeaconLayer = [TYGraphicsLayer graphicsLayer];
+    publicBeaconLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:publicBeaconLayer];
     
-    self.resultLayer = [TYGraphicsLayer graphicsLayer];
+    self.resultLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:self.resultLayer];
 }
 
@@ -95,7 +95,7 @@
                 continue;
             }
             
-            TYPoint *p = [TYPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *p = [AGSPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
             
 //            NSLog(@"{uuid:%@, major:%@, minor:%@, x:%f, y:%f, floor:%d", pb.UUID, pb.major, pb.minor, pb.location.x, pb.location.y, pb.location.floor);

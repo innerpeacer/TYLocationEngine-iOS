@@ -26,9 +26,9 @@
 @property (nonatomic, strong) NSMutableArray *scannedBeacons;
 @property (nonatomic, strong) NSMutableDictionary *allBeacons;
 
-@property (nonatomic, strong) TYGraphicsLayer *hintLayer;
-@property (nonatomic, strong) TYGraphicsLayer *resultLayer;
-@property (nonatomic, strong) TYGraphicsLayer *hintPolygonLayer;
+@property (nonatomic, strong) AGSGraphicsLayer *hintLayer;
+@property (nonatomic, strong) AGSGraphicsLayer *resultLayer;
+@property (nonatomic, strong) AGSGraphicsLayer *hintPolygonLayer;
 
 
 

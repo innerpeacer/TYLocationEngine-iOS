@@ -80,10 +80,10 @@
         TYLocalPoint *location = [singleLocationEngine getLocation];
         TYLocalPoint *directLocation = [singleLocationEngine getDirectioLocation];
         if (location != nil) {
-            TYPoint *pos = [TYPoint pointWithX:location.x y:location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *pos = [AGSPoint pointWithX:location.x y:location.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:pos AtLayer:self.resultLayer WithBuffer1:2.0 Buffer2:3.0];
             
-            TYPoint *directPos = [TYPoint pointWithX:directLocation.x y:directLocation.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *directPos = [AGSPoint pointWithX:directLocation.x y:directLocation.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:directPos AtLayer:self.resultLayer WithColor:[UIColor greenColor] Size:CGSizeMake(3, 3)];
         }
     }
@@ -94,10 +94,10 @@
         TYLocalPoint *location = [trippleLocationEngine getLocation];
         TYLocalPoint *directLocation = [trippleLocationEngine getDirectioLocation];
         if (location != nil) {
-            TYPoint *pos = [TYPoint pointWithX:location.x y:location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *pos = [AGSPoint pointWithX:location.x y:location.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:pos AtLayer:self.resultLayer WithColor:[UIColor blueColor] Size:CGSizeMake(8, 8)];
             
-            TYPoint *directPos = [TYPoint pointWithX:directLocation.x y:directLocation.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *directPos = [AGSPoint pointWithX:directLocation.x y:directLocation.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:directPos AtLayer:self.resultLayer WithColor:[UIColor blueColor] Size:CGSizeMake(3, 3)];
         }
     }

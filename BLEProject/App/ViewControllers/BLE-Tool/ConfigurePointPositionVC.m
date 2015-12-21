@@ -22,8 +22,8 @@
 
 @interface ConfigurePointPositionVC()
 {
-    TYGraphicsLayer *hintLayer;
-    TYGraphicsLayer *pointPositionLayer;
+    AGSGraphicsLayer *hintLayer;
+    AGSGraphicsLayer *pointPositionLayer;
     
     TYLocalPoint *currentLocation;
     
@@ -52,14 +52,14 @@
 
 - (void)addLayers
 {
-    hintLayer = [TYGraphicsLayer graphicsLayer];
+    hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
     
-    pointPositionLayer = [TYGraphicsLayer graphicsLayer];
+    pointPositionLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:pointPositionLayer];
 }
 
-- (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(TYPoint *)mappoint
+- (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
     [super TYMapView:mapView didClickAtPoint:screen mapPoint:mappoint];
     
@@ -102,7 +102,7 @@
             if (pp.location.floor != self.currentMapInfo.floorNumber && pp.location.floor != 0) {
                 continue;
             }
-            TYPoint *p = [TYPoint pointWithX:pp.location.x y:pp.location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *p = [AGSPoint pointWithX:pp.location.x y:pp.location.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:p AtLayer:pointPositionLayer WithColor:[UIColor redColor]];
             AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%d", pp.tag] color:[UIColor magentaColor]];
             [ts setOffset:CGPointMake(5, -10)];

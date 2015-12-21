@@ -13,8 +13,8 @@
 
 @interface ConfigureBeaconsVC () <BeaconSelectedDelegate, TYBeaconManagerDelegate>
 {
-    TYGraphicsLayer *hintLayer;
-    TYGraphicsLayer *publicBeaconLayer;
+    AGSGraphicsLayer *hintLayer;
+    AGSGraphicsLayer *publicBeaconLayer;
     
     TYBeacon *currentBeacon;
     TYLocalPoint *currentLocation;
@@ -52,6 +52,8 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Beacon List" style:UIBarButtonItemStylePlain target:self action:@selector(showConfiguredBeacons:)];
     
     [self addLayers];
+    
+    [self.mapView setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (void)initLocationManager
@@ -151,14 +153,14 @@
 
 - (void)addLayers
 {
-    hintLayer = [TYGraphicsLayer graphicsLayer];
+    hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
     
-    publicBeaconLayer = [TYGraphicsLayer graphicsLayer];
+    publicBeaconLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:publicBeaconLayer];
 }
 
-- (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(TYPoint *)mappoint
+- (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
     [super TYMapView:mapView didClickAtPoint:screen mapPoint:mappoint];
     
@@ -250,7 +252,7 @@
             }
             
             //            NSLog(@"Tag: %@", pb.tag);
-            TYPoint *p = [TYPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *p = [AGSPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
             
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
             

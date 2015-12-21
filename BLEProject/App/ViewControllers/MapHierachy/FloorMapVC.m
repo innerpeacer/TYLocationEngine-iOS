@@ -10,7 +10,7 @@
     
     int currentIndex;
     
-    TYGraphicsLayer *hintLayer;
+    AGSGraphicsLayer *hintLayer;
 }
 
 @end
@@ -78,7 +78,7 @@
     
     [self.mapView setFloorWithInfo:currentMapInfo];
     
-    hintLayer = [TYGraphicsLayer graphicsLayer];
+    hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToZooming:) name:@"AGSMapViewDidEndZoomingNotification" object:nil];

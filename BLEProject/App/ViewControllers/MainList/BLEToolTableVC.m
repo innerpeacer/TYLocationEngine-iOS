@@ -26,7 +26,7 @@
         [self.controllerDict setObject:storyboardID forKey:name];
     }
     
-    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
+//    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

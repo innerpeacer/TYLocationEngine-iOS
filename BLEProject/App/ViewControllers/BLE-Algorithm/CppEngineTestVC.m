@@ -18,17 +18,16 @@
 
 @interface CppEngineTestVC () <TYLocationManagerDelegate>
 {
-    TYGraphicsLayer *hintLayer;
-    TYGraphicsLayer *resultLayer;
-    TYGraphicsLayer *immediateLayer;
-    TYGraphicsLayer *publicBeaconLayer;
+    AGSGraphicsLayer *hintLayer;
+    AGSGraphicsLayer *resultLayer;
+    AGSGraphicsLayer *immediateLayer;
+    AGSGraphicsLayer *publicBeaconLayer;
     
     CLBeaconRegion *publicBeaconRegion;
 
     TYLocationManager *locationManager;
     
-    TYPictureMarkerSymbol *pms;
-    TYPathCalibration *pathCalibration;
+    AGSPictureMarkerSymbol *pms;
 }
 
 @property (weak, nonatomic) IBOutlet UISwitch *publicSwitch;
@@ -49,8 +48,8 @@
     
 //    pathCalibration = [[TYPathCalibration alloc] initWithFloorID:@"002100002F20"];
     
-    pms = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"l7"];
-    [self.mapView setLocationSymbol:(TYMarkerSymbol *)pms];
+    pms = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"l7"];
+    [self.mapView setLocationSymbol:pms];
     
     [self.mapView setMapMode:TYMapViewModeDefault];
 //    [self.mapView setMapMode:TYMapViewModeFollowing];
@@ -78,16 +77,16 @@
 
 - (void)addLayers
 {
-    hintLayer = [TYGraphicsLayer graphicsLayer];
+    hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
         
-    publicBeaconLayer = [TYGraphicsLayer graphicsLayer];
+    publicBeaconLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:publicBeaconLayer];
     
-    resultLayer = [TYGraphicsLayer graphicsLayer];
+    resultLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:resultLayer];
     
-    immediateLayer = [TYGraphicsLayer graphicsLayer];
+    immediateLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:immediateLayer];
 }
 
@@ -113,7 +112,7 @@
 //        self.title = self.mapView.currentMapInfo.floorName;
 //    }
 //    
-//    TYPoint *pos = [TYPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
+//    AGSPoint *pos = [AGSPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
 //    [self.mapView showLocation:newLocation];
 //    
 //    CGRect screenBound = [[UIScreen mainScreen] bounds];
@@ -127,7 +126,7 @@
 {
 //    [immediateLayer removeAllGraphics];
 //    
-//    TYPoint *pos = [TYPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:self.mapView.spatialReference];
+//    AGSPoint *pos = [AGSPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:self.mapView.spatialReference];
 //    AGSSimpleMarkerSymbol *sms = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor greenColor]];
 //    sms.size = CGSizeMake(8, 8);
 //    [immediateLayer addGraphic:[AGSGraphic graphicWithGeometry:pos symbol:sms attributes:nil]];
@@ -139,7 +138,7 @@
         self.title = self.mapView.currentMapInfo.floorName;
     }
     
-    TYPoint *pos = [TYPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:self.mapView.spatialReference];
+    AGSPoint *pos = [AGSPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:self.mapView.spatialReference];
     [self.mapView showLocation:newImmediateLocation];
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
@@ -151,7 +150,7 @@
     [self.mapView centerAtPoint:pos animated:YES];
 }
 
-- (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(TYPoint *)mappoint
+- (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
     NSLog(@"didClickAtPoint: %f, %f", mappoint.x, mappoint.y);
     NSLog(@"%f", self.mapView.mapScale);
@@ -196,7 +195,7 @@
                 continue;
             }
             
-            TYPoint *p = [TYPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *p = [AGSPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
             
 //            AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@\n%@", pb.minor, pb.tag] color:[UIColor magentaColor]];

@@ -7,8 +7,8 @@
 
 @interface MapVC()
 {
-    TYGraphicsLayer *hintLayer;
-    TYGraphicsLayer *graphicLayer;
+    AGSGraphicsLayer *hintLayer;
+    AGSGraphicsLayer *graphicLayer;
     
     NSMutableArray *pointsArray;
 }
@@ -22,10 +22,10 @@
 {
     [super viewDidLoad];
     
-    hintLayer = [TYGraphicsLayer graphicsLayer];
+    hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
     
-    graphicLayer = [TYGraphicsLayer graphicsLayer];
+    graphicLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:graphicLayer];
     
     pointsArray = [[NSMutableArray alloc] init];

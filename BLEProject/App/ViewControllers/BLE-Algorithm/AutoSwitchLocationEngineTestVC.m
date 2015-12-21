@@ -54,7 +54,7 @@
                 AGSGraphic *graphic = [AGSGraphic graphicWithGeometry:pos symbol:ts attributes:nil];
                 [self.hintLayer addGraphic:graphic];
                 
-                TYSimpleMarkerSymbol *sms = [TYSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor redColor]];
+                AGSSimpleMarkerSymbol *sms = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor redColor]];
                 sms.size = CGSizeMake(5, 5);
                 [self.hintLayer addGraphic:[AGSGraphic graphicWithGeometry:pos symbol:sms attributes:nil]];
                 break;
@@ -106,14 +106,14 @@
                 
             }
             
-            TYPoint *pos = [TYPoint pointWithX:location.x y:location.y spatialReference:self.mapView.spatialReference];
-            TYPoint *snappedAgsPoint = pos;
+            AGSPoint *pos = [AGSPoint pointWithX:location.x y:location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *snappedAgsPoint = pos;
             
-            TYGeometryEngine *engine = (TYGeometryEngine *)[TYGeometryEngine defaultGeometryEngine];
+            AGSGeometryEngine *engine = [AGSGeometryEngine defaultGeometryEngine];
             
-            TYPolygon *buf2m = (TYPolygon *)[engine bufferGeometry:snappedAgsPoint byDistance:2.0];
-            TYSimpleFillSymbol *sfs2m = (TYSimpleFillSymbol *)[TYSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] outlineColor:[UIColor blackColor]];
-            [self.resultLayer addGraphic:[TYGraphic graphicWithGeometry:buf2m symbol:sfs2m attributes:nil]];
+            AGSPolygon *buf2m = [engine bufferGeometry:snappedAgsPoint byDistance:2.0];
+            AGSSimpleFillSymbol *sfs2m = [AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] outlineColor:[UIColor blackColor]];
+            [self.resultLayer addGraphic:[AGSGraphic graphicWithGeometry:buf2m symbol:sfs2m attributes:nil]];
             
             AGSPolygon *buf3m = [engine bufferGeometry:snappedAgsPoint byDistance:3.0];
             AGSSimpleFillSymbol *sfs3m = [AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] outlineColor:[UIColor blackColor]];
@@ -130,7 +130,7 @@
         [trippleLocationEngine processBeacons:self.scannedBeacons];
         TYLocalPoint *location = [trippleLocationEngine getLocation];
         if (location != nil) {
-            TYPoint *pos = [TYPoint pointWithX:location.x y:location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *pos = [AGSPoint pointWithX:location.x y:location.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:pos AtLayer:self.resultLayer WithColor:[UIColor blueColor] Size:CGSizeMake(5, 5)];
         }
     }

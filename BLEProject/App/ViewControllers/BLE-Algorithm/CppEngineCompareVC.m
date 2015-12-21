@@ -17,10 +17,10 @@
 
 @interface CppEngineCompareVC() <TYLocationManagerDelegate>
 {
-    TYGraphicsLayer *hintLayer;
-    TYGraphicsLayer *np2ResultLayer;
-    TYGraphicsLayer *npResultLayer;
-    TYGraphicsLayer *publicBeaconLayer;
+    AGSGraphicsLayer *hintLayer;
+    AGSGraphicsLayer *np2ResultLayer;
+    AGSGraphicsLayer *npResultLayer;
+    AGSGraphicsLayer *publicBeaconLayer;
     
     CLBeaconRegion *publicBeaconRegion;
     
@@ -67,16 +67,16 @@
 
 - (void)addLayers
 {
-    hintLayer = [TYGraphicsLayer graphicsLayer];
+    hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
     
-    publicBeaconLayer = [TYGraphicsLayer graphicsLayer];
+    publicBeaconLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:publicBeaconLayer];
     
-    np2ResultLayer = [TYGraphicsLayer graphicsLayer];
+    np2ResultLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:np2ResultLayer];
     
-    npResultLayer = [TYGraphicsLayer graphicsLayer];
+    npResultLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:npResultLayer];
 }
 
@@ -161,7 +161,7 @@
                 continue;
             }
             
-            TYPoint *p = [TYPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
+            AGSPoint *p = [AGSPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
             [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
             
             AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@\n%@", pb.minor, pb.tag] color:[UIColor magentaColor]];

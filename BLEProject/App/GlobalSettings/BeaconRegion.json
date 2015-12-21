@@ -1,6 +1,13 @@
 {
     "BeaconRegion": [
                      {
+                     "cityID": "0010",
+                     "buildingID": "00100005",
+                     "name": "北京联合大学",
+                     "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",
+                     "major": null
+                     },
+                     {
                      "cityID": "0021",
                      "buildingID": "00210100",
                      "name": "联通国际大厦",
@@ -39,8 +46,8 @@
                      "cityID": "0021",
                      "buildingID": "00210012",
                      "name": "虹桥电子广场",
-                     "uuid": "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0",
-                     "major": 1
+                     "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",
+                     "major": 10035
                      },
                      {
                      "cityID": "0021",
@@ -132,6 +139,13 @@
                      "name": "高德汇",
                      "uuid": "24AE132F-65E3-4769-8675-2B9DBD154262",
                      "major": 1
+                     },
+                     {
+                     "cityID": "0020",
+                     "buildingID": "00200003",
+                     "name": "广州大道368号大厦",
+                     "uuid": "24AE132F-65E3-4769-8675-2B9DBD154262",
+                     "major": 3
                      },
                      {
                      "cityID": "0591",
