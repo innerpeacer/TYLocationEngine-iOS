@@ -7,6 +7,8 @@
 
 #import "TYBuildingMonitor.h"
 
+#import "TYBeaconRegionDBAdapter.h"
+#import <CoreLocation/CoreLocation.h>
 @interface AppDelegate()
 {
     TYBuildingMonitor *monitor;

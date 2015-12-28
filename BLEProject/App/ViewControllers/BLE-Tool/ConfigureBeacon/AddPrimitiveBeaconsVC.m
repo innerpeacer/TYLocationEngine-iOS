@@ -47,7 +47,7 @@
             NSNumber *minor = [NSNumber numberWithInt:minorString.intValue];
             
             if (tagString == nil || tagString.length == 0) {
-                tagString = @"";
+                tagString = minorString;
             }
 
             TYPrimitiveBeaconDBAdapter *db = [[TYPrimitiveBeaconDBAdapter alloc] initWithBuilding:currentBuilding];

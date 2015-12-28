@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"生成加密资源";
+    self.title = @"验证Beacon数据";
     
     [self addToLog:@"开始验证"];
     [self checkBeaconDatabase];

@@ -16,4 +16,6 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) CLBeaconRegion *region;
 
++ (TYBeaconRegion *)beaconRegionWithCityID:(NSString *)cid BuildingID:(NSString *)bid Name:(NSString *)name UUID:(NSString *)uuidString Major:(NSNumber *)m;
+
 @end

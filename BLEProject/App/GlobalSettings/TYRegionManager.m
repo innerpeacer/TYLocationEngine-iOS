@@ -7,7 +7,8 @@
 #define KEY_UUID @"uuid"
 #define KEY_MAJOR @"major"
 
-
+#import "TYBeaconRegionDBAdapter.h"
+#import <TYMapSDK/TYMapSDK.h>
 
 @implementation TYRegionManager
 
@@ -16,7 +17,7 @@ static NSDictionary *allBeaconRegionDictionary;
 + (CLBeaconRegion *)getBeaconRegionForBuilding:(NSString *)building
 {
     if (allBeaconRegionDictionary == nil) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"BeaconRegion" ofType:@"json"];
+        NSString *path = [[TYMapEnvironment getRootDirectoryForMapFiles] stringByAppendingPathComponent:@"BeaconRegion.db"];
         allBeaconRegionDictionary = [TYRegionManager parseAllBeaconRegion:path];
     }
     
@@ -27,41 +28,58 @@ static NSDictionary *allBeaconRegionDictionary;
     return nil;
 }
 
++ (void)reloadRegions
+{
+    NSString *path = [[TYMapEnvironment getRootDirectoryForMapFiles] stringByAppendingPathComponent:@"BeaconRegion.db"];
+    allBeaconRegionDictionary = [TYRegionManager parseAllBeaconRegion:path];
+}
+
 + (NSDictionary *)parseAllBeaconRegion:(NSString *)path
 {
     NSMutableDictionary *allDict = [NSMutableDictionary dictionary];
     
-    NSError *error = nil;
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSDictionary *regionDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-        if (error) {
-            NSLog(@"Error: %@", [error localizedDescription]);
-        }
-        
-        NSArray *regionArray = [regionDict objectForKey:KEY_BEACON_REGION];
-        for (NSDictionary *dict in regionArray) {
-            NSString *cityID = [dict objectForKey:KEY_CITY_ID];
-            NSString *buildingID = [dict objectForKey:KEY_BUILDING_ID];
-            NSString *name = [dict objectForKey:KEY_NAME];
-            NSString *uuidString = [dict objectForKey:KEY_UUID];
-            NSNumber *majorNumber = [dict objectForKey:KEY_MAJOR];
-            
-            TYBeaconRegion *beaconRegion = [[TYBeaconRegion alloc] init];
-            beaconRegion.cityID = cityID;
-            beaconRegion.buildingID = buildingID;
-            beaconRegion.name = name;
-            
-            if ((NSNull *)majorNumber == [NSNull null]) {
-                beaconRegion.region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:uuidString] identifier:@""];
-            } else {
-                beaconRegion.region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:uuidString] major:majorNumber.intValue identifier:@""];
-            }
-            
-            [allDict setObject:beaconRegion forKey:beaconRegion.buildingID];
-        }
+    TYBeaconRegionDBAdapter *db = [[TYBeaconRegionDBAdapter alloc] initWithPath:path];
+    [db open];
+    NSArray *regionArray = [db getAllBeaconRegions];
+    for (TYBeaconRegion *region in regionArray) {
+        [allDict setObject:region forKey:region.buildingID];
     }
+    [db close];
     return allDict;
+    
+//    NSMutableDictionary *allDict = [NSMutableDictionary dictionary];
+//    
+//    NSError *error = nil;
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+//        NSData *data = [NSData dataWithContentsOfFile:path];
+//        NSDictionary *regionDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+//        if (error) {
+//            NSLog(@"Error: %@", [error localizedDescription]);
+//        }
+//        
+//        NSArray *regionArray = [regionDict objectForKey:KEY_BEACON_REGION];
+//        for (NSDictionary *dict in regionArray) {
+//            NSString *cityID = [dict objectForKey:KEY_CITY_ID];
+//            NSString *buildingID = [dict objectForKey:KEY_BUILDING_ID];
+//            NSString *name = [dict objectForKey:KEY_NAME];
+//            NSString *uuidString = [dict objectForKey:KEY_UUID];
+//            NSNumber *majorNumber = [dict objectForKey:KEY_MAJOR];
+//            
+//            TYBeaconRegion *beaconRegion = [[TYBeaconRegion alloc] init];
+//            beaconRegion.cityID = cityID;
+//            beaconRegion.buildingID = buildingID;
+//            beaconRegion.name = name;
+//            
+//            if ((NSNull *)majorNumber == [NSNull null]) {
+//                beaconRegion.region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:uuidString] identifier:@""];
+//            } else {
+//                beaconRegion.region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:uuidString] major:majorNumber.intValue identifier:@""];
+//            }
+//            
+//            [allDict setObject:beaconRegion forKey:beaconRegion.buildingID];
+//        }
+//    }
+//    return allDict;
 }
 
 @end

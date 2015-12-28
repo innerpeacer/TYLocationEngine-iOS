@@ -26,4 +26,3 @@
 - (TYBeacon *)getPrimitiveBeaconWithTag:(NSString *)tag;
 
 @end
-

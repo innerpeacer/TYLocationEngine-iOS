@@ -8,11 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		570ABA581BF9711B0006BC30 /* MKNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570ABA571BF9711B0006BC30 /* MKNetworkKit.framework */; };
-		5717FC321C0D3F9B0013D357 /* ConfigurePointPositionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5717FC311C0D3F9B0013D357 /* ConfigurePointPositionVC.m */; };
 		5717FC351C0D498C0013D357 /* TYPointPosFMDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5717FC341C0D498C0013D357 /* TYPointPosFMDBAdapter.m */; };
 		5717FC3A1C0D4A370013D357 /* TYPointPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5717FC391C0D4A370013D357 /* TYPointPosition.m */; };
-		5717FC401C0D5CC30013D357 /* ShowPointPositionTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5717FC3F1C0D5CC30013D357 /* ShowPointPositionTableVC.m */; };
-		57410EE11BF8B7C600D5405F /* UploadBeaconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57410EE01BF8B7C600D5405F /* UploadBeaconVC.m */; };
+		5722C9C41C304DF1009D2365 /* AddBeaconRegionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9B41C304DF1009D2365 /* AddBeaconRegionVC.m */; };
+		5722C9C51C304DF1009D2365 /* ShowBeaconRegionTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9B61C304DF1009D2365 /* ShowBeaconRegionTableVC.m */; };
+		5722C9C61C304DF1009D2365 /* AddPrimitiveBeaconsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9B91C304DF1009D2365 /* AddPrimitiveBeaconsVC.m */; };
+		5722C9C71C304DF1009D2365 /* BeaconListForChoosingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9BB1C304DF1009D2365 /* BeaconListForChoosingTableVC.m */; };
+		5722C9C81C304DF1009D2365 /* ConfigureBeaconsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9BD1C304DF1009D2365 /* ConfigureBeaconsVC.m */; };
+		5722C9C91C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9BF1C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m */; };
+		5722C9CA1C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9C11C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m */; };
+		5722C9CB1C304DF1009D2365 /* UploadBeaconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9C31C304DF1009D2365 /* UploadBeaconVC.m */; };
+		5722C9D51C304E81009D2365 /* BaseLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9CE1C304E81009D2365 /* BaseLogVC.m */; };
+		5722C9D61C304E81009D2365 /* BaseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9D01C304E81009D2365 /* BaseMapVC.m */; };
+		5722C9D71C304E81009D2365 /* CityBuildingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9D21C304E81009D2365 /* CityBuildingTableVC.m */; };
+		5722C9D81C304E81009D2365 /* SelectBuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9D41C304E81009D2365 /* SelectBuildingVC.m */; };
+		5722C9DE1C304EAA009D2365 /* ConfigurePointPositionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9DB1C304EAA009D2365 /* ConfigurePointPositionVC.m */; };
+		5722C9DF1C304EAA009D2365 /* ShowPointPositionTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9DD1C304EAA009D2365 /* ShowPointPositionTableVC.m */; };
+		57342C611C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */; };
 		57410F101BF8BBF400D5405F /* IPXEncryption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57410F0E1BF8BBF400D5405F /* IPXEncryption.cpp */; };
 		57410F131BF8BC1800D5405F /* BLEEncryption.mm in Sources */ = {isa = PBXBuildFile; fileRef = 57410F121BF8BC1800D5405F /* BLEEncryption.mm */; };
 		57410F161BF8BCBB00D5405F /* BLELicenseGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 57410F151BF8BCBB00D5405F /* BLELicenseGenerator.m */; };
@@ -28,7 +40,6 @@
 		5754EDF91BB44D9500D63B13 /* IPXBeaconDBChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF71BB44D9500D63B13 /* IPXBeaconDBChecker.cpp */; };
 		575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AD1B564DE200B1E77C /* TYRegionManager.m */; };
 		575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */; };
-		575CD0EC1B564DE200B1E77C /* BaseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B21B564DE200B1E77C /* BaseMapVC.m */; };
 		575CD0ED1B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B51B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m */; };
 		575CD0EE1B564DE200B1E77C /* BaseLocationTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B71B564DE200B1E77C /* BaseLocationTestVC.m */; };
 		575CD0EF1B564DE200B1E77C /* BeaconFilterTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B91B564DE200B1E77C /* BeaconFilterTestVC.m */; };
@@ -36,12 +47,7 @@
 		575CD0F11B564DE200B1E77C /* CppEngineTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0BD1B564DE200B1E77C /* CppEngineTestVC.m */; };
 		575CD0F21B564DE200B1E77C /* LocationEngineTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0BF1B564DE200B1E77C /* LocationEngineTestVC.m */; };
 		575CD0F31B564DE200B1E77C /* MultiLocationTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0C11B564DE200B1E77C /* MultiLocationTestVC.m */; };
-		575CD0F41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0C41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m */; };
-		575CD0F51B564DE200B1E77C /* BeaconListForChoosingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0C61B564DE200B1E77C /* BeaconListForChoosingTableVC.m */; };
-		575CD0F61B564DE200B1E77C /* ConfigureBeaconsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0C91B564DE200B1E77C /* ConfigureBeaconsVC.m */; };
 		575CD0F71B564DE200B1E77C /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0CC1B564DE200B1E77C /* MapVC.m */; };
-		575CD0F81B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0CE1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m */; };
-		575CD0F91B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D01B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m */; };
 		575CD0FA1B564DE200B1E77C /* BaseControllerTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D31B564DE200B1E77C /* BaseControllerTableVC.m */; };
 		575CD0FB1B564DE200B1E77C /* BLEAlgorithmTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D51B564DE200B1E77C /* BLEAlgorithmTableVC.m */; };
 		575CD0FC1B564DE200B1E77C /* BLEToolTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0D71B564DE200B1E77C /* BLEToolTableVC.m */; };
@@ -126,7 +132,6 @@
 		57B3989E1A6364D900E72FF5 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989D1A6364D900E72FF5 /* libgeos.a */; };
 		57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */; };
 		57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */; };
-		57E6BCC01B8C1B88002226FB /* BeaconRegion.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */; };
 		57E6BCC31B8C1C5D002226FB /* TYBeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */; };
 		57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC61B8C41D0002226FB /* RADataObject.m */; };
 		57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC91B8C41D0002226FB /* RATreeNode.m */; };
@@ -139,9 +144,6 @@
 		57E6BCE41B8C41D0002226FB /* RATreeView+TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD71B8C41D0002226FB /* RATreeView+TableViewDelegate.m */; };
 		57E6BCE51B8C41D0002226FB /* RATreeView+UIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD91B8C41D0002226FB /* RATreeView+UIScrollView.m */; };
 		57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCDB1B8C41D0002226FB /* RATreeView.m */; };
-		57E6BCE91B8C41DC002226FB /* CityBuildingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */; };
-		57E6BCEC1B8C43DD002226FB /* SelectBuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */; };
-		57F85C8B1BB5167B005D28CF /* BaseLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8A1BB5167B005D28CF /* BaseLogVC.m */; };
 		57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */; };
 		57FC97BA1BB12F5B006D6D00 /* Licenses.json in Resources */ = {isa = PBXBuildFile; fileRef = 57FC97B91BB12F5B006D6D00 /* Licenses.json */; };
 		57FC97BD1BB12F87006D6D00 /* LicenseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC97BC1BB12F87006D6D00 /* LicenseManager.m */; };
@@ -149,17 +151,42 @@
 
 /* Begin PBXFileReference section */
 		570ABA571BF9711B0006BC30 /* MKNetworkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MKNetworkKit.framework; sourceTree = "<group>"; };
-		5717FC301C0D3F9B0013D357 /* ConfigurePointPositionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurePointPositionVC.h; sourceTree = "<group>"; };
-		5717FC311C0D3F9B0013D357 /* ConfigurePointPositionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurePointPositionVC.m; sourceTree = "<group>"; };
 		5717FC331C0D498C0013D357 /* TYPointPosFMDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPointPosFMDBAdapter.h; sourceTree = "<group>"; };
 		5717FC341C0D498C0013D357 /* TYPointPosFMDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPointPosFMDBAdapter.m; sourceTree = "<group>"; };
 		5717FC371C0D49C80013D357 /* TYPointPosFMDBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYPointPosFMDBConstants.h; sourceTree = "<group>"; };
 		5717FC381C0D4A370013D357 /* TYPointPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPointPosition.h; sourceTree = "<group>"; };
 		5717FC391C0D4A370013D357 /* TYPointPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPointPosition.m; sourceTree = "<group>"; };
-		5717FC3E1C0D5CC30013D357 /* ShowPointPositionTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPointPositionTableVC.h; sourceTree = "<group>"; };
-		5717FC3F1C0D5CC30013D357 /* ShowPointPositionTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPointPositionTableVC.m; sourceTree = "<group>"; };
-		57410EDF1BF8B7C600D5405F /* UploadBeaconVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadBeaconVC.h; sourceTree = "<group>"; };
-		57410EE01BF8B7C600D5405F /* UploadBeaconVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadBeaconVC.m; sourceTree = "<group>"; };
+		5722C9B31C304DF1009D2365 /* AddBeaconRegionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBeaconRegionVC.h; sourceTree = "<group>"; };
+		5722C9B41C304DF1009D2365 /* AddBeaconRegionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBeaconRegionVC.m; sourceTree = "<group>"; };
+		5722C9B51C304DF1009D2365 /* ShowBeaconRegionTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowBeaconRegionTableVC.h; sourceTree = "<group>"; };
+		5722C9B61C304DF1009D2365 /* ShowBeaconRegionTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowBeaconRegionTableVC.m; sourceTree = "<group>"; };
+		5722C9B81C304DF1009D2365 /* AddPrimitiveBeaconsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPrimitiveBeaconsVC.h; sourceTree = "<group>"; };
+		5722C9B91C304DF1009D2365 /* AddPrimitiveBeaconsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPrimitiveBeaconsVC.m; sourceTree = "<group>"; };
+		5722C9BA1C304DF1009D2365 /* BeaconListForChoosingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconListForChoosingTableVC.h; sourceTree = "<group>"; };
+		5722C9BB1C304DF1009D2365 /* BeaconListForChoosingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconListForChoosingTableVC.m; sourceTree = "<group>"; };
+		5722C9BC1C304DF1009D2365 /* ConfigureBeaconsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureBeaconsVC.h; sourceTree = "<group>"; };
+		5722C9BD1C304DF1009D2365 /* ConfigureBeaconsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureBeaconsVC.m; sourceTree = "<group>"; };
+		5722C9BE1C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowConfiguredBeaconsTableVC.h; sourceTree = "<group>"; };
+		5722C9BF1C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowConfiguredBeaconsTableVC.m; sourceTree = "<group>"; };
+		5722C9C01C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPrimitiveBeaconTableVC.h; sourceTree = "<group>"; };
+		5722C9C11C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPrimitiveBeaconTableVC.m; sourceTree = "<group>"; };
+		5722C9C21C304DF1009D2365 /* UploadBeaconVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadBeaconVC.h; sourceTree = "<group>"; };
+		5722C9C31C304DF1009D2365 /* UploadBeaconVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadBeaconVC.m; sourceTree = "<group>"; };
+		5722C9CD1C304E81009D2365 /* BaseLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLogVC.h; sourceTree = "<group>"; };
+		5722C9CE1C304E81009D2365 /* BaseLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLogVC.m; sourceTree = "<group>"; };
+		5722C9CF1C304E81009D2365 /* BaseMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapVC.h; sourceTree = "<group>"; };
+		5722C9D01C304E81009D2365 /* BaseMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapVC.m; sourceTree = "<group>"; };
+		5722C9D11C304E81009D2365 /* CityBuildingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityBuildingTableVC.h; sourceTree = "<group>"; };
+		5722C9D21C304E81009D2365 /* CityBuildingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityBuildingTableVC.m; sourceTree = "<group>"; };
+		5722C9D31C304E81009D2365 /* SelectBuildingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBuildingVC.h; sourceTree = "<group>"; };
+		5722C9D41C304E81009D2365 /* SelectBuildingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBuildingVC.m; sourceTree = "<group>"; };
+		5722C9DA1C304EAA009D2365 /* ConfigurePointPositionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurePointPositionVC.h; sourceTree = "<group>"; };
+		5722C9DB1C304EAA009D2365 /* ConfigurePointPositionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurePointPositionVC.m; sourceTree = "<group>"; };
+		5722C9DC1C304EAA009D2365 /* ShowPointPositionTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPointPositionTableVC.h; sourceTree = "<group>"; };
+		5722C9DD1C304EAA009D2365 /* ShowPointPositionTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPointPositionTableVC.m; sourceTree = "<group>"; };
+		57342C5F1C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegionDBAdapter.h; sourceTree = "<group>"; };
+		57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegionDBAdapter.m; sourceTree = "<group>"; };
+		57342C621C2C4D7000FA2745 /* TYBeaconRegionDBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegionDBConstants.h; sourceTree = "<group>"; };
 		57410F0E1BF8BBF400D5405F /* IPXEncryption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPXEncryption.cpp; sourceTree = "<group>"; };
 		57410F0F1BF8BBF400D5405F /* IPXEncryption.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IPXEncryption.hpp; sourceTree = "<group>"; };
 		57410F111BF8BC1800D5405F /* BLEEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEEncryption.h; sourceTree = "<group>"; };
@@ -185,8 +212,6 @@
 		575CD0AD1B564DE200B1E77C /* TYRegionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRegionManager.m; sourceTree = "<group>"; };
 		575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYUserDefaults.h; sourceTree = "<group>"; };
 		575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYUserDefaults.m; sourceTree = "<group>"; };
-		575CD0B11B564DE200B1E77C /* BaseMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapVC.h; sourceTree = "<group>"; };
-		575CD0B21B564DE200B1E77C /* BaseMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapVC.m; sourceTree = "<group>"; };
 		575CD0B41B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoSwitchLocationEngineTestVC.h; sourceTree = "<group>"; };
 		575CD0B51B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoSwitchLocationEngineTestVC.m; sourceTree = "<group>"; };
 		575CD0B61B564DE200B1E77C /* BaseLocationTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLocationTestVC.h; sourceTree = "<group>"; };
@@ -201,18 +226,8 @@
 		575CD0BF1B564DE200B1E77C /* LocationEngineTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationEngineTestVC.m; sourceTree = "<group>"; };
 		575CD0C01B564DE200B1E77C /* MultiLocationTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLocationTestVC.h; sourceTree = "<group>"; };
 		575CD0C11B564DE200B1E77C /* MultiLocationTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLocationTestVC.m; sourceTree = "<group>"; };
-		575CD0C31B564DE200B1E77C /* AddPrimitiveBeaconsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPrimitiveBeaconsVC.h; sourceTree = "<group>"; };
-		575CD0C41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPrimitiveBeaconsVC.m; sourceTree = "<group>"; };
-		575CD0C51B564DE200B1E77C /* BeaconListForChoosingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconListForChoosingTableVC.h; sourceTree = "<group>"; };
-		575CD0C61B564DE200B1E77C /* BeaconListForChoosingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconListForChoosingTableVC.m; sourceTree = "<group>"; };
-		575CD0C81B564DE200B1E77C /* ConfigureBeaconsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureBeaconsVC.h; sourceTree = "<group>"; };
-		575CD0C91B564DE200B1E77C /* ConfigureBeaconsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureBeaconsVC.m; sourceTree = "<group>"; };
 		575CD0CB1B564DE200B1E77C /* MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
 		575CD0CC1B564DE200B1E77C /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
-		575CD0CD1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowConfiguredBeaconsTableVC.h; sourceTree = "<group>"; };
-		575CD0CE1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowConfiguredBeaconsTableVC.m; sourceTree = "<group>"; };
-		575CD0CF1B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPrimitiveBeaconTableVC.h; sourceTree = "<group>"; };
-		575CD0D01B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPrimitiveBeaconTableVC.m; sourceTree = "<group>"; };
 		575CD0D21B564DE200B1E77C /* BaseControllerTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseControllerTableVC.h; sourceTree = "<group>"; };
 		575CD0D31B564DE200B1E77C /* BaseControllerTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseControllerTableVC.m; sourceTree = "<group>"; };
 		575CD0D41B564DE200B1E77C /* BLEAlgorithmTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEAlgorithmTableVC.h; sourceTree = "<group>"; };
@@ -374,7 +389,6 @@
 		57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		57B5C5DB1B565EB200189FE8 /* TYBeaconPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconPool.h; sourceTree = "<group>"; };
 		57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconPool.m; sourceTree = "<group>"; };
-		57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BeaconRegion.json; sourceTree = "<group>"; };
 		57E6BCC11B8C1C5D002226FB /* TYBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegion.h; sourceTree = "<group>"; };
 		57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegion.m; sourceTree = "<group>"; };
 		57E6BCC51B8C41D0002226FB /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
@@ -399,12 +413,6 @@
 		57E6BCD91B8C41D0002226FB /* RATreeView+UIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+UIScrollView.m"; sourceTree = "<group>"; };
 		57E6BCDA1B8C41D0002226FB /* RATreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView.h; sourceTree = "<group>"; };
 		57E6BCDB1B8C41D0002226FB /* RATreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeView.m; sourceTree = "<group>"; };
-		57E6BCE71B8C41DC002226FB /* CityBuildingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityBuildingTableVC.h; sourceTree = "<group>"; };
-		57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityBuildingTableVC.m; sourceTree = "<group>"; };
-		57E6BCEA1B8C43DD002226FB /* SelectBuildingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBuildingVC.h; sourceTree = "<group>"; };
-		57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBuildingVC.m; sourceTree = "<group>"; };
-		57F85C891BB5167B005D28CF /* BaseLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLogVC.h; sourceTree = "<group>"; };
-		57F85C8A1BB5167B005D28CF /* BaseLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLogVC.m; sourceTree = "<group>"; };
 		57F85C8C1BB51695005D28CF /* CheckBeaconDatabaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBeaconDatabaseVC.h; sourceTree = "<group>"; };
 		57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBeaconDatabaseVC.m; sourceTree = "<group>"; };
 		57FC97B91BB12F5B006D6D00 /* Licenses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Licenses.json; sourceTree = "<group>"; };
@@ -435,6 +443,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5722C9B21C304DF1009D2365 /* BeaconRegion */ = {
+			isa = PBXGroup;
+			children = (
+				5722C9B31C304DF1009D2365 /* AddBeaconRegionVC.h */,
+				5722C9B41C304DF1009D2365 /* AddBeaconRegionVC.m */,
+				5722C9B51C304DF1009D2365 /* ShowBeaconRegionTableVC.h */,
+				5722C9B61C304DF1009D2365 /* ShowBeaconRegionTableVC.m */,
+			);
+			path = BeaconRegion;
+			sourceTree = "<group>";
+		};
+		5722C9B71C304DF1009D2365 /* ConfigureBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				5722C9B81C304DF1009D2365 /* AddPrimitiveBeaconsVC.h */,
+				5722C9B91C304DF1009D2365 /* AddPrimitiveBeaconsVC.m */,
+				5722C9BA1C304DF1009D2365 /* BeaconListForChoosingTableVC.h */,
+				5722C9BB1C304DF1009D2365 /* BeaconListForChoosingTableVC.m */,
+				5722C9BC1C304DF1009D2365 /* ConfigureBeaconsVC.h */,
+				5722C9BD1C304DF1009D2365 /* ConfigureBeaconsVC.m */,
+				5722C9BE1C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.h */,
+				5722C9BF1C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m */,
+				5722C9C01C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.h */,
+				5722C9C11C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m */,
+				5722C9C21C304DF1009D2365 /* UploadBeaconVC.h */,
+				5722C9C31C304DF1009D2365 /* UploadBeaconVC.m */,
+			);
+			path = ConfigureBeacon;
+			sourceTree = "<group>";
+		};
+		5722C9CC1C304E81009D2365 /* HelperVC */ = {
+			isa = PBXGroup;
+			children = (
+				5722C9CD1C304E81009D2365 /* BaseLogVC.h */,
+				5722C9CE1C304E81009D2365 /* BaseLogVC.m */,
+				5722C9CF1C304E81009D2365 /* BaseMapVC.h */,
+				5722C9D01C304E81009D2365 /* BaseMapVC.m */,
+				5722C9D11C304E81009D2365 /* CityBuildingTableVC.h */,
+				5722C9D21C304E81009D2365 /* CityBuildingTableVC.m */,
+				5722C9D31C304E81009D2365 /* SelectBuildingVC.h */,
+				5722C9D41C304E81009D2365 /* SelectBuildingVC.m */,
+			);
+			path = HelperVC;
+			sourceTree = "<group>";
+		};
+		5722C9D91C304EAA009D2365 /* PointPosition */ = {
+			isa = PBXGroup;
+			children = (
+				5722C9DA1C304EAA009D2365 /* ConfigurePointPositionVC.h */,
+				5722C9DB1C304EAA009D2365 /* ConfigurePointPositionVC.m */,
+				5722C9DC1C304EAA009D2365 /* ShowPointPositionTableVC.h */,
+				5722C9DD1C304EAA009D2365 /* ShowPointPositionTableVC.m */,
+			);
+			path = PointPosition;
+			sourceTree = "<group>";
+		};
 		57410F011BF8BA7200D5405F /* ServerSync */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,7 +563,6 @@
 		575CD0AA1B564DE200B1E77C /* GlobalSettings */ = {
 			isa = PBXGroup;
 			children = (
-				57E6BCBF1B8C1B88002226FB /* BeaconRegion.json */,
 				575CD0AC1B564DE200B1E77C /* TYRegionManager.h */,
 				575CD0AD1B564DE200B1E77C /* TYRegionManager.m */,
 				57FC97BB1BB12F87006D6D00 /* LicenseManager.h */,
@@ -508,6 +571,9 @@
 				575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */,
 				57E6BCC11B8C1C5D002226FB /* TYBeaconRegion.h */,
 				57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */,
+				57342C5F1C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.h */,
+				57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */,
+				57342C621C2C4D7000FA2745 /* TYBeaconRegionDBConstants.h */,
 			);
 			path = GlobalSettings;
 			sourceTree = "<group>";
@@ -515,14 +581,7 @@
 		575CD0B01B564DE200B1E77C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				57F85C891BB5167B005D28CF /* BaseLogVC.h */,
-				57F85C8A1BB5167B005D28CF /* BaseLogVC.m */,
-				57E6BCEA1B8C43DD002226FB /* SelectBuildingVC.h */,
-				57E6BCEB1B8C43DD002226FB /* SelectBuildingVC.m */,
-				57E6BCE71B8C41DC002226FB /* CityBuildingTableVC.h */,
-				57E6BCE81B8C41DC002226FB /* CityBuildingTableVC.m */,
-				575CD0B11B564DE200B1E77C /* BaseMapVC.h */,
-				575CD0B21B564DE200B1E77C /* BaseMapVC.m */,
+				5722C9CC1C304E81009D2365 /* HelperVC */,
 				575CD0B31B564DE200B1E77C /* BLE-Algorithm */,
 				575CD0C21B564DE200B1E77C /* BLE-Tool */,
 				575CD0D11B564DE200B1E77C /* MainList */,
@@ -556,36 +615,15 @@
 		575CD0C21B564DE200B1E77C /* BLE-Tool */ = {
 			isa = PBXGroup;
 			children = (
-				5717FC301C0D3F9B0013D357 /* ConfigurePointPositionVC.h */,
-				5717FC311C0D3F9B0013D357 /* ConfigurePointPositionVC.m */,
-				575CD0C31B564DE200B1E77C /* AddPrimitiveBeaconsVC.h */,
-				575CD0C41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m */,
-				575CD0C51B564DE200B1E77C /* BeaconListForChoosingTableVC.h */,
-				575CD0C61B564DE200B1E77C /* BeaconListForChoosingTableVC.m */,
-				575CD0C81B564DE200B1E77C /* ConfigureBeaconsVC.h */,
-				575CD0C91B564DE200B1E77C /* ConfigureBeaconsVC.m */,
-				575CD0CA1B564DE200B1E77C /* Explore */,
+				5722C9D91C304EAA009D2365 /* PointPosition */,
+				5722C9B21C304DF1009D2365 /* BeaconRegion */,
+				5722C9B71C304DF1009D2365 /* ConfigureBeacon */,
 				575CD0CB1B564DE200B1E77C /* MapVC.h */,
 				575CD0CC1B564DE200B1E77C /* MapVC.m */,
-				575CD0CD1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.h */,
-				575CD0CE1B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m */,
-				575CD0CF1B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.h */,
-				575CD0D01B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m */,
 				57F85C8C1BB51695005D28CF /* CheckBeaconDatabaseVC.h */,
 				57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */,
-				57410EDF1BF8B7C600D5405F /* UploadBeaconVC.h */,
-				57410EE01BF8B7C600D5405F /* UploadBeaconVC.m */,
-				5717FC3E1C0D5CC30013D357 /* ShowPointPositionTableVC.h */,
-				5717FC3F1C0D5CC30013D357 /* ShowPointPositionTableVC.m */,
 			);
 			path = "BLE-Tool";
-			sourceTree = "<group>";
-		};
-		575CD0CA1B564DE200B1E77C /* Explore */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Explore;
 			sourceTree = "<group>";
 		};
 		575CD0D11B564DE200B1E77C /* MainList */ = {
@@ -1218,7 +1256,6 @@
 				575CD3701B564F2900B1E77C /* BLE-Algorithm.storyboard in Resources */,
 				575CD2AF1B564ED400B1E77C /* ArcGIS.bundle in Resources */,
 				575CD1E01B564E7300B1E77C /* Images.xcassets in Resources */,
-				57E6BCC01B8C1B88002226FB /* BeaconRegion.json in Resources */,
 				575CD3681B564F1500B1E77C /* Settings.bundle in Resources */,
 				577605141B581513005F30B1 /* MapEncrypted in Resources */,
 			);
@@ -1233,8 +1270,6 @@
 			files = (
 				575CD0FA1B564DE200B1E77C /* BaseControllerTableVC.m in Sources */,
 				575CD1CD1B564E7300B1E77C /* IPXGeometryEngine.cpp in Sources */,
-				57E6BCEC1B8C43DD002226FB /* SelectBuildingVC.m in Sources */,
-				575CD0F41B564DE200B1E77C /* AddPrimitiveBeaconsVC.m in Sources */,
 				575CD1BB1B564E7300B1E77C /* TYPointConverter.m in Sources */,
 				5717FC351C0D498C0013D357 /* TYPointPosFMDBAdapter.m in Sources */,
 				575CD1001B564DE200B1E77C /* CityTableVC.m in Sources */,
@@ -1246,16 +1281,20 @@
 				57E6BCE01B8C41D0002226FB /* RATreeNodeInfo.m in Sources */,
 				575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */,
 				574B31A31C02B73200882360 /* CppUnionLane.cpp in Sources */,
+				5722C9C51C304DF1009D2365 /* ShowBeaconRegionTableVC.m in Sources */,
+				5722C9C71C304DF1009D2365 /* BeaconListForChoosingTableVC.m in Sources */,
 				57E6BCDE1B8C41D0002226FB /* RATreeNodeCollectionController.m in Sources */,
 				575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */,
+				5722C9C91C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m in Sources */,
+				5722C9D61C304E81009D2365 /* BaseMapVC.m in Sources */,
 				575CD1D71B564E7300B1E77C /* TYWeightingAlgorithm.m in Sources */,
 				5754EDF31BB43E5700D63B13 /* BLEMD5Utils.mm in Sources */,
+				5722C9DE1C304EAA009D2365 /* ConfigurePointPositionVC.m in Sources */,
 				575CD1B31B564E7300B1E77C /* TYHeadingDetector.m in Sources */,
 				575CD1D21B564E7300B1E77C /* TYLocationEngine.m in Sources */,
 				575CD1DD1B564E7300B1E77C /* TYDistributionResult.m in Sources */,
 				575CD1C71B564E7300B1E77C /* IPXBeacon.cpp in Sources */,
 				575CD1B01B564E7300B1E77C /* TYCumulativeSingalPowerTD.m in Sources */,
-				575CD0F91B564DE200B1E77C /* ShowPrimitiveBeaconTableVC.m in Sources */,
 				575CD1B21B564E7300B1E77C /* TYMovingAverageTD.m in Sources */,
 				575CD1AF1B564E7300B1E77C /* TYPublicBeacon.m in Sources */,
 				575CD0EE1B564DE200B1E77C /* BaseLocationTestVC.m in Sources */,
@@ -1264,14 +1303,17 @@
 				575CD1C91B564E7300B1E77C /* IPXPublicBeacon.cpp in Sources */,
 				575CD1BD1B564E7300B1E77C /* IPXRegionDBAdapter.m in Sources */,
 				5754EDF61BB4487C00D63B13 /* TYBeaconDBCodeChecker.m in Sources */,
+				5722C9D51C304E81009D2365 /* BaseLogVC.m in Sources */,
+				5722C9C81C304DF1009D2365 /* ConfigureBeaconsVC.m in Sources */,
 				575CD1AE1B564E7300B1E77C /* TYBeaconManager.m in Sources */,
 				57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */,
-				5717FC321C0D3F9B0013D357 /* ConfigurePointPositionVC.m in Sources */,
 				575CD1E31B564E7300B1E77C /* FMDatabasePool.m in Sources */,
 				575CD1D51B564E7300B1E77C /* TYLocationAlgorithm.m in Sources */,
 				57E6BCE51B8C41D0002226FB /* RATreeView+UIScrollView.m in Sources */,
+				5722C9DF1C304EAA009D2365 /* ShowPointPositionTableVC.m in Sources */,
 				575CD1E11B564E7300B1E77C /* FMDatabase.m in Sources */,
 				5717FC3A1C0D4A370013D357 /* TYPointPosition.m in Sources */,
+				5722C9D81C304E81009D2365 /* SelectBuildingVC.m in Sources */,
 				575CD1AD1B564E7300B1E77C /* TYBeacon.m in Sources */,
 				575CD1D91B564E7300B1E77C /* TYVector2.m in Sources */,
 				575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */,
@@ -1286,7 +1328,6 @@
 				575CD1D31B564E7300B1E77C /* TYAlgorithmFactory.m in Sources */,
 				575CD0F71B564DE200B1E77C /* MapVC.m in Sources */,
 				575CD1D11B564E7300B1E77C /* TYBeaconFMDBAdapter.m in Sources */,
-				575CD0F51B564DE200B1E77C /* BeaconListForChoosingTableVC.m in Sources */,
 				575CD1CE1B564E7300B1E77C /* IPXStepBasedEngine.cpp in Sources */,
 				575CD1021B564DE200B1E77C /* FloorMapVC.m in Sources */,
 				57410F101BF8BBF400D5405F /* IPXEncryption.cpp in Sources */,
@@ -1296,23 +1337,23 @@
 				575CD0FD1B564DE200B1E77C /* MapTableVC.m in Sources */,
 				57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */,
 				57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */,
-				57F85C8B1BB5167B005D28CF /* BaseLogVC.m in Sources */,
-				5717FC401C0D5CC30013D357 /* ShowPointPositionTableVC.m in Sources */,
 				57E6BCE31B8C41D0002226FB /* RATreeView+TableViewDataSource.m in Sources */,
 				57410F161BF8BCBB00D5405F /* BLELicenseGenerator.m in Sources */,
-				57410EE11BF8B7C600D5405F /* UploadBeaconVC.m in Sources */,
-				575CD0F81B564DE200B1E77C /* ShowConfiguredBeaconsTableVC.m in Sources */,
 				575CD0FB1B564DE200B1E77C /* BLEAlgorithmTableVC.m in Sources */,
 				575CD1B51B564E7300B1E77C /* TYMotionDetector.m in Sources */,
 				575CD1B81B564E7300B1E77C /* TYStepEvent.m in Sources */,
+				5722C9D71C304E81009D2365 /* CityBuildingTableVC.m in Sources */,
+				5722C9CB1C304DF1009D2365 /* UploadBeaconVC.m in Sources */,
 				575CD1B71B564E7300B1E77C /* TYStepDetector.m in Sources */,
+				5722C9C61C304DF1009D2365 /* AddPrimitiveBeaconsVC.m in Sources */,
 				575CD1E21B564E7300B1E77C /* FMDatabaseAdditions.m in Sources */,
 				575CD1CB1B564E7300B1E77C /* IPXMovingAverage.cpp in Sources */,
-				575CD0EC1B564DE200B1E77C /* BaseMapVC.m in Sources */,
+				5722C9C41C304DF1009D2365 /* AddBeaconRegionVC.m in Sources */,
 				575CD0FC1B564DE200B1E77C /* BLEToolTableVC.m in Sources */,
 				575CD1B91B564E7300B1E77C /* TYVector2.m in Sources */,
 				5754EDEF1BB43D0E00D63B13 /* BLEMD5.cpp in Sources */,
 				575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */,
+				5722C9CA1C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m in Sources */,
 				575CD0F01B564DE200B1E77C /* CppEngineCompareVC.m in Sources */,
 				575CD0F11B564DE200B1E77C /* CppEngineTestVC.m in Sources */,
 				575CD1C31B564E7300B1E77C /* IPXGeometryCalculator.cpp in Sources */,
@@ -1321,17 +1362,16 @@
 				575CD1031B564DE200B1E77C /* SetCurrentPlaceVC.m in Sources */,
 				575CD1C11B564E7300B1E77C /* TYLocationFileManager.m in Sources */,
 				575CD1E51B564E7300B1E77C /* FMResultSet.m in Sources */,
-				575CD0F61B564DE200B1E77C /* ConfigureBeaconsVC.m in Sources */,
 				575CD1D81B564E7300B1E77C /* TYGeometryFactory.m in Sources */,
 				575CD10D1B564E2C00B1E77C /* main.m in Sources */,
 				575CD1B61B564E7300B1E77C /* TYSample.m in Sources */,
 				575CD1B11B564E7300B1E77C /* TYMovingAverage.m in Sources */,
 				575CD1DF1B564E7300B1E77C /* TYTestResult.m in Sources */,
 				57E6BCE21B8C41D0002226FB /* RATreeView+Private.m in Sources */,
-				57E6BCE91B8C41DC002226FB /* CityBuildingTableVC.m in Sources */,
 				575CD1D61B564E7300B1E77C /* TYTriangulationAlgorithm.m in Sources */,
 				575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */,
 				57410F131BF8BC1800D5405F /* BLEEncryption.mm in Sources */,
+				57342C611C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m in Sources */,
 				575CD1CA1B564E7300B1E77C /* IPXScannedBeacon.cpp in Sources */,
 				57FC97BD1BB12F87006D6D00 /* LicenseManager.m in Sources */,
 				575CD1CF1B564E7300B1E77C /* TYBeaconFilter.m in Sources */,

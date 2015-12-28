@@ -7,9 +7,11 @@
     self.title = @"BLE工具";
     
     NSArray *viewControllers = @[
-                                 @[@"商场地图", @"mapViewController"],
-                                 @[@"添加原始信标", @"addPrimitiveController"],
-                                 @[@"配置信标", @"configureBeaconController"],
+                                 @[@"当前地图", @"mapViewController"],
+                                 @[@"添加BeaconRegion", @"AddBeaconRegionVC"],
+//                                 @[@"配置BeaconRegion", @"ShowBeaconRegionRootController"],
+                                 @[@"添加Beacon", @"addPrimitiveController"],
+                                 @[@"配置Beacon", @"ConfigureBeaconsVC"],
                                  @[@"验证Beacon数据", @"CheckBeaconDatabaseVC"],
                                  @[@"上传Beacon数据", @"UploadBeaconVC"],
                                  @[@"配置点位图", @"ConfigurePointPositionVC"],
@@ -25,7 +27,6 @@
         [self.objects addObject:name];
         [self.controllerDict setObject:storyboardID forKey:name];
     }
-    
 //    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
 }
 
