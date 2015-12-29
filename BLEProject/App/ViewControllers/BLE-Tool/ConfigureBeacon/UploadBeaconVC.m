@@ -7,27 +7,33 @@
 //
 
 #import "UploadBeaconVC.h"
-//#import "MKNetworkKit.h"
 #import <MKNetworkKit/MKNetworkKit.h>
 #import "TYUserDefaults.h"
 #import "TYPointConverter.h"
 #import "TYBeaconFMDBAdapter.h"
-
+#import "IPBLEApi.h"
+#import "IPBLEApi_Manager.h"
 #import "BLELicenseGenerator.h"
-@interface UploadBeaconVC()
+#import "TYUserManager.h"
+#import "IPBLEWebObjectConverter.h"
+#import "TYMapCredential_Private.h"
+
+#import "IPRegionBeaconUploader.h"
+
+@interface UploadBeaconVC() <IPRegionBeaconUploaderDelegate>
 {
     TYCity *currentCity;
     TYBuilding *currentBuilding;
     NSArray *allMapInfos;
     
-    NSString *userID;
-    NSString *buildingID;
-    NSString *license;
+    TYMapCredential *user;
     
     NSString *hostName;
     NSString *apiPath;
     
     NSArray *allBeaconArray;
+    
+    IPRegionBeaconUploader *uploader;
 }
 
 @end
@@ -47,18 +53,28 @@
     
     self.title = @"上传Beacon数据";
     
-    userID = SUPER_USER_ID;
-//    userID = @"fafasfaag";
-    buildingID = currentBuilding.buildingID;
-    license = [BLELicenseGenerator generateLicenseForUserID:userID Building:buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
+    user = [TYUserManager createSuperUser:currentBuilding.buildingID];
     
-//    hostName = @"localhost:8112";
-//    hostName = LOCAL_HOST_NAME;
-    hostName = SERVER_HOST_NAME;
-    apiPath = [[NSString alloc] initWithFormat:@"/TYMapServerManager/manager/beacon/UploadLocatingBeacons"];
+    hostName = HOST_NAME;
+    apiPath = TY_API_UPLOAD_LOCATING_BEACONS;
     
     [self getAllLocatingBeacons];
-    [self testUploadLocatingBeaconUsingHttpPost];
+//    [self testUploadLocatingBeaconUsingHttpPost];
+    
+    uploader = [[IPRegionBeaconUploader alloc] initWithUser:user];
+    uploader.delegate = self;
+    
+    [uploader uploadLocatingBeacons:allBeaconArray];
+}
+
+- (void)RegionBeaconUploader:(IPRegionBeaconUploader *)uploader DidFailedUploadingWithApi:(NSString *)api WithError:(NSError *)error
+{
+    NSLog(@"Error: %@", [error localizedDescription]);
+}
+
+- (void)RegionBeaconUploader:(IPRegionBeaconUploader *)uploader DidFinishUploadingWithApi:(NSString *)api WithDescription:(NSString *)description
+{
+    [self addToLog:description];
 }
 
 - (void)getAllLocatingBeacons
@@ -67,16 +83,8 @@
     [db open];
     allBeaconArray = [db getAllLocationingBeacons];
     [db close];
-    NSLog(@"%d beacons", (int)allBeaconArray.count);
-}
-
-- (NSArray *)prepareBeaconArray
-{
-    NSDate *now = [NSDate date];
-    NSMutableArray *beaconArray = [NSMutableArray array];
     
     for (TYPublicBeacon *pb in allBeaconArray) {
-        
         TYMapInfo *mapInfo = [TYMapInfo searchMapInfoFromArray:allMapInfos Floor:pb.location.floor];
         if (mapInfo == nil) {
             mapInfo = allMapInfos[0];
@@ -84,33 +92,21 @@
         pb.mapID = mapInfo.mapID;
         pb.buildingID = mapInfo.buildingID;
         pb.cityID = mapInfo.buildingID;
-        
-        NSDictionary *beaconObject = [TYPublicBeacon buildBeaconObject:pb];
-        [beaconArray addObject:beaconObject];
     }
     
-    NSLog(@"Time Interval: %f", [[NSDate date] timeIntervalSinceDate:now]);
-    return beaconArray;
+    NSLog(@"%d beacons", (int)allBeaconArray.count);
 }
 
 - (void)testUploadLocatingBeaconUsingHttpPost
 {
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-    [param setValue:userID forKey:@"userID"];
-    [param setValue:buildingID forKey:@"buildingID"];
-    [param setValue:license forKey:@"license"];
-    
-    NSArray *beaconArray = [self prepareBeaconArray];
-    NSData *beaconData = [NSJSONSerialization dataWithJSONObject:beaconArray options:NSJSONWritingPrettyPrinted error:nil];
-    NSString *beaconString = [[NSString alloc] initWithData:beaconData encoding:NSUTF8StringEncoding];
-    [param setValue:beaconString forKey:@"beacons"];
+    [param setValuesForKeysWithDictionary:[user buildDictionary]];
+    [param setValue:[IPBLEWebObjectConverter prepareJsonString:[IPBLEWebObjectConverter prepareBeaconObjectArray:allBeaconArray]] forKey:@"beacons"];
     
     MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:hostName];
     MKNetworkOperation *op = [engine operationWithPath:apiPath params:param httpMethod:@"POST"];
     
     [op addCompletionHandler:^(MKNetworkOperation *operation) {
-//        NSLog(@"ResponseData: %@", [operation responseString]);
-//        [self addToLog:@"Response String:"];
         [self addToLog:[operation responseString]];
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         NSLog(@"Error: %@", [error localizedDescription]);

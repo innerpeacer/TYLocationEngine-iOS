@@ -38,6 +38,8 @@
 {
     [TYMapEnvironment initMapEnvironment];
     
+    [TYMapEnvironment setHostName:HOST_NAME];
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
     NSLog(@"%@", documentDirectory);

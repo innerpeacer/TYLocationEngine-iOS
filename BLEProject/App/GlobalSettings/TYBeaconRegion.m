@@ -7,6 +7,7 @@
 //
 
 #import "TYBeaconRegion.h"
+#import "TYBeaconRegionDBConstants.h"
 
 @implementation TYBeaconRegion
 
@@ -33,6 +34,31 @@
         _region = beaconRegion;
     }
     return self;
+}
+
++ (NSDictionary *)buildRegionObject:(TYBeaconRegion *)region
+{
+    NSMutableDictionary *regionObject = [NSMutableDictionary dictionary];
+    
+    [regionObject setObject:region.cityID forKey:FIELD_BEACON_REGION_1_CITY_ID];
+    [regionObject setObject:region.buildingID forKey:FIELD_BEACON_REGION_2_BUILDING_ID];
+    [regionObject setObject:region.name forKey:FIELD_BEACON_REGION_3_BUILDING_NAME];
+    [regionObject setObject:region.region.proximityUUID.UUIDString forKey:FIELD_BEACON_REGION_4_UUID];
+    if (region.region.major != nil) {
+        [regionObject setObject:region.region.major forKey:FIELD_BEACON_REGION_5_MAJOR];
+    }
+    return regionObject;
+}
+
++ (TYBeaconRegion *)parseBeaconRegionObject:(NSDictionary *)regionObject
+{
+    NSString *cityID = regionObject[FIELD_BEACON_REGION_1_CITY_ID];
+    NSString *buildingID = regionObject[FIELD_BEACON_REGION_2_BUILDING_ID];
+    NSString *name = regionObject[FIELD_BEACON_REGION_3_BUILDING_NAME];
+    NSString *uuid = regionObject[FIELD_BEACON_REGION_4_UUID];
+    NSNumber *major = regionObject[FIELD_BEACON_REGION_5_MAJOR];
+    
+    return [TYBeaconRegion beaconRegionWithCityID:cityID BuildingID:buildingID Name:name UUID:uuid Major:major];
 }
 
 - (NSString *)description

@@ -24,6 +24,13 @@
 		5722C9D81C304E81009D2365 /* SelectBuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9D41C304E81009D2365 /* SelectBuildingVC.m */; };
 		5722C9DE1C304EAA009D2365 /* ConfigurePointPositionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9DB1C304EAA009D2365 /* ConfigurePointPositionVC.m */; };
 		5722C9DF1C304EAA009D2365 /* ShowPointPositionTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9DD1C304EAA009D2365 /* ShowPointPositionTableVC.m */; };
+		57261C361C324D160099D924 /* IPBLEWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C351C324D160099D924 /* IPBLEWebUploader.m */; };
+		57261C3C1C3267090099D924 /* IPBLEWebDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C3B1C3267090099D924 /* IPBLEWebDownloader.m */; };
+		57261C3F1C3267630099D924 /* IPBLEWebObjectConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C3E1C3267630099D924 /* IPBLEWebObjectConverter.m */; };
+		57261C421C3267A30099D924 /* IPRegionBeaconUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C411C3267A30099D924 /* IPRegionBeaconUploader.m */; };
+		57261C451C3267B80099D924 /* IPRegionBeaconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C441C3267B80099D924 /* IPRegionBeaconDownloader.m */; };
+		57261C491C328E3E0099D924 /* TYUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C481C328E3E0099D924 /* TYUserManager.m */; };
+		57261C4E1C328F260099D924 /* MapLicenseGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C4C1C328F260099D924 /* MapLicenseGenerator.m */; };
 		57342C611C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */; };
 		57410F101BF8BBF400D5405F /* IPXEncryption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57410F0E1BF8BBF400D5405F /* IPXEncryption.cpp */; };
 		57410F131BF8BC1800D5405F /* BLEEncryption.mm in Sources */ = {isa = PBXBuildFile; fileRef = 57410F121BF8BC1800D5405F /* BLEEncryption.mm */; };
@@ -184,6 +191,25 @@
 		5722C9DB1C304EAA009D2365 /* ConfigurePointPositionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurePointPositionVC.m; sourceTree = "<group>"; };
 		5722C9DC1C304EAA009D2365 /* ShowPointPositionTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPointPositionTableVC.h; sourceTree = "<group>"; };
 		5722C9DD1C304EAA009D2365 /* ShowPointPositionTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPointPositionTableVC.m; sourceTree = "<group>"; };
+		57261C341C324D160099D924 /* IPBLEWebUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPBLEWebUploader.h; sourceTree = "<group>"; };
+		57261C351C324D160099D924 /* IPBLEWebUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPBLEWebUploader.m; sourceTree = "<group>"; };
+		57261C371C325C2D0099D924 /* IPBLEApi_Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPBLEApi_Manager.h; sourceTree = "<group>"; };
+		57261C3A1C3267090099D924 /* IPBLEWebDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPBLEWebDownloader.h; sourceTree = "<group>"; };
+		57261C3B1C3267090099D924 /* IPBLEWebDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPBLEWebDownloader.m; sourceTree = "<group>"; };
+		57261C3D1C3267630099D924 /* IPBLEWebObjectConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPBLEWebObjectConverter.h; sourceTree = "<group>"; };
+		57261C3E1C3267630099D924 /* IPBLEWebObjectConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPBLEWebObjectConverter.m; sourceTree = "<group>"; };
+		57261C401C3267A30099D924 /* IPRegionBeaconUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPRegionBeaconUploader.h; sourceTree = "<group>"; };
+		57261C411C3267A30099D924 /* IPRegionBeaconUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPRegionBeaconUploader.m; sourceTree = "<group>"; };
+		57261C431C3267B80099D924 /* IPRegionBeaconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPRegionBeaconDownloader.h; sourceTree = "<group>"; };
+		57261C441C3267B80099D924 /* IPRegionBeaconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPRegionBeaconDownloader.m; sourceTree = "<group>"; };
+		57261C461C3267CB0099D924 /* IPBLEApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPBLEApi.h; sourceTree = "<group>"; };
+		57261C471C328E3E0099D924 /* TYUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYUserManager.h; sourceTree = "<group>"; };
+		57261C481C328E3E0099D924 /* TYUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYUserManager.m; sourceTree = "<group>"; };
+		57261C4B1C328F260099D924 /* MapLicenseGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLicenseGenerator.h; sourceTree = "<group>"; };
+		57261C4C1C328F260099D924 /* MapLicenseGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLicenseGenerator.m; sourceTree = "<group>"; };
+		57261C501C328FBE0099D924 /* IPEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPEncryption.h; sourceTree = "<group>"; };
+		57261C511C328FCA0099D924 /* IPMD5Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMD5Utils.h; sourceTree = "<group>"; };
+		57261C521C3290880099D924 /* TYMapCredential_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYMapCredential_Private.h; sourceTree = "<group>"; };
 		57342C5F1C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegionDBAdapter.h; sourceTree = "<group>"; };
 		57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegionDBAdapter.m; sourceTree = "<group>"; };
 		57342C621C2C4D7000FA2745 /* TYBeaconRegionDBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegionDBConstants.h; sourceTree = "<group>"; };
@@ -499,15 +525,69 @@
 			path = PointPosition;
 			sourceTree = "<group>";
 		};
+		57261C2F1C324CB40099D924 /* BLETool */ = {
+			isa = PBXGroup;
+			children = (
+				57261C4B1C328F260099D924 /* MapLicenseGenerator.h */,
+				57261C4C1C328F260099D924 /* MapLicenseGenerator.m */,
+			);
+			path = BLETool;
+			sourceTree = "<group>";
+		};
+		57261C331C324D160099D924 /* Uploader */ = {
+			isa = PBXGroup;
+			children = (
+				57261C341C324D160099D924 /* IPBLEWebUploader.h */,
+				57261C351C324D160099D924 /* IPBLEWebUploader.m */,
+				57261C401C3267A30099D924 /* IPRegionBeaconUploader.h */,
+				57261C411C3267A30099D924 /* IPRegionBeaconUploader.m */,
+			);
+			path = Uploader;
+			sourceTree = "<group>";
+		};
+		57261C381C3266D50099D924 /* ServerSync */ = {
+			isa = PBXGroup;
+			children = (
+				57261C391C3266D50099D924 /* Downloader */,
+				57261C3D1C3267630099D924 /* IPBLEWebObjectConverter.h */,
+				57261C3E1C3267630099D924 /* IPBLEWebObjectConverter.m */,
+				57261C461C3267CB0099D924 /* IPBLEApi.h */,
+			);
+			path = ServerSync;
+			sourceTree = "<group>";
+		};
+		57261C391C3266D50099D924 /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				57261C3A1C3267090099D924 /* IPBLEWebDownloader.h */,
+				57261C3B1C3267090099D924 /* IPBLEWebDownloader.m */,
+				57261C431C3267B80099D924 /* IPRegionBeaconDownloader.h */,
+				57261C441C3267B80099D924 /* IPRegionBeaconDownloader.m */,
+			);
+			path = Downloader;
+			sourceTree = "<group>";
+		};
+		57261C4F1C328F950099D924 /* FrameworkHeader_Private */ = {
+			isa = PBXGroup;
+			children = (
+				57261C521C3290880099D924 /* TYMapCredential_Private.h */,
+				57261C511C328FCA0099D924 /* IPMD5Utils.h */,
+				57261C501C328FBE0099D924 /* IPEncryption.h */,
+			);
+			path = FrameworkHeader_Private;
+			sourceTree = "<group>";
+		};
 		57410F011BF8BA7200D5405F /* ServerSync */ = {
 			isa = PBXGroup;
 			children = (
+				57261C331C324D160099D924 /* Uploader */,
 				57410F0E1BF8BBF400D5405F /* IPXEncryption.cpp */,
 				57410F0F1BF8BBF400D5405F /* IPXEncryption.hpp */,
 				57410F111BF8BC1800D5405F /* BLEEncryption.h */,
 				57410F121BF8BC1800D5405F /* BLEEncryption.mm */,
 				57410F141BF8BCBB00D5405F /* BLELicenseGenerator.h */,
 				57410F151BF8BCBB00D5405F /* BLELicenseGenerator.m */,
+				57261C371C325C2D0099D924 /* IPBLEApi_Manager.h */,
 			);
 			path = ServerSync;
 			sourceTree = "<group>";
@@ -535,6 +615,7 @@
 		575CD0A81B564DE200B1E77C /* BLEProject */ = {
 			isa = PBXGroup;
 			children = (
+				57261C4F1C328F950099D924 /* FrameworkHeader_Private */,
 				575CD0E81B564DE200B1E77C /* AppDelegate.h */,
 				575CD0E91B564DE200B1E77C /* AppDelegate.m */,
 				57FC97B91BB12F5B006D6D00 /* Licenses.json */,
@@ -552,6 +633,7 @@
 		575CD0A91B564DE200B1E77C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				57261C2F1C324CB40099D924 /* BLETool */,
 				57410F011BF8BA7200D5405F /* ServerSync */,
 				57E6BCC41B8C41D0002226FB /* UI */,
 				575CD0AA1B564DE200B1E77C /* GlobalSettings */,
@@ -565,6 +647,8 @@
 			children = (
 				575CD0AC1B564DE200B1E77C /* TYRegionManager.h */,
 				575CD0AD1B564DE200B1E77C /* TYRegionManager.m */,
+				57261C471C328E3E0099D924 /* TYUserManager.h */,
+				57261C481C328E3E0099D924 /* TYUserManager.m */,
 				57FC97BB1BB12F87006D6D00 /* LicenseManager.h */,
 				57FC97BC1BB12F87006D6D00 /* LicenseManager.m */,
 				575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */,
@@ -702,6 +786,7 @@
 		575CD1101B564E7300B1E77C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				57261C381C3266D50099D924 /* ServerSync */,
 				575CD1111B564E7300B1E77C /* Beacon */,
 				575CD1181B564E7300B1E77C /* Filter */,
 				575CD11F1B564E7300B1E77C /* MotionDetector */,
@@ -1268,6 +1353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57261C3F1C3267630099D924 /* IPBLEWebObjectConverter.m in Sources */,
 				575CD0FA1B564DE200B1E77C /* BaseControllerTableVC.m in Sources */,
 				575CD1CD1B564E7300B1E77C /* IPXGeometryEngine.cpp in Sources */,
 				575CD1BB1B564E7300B1E77C /* TYPointConverter.m in Sources */,
@@ -1283,15 +1369,18 @@
 				574B31A31C02B73200882360 /* CppUnionLane.cpp in Sources */,
 				5722C9C51C304DF1009D2365 /* ShowBeaconRegionTableVC.m in Sources */,
 				5722C9C71C304DF1009D2365 /* BeaconListForChoosingTableVC.m in Sources */,
+				57261C4E1C328F260099D924 /* MapLicenseGenerator.m in Sources */,
 				57E6BCDE1B8C41D0002226FB /* RATreeNodeCollectionController.m in Sources */,
 				575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */,
 				5722C9C91C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m in Sources */,
 				5722C9D61C304E81009D2365 /* BaseMapVC.m in Sources */,
+				57261C361C324D160099D924 /* IPBLEWebUploader.m in Sources */,
 				575CD1D71B564E7300B1E77C /* TYWeightingAlgorithm.m in Sources */,
 				5754EDF31BB43E5700D63B13 /* BLEMD5Utils.mm in Sources */,
 				5722C9DE1C304EAA009D2365 /* ConfigurePointPositionVC.m in Sources */,
 				575CD1B31B564E7300B1E77C /* TYHeadingDetector.m in Sources */,
 				575CD1D21B564E7300B1E77C /* TYLocationEngine.m in Sources */,
+				57261C451C3267B80099D924 /* IPRegionBeaconDownloader.m in Sources */,
 				575CD1DD1B564E7300B1E77C /* TYDistributionResult.m in Sources */,
 				575CD1C71B564E7300B1E77C /* IPXBeacon.cpp in Sources */,
 				575CD1B01B564E7300B1E77C /* TYCumulativeSingalPowerTD.m in Sources */,
@@ -1326,6 +1415,7 @@
 				57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */,
 				575CD0FF1B564DE200B1E77C /* BuildingTableVC.m in Sources */,
 				575CD1D31B564E7300B1E77C /* TYAlgorithmFactory.m in Sources */,
+				57261C421C3267A30099D924 /* IPRegionBeaconUploader.m in Sources */,
 				575CD0F71B564DE200B1E77C /* MapVC.m in Sources */,
 				575CD1D11B564E7300B1E77C /* TYBeaconFMDBAdapter.m in Sources */,
 				575CD1CE1B564E7300B1E77C /* IPXStepBasedEngine.cpp in Sources */,
@@ -1337,6 +1427,7 @@
 				575CD0FD1B564DE200B1E77C /* MapTableVC.m in Sources */,
 				57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */,
 				57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */,
+				57261C491C328E3E0099D924 /* TYUserManager.m in Sources */,
 				57E6BCE31B8C41D0002226FB /* RATreeView+TableViewDataSource.m in Sources */,
 				57410F161BF8BCBB00D5405F /* BLELicenseGenerator.m in Sources */,
 				575CD0FB1B564DE200B1E77C /* BLEAlgorithmTableVC.m in Sources */,
@@ -1379,6 +1470,7 @@
 				57E6BCE11B8C41D0002226FB /* RATreeView+Enums.m in Sources */,
 				575CD1B41B564E7300B1E77C /* TYMagHeadingDetector.m in Sources */,
 				575CD1D41B564E7300B1E77C /* TYGeometryCalculator.m in Sources */,
+				57261C3C1C3267090099D924 /* IPBLEWebDownloader.m in Sources */,
 				575CD1E41B564E7300B1E77C /* FMDatabaseQueue.m in Sources */,
 				575CD1C21B564E7300B1E77C /* TYLocationManager.m in Sources */,
 				575CD1DA1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m in Sources */,

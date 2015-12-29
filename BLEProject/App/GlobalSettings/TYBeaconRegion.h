@@ -18,4 +18,7 @@
 
 + (TYBeaconRegion *)beaconRegionWithCityID:(NSString *)cid BuildingID:(NSString *)bid Name:(NSString *)name UUID:(NSString *)uuidString Major:(NSNumber *)m;
 
++ (NSDictionary *)buildRegionObject:(TYBeaconRegion *)region;
++ (TYBeaconRegion *)parseBeaconRegionObject:(NSDictionary *)regionObject;
+
 @end
