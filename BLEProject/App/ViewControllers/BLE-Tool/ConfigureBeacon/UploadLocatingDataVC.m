@@ -1,12 +1,12 @@
 //
-//  UploadBeaconVC.m
+//  UploadLocatingDataVC.m
 //  BLEProject
 //
 //  Created by innerpeacer on 15/11/15.
 //  Copyright © 2015年 innerpeacer. All rights reserved.
 //
 
-#import "UploadBeaconVC.h"
+#import "UploadLocatingDataVC.h"
 #import <MKNetworkKit/MKNetworkKit.h>
 #import "TYUserDefaults.h"
 #import "TYPointConverter.h"
@@ -19,8 +19,9 @@
 #import "TYMapCredential_Private.h"
 
 #import "IPRegionBeaconUploader.h"
+#import "TYRegionManager.h"
 
-@interface UploadBeaconVC() <IPRegionBeaconUploaderDelegate>
+@interface UploadLocatingDataVC() <IPRegionBeaconUploaderDelegate>
 {
     TYCity *currentCity;
     TYBuilding *currentBuilding;
@@ -34,11 +35,12 @@
     NSArray *allBeaconArray;
     
     IPRegionBeaconUploader *uploader;
+    TYBeaconRegion *beaconRegion;
 }
 
 @end
 
-@implementation UploadBeaconVC
+@implementation UploadLocatingDataVC
 
 
 - (void)viewDidLoad
@@ -59,12 +61,17 @@
     apiPath = TY_API_UPLOAD_LOCATING_BEACONS;
     
     [self getAllLocatingBeacons];
-//    [self testUploadLocatingBeaconUsingHttpPost];
     
     uploader = [[IPRegionBeaconUploader alloc] initWithUser:user];
     uploader.delegate = self;
     
-    [uploader uploadLocatingBeacons:allBeaconArray];
+    beaconRegion = [TYRegionManager getBeaconRegionForBuilding:currentBuilding.buildingID];
+    
+//    [uploader uploadBeaconRegions:[TYRegionManager getAllBeaconRegions]];
+//    [uploader uploadLocatingBeacons:allBeaconArray];
+//    [uploader addBeaconRegion:@[beaconRegion]];
+    [uploader uploadLocatingBeacons:allBeaconArray AndBeaconRegion:beaconRegion];
+    
 }
 
 - (void)RegionBeaconUploader:(IPRegionBeaconUploader *)uploader DidFailedUploadingWithApi:(NSString *)api WithError:(NSError *)error
@@ -95,24 +102,6 @@
     }
     
     NSLog(@"%d beacons", (int)allBeaconArray.count);
-}
-
-- (void)testUploadLocatingBeaconUsingHttpPost
-{
-    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-    [param setValuesForKeysWithDictionary:[user buildDictionary]];
-    [param setValue:[IPBLEWebObjectConverter prepareJsonString:[IPBLEWebObjectConverter prepareBeaconObjectArray:allBeaconArray]] forKey:@"beacons"];
-    
-    MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:hostName];
-    MKNetworkOperation *op = [engine operationWithPath:apiPath params:param httpMethod:@"POST"];
-    
-    [op addCompletionHandler:^(MKNetworkOperation *operation) {
-        [self addToLog:[operation responseString]];
-    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
-        NSLog(@"Error: %@", [error localizedDescription]);
-    }];
-    
-    [engine enqueueOperation:op];
 }
 
 @end

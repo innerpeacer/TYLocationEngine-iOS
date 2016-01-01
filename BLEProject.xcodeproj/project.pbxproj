@@ -17,7 +17,7 @@
 		5722C9C81C304DF1009D2365 /* ConfigureBeaconsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9BD1C304DF1009D2365 /* ConfigureBeaconsVC.m */; };
 		5722C9C91C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9BF1C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m */; };
 		5722C9CA1C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9C11C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m */; };
-		5722C9CB1C304DF1009D2365 /* UploadBeaconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9C31C304DF1009D2365 /* UploadBeaconVC.m */; };
+		5722C9CB1C304DF1009D2365 /* UploadLocatingDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9C31C304DF1009D2365 /* UploadLocatingDataVC.m */; };
 		5722C9D51C304E81009D2365 /* BaseLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9CE1C304E81009D2365 /* BaseLogVC.m */; };
 		5722C9D61C304E81009D2365 /* BaseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9D01C304E81009D2365 /* BaseMapVC.m */; };
 		5722C9D71C304E81009D2365 /* CityBuildingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5722C9D21C304E81009D2365 /* CityBuildingTableVC.m */; };
@@ -177,8 +177,8 @@
 		5722C9BF1C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowConfiguredBeaconsTableVC.m; sourceTree = "<group>"; };
 		5722C9C01C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPrimitiveBeaconTableVC.h; sourceTree = "<group>"; };
 		5722C9C11C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPrimitiveBeaconTableVC.m; sourceTree = "<group>"; };
-		5722C9C21C304DF1009D2365 /* UploadBeaconVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadBeaconVC.h; sourceTree = "<group>"; };
-		5722C9C31C304DF1009D2365 /* UploadBeaconVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadBeaconVC.m; sourceTree = "<group>"; };
+		5722C9C21C304DF1009D2365 /* UploadLocatingDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadLocatingDataVC.h; sourceTree = "<group>"; };
+		5722C9C31C304DF1009D2365 /* UploadLocatingDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadLocatingDataVC.m; sourceTree = "<group>"; };
 		5722C9CD1C304E81009D2365 /* BaseLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLogVC.h; sourceTree = "<group>"; };
 		5722C9CE1C304E81009D2365 /* BaseLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLogVC.m; sourceTree = "<group>"; };
 		5722C9CF1C304E81009D2365 /* BaseMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapVC.h; sourceTree = "<group>"; };
@@ -493,8 +493,8 @@
 				5722C9BF1C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m */,
 				5722C9C01C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.h */,
 				5722C9C11C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m */,
-				5722C9C21C304DF1009D2365 /* UploadBeaconVC.h */,
-				5722C9C31C304DF1009D2365 /* UploadBeaconVC.m */,
+				5722C9C21C304DF1009D2365 /* UploadLocatingDataVC.h */,
+				5722C9C31C304DF1009D2365 /* UploadLocatingDataVC.m */,
 			);
 			path = ConfigureBeacon;
 			sourceTree = "<group>";
@@ -1434,7 +1434,7 @@
 				575CD1B51B564E7300B1E77C /* TYMotionDetector.m in Sources */,
 				575CD1B81B564E7300B1E77C /* TYStepEvent.m in Sources */,
 				5722C9D71C304E81009D2365 /* CityBuildingTableVC.m in Sources */,
-				5722C9CB1C304DF1009D2365 /* UploadBeaconVC.m in Sources */,
+				5722C9CB1C304DF1009D2365 /* UploadLocatingDataVC.m in Sources */,
 				575CD1B71B564E7300B1E77C /* TYStepDetector.m in Sources */,
 				5722C9C61C304DF1009D2365 /* AddPrimitiveBeaconsVC.m in Sources */,
 				575CD1E21B564E7300B1E77C /* FMDatabaseAdditions.m in Sources */,

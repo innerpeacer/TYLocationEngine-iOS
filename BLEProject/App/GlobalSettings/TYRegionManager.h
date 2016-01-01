@@ -5,7 +5,8 @@
 
 @interface TYRegionManager : NSObject
 
-+ (CLBeaconRegion *)getBeaconRegionForBuilding:(NSString *)buildingID;
++ (TYBeaconRegion *)getBeaconRegionForBuilding:(NSString *)buildingID;
++ (NSArray *)getAllBeaconRegions;
 + (void)reloadRegions;
 
 @end

@@ -462,10 +462,10 @@
             </objects>
             <point key="canvasLocation" x="1441" y="19"/>
         </scene>
-        <!--Upload BeaconVC-->
+        <!--Upload Locating DataVC-->
         <scene sceneID="fBv-t7-GRE">
             <objects>
-                <viewController storyboardIdentifier="UploadBeaconVC" id="2P0-nv-RjZ" customClass="UploadBeaconVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadLocatingDataVC" id="2P0-nv-RjZ" customClass="UploadLocatingDataVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XzI-el-qAq"/>
                         <viewControllerLayoutGuide type="bottom" id="JuS-da-6ir"/>

@@ -58,7 +58,7 @@
     self.beaconManager = [[TYBeaconManager alloc] init];
     self.beaconManager.delegate = self;
     
-    self.publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:self.currentBuilding.buildingID];
+    self.publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:self.currentBuilding.buildingID].region;
     
     self.scannedBeacons = [[NSMutableArray alloc] init];
     self.allBeacons = [[NSMutableDictionary alloc] init];

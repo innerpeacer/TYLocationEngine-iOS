@@ -13,7 +13,7 @@
                                  @[@"添加Beacon", @"addPrimitiveController"],
                                  @[@"配置Beacon", @"ConfigureBeaconsVC"],
                                  @[@"验证Beacon数据", @"CheckBeaconDatabaseVC"],
-                                 @[@"上传Beacon数据", @"UploadBeaconVC"],
+                                 @[@"上传定位数据", @"UploadLocatingDataVC"],
                                  @[@"配置点位图", @"ConfigurePointPositionVC"],
                                                                   ];
     

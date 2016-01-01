@@ -70,7 +70,7 @@
     param[@"license"] = user.license;
     param[@"beacons"] = [IPBLEWebObjectConverter prepareJsonString:[IPBLEWebObjectConverter prepareBeaconObjectArray:beacons]];
     param[@"regions"] = [IPBLEWebObjectConverter prepareJsonString:[IPBLEWebObjectConverter prepareBeaconRegionObjectArray:@[region]]];
-    [uploader uploadWithApi:TY_API_UPLOAD_LOCATING_BEACONS Parameters:param];
+    [uploader uploadWithApi:TY_API_ADD_REGION_AND_BEACONS Parameters:param];
 }
 
 - (void)WebUploaderDidFailedUploading:(IPBLEWebUploader *)uploader WithApi:(NSString *)api WithError:(NSError *)error

@@ -92,7 +92,7 @@
 
 - (void)initLocationSettings
 {
-    publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
+    publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID].region;
     locationManager = [[TYLocationManager alloc] initWithBuilding:[TYUserDefaults getDefaultBuilding]];
     [locationManager setLimitBeaconNumber:YES];
 //    [locationManager setLimitBeaconNumber:NO];

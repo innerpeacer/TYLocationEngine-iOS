@@ -82,7 +82,7 @@
 
 - (void)initLocationSettings
 {
-    publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
+    publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID].region;
     
     np2LocationManager = [[TYLocationManager alloc] initWithBuilding:self.currentBuilding];
     np2LocationManager.delegate = self;

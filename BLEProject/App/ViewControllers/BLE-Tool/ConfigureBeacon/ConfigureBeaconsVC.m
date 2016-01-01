@@ -61,7 +61,7 @@
     beaconManager = [[TYBeaconManager alloc] init];
     beaconManager.delegate = self;
     
-    beaconRegion =  [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID];
+    beaconRegion =  [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID].region;
     
         NSLog(@"%@", [TYUserDefaults getDefaultBuilding]);
         NSLog(@"%@", beaconRegion);

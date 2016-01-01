@@ -44,7 +44,6 @@
     NSString *documentDirectory = [paths objectAtIndex:0];
     NSLog(@"%@", documentDirectory);
     [TYMapEnvironment setRootDirectoryForMapFiles:[documentDirectory stringByAppendingPathComponent:DEFAULT_MAP_ROOT]];
-
 }
 
 - (void)setDefaultPlaceIfNeeded

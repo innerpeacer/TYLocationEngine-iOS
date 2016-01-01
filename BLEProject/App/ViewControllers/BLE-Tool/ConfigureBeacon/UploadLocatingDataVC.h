@@ -1,5 +1,5 @@
 //
-//  UploadBeaconVC.h
+//  UploadLocatingDataVC.h
 //  BLEProject
 //
 //  Created by innerpeacer on 15/11/15.
@@ -8,6 +8,6 @@
 
 #import "BaseLogVC.h"
 
-@interface UploadBeaconVC : BaseLogVC
+@interface UploadLocatingDataVC : BaseLogVC
 
 @end
