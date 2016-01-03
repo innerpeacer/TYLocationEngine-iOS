@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="loy-q6-XHu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="l4E-it-kgE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pht-eM-pgj" customClass="TYMapView">
@@ -45,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6v8-AU-gxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="167" y="-727"/>
+            <point key="canvasLocation" x="313.125" y="-767.95774647887322"/>
         </scene>
         <!--Base Location TestVC-->
         <scene sceneID="Acn-uz-cj2">
@@ -56,19 +56,19 @@
                         <viewControllerLayoutGuide type="bottom" id="fpd-uw-0ya"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WWi-B5-xK6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-Qu-bFQ" customClass="TYMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cE-Pi-Nck">
-                                        <rect key="frame" x="20" y="484" width="62.5" height="20.5"/>
+                                        <rect key="frame" x="20" y="516" width="62.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QSJ-KZ-Oeb">
-                                        <rect key="frame" x="90.5" y="479" width="51" height="31"/>
+                                        <rect key="frame" x="90" y="511" width="51" height="31"/>
                                         <connections>
                                             <action selector="publicSwitchToggled:" destination="M6V-xj-jKC" eventType="valueChanged" id="mzA-pB-oTp"/>
                                         </connections>
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ha4-kj-rXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="167" y="-727"/>
+            <point key="canvasLocation" x="313.125" y="-767.95774647887322"/>
         </scene>
         <!--Location Engine TestVC-->
         <scene sceneID="rGC-DS-pro">
@@ -109,19 +109,19 @@
                         <viewControllerLayoutGuide type="bottom" id="xdx-sQ-1Rq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UxK-Ig-A7u">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJT-8p-VAc" customClass="TYMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e9-Fx-BAN">
-                                        <rect key="frame" x="20" y="484.5" width="62.5" height="20.5"/>
+                                        <rect key="frame" x="20" y="516" width="62.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CCO-Rs-qTp">
-                                        <rect key="frame" x="90" y="479" width="51" height="31"/>
+                                        <rect key="frame" x="90" y="511" width="51" height="31"/>
                                         <connections>
                                             <action selector="publicSwitchToggled:" destination="KLK-jf-nHP" eventType="valueChanged" id="43T-vP-WRm"/>
                                         </connections>
@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfL-t0-2KC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="-736"/>
+            <point key="canvasLocation" x="1689.375" y="-777.46478873239425"/>
         </scene>
         <!--Multi Location TestVC-->
         <scene sceneID="46H-cd-sZY">
@@ -162,19 +162,19 @@
                         <viewControllerLayoutGuide type="bottom" id="0h8-fj-QQl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q2w-Xw-0fW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFn-ad-QQ7" customClass="TYMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVh-fC-L9i">
-                                        <rect key="frame" x="20" y="484" width="62.5" height="20.5"/>
+                                        <rect key="frame" x="20" y="516" width="62.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nYg-ZD-LwM">
-                                        <rect key="frame" x="90.5" y="479" width="51" height="31"/>
+                                        <rect key="frame" x="90" y="511" width="51" height="31"/>
                                         <connections>
                                             <action selector="publicSwitchToggled:" destination="GGd-Dt-8aO" eventType="valueChanged" id="vf6-IK-d8u"/>
                                         </connections>
@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xs-Kq-WMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536" y="-736"/>
+            <point key="canvasLocation" x="1005" y="-777.46478873239425"/>
         </scene>
         <!--Beacon Filter TestVC-->
         <scene sceneID="r4n-ee-QbB">
@@ -215,19 +215,19 @@
                         <viewControllerLayoutGuide type="bottom" id="zf7-b6-GXi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bom-Kt-xDB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vff-Qc-0iQ" customClass="TYMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6v-1J-Fsd">
-                                        <rect key="frame" x="20" y="484" width="62.5" height="20.5"/>
+                                        <rect key="frame" x="20" y="516" width="62.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zIE-gj-cKh">
-                                        <rect key="frame" x="100.5" y="479" width="51" height="31"/>
+                                        <rect key="frame" x="100" y="511" width="51" height="31"/>
                                         <connections>
                                             <action selector="publicSwitchToggled:" destination="Coe-jV-uqX" eventType="valueChanged" id="GpM-t0-oIb"/>
                                             <action selector="publicSwitchToggled:" destination="GGd-Dt-8aO" eventType="valueChanged" id="NIO-rN-Yjt"/>
@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdg-lU-prz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="-14"/>
+            <point key="canvasLocation" x="1246.875" y="-14.788732394366196"/>
         </scene>
         <!--Cpp Engine TestVC-->
         <scene sceneID="hFX-tZ-CBd">
@@ -270,25 +270,25 @@
                         <viewControllerLayoutGuide type="bottom" id="NDm-4s-H3f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gjT-Ra-Vdd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zeo-UO-so3" customClass="TYMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikV-wZ-gcK">
-                                        <rect key="frame" x="20" y="484.5" width="62.5" height="20.5"/>
+                                        <rect key="frame" x="20" y="516" width="62.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Zh-8r-yNH">
-                                        <rect key="frame" x="90" y="479" width="51" height="31"/>
+                                        <rect key="frame" x="90" y="511" width="51" height="31"/>
                                         <connections>
                                             <action selector="publicSwitchToggled:" destination="bd9-Nl-tnR" eventType="valueChanged" id="Md3-ht-EAM"/>
                                         </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pH5-Op-Tpy">
-                                        <rect key="frame" x="252" y="479" width="51" height="31"/>
+                                        <rect key="frame" x="532" y="511" width="51" height="31"/>
                                         <connections>
                                             <action selector="followingModeSwitchToggled:" destination="bd9-Nl-tnR" eventType="valueChanged" id="TjJ-vF-Tya"/>
                                         </connections>
@@ -321,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tix-Yy-vwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="-14"/>
+            <point key="canvasLocation" x="2056.875" y="-14.788732394366196"/>
         </scene>
         <!--Cpp Engine CompareVC-->
         <scene sceneID="L11-WC-vWY">
@@ -332,19 +332,19 @@
                         <viewControllerLayoutGuide type="bottom" id="7rF-om-mjB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lf0-5R-uhz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noQ-DZ-hq0" customClass="TYMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k9-NH-EQF">
-                                        <rect key="frame" x="20" y="484" width="62.5" height="20.5"/>
+                                        <rect key="frame" x="20" y="516" width="62.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jRX-g4-oBq">
-                                        <rect key="frame" x="90.5" y="479" width="51" height="31"/>
+                                        <rect key="frame" x="90" y="511" width="51" height="31"/>
                                         <connections>
                                             <action selector="publicSwitchToggled:" destination="XZB-JA-6AJ" eventType="valueChanged" id="pP9-2C-ySg"/>
                                         </connections>
@@ -374,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHC-So-TlZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="662"/>
+            <point key="canvasLocation" x="2056.875" y="699.29577464788724"/>
         </scene>
     </scenes>
 </document>

@@ -17,7 +17,6 @@
 - (void)RegionBeaconUploader:(IPRegionBeaconUploader *)uploader DidFinishUploadingWithApi:(NSString *)api WithDescription:(NSString *)description;
 - (void)RegionBeaconUploader:(IPRegionBeaconUploader *)uploader DidFailedUploadingWithApi:(NSString *)api WithError:(NSError *)error;
 
-
 @end
 
 @interface IPRegionBeaconUploader : NSObject

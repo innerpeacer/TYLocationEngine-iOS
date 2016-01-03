@@ -12,7 +12,7 @@
 #pragma mark -
 #pragma mark User API
 #define TY_API_GET_ALL_BEACON_REGIONS               @"/TYMapServerManager/user/ble/GetAllBeaconRegions"
-#define TY_API_GET_TAGRET_LOCATING_BEACONS          @"/TYMapServerManager/user/ble/GetLocatingBeacons"
+#define TY_API_GET_TARGET_LOCATING_BEACONS          @"/TYMapServerManager/user/ble/GetLocatingBeacons"
 #define TY_API_GET_TARGET_BEACON_REGION             @"/TYMapServerManager/user/ble/GetBeaconRegion"
 #define TY_API_GET_TARGET_REGION_AND_BEACON         @"/TYMapServerManager/user/ble/GetRegionAndBeacon"
 

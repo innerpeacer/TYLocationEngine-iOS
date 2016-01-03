@@ -16,7 +16,6 @@
 #import "BLELicenseGenerator.h"
 #import "TYUserManager.h"
 #import "IPBLEWebObjectConverter.h"
-#import "TYMapCredential_Private.h"
 
 #import "IPRegionBeaconUploader.h"
 #import "TYRegionManager.h"
@@ -29,14 +28,14 @@
     
     TYMapCredential *user;
     
-    NSString *hostName;
-    NSString *apiPath;
-    
     NSArray *allBeaconArray;
     
     IPRegionBeaconUploader *uploader;
     TYBeaconRegion *beaconRegion;
 }
+
+- (IBAction)uploadAllBeaconRegions:(id)sender;
+- (IBAction)uploadCurrentLocatingData:(id)sender;
 
 @end
 
@@ -53,12 +52,9 @@
     
     NSLog(@"%@", allMapInfos);
     
-    self.title = @"上传Beacon数据";
+    self.title = @"上传定位数据";
     
     user = [TYUserManager createSuperUser:currentBuilding.buildingID];
-    
-    hostName = HOST_NAME;
-    apiPath = TY_API_UPLOAD_LOCATING_BEACONS;
     
     [self getAllLocatingBeacons];
     
@@ -66,12 +62,6 @@
     uploader.delegate = self;
     
     beaconRegion = [TYRegionManager getBeaconRegionForBuilding:currentBuilding.buildingID];
-    
-//    [uploader uploadBeaconRegions:[TYRegionManager getAllBeaconRegions]];
-//    [uploader uploadLocatingBeacons:allBeaconArray];
-//    [uploader addBeaconRegion:@[beaconRegion]];
-    [uploader uploadLocatingBeacons:allBeaconArray AndBeaconRegion:beaconRegion];
-    
 }
 
 - (void)RegionBeaconUploader:(IPRegionBeaconUploader *)uploader DidFailedUploadingWithApi:(NSString *)api WithError:(NSError *)error
@@ -102,6 +92,16 @@
     }
     
     NSLog(@"%d beacons", (int)allBeaconArray.count);
+}
+
+- (IBAction)uploadAllBeaconRegions:(id)sender
+{
+    [uploader uploadBeaconRegions:[TYRegionManager getAllBeaconRegions]];
+}
+
+- (IBAction)uploadCurrentLocatingData:(id)sender
+{
+    [uploader uploadLocatingBeacons:allBeaconArray AndBeaconRegion:beaconRegion];
 }
 
 @end

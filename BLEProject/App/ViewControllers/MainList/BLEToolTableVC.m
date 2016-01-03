@@ -14,6 +14,7 @@
                                  @[@"配置Beacon", @"ConfigureBeaconsVC"],
                                  @[@"验证Beacon数据", @"CheckBeaconDatabaseVC"],
                                  @[@"上传定位数据", @"UploadLocatingDataVC"],
+                                 @[@"下载定位数据", @"DownloadLocatingDataVC"],
                                  @[@"配置点位图", @"ConfigurePointPositionVC"],
                                                                   ];
     
@@ -27,7 +28,7 @@
         [self.objects addObject:name];
         [self.controllerDict setObject:storyboardID forKey:name];
     }
-    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
+    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -44,7 +44,7 @@
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
 
-     NSString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_BEACON_MAJOR, FIELD_BEACON_MINOR, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID, TABLE_BEACON];
+     NSString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@,%@,%@ FROM %@", FIELD_BEACON_O_GEOM, FIELD_BEACON_1_UUID, FIELD_BEACON_2_MAJOR, FIELD_BEACON_3_MINOR, FIELD_BEACON_4_FLOOR, FIELD_BEACON_5_SHOPID, TABLE_BEACON];
     const char *selectSql = [sql UTF8String];
     sqlite3_stmt *statement;
     if (sqlite3_prepare_v2(_database, selectSql, -1, &statement, nil) == SQLITE_OK) {
@@ -72,8 +72,8 @@
 
 - (TYPublicBeacon *)getLocationingBeaconWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
 {
-    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@ FROM %@", FIELD_GEOM, FIELD_UUID, FIELD_FLOOR, FIELD_TY_BEACON_SHOPID, TABLE_BEACON];
-    NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d and %@ = %d ",FIELD_BEACON_MAJOR, major.intValue, FIELD_BEACON_MINOR, minor.intValue];
+    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@,%@,%@ FROM %@", FIELD_BEACON_O_GEOM, FIELD_BEACON_1_UUID, FIELD_BEACON_4_FLOOR, FIELD_BEACON_5_SHOPID, TABLE_BEACON];
+    NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d and %@ = %d ",FIELD_BEACON_2_MAJOR, major.intValue, FIELD_BEACON_3_MINOR, minor.intValue];
     [sql appendString:whereClause];
     
     const char *selectSql = [sql UTF8String];

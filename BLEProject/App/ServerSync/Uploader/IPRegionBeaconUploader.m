@@ -55,9 +55,10 @@
 - (void)uploadLocatingBeacons:(NSArray *)beacons
 {
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-    param[@"userID"] = user.userID;
-    param[@"buildingID"] = user.buildingID;
-    param[@"license"] = user.license;
+    [param setValuesForKeysWithDictionary:user.buildDictionary];
+//    param[@"userID"] = user.userID;
+//    param[@"buildingID"] = user.buildingID;
+//    param[@"license"] = user.license;
     [param setValue:[IPBLEWebObjectConverter prepareJsonString:[IPBLEWebObjectConverter prepareBeaconObjectArray:beacons]] forKey:@"beacons"];
     [uploader uploadWithApi:TY_API_UPLOAD_LOCATING_BEACONS Parameters:param];
 }
@@ -65,9 +66,10 @@
 - (void)uploadLocatingBeacons:(NSArray *)beacons AndBeaconRegion:(TYBeaconRegion *)region
 {
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-    param[@"userID"] = user.userID;
-    param[@"buildingID"] = user.buildingID;
-    param[@"license"] = user.license;
+    [param setValuesForKeysWithDictionary:user.buildDictionary];
+//    param[@"userID"] = user.userID;
+//    param[@"buildingID"] = user.buildingID;
+//    param[@"license"] = user.license;
     param[@"beacons"] = [IPBLEWebObjectConverter prepareJsonString:[IPBLEWebObjectConverter prepareBeaconObjectArray:beacons]];
     param[@"regions"] = [IPBLEWebObjectConverter prepareJsonString:[IPBLEWebObjectConverter prepareBeaconRegionObjectArray:@[region]]];
     [uploader uploadWithApi:TY_API_ADD_REGION_AND_BEACONS Parameters:param];
