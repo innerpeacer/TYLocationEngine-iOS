@@ -289,7 +289,7 @@
 - (BOOL)insertCheckCode:(NSString *)code
 {
     NSString *errorString = @"Error: failed to insert checkcode into the database.";
-    NSString *sql = [NSString stringWithFormat:@"Insert into %@ (%@) values (?)", TABLE_BEACON, FIELD_CODE];
+    NSString *sql = [NSString stringWithFormat:@"Insert into %@ (%@) values (?)", TABLE_CODE, FIELD_CODE];
     sqlite3_stmt *statement;
     int success = sqlite3_prepare_v2(_database, [sql UTF8String], -1, &statement, NULL);
     if (success != SQLITE_OK) {
@@ -364,7 +364,7 @@
     if (sqlite3_prepare_v2(_database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
         if (sqlite3_step(statement) == SQLITE_ROW) {
             if (sqlite3_column_type(statement, 0) != SQLITE_NULL) {
-                code = [[NSString alloc] initWithCString:(char *)sqlite3_column_text(statement,05) encoding:NSUTF8StringEncoding];
+                code = [[NSString alloc] initWithCString:(char *)sqlite3_column_text(statement, 0) encoding:NSUTF8StringEncoding];
             }
         }
     }

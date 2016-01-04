@@ -5,13 +5,13 @@
 
 #define DEFAULT_MAP_ROOT @"Map"
 
-#import "TYBuildingMonitor.h"
+#import "IPSyncBeaconDBAdapter.h"
 
 #import "TYBeaconRegionDBAdapter.h"
 #import <CoreLocation/CoreLocation.h>
 @interface AppDelegate()
 {
-    TYBuildingMonitor *monitor;
+
 }
 
 @end
@@ -26,12 +26,6 @@
     [self registerDefaultsFromSettingsBundle];
     
     return YES;
-}
-
-- (void)testMonitor
-{
-    monitor = [[TYBuildingMonitor alloc] initMonitor];
-    [monitor start];
 }
 
 - (void)initArcGISEnvironment
@@ -60,7 +54,6 @@
 - (void)copyMapFilesIfNeeded
 {
     BOOL overwritingFile = NO;
-
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     

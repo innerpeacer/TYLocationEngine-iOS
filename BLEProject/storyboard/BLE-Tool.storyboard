@@ -863,5 +863,52 @@
             </objects>
             <point key="canvasLocation" x="3931" y="-14"/>
         </scene>
+        <!--Fetch Locating DataVC-->
+        <scene sceneID="jUk-BN-Yev">
+            <objects>
+                <viewController storyboardIdentifier="FetchLocatingDataVC" id="u4A-2e-vym" customClass="FetchLocatingDataVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Acr-iP-dwQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="uQk-MJ-ABL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b5p-fN-oO1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrK-yy-qCm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDD-Ca-m9V">
+                                <rect key="frame" x="175" y="483" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="LuH-QT-vVS"/>
+                                </constraints>
+                                <state key="normal" title="获取定位数据"/>
+                                <connections>
+                                    <action selector="fetchData:" destination="u4A-2e-vym" eventType="touchUpInside" id="V3j-Ex-P2R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uQk-MJ-ABL" firstAttribute="top" secondItem="hrK-yy-qCm" secondAttribute="bottom" id="dL4-gf-FLK"/>
+                            <constraint firstItem="hrK-yy-qCm" firstAttribute="top" secondItem="b5p-fN-oO1" secondAttribute="top" id="fdh-RT-m7I"/>
+                            <constraint firstItem="hrK-yy-qCm" firstAttribute="leading" secondItem="b5p-fN-oO1" secondAttribute="leading" id="o6I-eP-csh"/>
+                            <constraint firstItem="YDD-Ca-m9V" firstAttribute="centerX" secondItem="b5p-fN-oO1" secondAttribute="centerX" id="rSa-Pg-EZ7"/>
+                            <constraint firstAttribute="trailing" secondItem="hrK-yy-qCm" secondAttribute="trailing" id="snr-Qm-Uh0"/>
+                            <constraint firstItem="uQk-MJ-ABL" firstAttribute="top" secondItem="YDD-Ca-m9V" secondAttribute="bottom" constant="87" id="tzk-Ql-Imu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logView" destination="hrK-yy-qCm" id="Rw3-oN-Y4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baa-6O-0Gb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4669" y="-14"/>
+        </scene>
     </scenes>
 </document>
