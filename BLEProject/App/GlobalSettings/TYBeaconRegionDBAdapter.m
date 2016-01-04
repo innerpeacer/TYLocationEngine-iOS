@@ -7,7 +7,7 @@
 //
 
 #import "TYBeaconRegionDBAdapter.h"
-#import "TYBeaconRegionDBConstants.h"
+#import "IPBeaconRegionDBConstants.h"
 
 #import <sqlite3.h>
 #import "TYBeaconRegion.h"

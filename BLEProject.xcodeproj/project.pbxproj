@@ -45,12 +45,13 @@
 		574EE2F71B724809005A6482 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574EE2F61B724809005A6482 /* TYMapData.framework */; };
 		5754EDEF1BB43D0E00D63B13 /* BLEMD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDED1BB43D0E00D63B13 /* BLEMD5.cpp */; };
 		5754EDF31BB43E5700D63B13 /* BLEMD5Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF21BB43E5700D63B13 /* BLEMD5Utils.mm */; };
-		5754EDF61BB4487C00D63B13 /* TYBeaconDBCodeChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF51BB4487C00D63B13 /* TYBeaconDBCodeChecker.m */; };
 		5754EDF91BB44D9500D63B13 /* IPXBeaconDBChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5754EDF71BB44D9500D63B13 /* IPXBeaconDBChecker.cpp */; };
 		5755FA1A1C3A10C2000CA7C8 /* DownloadLocatingDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755FA171C3A10C2000CA7C8 /* DownloadLocatingDataVC.m */; };
 		5755FA1B1C3A10C2000CA7C8 /* UploadLocatingDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755FA191C3A10C2000CA7C8 /* UploadLocatingDataVC.m */; };
 		5755FA1E1C3A10D1000CA7C8 /* FetchLocatingDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755FA1D1C3A10D1000CA7C8 /* FetchLocatingDataVC.m */; };
 		5755FA211C3A1300000CA7C8 /* TYBLEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755FA201C3A1300000CA7C8 /* TYBLEDataManager.m */; };
+		5755FA451C3A3529000CA7C8 /* TYBeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755FA441C3A3529000CA7C8 /* TYBeaconRegion.m */; };
+		5755FA4F1C3A37CB000CA7C8 /* IPBeaconDBCodeChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755FA4E1C3A37CB000CA7C8 /* IPBeaconDBCodeChecker.m */; };
 		575CD0EA1B564DE200B1E77C /* TYRegionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AD1B564DE200B1E77C /* TYRegionManager.m */; };
 		575CD0EB1B564DE200B1E77C /* TYUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */; };
 		575CD0ED1B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD0B51B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m */; };
@@ -90,10 +91,8 @@
 		575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1301B564E7300B1E77C /* DoubleRounder.m */; };
 		575CD1BB1B564E7300B1E77C /* TYPointConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1321B564E7300B1E77C /* TYPointConverter.m */; };
 		575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1371B564E7300B1E77C /* IPXBeaconDBAdapter.m */; };
-		575CD1BD1B564E7300B1E77C /* IPXRegionDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13A1B564E7300B1E77C /* IPXRegionDBAdapter.m */; };
 		575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 575CD13E1B564E7300B1E77C /* IPXLocationEngine.mm */; };
 		575CD1BF1B564E7300B1E77C /* TYBeaconKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1411B564E7300B1E77C /* TYBeaconKey.m */; };
-		575CD1C01B564E7300B1E77C /* TYBuildingMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1441B564E7300B1E77C /* TYBuildingMonitor.m */; };
 		575CD1C11B564E7300B1E77C /* TYLocationFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1461B564E7300B1E77C /* TYLocationFileManager.m */; };
 		575CD1C21B564E7300B1E77C /* TYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 575CD1481B564E7300B1E77C /* TYLocationManager.m */; };
 		575CD1C31B564E7300B1E77C /* IPXGeometryCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575CD14C1B564E7300B1E77C /* IPXGeometryCalculator.cpp */; };
@@ -145,7 +144,6 @@
 		57B3989E1A6364D900E72FF5 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989D1A6364D900E72FF5 /* libgeos.a */; };
 		57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */; };
 		57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */; };
-		57E6BCC31B8C1C5D002226FB /* TYBeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */; };
 		57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC61B8C41D0002226FB /* RADataObject.m */; };
 		57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC91B8C41D0002226FB /* RATreeNode.m */; };
 		57E6BCDE1B8C41D0002226FB /* RATreeNodeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCCB1B8C41D0002226FB /* RATreeNodeCollectionController.m */; };
@@ -221,7 +219,6 @@
 		57261C511C328FCA0099D924 /* IPMD5Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMD5Utils.h; sourceTree = "<group>"; };
 		57342C5F1C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegionDBAdapter.h; sourceTree = "<group>"; };
 		57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegionDBAdapter.m; sourceTree = "<group>"; };
-		57342C621C2C4D7000FA2745 /* TYBeaconRegionDBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegionDBConstants.h; sourceTree = "<group>"; };
 		57410F0E1BF8BBF400D5405F /* IPXEncryption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPXEncryption.cpp; sourceTree = "<group>"; };
 		57410F0F1BF8BBF400D5405F /* IPXEncryption.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IPXEncryption.hpp; sourceTree = "<group>"; };
 		57410F111BF8BC1800D5405F /* BLEEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEEncryption.h; sourceTree = "<group>"; };
@@ -239,8 +236,6 @@
 		5754EDEE1BB43D0E00D63B13 /* BLEMD5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BLEMD5.hpp; sourceTree = "<group>"; };
 		5754EDF11BB43E5700D63B13 /* BLEMD5Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEMD5Utils.h; sourceTree = "<group>"; };
 		5754EDF21BB43E5700D63B13 /* BLEMD5Utils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BLEMD5Utils.mm; sourceTree = "<group>"; };
-		5754EDF41BB4487C00D63B13 /* TYBeaconDBCodeChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconDBCodeChecker.h; sourceTree = "<group>"; };
-		5754EDF51BB4487C00D63B13 /* TYBeaconDBCodeChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconDBCodeChecker.m; sourceTree = "<group>"; };
 		5754EDF71BB44D9500D63B13 /* IPXBeaconDBChecker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPXBeaconDBChecker.cpp; sourceTree = "<group>"; };
 		5754EDF81BB44D9500D63B13 /* IPXBeaconDBChecker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IPXBeaconDBChecker.hpp; sourceTree = "<group>"; };
 		5755FA161C3A10C2000CA7C8 /* DownloadLocatingDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadLocatingDataVC.h; sourceTree = "<group>"; };
@@ -251,6 +246,11 @@
 		5755FA1D1C3A10D1000CA7C8 /* FetchLocatingDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchLocatingDataVC.m; sourceTree = "<group>"; };
 		5755FA1F1C3A1300000CA7C8 /* TYBLEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBLEDataManager.h; sourceTree = "<group>"; };
 		5755FA201C3A1300000CA7C8 /* TYBLEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBLEDataManager.m; sourceTree = "<group>"; };
+		5755FA431C3A3529000CA7C8 /* TYBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegion.h; sourceTree = "<group>"; };
+		5755FA441C3A3529000CA7C8 /* TYBeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegion.m; sourceTree = "<group>"; };
+		5755FA4A1C3A36A2000CA7C8 /* IPBeaconRegionDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPBeaconRegionDBConstants.h; sourceTree = "<group>"; };
+		5755FA4D1C3A37CB000CA7C8 /* IPBeaconDBCodeChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPBeaconDBCodeChecker.h; sourceTree = "<group>"; };
+		5755FA4E1C3A37CB000CA7C8 /* IPBeaconDBCodeChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPBeaconDBCodeChecker.m; sourceTree = "<group>"; };
 		575CD0AC1B564DE200B1E77C /* TYRegionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRegionManager.h; sourceTree = "<group>"; };
 		575CD0AD1B564DE200B1E77C /* TYRegionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRegionManager.m; sourceTree = "<group>"; };
 		575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYUserDefaults.h; sourceTree = "<group>"; };
@@ -330,15 +330,10 @@
 		575CD1361B564E7300B1E77C /* IPXBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXBeaconDBAdapter.h; sourceTree = "<group>"; };
 		575CD1371B564E7300B1E77C /* IPXBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPXBeaconDBAdapter.m; sourceTree = "<group>"; };
 		575CD1381B564E7300B1E77C /* IPXBeaconDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXBeaconDBConstants.h; sourceTree = "<group>"; };
-		575CD1391B564E7300B1E77C /* IPXRegionDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXRegionDBAdapter.h; sourceTree = "<group>"; };
-		575CD13A1B564E7300B1E77C /* IPXRegionDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPXRegionDBAdapter.m; sourceTree = "<group>"; };
-		575CD13B1B564E7300B1E77C /* IPXRegionDBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXRegionDBConstants.h; sourceTree = "<group>"; };
 		575CD13D1B564E7300B1E77C /* IPXLocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPXLocationEngine.h; sourceTree = "<group>"; };
 		575CD13E1B564E7300B1E77C /* IPXLocationEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IPXLocationEngine.mm; sourceTree = "<group>"; };
 		575CD1401B564E7300B1E77C /* TYBeaconKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconKey.h; sourceTree = "<group>"; };
 		575CD1411B564E7300B1E77C /* TYBeaconKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconKey.m; sourceTree = "<group>"; };
-		575CD1431B564E7300B1E77C /* TYBuildingMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBuildingMonitor.h; sourceTree = "<group>"; };
-		575CD1441B564E7300B1E77C /* TYBuildingMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBuildingMonitor.m; sourceTree = "<group>"; };
 		575CD1451B564E7300B1E77C /* TYLocationFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLocationFileManager.h; sourceTree = "<group>"; };
 		575CD1461B564E7300B1E77C /* TYLocationFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLocationFileManager.m; sourceTree = "<group>"; };
 		575CD1471B564E7300B1E77C /* TYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLocationManager.h; sourceTree = "<group>"; };
@@ -431,8 +426,6 @@
 		57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		57B5C5DB1B565EB200189FE8 /* TYBeaconPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconPool.h; sourceTree = "<group>"; };
 		57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconPool.m; sourceTree = "<group>"; };
-		57E6BCC11B8C1C5D002226FB /* TYBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegion.h; sourceTree = "<group>"; };
-		57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegion.m; sourceTree = "<group>"; };
 		57E6BCC51B8C41D0002226FB /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
 		57E6BCC61B8C41D0002226FB /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
 		57E6BCC81B8C41D0002226FB /* RATreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNode.h; sourceTree = "<group>"; };
@@ -695,11 +688,8 @@
 				57FC97BC1BB12F87006D6D00 /* LicenseManager.m */,
 				575CD0AE1B564DE200B1E77C /* TYUserDefaults.h */,
 				575CD0AF1B564DE200B1E77C /* TYUserDefaults.m */,
-				57E6BCC11B8C1C5D002226FB /* TYBeaconRegion.h */,
-				57E6BCC21B8C1C5D002226FB /* TYBeaconRegion.m */,
 				57342C5F1C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.h */,
 				57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */,
-				57342C621C2C4D7000FA2745 /* TYBeaconRegionDBConstants.h */,
 			);
 			path = GlobalSettings;
 			sourceTree = "<group>";
@@ -841,6 +831,10 @@
 		575CD1111B564E7300B1E77C /* Beacon */ = {
 			isa = PBXGroup;
 			children = (
+				5755FA4D1C3A37CB000CA7C8 /* IPBeaconDBCodeChecker.h */,
+				5755FA4E1C3A37CB000CA7C8 /* IPBeaconDBCodeChecker.m */,
+				5755FA431C3A3529000CA7C8 /* TYBeaconRegion.h */,
+				5755FA441C3A3529000CA7C8 /* TYBeaconRegion.m */,
 				575CD1121B564E7300B1E77C /* TYBeacon.h */,
 				575CD1131B564E7300B1E77C /* TYBeacon.m */,
 				575CD1141B564E7300B1E77C /* TYBeaconManager.h */,
@@ -920,12 +914,10 @@
 		575CD1351B564E7300B1E77C /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				5755FA4A1C3A36A2000CA7C8 /* IPBeaconRegionDBConstants.h */,
 				575CD1361B564E7300B1E77C /* IPXBeaconDBAdapter.h */,
 				575CD1371B564E7300B1E77C /* IPXBeaconDBAdapter.m */,
 				575CD1381B564E7300B1E77C /* IPXBeaconDBConstants.h */,
-				575CD1391B564E7300B1E77C /* IPXRegionDBAdapter.h */,
-				575CD13A1B564E7300B1E77C /* IPXRegionDBAdapter.m */,
-				575CD13B1B564E7300B1E77C /* IPXRegionDBConstants.h */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -951,8 +943,6 @@
 		575CD1421B564E7300B1E77C /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				575CD1431B564E7300B1E77C /* TYBuildingMonitor.h */,
-				575CD1441B564E7300B1E77C /* TYBuildingMonitor.m */,
 				575CD1451B564E7300B1E77C /* TYLocationFileManager.h */,
 				575CD1461B564E7300B1E77C /* TYLocationFileManager.m */,
 				575CD1471B564E7300B1E77C /* TYLocationManager.h */,
@@ -1145,8 +1135,6 @@
 				575CD18E1B564E7300B1E77C /* Database */,
 				575CD1921B564E7300B1E77C /* Entity */,
 				575CD1991B564E7300B1E77C /* Test */,
-				5754EDF41BB4487C00D63B13 /* TYBeaconDBCodeChecker.h */,
-				5754EDF51BB4487C00D63B13 /* TYBeaconDBCodeChecker.m */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -1434,8 +1422,6 @@
 				575CD0F31B564DE200B1E77C /* MultiLocationTestVC.m in Sources */,
 				575CD1C81B564E7300B1E77C /* IPXPoint.cpp in Sources */,
 				575CD1C91B564E7300B1E77C /* IPXPublicBeacon.cpp in Sources */,
-				575CD1BD1B564E7300B1E77C /* IPXRegionDBAdapter.m in Sources */,
-				5754EDF61BB4487C00D63B13 /* TYBeaconDBCodeChecker.m in Sources */,
 				5722C9D51C304E81009D2365 /* BaseLogVC.m in Sources */,
 				5722C9C81C304DF1009D2365 /* ConfigureBeaconsVC.m in Sources */,
 				575CD1AE1B564E7300B1E77C /* TYBeaconManager.m in Sources */,
@@ -1465,6 +1451,7 @@
 				575CD0F71B564DE200B1E77C /* MapVC.m in Sources */,
 				575CD1D11B564E7300B1E77C /* TYBeaconFMDBAdapter.m in Sources */,
 				575CD1CE1B564E7300B1E77C /* IPXStepBasedEngine.cpp in Sources */,
+				5755FA451C3A3529000CA7C8 /* TYBeaconRegion.m in Sources */,
 				575CD1021B564DE200B1E77C /* FloorMapVC.m in Sources */,
 				5702152F1C391E5700F49C64 /* IPBLESyncDataManager.m in Sources */,
 				57410F101BF8BBF400D5405F /* IPXEncryption.cpp in Sources */,
@@ -1495,7 +1482,6 @@
 				575CD0F01B564DE200B1E77C /* CppEngineCompareVC.m in Sources */,
 				575CD0F11B564DE200B1E77C /* CppEngineTestVC.m in Sources */,
 				575CD1C31B564E7300B1E77C /* IPXGeometryCalculator.cpp in Sources */,
-				575CD1C01B564E7300B1E77C /* TYBuildingMonitor.m in Sources */,
 				575CD1DC1B564E7300B1E77C /* TYStaticSample.m in Sources */,
 				575CD1031B564DE200B1E77C /* SetCurrentPlaceVC.m in Sources */,
 				575CD1C11B564E7300B1E77C /* TYLocationFileManager.m in Sources */,
@@ -1503,6 +1489,7 @@
 				575CD1D81B564E7300B1E77C /* TYGeometryFactory.m in Sources */,
 				5755FA1A1C3A10C2000CA7C8 /* DownloadLocatingDataVC.m in Sources */,
 				575CD10D1B564E2C00B1E77C /* main.m in Sources */,
+				5755FA4F1C3A37CB000CA7C8 /* IPBeaconDBCodeChecker.m in Sources */,
 				575CD1B61B564E7300B1E77C /* TYSample.m in Sources */,
 				575CD1B11B564E7300B1E77C /* TYMovingAverage.m in Sources */,
 				575CD1DF1B564E7300B1E77C /* TYTestResult.m in Sources */,
@@ -1523,7 +1510,6 @@
 				575CD1C21B564E7300B1E77C /* TYLocationManager.m in Sources */,
 				575CD1DA1B564E7300B1E77C /* TYPrimitiveBeaconDBAdapter.m in Sources */,
 				57E6BCE41B8C41D0002226FB /* RATreeView+TableViewDelegate.m in Sources */,
-				57E6BCC31B8C1C5D002226FB /* TYBeaconRegion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

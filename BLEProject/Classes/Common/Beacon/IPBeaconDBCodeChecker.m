@@ -6,11 +6,11 @@
 //  Copyright © 2015年 innerpeacer. All rights reserved.
 //
 
-#import "TYBeaconDBCodeChecker.h"
+#import "IPBeaconDBCodeChecker.h"
 #import "BLEMD5Utils.h"
 #import "TYPublicBeacon.h"
 
-@implementation TYBeaconDBCodeChecker
+@implementation IPBeaconDBCodeChecker
 
 + (NSString *)checkBeacons:(NSArray *)array
 {

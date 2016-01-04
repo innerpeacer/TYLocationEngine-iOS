@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <TYMapSDK/TYMapSDK.h>
 
 @class TYBLEDataManager;
 

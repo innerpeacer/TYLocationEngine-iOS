@@ -1,7 +1,5 @@
 #import "SettingTableVC.h"
 
-#import "TYBuildingMonitor.h"
-
 @implementation SettingTableVC
 
 - (void)viewDidLoad
@@ -18,9 +16,6 @@
 //    [self.objects addObject:@"重置定点测试数据"];
 //    [self.controllerDict setObject:@"resetPointTestController" forKey:@"重置定点测试数据"];
     
-    NSLog(@"monitor");
-    TYBuildingMonitor *monitor = [[TYBuildingMonitor alloc] init];
-    [monitor start];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TYBeaconDBCodeChecker : NSObject
+@interface IPBeaconDBCodeChecker : NSObject
 
 + (NSString *)checkBeacons:(NSArray *)array;
 

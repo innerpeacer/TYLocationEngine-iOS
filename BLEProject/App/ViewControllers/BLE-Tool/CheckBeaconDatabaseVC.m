@@ -9,7 +9,7 @@
 #import "CheckBeaconDatabaseVC.h"
 #import <TYMapSDK/TYMapSDK.h>
 #import "TYBeaconFMDBAdapter.h"
-#import "TYBeaconDBCodeChecker.h"
+#import "IPBeaconDBCodeChecker.h"
 
 @interface CheckBeaconDatabaseVC()
 {
@@ -45,7 +45,7 @@
             
             NSString *code;
             if (array && array.count > 0) {
-                code = [TYBeaconDBCodeChecker checkBeacons:array];
+                code = [IPBeaconDBCodeChecker checkBeacons:array];
                 if ([db getCheckCode]) {
                     [db updateCheckCode:code];
                 } else {

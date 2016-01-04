@@ -9,6 +9,7 @@
 #import "IPRegionBeaconDownloader.h"
 #import "IPBLEWebDownloader.h"
 #import "IPBLEWebObjectConverter.h"
+#import "IPBLEApi.h"
 
 @interface IPRegionBeaconDownloader() <IPBLEWebDownloaderDelegate>
 {

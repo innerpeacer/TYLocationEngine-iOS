@@ -14,7 +14,6 @@
 #import "TYLocationManager.h"
 #import "TYRegionManager.h"
 #import "TYUserDefaults.h"
-#import "TYBuildingMonitor.h"
 
 @interface CppEngineTestVC () <TYLocationManagerDelegate>
 {

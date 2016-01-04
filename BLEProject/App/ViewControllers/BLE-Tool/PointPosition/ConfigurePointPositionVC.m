@@ -16,7 +16,7 @@
 #import "TYBeaconManager.h"
 
 #import "TYRegionManager.h"
-#import "TYBeaconDBCodeChecker.h"
+#import "IPBeaconDBCodeChecker.h"
 
 #import "TYPointPosFMDBAdapter.h"
 

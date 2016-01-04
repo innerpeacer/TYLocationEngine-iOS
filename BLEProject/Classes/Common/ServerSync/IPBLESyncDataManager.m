@@ -9,7 +9,7 @@
 #import "IPBLESyncDataManager.h"
 #import "IPBLESyncDownloadingTask.h"
 #import "IPSyncBeaconDBAdapter.h"
-#import "TYBeaconDBCodeChecker.h"
+#import "IPBeaconDBCodeChecker.h"
 
 @interface IPBLESyncDataManager() <IPBLESyncDownloadingTaskDelegate>
 {
@@ -81,7 +81,7 @@
     
     [beaconDB insertLocatingBeacons:beaconArray];
     
-    NSString *code = [TYBeaconDBCodeChecker checkBeacons:beaconArray];
+    NSString *code = [IPBeaconDBCodeChecker checkBeacons:beaconArray];
     [beaconDB insertCheckCode:code];
     
     [beaconDB close];

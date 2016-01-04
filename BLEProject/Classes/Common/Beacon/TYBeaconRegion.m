@@ -7,7 +7,7 @@
 //
 
 #import "TYBeaconRegion.h"
-#import "TYBeaconRegionDBConstants.h"
+#import "IPBeaconRegionDBConstants.h"
 
 @implementation TYBeaconRegion
 

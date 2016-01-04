@@ -9,7 +9,7 @@
 #import "TYBeaconManager.h"
 
 #import "TYRegionManager.h"
-#import "TYBeaconDBCodeChecker.h"
+#import "IPBeaconDBCodeChecker.h"
 
 @interface ConfigureBeaconsVC () <BeaconSelectedDelegate, TYBeaconManagerDelegate>
 {
@@ -237,7 +237,7 @@
         NSLog(@"%d beacons", (int)array.count);
         
         if (array && array.count > 0) {
-            NSString *code = [TYBeaconDBCodeChecker checkBeacons:array];
+            NSString *code = [IPBeaconDBCodeChecker checkBeacons:array];
             if ([db getCheckCode]) {
                 [db updateCheckCode:code];
             } else {
