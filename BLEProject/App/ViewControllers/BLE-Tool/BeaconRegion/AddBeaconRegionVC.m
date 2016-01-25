@@ -49,8 +49,6 @@
         return;
     }
 
-
-//    uuidString = @"FDA50693-A4E2-4FB1-AFCF-C6EB07647825";
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
     if (uuid == nil) {
         UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Error!" message:@"Invalid UUID" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -60,7 +58,6 @@
     
     NSLog(@"UUID: %@", uuid);
     NSLog(@"UUIDString: %@", uuidString);
-    
     
     NSNumber *major = nil;
     NSString *majorString = self.majorTextField.text;
@@ -74,8 +71,6 @@
     NSString *dbPath = [[TYMapEnvironment getRootDirectoryForMapFiles] stringByAppendingPathComponent:@"BeaconRegion.db"];
     TYBeaconRegionDBAdapter *db = [[TYBeaconRegionDBAdapter alloc] initWithPath:dbPath];
     [db open];
-//    [db insertBeaconRegion:region];
-//    [db insertBeaconRegions:@[region, region, region, region]];
     
     TYBeaconRegion *targetRegion = [db getBeaconRegion:currentBuilding.buildingID];
     if (targetRegion == nil) {

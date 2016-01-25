@@ -9,6 +9,7 @@
 #import "TYBLEDataManager.h"
 #import "IPBLESyncDataManager.h"
 
+
 @interface TYBLEDataManager() <IPBLESyncDataManagerDelegate>
 {
     IPBLESyncDataManager *syncManager;
@@ -47,11 +48,22 @@
     
 }
 
+- (void)SyncDataManagerDidFetchBeaconRegion:(TYBeaconRegion *)region
+{
+    [self notifyFetchRegion:region];
+}
+
 - (void)SyncDataManagerDidFinishSyncData:(IPBLESyncDataManager *)manager
 {
     [self notifyFinishFetchingData];
 }
 
+- (void)notifyFetchRegion:(TYBeaconRegion *)region
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(TYBLEDataManagerDidFetchBeaconRegion:)]) {
+        [self.delegate TYBLEDataManagerDidFetchBeaconRegion:region];
+    }
+}
 
 - (void)notifyFinishFetchingData
 {

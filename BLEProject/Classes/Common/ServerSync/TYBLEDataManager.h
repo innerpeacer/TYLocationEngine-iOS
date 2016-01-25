@@ -10,12 +10,14 @@
 #import <TYMapSDK/TYMapSDK.h>
 
 @class TYBLEDataManager;
+@class TYBeaconRegion;
 
 @protocol TYBLEDataManagerDelegate <NSObject>
 
 - (void)TYBLEDataManagerDidFinishFetchingData:(TYBLEDataManager *)manager;
 - (void)TYBLEDataManagerDidFailedFetchingData:(TYBLEDataManager *)manager WithError:(NSError *)error;
-
+@optional
+- (void)TYBLEDataManagerDidFetchBeaconRegion:(TYBeaconRegion *)region;
 @end
 
 @interface TYBLEDataManager : NSObject

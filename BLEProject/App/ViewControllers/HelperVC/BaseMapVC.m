@@ -61,11 +61,15 @@
     }
     
     _floorSegment = [[UISegmentedControl alloc] initWithItems:floorNameArray];
-    CGRect frame = self.mapView.frame;
     
-    _floorSegment.frame = CGRectMake(20, 80, frame.size.width - 40, 30.0);
+    double screenWidth = self.view.frame.size.width;
+    double xOffset = 20;
+    double yOffset = 80;
+    double height = 30;
+    _floorSegment.frame = CGRectMake(xOffset, yOffset, screenWidth - xOffset * 2, height);
     _floorSegment.tintColor = [UIColor blueColor];
     _floorSegment.selectedSegmentIndex = currentIndex;
+    
     
     [_floorSegment addTarget:self action:@selector(floorChanged:) forControlEvents:UIControlEventValueChanged];
     

@@ -20,6 +20,11 @@
     self.title = @"城市列表";
     
     allCities = [TYCityManager parseAllCities];
+    allCities = [allCities sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        TYCity *city1 = obj1;
+        TYCity *city2 = obj2;
+        return [city1.cityID caseInsensitiveCompare:city2.cityID];
+    }];
 }
 
 - (void)didReceiveMemoryWarning

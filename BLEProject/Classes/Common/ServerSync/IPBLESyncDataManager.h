@@ -10,12 +10,13 @@
 #import <TYMapSDK/TYMapSDK.h>
 
 @class IPBLESyncDataManager;
+@class TYBeaconRegion;
 
 @protocol IPBLESyncDataManagerDelegate <NSObject>
 
 - (void)SyncDataManagerDidFinishSyncData:(IPBLESyncDataManager *)manager;
 - (void)SyncDataManagerDidFinishDownloadingSyncData:(IPBLESyncDataManager *)manager;
-
+- (void)SyncDataManagerDidFetchBeaconRegion:(TYBeaconRegion *)region;
 @optional
 - (void)SyncDataManagerDidFailedSyncData:(IPBLESyncDataManager *)manager InStep:(int)step WithError:(NSError *)error;
 

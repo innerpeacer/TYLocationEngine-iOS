@@ -87,6 +87,7 @@
     [beaconDB close];
     
     [self notifyFinishSyncData];
+    [self notifyFetchRegion:region];
 }
 
 - (void)notifyFinishSyncData
@@ -100,6 +101,13 @@
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(SyncDataManagerDidFinishDownloadingSyncData:)]) {
         [self.delegate SyncDataManagerDidFinishDownloadingSyncData:self];
+    }
+}
+
+- (void)notifyFetchRegion:(TYBeaconRegion *)region
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(SyncDataManagerDidFetchBeaconRegion:)]) {
+        [self.delegate SyncDataManagerDidFetchBeaconRegion:region];
     }
 }
 
