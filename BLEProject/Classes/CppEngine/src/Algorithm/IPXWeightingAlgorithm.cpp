@@ -28,6 +28,9 @@ namespace Innerpeacer {
             
             for (int i = 0; i < nearestBeacons.size(); ++i) {
                 const IPXScannedBeacon *sb = nearestBeacons.at(i);
+                if (!HasPublicBeacon(*sb)) {
+                    continue;
+                }
                 const IPXPublicBeacon pb = GetPublicBeacon(*sb);
                 
                 double weighting = 1.0/sb->getAccuracy();
@@ -70,6 +73,9 @@ namespace Innerpeacer {
             
             for (int i = 0; i < nearestBeacons.size(); ++i) {
                 const IPXScannedBeacon *sb = nearestBeacons.at(i);
+                if (!HasPublicBeacon(*sb)) {
+                    continue;
+                }
                 const IPXPublicBeacon pb = GetPublicBeacon(*sb);
                 
                 double weighting = 1.0/pow(sb->getAccuracy(), 2);
