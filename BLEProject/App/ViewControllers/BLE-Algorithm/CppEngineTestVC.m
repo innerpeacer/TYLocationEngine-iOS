@@ -176,10 +176,10 @@
 
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons
 {
-    NSLog(@"TYLocationManager:didRangedLocationBeacons: %d", (int)beacons.count);
-    for (TYPublicBeacon *b in beacons) {
-        NSLog(@"%@", b);
-    }
+//    NSLog(@"TYLocationManager:didRangedLocationBeacons: %d", (int)beacons.count);
+//    for (TYPublicBeacon *b in beacons) {
+//        NSLog(@"%@", b);
+//    }
     [self showHintRssiForLocationBeacons:beacons];
 }
 

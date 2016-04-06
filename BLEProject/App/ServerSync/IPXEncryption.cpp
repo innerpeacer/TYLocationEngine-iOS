@@ -65,7 +65,7 @@ std::string Innerpeacer::BLETool::encryptString(std::string originalString, std:
     originalValue[originalLength] = 0;
     
     std::string result(originalValue);
-    delete originalValue;
+    delete[] originalValue;
     return result;
 }
 
