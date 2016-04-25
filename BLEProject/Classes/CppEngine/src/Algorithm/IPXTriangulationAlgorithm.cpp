@@ -376,7 +376,8 @@ IPXTriangulationAlgorithm *CreateTriangulationAlgorithm(const vector<IPXPublicBe
             break;
             
         default:
-            return nullptr;
+            return NULL;
             break;
     }
+    return NULL;
 }

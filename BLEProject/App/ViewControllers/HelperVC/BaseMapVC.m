@@ -89,6 +89,7 @@
 {
     NSDictionary *dict = [LicenseManager getLicenseForBuilding:_currentBuilding.buildingID];
     NSLog(@"%@", dict);
+    NSLog(@"%d", (int)[dict[@"License"] length]);
     
     [self.mapView initMapViewWithBuilding:_currentBuilding UserID:dict[@"UserID"] License:dict[@"License"]];
     self.mapView.mapDelegate = self;
@@ -97,7 +98,6 @@
     self.mapView.gridLineWidth = 0.0;
     
     self.mapView.highlightPOIOnSelection = YES;
-    
     [self.mapView setFloorWithInfo:_currentMapInfo];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToZooming:) name:@"AGSMapViewDidEndZoomingNotification" object:nil];

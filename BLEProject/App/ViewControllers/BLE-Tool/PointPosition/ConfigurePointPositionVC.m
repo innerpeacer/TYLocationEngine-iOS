@@ -46,7 +46,7 @@
 {
     [super viewDidLoad];
     
-    self.mapView.highlightPOIOnSelection = YES;
+//    self.mapView.highlightPOIOnSelection = YES;
     [self addLayers];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"点位列表" style:UIBarButtonItemStylePlain target:self action:@selector(showConfiguredPointPosition:)];
@@ -136,7 +136,7 @@
             continue;
         }
         AGSPoint *p = [AGSPoint pointWithX:pp.location.x y:pp.location.y spatialReference:self.mapView.spatialReference];
-        AGSPolygon *pbuffer = [[AGSGeometryEngine defaultGeometryEngine] bufferGeometry:p byDistance:8.0];
+        AGSPolygon *pbuffer = [[AGSGeometryEngine defaultGeometryEngine] bufferGeometry:p byDistance:0.0];
         
         [pointPositionLayer addGraphic:[AGSGraphic graphicWithGeometry:pbuffer symbol:sfs attributes:nil]];
         [TYArcGISDrawer drawPoint:p AtLayer:pointPositionLayer WithColor:[UIColor redColor]];

@@ -7,6 +7,7 @@
 //
 
 #include "IPXWeightingAlgorithm.h"
+#include <cmath>
 
 namespace Innerpeacer {
     namespace BLELocationEngine {
