@@ -11,7 +11,7 @@
 
 @interface TYPointPosition : NSObject
 
-@property (nonatomic, assign) int tag;
+@property (nonatomic, assign) int posIndex;
 @property (nonatomic, strong) TYLocalPoint *location;
 
 @end

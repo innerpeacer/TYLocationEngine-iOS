@@ -49,7 +49,7 @@
     [allPointPositions sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         TYPointPosition *p1 = obj1;
         TYPointPosition *p2 = obj2;
-        return (p1.tag < p2.tag);
+        return (p1.posIndex < p2.posIndex);
     }];
     [db close];
 }
@@ -96,7 +96,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     TYPointPosition *pp = allPointPositions[indexPath.row];
-    NSString *content = [NSString stringWithFormat:@"%d: (%.2f, %.2f, %d)", pp.tag, pp.location.x, pp.location.y, pp.location.floor];
+    NSString *content = [NSString stringWithFormat:@"%d: (%.2f, %.2f, %d)", pp.posIndex, pp.location.x, pp.location.y, pp.location.floor];
     cell.textLabel.text = content;
     
     return cell;

@@ -19,14 +19,14 @@
 - (BOOL)close;
 
 - (BOOL)deletePointPosition:(TYPointPosition *)position;
-- (BOOL)deletePointPositionWithTag:(int)tag;
+- (BOOL)deletePointPositionWithIndex:(int)index;
 - (BOOL)erasePointPositionTable;
 
 - (BOOL)insertPointPosition:(TYPointPosition *)position;
 - (BOOL)updatePointPosition:(TYPointPosition *)position;
 
 - (NSArray *)getAllPointPositions;
-- (TYPointPosition *)getPointPositionWithTag:(int)tag;
-- (int)getMaxTag;
+- (TYPointPosition *)getPointPositionWithIndex:(int)index;
+- (int)getMaxIndex;
 
 @end

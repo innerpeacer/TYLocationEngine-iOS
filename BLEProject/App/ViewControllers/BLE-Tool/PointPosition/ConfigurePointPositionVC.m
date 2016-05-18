@@ -90,12 +90,12 @@
     if (currentLocation) {
         TYPointPosFMDBAdapter *db = [[TYPointPosFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [db open];
-        int maxTag = [db getMaxTag];
+        int maxTag = [db getMaxIndex];
         NSLog(@"Max Tag: %d", maxTag);
         
         TYPointPosition *pointPos = [[TYPointPosition alloc] init];
         pointPos.location = currentLocation;
-        pointPos.tag = maxTag + 1;
+        pointPos.posIndex = maxTag + 1;
         [db insertPointPosition:pointPos];
         [db close];
         
@@ -142,7 +142,7 @@
         
         [pointPositionLayer addGraphic:[AGSGraphic graphicWithGeometry:pbuffer symbol:sfs attributes:nil]];
         [TYArcGISDrawer drawPoint:p AtLayer:pointPositionLayer WithColor:[UIColor redColor]];
-        AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%d", pp.tag] color:[UIColor magentaColor]];
+        AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%d", pp.posIndex] color:[UIColor magentaColor]];
         [ts setOffset:CGPointMake(5, -10)];
         [pointPositionLayer addGraphic:[AGSGraphic graphicWithGeometry:p symbol:ts attributes:nil]];
     }

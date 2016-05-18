@@ -53,12 +53,12 @@
 
 - (BOOL)deletePointPosition:(TYPointPosition *)position
 {
-    return [self deletePointPositionWithTag:position.tag];
+    return [self deletePointPositionWithIndex:position.posIndex];
 }
 
-- (BOOL)deletePointPositionWithTag:(int)tag
+- (BOOL)deletePointPositionWithIndex:(int)index
 {
-    NSString *sql = [NSString stringWithFormat:@"DELETE FROM %@ where %@=%d", TABLE_POINT_POSITION, FIELD_BEACON_TAG, tag];
+    NSString *sql = [NSString stringWithFormat:@"DELETE FROM %@ where %@=%d", TABLE_POINT_POSITION, FIELD_BEACON_INDEX, index];
     return [_database executeUpdate:sql];
 }
 
@@ -71,20 +71,20 @@
 
 - (BOOL)insertPointPosition:(TYPointPosition *)position
 {
-    return [self insertPointPositionWithX:position.location.x Y:position.location.y Floor:position.location.floor Tag:position.tag];
+    return [self insertPointPositionWithX:position.location.x Y:position.location.y Floor:position.location.floor Index:position.posIndex];
 }
 
-- (BOOL)insertPointPositionWithX:(double)x Y:(double)y Floor:(int)floor Tag:(int)tag
+- (BOOL)insertPointPositionWithX:(double)x Y:(double)y Floor:(int)floor Index:(int)index
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"Insert into %@", TABLE_POINT_POSITION];
     NSMutableArray *arguments = [[NSMutableArray alloc] init];
     
-    NSString *fields = [NSString stringWithFormat:@" ( %@, %@, %@, %@, %@) ", FIELD_GEOM, FIELD_FLOOR, FIELD_BEACON_TAG, FIELD_X, FIELD_Y];
+    NSString *fields = [NSString stringWithFormat:@" ( %@, %@, %@, %@, %@) ", FIELD_GEOM, FIELD_FLOOR, FIELD_BEACON_INDEX, FIELD_X, FIELD_Y];
     NSString *values = @" ( ?, ?, ?, ?, ?) ";
     
     [arguments addObject:[TYPointConverter dataFromX:x Y:y Z:0.0]];
     [arguments addObject:[NSString stringWithFormat:@"%d", floor]];
-    [arguments addObject:[NSString stringWithFormat:@"%d", tag]];
+    [arguments addObject:[NSString stringWithFormat:@"%d", index]];
     [arguments addObject:[NSString stringWithFormat:@"%f", x]];
     [arguments addObject:[NSString stringWithFormat:@"%f", y]];
 
@@ -92,11 +92,11 @@
     return [_database executeUpdate:sql withArgumentsInArray:arguments];
 }
 
-- (BOOL)updatePointPositionWithX:(double)x Y:(double)y Floor:(int)floor Tag:(int)tag
+- (BOOL)updatePointPositionWithX:(double)x Y:(double)y Floor:(int)floor Index:(int)index
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"UPDATE %@ SET ",TABLE_POINT_POSITION];
     NSString *fields = [NSString stringWithFormat:@" %@ = ?, %@ = ?", FIELD_GEOM, FIELD_FLOOR];
-    NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d ", FIELD_BEACON_TAG, tag];
+    NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d ", FIELD_BEACON_INDEX, index];
     
     [sql appendString:fields];
     [sql appendString:whereClause];
@@ -104,7 +104,7 @@
     NSMutableArray *arguments = [[NSMutableArray alloc] init];
     [arguments addObject:[TYPointConverter dataFromX:x Y:y Z:0.0]];
     [arguments addObject:[NSString stringWithFormat:@"%d", floor]];
-    [arguments addObject:[NSString stringWithFormat:@"%d", tag]];
+    [arguments addObject:[NSString stringWithFormat:@"%d", index]];
     [arguments addObject:[NSString stringWithFormat:@"%f", x]];
     [arguments addObject:[NSString stringWithFormat:@"%f", y]];
     
@@ -113,12 +113,12 @@
 
 - (BOOL)updatePointPosition:(TYPointPosition *)position
 {
-    return [self updatePointPositionWithX:position.location.x Y:position.location.y Floor:position.location.floor Tag:position.tag];
+    return [self updatePointPositionWithX:position.location.x Y:position.location.y Floor:position.location.floor Index:position.posIndex];
 }
 
 - (NSArray *)getAllPointPositions
 {
-    NSString *sql = [NSMutableString stringWithFormat:@"select distinct %@,%@,%@ From %@", FIELD_GEOM, FIELD_FLOOR, FIELD_BEACON_TAG, TABLE_POINT_POSITION];
+    NSString *sql = [NSMutableString stringWithFormat:@"select distinct %@,%@,%@ From %@", FIELD_GEOM, FIELD_FLOOR, FIELD_BEACON_INDEX, TABLE_POINT_POSITION];
     FMResultSet *rs = [_database executeQuery:sql];
     NSMutableArray *array = [[NSMutableArray alloc] init];
     while ([rs next]) {
@@ -127,22 +127,22 @@
         double x = xyz[0];
         double y = xyz[1];
         int floor = [rs intForColumn:FIELD_FLOOR];
-        int tag = [rs intForColumn:FIELD_BEACON_TAG];
+        int posIndex = [rs intForColumn:FIELD_BEACON_INDEX];
         
         TYLocalPoint *location = [TYLocalPoint pointWithX:x Y:y Floor:floor];
         TYPointPosition *pointPosition = [[TYPointPosition alloc] init];
         pointPosition.location = location;
-        pointPosition.tag = tag;
+        pointPosition.posIndex = posIndex;
         [array addObject:pointPosition];
     }
     [rs close];
     return array;
 }
 
-- (TYPointPosition *)getPointPositionWithTag:(int)tag
+- (TYPointPosition *)getPointPositionWithIndex:(int)index
 {
     NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT distinct %@,%@ FROM %@", FIELD_GEOM, FIELD_FLOOR, TABLE_POINT_POSITION];
-    NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d ", FIELD_BEACON_TAG, tag];
+    NSString *whereClause = [NSString stringWithFormat:@" where %@ = %d ", FIELD_BEACON_INDEX, index];
     [sql appendString:whereClause];
     
     TYPointPosition *pointPosition = nil;
@@ -158,16 +158,16 @@
         TYLocalPoint *location = [TYLocalPoint pointWithX:x Y:y Floor:floor];
         pointPosition = [[TYPointPosition alloc] init];
         pointPosition.location = location;
-        pointPosition.tag = tag;
+        pointPosition.posIndex = index;
     }
     [rs close];
     return pointPosition;
 }
 
-- (int)getMaxTag
+- (int)getMaxIndex
 {
     int max = 0;
-    NSString *sql = [NSString stringWithFormat:@"select max(tag) from %@", TABLE_POINT_POSITION];
+    NSString *sql = [NSString stringWithFormat:@"select max(posIndex) from %@", TABLE_POINT_POSITION];
     FMResultSet * rs = [_database executeQuery:sql];
     if ([rs next]) {
         max = [rs intForColumnIndex:0];
@@ -209,7 +209,13 @@
 #pragma mark primitive beacon
 - (BOOL)createPointPositionTable
 {
-    NSString *sql = [NSString stringWithFormat:@"create table %@ (%@, %@, %@, %@, %@, %@)", TABLE_POINT_POSITION, @"_id integer primary key autoincrement", @"geom blob not null", @"x real not null", @"y real not null", @"floor integer not null", @"tag integer not null"];
+    {
+        NSString *sql = [NSString stringWithFormat:@"create table %@ (%@)", TABLE_TEST_CODE, @"Code text"];
+        [_database executeUpdate:sql];
+    }
+    
+//    NSString *sql = [NSString stringWithFormat:@"create table %@ (%@, %@, %@, %@, %@, %@)", TABLE_POINT_POSITION, @"_id integer primary key autoincrement", @"geom blob not null", @"x real not null", @"y real not null", @"floor integer not null", @"posIndex integer not null"];
+    NSString *sql = [NSString stringWithFormat:@"create table %@ (%@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@)", TABLE_POINT_POSITION, @"_id integer primary key autoincrement", @"geom blob not null", @"uuid text", @"major integer", @"minor integer", @"floor integer not null", @"shop_id text", @"tag text", @"x real not null", @"y real not null", @"posIndex integer not null"];
     if ([_database executeUpdate:sql]) {
         return YES;
     } else {
@@ -217,5 +223,11 @@
     }
 }
 
+
+//#define FIELD_TEST_UUID @"uuid"
+//#define FIELD_TEST_MAJOR @"major"
+//#define FIELD_TEST_MINOR @"minor"
+//#define FIELD_TEST_SHOP_ID @"shop_id"
+//#define FIELD_TEST_TAG @"tag"
 
 @end
