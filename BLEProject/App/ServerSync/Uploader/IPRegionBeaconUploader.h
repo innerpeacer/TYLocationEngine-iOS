@@ -26,6 +26,8 @@
 
 - (void)uploadBeaconRegions:(NSArray *)regions;
 - (void)addBeaconRegion:(NSArray *)regions;
+
+- (void)addLocatingBeacons:(NSArray *)beacons;
 - (void)uploadLocatingBeacons:(NSArray *)beacons;
 - (void)uploadLocatingBeacons:(NSArray *)beacons AndBeaconRegion:(TYBeaconRegion *)region;
 

@@ -102,6 +102,7 @@
 - (IBAction)uploadCurrentLocatingData:(id)sender
 {
     [uploader uploadLocatingBeacons:allBeaconArray AndBeaconRegion:beaconRegion];
+//    [uploader addLocatingBeacons:allBeaconArray];
 }
 
 @end

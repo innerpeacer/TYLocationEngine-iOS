@@ -75,6 +75,16 @@
     [uploader uploadWithApi:TY_API_ADD_REGION_AND_BEACONS Parameters:param];
 }
 
+- (void)addLocatingBeacons:(NSArray *)beacons
+{
+    NSLog(@"addLocatingBeacons: %@", TY_API_ADD_LOCATING_BEACONS);
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    param[@"buildingID"] = user.buildingID;
+    param[@"cityID"] = [user.buildingID substringWithRange:NSMakeRange(0, 4)];
+    param[@"beacons"] = [IPBLEWebObjectConverter prepareJsonString:[IPBLEWebObjectConverter prepareBeaconObjectArray:beacons]];
+    [uploader uploadWithApi:TY_API_ADD_LOCATING_BEACONS Parameters:param];
+}
+
 - (void)WebUploaderDidFailedUploading:(IPBLEWebUploader *)uploader WithApi:(NSString *)api WithError:(NSError *)error
 {
     [self notifyFailedUploadingWithApi:api WithError:error];

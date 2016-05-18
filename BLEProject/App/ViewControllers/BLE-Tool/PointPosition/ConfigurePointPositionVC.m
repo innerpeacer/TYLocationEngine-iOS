@@ -17,8 +17,10 @@
 
 #import "TYRegionManager.h"
 #import "IPBeaconDBCodeChecker.h"
-
 #import "TYPointPosFMDBAdapter.h"
+
+
+#define BUFFER_LENGTH 5.0
 
 @interface ConfigurePointPositionVC()
 {
@@ -136,7 +138,7 @@
             continue;
         }
         AGSPoint *p = [AGSPoint pointWithX:pp.location.x y:pp.location.y spatialReference:self.mapView.spatialReference];
-        AGSPolygon *pbuffer = [[AGSGeometryEngine defaultGeometryEngine] bufferGeometry:p byDistance:0.0];
+        AGSPolygon *pbuffer = [[AGSGeometryEngine defaultGeometryEngine] bufferGeometry:p byDistance:BUFFER_LENGTH];
         
         [pointPositionLayer addGraphic:[AGSGraphic graphicWithGeometry:pbuffer symbol:sfs attributes:nil]];
         [TYArcGISDrawer drawPoint:p AtLayer:pointPositionLayer WithColor:[UIColor redColor]];

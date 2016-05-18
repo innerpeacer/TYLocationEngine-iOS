@@ -13,6 +13,10 @@
 #pragma mark Manager API
 #define TY_API_UPLOAD_ALL_BEACON_REGIONS    @"/TYMapServerManager/manager/ble/UploadAllBeaconRegion"
 #define TY_API_UPLOAD_LOCATING_BEACONS      @"/TYMapServerManager/manager/ble/UploadLocatingBeacons"
+
+#define TY_API_ADD_LOCATING_BEACONS      @"/TYMapServerManager/manager/ble/AddLocatingBeacons"
+
+
 #define TY_API_ADD_BEACON_REGION            @"/TYMapServerManager/manager/ble/AddBeaconRegion"
 #define TY_API_ADD_REGION_AND_BEACONS       @"/TYMapServerManager/manager/ble/AddRegionAndBeacons"
 
