@@ -17,7 +17,7 @@
 
 + (NSString *)getTrialUserLicense:(TYBuilding *)building
 {
-    return [MapLicenseGenerator generateLicenseForUserID:TRIAL_USER_ID Building:building.buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
+    return [MapLicenseGenerator generateBase64License40ForUserID:TRIAL_USER_ID Building:building.buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
 }
 
 + (NSString *)getSuperUserID
@@ -27,7 +27,7 @@
 
 + (NSString *)getSuperUserLicense:(TYBuilding *)building
 {
-    return [MapLicenseGenerator generateLicenseForUserID:SUPER_USER_ID Building:building.buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
+    return [MapLicenseGenerator generateBase64License40ForUserID:SUPER_USER_ID Building:building.buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
 }
 
 + (NSDictionary *)getTrialUserDictionay:(TYBuilding *)building
@@ -35,7 +35,7 @@
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     dict[@"userID"] = TRIAL_USER_ID;
     dict[@"buildingID"] = building.buildingID;
-    dict[@"license"] = [MapLicenseGenerator generateLicenseForUserID:TRIAL_USER_ID Building:building.buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
+    dict[@"license"] = [MapLicenseGenerator generateBase64License40ForUserID:TRIAL_USER_ID Building:building.buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
     return dict;
 }
 
@@ -44,18 +44,18 @@
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     dict[@"userID"] = SUPER_USER_ID;
     dict[@"buildingID"] = building.buildingID;
-    dict[@"license"] = [MapLicenseGenerator generateLicenseForUserID:SUPER_USER_ID Building:building.buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
+    dict[@"license"] = [MapLicenseGenerator generateBase64License40ForUserID:SUPER_USER_ID Building:building.buildingID ExpiredDate:TRIAL_EXPRIED_DATE];
     return dict;
 }
 
 + (TYMapCredential *)createSuperUser:(NSString *)buildingID
 {
-    return [TYMapCredential credentialWithUserID:SUPER_USER_ID BuildingID:buildingID License:[MapLicenseGenerator generateLicenseForUserID:SUPER_USER_ID Building:buildingID ExpiredDate:TRIAL_EXPRIED_DATE]];
+    return [TYMapCredential credentialWithUserID:SUPER_USER_ID BuildingID:buildingID License:[MapLicenseGenerator generateBase64License40ForUserID:SUPER_USER_ID Building:buildingID ExpiredDate:TRIAL_EXPRIED_DATE]];
 }
 
 + (TYMapCredential *)createTrialUser:(NSString *)buildingID
 {
-    return [TYMapCredential credentialWithUserID:TRIAL_USER_ID BuildingID:buildingID License:[MapLicenseGenerator generateLicenseForUserID:TRIAL_USER_ID Building:buildingID ExpiredDate:TRIAL_EXPRIED_DATE]];
+    return [TYMapCredential credentialWithUserID:TRIAL_USER_ID BuildingID:buildingID License:[MapLicenseGenerator generateBase64License40ForUserID:TRIAL_USER_ID Building:buildingID ExpiredDate:TRIAL_EXPRIED_DATE]];
 }
 
 + (TYMapCredential *)createWrongUser:(NSString *)buildingID

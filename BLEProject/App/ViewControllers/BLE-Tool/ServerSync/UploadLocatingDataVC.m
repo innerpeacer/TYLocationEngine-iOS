@@ -13,7 +13,6 @@
 #import "TYBeaconFMDBAdapter.h"
 #import "IPBLEApi.h"
 #import "IPBLEApi_Manager.h"
-#import "BLELicenseGenerator.h"
 #import "TYUserManager.h"
 #import "IPBLEWebObjectConverter.h"
 
