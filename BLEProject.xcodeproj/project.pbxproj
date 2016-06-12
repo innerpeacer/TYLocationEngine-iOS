@@ -1638,7 +1638,7 @@
 					"$(inherited)",
 					/Users/innerpeacer/wsForIOS/goeslib,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.innerpeacer.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.BLEProject;
 				PRODUCT_NAME = BLEProject;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1666,7 +1666,7 @@
 					"$(inherited)",
 					/Users/innerpeacer/wsForIOS/goeslib,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.innerpeacer.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.BLEProject;
 				PRODUCT_NAME = BLEProject;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

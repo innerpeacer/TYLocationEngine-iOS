@@ -260,6 +260,10 @@
             AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@", pb.minor] color:[UIColor magentaColor]];
             [ts setOffset:CGPointMake(5, -10)];
             [publicBeaconLayer addGraphic:[AGSGraphic graphicWithGeometry:p symbol:ts attributes:nil]];
+            
+            // For Doubi Wanda
+//            NSLog(@"%d\t%f\t%f", pb.minor.intValue, pb.location.x, pb.location.y);
+            printf("%d\t%f\t%f\n", pb.minor.intValue, pb.location.x, pb.location.y);
         }
         [db close];
         
