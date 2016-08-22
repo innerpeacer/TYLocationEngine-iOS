@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TYMapSDK/TYMapSDK.h>
+#import <TYMapData/TYMapData.h>
 
 @interface TYLocationFileManager : NSObject
 

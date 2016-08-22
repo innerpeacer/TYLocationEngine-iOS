@@ -36,7 +36,6 @@ void IPXStepBasedEngine::Initilize(const vector<Innerpeacer::BLELocationEngine::
     yMovingAverage = IPXMovingAverage(DefaultMovingAverageWindow);
     
     stepCount = DefaultStep;
-    
 //    printf("IPXStepBasedTEngine::Initilize OK!");
 }
 
@@ -45,7 +44,6 @@ void IPXStepBasedEngine::processBeacons(vector<const Innerpeacer::BLELocationEng
     algorithm->setNearestBeacons(beacons);
     
 //    printf("IPXStepBasedTEngine: Here OK!");
-    
     if (!isBeaconDataComplete) {
         return;
     }

@@ -74,6 +74,7 @@
 - (void)loadBeaconDatabase:(NSString *)dbPath
 {
     IPXBeaconDBAdapter *db = [[IPXBeaconDBAdapter alloc] initWithDBFile:dbPath];
+    NSLog(@"%@", dbPath);
     [db open];
     NSArray *array = [db getAllLocationingBeacons];
     NSString *checkCode = [db getCode];

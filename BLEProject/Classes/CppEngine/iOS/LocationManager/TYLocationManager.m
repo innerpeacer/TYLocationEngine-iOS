@@ -59,7 +59,7 @@
 //        [alert show];
         return nil;
     }
-    
+    NSLog(@"%@", [TYLocationFileManager getBeaconDBPath:building]);
     return [[TYLocationManager alloc] initWithBeaconDB:[TYLocationFileManager getBeaconDBPath:building] FloorPathDict:nil];
 }
 

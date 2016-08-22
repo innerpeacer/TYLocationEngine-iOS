@@ -19,7 +19,6 @@
 #import "IPBeaconDBCodeChecker.h"
 #import "TYPointPosFMDBAdapter.h"
 
-
 #define BUFFER_LENGTH 5.0
 
 @interface ConfigurePointPositionVC()

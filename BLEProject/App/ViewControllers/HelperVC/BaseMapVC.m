@@ -97,7 +97,7 @@
     self.mapView.backgroundColor = [UIColor lightGrayColor];
     self.mapView.gridLineWidth = 0.0;
     
-    self.mapView.highlightPOIOnSelection = YES;
+//    self.mapView.highlightPOIOnSelection = YES;
     [self.mapView setFloorWithInfo:_currentMapInfo];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToZooming:) name:@"AGSMapViewDidEndZoomingNotification" object:nil];

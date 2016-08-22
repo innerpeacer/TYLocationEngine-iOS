@@ -9,6 +9,8 @@
 
 #import "TYBeaconRegionDBAdapter.h"
 #import <CoreLocation/CoreLocation.h>
+
+#import "TYBLEEnvironment.h"
 @interface AppDelegate()
 {
 
@@ -38,6 +40,7 @@
     NSString *documentDirectory = [paths objectAtIndex:0];
     NSLog(@"%@", documentDirectory);
     [TYMapEnvironment setRootDirectoryForMapFiles:[documentDirectory stringByAppendingPathComponent:DEFAULT_MAP_ROOT]];
+    [TYBLEEnvironment setRootDirectoryForFiles:[TYMapEnvironment getRootDirectoryForMapFiles]];
 }
 
 - (void)setDefaultPlaceIfNeeded
@@ -53,7 +56,7 @@
 //        [TYUserDefaults setDefaultBuilding:@"00100020"];
         
         [TYUserDefaults setDefaultCity:@"0010"];
-        [TYUserDefaults setDefaultBuilding:@"00100009"];
+        [TYUserDefaults setDefaultBuilding:@"00100027"];
     }
 }
 

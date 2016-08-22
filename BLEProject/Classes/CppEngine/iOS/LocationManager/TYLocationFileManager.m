@@ -7,6 +7,7 @@
 //
 
 #import "TYLocationFileManager.h"
+#import "TYBLEEnvironment.h"
 
 #define FILE_REGION_DB @"BeaconRegion.db"
 #define FILE_BEACON_DB @"%@_Beacon.db"
@@ -15,13 +16,13 @@
 
 + (NSString *)getBeaconRegionDBPath
 {
-    NSString *rootDir = [TYMapEnvironment getRootDirectoryForMapFiles];
+    NSString *rootDir = [TYBLEEnvironment getRootDirectoryForFiles];
     return [rootDir stringByAppendingPathComponent:FILE_REGION_DB];
 }
 
 + (NSString *)getBeaconDBPath:(TYBuilding *)building
 {
-    NSString *rootDir = [TYMapEnvironment getRootDirectoryForMapFiles];
+    NSString *rootDir = [TYBLEEnvironment getRootDirectoryForFiles];
     NSString *cityDir = [rootDir stringByAppendingPathComponent:building.cityID];
     NSString *buildingDir = [cityDir stringByAppendingPathComponent:building.buildingID];
     NSString *fileName = [NSString stringWithFormat:FILE_BEACON_DB, building.buildingID];

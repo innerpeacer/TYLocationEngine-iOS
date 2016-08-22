@@ -10,6 +10,7 @@
 
 #import "TYRegionManager.h"
 #import "IPBeaconDBCodeChecker.h"
+#import "TYMapToFengMap.h"
 
 @interface ConfigureBeaconsVC () <BeaconSelectedDelegate, TYBeaconManagerDelegate>
 {
@@ -172,6 +173,23 @@
     
     currentLocation = [TYLocalPoint pointWithX:mappoint.x Y:mappoint.y Floor:self.currentMapInfo.floorNumber];;
     currentLocation.floor = self.currentMapInfo.floorNumber;
+    
+    
+//    // Convert Beacon Data to Feng Map
+//    {
+//        TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
+//        [pdb open];
+//        NSArray *beaconArray = [pdb getAllLocationingBeacons];
+//        for(TYPublicBeacon *pb in beaconArray)
+//        {
+//            NSArray *fengArray = [TYMapToFengMap TYMapToFengMap:@[@(pb.location.x), @(pb.location.y)]];
+//            TYLocalPoint *fengLocation = [TYLocalPoint pointWithX:[fengArray[0] doubleValue] Y:[fengArray[1] doubleValue] Floor:pb.location.floor];
+//            [pdb updateLocationingBeacon:[TYPublicBeacon beaconWithUUID:beaconRegion.proximityUUID.UUIDString Major:pb.major Minor:pb.minor Tag:pb.tag Location:fengLocation]];
+//        }
+//        [pdb close];
+//    }
+
+
 }
 
 - (IBAction)addCurrentBeacon:(id)sender {
@@ -247,6 +265,8 @@
         
         for (TYPublicBeacon *pb in array)
         {
+//            printf("%s\t%d\t%d\t%f\t%f\t%d\n", [pb.UUID UTF8String], pb.major.intValue, pb.minor.intValue, pb.location.x, pb.location.y, pb.location.floor);
+
             if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {
                 continue;
             }
@@ -263,7 +283,13 @@
             
             // For Doubi Wanda
 //            NSLog(@"%d\t%f\t%f", pb.minor.intValue, pb.location.x, pb.location.y);
-            printf("%d\t%f\t%f\n", pb.minor.intValue, pb.location.x, pb.location.y);
+//            printf("%d\t%f\t%f\n", pb.minor.intValue, pb.location.x, pb.location.y);
+            
+
+//            printf("TY  :\t%d\t%f\t%f\n", pb.minor.intValue, pb.location.x, pb.location.y);
+//            NSArray *fengArray = [TYMapToFengMap TYMapToFengMap:@[@(pb.location.x), @(pb.location.y)]];
+//            printf("Feng:\t%d\t%f\t%f\n", pb.minor.intValue, [fengArray[0] doubleValue], [fengArray[1] doubleValue]);
+           
         }
         [db close];
         

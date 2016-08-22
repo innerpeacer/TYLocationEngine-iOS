@@ -8,6 +8,7 @@
     NSMutableArray *groups;
     NSMutableArray *groupTitles;
     
+    NSArray *publicArray;
     TYBuilding *currentBuilding;
 }
 
@@ -23,6 +24,9 @@
     [self fetchData];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    if (publicArray && publicArray.count > 0) {
+        self.title = [NSString stringWithFormat:@"Beacon列表(%d个)", (int)publicArray.count];
+    }
 }
 
 - (IBAction)back:(id)sender
@@ -40,7 +44,7 @@
     TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:currentBuilding];
     [db open];
     
-    NSArray *publicArray = [db getAllLocationingBeacons];
+    publicArray = [db getAllLocationingBeacons];
     if (publicArray.count > 0) {
         
         publicArray = [publicArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
