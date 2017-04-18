@@ -42,7 +42,7 @@
 {
     NSLog(@"SelectBuildingVC:didSelectBuilding: %@ - %@", building.name, city.name);
     [TYUserDefaults setDefaultBuilding:building.buildingID];
-    [TYUserDefaults setDefaultCity:city.cityID];
+//    [TYUserDefaults setDefaultCity:city.cityID];
     
     self.title = [NSString stringWithFormat:@"当前建筑: %@", [TYUserDefaults getDefaultBuilding].name];
 }

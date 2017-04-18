@@ -1,13 +1,13 @@
+////
+////  BeaconFilterTest.h
+////  BLEProject
+////
+////  Created by innerpeacer on 15/1/30.
+////  Copyright (c) 2015年 innerpeacer. All rights reserved.
+////
 //
-//  BeaconFilterTest.h
-//  BLEProject
+//#import "BaseLocationTestVC.h"
 //
-//  Created by innerpeacer on 15/1/30.
-//  Copyright (c) 2015年 innerpeacer. All rights reserved.
+//@interface BeaconFilterTestVC : BaseLocationTestVC
 //
-
-#import "BaseLocationTestVC.h"
-
-@interface BeaconFilterTestVC : BaseLocationTestVC
-
-@end
+//@end

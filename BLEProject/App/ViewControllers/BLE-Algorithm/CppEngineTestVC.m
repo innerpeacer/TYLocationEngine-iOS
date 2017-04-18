@@ -146,7 +146,6 @@
     CGRect restrictRange = CGRectMake(screenBound.origin.x + PADDING, screenBound.origin.y + PADDING, screenBound.size.width - PADDING * 2, screenBound.size.height - PADDING * 2);
     
 //    [self.mapView restrictLocation:pos toScreenRange:restrictRange];
-    
 //    [self.mapView centerAtPoint:pos animated:YES];
 }
 

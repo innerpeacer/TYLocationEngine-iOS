@@ -1,13 +1,13 @@
+////
+////  CppEngineCompareVC.h
+////  BLEProject
+////
+////  Created by innerpeacer on 15/2/11.
+////  Copyright (c) 2015年 innerpeacer. All rights reserved.
+////
 //
-//  CppEngineCompareVC.h
-//  BLEProject
+//#import "BaseMapVC.h"
 //
-//  Created by innerpeacer on 15/2/11.
-//  Copyright (c) 2015年 innerpeacer. All rights reserved.
+//@interface CppEngineCompareVC : BaseMapVC
 //
-
-#import "BaseMapVC.h"
-
-@interface CppEngineCompareVC : BaseMapVC
-
-@end
+//@end

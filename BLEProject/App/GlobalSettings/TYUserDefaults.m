@@ -5,16 +5,17 @@
 
 @implementation TYUserDefaults
 
-+ (void)setDefaultCity:(NSString *)cityID
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:cityID forKey:KEY_CITY_ID];
-}
+//+ (void)setDefaultCity:(NSString *)cityID
+//{
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults setObject:cityID forKey:KEY_CITY_ID];
+//}
 
 + (void)setDefaultBuilding:(NSString *)buildingID
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:buildingID forKey:KEY_BUILDING_ID];
+    [defaults setObject:[buildingID substringToIndex:4] forKey:KEY_CITY_ID];
 }
 
 + (TYBuilding *)getDefaultBuilding

@@ -303,6 +303,8 @@
 		57E6BCE41B8C41D0002226FB /* RATreeView+TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD71B8C41D0002226FB /* RATreeView+TableViewDelegate.m */; };
 		57E6BCE51B8C41D0002226FB /* RATreeView+UIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCD91B8C41D0002226FB /* RATreeView+UIScrollView.m */; };
 		57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCDB1B8C41D0002226FB /* RATreeView.m */; };
+		57E7741E1EA5F4E4006DB616 /* RootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E7741D1EA5F4E4006DB616 /* RootTabbarController.m */; };
+		57E7741F1EA5F4E4006DB616 /* RootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E7741D1EA5F4E4006DB616 /* RootTabbarController.m */; };
 		57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */; };
 /* End PBXBuildFile section */
 
@@ -595,6 +597,8 @@
 		57E6BCD91B8C41D0002226FB /* RATreeView+UIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+UIScrollView.m"; sourceTree = "<group>"; };
 		57E6BCDA1B8C41D0002226FB /* RATreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView.h; sourceTree = "<group>"; };
 		57E6BCDB1B8C41D0002226FB /* RATreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeView.m; sourceTree = "<group>"; };
+		57E7741C1EA5F4E4006DB616 /* RootTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabbarController.h; sourceTree = "<group>"; };
+		57E7741D1EA5F4E4006DB616 /* RootTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabbarController.m; sourceTree = "<group>"; };
 		57F85C8C1BB51695005D28CF /* CheckBeaconDatabaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBeaconDatabaseVC.h; sourceTree = "<group>"; };
 		57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBeaconDatabaseVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -814,6 +818,8 @@
 		575CD0B01B564DE200B1E77C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				57E7741C1EA5F4E4006DB616 /* RootTabbarController.h */,
+				57E7741D1EA5F4E4006DB616 /* RootTabbarController.m */,
 				5722C9CC1C304E81009D2365 /* HelperVC */,
 				575CD0B31B564DE200B1E77C /* BLE-Algorithm */,
 				575CD0C21B564DE200B1E77C /* BLE-Tool */,
@@ -827,20 +833,9 @@
 		575CD0B31B564DE200B1E77C /* BLE-Algorithm */ = {
 			isa = PBXGroup;
 			children = (
-				575CD0B41B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.h */,
-				575CD0B51B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m */,
-				575CD0B61B564DE200B1E77C /* BaseLocationTestVC.h */,
-				575CD0B71B564DE200B1E77C /* BaseLocationTestVC.m */,
-				575CD0B81B564DE200B1E77C /* BeaconFilterTestVC.h */,
-				575CD0B91B564DE200B1E77C /* BeaconFilterTestVC.m */,
-				575CD0BA1B564DE200B1E77C /* CppEngineCompareVC.h */,
-				575CD0BB1B564DE200B1E77C /* CppEngineCompareVC.m */,
+				57E774201EA60D93006DB616 /* deprecated */,
 				575CD0BC1B564DE200B1E77C /* CppEngineTestVC.h */,
 				575CD0BD1B564DE200B1E77C /* CppEngineTestVC.m */,
-				575CD0BE1B564DE200B1E77C /* LocationEngineTestVC.h */,
-				575CD0BF1B564DE200B1E77C /* LocationEngineTestVC.m */,
-				575CD0C01B564DE200B1E77C /* MultiLocationTestVC.h */,
-				575CD0C11B564DE200B1E77C /* MultiLocationTestVC.m */,
 			);
 			path = "BLE-Algorithm";
 			sourceTree = "<group>";
@@ -1465,6 +1460,25 @@
 			path = RATreeView;
 			sourceTree = "<group>";
 		};
+		57E774201EA60D93006DB616 /* deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				575CD0C01B564DE200B1E77C /* MultiLocationTestVC.h */,
+				575CD0C11B564DE200B1E77C /* MultiLocationTestVC.m */,
+				575CD0BE1B564DE200B1E77C /* LocationEngineTestVC.h */,
+				575CD0BF1B564DE200B1E77C /* LocationEngineTestVC.m */,
+				575CD0B61B564DE200B1E77C /* BaseLocationTestVC.h */,
+				575CD0B71B564DE200B1E77C /* BaseLocationTestVC.m */,
+				575CD0B41B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.h */,
+				575CD0B51B564DE200B1E77C /* AutoSwitchLocationEngineTestVC.m */,
+				575CD0B81B564DE200B1E77C /* BeaconFilterTestVC.h */,
+				575CD0B91B564DE200B1E77C /* BeaconFilterTestVC.m */,
+				575CD0BA1B564DE200B1E77C /* CppEngineCompareVC.h */,
+				575CD0BB1B564DE200B1E77C /* CppEngineCompareVC.m */,
+			);
+			name = deprecated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1676,6 +1690,7 @@
 				57B156321D4DCDB500103143 /* AddBeaconRegionVC.m in Sources */,
 				57B156331D4DCDB500103143 /* BLEToolTableVC.m in Sources */,
 				57B156341D4DCDB500103143 /* TYVector2.m in Sources */,
+				57E7741F1EA5F4E4006DB616 /* RootTabbarController.m in Sources */,
 				57B156351D4DCDB500103143 /* BLEMD5.cpp in Sources */,
 				57B156361D4DCDB500103143 /* DoubleRounder.m in Sources */,
 				57B156371D4DCDB500103143 /* FetchLocatingDataVC.m in Sources */,
@@ -1808,6 +1823,7 @@
 				5722C9C41C304DF1009D2365 /* AddBeaconRegionVC.m in Sources */,
 				575CD0FC1B564DE200B1E77C /* BLEToolTableVC.m in Sources */,
 				575CD1B91B564E7300B1E77C /* TYVector2.m in Sources */,
+				57E7741E1EA5F4E4006DB616 /* RootTabbarController.m in Sources */,
 				5754EDEF1BB43D0E00D63B13 /* BLEMD5.cpp in Sources */,
 				575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */,
 				5755FA1E1C3A10D1000CA7C8 /* FetchLocatingDataVC.m in Sources */,

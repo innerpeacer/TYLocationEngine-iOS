@@ -33,7 +33,6 @@
 - (void)initArcGISEnvironment
 {
     [TYMapEnvironment initMapEnvironment];
-    
     [TYMapEnvironment setHostName:HOST_NAME];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -46,20 +45,11 @@
 - (void)setDefaultPlaceIfNeeded
 {
     if ([TYUserDefaults getDefaultBuilding] == nil) {
-//        [TYUserDefaults setDefaultCity:@"0020"];
-//        [TYUserDefaults setDefaultBuilding:@"00200001"];
+//        [TYUserDefaults setDefaultCity:@"0021"];
+//        [TYUserDefaults setDefaultBuilding:@"00210025"];
         
-//        [TYUserDefaults setDefaultCity:@"0755"];
-//        [TYUserDefaults setDefaultBuilding:@"07550008"];
-        
-//        [TYUserDefaults setDefaultCity:@"0010"];
-//        [TYUserDefaults setDefaultBuilding:@"00100020"];
-        
-//        [TYUserDefaults setDefaultCity:@"0755"];
-//        [TYUserDefaults setDefaultBuilding:@"07550012"];
-        
-        [TYUserDefaults setDefaultCity:@"0021"];
-        [TYUserDefaults setDefaultBuilding:@"00210025"];
+//        [TYUserDefaults setDefaultCity:@"0021"];
+        [TYUserDefaults setDefaultBuilding:@"00210020"];
     }
 }
 

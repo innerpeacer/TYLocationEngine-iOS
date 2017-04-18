@@ -7,12 +7,12 @@
     self.title = @"BLE算法";
 
     NSArray *viewControllers = @[
-                                @[@"Base Location Test",@"baseLocatingController"],
-                                @[@"Location Engine Test",@"locationEngineTestController"],
-                                @[@"Multi Location Engine Test",@"multiTestController"],
-                                @[@"Beacon Filter 测试",@"beaconFilterController"],
+//                                @[@"Base Location Test",@"baseLocatingController"],
+//                                @[@"Location Engine Test",@"locationEngineTestController"],
+//                                @[@"Multi Location Engine Test",@"multiTestController"],
+//                                @[@"Beacon Filter 测试",@"beaconFilterController"],
                                 @[@"Cpp Engine 测试",@"cppEngineController"],
-                                @[@"Cpp Engine 对比测试",@"cppEngineCompareController" ],
+//                                @[@"Cpp Engine 对比测试",@"cppEngineCompareController" ],
                                  ];
     
     self.objects = [[NSMutableArray alloc] init];
@@ -25,7 +25,6 @@
         [self.objects addObject:name];
         [self.controllerDict setObject:storyboardID forKey:name];
     }
-
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

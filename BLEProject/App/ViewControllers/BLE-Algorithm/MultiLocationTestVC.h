@@ -1,13 +1,13 @@
+////
+////  MultiLocationTestVC.h
+////  BLEProject
+////
+////  Created by innerpeacer on 15/1/29.
+////  Copyright (c) 2015年 innerpeacer. All rights reserved.
+////
 //
-//  MultiLocationTestVC.h
-//  BLEProject
+//#import "BaseLocationTestVC.h"
 //
-//  Created by innerpeacer on 15/1/29.
-//  Copyright (c) 2015年 innerpeacer. All rights reserved.
+//@interface MultiLocationTestVC : BaseLocationTestVC
 //
-
-#import "BaseLocationTestVC.h"
-
-@interface MultiLocationTestVC : BaseLocationTestVC
-
-@end
+//@end
