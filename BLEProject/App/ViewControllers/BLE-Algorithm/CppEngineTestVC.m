@@ -138,12 +138,12 @@
         self.title = self.mapView.currentMapInfo.floorName;
     }
     
-    AGSPoint *pos = [AGSPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:self.mapView.spatialReference];
+//    AGSPoint *pos = [AGSPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:self.mapView.spatialReference];
     [self.mapView showLocation:newImmediateLocation];
     
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
+//    CGRect screenBound = [[UIScreen mainScreen] bounds];
 #define PADDING 30
-    CGRect restrictRange = CGRectMake(screenBound.origin.x + PADDING, screenBound.origin.y + PADDING, screenBound.size.width - PADDING * 2, screenBound.size.height - PADDING * 2);
+//    CGRect restrictRange = CGRectMake(screenBound.origin.x + PADDING, screenBound.origin.y + PADDING, screenBound.size.width - PADDING * 2, screenBound.size.height - PADDING * 2);
     
 //    [self.mapView restrictLocation:pos toScreenRange:restrictRange];
 //    [self.mapView centerAtPoint:pos animated:YES];
