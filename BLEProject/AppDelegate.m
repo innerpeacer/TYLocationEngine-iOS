@@ -55,8 +55,11 @@
 //        [TYUserDefaults setDefaultCity:@"0010"];
 //        [TYUserDefaults setDefaultBuilding:@"00100020"];
         
-        [TYUserDefaults setDefaultCity:@"0010"];
-        [TYUserDefaults setDefaultBuilding:@"00100027"];
+//        [TYUserDefaults setDefaultCity:@"0755"];
+//        [TYUserDefaults setDefaultBuilding:@"07550012"];
+        
+        [TYUserDefaults setDefaultCity:@"0021"];
+        [TYUserDefaults setDefaultBuilding:@"00210025"];
     }
 }
 

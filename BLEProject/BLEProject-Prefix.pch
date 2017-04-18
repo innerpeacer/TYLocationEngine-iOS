@@ -28,7 +28,8 @@
 
 #define USE_REMOTE_HOST 1
 #if USE_REMOTE_HOST
-#define HOST_NAME @"123.56.41.94"
+#define HOST_NAME @"app.sdk.map.brtbeacon.com"
+//#define HOST_NAME @"123.56.41.94"
 #else
 #define HOST_NAME @"localhost:8112"
 #endif

@@ -167,6 +167,7 @@
     
     NSLog(@"Scale: %f", self.mapView.mapScale);
     NSLog(@"%f, %f", mappoint.x, mappoint.y);
+    NSLog(@"%f, %f", mappoint.x -xstart, mappoint.y-ystart);
     
     [hintLayer removeAllGraphics];
     [TYArcGISDrawer drawPoint:mappoint AtLayer:hintLayer WithColor:[UIColor greenColor]];
@@ -246,7 +247,11 @@
     self.hintLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@", currentBeacon.major, currentBeacon.minor];
 }
 
+
+double xstart = 12966504.768704;
+double ystart = 4826188.718741;
 - (IBAction)publicSwtichToggled:(id)sender {
+    NSLog(@"publicSwtichToggled");
     if (self.publicSwitch.on) {
         TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
         [db open];
@@ -265,7 +270,7 @@
         
         for (TYPublicBeacon *pb in array)
         {
-//            printf("%s\t%d\t%d\t%f\t%f\t%d\n", [pb.UUID UTF8String], pb.major.intValue, pb.minor.intValue, pb.location.x, pb.location.y, pb.location.floor);
+            printf("%s\t%d\t\t%d\t\t%f\t\t%f\t\t%d\n", [pb.UUID UTF8String], pb.major.intValue, pb.minor.intValue, pb.location.x, pb.location.y, pb.location.floor);
 
             if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {
                 continue;
@@ -285,7 +290,6 @@
 //            NSLog(@"%d\t%f\t%f", pb.minor.intValue, pb.location.x, pb.location.y);
 //            printf("%d\t%f\t%f\n", pb.minor.intValue, pb.location.x, pb.location.y);
             
-
 //            printf("TY  :\t%d\t%f\t%f\n", pb.minor.intValue, pb.location.x, pb.location.y);
 //            NSArray *fengArray = [TYMapToFengMap TYMapToFengMap:@[@(pb.location.x), @(pb.location.y)]];
 //            printf("Feng:\t%d\t%f\t%f\n", pb.minor.intValue, [fengArray[0] doubleValue], [fengArray[1] doubleValue]);
@@ -296,9 +300,39 @@
         //        NSLog(@"%@", array);
         [self encodeBeaconArrayToJson:array];
         [self encodeBeaconJsonForServer:array];
+        
+        // RTMap
+
+        OffsetSize offset = {0, 0};
+        TYBuilding *rtmapBuilding = [[TYBuilding alloc] initWithCityID:@"WD01" BuildingID:@"WD010001" Name:@"" Lon:0 Lat:0 Address:@"" InitAngle:0 RouteURL:@"" Offset:offset];
+        TYBeaconFMDBAdapter *rtmapDB = [[TYBeaconFMDBAdapter alloc] initWithBuilding:rtmapBuilding];
+        [rtmapDB open];
+        
+        for(TYPublicBeacon *pb in array){
+            TYPublicBeacon *rtmapBeacon = [TYPublicBeacon beaconWithUUID:pb.UUID Major:pb.major Minor:pb.minor Tag:pb.tag Location:[TYLocalPoint pointWithX:pb.location.x - xstart Y:pb.location.y - ystart Floor:pb.location.floor]];
+            
+            TYBeacon *rtBeacon;
+            rtBeacon = [rtmapDB getLocationingBeaconWithMajor:rtmapBeacon.major Minor:rtmapBeacon.minor];
+            if (rtBeacon == nil) {
+                [rtmapDB insertLocationingBeacon:rtmapBeacon];
+            } else {
+                [rtmapDB updateLocationingBeacon:rtmapBeacon];
+            }
+        }
+        if (array && array.count > 0) {
+            NSString *code = [IPBeaconDBCodeChecker checkBeacons:array];
+            if ([rtmapDB getCheckCode]) {
+                [rtmapDB updateCheckCode:code];
+            } else {
+                [rtmapDB insertCheckCode:code];
+            }
+        }
+        [rtmapDB close];
     } else {
         [publicBeaconLayer removeAllGraphics];
     }
+    
+    
 }
 
 - (void)encodeBeaconArrayToJson:(NSArray *)array

@@ -15,4 +15,6 @@
 
 + (NSString *)getBeaconDBPath:(TYBuilding *)building;
 
++ (NSString *)getBeaconDBPath:(NSString *)buildingID cityID:(NSString *)cityID;
+
 @end

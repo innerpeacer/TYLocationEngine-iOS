@@ -130,6 +130,7 @@
 //    sms.size = CGSizeMake(8, 8);
 //    [immediateLayer addGraphic:[AGSGraphic graphicWithGeometry:pos symbol:sms attributes:nil]];
     
+    NSLog(@"%@", [newImmediateLocation description]);
     [resultLayer removeAllGraphics];
     
     if (newImmediateLocation.floor != self.mapView.currentMapInfo.floorNumber) {
@@ -144,9 +145,9 @@
 #define PADDING 30
     CGRect restrictRange = CGRectMake(screenBound.origin.x + PADDING, screenBound.origin.y + PADDING, screenBound.size.width - PADDING * 2, screenBound.size.height - PADDING * 2);
     
-    [self.mapView restrictLocation:pos toScreenRange:restrictRange];
+//    [self.mapView restrictLocation:pos toScreenRange:restrictRange];
     
-    [self.mapView centerAtPoint:pos animated:YES];
+//    [self.mapView centerAtPoint:pos animated:YES];
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint

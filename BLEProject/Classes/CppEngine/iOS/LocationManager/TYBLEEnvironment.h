@@ -13,4 +13,8 @@
 + (void)setRootDirectoryForFiles:(NSString *)dir;
 + (NSString *)getRootDirectoryForFiles;
 
+
++ (NSString *)getSDKVersion;
++ (NSString *)getLibraryVersion;
+
 @end

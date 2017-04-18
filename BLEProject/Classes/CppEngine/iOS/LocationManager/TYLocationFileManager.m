@@ -29,4 +29,13 @@
     return [buildingDir stringByAppendingPathComponent:fileName];
 }
 
++ (NSString *)getBeaconDBPath:(NSString *)buildingID cityID:(NSString *)cityID
+{
+    NSString *rootDir = [TYBLEEnvironment getRootDirectoryForFiles];
+    NSString *cityDir = [rootDir stringByAppendingPathComponent:cityID];
+    NSString *buildingDir = [cityDir stringByAppendingPathComponent:buildingID];
+    NSString *fileName = [NSString stringWithFormat:FILE_BEACON_DB, buildingID];
+    return [buildingDir stringByAppendingPathComponent:fileName];
+}
+
 @end

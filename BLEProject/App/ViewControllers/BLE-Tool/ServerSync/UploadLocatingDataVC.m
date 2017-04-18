@@ -81,13 +81,24 @@
     [db close];
     
     for (TYPublicBeacon *pb in allBeaconArray) {
-        TYMapInfo *mapInfo = [TYMapInfo searchMapInfoFromArray:allMapInfos Floor:pb.location.floor];
-        if (mapInfo == nil) {
-            mapInfo = allMapInfos[0];
+//        TYMapInfo *mapInfo = [TYMapInfo searchMapInfoFromArray:allMapInfos Floor:pb.location.floor];
+//        if (mapInfo == nil) {
+//            mapInfo = allMapInfos[0];
+//        }
+//        pb.mapID = mapInfo.mapID;
+//        pb.buildingID = mapInfo.buildingID;
+//        pb.cityID = mapInfo.buildingID;
+        
+        NSString *testBuildingID = @"WD010026";
+        pb.buildingID = testBuildingID;
+        pb.cityID = @"WD01";
+        if(pb.location.floor > 0) {
+            pb.mapID = [NSString stringWithFormat:@"%@F0%d", testBuildingID, pb.location.floor];
+        } else if (pb.location.floor == -1){
+            pb.mapID = [NSString stringWithFormat:@"%@B01", testBuildingID];
+        } else if (pb.location.floor == -2){
+            pb.mapID = [NSString stringWithFormat:@"%@B02", testBuildingID];
         }
-        pb.mapID = mapInfo.mapID;
-        pb.buildingID = mapInfo.buildingID;
-        pb.cityID = mapInfo.buildingID;
     }
     
     NSLog(@"%d beacons", (int)allBeaconArray.count);

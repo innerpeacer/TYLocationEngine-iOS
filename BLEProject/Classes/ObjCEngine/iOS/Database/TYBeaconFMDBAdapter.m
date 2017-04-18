@@ -30,8 +30,67 @@
     if (self) {
         NSString *dbPath = [TYLocationFileManager getBeaconDBPath:building];
         _database = [FMDatabase databaseWithPath:dbPath];
+        [self checkDatabase];
     }
     return self;
+}
+
+- (void)checkDatabase
+{
+    [_database open];
+    if (![self existTable:TABLE_BEACON] || ![self existTable:TABLE_CODE]) {
+        [self createBeaconTable];
+    }
+}
+
+- (BOOL)existTable:(NSString *)table
+{
+    if (!table) {
+        return NO;
+    }
+    
+    NSString *sql = [NSString stringWithFormat:@"select count(*) from sqlite_master where type ='table' and name = '%@'",table];
+    
+    FMResultSet *set = [_database executeQuery:sql];
+    if([set next])
+    {
+        NSInteger count = [set intForColumnIndex:0];
+        if (count > 0) {
+            return YES;
+        } else {
+            return NO;
+        }
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)createBeaconTable
+{
+    BOOL beaconSuccess = false;
+    BOOL codeSuccess = false;
+    NSString *beaconSql = [NSString stringWithFormat:@"create table if not exists %@ (%@, %@, %@, %@, %@, %@, %@)", TABLE_BEACON,
+                           [NSString stringWithFormat:@"%@ blob not null", FIELD_BEACON_O_GEOM],
+                           [NSString stringWithFormat:@"%@ text not null", FIELD_BEACON_1_UUID],
+                           [NSString stringWithFormat:@"%@ integer not null", FIELD_BEACON_2_MAJOR],
+                           [NSString stringWithFormat:@"%@ integer not null", FIELD_BEACON_3_MINOR],
+                           [NSString stringWithFormat:@"%@ integer not null", FIELD_BEACON_4_FLOOR],
+                           [NSString stringWithFormat:@"%@ text", FIELD_BEACON_5_SHOPID],
+                           [NSString stringWithFormat:@"%@ text", FIELD_BEACON_6_TAG]];
+    if ([_database executeUpdate:beaconSql]) {
+        beaconSuccess = YES;
+    } else {
+        beaconSuccess = NO;
+    }
+    
+    NSString *codeSql = [NSString stringWithFormat:@"create table if not exists %@ (%@)", TABLE_CODE,
+                                                        [NSString stringWithFormat:@"%@ text", FIELD_CODE]];
+    if ([_database executeUpdate:codeSql]) {
+        codeSuccess = YES;
+    } else {
+        codeSuccess = NO;
+    }
+    return beaconSuccess && codeSuccess;
 }
 
 - (BOOL)deleteLocationingBeacon:(TYBeacon *)beacon

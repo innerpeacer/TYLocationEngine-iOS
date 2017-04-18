@@ -48,19 +48,14 @@
 
 - (id)initWithBuilding:(TYBuilding *)building
 {
-    NSString* invalidDateString = @"20171011";
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyyMMdd"];
-    NSDate* invalidDate = [dateFormatter dateFromString:invalidDateString];
-    NSTimeInterval interval = [invalidDate timeIntervalSinceDate:[NSDate date]];
-    if (interval < 0) {
-//        NSLog(@"抱歉，SDK已过期");
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误！" message:@"抱歉，定位引擎SDK已过期，请联系开发者。" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//        [alert show];
-        return nil;
-    }
     NSLog(@"%@", [TYLocationFileManager getBeaconDBPath:building]);
     return [[TYLocationManager alloc] initWithBeaconDB:[TYLocationFileManager getBeaconDBPath:building] FloorPathDict:nil];
+}
+
+- (id)initWithBuilding:(NSString *)buildingID cityID:(NSString *)cityID
+{
+    NSLog(@"%@", [TYLocationFileManager getBeaconDBPath:buildingID cityID:cityID]);
+    return [[TYLocationManager alloc] initWithBeaconDB:[TYLocationFileManager getBeaconDBPath:buildingID cityID:cityID] FloorPathDict:nil];
 }
 
 - (void)setBeaconRegion:(CLBeaconRegion *)region
