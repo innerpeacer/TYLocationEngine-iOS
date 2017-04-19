@@ -49,7 +49,7 @@
 //        [TYUserDefaults setDefaultBuilding:@"00210025"];
         
 //        [TYUserDefaults setDefaultCity:@"0021"];
-        [TYUserDefaults setDefaultBuilding:@"00210020"];
+        [TYUserDefaults setDefaultBuilding:@"00210024"];
     }
 }
 

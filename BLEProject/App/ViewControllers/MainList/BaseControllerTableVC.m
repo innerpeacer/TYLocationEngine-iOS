@@ -1,9 +1,71 @@
 #import "BaseControllerTableVC.h"
-#import "ControllerObject.h"
+
+@interface ControllerObject : NSObject
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *storyboardID;
+@end
+
+@implementation ControllerObject
+@end
+
+@interface ControllerCollections : NSObject
++ (NSArray *)bleToolControllers;
++ (NSArray *)bleAlgorithmControllers;
++ (NSArray *)mapControllers;
+@end
+
+@implementation ControllerCollections
+
++ (NSArray *)bleToolControllers
+{
+    NSArray *viewControllers = @[
+                                 @[@"当前地图", @"mapViewController"],
+                                 @[@"添加BeaconRegion", @"AddBeaconRegionVC"],
+                                 @[@"添加Beacon", @"addPrimitiveController"],
+                                 @[@"配置Beacon", @"ConfigureBeaconsVC"],
+                                 @[@"验证Beacon数据", @"CheckBeaconDatabaseVC"],
+                                 @[@"上传定位数据", @"UploadLocatingDataVC"],
+                                 @[@"下载定位数据", @"DownloadLocatingDataVC"],
+                                 @[@"获取定位数据", @"FetchLocatingDataVC"],
+                                 @[@"配置点位图", @"ConfigurePointPositionVC"],
+                                 ];
+    return [ControllerCollections getControllerArray:viewControllers];
+}
+
++ (NSArray *)bleAlgorithmControllers
+{
+    NSArray *viewControllers = @[
+                                 @[@"定位测试", @"CppEngineTestVC"],
+                                 @[@"PDR测试", @"PDRTestVC"],
+                                 ];
+    return [ControllerCollections getControllerArray:viewControllers];
+}
+
++ (NSArray *)mapControllers
+{
+    NSArray *viewControllers = @[
+                                 @[@"ArcGIS地图", @"cityListController"],
+                                 ];
+    return [ControllerCollections getControllerArray:viewControllers];
+}
+
+
++ (NSArray *)getControllerArray:(NSArray *)array
+{
+    NSMutableArray *controllers = [[NSMutableArray alloc] init];
+    for (int i = 0; i < array.count; ++i) {
+        NSArray *obj = array[i];
+        ControllerObject *controller = [[ControllerObject alloc] init];
+        controller.name = [NSString stringWithFormat:@"%d. %@", i, obj[0]];
+        controller.storyboardID = obj[1];
+        [controllers addObject:controller];
+    }
+    return controllers;
+}
+
+@end
 
 @interface BaseControllerTableVC()
-{
-}
 
 @end
 

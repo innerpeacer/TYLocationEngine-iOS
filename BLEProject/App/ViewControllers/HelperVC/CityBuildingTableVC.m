@@ -137,7 +137,7 @@
     } else {
         
         TYBuilding *building = ((RADataObject *)item).data;
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@)", building.name, building.buildingID];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", building.buildingID, building.name];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"地址：%@", building.address];
     }
     

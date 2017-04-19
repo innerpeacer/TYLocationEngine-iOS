@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "ControllerObject.h"
 
 @interface BaseControllerTableVC : UITableViewController
 @property (nonatomic, strong) NSArray *controllerObjects;
