@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 innerpeacer. All rights reserved.
 //
 
-#import "BaseMapVC.h"
+#import "BaseLocationTestVC.h"
 
-@interface CppEngineTestVC : BaseMapVC
+@interface CppEngineTestVC : BaseLocationTestVC
 
 @end

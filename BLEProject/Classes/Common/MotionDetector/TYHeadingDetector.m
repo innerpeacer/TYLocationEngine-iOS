@@ -52,7 +52,6 @@
 - (void)pushSensorValue:(CMAttitude *)attitude AtInterval:(CFTimeInterval)timeStamp
 {
     double attitudeAngle = attitude.yaw * 180 / PI;
-    
     double angle = 270 - attitudeAngle;
     if (angle >= 360) {
         angle -= 360;
@@ -60,6 +59,7 @@
     
     if (ABS(angle - _lastDeviceHeading) >= _sensitivity) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(headingDetector:onHeadingChanged:)]) {
+            BRTLog(@"=================== %f %f ", attitudeAngle, angle);
             [self.delegate headingDetector:self onHeadingChanged:angle];
         }
         _lastDeviceHeading = angle;

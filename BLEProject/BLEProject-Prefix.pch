@@ -34,4 +34,8 @@
 #define HOST_NAME @"localhost:8112"
 #endif
 
+
+#define BRTString [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent
+#define BRTLog(...) printf("%s 第%d行: %s\n", [BRTString UTF8String] ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
+
 #endif

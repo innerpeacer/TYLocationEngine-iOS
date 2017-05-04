@@ -12,6 +12,8 @@
 #import "IPBeaconDBCodeChecker.h"
 #import "TYMapToFengMap.h"
 
+#import "LocationTestHelper.h"
+
 @interface ConfigureBeaconsVC () <BeaconSelectedDelegate, TYBeaconManagerDelegate>
 {
     AGSGraphicsLayer *hintLayer;
@@ -167,30 +169,12 @@
     
     NSLog(@"Scale: %f", self.mapView.mapScale);
     NSLog(@"%f, %f", mappoint.x, mappoint.y);
-    NSLog(@"%f, %f", mappoint.x -xstart, mappoint.y-ystart);
     
     [hintLayer removeAllGraphics];
     [TYArcGISDrawer drawPoint:mappoint AtLayer:hintLayer WithColor:[UIColor greenColor]];
     
     currentLocation = [TYLocalPoint pointWithX:mappoint.x Y:mappoint.y Floor:self.currentMapInfo.floorNumber];;
     currentLocation.floor = self.currentMapInfo.floorNumber;
-    
-    
-//    // Convert Beacon Data to Feng Map
-//    {
-//        TYBeaconFMDBAdapter *pdb = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
-//        [pdb open];
-//        NSArray *beaconArray = [pdb getAllLocationingBeacons];
-//        for(TYPublicBeacon *pb in beaconArray)
-//        {
-//            NSArray *fengArray = [TYMapToFengMap TYMapToFengMap:@[@(pb.location.x), @(pb.location.y)]];
-//            TYLocalPoint *fengLocation = [TYLocalPoint pointWithX:[fengArray[0] doubleValue] Y:[fengArray[1] doubleValue] Floor:pb.location.floor];
-//            [pdb updateLocationingBeacon:[TYPublicBeacon beaconWithUUID:beaconRegion.proximityUUID.UUIDString Major:pb.major Minor:pb.minor Tag:pb.tag Location:fengLocation]];
-//        }
-//        [pdb close];
-//    }
-
-
 }
 
 - (IBAction)addCurrentBeacon:(id)sender {
@@ -247,154 +231,13 @@
     self.hintLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@", currentBeacon.major, currentBeacon.minor];
 }
 
-
-double xstart = 12966504.768704;
-double ystart = 4826188.718741;
 - (IBAction)publicSwtichToggled:(id)sender {
     NSLog(@"publicSwtichToggled");
     if (self.publicSwitch.on) {
-        TYBeaconFMDBAdapter *db = [[TYBeaconFMDBAdapter alloc] initWithBuilding:self.currentBuilding];
-        [db open];
-        
-        NSArray *array = [db getAllLocationingBeacons];
-        NSLog(@"%d beacons", (int)array.count);
-        
-        if (array && array.count > 0) {
-            NSString *code = [IPBeaconDBCodeChecker checkBeacons:array];
-            if ([db getCheckCode]) {
-                [db updateCheckCode:code];
-            } else {
-                [db insertCheckCode:code];
-            }
-        }
-        
-        for (TYPublicBeacon *pb in array)
-        {
-            printf("%s\t%d\t\t%d\t\t%f\t\t%f\t\t%d\n", [pb.UUID UTF8String], pb.major.intValue, pb.minor.intValue, pb.location.x, pb.location.y, pb.location.floor);
-
-            if (pb.location.floor != self.currentMapInfo.floorNumber && pb.location.floor != 0) {
-                continue;
-            }
-            
-            //            NSLog(@"Tag: %@", pb.tag);
-            AGSPoint *p = [AGSPoint pointWithX:pb.location.x y:pb.location.y spatialReference:self.mapView.spatialReference];
-            
-            [TYArcGISDrawer drawPoint:p AtLayer:publicBeaconLayer WithColor:[UIColor redColor]];
-            
-            
-            AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@", pb.minor] color:[UIColor magentaColor]];
-            [ts setOffset:CGPointMake(5, -10)];
-            [publicBeaconLayer addGraphic:[AGSGraphic graphicWithGeometry:p symbol:ts attributes:nil]];
-            
-            // For Doubi Wanda
-//            NSLog(@"%d\t%f\t%f", pb.minor.intValue, pb.location.x, pb.location.y);
-//            printf("%d\t%f\t%f\n", pb.minor.intValue, pb.location.x, pb.location.y);
-            
-//            printf("TY  :\t%d\t%f\t%f\n", pb.minor.intValue, pb.location.x, pb.location.y);
-//            NSArray *fengArray = [TYMapToFengMap TYMapToFengMap:@[@(pb.location.x), @(pb.location.y)]];
-//            printf("Feng:\t%d\t%f\t%f\n", pb.minor.intValue, [fengArray[0] doubleValue], [fengArray[1] doubleValue]);
-           
-        }
-        [db close];
-        
-        //        NSLog(@"%@", array);
-        [self encodeBeaconArrayToJson:array];
-        [self encodeBeaconJsonForServer:array];
-        
-        // RTMap
-
-        OffsetSize offset = {0, 0};
-        TYBuilding *rtmapBuilding = [[TYBuilding alloc] initWithCityID:@"WD01" BuildingID:@"WD010001" Name:@"" Lon:0 Lat:0 Address:@"" InitAngle:0 RouteURL:@"" Offset:offset];
-        TYBeaconFMDBAdapter *rtmapDB = [[TYBeaconFMDBAdapter alloc] initWithBuilding:rtmapBuilding];
-        [rtmapDB open];
-        
-        for(TYPublicBeacon *pb in array){
-            TYPublicBeacon *rtmapBeacon = [TYPublicBeacon beaconWithUUID:pb.UUID Major:pb.major Minor:pb.minor Tag:pb.tag Location:[TYLocalPoint pointWithX:pb.location.x - xstart Y:pb.location.y - ystart Floor:pb.location.floor]];
-            
-            TYBeacon *rtBeacon;
-            rtBeacon = [rtmapDB getLocationingBeaconWithMajor:rtmapBeacon.major Minor:rtmapBeacon.minor];
-            if (rtBeacon == nil) {
-                [rtmapDB insertLocationingBeacon:rtmapBeacon];
-            } else {
-                [rtmapDB updateLocationingBeacon:rtmapBeacon];
-            }
-        }
-        if (array && array.count > 0) {
-            NSString *code = [IPBeaconDBCodeChecker checkBeacons:array];
-            if ([rtmapDB getCheckCode]) {
-                [rtmapDB updateCheckCode:code];
-            } else {
-                [rtmapDB insertCheckCode:code];
-            }
-        }
-        [rtmapDB close];
+        [LocationTestHelper showBeaconLocationsWithMapInfo:self.currentMapInfo Building:self.currentBuilding OnLayer:publicBeaconLayer];
     } else {
         [publicBeaconLayer removeAllGraphics];
     }
-    
-    
-}
-
-- (void)encodeBeaconArrayToJson:(NSArray *)array
-{
-    NSMutableDictionary *rootDict = [[NSMutableDictionary alloc] init];
-    NSMutableArray *beaconArray = [[NSMutableArray alloc] init];
-    
-    [rootDict setObject:beaconArray forKey:@"beacons"];
-    
-    for (TYPublicBeacon *pb in array) {
-        NSMutableDictionary *beaconDict = [[NSMutableDictionary alloc] init];
-        [beaconDict setObject:pb.UUID forKey:@"uuid"];
-        [beaconDict setObject:pb.major forKey:@"major"];
-        [beaconDict setObject:pb.minor forKey:@"minor"];
-        [beaconDict setObject:@(pb.location.x) forKey:@"x"];
-        [beaconDict setObject:@(pb.location.y) forKey:@"y"];
-        [beaconDict setObject:@(pb.location.floor) forKey:@"floor"];
-        
-        [beaconArray addObject:beaconDict];
-    }
-    
-    NSData *data = [NSJSONSerialization dataWithJSONObject:rootDict options:NSJSONWritingPrettyPrinted error:nil];
-    
-    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *path = [documentDirectory stringByAppendingPathComponent:@"beacon.json"];
-    NSLog(@"%@", documentDirectory);
-    [data writeToFile:path atomically:YES];
-}
-
-- (void)encodeBeaconJsonForServer:(NSArray *)array
-{
-    NSMutableDictionary *rootDict = [[NSMutableDictionary alloc] init];
-    NSMutableArray *beaconArray = [[NSMutableArray alloc] init];
-    
-    [rootDict setObject:beaconArray forKey:@"beacons"];
-    
-    for (TYPublicBeacon *pb in array) {
-        NSMutableDictionary *beaconDict = [[NSMutableDictionary alloc] init];
-        [beaconDict setObject:pb.UUID forKey:@"uuid"];
-        [beaconDict setObject:pb.major forKey:@"major"];
-        [beaconDict setObject:pb.minor forKey:@"minor"];
-        [beaconDict setObject:@(pb.location.x) forKey:@"x"];
-        [beaconDict setObject:@(pb.location.y) forKey:@"y"];
-        [beaconDict setObject:@(pb.location.floor) forKey:@"floor"];
-        
-        [beaconDict setObject:self.currentBuilding.cityID forKey:@"cityID"];
-        [beaconDict setObject:self.currentBuilding.buildingID forKey:@"buildingID"];
-        for (TYMapInfo *info in self.allMapInfos) {
-            if (info.floorNumber == pb.location.floor) {
-                [beaconDict setObject:info.mapID forKey:@"mapID"];
-            }
-        }
-        
-        [beaconArray addObject:beaconDict];
-    }
-    
-    NSData *data = [NSJSONSerialization dataWithJSONObject:rootDict options:NSJSONWritingPrettyPrinted error:nil];
-    
-    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *path = [documentDirectory stringByAppendingPathComponent:@"beaconForServer.json"];
-    NSLog(@"%@", documentDirectory);
-    [data writeToFile:path atomically:YES];
 }
 
 - (IBAction)showConfiguredBeacons:(id)sender {

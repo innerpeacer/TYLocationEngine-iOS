@@ -13,7 +13,7 @@
 
 #define UPDATE_FREQUENY 100.0
 
-@interface TYMotionDetector() <TYStepDetectorDelegate, TYHeadingDetectorDelegate, TYMagHeadingDetectorDelegate>
+@interface TYMotionDetector() <TYStepDetectorDelegate, TYHeadingDetectorDelegate>
 {
     TYStepDetector *_stepDetector;
     TYHeadingDetector *_headingDetector;
@@ -102,6 +102,19 @@
 
 - (void)startUpdates
 {
+//    if ([_motionManager isDeviceMotionAvailable] && ![_motionManager isDeviceMotionActive]) {
+//        [_motionManager setDeviceMotionUpdateInterval:1.0 /UPDATE_FREQUENY];
+//        [_motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
+//            if (_isStepDetectorActive) {
+//                [_stepDetector pushSensorValue:motion.userAcceleration AtInterval:CFAbsoluteTimeGetCurrent()];
+//            }
+//            
+//            if (_isHeadingDetectorActive) {
+//                [_headingDetector pushSensorValue:motion.attitude AtInterval:CFAbsoluteTimeGetCurrent()];
+//            }
+//        }];
+//    }
+    
     if ([_motionManager isDeviceMotionAvailable] && ![_motionManager isDeviceMotionActive]) {
         [_motionManager setDeviceMotionUpdateInterval:1.0 /UPDATE_FREQUENY];
         [_motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
@@ -111,10 +124,7 @@
             
             if (_isHeadingDetectorActive) {
                 [_headingDetector pushSensorValue:motion.attitude AtInterval:CFAbsoluteTimeGetCurrent()];
-//                [_magHeadingDetector pushSensorValue:motion.magneticField AtInterval:CFAbsoluteTimeGetCurrent()];
             }
-            
-            
         }];
     }
 }
@@ -134,12 +144,12 @@
     }
 }
 
-- (void)headingDetector:(TYMagHeadingDetector *)headingDetector onMagHeadingChanged:(double)newHeading
-{
+//- (void)headingDetector:(TYMagHeadingDetector *)headingDetector onMagHeadingChanged:(double)newHeading
+//{
 //    if (self.delegate && [self.delegate respondsToSelector:@selector(motionDetector:onHeadingChanged:)]) {
 //        [self.delegate motionDetector:self onHeadingChanged:newHeading];
 //    }
-}
+//}
 
 - (void)stepDetector:(TYStepDetector *)stepDetector onStepEvent:(TYStepEvent *)step
 {

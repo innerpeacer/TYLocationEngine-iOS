@@ -6,8 +6,8 @@
 //  Copyright © 2017年 innerpeacer. All rights reserved.
 //
 
-#import "BaseMapVC.h"
+#import "BaseLocationTestVC.h"
 
-@interface PDRTestVC : BaseMapVC
+@interface PDRTestVC : BaseLocationTestVC
 
 @end

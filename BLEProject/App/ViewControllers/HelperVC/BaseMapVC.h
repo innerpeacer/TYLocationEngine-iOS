@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <TYMapSDK/TYMapSDK.h>
+#import "LocationTestHelper.h"
 
 @interface BaseMapVC : UIViewController <TYMapViewDelegate, AGSMapViewLayerDelegate>
 

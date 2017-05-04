@@ -77,6 +77,8 @@
     self.title = @"BLE算法";
     self.storyboardName = @"BLE-Algorithm";
     self.controllerObjects = [ControllerCollections bleAlgorithmControllers];
+    
+    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
 @end
