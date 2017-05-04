@@ -10,6 +10,12 @@
 
 @implementation ArcGISHelper
 
++ (AGSGraphicsLayer *)createNewLayer
+{
+    AGSGraphicsLayer *layer = [AGSGraphicsLayer graphicsLayer];
+    return layer;
+}
+
 + (AGSGraphicsLayer *)createNewLayer:(AGSMapView *)mapView
 {
     AGSGraphicsLayer *layer = [AGSGraphicsLayer graphicsLayer];

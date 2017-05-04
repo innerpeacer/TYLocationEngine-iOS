@@ -78,7 +78,7 @@
     self.storyboardName = @"BLE-Algorithm";
     self.controllerObjects = [ControllerCollections bleAlgorithmControllers];
     
-    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
 }
 
 @end

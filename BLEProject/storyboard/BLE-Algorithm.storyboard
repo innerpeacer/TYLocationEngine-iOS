@@ -13,7 +13,6 @@
         <!--Cpp Engine TestVC-->
         <scene sceneID="hFX-tZ-CBd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tix-Yy-vwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CppEngineTestVC" id="bd9-Nl-tnR" customClass="CppEngineTestVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0dr-a4-mBe"/>
@@ -25,34 +24,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zeo-UO-so3" customClass="TYMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikV-wZ-gcK">
-                                        <rect key="frame" x="20" y="652" width="62.666666666666671" height="20.666666666666629"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Zh-8r-yNH">
-                                        <rect key="frame" x="90" y="647" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="publicSwitchToggled:" destination="bd9-Nl-tnR" eventType="valueChanged" id="Md3-ht-EAM"/>
-                                        </connections>
-                                    </switch>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pH5-Op-Tpy">
-                                        <rect key="frame" x="346" y="647" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="followingModeSwitchToggled:" destination="bd9-Nl-tnR" eventType="valueChanged" id="TjJ-vF-Tya"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="pH5-Op-Tpy" secondAttribute="trailing" constant="19" id="PAR-TS-h8B"/>
-                                    <constraint firstItem="0Zh-8r-yNH" firstAttribute="leading" secondItem="ikV-wZ-gcK" secondAttribute="trailing" constant="8" id="WLX-YR-C5O"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Zh-8r-yNH" secondAttribute="bottom" constant="58" id="f8X-Uy-89u"/>
-                                    <constraint firstAttribute="bottom" secondItem="pH5-Op-Tpy" secondAttribute="bottom" constant="58" id="gkI-M8-cHc"/>
-                                    <constraint firstAttribute="bottom" secondItem="ikV-wZ-gcK" secondAttribute="bottom" constant="63" id="mdP-r0-FMI"/>
-                                    <constraint firstItem="ikV-wZ-gcK" firstAttribute="leading" secondItem="Zeo-UO-so3" secondAttribute="leading" constant="20" id="qhu-jc-oGx"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,18 +36,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="followingModeSwitch" destination="pH5-Op-Tpy" id="taB-8E-UPW"/>
                         <outlet property="mapView" destination="Zeo-UO-so3" id="5ul-i3-C6b"/>
-                        <outlet property="publicSwitch" destination="0Zh-8r-yNH" id="HNK-xC-j2p"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tix-Yy-vwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2056.875" y="-14.788732394366196"/>
         </scene>
         <!--TestVC-->
         <scene sceneID="m4G-xz-9br">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7QG-b6-m4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PDRTestVC" id="RwE-LI-gXE" customClass="PDRTestVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m8B-4b-Zqv"/>
@@ -87,34 +57,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2e0-KR-AEQ" customClass="TYMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pr-Gz-Obs">
-                                        <rect key="frame" x="20" y="652" width="62.666666666666671" height="20.666666666666629"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-XE-Lbb">
-                                        <rect key="frame" x="90" y="647" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="publicSwitchToggled:" destination="RwE-LI-gXE" eventType="valueChanged" id="398-1V-8cV"/>
-                                        </connections>
-                                    </switch>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aUu-JB-gWU">
-                                        <rect key="frame" x="346" y="647" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="followingModeSwitchToggled:" destination="RwE-LI-gXE" eventType="valueChanged" id="Pph-5p-FHT"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="3Pr-Gz-Obs" firstAttribute="leading" secondItem="2e0-KR-AEQ" secondAttribute="leading" constant="20" id="Dti-hh-Dpy"/>
-                                    <constraint firstItem="Kj7-XE-Lbb" firstAttribute="leading" secondItem="3Pr-Gz-Obs" secondAttribute="trailing" constant="8" id="J7t-Um-Els"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kj7-XE-Lbb" secondAttribute="bottom" constant="58" id="Lus-sU-eWW"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Pr-Gz-Obs" secondAttribute="bottom" constant="63" id="fBk-JZ-WMb"/>
-                                    <constraint firstAttribute="bottom" secondItem="aUu-JB-gWU" secondAttribute="bottom" constant="58" id="oe9-wT-H5v"/>
-                                    <constraint firstAttribute="trailing" secondItem="aUu-JB-gWU" secondAttribute="trailing" constant="19" id="ysp-tk-3ZG"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -126,11 +69,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="followingModeSwitch" destination="aUu-JB-gWU" id="4fd-Jl-cGJ"/>
                         <outlet property="mapView" destination="2e0-KR-AEQ" id="2GV-l3-BXV"/>
-                        <outlet property="publicSwitch" destination="Kj7-XE-Lbb" id="9t5-VP-uck"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7QG-b6-m4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2775" y="-15"/>
         </scene>

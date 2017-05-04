@@ -7,11 +7,15 @@
 //
 
 #import "BaseMapVC.h"
+#import "ArcGISHelper.h"
+#import "DebugItem.h"
 
 @interface BaseLocationTestVC : BaseMapVC
 
 @property (nonatomic, strong) AGSGraphicsLayer *publicBeaconLayer;
 @property (nonatomic, strong) AGSGraphicsLayer *signalLayer;
+
+@property (nonatomic, strong) AGSGraphicsLayer *traceLayer;
 
 @property (nonatomic, strong) AGSGraphicsLayer *locationLayer1;
 @property (nonatomic, strong) AGSGraphicsLayer *locationLayer2;
@@ -19,10 +23,7 @@
 @property (nonatomic, strong) AGSPictureMarkerSymbol *locationSymbol;
 @property (nonatomic, strong) AGSPictureMarkerSymbol *locationArrowSymbol;
 
-@property (weak, nonatomic) IBOutlet UISwitch *publicSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *followingModeSwitch;
-
-- (IBAction)publicSwitchToggled:(id)sender;
-- (IBAction)followingModeSwitchToggled:(id)sender;
+@property (nonatomic, strong) NSMutableArray *debugItems;
+@property (nonatomic, assign) BOOL isSignalOn;
 
 @end

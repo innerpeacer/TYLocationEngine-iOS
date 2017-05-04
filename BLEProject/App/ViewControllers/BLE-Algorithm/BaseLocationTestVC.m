@@ -8,7 +8,7 @@
 
 #import "BaseLocationTestVC.h"
 
-@interface BaseLocationTestVC ()
+@interface BaseLocationTestVC () <UIActionSheetDelegate>
 
 @end
 
@@ -17,17 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.signalLayer = [AGSGraphicsLayer graphicsLayer];
-    [self.mapView addMapLayer:self.signalLayer];
+    self.debugItems = [[NSMutableArray alloc] init];
+    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_PUBLIC_BEACON]];
     
-    self.publicBeaconLayer = [AGSGraphicsLayer graphicsLayer];
-    [self.mapView addMapLayer:self.publicBeaconLayer];
-
-    self.locationLayer1 = [AGSGraphicsLayer graphicsLayer];
-    [self.mapView addMapLayer:self.locationLayer1];
-    
-    self.locationLayer2 = [AGSGraphicsLayer graphicsLayer];
-    [self.mapView addMapLayer:self.locationLayer2];
+    self.signalLayer = [ArcGISHelper createNewLayer:self.mapView];
+    self.publicBeaconLayer = [ArcGISHelper createNewLayer:self.mapView];
+    self.traceLayer = [ArcGISHelper createNewLayer:self.mapView];
+    self.locationLayer1 = [ArcGISHelper createNewLayer:self.mapView];
+    self.locationLayer2 = [ArcGISHelper createNewLayer:self.mapView];
     
     self.locationSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"l7"];
     self.locationArrowSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locationArrow2"];
@@ -35,22 +32,47 @@
 
 //    [self.mapView setLocationSymbol:self.locationSymbol];
     [self.mapView setLocationSymbol:self.locationArrowSymbol];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"调试" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemTest:)];
 }
 
-- (IBAction)publicSwitchToggled:(id)sender {
-    if (self.publicSwitch.on) {
+- (IBAction)rightBarButtonItemTest:(id)sender
+{
+    BRTLog(@"rightBarButtonItemTest");
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"调试内容" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:nil];
+    for (DebugItem *item in self.debugItems) {
+        [actionSheet addButtonWithTitle:(item.on ? item.nameOff : item.name)];
+    }
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    BRTLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
+    if (buttonIndex == 0) {
+        return;
+    }
+    DebugItem *item = self.debugItems[buttonIndex - 1];
+    [item switchStatus];
+    [self performSelector:item.selector withObject:item afterDelay:0];
+}
+
+- (void)switchPublicBeacon:(id)sender
+{
+    BRTLog(@"switchPublicBeacon");
+    DebugItem *item = sender;
+    if (item.on) {
         [LocationTestHelper showBeaconLocationsWithMapInfo:self.currentMapInfo Building:self.currentBuilding OnLayer:self.publicBeaconLayer];
     } else {
         [self.publicBeaconLayer removeAllGraphics];
     }
 }
 
-- (IBAction)followingModeSwitchToggled:(id)sender {
-    if (self.followingModeSwitch.on) {
-        [self.mapView setMapMode:TYMapViewModeFollowing];
-    } else {
-        [self.mapView setMapMode:TYMapViewModeDefault];
-    }
+- (void)switchBeaconSignal:(id)sender
+{
+    BRTLog(@"switchPublicBeacon");
+    DebugItem *item = sender;
+    self.isSignalOn = item.on;
 }
 
 @end

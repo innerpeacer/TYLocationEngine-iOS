@@ -13,7 +13,6 @@
     CLBeaconRegion *publicBeaconRegion;
     TYLocationManager *locationManager;
 }
-
 @end
 
 @implementation CppEngineTestVC
@@ -21,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initLocationSettings];
+    
+    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_BEACON_SIGNAL]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -99,7 +100,11 @@
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons
 {
     [self.signalLayer removeAllGraphics];
-    [LocationTestHelper showHintRssiForLocationBeacons:beacons WithMapInfo:self.currentMapInfo OnLayer:self.signalLayer];
+    if (self.isSignalOn) {
+        [LocationTestHelper showHintRssiForLocationBeacons:beacons WithMapInfo:self.currentMapInfo OnLayer:self.signalLayer];
+    } else {
+        [self.signalLayer removeAllGraphics];
+    }
 }
 
 

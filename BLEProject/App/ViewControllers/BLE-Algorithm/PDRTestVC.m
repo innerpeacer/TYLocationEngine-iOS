@@ -16,8 +16,6 @@
 @interface PDRTestVC () <TYMotionDetectorDelegate, CLLocationManagerDelegate>
 {
     AGSGraphicsLayer *hintLayer;
-    AGSGraphicsLayer *traceLayer;
-//    AGSPictureMarkerSymbol *arrowSymbol;
     
     TYMotionDetector *motionDetector;
     
@@ -37,11 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    traceLayer = [ArcGISHelper createNewLayer:self.mapView];
     hintLayer = [ArcGISHelper createNewLayer:self.mapView];
-    
-//    arrowSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locationArrow2"];
-//    arrowSymbol.size = CGSizeMake(60, 60);
     
     motionDetector = [[TYMotionDetector alloc] init];
     motionDetector.delegate = self;
@@ -49,10 +43,6 @@
     startPoint = [AGSPoint pointWithX:13523504.992997 y:3642473.329817 spatialReference:self.mapView.spatialReference];
     currentPoint = startPoint;
     lastPoint = nil;
-    
-    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:NO block:^(NSTimer * _Nonnull timer) {
-        [self TYMapView:self.mapView didClickAtPoint:CGPointZero mapPoint:nil];
-    }];
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -64,9 +54,6 @@
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
-    NSLog(@"%@", mappoint);
-//    NSLog(@"%f", self.mapView.resolution);
-    
     currentPoint = startPoint;
     lastPoint = nil;
     [pdrController setStartLocation:[TYLocalPoint pointWithX:startPoint.x Y:startPoint.y]];
@@ -86,7 +73,7 @@
 
 - (void)motionDetector:(TYMotionDetector *)detector onHeadingChanged:(double)heading
 {
-    BRTLog(@"Heading: %f", heading);
+//    BRTLog(@"Heading: %f", heading);
     self.locationArrowSymbol.angle = heading;
     [pdrController updateHeading:heading];
     
@@ -94,7 +81,7 @@
 
 - (void)motionDetector:(TYMotionDetector *)detector onStepEvent:(TYStepEvent *)stepEvent
 {
-    BRTLog(@"StepEvent");
+//    BRTLog(@"StepEvent");
     [pdrController addStepEvent];
     TYLocalPoint *lp = pdrController.currentLocation;
     
@@ -105,8 +92,8 @@
     AGSSimpleMarkerSymbol *sms = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor blueColor]];
     sms.size = CGSizeMake(8, 8);
     sms.outline = [AGSSimpleLineSymbol simpleLineSymbolWithColor:[UIColor whiteColor]];
-    [ArcGISHelper drawLineFrom:lastPoint To:currentPoint AtLayer:traceLayer WithColor:[UIColor greenColor] Width:@4 ClearContent:NO];
-    [ArcGISHelper drawPoint:lastPoint AtLayer:traceLayer WithSymbol:sms ClearContent:NO];
+    [ArcGISHelper drawLineFrom:lastPoint To:currentPoint AtLayer:self.traceLayer WithColor:[UIColor greenColor] Width:@4 ClearContent:NO];
+    [ArcGISHelper drawPoint:lastPoint AtLayer:self.traceLayer WithSymbol:sms ClearContent:NO];
     
     [self.mapView centerAtPoint:currentPoint animated:YES];
 }
@@ -121,13 +108,5 @@
 {
     [motionDetector stopAllDetectors];
 }
-
-//- (IBAction)followingModeSwitchToggled:(id)sender {
-//    if (self.followingModeSwitch.on) {
-//        [self.mapView setMapMode:TYMapViewModeFollowing];
-//    } else {
-//        [self.mapView setMapMode:TYMapViewModeDefault];
-//    }
-//}
 
 @end
