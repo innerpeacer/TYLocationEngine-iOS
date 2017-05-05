@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package innerpeacer.trace;
+
+message TYTracePointPbf {
+required uint32 index = 1;
+required double x = 2;
+required double y = 3;
+required uint32 floor = 4;
+required double timestamp = 5;
+}
+
+message TYTracePbf {
+required string traceID = 1;
+required double timestamp = 2;
+repeated TYTracePointPbf points = 3;
+}

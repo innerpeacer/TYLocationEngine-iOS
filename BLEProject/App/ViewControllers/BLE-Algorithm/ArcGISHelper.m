@@ -44,15 +44,8 @@
         [layer removeAllGraphics];
     }
     
-    UIColor *lineColor = color;
-    if (lineColor == nil) {
-        lineColor = [UIColor redColor];
-    }
-    
-    NSNumber *lineWidth = width;
-    if (lineWidth == nil) {
-        lineWidth = @2;
-    }
+    UIColor *lineColor = (color == nil) ? [UIColor redColor] : color;
+    NSNumber *lineWidth = (width == nil) ? @2 : width;
     
     AGSMutablePolyline *polyline = [[AGSMutablePolyline alloc] initWithSpatialReference:nil];
     [polyline addPathToPolyline];
@@ -62,6 +55,40 @@
     
     AGSSimpleLineSymbol *sls = [AGSSimpleLineSymbol simpleLineSymbolWithColor:lineColor width:lineWidth.doubleValue];
     [layer addGraphic:[AGSGraphic graphicWithGeometry:polyline symbol:sls attributes:nil]];
+}
+
++ (void)drawTrace:(TYTrace *)trace AtLayer:(AGSGraphicsLayer *)layer
+{
+    [ArcGISHelper drawTrace:trace AtLayer:layer PointColor:nil LineColor:nil Width:nil];
+}
+
++ (void)drawTrace:(TYTrace *)trace AtLayer:(AGSGraphicsLayer *)layer PointColor:(UIColor *)pColor LineColor:(UIColor *)lColor Width:(NSNumber *)width
+{
+    UIColor *pointColor = (pColor == nil) ? [UIColor blueColor] : pColor;
+    AGSSimpleMarkerSymbol *pointSymbol = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:pointColor];
+    pointSymbol.size = CGSizeMake(6, 6);
+    pointSymbol.outline = [AGSSimpleLineSymbol simpleLineSymbolWithColor:[UIColor whiteColor]];
+    
+    UIColor *lineColor = (lColor == nil) ? [UIColor greenColor] : lColor;
+    NSNumber *lineWidth = (width == nil) ? @4 : width;
+    
+    [layer removeAllGraphics];
+    for (int i = 0; i < trace.points.count; ++i) {
+        TYTracePoint *tp = trace.points[i];
+        AGSPoint *currentPoint = [AGSPoint pointWithX:tp.x y:tp.y spatialReference:nil];
+        if (i > 0) {
+            TYTracePoint *lastTP = trace.points[i - 1];
+            AGSPoint *lastPoint = [AGSPoint pointWithX:lastTP.x y:lastTP.y spatialReference:nil];
+            [ArcGISHelper drawLineFrom:lastPoint To:currentPoint AtLayer:layer WithColor:lineColor Width:lineWidth ClearContent:NO];
+        }
+    }
+    
+    for (int i = 0; i < trace.points.count; ++i) {
+        TYTracePoint *tp = trace.points[i];
+        AGSPoint *currentPoint = [AGSPoint pointWithX:tp.x y:tp.y spatialReference:nil];
+        [ArcGISHelper drawPoint:currentPoint AtLayer:layer WithSymbol:pointSymbol ClearContent:NO];
+    }
+    
 }
 
 @end

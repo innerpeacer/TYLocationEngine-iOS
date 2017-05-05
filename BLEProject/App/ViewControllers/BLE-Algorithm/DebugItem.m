@@ -21,8 +21,9 @@
     if (testItems == nil) {
         testItems = @[
                       @[IP_DEBUG_ITEM_PUBLIC_BEACON, @"显示点位", @"隐藏点位", @(YES), @"switchPublicBeacon:"],
-                      @[IP_DEBUG_ITEM_BEACON_SIGNAL, @"显示信号", @"隐藏信号", @(YES), @"switchBeaconSignal:"]
-
+                      @[IP_DEBUG_ITEM_BEACON_SIGNAL, @"显示信号", @"隐藏信号", @(YES), @"switchBeaconSignal:"],
+                      @[IP_DEBUG_ITEM_SAVE_TRACE, @"保存轨迹", @"保存轨迹", @(YES), @"saveTrace:"],
+                      @[IP_DEBUG_ITEM_SHOW_TRACE, @"显示轨迹", @"显示轨迹", @(YES), @"showTrace:"]
                       ];
     }
     

@@ -59,7 +59,7 @@
     
     if (ABS(angle - _lastDeviceHeading) >= _sensitivity) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(headingDetector:onHeadingChanged:)]) {
-            BRTLog(@"=================== %f %f ", attitudeAngle, angle);
+//            BRTLog(@"=================== %f %f ", attitudeAngle, angle);
             [self.delegate headingDetector:self onHeadingChanged:angle];
         }
         _lastDeviceHeading = angle;
