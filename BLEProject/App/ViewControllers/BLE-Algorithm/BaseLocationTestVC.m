@@ -17,9 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.debugItems = [[NSMutableArray alloc] init];
-    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_PUBLIC_BEACON]];
-    
     self.signalLayer = [ArcGISHelper createNewLayer:self.mapView];
     self.publicBeaconLayer = [ArcGISHelper createNewLayer:self.mapView];
     self.traceLayer = [ArcGISHelper createNewLayer:self.mapView];
@@ -34,6 +31,17 @@
     [self.mapView setLocationSymbol:self.locationArrowSymbol];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"调试" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemTest:)];
+    
+    
+    self.debugItems = [[NSMutableArray alloc] init];
+    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_PUBLIC_BEACON]];
+    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_BEACON_SIGNAL]];
+
+    for (DebugItem *item in self.debugItems) {
+        if (item.on) {
+            [self performSelector:item.selector withObject:item afterDelay:0];
+        }
+    }
 }
 
 - (IBAction)rightBarButtonItemTest:(id)sender
@@ -59,7 +67,7 @@
 
 - (void)switchPublicBeacon:(id)sender
 {
-    BRTLog(@"switchPublicBeacon");
+//    BRTLog(@"switchPublicBeacon");
     DebugItem *item = sender;
     if (item.on) {
         [LocationTestHelper showBeaconLocationsWithMapInfo:self.currentMapInfo Building:self.currentBuilding OnLayer:self.publicBeaconLayer];
@@ -70,7 +78,7 @@
 
 - (void)switchBeaconSignal:(id)sender
 {
-    BRTLog(@"switchPublicBeacon");
+//    BRTLog(@"switchBeaconSignal");
     DebugItem *item = sender;
     self.isSignalOn = item.on;
 }

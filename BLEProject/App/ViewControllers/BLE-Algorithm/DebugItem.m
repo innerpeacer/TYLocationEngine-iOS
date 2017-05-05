@@ -20,8 +20,8 @@
     static NSArray *testItems;
     if (testItems == nil) {
         testItems = @[
-                      @[IP_DEBUG_ITEM_PUBLIC_BEACON, @"显示点位", @"隐藏点位", @(NO), @"switchPublicBeacon:"],
-                      @[IP_DEBUG_ITEM_BEACON_SIGNAL, @"显示信号", @"隐藏信号", @(NO), @"switchBeaconSignal:"]
+                      @[IP_DEBUG_ITEM_PUBLIC_BEACON, @"显示点位", @"隐藏点位", @(YES), @"switchPublicBeacon:"],
+                      @[IP_DEBUG_ITEM_BEACON_SIGNAL, @"显示信号", @"隐藏信号", @(YES), @"switchBeaconSignal:"]
 
                       ];
     }

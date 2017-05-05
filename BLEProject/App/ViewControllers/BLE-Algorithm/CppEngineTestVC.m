@@ -21,7 +21,6 @@
     [super viewDidLoad];
     [self initLocationSettings];
     
-    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_BEACON_SIGNAL]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
