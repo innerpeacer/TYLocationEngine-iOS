@@ -16,7 +16,6 @@
 
 #define FILE_MAPINFO @"MapInfo_Building"
 
-
 - (void)viewDidLoad
 {    
     _currentCity = [TYUserDefaults getDefaultCity];

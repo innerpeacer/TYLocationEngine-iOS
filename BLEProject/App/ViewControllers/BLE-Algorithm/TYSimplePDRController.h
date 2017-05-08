@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <TYMapData/TYMapData.h>
 
-@interface TYPDRController : NSObject
+@interface TYSimplePDRController : NSObject
 
 - (id)initWithAngle:(double)angle;
 

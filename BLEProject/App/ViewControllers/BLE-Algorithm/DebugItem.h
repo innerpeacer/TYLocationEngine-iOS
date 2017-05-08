@@ -10,6 +10,7 @@
 
 #define IP_DEBUG_ITEM_PUBLIC_BEACON @"PublicBeacon"
 #define IP_DEBUG_ITEM_BEACON_SIGNAL @"BeaconSignal"
+#define IP_DEBUG_ITEM_START_TRACE @"StartTrace"
 #define IP_DEBUG_ITEM_SAVE_TRACE @"SaveTrace"
 #define IP_DEBUG_ITEM_SHOW_TRACE @"ShowTrace"
 

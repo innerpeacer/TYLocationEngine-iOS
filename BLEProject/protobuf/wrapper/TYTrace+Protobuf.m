@@ -67,7 +67,11 @@
 
 - (id)initWithTracePbf:(TYTracePbf *)pbf
 {
-    return [[[self class] alloc] initWithTraceID:pbf.traceId Timestamp:pbf.timestamp Points:pbf.pointsArray];
+    NSMutableArray *pointArray = [NSMutableArray arrayWithCapacity:pbf.pointsArray.count];
+    for (int i = 0; i < pbf.pointsArray.count; ++i) {
+        pointArray[i] = [[TYTracePoint alloc] initWithTracePointPbf:pbf.pointsArray[i]];
+    }
+    return [[[self class] alloc] initWithTraceID:pbf.traceId Timestamp:pbf.timestamp Points:pointArray];
 }
 
 + (TYTrace *)traceWithData:(NSData *)data error:(NSError *)err

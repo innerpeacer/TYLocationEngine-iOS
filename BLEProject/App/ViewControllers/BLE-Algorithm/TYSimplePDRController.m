@@ -7,11 +7,11 @@
 //  Copyright © 2017年 innerpeacer. All rights reserved.
 //
 
-#import "TYPDRController.h"
+#import "TYSimplePDRController.h"
 
 #define DEFAULT_STRIDE_LENGTH 0.5
 
-@interface TYPDRController()
+@interface TYSimplePDRController()
 {
     double initAngle;
     
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation TYPDRController
+@implementation TYSimplePDRController
 
 - (id)initWithAngle:(double)angle
 {

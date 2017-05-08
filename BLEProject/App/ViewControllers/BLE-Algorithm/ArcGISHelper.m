@@ -23,6 +23,12 @@
     return layer;
 }
 
++ (void)drawLocalPoint:(TYLocalPoint *)lp AtLayer:(AGSGraphicsLayer *)layer WithSymbol:(AGSMarkerSymbol *)ms ClearContent:(BOOL)clear
+{
+    AGSPoint *point = [AGSPoint pointWithX:lp.x y:lp.y spatialReference:nil];
+    [ArcGISHelper drawPoint:point AtLayer:layer WithSymbol:ms ClearContent:clear];
+}
+
 + (void)drawPoint:(AGSPoint *)p AtLayer:(AGSGraphicsLayer *)layer WithSymbol:(AGSMarkerSymbol *)ms ClearContent:(BOOL)clear
 {
     if (clear) {

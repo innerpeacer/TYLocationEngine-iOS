@@ -11,25 +11,28 @@
 #import "TYMotionDetector.h"
 
 #import <CoreLocation/CoreLocation.h>
-#import "TYPDRController.h"
+#import "TYSimplePDRController.h"
 #import "TYTrace.h"
 #import "TYTrace+Protobuf.h"
+#import "PbfCollectionDatabase.h"
+#import "TraceManager.h"
+#import "TraceTableVC.h"
+#import "TYLocationManager.h"
 
 @interface PDRTestVC () <TYMotionDetectorDelegate, CLLocationManagerDelegate>
 {
-    AGSGraphicsLayer *hintLayer;
-    
     TYMotionDetector *motionDetector;
     
-    AGSPoint *startPoint;
-    AGSPoint *currentPoint;
-    AGSPoint *lastPoint;
+    TYLocalPoint *currentLocation;
     
-    CLLocationManager *locationManager;
+    CLLocationManager *systemLocationManager;
     
-    TYPDRController *pdrController;
+    TYSimplePDRController *pureController;
+    TYSimplePDRController *pdrController;
     
+    TYTrace *pureTrace;
     TYTrace *pdrTrace;
+    BOOL isStarted;
 }
 
 @end
@@ -39,41 +42,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    hintLayer = [ArcGISHelper createNewLayer:self.mapView];
-    
     motionDetector = [[TYMotionDetector alloc] init];
     motionDetector.delegate = self;
     
-    startPoint = [AGSPoint pointWithX:13523504.992997 y:3642473.329817 spatialReference:self.mapView.spatialReference];
-    currentPoint = startPoint;
-    lastPoint = nil;
+    systemLocationManager = [[CLLocationManager alloc] init];
+    systemLocationManager.delegate = self;
+    [systemLocationManager startUpdatingHeading];
     
-    pdrTrace = [[TYTrace alloc] initWithTraceID:@"trace-0"];
+    pdrController = [[TYSimplePDRController alloc] initWithAngle:0];
+    pureController = [[TYSimplePDRController alloc] initWithAngle:0];
     
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    [locationManager startUpdatingHeading];
-    
-    pdrController = [[TYPDRController alloc] initWithAngle:0];
-    [pdrController setStartLocation:[TYLocalPoint pointWithX:startPoint.x Y:startPoint.y]];
-    
+    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_START_TRACE]];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_SAVE_TRACE]];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_SHOW_TRACE]];
-
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
-    currentPoint = startPoint;
-    lastPoint = nil;
-    [pdrController setStartLocation:[TYLocalPoint pointWithX:startPoint.x Y:startPoint.y]];
-
-    [ArcGISHelper drawPoint:startPoint AtLayer:hintLayer WithSymbol:self.locationArrowSymbol ClearContent:YES];
-    
-//    [self.mapView centerAtPoint:startPoint animated:NO];
-//    [self.mapView zoomToResolution:0.023484 animated:NO];
-    
-    [pdrTrace addTracePointWithX:mappoint.x Y:mappoint.y Floor:22];
 }
 
 
@@ -88,58 +73,98 @@
 //    BRTLog(@"Heading: %f", heading);
     self.locationArrowSymbol.angle = heading;
     [pdrController updateHeading:heading];
-    
+    [pureController updateHeading:heading];
 }
 
 - (void)motionDetector:(TYMotionDetector *)detector onStepEvent:(TYStepEvent *)stepEvent
 {
 //    BRTLog(@"StepEvent");
+    if (!isStarted) {
+        return;
+    }
+    
     [pdrController addStepEvent];
+    [pureController addStepEvent];
+    
     TYLocalPoint *lp = pdrController.currentLocation;
+    TYLocalPoint *pureLp = pureController.currentLocation;
     
-//    lastPoint = currentPoint;
-    currentPoint = [AGSPoint pointWithX:lp.x y:lp.y spatialReference:self.mapView.spatialReference];
-    [ArcGISHelper drawPoint:currentPoint AtLayer:hintLayer WithSymbol:self.locationArrowSymbol ClearContent:YES];
-//
-//    AGSSimpleMarkerSymbol *sms = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor blueColor]];
-//    sms.size = CGSizeMake(8, 8);
-//    sms.outline = [AGSSimpleLineSymbol simpleLineSymbolWithColor:[UIColor whiteColor]];
-//    [ArcGISHelper drawLineFrom:lastPoint To:currentPoint AtLayer:self.traceLayer WithColor:[UIColor greenColor] Width:@4 ClearContent:NO];
-//    [ArcGISHelper drawPoint:lastPoint AtLayer:self.traceLayer WithSymbol:sms ClearContent:NO];
-//    
-//    [self.mapView centerAtPoint:currentPoint animated:YES];
-    
-//    [pdrTrace addTracePoint:tp];
+    [ArcGISHelper drawLocalPoint:lp AtLayer:self.hintLayer WithSymbol:self.locationArrowSymbol ClearContent:YES];
+    [ArcGISHelper drawLocalPoint:pureLp AtLayer:self.hintLayer WithSymbol:self.locationArrowSymbol ClearContent:NO];
+
     [pdrTrace addTracePointWithX:lp.x Y:lp.y Floor:lp.floor];
-    [ArcGISHelper drawTrace:pdrTrace AtLayer:self.traceLayer];
+    [pureTrace addTracePointWithX:pureLp.x Y:pureLp.y Floor:pureLp.floor];
+
+    [ArcGISHelper drawTrace:pdrTrace AtLayer:self.traceLayer1];
+    [ArcGISHelper drawTrace:pureTrace AtLayer:self.traceLayer2 PointColor:[UIColor yellowColor] LineColor:[UIColor redColor] Width:@6];
+}
+
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
+{
+//    NSLog(@"%@", [newLocation description]);
+    currentLocation = newLocation;
+    
+    [self.locationLayer1 removeAllGraphics];
+    
+    if (currentLocation.floor != self.mapView.currentMapInfo.floorNumber) {
+        [self.mapView setFloorWithInfo:[TYMapInfo searchMapInfoFromArray:self.allMapInfos Floor:newLocation.floor]];
+        self.title = self.mapView.currentMapInfo.floorName;
+    }
+    [self.mapView showLocation:currentLocation];
+    
+    if (!isStarted) {
+        return;
+    }
+    
+    if (pureController.currentLocation == nil) {
+        [pureController setStartLocation:newLocation];
+    }
+    [pdrController setStartLocation:currentLocation];
+    
+//    [ArcGISHelper drawLocalPoint:currentLocation AtLayer:self.hintLayer WithSymbol:self.locationArrowSymbol ClearContent:YES];
+//    [pdrTrace addTracePointWithX:newLocation.x Y:newLocation.y Floor:newLocation.floor];
 }
 
 - (void)showTrace:(id)sender
 {
     BRTLog(@"showTrace");
-    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSData *pdrData = [NSData dataWithContentsOfFile:[documentDirectory stringByAppendingPathComponent:@"trace.pbf"]];
-    TYTrace *trace = [TYTrace traceWithData:pdrData error:nil];
-    [ArcGISHelper drawTrace:trace AtLayer:self.traceLayer PointColor:nil LineColor:nil Width:nil];
-    BRTLog(@"%@", trace);
+    TraceTableNaviController *traceVC = [[TraceTableNaviController alloc] init];
+    traceVC.startingController = self;
+    [self presentViewController:traceVC animated:YES completion:^{
+    }];
+}
+
+- (void)tableViewFinished
+{
+    TYTrace *trace = [TraceManager currentTrace];
+    [ArcGISHelper drawTrace:trace AtLayer:self.traceLayer1 PointColor:nil LineColor:nil Width:nil];
 }
 
 - (void)saveTrace:(id)sender
 {
-    BRTLog(@"saveTrace");
-    NSData *pdrData = [pdrTrace data];
-    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    [pdrData writeToFile:[documentDirectory stringByAppendingPathComponent:@"trace.pbf"] atomically:YES];
+    BRTLog(@"saveTrace: %@", pdrTrace);
+    [TraceManager saveTrace:pdrTrace];
+    [TraceManager saveTrace:pureTrace];
+}
+
+- (void)startTrace:(id)sender
+{
+    BRTLog(@"startTrace: %@", pdrTrace);
+    pdrTrace = [TraceManager createNewTrace];
+    pureTrace = [TraceManager createPureTrace];
+    isStarted = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     [motionDetector startHeadingDetector];
     [motionDetector startStepDetector];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [motionDetector stopAllDetectors];
 }
 

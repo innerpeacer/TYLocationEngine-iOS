@@ -7,6 +7,8 @@
 //
 
 #import "BaseLocationTestVC.h"
+#import "TYRegionManager.h"
+#import "TYUserDefaults.h"
 
 @interface BaseLocationTestVC () <UIActionSheetDelegate>
 
@@ -17,11 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.signalLayer = [ArcGISHelper createNewLayer:self.mapView];
+    [self initLocationSettings];
+
     self.publicBeaconLayer = [ArcGISHelper createNewLayer:self.mapView];
-    self.traceLayer = [ArcGISHelper createNewLayer:self.mapView];
+    self.traceLayer1 = [ArcGISHelper createNewLayer:self.mapView];
+    self.traceLayer2 = [ArcGISHelper createNewLayer:self.mapView];
+    self.signalLayer = [ArcGISHelper createNewLayer:self.mapView];
+
     self.locationLayer1 = [ArcGISHelper createNewLayer:self.mapView];
     self.locationLayer2 = [ArcGISHelper createNewLayer:self.mapView];
+    self.hintLayer = [ArcGISHelper createNewLayer:self.mapView];
     
     self.locationSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"l7"];
     self.locationArrowSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locationArrow2"];
@@ -31,8 +38,7 @@
     [self.mapView setLocationSymbol:self.locationArrowSymbol];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"调试" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemTest:)];
-    
-    
+
     self.debugItems = [[NSMutableArray alloc] init];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_PUBLIC_BEACON]];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_BEACON_SIGNAL]];
@@ -44,9 +50,38 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.publicBeaconRegion) {
+        [self.locationManager startUpdateLocation];
+        self.locationManager.delegate = self;
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if (self.publicBeaconRegion) {
+        [self.locationManager stopUpdateLocation];
+        self.locationManager.delegate = nil;
+    }
+}
+
+- (void)initLocationSettings
+{
+    self.publicBeaconRegion = [TYRegionManager getBeaconRegionForBuilding:[TYUserDefaults getDefaultBuilding].buildingID].region;
+    self.locationManager = [[TYLocationManager alloc] initWithBuilding:[TYUserDefaults getDefaultBuilding]];
+    [self.locationManager setLimitBeaconNumber:YES];
+    [self.locationManager setRssiThreshold:-90];
+    self.locationManager.delegate = self;
+    [self.locationManager setBeaconRegion:self.publicBeaconRegion];
+}
+
+
 - (IBAction)rightBarButtonItemTest:(id)sender
 {
-    BRTLog(@"rightBarButtonItemTest");
+//    BRTLog(@"rightBarButtonItemTest");
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"调试内容" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:nil];
     for (DebugItem *item in self.debugItems) {
         [actionSheet addButtonWithTitle:(item.on ? item.nameOff : item.name)];
@@ -56,7 +91,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    BRTLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
+//    BRTLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
     if (buttonIndex == 0) {
         return;
     }
@@ -82,5 +117,58 @@
     DebugItem *item = sender;
     self.isSignalOn = item.on;
 }
+
+- (void)tableViewFinished
+{
+    
+}
+
+- (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
+{
+//    NSLog(@"didClickAtPoint: %f, %f", mappoint.x, mappoint.y);
+//    NSLog(@"%f", self.mapView.mapScale);
+}
+
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
+{
+    NSLog(@"%@", [newLocation description]);
+    [self.locationLayer1 removeAllGraphics];
+    
+    if (newLocation.floor != self.mapView.currentMapInfo.floorNumber) {
+        [self.mapView setFloorWithInfo:[TYMapInfo searchMapInfoFromArray:self.allMapInfos Floor:newLocation.floor]];
+        self.title = self.mapView.currentMapInfo.floorName;
+    }
+    [self.mapView showLocation:newLocation];
+}
+
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation
+{
+
+}
+
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading
+{
+    [self.mapView processDeviceRotation:newHeading];
+}
+
+- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager
+{
+    [self.mapView removeLocation];
+}
+
+- (void)TYLocationManager:(TYLocationManager *)manager didRangedBeacons:(NSArray *)beacons
+{
+}
+
+- (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons
+{
+    [self.signalLayer removeAllGraphics];
+    if (self.isSignalOn) {
+        [LocationTestHelper showHintRssiForLocationBeacons:beacons WithMapInfo:self.currentMapInfo OnLayer:self.signalLayer];
+    } else {
+        [self.signalLayer removeAllGraphics];
+    }
+}
+
 
 @end

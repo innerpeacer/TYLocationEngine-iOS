@@ -26,8 +26,14 @@
 		57261C421C3267A30099D924 /* IPRegionBeaconUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C411C3267A30099D924 /* IPRegionBeaconUploader.m */; };
 		57261C491C328E3E0099D924 /* TYUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C481C328E3E0099D924 /* TYUserManager.m */; };
 		57261C4E1C328F260099D924 /* MapLicenseGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 57261C4C1C328F260099D924 /* MapLicenseGenerator.m */; };
+		572B9C491EBC6BC400AB6EA3 /* PbfCollectionDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 572B9C481EBC6BC400AB6EA3 /* PbfCollectionDatabase.m */; };
+		572B9C4A1EBC6BC400AB6EA3 /* PbfCollectionDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 572B9C481EBC6BC400AB6EA3 /* PbfCollectionDatabase.m */; };
+		572B9C4D1EBC6BD800AB6EA3 /* PbfDBRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 572B9C4C1EBC6BD800AB6EA3 /* PbfDBRecord.m */; };
+		572B9C4E1EBC6BD800AB6EA3 /* PbfDBRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 572B9C4C1EBC6BD800AB6EA3 /* PbfDBRecord.m */; };
 		57304D271D13DB8B00F9F11B /* TYBLEEnvironment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 57304D261D13DB8B00F9F11B /* TYBLEEnvironment.mm */; };
 		57342C611C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */; };
+		5738DA751EBF76AA00AE3DA5 /* TraceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5738DA741EBF76AA00AE3DA5 /* TraceManager.m */; };
+		5738DA761EBF76AA00AE3DA5 /* TraceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5738DA741EBF76AA00AE3DA5 /* TraceManager.m */; };
 		57410F181BF8BE7C00D5405F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57410F171BF8BE7C00D5405F /* Security.framework */; };
 		57410F1A1BF8BEA100D5405F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57410F191BF8BEA100D5405F /* ImageIO.framework */; };
 		57410F1C1BF8BEA900D5405F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57410F1B1BF8BEA900D5405F /* SystemConfiguration.framework */; };
@@ -118,8 +124,6 @@
 		57677CAD1EBC4B620013A87A /* READ.ME in Resources */ = {isa = PBXBuildFile; fileRef = 57677CAC1EBC4B620013A87A /* READ.ME */; };
 		57677CB81EBC4C550013A87A /* TYTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 57677CB71EBC4C550013A87A /* TYTrace.m */; };
 		57677CB91EBC4C550013A87A /* TYTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 57677CB71EBC4C550013A87A /* TYTrace.m */; };
-		57677CBC1EBC4CD30013A87A /* TYTrace+Protobuf.m in Sources */ = {isa = PBXBuildFile; fileRef = 57677CBB1EBC4CD30013A87A /* TYTrace+Protobuf.m */; };
-		57677CBD1EBC4CD30013A87A /* TYTrace+Protobuf.m in Sources */ = {isa = PBXBuildFile; fileRef = 57677CBB1EBC4CD30013A87A /* TYTrace+Protobuf.m */; };
 		57677CCA1EBC4E750013A87A /* t_y_trace_pbf.proto in Resources */ = {isa = PBXBuildFile; fileRef = 57677CC71EBC4E750013A87A /* t_y_trace_pbf.proto */; };
 		57677CCB1EBC4E750013A87A /* t_y_trace_pbf.proto in Resources */ = {isa = PBXBuildFile; fileRef = 57677CC71EBC4E750013A87A /* t_y_trace_pbf.proto */; };
 		57677CCE1EBC50210013A87A /* TYTracePbf.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 57677CCD1EBC50210013A87A /* TYTracePbf.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -278,6 +282,9 @@
 		57B398A01A6364ED00E72FF5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B3989F1A6364ED00E72FF5 /* libsqlite3.dylib */; };
 		57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */; };
 		57C06F121D4DCE4C00DDC4DA /* RemoteTest-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C06F111D4DCE4C00DDC4DA /* RemoteTest-Info.plist */; };
+		57C96D6E1EC01763001F34F1 /* TYTrace+Protobuf.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C96D6D1EC01763001F34F1 /* TYTrace+Protobuf.m */; };
+		57C96D711EC02753001F34F1 /* TraceTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C96D701EC02753001F34F1 /* TraceTableVC.m */; };
+		57C96D721EC02753001F34F1 /* TraceTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C96D701EC02753001F34F1 /* TraceTableVC.m */; };
 		57CF727A1EBB0FDF0084FD4B /* DebugItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CF72791EBB0FDF0084FD4B /* DebugItem.m */; };
 		57CF727B1EBB0FDF0084FD4B /* DebugItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CF72791EBB0FDF0084FD4B /* DebugItem.m */; };
 		57D7326A1EB5C0B100782548 /* BaseLocationTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D732691EB5C0B100782548 /* BaseLocationTestVC.m */; };
@@ -299,7 +306,7 @@
 		57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCDB1B8C41D0002226FB /* RATreeView.m */; };
 		57E7741E1EA5F4E4006DB616 /* RootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E7741D1EA5F4E4006DB616 /* RootTabbarController.m */; };
 		57E7741F1EA5F4E4006DB616 /* RootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E7741D1EA5F4E4006DB616 /* RootTabbarController.m */; };
-		57E905E71EA898F9000B3754 /* TYPDRController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E905E61EA898F9000B3754 /* TYPDRController.m */; };
+		57E905E71EA898F9000B3754 /* TYSimplePDRController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E905E61EA898F9000B3754 /* TYSimplePDRController.m */; };
 		57E905EA1EA8B05A000B3754 /* LocationTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E905E91EA8B05A000B3754 /* LocationTestHelper.m */; };
 		57E905EB1EA8B05A000B3754 /* LocationTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E905E91EA8B05A000B3754 /* LocationTestHelper.m */; };
 		57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */; };
@@ -347,10 +354,16 @@
 		57261C4C1C328F260099D924 /* MapLicenseGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLicenseGenerator.m; sourceTree = "<group>"; };
 		57261C501C328FBE0099D924 /* IPEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPEncryption.h; sourceTree = "<group>"; };
 		57261C511C328FCA0099D924 /* IPMD5Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPMD5Utils.h; sourceTree = "<group>"; };
+		572B9C471EBC6BC400AB6EA3 /* PbfCollectionDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PbfCollectionDatabase.h; sourceTree = "<group>"; };
+		572B9C481EBC6BC400AB6EA3 /* PbfCollectionDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PbfCollectionDatabase.m; sourceTree = "<group>"; };
+		572B9C4B1EBC6BD800AB6EA3 /* PbfDBRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PbfDBRecord.h; sourceTree = "<group>"; };
+		572B9C4C1EBC6BD800AB6EA3 /* PbfDBRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PbfDBRecord.m; sourceTree = "<group>"; };
 		57304D251D13DB8B00F9F11B /* TYBLEEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBLEEnvironment.h; sourceTree = "<group>"; };
 		57304D261D13DB8B00F9F11B /* TYBLEEnvironment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TYBLEEnvironment.mm; sourceTree = "<group>"; };
 		57342C5F1C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconRegionDBAdapter.h; sourceTree = "<group>"; };
 		57342C601C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconRegionDBAdapter.m; sourceTree = "<group>"; };
+		5738DA731EBF76AA00AE3DA5 /* TraceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceManager.h; sourceTree = "<group>"; };
+		5738DA741EBF76AA00AE3DA5 /* TraceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceManager.m; sourceTree = "<group>"; };
 		57410F171BF8BE7C00D5405F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		57410F191BF8BEA100D5405F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		57410F1B1BF8BEA900D5405F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -549,8 +562,6 @@
 		57677CAC1EBC4B620013A87A /* READ.ME */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = READ.ME; sourceTree = "<group>"; };
 		57677CB61EBC4C550013A87A /* TYTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTrace.h; sourceTree = "<group>"; };
 		57677CB71EBC4C550013A87A /* TYTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTrace.m; sourceTree = "<group>"; };
-		57677CBA1EBC4CD30013A87A /* TYTrace+Protobuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TYTrace+Protobuf.h"; sourceTree = "<group>"; };
-		57677CBB1EBC4CD30013A87A /* TYTrace+Protobuf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TYTrace+Protobuf.m"; sourceTree = "<group>"; };
 		57677CC71EBC4E750013A87A /* t_y_trace_pbf.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = t_y_trace_pbf.proto; sourceTree = "<group>"; };
 		57677CCC1EBC50210013A87A /* TYTracePbf.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTracePbf.pbobjc.h; sourceTree = "<group>"; };
 		57677CCD1EBC50210013A87A /* TYTracePbf.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTracePbf.pbobjc.m; sourceTree = "<group>"; };
@@ -586,6 +597,10 @@
 		57B5C5DB1B565EB200189FE8 /* TYBeaconPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBeaconPool.h; sourceTree = "<group>"; };
 		57B5C5DC1B565EB200189FE8 /* TYBeaconPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBeaconPool.m; sourceTree = "<group>"; };
 		57C06F111D4DCE4C00DDC4DA /* RemoteTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RemoteTest-Info.plist"; sourceTree = "<group>"; };
+		57C96D6C1EC01763001F34F1 /* TYTrace+Protobuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TYTrace+Protobuf.h"; sourceTree = "<group>"; };
+		57C96D6D1EC01763001F34F1 /* TYTrace+Protobuf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TYTrace+Protobuf.m"; sourceTree = "<group>"; };
+		57C96D6F1EC02753001F34F1 /* TraceTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceTableVC.h; sourceTree = "<group>"; };
+		57C96D701EC02753001F34F1 /* TraceTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceTableVC.m; sourceTree = "<group>"; };
 		57CF72781EBB0FDF0084FD4B /* DebugItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugItem.h; sourceTree = "<group>"; };
 		57CF72791EBB0FDF0084FD4B /* DebugItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugItem.m; sourceTree = "<group>"; };
 		57D732681EB5C0B100782548 /* BaseLocationTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLocationTestVC.h; sourceTree = "<group>"; };
@@ -618,8 +633,8 @@
 		57E6BCDB1B8C41D0002226FB /* RATreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeView.m; sourceTree = "<group>"; };
 		57E7741C1EA5F4E4006DB616 /* RootTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabbarController.h; sourceTree = "<group>"; };
 		57E7741D1EA5F4E4006DB616 /* RootTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabbarController.m; sourceTree = "<group>"; };
-		57E905E51EA898F9000B3754 /* TYPDRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPDRController.h; sourceTree = "<group>"; };
-		57E905E61EA898F9000B3754 /* TYPDRController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPDRController.m; sourceTree = "<group>"; };
+		57E905E51EA898F9000B3754 /* TYSimplePDRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYSimplePDRController.h; sourceTree = "<group>"; };
+		57E905E61EA898F9000B3754 /* TYSimplePDRController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYSimplePDRController.m; sourceTree = "<group>"; };
 		57E905E81EA8B05A000B3754 /* LocationTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTestHelper.h; sourceTree = "<group>"; };
 		57E905E91EA8B05A000B3754 /* LocationTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTestHelper.m; sourceTree = "<group>"; };
 		57F85C8C1BB51695005D28CF /* CheckBeaconDatabaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBeaconDatabaseVC.h; sourceTree = "<group>"; };
@@ -866,16 +881,22 @@
 				575CD0BD1B564DE200B1E77C /* CppEngineTestVC.m */,
 				57E262971EA74DD300CBE217 /* PDRTestVC.h */,
 				57E262981EA74DD300CBE217 /* PDRTestVC.m */,
-				57E905E51EA898F9000B3754 /* TYPDRController.h */,
-				57E905E61EA898F9000B3754 /* TYPDRController.m */,
+				57E905E51EA898F9000B3754 /* TYSimplePDRController.h */,
+				57E905E61EA898F9000B3754 /* TYSimplePDRController.m */,
 				57D732681EB5C0B100782548 /* BaseLocationTestVC.h */,
 				57D732691EB5C0B100782548 /* BaseLocationTestVC.m */,
 				57CF72781EBB0FDF0084FD4B /* DebugItem.h */,
 				57CF72791EBB0FDF0084FD4B /* DebugItem.m */,
 				57677CB61EBC4C550013A87A /* TYTrace.h */,
 				57677CB71EBC4C550013A87A /* TYTrace.m */,
-				57677CBA1EBC4CD30013A87A /* TYTrace+Protobuf.h */,
-				57677CBB1EBC4CD30013A87A /* TYTrace+Protobuf.m */,
+				572B9C471EBC6BC400AB6EA3 /* PbfCollectionDatabase.h */,
+				572B9C481EBC6BC400AB6EA3 /* PbfCollectionDatabase.m */,
+				572B9C4B1EBC6BD800AB6EA3 /* PbfDBRecord.h */,
+				572B9C4C1EBC6BD800AB6EA3 /* PbfDBRecord.m */,
+				5738DA731EBF76AA00AE3DA5 /* TraceManager.h */,
+				5738DA741EBF76AA00AE3DA5 /* TraceManager.m */,
+				57C96D6F1EC02753001F34F1 /* TraceTableVC.h */,
+				57C96D701EC02753001F34F1 /* TraceTableVC.m */,
 			);
 			path = "BLE-Algorithm";
 			sourceTree = "<group>";
@@ -1413,6 +1434,7 @@
 		57677CC21EBC4E650013A87A /* protobuf */ = {
 			isa = PBXGroup;
 			children = (
+				57C96D6B1EC0173B001F34F1 /* wrapper */,
 				57677CC31EBC4E750013A87A /* objc */,
 				57677CC61EBC4E750013A87A /* proto */,
 			);
@@ -1505,6 +1527,15 @@
 				57B396E11A6361B800E72FF5 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57C96D6B1EC0173B001F34F1 /* wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				57C96D6C1EC01763001F34F1 /* TYTrace+Protobuf.h */,
+				57C96D6D1EC01763001F34F1 /* TYTrace+Protobuf.m */,
+			);
+			path = wrapper;
 			sourceTree = "<group>";
 		};
 		57E6BCC41B8C41D0002226FB /* UI */ = {
@@ -1702,7 +1733,9 @@
 				57B155FC1D4DCDB500103143 /* TYPublicBeacon.m in Sources */,
 				57B155FF1D4DCDB500103143 /* IPXPoint.cpp in Sources */,
 				57B156001D4DCDB500103143 /* IPXPublicBeacon.cpp in Sources */,
+				572B9C4E1EBC6BD800AB6EA3 /* PbfDBRecord.m in Sources */,
 				57E905EB1EA8B05A000B3754 /* LocationTestHelper.m in Sources */,
+				57C96D721EC02753001F34F1 /* TraceTableVC.m in Sources */,
 				57B156011D4DCDB500103143 /* BaseLogVC.m in Sources */,
 				57B156021D4DCDB500103143 /* ConfigureBeaconsVC.m in Sources */,
 				57B156031D4DCDB500103143 /* TYBeaconManager.m in Sources */,
@@ -1743,7 +1776,6 @@
 				57B156261D4DCDB500103143 /* RATreeNode.m in Sources */,
 				57B156271D4DCDB500103143 /* RADataObject.m in Sources */,
 				57B156281D4DCDB500103143 /* TYUserManager.m in Sources */,
-				57677CBD1EBC4CD30013A87A /* TYTrace+Protobuf.m in Sources */,
 				57B156291D4DCDB500103143 /* RATreeView+TableViewDataSource.m in Sources */,
 				57B1562B1D4DCDB500103143 /* TYMotionDetector.m in Sources */,
 				57A8F46C1D6B5517009F7049 /* IPXLibraryVersion.cpp in Sources */,
@@ -1755,6 +1787,7 @@
 				57B156301D4DCDB500103143 /* FMDatabaseAdditions.m in Sources */,
 				57B156311D4DCDB500103143 /* IPXMovingAverage.cpp in Sources */,
 				57B156321D4DCDB500103143 /* AddBeaconRegionVC.m in Sources */,
+				5738DA761EBF76AA00AE3DA5 /* TraceManager.m in Sources */,
 				57B156341D4DCDB500103143 /* TYVector2.m in Sources */,
 				57E7741F1EA5F4E4006DB616 /* RootTabbarController.m in Sources */,
 				57B156351D4DCDB500103143 /* BLEMD5.cpp in Sources */,
@@ -1782,6 +1815,7 @@
 				57B1564D1D4DCDB500103143 /* RATreeView+Enums.m in Sources */,
 				57B1564E1D4DCDB500103143 /* TYMagHeadingDetector.m in Sources */,
 				57B1564F1D4DCDB500103143 /* TYGeometryCalculator.m in Sources */,
+				572B9C4A1EBC6BC400AB6EA3 /* PbfCollectionDatabase.m in Sources */,
 				57B156511D4DCDB500103143 /* FMDatabaseQueue.m in Sources */,
 				57B156521D4DCDB500103143 /* TYLocationManager.m in Sources */,
 				57B156531D4DCDB500103143 /* TYPrimitiveBeaconDBAdapter.m in Sources */,
@@ -1801,6 +1835,7 @@
 				575CD1001B564DE200B1E77C /* CityTableVC.m in Sources */,
 				57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */,
 				57A8F3E81D6B42C4009F7049 /* IPBLESyncDownloadingTask.m in Sources */,
+				57C96D711EC02753001F34F1 /* TraceTableVC.m in Sources */,
 				5754EDF91BB44D9500D63B13 /* IPXBeaconDBChecker.cpp in Sources */,
 				575CD1DE1B564E7300B1E77C /* TYPointTester.m in Sources */,
 				57E6BCDF1B8C41D0002226FB /* RATreeNodeInfo+Private.m in Sources */,
@@ -1831,7 +1866,6 @@
 				575CD1B21B564E7300B1E77C /* TYMovingAverageTD.m in Sources */,
 				575CD1AF1B564E7300B1E77C /* TYPublicBeacon.m in Sources */,
 				575CD1C81B564E7300B1E77C /* IPXPoint.cpp in Sources */,
-				57677CBC1EBC4CD30013A87A /* TYTrace+Protobuf.m in Sources */,
 				575CD1C91B564E7300B1E77C /* IPXPublicBeacon.cpp in Sources */,
 				5722C9D51C304E81009D2365 /* BaseLogVC.m in Sources */,
 				5722C9C81C304DF1009D2365 /* ConfigureBeaconsVC.m in Sources */,
@@ -1854,7 +1888,7 @@
 				575CD1C41B564E7300B1E77C /* IPXLocationAlgorithm.cpp in Sources */,
 				57E2629D1EA7523600CBE217 /* ArcGISHelper.m in Sources */,
 				57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */,
-				57E905E71EA898F9000B3754 /* TYPDRController.m in Sources */,
+				57E905E71EA898F9000B3754 /* TYSimplePDRController.m in Sources */,
 				57304D271D13DB8B00F9F11B /* TYBLEEnvironment.mm in Sources */,
 				57E262991EA74DD300CBE217 /* PDRTestVC.m in Sources */,
 				575CD0FF1B564DE200B1E77C /* BuildingTableVC.m in Sources */,
@@ -1863,6 +1897,7 @@
 				57677CAB1EBC4A1B0013A87A /* GPBProtocolBuffers.m in Sources */,
 				575CD0F71B564DE200B1E77C /* MapVC.m in Sources */,
 				575CD1D11B564E7300B1E77C /* TYBeaconFMDBAdapter.m in Sources */,
+				57C96D6E1EC01763001F34F1 /* TYTrace+Protobuf.m in Sources */,
 				57A8F3EA1D6B42C4009F7049 /* IPBLEWebObjectConverter.m in Sources */,
 				57D7326A1EB5C0B100782548 /* BaseLocationTestVC.m in Sources */,
 				575CD1CE1B564E7300B1E77C /* IPXStepBasedEngine.cpp in Sources */,
@@ -1876,7 +1911,9 @@
 				57E6BCE31B8C41D0002226FB /* RATreeView+TableViewDataSource.m in Sources */,
 				575CD1B51B564E7300B1E77C /* TYMotionDetector.m in Sources */,
 				57A8F46B1D6B5517009F7049 /* IPXLibraryVersion.cpp in Sources */,
+				5738DA751EBF76AA00AE3DA5 /* TraceManager.m in Sources */,
 				575CD1B81B564E7300B1E77C /* TYStepEvent.m in Sources */,
+				572B9C4D1EBC6BD800AB6EA3 /* PbfDBRecord.m in Sources */,
 				5722C9D71C304E81009D2365 /* CityBuildingTableVC.m in Sources */,
 				57677CB81EBC4C550013A87A /* TYTrace.m in Sources */,
 				575CD1B71B564E7300B1E77C /* TYStepDetector.m in Sources */,
@@ -1892,6 +1929,7 @@
 				575CD1BA1B564E7300B1E77C /* DoubleRounder.m in Sources */,
 				5755FA1E1C3A10D1000CA7C8 /* FetchLocatingDataVC.m in Sources */,
 				5722C9CA1C304DF1009D2365 /* ShowPrimitiveBeaconTableVC.m in Sources */,
+				572B9C491EBC6BC400AB6EA3 /* PbfCollectionDatabase.m in Sources */,
 				57CF727A1EBB0FDF0084FD4B /* DebugItem.m in Sources */,
 				575CD0F11B564DE200B1E77C /* CppEngineTestVC.m in Sources */,
 				575CD1C31B564E7300B1E77C /* IPXGeometryCalculator.cpp in Sources */,
