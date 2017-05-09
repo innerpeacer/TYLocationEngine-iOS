@@ -76,5 +76,38 @@
             </objects>
             <point key="canvasLocation" x="2775" y="-15"/>
         </scene>
+        <!--Raw Data CollectionVC-->
+        <scene sceneID="wFm-SE-BNW">
+            <objects>
+                <viewController storyboardIdentifier="RawDataCollectionVC" id="jo5-AV-X0V" customClass="RawDataCollectionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YGl-aC-ERI"/>
+                        <viewControllerLayoutGuide type="bottom" id="c3f-oM-8ue"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mNH-Nk-bo1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzY-Tn-MxJ" customClass="TYMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c3f-oM-8ue" firstAttribute="top" secondItem="LzY-Tn-MxJ" secondAttribute="bottom" id="PKk-5w-6t3"/>
+                            <constraint firstItem="LzY-Tn-MxJ" firstAttribute="leading" secondItem="mNH-Nk-bo1" secondAttribute="leading" id="Scm-4k-xXA"/>
+                            <constraint firstItem="LzY-Tn-MxJ" firstAttribute="top" secondItem="mNH-Nk-bo1" secondAttribute="topMargin" id="egY-UB-2Lv"/>
+                            <constraint firstAttribute="trailing" secondItem="LzY-Tn-MxJ" secondAttribute="trailing" id="t3T-zB-cTR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="LzY-Tn-MxJ" id="xus-cZ-d9k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgl-6Q-7fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3619" y="-15"/>
+        </scene>
     </scenes>
 </document>

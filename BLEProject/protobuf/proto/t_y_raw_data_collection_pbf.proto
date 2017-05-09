@@ -1,0 +1,45 @@
+syntax = "proto2";
+
+package innerpeacer.rawdata;
+
+message TYRawStepEventPbf {
+required double timestamp = 1;
+}
+
+message TYRawHeadingEventPbf {
+required double timestamp = 1;
+required double heading = 2;
+}
+
+message TYRawBeaconSignalPbf {
+required string uuid = 1;
+required uint32 major = 2;
+required uint32 minor = 3;
+required double x = 4;
+required double y = 5;
+required uint32 floor = 6;
+required uint32 rssi = 7;
+required double accuracy = 8;
+
+}
+
+message TYRawLocationPbf {
+required double x = 1;
+required double y = 2;
+required uint32 floor = 3;
+}
+
+message TYRawSignalEventPbf {
+required double timestamp = 1;
+repeated TYRawBeaconSignalPbf beacons = 2;
+required TYRawLocationPbf location = 3;
+required TYRawLocationPbf immediateLocation = 4;
+}
+
+message TYRawDataCollectionPbf {
+required string dataID = 1;
+required double timestamp = 2;
+repeated TYRawStepEventPbf stepEvents = 3;
+repeated TYRawHeadingEventPbf headingEvents = 4;
+repeated TYRawSignalEventPbf signalEvents = 5;
+}

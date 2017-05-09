@@ -38,4 +38,8 @@
 #define BRTString [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent
 #define BRTLog(...) printf("%s 第%d行: %s\n", [BRTString UTF8String] ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
 
+#define BRTNow [[NSDate date] timeIntervalSince1970]
+
+#define BRTDocumentDir [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
 #endif

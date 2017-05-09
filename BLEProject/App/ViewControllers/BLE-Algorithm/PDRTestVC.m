@@ -40,6 +40,8 @@
 @implementation PDRTestVC
 
 - (void)viewDidLoad {
+    self.name = @"PDR";
+    
     [super viewDidLoad];
     
     motionDetector = [[TYMotionDetector alloc] init];
@@ -51,7 +53,7 @@
     
     pdrController = [[TYSimplePDRController alloc] initWithAngle:0];
     pureController = [[TYSimplePDRController alloc] initWithAngle:0];
-    
+        
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_START_TRACE]];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_SAVE_TRACE]];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_SHOW_TRACE]];

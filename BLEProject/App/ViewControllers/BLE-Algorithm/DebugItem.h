@@ -14,6 +14,9 @@
 #define IP_DEBUG_ITEM_SAVE_TRACE @"SaveTrace"
 #define IP_DEBUG_ITEM_SHOW_TRACE @"ShowTrace"
 
+#define IP_DEBUG_ITEM_START_RAW_DATA @"StartRawData"
+#define IP_DEBUG_ITEM_SAVE_RAW_DATA @"SaveRawData"
+
 @interface DebugItem : NSObject
 
 @property (nonatomic, strong) NSString *itemID;

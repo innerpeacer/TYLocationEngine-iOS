@@ -37,7 +37,8 @@
 //    [self.mapView setLocationSymbol:self.locationSymbol];
     [self.mapView setLocationSymbol:self.locationArrowSymbol];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"调试" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemTest:)];
+    NSString *title = [NSString stringWithFormat:@"%@调试", (self.name == nil ? @"" : self.name)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemTest:)];
 
     self.debugItems = [[NSMutableArray alloc] init];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_PUBLIC_BEACON]];

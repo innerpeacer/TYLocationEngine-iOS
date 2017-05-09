@@ -120,6 +120,7 @@
 		575CD3731B564F2900B1E77C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36D1B564F2900B1E77C /* Main.storyboard */; };
 		575CD3741B564F2900B1E77C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575CD36E1B564F2900B1E77C /* Map.storyboard */; };
 		575EE2361D1269C300E90CA0 /* TYMapToFengMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 575EE2351D1269C300E90CA0 /* TYMapToFengMap.m */; };
+		575FCDBD1EC22F230020F219 /* TYRawDataCollectionPbf.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 575FCDBC1EC22F230020F219 /* TYRawDataCollectionPbf.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		57677CAB1EBC4A1B0013A87A /* GPBProtocolBuffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 57677C9E1EBC4A1B0013A87A /* GPBProtocolBuffers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		57677CAD1EBC4B620013A87A /* READ.ME in Resources */ = {isa = PBXBuildFile; fileRef = 57677CAC1EBC4B620013A87A /* READ.ME */; };
 		57677CB81EBC4C550013A87A /* TYTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 57677CB71EBC4C550013A87A /* TYTrace.m */; };
@@ -131,6 +132,10 @@
 		5771BEC51BE7409C00026873 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5771BEC41BE7409C00026873 /* TYMapSDK.framework */; };
 		577605141B581513005F30B1 /* MapEncrypted in Resources */ = {isa = PBXBuildFile; fileRef = 577605131B581513005F30B1 /* MapEncrypted */; };
 		577F958F1C55E19500E4BA16 /* SelectBuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 577F958E1C55E19500E4BA16 /* SelectBuildingVC.m */; };
+		5787F2E01EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787F2DF1EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m */; };
+		5787F2E11EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787F2DF1EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m */; };
+		5787F2E81EC1921400D5ADCA /* RawDataCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787F2E71EC1921400D5ADCA /* RawDataCollectionVC.m */; };
+		5787F2E91EC1921400D5ADCA /* RawDataCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787F2E71EC1921400D5ADCA /* RawDataCollectionVC.m */; };
 		57A8F3E01D6B42C4009F7049 /* IPSyncBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A8F3D11D6B42C4009F7049 /* IPSyncBeaconDBAdapter.m */; };
 		57A8F3E11D6B42C4009F7049 /* IPSyncBeaconDBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A8F3D11D6B42C4009F7049 /* IPSyncBeaconDBAdapter.m */; };
 		57A8F3E21D6B42C4009F7049 /* IPBLEWebDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A8F3D41D6B42C4009F7049 /* IPBLEWebDownloader.m */; };
@@ -293,6 +298,10 @@
 		57E2629A1EA74DD300CBE217 /* PDRTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E262981EA74DD300CBE217 /* PDRTestVC.m */; };
 		57E2629D1EA7523600CBE217 /* ArcGISHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E2629C1EA7523600CBE217 /* ArcGISHelper.m */; };
 		57E2629E1EA7523600CBE217 /* ArcGISHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E2629C1EA7523600CBE217 /* ArcGISHelper.m */; };
+		57E59B761EC0E5550079A628 /* t_y_raw_data_collection_pbf.proto in Resources */ = {isa = PBXBuildFile; fileRef = 57E59B751EC0E5550079A628 /* t_y_raw_data_collection_pbf.proto */; };
+		57E59B771EC0E5550079A628 /* t_y_raw_data_collection_pbf.proto in Resources */ = {isa = PBXBuildFile; fileRef = 57E59B751EC0E5550079A628 /* t_y_raw_data_collection_pbf.proto */; };
+		57E59B7B1EC0E5F20079A628 /* TYRawDataCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E59B7A1EC0E5F20079A628 /* TYRawDataCollection.m */; };
+		57E59B7C1EC0E5F20079A628 /* TYRawDataCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E59B7A1EC0E5F20079A628 /* TYRawDataCollection.m */; };
 		57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC61B8C41D0002226FB /* RADataObject.m */; };
 		57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCC91B8C41D0002226FB /* RATreeNode.m */; };
 		57E6BCDE1B8C41D0002226FB /* RATreeNodeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6BCCB1B8C41D0002226FB /* RATreeNodeCollectionController.m */; };
@@ -530,6 +539,8 @@
 		575CD36E1B564F2900B1E77C /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		575EE2341D1269C300E90CA0 /* TYMapToFengMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYMapToFengMap.h; sourceTree = "<group>"; };
 		575EE2351D1269C300E90CA0 /* TYMapToFengMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYMapToFengMap.m; sourceTree = "<group>"; };
+		575FCDBB1EC22F230020F219 /* TYRawDataCollectionPbf.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRawDataCollectionPbf.pbobjc.h; sourceTree = "<group>"; };
+		575FCDBC1EC22F230020F219 /* TYRawDataCollectionPbf.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRawDataCollectionPbf.pbobjc.m; sourceTree = "<group>"; };
 		57677C8E1EBC4A1B0013A87A /* GPBArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBArray.h; sourceTree = "<group>"; };
 		57677C8F1EBC4A1B0013A87A /* GPBArray_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBArray_PackagePrivate.h; sourceTree = "<group>"; };
 		57677C901EBC4A1B0013A87A /* GPBBootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBBootstrap.h; sourceTree = "<group>"; };
@@ -570,6 +581,10 @@
 		577985D21D0D39F600AE418F /* IPBase64Encoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPBase64Encoding.h; sourceTree = "<group>"; };
 		577F958D1C55E19500E4BA16 /* SelectBuildingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBuildingVC.h; sourceTree = "<group>"; };
 		577F958E1C55E19500E4BA16 /* SelectBuildingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBuildingVC.m; sourceTree = "<group>"; };
+		5787F2DE1EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TYRawDataCollection+Protobuf.h"; sourceTree = "<group>"; };
+		5787F2DF1EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TYRawDataCollection+Protobuf.m"; sourceTree = "<group>"; };
+		5787F2E61EC1921400D5ADCA /* RawDataCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawDataCollectionVC.h; sourceTree = "<group>"; };
+		5787F2E71EC1921400D5ADCA /* RawDataCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawDataCollectionVC.m; sourceTree = "<group>"; };
 		57A8F3D01D6B42C4009F7049 /* IPSyncBeaconDBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPSyncBeaconDBAdapter.h; sourceTree = "<group>"; };
 		57A8F3D11D6B42C4009F7049 /* IPSyncBeaconDBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPSyncBeaconDBAdapter.m; sourceTree = "<group>"; };
 		57A8F3D31D6B42C4009F7049 /* IPBLEWebDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPBLEWebDownloader.h; sourceTree = "<group>"; };
@@ -609,6 +624,9 @@
 		57E262981EA74DD300CBE217 /* PDRTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRTestVC.m; sourceTree = "<group>"; };
 		57E2629B1EA7523600CBE217 /* ArcGISHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArcGISHelper.h; path = "App/ViewControllers/BLE-Algorithm/ArcGISHelper.h"; sourceTree = "<group>"; };
 		57E2629C1EA7523600CBE217 /* ArcGISHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArcGISHelper.m; path = "App/ViewControllers/BLE-Algorithm/ArcGISHelper.m"; sourceTree = "<group>"; };
+		57E59B751EC0E5550079A628 /* t_y_raw_data_collection_pbf.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = t_y_raw_data_collection_pbf.proto; sourceTree = "<group>"; };
+		57E59B791EC0E5F20079A628 /* TYRawDataCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRawDataCollection.h; sourceTree = "<group>"; };
+		57E59B7A1EC0E5F20079A628 /* TYRawDataCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRawDataCollection.m; sourceTree = "<group>"; };
 		57E6BCC51B8C41D0002226FB /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
 		57E6BCC61B8C41D0002226FB /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
 		57E6BCC81B8C41D0002226FB /* RATreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNode.h; sourceTree = "<group>"; };
@@ -877,26 +895,21 @@
 		575CD0B31B564DE200B1E77C /* BLE-Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				5787F2E51EC191E400D5ADCA /* Pbf */,
+				5787F2E41EC191D600D5ADCA /* Trace */,
+				5787F2E31EC191CD00D5ADCA /* DebugItem */,
+				57E59B781EC0E5D00079A628 /* RawData */,
 				575CD0BC1B564DE200B1E77C /* CppEngineTestVC.h */,
 				575CD0BD1B564DE200B1E77C /* CppEngineTestVC.m */,
 				57E262971EA74DD300CBE217 /* PDRTestVC.h */,
 				57E262981EA74DD300CBE217 /* PDRTestVC.m */,
-				57E905E51EA898F9000B3754 /* TYSimplePDRController.h */,
-				57E905E61EA898F9000B3754 /* TYSimplePDRController.m */,
+				5787F2E21EC191C500D5ADCA /* PDR */,
 				57D732681EB5C0B100782548 /* BaseLocationTestVC.h */,
 				57D732691EB5C0B100782548 /* BaseLocationTestVC.m */,
-				57CF72781EBB0FDF0084FD4B /* DebugItem.h */,
-				57CF72791EBB0FDF0084FD4B /* DebugItem.m */,
-				57677CB61EBC4C550013A87A /* TYTrace.h */,
-				57677CB71EBC4C550013A87A /* TYTrace.m */,
-				572B9C471EBC6BC400AB6EA3 /* PbfCollectionDatabase.h */,
-				572B9C481EBC6BC400AB6EA3 /* PbfCollectionDatabase.m */,
-				572B9C4B1EBC6BD800AB6EA3 /* PbfDBRecord.h */,
-				572B9C4C1EBC6BD800AB6EA3 /* PbfDBRecord.m */,
-				5738DA731EBF76AA00AE3DA5 /* TraceManager.h */,
-				5738DA741EBF76AA00AE3DA5 /* TraceManager.m */,
 				57C96D6F1EC02753001F34F1 /* TraceTableVC.h */,
 				57C96D701EC02753001F34F1 /* TraceTableVC.m */,
+				5787F2E61EC1921400D5ADCA /* RawDataCollectionVC.h */,
+				5787F2E71EC1921400D5ADCA /* RawDataCollectionVC.m */,
 			);
 			path = "BLE-Algorithm";
 			sourceTree = "<group>";
@@ -1444,6 +1457,8 @@
 		57677CC31EBC4E750013A87A /* objc */ = {
 			isa = PBXGroup;
 			children = (
+				575FCDBB1EC22F230020F219 /* TYRawDataCollectionPbf.pbobjc.h */,
+				575FCDBC1EC22F230020F219 /* TYRawDataCollectionPbf.pbobjc.m */,
 				57677CCC1EBC50210013A87A /* TYTracePbf.pbobjc.h */,
 				57677CCD1EBC50210013A87A /* TYTracePbf.pbobjc.m */,
 			);
@@ -1454,8 +1469,49 @@
 			isa = PBXGroup;
 			children = (
 				57677CC71EBC4E750013A87A /* t_y_trace_pbf.proto */,
+				57E59B751EC0E5550079A628 /* t_y_raw_data_collection_pbf.proto */,
 			);
 			path = proto;
+			sourceTree = "<group>";
+		};
+		5787F2E21EC191C500D5ADCA /* PDR */ = {
+			isa = PBXGroup;
+			children = (
+				57E905E51EA898F9000B3754 /* TYSimplePDRController.h */,
+				57E905E61EA898F9000B3754 /* TYSimplePDRController.m */,
+			);
+			name = PDR;
+			sourceTree = "<group>";
+		};
+		5787F2E31EC191CD00D5ADCA /* DebugItem */ = {
+			isa = PBXGroup;
+			children = (
+				57CF72781EBB0FDF0084FD4B /* DebugItem.h */,
+				57CF72791EBB0FDF0084FD4B /* DebugItem.m */,
+			);
+			name = DebugItem;
+			sourceTree = "<group>";
+		};
+		5787F2E41EC191D600D5ADCA /* Trace */ = {
+			isa = PBXGroup;
+			children = (
+				5738DA731EBF76AA00AE3DA5 /* TraceManager.h */,
+				5738DA741EBF76AA00AE3DA5 /* TraceManager.m */,
+				57677CB61EBC4C550013A87A /* TYTrace.h */,
+				57677CB71EBC4C550013A87A /* TYTrace.m */,
+			);
+			name = Trace;
+			sourceTree = "<group>";
+		};
+		5787F2E51EC191E400D5ADCA /* Pbf */ = {
+			isa = PBXGroup;
+			children = (
+				572B9C471EBC6BC400AB6EA3 /* PbfCollectionDatabase.h */,
+				572B9C481EBC6BC400AB6EA3 /* PbfCollectionDatabase.m */,
+				572B9C4B1EBC6BD800AB6EA3 /* PbfDBRecord.h */,
+				572B9C4C1EBC6BD800AB6EA3 /* PbfDBRecord.m */,
+			);
+			name = Pbf;
 			sourceTree = "<group>";
 		};
 		57A8F3CE1D6B42C4009F7049 /* ServerSync */ = {
@@ -1534,8 +1590,19 @@
 			children = (
 				57C96D6C1EC01763001F34F1 /* TYTrace+Protobuf.h */,
 				57C96D6D1EC01763001F34F1 /* TYTrace+Protobuf.m */,
+				5787F2DE1EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.h */,
+				5787F2DF1EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m */,
 			);
 			path = wrapper;
+			sourceTree = "<group>";
+		};
+		57E59B781EC0E5D00079A628 /* RawData */ = {
+			isa = PBXGroup;
+			children = (
+				57E59B791EC0E5F20079A628 /* TYRawDataCollection.h */,
+				57E59B7A1EC0E5F20079A628 /* TYRawDataCollection.m */,
+			);
+			name = RawData;
 			sourceTree = "<group>";
 		};
 		57E6BCC41B8C41D0002226FB /* UI */ = {
@@ -1661,6 +1728,7 @@
 				57B156681D4DCDB500103143 /* BLE-Tool.storyboard in Resources */,
 				57B156691D4DCDB500103143 /* BLE-Algorithm.storyboard in Resources */,
 				57B1566A1D4DCDB500103143 /* ArcGIS.bundle in Resources */,
+				57E59B771EC0E5550079A628 /* t_y_raw_data_collection_pbf.proto in Resources */,
 				57B1566B1D4DCDB500103143 /* Images.xcassets in Resources */,
 				57B1566C1D4DCDB500103143 /* Settings.bundle in Resources */,
 				57B1566D1D4DCDB500103143 /* MapEncrypted in Resources */,
@@ -1673,6 +1741,7 @@
 			files = (
 				575CD10C1B564E2C00B1E77C /* InfoPlist.strings in Resources */,
 				57677CCA1EBC4E750013A87A /* t_y_trace_pbf.proto in Resources */,
+				57E59B761EC0E5550079A628 /* t_y_raw_data_collection_pbf.proto in Resources */,
 				575CD3741B564F2900B1E77C /* Map.storyboard in Resources */,
 				575CD3721B564F2900B1E77C /* Launch Screen.xib in Resources */,
 				57677CAD1EBC4B620013A87A /* READ.ME in Resources */,
@@ -1703,6 +1772,7 @@
 				57B155E01D4DCDB500103143 /* RATreeView.m in Sources */,
 				57A8F3E91D6B42C4009F7049 /* IPBLESyncDownloadingTask.m in Sources */,
 				57B155E11D4DCDB500103143 /* IPXBeaconDBChecker.cpp in Sources */,
+				5787F2E91EC1921400D5ADCA /* RawDataCollectionVC.m in Sources */,
 				57B155E21D4DCDB500103143 /* TYPointTester.m in Sources */,
 				57B155E31D4DCDB500103143 /* RATreeNodeInfo+Private.m in Sources */,
 				57B155E41D4DCDB500103143 /* IPXTriangulationAlgorithm.cpp in Sources */,
@@ -1712,6 +1782,7 @@
 				57A8F3E11D6B42C4009F7049 /* IPSyncBeaconDBAdapter.m in Sources */,
 				57B155E91D4DCDB500103143 /* ShowBeaconRegionTableVC.m in Sources */,
 				57B155EA1D4DCDB500103143 /* BeaconListForChoosingTableVC.m in Sources */,
+				5787F2E11EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m in Sources */,
 				57B155EB1D4DCDB500103143 /* MapLicenseGenerator.m in Sources */,
 				57B155EC1D4DCDB500103143 /* RATreeNodeCollectionController.m in Sources */,
 				57B155ED1D4DCDB500103143 /* IPXLocationEngine.mm in Sources */,
@@ -1720,6 +1791,7 @@
 				57B155F01D4DCDB500103143 /* IPBLEWebUploader.m in Sources */,
 				57B155F11D4DCDB500103143 /* TYWeightingAlgorithm.m in Sources */,
 				57B155F21D4DCDB500103143 /* BLEMD5Utils.mm in Sources */,
+				57E59B7C1EC0E5F20079A628 /* TYRawDataCollection.m in Sources */,
 				57B155F31D4DCDB500103143 /* ConfigurePointPositionVC.m in Sources */,
 				57A8F3E71D6B42C4009F7049 /* IPBLESyncDataManager.m in Sources */,
 				57CF727B1EBB0FDF0084FD4B /* DebugItem.m in Sources */,
@@ -1850,6 +1922,7 @@
 				57E6BCDE1B8C41D0002226FB /* RATreeNodeCollectionController.m in Sources */,
 				575CD1BE1B564E7300B1E77C /* IPXLocationEngine.mm in Sources */,
 				5722C9C91C304DF1009D2365 /* ShowConfiguredBeaconsTableVC.m in Sources */,
+				57E59B7B1EC0E5F20079A628 /* TYRawDataCollection.m in Sources */,
 				5722C9D61C304E81009D2365 /* BaseMapVC.m in Sources */,
 				57677CCE1EBC50210013A87A /* TYTracePbf.pbobjc.m in Sources */,
 				57261C361C324D160099D924 /* IPBLEWebUploader.m in Sources */,
@@ -1872,6 +1945,7 @@
 				575CD1AE1B564E7300B1E77C /* TYBeaconManager.m in Sources */,
 				57B5C5DD1B565EB200189FE8 /* TYBeaconPool.m in Sources */,
 				575CD1E31B564E7300B1E77C /* FMDatabasePool.m in Sources */,
+				5787F2E01EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m in Sources */,
 				575CD1D51B564E7300B1E77C /* TYLocationAlgorithm.m in Sources */,
 				57E6BCE51B8C41D0002226FB /* RATreeView+UIScrollView.m in Sources */,
 				5722C9DF1C304EAA009D2365 /* ShowPointPositionTableVC.m in Sources */,
@@ -1908,6 +1982,7 @@
 				57E6BCDD1B8C41D0002226FB /* RATreeNode.m in Sources */,
 				57E6BCDC1B8C41D0002226FB /* RADataObject.m in Sources */,
 				57261C491C328E3E0099D924 /* TYUserManager.m in Sources */,
+				5787F2E81EC1921400D5ADCA /* RawDataCollectionVC.m in Sources */,
 				57E6BCE31B8C41D0002226FB /* RATreeView+TableViewDataSource.m in Sources */,
 				575CD1B51B564E7300B1E77C /* TYMotionDetector.m in Sources */,
 				57A8F46B1D6B5517009F7049 /* IPXLibraryVersion.cpp in Sources */,
@@ -1948,6 +2023,7 @@
 				575CD1D61B564E7300B1E77C /* TYTriangulationAlgorithm.m in Sources */,
 				575CD1BC1B564E7300B1E77C /* IPXBeaconDBAdapter.m in Sources */,
 				57342C611C2C4BD500FA2745 /* TYBeaconRegionDBAdapter.m in Sources */,
+				575FCDBD1EC22F230020F219 /* TYRawDataCollectionPbf.pbobjc.m in Sources */,
 				575CD1CA1B564E7300B1E77C /* IPXScannedBeacon.cpp in Sources */,
 				57E6BCE11B8C41D0002226FB /* RATreeView+Enums.m in Sources */,
 				575CD1B41B564E7300B1E77C /* TYMagHeadingDetector.m in Sources */,

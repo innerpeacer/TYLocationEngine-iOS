@@ -24,7 +24,11 @@
                       @[IP_DEBUG_ITEM_BEACON_SIGNAL, @"显示信号", @"隐藏信号", @(YES), @"switchBeaconSignal:"],
                       @[IP_DEBUG_ITEM_SAVE_TRACE, @"保存轨迹", @"保存轨迹", @(YES), @"saveTrace:"],
                       @[IP_DEBUG_ITEM_SHOW_TRACE, @"显示轨迹", @"显示轨迹", @(YES), @"showTrace:"],
-                      @[IP_DEBUG_ITEM_START_TRACE, @"创建轨迹", @"创建轨迹", @(YES), @"startTrace:"]
+                      @[IP_DEBUG_ITEM_START_TRACE, @"创建轨迹", @"创建轨迹", @(YES), @"startTrace:"],
+                      @[IP_DEBUG_ITEM_START_RAW_DATA, @"记录原始数据", @"记录原始数据", @(YES), @"startRawData:"],
+                      @[IP_DEBUG_ITEM_SAVE_RAW_DATA, @"保存原始数据", @"保存原始数据", @(YES), @"saveRawData:"],
+
+                      
                       ];
     }
     

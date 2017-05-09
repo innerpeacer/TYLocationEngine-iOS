@@ -16,6 +16,8 @@
 @implementation CppEngineTestVC
 
 - (void)viewDidLoad {
+    self.name = @"定位";
+
     [super viewDidLoad];
 }
 

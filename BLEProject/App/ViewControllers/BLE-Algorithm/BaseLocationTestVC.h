@@ -13,6 +13,8 @@
 
 @interface BaseLocationTestVC : BaseMapVC <TYLocationManagerDelegate>
 
+@property (nonatomic, strong) NSString *name;
+
 @property (nonatomic, strong) AGSGraphicsLayer *publicBeaconLayer;
 @property (nonatomic, strong) AGSGraphicsLayer *signalLayer;
 
