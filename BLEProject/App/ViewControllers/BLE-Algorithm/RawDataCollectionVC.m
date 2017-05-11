@@ -10,6 +10,7 @@
 #import "TYRawDataCollection.h"
 #import "TYRawDataCollection+Protobuf.h"
 #import "TYMotionDetector.h"
+#import "TYRawDataManager.h"
 
 @interface RawDataCollectionVC () <TYMotionDetectorDelegate>
 {
@@ -35,7 +36,7 @@
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_START_RAW_DATA]];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_SAVE_RAW_DATA]];
     
-    [self startRawData:nil];
+//    [self startRawData:nil];
 
 }
 
@@ -54,6 +55,7 @@
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
 {
+    [super TYLocationManager:manager didUpdateLocation:newLocation];
 //        NSLog(@"didUpdateLocation: %@", [newLocation description]);
     currentLocation = newLocation;
 }
@@ -79,6 +81,7 @@
 
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons
 {
+    [super TYLocationManager:manager didRangedLocationBeacons:beacons];
 //    NSLog(@"didRangedLocationBeacons:");
     currentBeacons = beacons;
 }
@@ -87,20 +90,22 @@
 {
     BRTLog(@"startRawData");
 //    collection = [[TYRawDataCollection alloc] initWithDataID:@"RawDataID"];
+    collection = [TYRawDataManager createNewData];
     
-    NSData *data = [NSData dataWithContentsOfFile:[BRTDocumentDir stringByAppendingPathComponent:@"rawData.pbf"]];
-    TYRawDataCollection *dataCollection = [TYRawDataCollection withData:data error:nil];
-    BRTLog(@"%@", [dataCollection detailedDescription]);
-    BRTLog(@"%@", dataCollection);
+//    NSData *data = [NSData dataWithContentsOfFile:[BRTDocumentDir stringByAppendingPathComponent:@"rawData.pbf"]];
+//    TYRawDataCollection *dataCollection = [TYRawDataCollection withData:data error:nil];
+//    BRTLog(@"%@", [dataCollection detailedDescription]);
+//    BRTLog(@"%@", dataCollection);
 }
 
 - (void)saveRawData:(id)sender
 {
-    BRTLog(@"saveRawData: %@", [collection detailedDescription]);
+    BRTLog(@"saveRawData:");
 //    dataCollection
 //    collection = nil;
-    NSData *data = [collection data];
-    [data writeToFile:[BRTDocumentDir stringByAppendingPathComponent:@"rawData.pbf"] atomically:YES];
+//    NSData *data = [collection data];
+    [TYRawDataManager saveData:collection];
+//    [data writeToFile:[BRTDocumentDir stringByAppendingPathComponent:@"rawData.pbf"] atomically:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated

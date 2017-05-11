@@ -74,7 +74,7 @@
     return [[[self class] alloc] initWithTraceID:pbf.traceId Timestamp:pbf.timestamp Points:pointArray];
 }
 
-+ (TYTrace *)traceWithData:(NSData *)data error:(NSError *)err
++ (TYTrace *)withData:(NSData *)data error:(NSError *)err
 {
     TYTracePbf *pbf = [[TYTracePbf alloc] initWithData:data error:&err];
     if (err) {

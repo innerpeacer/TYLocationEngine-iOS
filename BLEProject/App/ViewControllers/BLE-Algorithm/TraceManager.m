@@ -28,7 +28,7 @@ static TYTrace *sharedTrace = nil;
 {
     if (TraceDataFormatter == nil) {
         TraceDataFormatter = [[NSDateFormatter alloc] init];
-        TraceDataFormatter.dateFormat = @"MMDD-HH:mm:ss";
+        TraceDataFormatter.dateFormat = @"MMdd-HH:mm:ss";
     }
     NSDate *now = [NSDate date];
     NSString *traceID = [NSString stringWithFormat:@"Trace-%@", [TraceDataFormatter stringFromDate:now]];

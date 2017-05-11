@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "TYTrace.h"
+#import "TYRawDataCollection.h"
+
 typedef enum {
     PBF_TRACE_DATA = 1,
     
-    
+    PBF_RAW_DATA = 2,
     
     
     
@@ -26,8 +28,11 @@ typedef enum {
 @end
 
 @interface TYTrace(PbfDBRecord)
-
 - (PbfDBRecord *)toPbfDBRecord;
 + (TYTrace *)fromPbfDBRecord:(PbfDBRecord *)record;
+@end
 
+@interface TYRawDataCollection(PbfDBRecord)
+- (PbfDBRecord *)toPbfDBRecord;
++ (TYRawDataCollection *)fromPbfDBRecord:(PbfDBRecord *)record;
 @end

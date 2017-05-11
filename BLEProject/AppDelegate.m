@@ -25,6 +25,7 @@
     [self initArcGISEnvironment];
     [self copyMapFilesIfNeeded];
     [self setDefaultPlaceIfNeeded];
+    [self copyCollectionDatabaseIfNeeded];
     [self registerDefaultsFromSettingsBundle];
     
     return YES;
@@ -49,6 +50,18 @@
         
 //        [TYUserDefaults setDefaultCity:@"0021"];
         [TYUserDefaults setDefaultBuilding:@"00210024"];
+    }
+}
+
+- (void)copyCollectionDatabaseIfNeeded
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *cdb = [[NSBundle mainBundle] pathForResource:@"MyCollection" ofType:@"db"];
+    
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *destDB = [documentDirectory stringByAppendingPathComponent:@"MyCollection.db"];
+    if (![fileManager fileExistsAtPath:destDB]) {
+        [fileManager copyItemAtPath:cdb toPath:destDB error:nil];
     }
 }
 

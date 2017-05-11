@@ -18,5 +18,5 @@
 @interface TYTrace(Protobuf)
 //- (TYTracePbf *)toPbf;
 - (NSData *)data;
-+ (TYTrace *)traceWithData:(NSData *)data error:(NSError *)err;
++ (TYTrace *)withData:(NSData *)data error:(NSError *)err;
 @end
