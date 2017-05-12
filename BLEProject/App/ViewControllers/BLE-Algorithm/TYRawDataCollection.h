@@ -50,6 +50,8 @@
 @property (nonatomic, assign) int floor;
 - (id)initWithX:(double)x Y:(double)y Floor:(int)floor;
 + (TYRawLocation *)rawLocationWithX:(double)x Y:(double)y Floor:(int)floor;
+
+- (TYLocalPoint *)toLocalPoint;
 @end
 
 @interface TYRawSignalEvent : NSObject

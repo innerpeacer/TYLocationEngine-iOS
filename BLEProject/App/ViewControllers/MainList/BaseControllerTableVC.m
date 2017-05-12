@@ -81,7 +81,7 @@
     self.storyboardName = @"BLE-Algorithm";
     self.controllerObjects = [ControllerCollections bleAlgorithmControllers];
     
-//    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
 }
 
 @end
@@ -140,7 +140,7 @@
     ControllerObject *obj = self.controllerObjects[indexPath.row];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:self.storyboardName bundle:nil];
     UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:obj.storyboardID];
-    [self.navigationController pushViewController:controller animated:YES];
+    [self.navigationController pushViewController:controller animated:NO];
 }
 
 @end

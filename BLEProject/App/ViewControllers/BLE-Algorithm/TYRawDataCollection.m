@@ -206,6 +206,11 @@
     return [[TYRawLocation alloc] initWithX:x Y:y Floor:floor];
 }
 
+- (TYLocalPoint *)toLocalPoint
+{
+    return [TYLocalPoint pointWithX:self.x Y:self.y Floor:self.floor];
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"RawLocation: (%f, %f, %d)", _x, _y, _floor];

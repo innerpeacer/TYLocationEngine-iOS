@@ -24,6 +24,8 @@
     
     self.title = @"原始数据列表";
     dataArray = [NSMutableArray arrayWithArray:[TYRawDataManager getAllDataID]];
+    
+    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -33,7 +35,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BLE-Algorithm" bundle:nil];
     PDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"PDRSimulatorVC"];
     controller.dataID = dataID;
-    [self.navigationController pushViewController:controller animated:YES];
+    [self.navigationController pushViewController:controller animated:NO];
 }
 
 #pragma mark - Table view data source

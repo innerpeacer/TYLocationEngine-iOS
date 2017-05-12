@@ -42,4 +42,7 @@
 
 #define BRTDocumentDir [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
+#define BRTMethod BRTLog(@"%@", NSStringFromSelector(_cmd));
+
+
 #endif

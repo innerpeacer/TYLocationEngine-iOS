@@ -6,8 +6,24 @@
 //  Copyright © 2017年 innerpeacer. All rights reserved.
 //
 
-#import "BaseLocationTestVC.h"
+#import "BaseMapVC.h"
+#import "ArcGISHelper.h"
 
-@interface PDRSimulatorVC : BaseLocationTestVC
+@interface PDRSimulatorVC : BaseMapVC
 @property (nonatomic, strong) NSString *dataID;
+
+@property (nonatomic, strong) AGSGraphicsLayer *publicBeaconLayer;
+@property (nonatomic, strong) AGSGraphicsLayer *signalLayer;
+
+@property (nonatomic, strong) AGSGraphicsLayer *traceLayer1;
+@property (nonatomic, strong) AGSGraphicsLayer *traceLayer2;
+
+@property (nonatomic, strong) AGSGraphicsLayer *locationLayer1;
+@property (nonatomic, strong) AGSGraphicsLayer *locationLayer2;
+
+@property (nonatomic, strong) AGSGraphicsLayer *hintLayer;
+
+@property (nonatomic, strong) AGSPictureMarkerSymbol *locationSymbol;
+@property (nonatomic, strong) AGSPictureMarkerSymbol *locationArrowSymbol;
+
 @end

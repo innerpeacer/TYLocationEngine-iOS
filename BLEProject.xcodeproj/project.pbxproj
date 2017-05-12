@@ -326,6 +326,8 @@
 		57ED32781EC42DFF006BD80F /* MyCollection.db in Resources */ = {isa = PBXBuildFile; fileRef = 57ED32761EC42DFF006BD80F /* MyCollection.db */; };
 		57ED327B1EC43067006BD80F /* PDRSimulatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ED327A1EC43067006BD80F /* PDRSimulatorVC.m */; };
 		57ED327C1EC43067006BD80F /* PDRSimulatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ED327A1EC43067006BD80F /* PDRSimulatorVC.m */; };
+		57ED327F1EC432CF006BD80F /* TYPDRSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ED327E1EC432CF006BD80F /* TYPDRSimulator.m */; };
+		57ED32801EC432CF006BD80F /* TYPDRSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ED327E1EC432CF006BD80F /* TYPDRSimulator.m */; };
 		57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */; };
 /* End PBXBuildFile section */
 
@@ -670,6 +672,8 @@
 		57ED32761EC42DFF006BD80F /* MyCollection.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyCollection.db; sourceTree = "<group>"; };
 		57ED32791EC43067006BD80F /* PDRSimulatorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRSimulatorVC.h; sourceTree = "<group>"; };
 		57ED327A1EC43067006BD80F /* PDRSimulatorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRSimulatorVC.m; sourceTree = "<group>"; };
+		57ED327D1EC432CF006BD80F /* TYPDRSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPDRSimulator.h; sourceTree = "<group>"; };
+		57ED327E1EC432CF006BD80F /* TYPDRSimulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPDRSimulator.m; sourceTree = "<group>"; };
 		57F85C8C1BB51695005D28CF /* CheckBeaconDatabaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBeaconDatabaseVC.h; sourceTree = "<group>"; };
 		57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBeaconDatabaseVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -929,6 +933,8 @@
 				5790BB9A1EC2FF9E00EDA409 /* RawDataTableVC.m */,
 				57ED32791EC43067006BD80F /* PDRSimulatorVC.h */,
 				57ED327A1EC43067006BD80F /* PDRSimulatorVC.m */,
+				57ED327D1EC432CF006BD80F /* TYPDRSimulator.h */,
+				57ED327E1EC432CF006BD80F /* TYPDRSimulator.m */,
 			);
 			path = "BLE-Algorithm";
 			sourceTree = "<group>";
@@ -1832,6 +1838,7 @@
 				572B9C4E1EBC6BD800AB6EA3 /* PbfDBRecord.m in Sources */,
 				57E905EB1EA8B05A000B3754 /* LocationTestHelper.m in Sources */,
 				57C96D721EC02753001F34F1 /* TraceTableVC.m in Sources */,
+				57ED32801EC432CF006BD80F /* TYPDRSimulator.m in Sources */,
 				57B156011D4DCDB500103143 /* BaseLogVC.m in Sources */,
 				57ED327C1EC43067006BD80F /* PDRSimulatorVC.m in Sources */,
 				57B156021D4DCDB500103143 /* ConfigureBeaconsVC.m in Sources */,
@@ -1930,6 +1937,7 @@
 				575CD1CD1B564E7300B1E77C /* IPXGeometryEngine.cpp in Sources */,
 				57A8F3E21D6B42C4009F7049 /* IPBLEWebDownloader.m in Sources */,
 				575CD1BB1B564E7300B1E77C /* TYPointConverter.m in Sources */,
+				57ED327F1EC432CF006BD80F /* TYPDRSimulator.m in Sources */,
 				5717FC351C0D498C0013D357 /* TYPointPosFMDBAdapter.m in Sources */,
 				575CD1001B564DE200B1E77C /* CityTableVC.m in Sources */,
 				57E6BCE61B8C41D0002226FB /* RATreeView.m in Sources */,

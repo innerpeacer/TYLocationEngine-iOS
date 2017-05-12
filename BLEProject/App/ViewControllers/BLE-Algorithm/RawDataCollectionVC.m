@@ -37,7 +37,6 @@
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_SAVE_RAW_DATA]];
     
 //    [self startRawData:nil];
-
 }
 
 - (void)motionDetector:(TYMotionDetector *)detector onStepEvent:(TYStepEvent *)stepEvent
