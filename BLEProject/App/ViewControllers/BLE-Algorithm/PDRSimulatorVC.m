@@ -37,30 +37,40 @@
     
     [self initMapSettings];
     
+    
     pdrController = [[TYSimplePDRController alloc] initWithAngle:0];
     pdrUpdatingController = [[TYSimplePDRController alloc] initWithAngle:0];
     
-    [simulator setReplaySpeed:1.0];
-    [simulator start];
+    [simulator setReplaySpeed:3.0];
+//    [simulator start];
+    
+    
+    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_START_REPLAY]];
+    for (DebugItem *item in self.debugItems) {
+        if (item.on) {
+            [self performSelector:item.selector withObject:item afterDelay:0];
+        }
+    }
+}
+
+- (IBAction)startReplay:(id)sender
+{
+    DebugItem *item = sender;
+    if (item.on) {
+        [simulator start];
+    } else {
+        [simulator cancel];
+    }
 }
 
 - (void)initMapSettings
 {
-    self.locationSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"l7"];
-    self.locationArrowSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locationArrow2"];
-    self.locationArrowSymbol.size = CGSizeMake(60, 60);
-    
     self.locationReplayLayer = [TYReplayTraceLayer newLayer:self.mapView];
 //    self.locationReplayLayer.markSymbol = [self.locationArrowSymbol copy];
 //    self.locationReplayLayer.markSymbol = nil;
     
     self.stepReplayLayer = [TYReplayTraceLayer newLayer:self.mapView];
     self.stepReplayLayer.lineSymbol.color = [UIColor yellowColor];
-
-    self.signalLayer = [ArcGISHelper createNewLayer:self.mapView];
-    self.locationLayer1 = [ArcGISHelper createNewLayer:self.mapView];
-    
-    [self.mapView setLocationSymbol:self.locationArrowSymbol];
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
@@ -77,7 +87,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [simulator stop];
+    [simulator cancel];
 }
 
 - (void)simulator:(id)sender replaySignal:(TYRawSignalEvent *)signal
@@ -114,11 +124,29 @@
 - (void)simulatorDidStart:(id)sender
 {
     BRTLog(@"simulatorDidStart:");
+    pdrController.currentLocation = nil;
 }
 
-- (void)simulatorDidEnd:(id)sender
+- (void)simulatorDidFinish:(id)sender
 {
-    BRTLog(@"simulatorDidEnd");
+    BRTLog(@"simulatorDidFinish");
+}
+
+- (void)simulatorDidPause:(TYPDRSimulator *)simulator
+{
+    BRTLog(@"simulatorDidPause");
+}
+
+- (void)simulatorDidResume:(TYPDRSimulator *)simulator
+{
+    BRTLog(@"simulatorDidResume");
+}
+
+- (void)simulatorDidCancel:(TYPDRSimulator *)simulator
+{
+    BRTLog(@"simulatorDidCancel");
+    [self.stepReplayLayer reset];
+    [self.locationReplayLayer reset];
 }
 
 @end

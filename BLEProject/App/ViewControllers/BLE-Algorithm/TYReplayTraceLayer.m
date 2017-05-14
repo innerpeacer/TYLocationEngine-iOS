@@ -46,7 +46,7 @@
 
 - (void)addTracePoint:(TYLocalPoint *)lp Angle:(double)angle
 {
-    BRTMethod
+//    BRTMethod
     lastPoint = currentPoint;
     currentPoint = lp;
     
@@ -59,6 +59,13 @@
         [ArcGISHelper drawLineFrom:lastAgs To:newAgs AtLayer:self WithSymbol:self.lineSymbol];
     }
     [self addGraphic:[AGSGraphic graphicWithGeometry:newAgs symbol:ms attributes:nil]];
+}
+
+- (void)reset
+{
+//    [self removeAllGraphics];
+    lastPoint = nil;
+    currentPoint = nil;
 }
 
 @end

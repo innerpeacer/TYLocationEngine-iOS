@@ -10,7 +10,8 @@
 #import "TYRegionManager.h"
 #import "TYUserDefaults.h"
 
-@interface BaseLocationTestVC () <UIActionSheetDelegate>
+@interface BaseLocationTestVC ()
+//<UIActionSheetDelegate>
 
 @end
 
@@ -20,30 +21,10 @@
     [super viewDidLoad];
     
     [self initLocationSettings];
-
-    self.publicBeaconLayer = [ArcGISHelper createNewLayer:self.mapView];
-    self.traceLayer1 = [ArcGISHelper createNewLayer:self.mapView];
-    self.traceLayer2 = [ArcGISHelper createNewLayer:self.mapView];
-    self.signalLayer = [ArcGISHelper createNewLayer:self.mapView];
-
-    self.locationLayer1 = [ArcGISHelper createNewLayer:self.mapView];
-    self.locationLayer2 = [ArcGISHelper createNewLayer:self.mapView];
-    self.hintLayer = [ArcGISHelper createNewLayer:self.mapView];
     
-    self.locationSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"l7"];
-    self.locationArrowSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locationArrow2"];
-    self.locationArrowSymbol.size = CGSizeMake(60, 60);
-
-//    [self.mapView setLocationSymbol:self.locationSymbol];
-    [self.mapView setLocationSymbol:self.locationArrowSymbol];
-    
-    NSString *title = [NSString stringWithFormat:@"%@调试", (self.name == nil ? @"" : self.name)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemTest:)];
-
-    self.debugItems = [[NSMutableArray alloc] init];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_PUBLIC_BEACON]];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_BEACON_SIGNAL]];
-
+    
     for (DebugItem *item in self.debugItems) {
         if (item.on) {
             [self performSelector:item.selector withObject:item afterDelay:0];
@@ -77,28 +58,6 @@
     [self.locationManager setRssiThreshold:-90];
     self.locationManager.delegate = self;
     [self.locationManager setBeaconRegion:self.publicBeaconRegion];
-}
-
-
-- (IBAction)rightBarButtonItemTest:(id)sender
-{
-//    BRTLog(@"rightBarButtonItemTest");
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"调试内容" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:nil];
-    for (DebugItem *item in self.debugItems) {
-        [actionSheet addButtonWithTitle:(item.on ? item.nameOff : item.name)];
-    }
-    [actionSheet showInView:self.view];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-//    BRTLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
-    if (buttonIndex == 0) {
-        return;
-    }
-    DebugItem *item = self.debugItems[buttonIndex - 1];
-    [item switchStatus];
-    [self performSelector:item.selector withObject:item afterDelay:0];
 }
 
 - (void)switchPublicBeacon:(id)sender

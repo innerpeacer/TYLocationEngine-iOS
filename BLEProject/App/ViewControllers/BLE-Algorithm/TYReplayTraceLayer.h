@@ -17,4 +17,5 @@
 - (void)addTracePoint:(TYLocalPoint *)lp Angle:(double)angle;
 + (TYReplayTraceLayer *)newLayer:(AGSMapView *)mapView;
 
+- (void)reset;
 @end

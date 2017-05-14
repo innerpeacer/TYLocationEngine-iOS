@@ -61,7 +61,6 @@
 
 - (void)start
 {
-    [self notifyStart];
     if (replayTimer) {
         [replayTimer invalidate];
         replayTimer = nil;
@@ -80,14 +79,15 @@
     timePaused = 0;
     
     replayTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(replay:) userInfo:nil repeats:YES];
-    
-    BRTLog(@"%@", data);
+    [TYPDRSimulatorDelegateHelper notifyStart:self];
+//    BRTLog(@"%@", data);
 }
 
-- (void)stop
+- (void)cancel
 {
     [replayTimer invalidate];
     replayTimer = nil;
+    [TYPDRSimulatorDelegateHelper notifyCancel:self];
 }
 
 - (void)pause
@@ -98,6 +98,7 @@
     }
     isPaused = YES;
     pausingTime = BRTNow;
+    [TYPDRSimulatorDelegateHelper notifyPause:self];
 }
 
 - (void)resume
@@ -109,6 +110,7 @@
     isPaused = NO;
     
     timePaused += (BRTNow - pausingTime);
+    [TYPDRSimulatorDelegateHelper notifyResume:self];
 }
 
 - (void)replay:(id)sender
@@ -123,7 +125,7 @@
         currentStep = stepArray[stepIndex];
         if ((currentStep.timestamp - data.timestamp) < timeElasped) {
 //            BRTLog(@"Fire Step %d: %@", stepIndex, currentStep);
-            [self notifyStep:currentStep];
+            [TYPDRSimulatorDelegateHelper simulator:self notifyStep:currentStep];
             ++stepIndex;
             stepOver = !(stepIndex < stepArray.count);
         } else {
@@ -135,7 +137,7 @@
         currentHeading = headingArray[headingIndex];
         if ((currentHeading.timestamp - data.timestamp) < timeElasped) {
             //            BRTLog(@"Fire Heading %d: %@", headingIndex, currentHeading);
-            [self notifyHeading:currentHeading];
+            [TYPDRSimulatorDelegateHelper simulator:self notifyHeading:currentHeading];
             ++headingIndex;
             headingOver = !(headingIndex < headingArray.count);
         } else {
@@ -147,7 +149,7 @@
         currentSignal = signalArray[signalIndex];
         if ((currentSignal.timestamp - data.timestamp) < timeElasped) {
 //            BRTLog(@"Fire Signal %d: %@", signalIndex, currentSignal);
-            [self notifySignal:currentSignal];
+            [TYPDRSimulatorDelegateHelper simulator:self notifySignal:currentSignal];
             ++signalIndex;
             signalOver = !(signalIndex < signalArray.count);
         } else {
@@ -156,44 +158,9 @@
     }
     
     if (stepOver && headingOver && signalOver) {
-        [self notifyEnd];
+        [TYPDRSimulatorDelegateHelper notifyFinish:self];
         NSTimer *timer = sender;
         [timer invalidate];
-    }
-}
-
-- (void)notifyStart
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(simulatorDidStart:)]) {
-        [self.delegate simulatorDidStart:self];
-    }
-}
-
-- (void)notifyEnd
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(simulatorDidEnd:)]) {
-        [self.delegate simulatorDidEnd:self];
-    }
-}
-
-- (void)notifyStep:(TYRawStepEvent *)step
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(simulator:replayStep:)]) {
-        [self.delegate simulator:self replayStep:step];
-    }
-}
-
-- (void)notifyHeading:(TYRawHeadingEvent *)heading
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(simulator:replayHeading:)]) {
-        [self.delegate simulator:self replayHeading:heading];
-    }
-}
-
-- (void)notifySignal:(TYRawSignalEvent *)signal
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(simulator:replaySignal:)]) {
-        [self.delegate simulator:self replaySignal:signal];
     }
 }
 

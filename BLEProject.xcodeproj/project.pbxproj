@@ -331,6 +331,8 @@
 		57F85C8E1BB51695005D28CF /* CheckBeaconDatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */; };
 		57FE5D191EC82991004DAC95 /* TYReplayTraceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE5D181EC82991004DAC95 /* TYReplayTraceLayer.m */; };
 		57FE5D1A1EC82991004DAC95 /* TYReplayTraceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE5D181EC82991004DAC95 /* TYReplayTraceLayer.m */; };
+		57FE5D1D1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE5D1C1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.m */; };
+		57FE5D1E1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE5D1C1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -680,6 +682,8 @@
 		57F85C8D1BB51695005D28CF /* CheckBeaconDatabaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBeaconDatabaseVC.m; sourceTree = "<group>"; };
 		57FE5D171EC82991004DAC95 /* TYReplayTraceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYReplayTraceLayer.h; sourceTree = "<group>"; };
 		57FE5D181EC82991004DAC95 /* TYReplayTraceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYReplayTraceLayer.m; sourceTree = "<group>"; };
+		57FE5D1B1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPDRSimulatorDelegate.h; sourceTree = "<group>"; };
+		57FE5D1C1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPDRSimulatorDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -941,6 +945,8 @@
 				57ED327E1EC432CF006BD80F /* TYPDRSimulator.m */,
 				57FE5D171EC82991004DAC95 /* TYReplayTraceLayer.h */,
 				57FE5D181EC82991004DAC95 /* TYReplayTraceLayer.m */,
+				57FE5D1B1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.h */,
+				57FE5D1C1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.m */,
 			);
 			path = "BLE-Algorithm";
 			sourceTree = "<group>";
@@ -1819,6 +1825,7 @@
 				57B155E91D4DCDB500103143 /* ShowBeaconRegionTableVC.m in Sources */,
 				57B155EA1D4DCDB500103143 /* BeaconListForChoosingTableVC.m in Sources */,
 				5787F2E11EC18F0600D5ADCA /* TYRawDataCollection+Protobuf.m in Sources */,
+				57FE5D1E1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.m in Sources */,
 				57B155EB1D4DCDB500103143 /* MapLicenseGenerator.m in Sources */,
 				57B155EC1D4DCDB500103143 /* RATreeNodeCollectionController.m in Sources */,
 				57B155ED1D4DCDB500103143 /* IPXLocationEngine.mm in Sources */,
@@ -2034,6 +2041,7 @@
 				575CD1B81B564E7300B1E77C /* TYStepEvent.m in Sources */,
 				572B9C4D1EBC6BD800AB6EA3 /* PbfDBRecord.m in Sources */,
 				5722C9D71C304E81009D2365 /* CityBuildingTableVC.m in Sources */,
+				57FE5D1D1EC8C59C004DAC95 /* TYPDRSimulatorDelegate.m in Sources */,
 				57677CB81EBC4C550013A87A /* TYTrace.m in Sources */,
 				575CD1B71B564E7300B1E77C /* TYStepDetector.m in Sources */,
 				5722C9C61C304DF1009D2365 /* AddPrimitiveBeaconsVC.m in Sources */,

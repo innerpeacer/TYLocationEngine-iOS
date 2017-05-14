@@ -27,6 +27,7 @@
                       @[IP_DEBUG_ITEM_START_TRACE, @"创建轨迹", @"创建轨迹", @(YES), @"startTrace:"],
                       @[IP_DEBUG_ITEM_START_RAW_DATA, @"记录原始数据", @"记录原始数据", @(YES), @"startRawData:"],
                       @[IP_DEBUG_ITEM_SAVE_RAW_DATA, @"保存原始数据", @"保存原始数据", @(YES), @"saveRawData:"],
+                      @[IP_DEBUG_ITEM_START_REPLAY, @"开始Replay", @"停止Replay", @(YES), @"startReplay:"],
 
                       
                       ];
