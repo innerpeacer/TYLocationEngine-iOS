@@ -62,6 +62,8 @@
 
 - (id)initWithTime:(NSTimeInterval)time Location:(TYRawLocation *)location ImmediateLocation:(TYRawLocation *)immediateLocation SingalEvent:(NSArray *)singalEvent;
 + (TYRawSignalEvent *)newRawSingalEvent:(NSTimeInterval)time Location:(TYRawLocation *)location ImmediateLocation:(TYRawLocation *)immediateLocation SingalEvent:(NSArray *)singalEvent;
+
+- (NSArray *)toPublicBeaconArray;
 - (NSString *)detailedDescription;
 
 @end

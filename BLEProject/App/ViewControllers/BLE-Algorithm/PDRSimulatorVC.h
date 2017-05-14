@@ -8,6 +8,7 @@
 
 #import "BaseMapVC.h"
 #import "ArcGISHelper.h"
+#import "TYReplayTraceLayer.h"
 
 @interface PDRSimulatorVC : BaseMapVC
 @property (nonatomic, strong) NSString *dataID;
@@ -23,7 +24,12 @@
 
 @property (nonatomic, strong) AGSGraphicsLayer *hintLayer;
 
+@property (nonatomic, strong) TYReplayTraceLayer *locationReplayLayer;
+@property (nonatomic, strong) TYReplayTraceLayer *stepReplayLayer;
+
 @property (nonatomic, strong) AGSPictureMarkerSymbol *locationSymbol;
 @property (nonatomic, strong) AGSPictureMarkerSymbol *locationArrowSymbol;
+
+
 
 @end

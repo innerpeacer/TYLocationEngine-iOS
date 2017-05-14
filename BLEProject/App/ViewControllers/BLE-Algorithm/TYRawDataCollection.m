@@ -257,6 +257,19 @@
     return [[TYRawSignalEvent alloc] initWithTime:time Location:location ImmediateLocation:immediateLocation SingalEvent:singalEvent];
 }
 
+- (NSArray *)toPublicBeaconArray
+{
+    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
+    for (TYRawBeaconSignal *bs in self.beaconSignalArray) {
+        TYPublicBeacon *pb = [[TYPublicBeacon alloc] initWithUUID:bs.uuid Major:@(bs.major) Minor:@(bs.minor) Tag:nil Type:PUBLIC];
+        pb.location = [TYLocalPoint pointWithX:bs.x Y:bs.y Floor:bs.floor];
+        pb.rssi = bs.rssi;
+        pb.accuracy = bs.accuracy;
+        [resultArray addObject:pb];
+    }
+    return resultArray;
+}
+
 - (NSString *)detailedDescription
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];

@@ -44,6 +44,18 @@
     }
 }
 
+
++ (void)drawLineFrom:(AGSPoint *)start To:(AGSPoint *)end AtLayer:(AGSGraphicsLayer *)layer WithSymbol:(AGSSimpleLineSymbol *)sls
+{
+    AGSMutablePolyline *polyline = [[AGSMutablePolyline alloc] initWithSpatialReference:nil];
+    [polyline addPathToPolyline];
+    
+    [polyline addPointToPath:start];
+    [polyline addPointToPath:end];
+    [layer addGraphic:[AGSGraphic graphicWithGeometry:polyline symbol:sls attributes:nil]];
+}
+
+
 + (void)drawLineFrom:(AGSPoint *)start To:(AGSPoint *)end AtLayer:(AGSGraphicsLayer *)layer WithColor:(UIColor *)color Width:(NSNumber *)width ClearContent:(BOOL)clear
 {
     if (clear) {

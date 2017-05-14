@@ -17,6 +17,8 @@
 
 + (void)drawLocalPoint:(TYLocalPoint *)lp AtLayer:(AGSGraphicsLayer *)layer WithSymbol:(AGSMarkerSymbol *)ms ClearContent:(BOOL)clear;
 + (void)drawPoint:(AGSPoint *)p AtLayer:(AGSGraphicsLayer *)layer WithSymbol:(AGSMarkerSymbol *)ms ClearContent:(BOOL)clear;
+
++ (void)drawLineFrom:(AGSPoint *)start To:(AGSPoint *)end AtLayer:(AGSGraphicsLayer *)layer WithSymbol:(AGSSimpleLineSymbol *)sls;
 + (void)drawLineFrom:(AGSPoint *)start To:(AGSPoint *)end AtLayer:(AGSGraphicsLayer *)layer WithColor:(UIColor *)color Width:(NSNumber *)width ClearContent:(BOOL)clear;
 
 + (void)drawTrace:(TYTrace *)trace AtLayer:(AGSGraphicsLayer *)layer;
