@@ -63,7 +63,7 @@
 
 - (void)reset
 {
-//    [self removeAllGraphics];
+    [self removeAllGraphics];
     lastPoint = nil;
     currentPoint = nil;
 }

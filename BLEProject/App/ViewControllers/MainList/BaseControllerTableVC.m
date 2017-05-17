@@ -39,6 +39,7 @@
                                  @[@"PDR测试", @"PDRTestVC"],
                                  @[@"原始数据收集", @"RawDataCollectionVC"],
                                  @[@"原始数据列表", @"RawDataTableVC"],
+                                 @[@"融合PDR测试", @"FusionPDRSimulatorVC"],
 
                                  ];
     return [ControllerCollections getControllerArray:viewControllers];
@@ -81,7 +82,7 @@
     self.storyboardName = @"BLE-Algorithm";
     self.controllerObjects = [ControllerCollections bleAlgorithmControllers];
     
-    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
 }
 
 @end

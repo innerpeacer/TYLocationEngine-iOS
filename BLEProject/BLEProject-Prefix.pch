@@ -44,5 +44,9 @@
 
 #define BRTMethod BRTLog(@"%@", NSStringFromSelector(_cmd));
 
+//double headingInRad = PI * currentHeading / 180.0;
+
+#define BRT_ANGLE_TO_RAD(X) (PI * X)/180.0
+
 
 #endif

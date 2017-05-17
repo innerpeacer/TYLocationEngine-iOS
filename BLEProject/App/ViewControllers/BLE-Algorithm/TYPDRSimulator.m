@@ -61,6 +61,8 @@
 
 - (void)start
 {
+    [TYPDRSimulatorDelegateHelper notifyStart:self];
+
     if (replayTimer) {
         [replayTimer invalidate];
         replayTimer = nil;
@@ -79,7 +81,6 @@
     timePaused = 0;
     
     replayTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(replay:) userInfo:nil repeats:YES];
-    [TYPDRSimulatorDelegateHelper notifyStart:self];
 //    BRTLog(@"%@", data);
 }
 

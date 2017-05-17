@@ -15,5 +15,7 @@
 
 @property (nonatomic, strong) TYReplayTraceLayer *locationReplayLayer;
 @property (nonatomic, strong) TYReplayTraceLayer *stepReplayLayer;
+@property (nonatomic, strong) TYReplayTraceLayer *updateingStepReplayLayer;
+@property (nonatomic, strong) TYReplayTraceLayer *fusionStepReplayLayer;
 
 @end

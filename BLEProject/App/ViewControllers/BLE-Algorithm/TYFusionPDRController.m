@@ -1,17 +1,17 @@
-
 //
-//  TYPDRController.m
+//  TYFusionPDRController.m
 //  BLEProject
 //
-//  Created by innerpeacer on 2017/4/20.
+//  Created by innerpeacer on 2017/5/15.
 //  Copyright © 2017年 innerpeacer. All rights reserved.
 //
 
-#import "TYSimplePDRController.h"
+#import "TYFusionPDRController.h"
 
 #define DEFAULT_STRIDE_LENGTH 0.5
+#define DEFAULT_TOLERANCE_DISTANCE 3
 
-@interface TYSimplePDRController()
+@interface TYFusionPDRController()
 {
     double initAngle;
     
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation TYSimplePDRController
+@implementation TYFusionPDRController
 
 - (id)initWithAngle:(double)angle
 {
@@ -39,7 +39,17 @@
 - (void)setStartLocation:(TYLocalPoint *)start
 {
     _currentLocation = start;
-//    BRTLog(@"Set: %@", _currentLocation);
+    BRTLog(@"Set: %@", _currentLocation);
+}
+
+- (void)updateRawSignalEvent:(TYRawSignalEvent *)signal
+{
+    TYLocalPoint *location = [signal.immediateLocation toLocalPoint];
+    double distance = [_currentLocation distanceWith:location];
+//    BRTLog(@"Distance: %f", distance);
+    if (distance > DEFAULT_TOLERANCE_DISTANCE) {
+        _currentLocation = location;
+    }
 }
 
 - (void)addStepEvent
@@ -49,7 +59,7 @@
     }
     
     double headingInRad = PI * currentHeading / 180.0;
-//    headingInRad = headingInRad * -1;
+    //    headingInRad = headingInRad * -1;
     _currentLocation = [TYLocalPoint pointWithX:_currentLocation.x + strideLength * sin(headingInRad) Y:_currentLocation.y + strideLength * cos(headingInRad)];
 }
 

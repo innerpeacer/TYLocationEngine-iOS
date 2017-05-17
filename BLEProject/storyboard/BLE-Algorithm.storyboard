@@ -170,5 +170,38 @@
             </objects>
             <point key="canvasLocation" x="2774" y="686"/>
         </scene>
+        <!--FusionPDR SimulatorVC-->
+        <scene sceneID="PUt-U1-A7y">
+            <objects>
+                <viewController storyboardIdentifier="FusionPDRSimulatorVC" id="Y5W-hl-lqN" customClass="FusionPDRSimulatorVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ObB-Zf-SAN"/>
+                        <viewControllerLayoutGuide type="bottom" id="xYc-pz-FCG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fe0-NF-0yF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jof-ar-hqd" customClass="TYMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jof-ar-hqd" firstAttribute="top" secondItem="fe0-NF-0yF" secondAttribute="topMargin" id="ABV-ji-b1q"/>
+                            <constraint firstItem="xYc-pz-FCG" firstAttribute="top" secondItem="Jof-ar-hqd" secondAttribute="bottom" id="Dd3-iv-KSx"/>
+                            <constraint firstAttribute="trailing" secondItem="Jof-ar-hqd" secondAttribute="trailing" id="cqe-5f-NO4"/>
+                            <constraint firstItem="Jof-ar-hqd" firstAttribute="leading" secondItem="fe0-NF-0yF" secondAttribute="leading" id="iZ5-Lu-4EF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Jof-ar-hqd" id="QsJ-DL-NpE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z05-B5-ojD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3619" y="686"/>
+        </scene>
     </scenes>
 </document>
