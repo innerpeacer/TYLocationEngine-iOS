@@ -45,7 +45,7 @@
     [self.mapView zoomToEnvelope:[AGSEnvelope envelopeWithXmin:13523497.578848 ymin:3642439.640312 xmax:13523524.595785 ymax:3642484.472765 spatialReference:self.mapView.spatialReference] animated:NO];
     
     pdrFusionController = [[TYFusionPDRController alloc] initWithAngle:0];
-    [simulator setReplaySpeed:3.0];
+    [simulator setReplaySpeed:5.0];
     //    [simulator start];
     
     
@@ -77,11 +77,11 @@
     BRTLog(@"%@", self.mapView.visibleAreaEnvelope);
     isPaused = !isPaused;
     
-    //    if (isPaused) {
-    //        [simulator pause];
-    //    } else {
-    //        [simulator resume];
-    //    }
+//        if (isPaused) {
+//            [simulator pause];
+//        } else {
+//            [simulator resume];
+//        }
     
     if (isPaused) {
         [simulator cancel];
@@ -135,11 +135,13 @@
 - (void)simulatorDidStart:(id)sender
 {
     [self.fusionStepReplayLayer reset];
+    [pdrFusionController reset];
 }
 
 - (void)simulatorDidCancel:(TYPDRSimulator *)simulator
 {
     [self.fusionStepReplayLayer reset];
+    [pdrFusionController reset];
 }
 
 - (IBAction)startReplay:(id)sender

@@ -8,6 +8,10 @@
 
 #import "TYRawDataCollection.h"
 
+@implementation TYRawEvent
+
+@end
+
 @implementation TYRawDataCollection
 
 - (id)init
@@ -25,7 +29,7 @@
     self = [super init];
     if (self) {
         _dataID = dID;
-        _timestamp = time;
+        self.timestamp = time;
         _stepEventArray = [[NSMutableArray alloc] init];
         _headingEventArray = [[NSMutableArray alloc] init];
         _signalEventArray = [[NSMutableArray alloc] init];
@@ -38,7 +42,7 @@
     self = [super init];
     if (self) {
         _dataID = dID;
-        _timestamp = time;
+        self.timestamp = time;
         _stepEventArray = [NSMutableArray arrayWithArray:steps];
         _headingEventArray = [NSMutableArray arrayWithArray:headings];
         _signalEventArray = [NSMutableArray arrayWithArray:signals];
@@ -107,7 +111,7 @@
 {
     self = [super init];
     if (self) {
-        _timestamp = time;
+        self.timestamp = time;
     }
     return self;
 }
@@ -124,7 +128,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Step: %f", _timestamp];
+    return [NSString stringWithFormat:@"Step: %f", self.timestamp];
 }
 
 @end
@@ -136,7 +140,7 @@
     self = [super init];
     if (self) {
         _heading = heading;
-        _timestamp = time;
+        self.timestamp = time;
     }
     return self;
 }
@@ -153,7 +157,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Heading: %f, Time: %f", _heading, _timestamp];
+    return [NSString stringWithFormat:@"Heading: %f, Time: %f", _heading, self.timestamp];
 }
 
 @end
@@ -229,7 +233,7 @@
 {
     self = [super init];
     if (self) {
-        _timestamp = time;
+        self.timestamp = time;
         _beaconSignalArray = [[NSMutableArray alloc] init];
     }
     return self;
@@ -239,7 +243,7 @@
 {
     self = [super init];
     if (self) {
-        _timestamp = time;
+        self.timestamp = time;
         _location = location;
         _immediateLocation = immediateLocation;
         _beaconSignalArray = [NSMutableArray arrayWithArray:singalEvent];

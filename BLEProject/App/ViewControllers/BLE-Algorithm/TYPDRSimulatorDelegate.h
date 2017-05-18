@@ -33,7 +33,8 @@
 + (void)notifyPause:(TYPDRSimulator *)simulator;
 + (void)notifyResume:(TYPDRSimulator *)simulator;
 
-+ (void)simulator:(TYPDRSimulator *)simulator notifyStep:(TYRawStepEvent *)step;
-+ (void)simulator:(TYPDRSimulator *)simulator notifyHeading:(TYRawHeadingEvent *)heading;
-+ (void)simulator:(TYPDRSimulator *)simulator notifySignal:(TYRawSignalEvent *)signal;
++ (void)simulator:(TYPDRSimulator *)simulator nofityRawEvent:(TYRawEvent *)event;
+//+ (void)simulator:(TYPDRSimulator *)simulator notifyStep:(TYRawStepEvent *)step;
+//+ (void)simulator:(TYPDRSimulator *)simulator notifyHeading:(TYRawHeadingEvent *)heading;
+//+ (void)simulator:(TYPDRSimulator *)simulator notifySignal:(TYRawSignalEvent *)signal;
 @end

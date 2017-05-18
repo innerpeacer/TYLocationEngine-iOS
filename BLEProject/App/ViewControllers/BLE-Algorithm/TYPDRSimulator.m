@@ -2,7 +2,7 @@
 //  TYPDRSimulator.m
 //  BLEProject
 //
-//  Created by innerpeacer on 2017/5/11.
+//  Created by innerpeacer on 2017/5/17.
 //  Copyright © 2017年 innerpeacer. All rights reserved.
 //
 
@@ -12,32 +12,19 @@
 @interface TYPDRSimulator()
 {
     TYRawDataCollection *data;
-    NSTimeInterval startTime;
     NSTimer *replayTimer;
     
-    NSArray *stepArray;
-    NSArray *signalArray;
-    NSArray *headingArray;
-    
-    int stepIndex;
-    int signalIndex;
-    int headingIndex;
-    
-    TYRawStepEvent *currentStep;
-    TYRawHeadingEvent *currentHeading;
-    TYRawSignalEvent *currentSignal;
-    
-    BOOL stepOver;
-    BOOL signalOver;
-    BOOL headingOver;
-    
+    NSMutableArray *allEventArray;
+    TYRawEvent *currentEvent;
+    int eventIndex;
+    BOOL isEventOver;
     BOOL isPaused;
     
-    NSTimeInterval timeElasped;
-    NSTimeInterval timePaused;
-    NSTimeInterval pausingTime;
-    
-    double currentSpeed;
+    NSTimeInterval startTime;
+    NSTimeInterval currentReplayTime;
+    NSTimeInterval replayStartTime;
+    NSTimeInterval replayStep;
+    NSTimeInterval replaySpeed;
 }
 
 @end
@@ -49,39 +36,52 @@
     self = [super init];
     if (self) {
         data = d;
-        currentSpeed = 1;
+        replaySpeed = 1;
+        replayStep = 0.01;
         
-        stepArray = data.stepEventArray;
-        headingArray = data.headingEventArray;
-        signalArray = data.signalEventArray;
+        allEventArray = [[NSMutableArray alloc] init];
+        [allEventArray addObjectsFromArray:data.stepEventArray];
+        [allEventArray addObjectsFromArray:data.headingEventArray];
+        [allEventArray addObjectsFromArray:data.signalEventArray];
+        [allEventArray sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            TYRawEvent *e1 = obj1;
+            TYRawEvent *e2 = obj2;
+            return e1.timestamp - e2.timestamp;
+        }];
     }
     
     return self;
 }
 
+- (NSTimeInterval)calcualteCurrentReplayTime
+{
+    BOOL useStep = YES;
+//    useStep = NO;
+    if (useStep) {
+        return replayStartTime + (BRTNow - startTime) * replaySpeed;
+    } else {
+        return currentReplayTime + replayStep * replaySpeed;
+    }
+}
+
 - (void)start
 {
     [TYPDRSimulatorDelegateHelper notifyStart:self];
-
+    
     if (replayTimer) {
         [replayTimer invalidate];
         replayTimer = nil;
     }
     
     isPaused = NO;
-    stepIndex = 0;
-    signalIndex = 0;
-    headingIndex = 0;
-    
-    stepOver = !(stepIndex < stepArray.count);
-    headingOver = !(headingIndex < headingArray.count);
-    signalOver = !(signalIndex < signalArray.count);
+    eventIndex = 0;
+    isEventOver = !(eventIndex < allEventArray.count);
     
     startTime = BRTNow;
-    timePaused = 0;
+    replayStartTime = data.timestamp - 0.02;
+    currentReplayTime = replayStartTime;
     
     replayTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(replay:) userInfo:nil repeats:YES];
-//    BRTLog(@"%@", data);
 }
 
 - (void)cancel
@@ -98,7 +98,6 @@
         return;
     }
     isPaused = YES;
-    pausingTime = BRTNow;
     [TYPDRSimulatorDelegateHelper notifyPause:self];
 }
 
@@ -110,55 +109,39 @@
     }
     isPaused = NO;
     
-    timePaused += (BRTNow - pausingTime);
+    startTime = BRTNow;
+    replayStartTime = currentReplayTime;
     [TYPDRSimulatorDelegateHelper notifyResume:self];
 }
 
 - (void)replay:(id)sender
 {
     if (isPaused) {
-//        BRTLog(@"Paused");
         return;
     }
     
-    timeElasped = (BRTNow - startTime - timePaused) * currentSpeed;
-    while (!stepOver) {
-        currentStep = stepArray[stepIndex];
-        if ((currentStep.timestamp - data.timestamp) < timeElasped) {
-//            BRTLog(@"Fire Step %d: %@", stepIndex, currentStep);
-            [TYPDRSimulatorDelegateHelper simulator:self notifyStep:currentStep];
-            ++stepIndex;
-            stepOver = !(stepIndex < stepArray.count);
+    NSMutableArray *eventToFire = [[NSMutableArray alloc] init];
+    currentReplayTime = [self calcualteCurrentReplayTime];
+    
+    while (!isEventOver) {
+        currentEvent = allEventArray[eventIndex];
+        if (currentEvent.timestamp < currentReplayTime) {
+            [eventToFire addObject:currentEvent];
+            ++eventIndex;
+            isEventOver = !(eventIndex < allEventArray.count);
         } else {
             break;
         }
     }
     
-    while (!headingOver) {
-        currentHeading = headingArray[headingIndex];
-        if ((currentHeading.timestamp - data.timestamp) < timeElasped) {
-            //            BRTLog(@"Fire Heading %d: %@", headingIndex, currentHeading);
-            [TYPDRSimulatorDelegateHelper simulator:self notifyHeading:currentHeading];
-            ++headingIndex;
-            headingOver = !(headingIndex < headingArray.count);
-        } else {
-            break;
+    
+    if (eventToFire.count != 0) {
+        for (TYRawEvent *event in eventToFire) {
+            [TYPDRSimulatorDelegateHelper simulator:self nofityRawEvent:event];
         }
     }
     
-    while (!signalOver) {
-        currentSignal = signalArray[signalIndex];
-        if ((currentSignal.timestamp - data.timestamp) < timeElasped) {
-//            BRTLog(@"Fire Signal %d: %@", signalIndex, currentSignal);
-            [TYPDRSimulatorDelegateHelper simulator:self notifySignal:currentSignal];
-            ++signalIndex;
-            signalOver = !(signalIndex < signalArray.count);
-        } else {
-            break;
-        }
-    }
-    
-    if (stepOver && headingOver && signalOver) {
+    if (isEventOver) {
         [TYPDRSimulatorDelegateHelper notifyFinish:self];
         NSTimer *timer = sender;
         [timer invalidate];
@@ -170,7 +153,8 @@
     if (speed < 0) {
         BRTLog(@"Speed %f < 0, Invalid",speed);
     }
-    currentSpeed = speed;
+    replaySpeed = speed;
 }
 
 @end
+

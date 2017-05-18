@@ -9,17 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "TYPublicBeacon.h"
 
-@interface TYRawStepEvent : NSObject
+@interface TYRawEvent : NSObject
 @property (nonatomic, assign) NSTimeInterval timestamp;
+@end
 
+@interface TYRawStepEvent : TYRawEvent
 - (id)initWithTime:(NSTimeInterval)time;
 + (TYRawStepEvent *)newStepEvent;
 + (TYRawStepEvent *)newStepEvent:(NSTimeInterval)time;
-
 @end
 
-@interface TYRawHeadingEvent : NSObject
-@property (nonatomic, assign) NSTimeInterval timestamp;
+@interface TYRawHeadingEvent : TYRawEvent
 @property (nonatomic, assign) double heading;
 
 - (id)initWithHeading:(double)heading Time:(NSTimeInterval)time;
@@ -54,8 +54,7 @@
 - (TYLocalPoint *)toLocalPoint;
 @end
 
-@interface TYRawSignalEvent : NSObject
-@property (nonatomic, assign) NSTimeInterval timestamp;
+@interface TYRawSignalEvent : TYRawEvent
 @property (nonatomic, strong) NSMutableArray *beaconSignalArray;
 @property (nonatomic, strong) TYRawLocation *location;
 @property (nonatomic, strong) TYRawLocation *immediateLocation;
@@ -68,9 +67,8 @@
 
 @end
 
-@interface TYRawDataCollection : NSObject
+@interface TYRawDataCollection : TYRawEvent
 @property (nonatomic, strong) NSString *dataID;
-@property (nonatomic, assign) NSTimeInterval timestamp;
 @property (nonatomic, strong) NSMutableArray *stepEventArray;
 @property (nonatomic, strong) NSMutableArray *headingEventArray;
 @property (nonatomic, strong) NSMutableArray *signalEventArray;

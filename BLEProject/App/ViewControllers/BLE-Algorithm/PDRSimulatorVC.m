@@ -45,7 +45,7 @@
     pdrController = [[TYSimplePDRController alloc] initWithAngle:0];
     pdrUpdatingController = [[TYSimplePDRController alloc] initWithAngle:0];
     pdrFusionController = [[TYFusionPDRController alloc] initWithAngle:0];
-    [simulator setReplaySpeed:3.0];
+    [simulator setReplaySpeed:10.0];
 //    [simulator start];
     
     
@@ -165,6 +165,8 @@
     [self.updateingStepReplayLayer reset];
     [self.fusionStepReplayLayer reset];
     [pdrController reset];
+    [pdrUpdatingController reset];
+    [pdrFusionController reset];
 }
 
 - (void)simulatorDidCancel:(TYPDRSimulator *)simulator
@@ -175,6 +177,8 @@
     [self.updateingStepReplayLayer reset];
     [self.fusionStepReplayLayer reset];
     [pdrController reset];
+    [pdrUpdatingController reset];
+    [pdrFusionController reset];
 }
 
 @end

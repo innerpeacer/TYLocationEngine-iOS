@@ -46,6 +46,22 @@
     }
 }
 
++ (void)simulator:(TYPDRSimulator *)simulator nofityRawEvent:(TYRawEvent *)event
+{
+    if ([event isKindOfClass:[TYRawStepEvent class]]) {
+        [TYPDRSimulatorDelegateHelper simulator:simulator notifyStep:(TYRawStepEvent *)event];
+    }
+    
+    if ([event isKindOfClass:[TYRawHeadingEvent class]]) {
+        [TYPDRSimulatorDelegateHelper simulator:simulator notifyHeading:(TYRawHeadingEvent *)event];
+    }
+    
+    if ([event isKindOfClass:[TYRawSignalEvent class]]) {
+        [TYPDRSimulatorDelegateHelper simulator:simulator notifySignal:(TYRawSignalEvent *)event];
+    }
+
+}
+
 + (void)simulator:(TYPDRSimulator *)simulator notifyStep:(TYRawStepEvent *)step
 {
     if (simulator.delegate && [simulator.delegate respondsToSelector:@selector(simulator:replayStep:)]) {
