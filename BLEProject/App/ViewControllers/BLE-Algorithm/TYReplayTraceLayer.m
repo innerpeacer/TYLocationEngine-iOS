@@ -44,6 +44,23 @@
     [self addGraphic:[AGSGraphic graphicWithGeometry:point symbol:self.markSymbol attributes:nil]];
 }
 
+- (void)addTracePoint:(TYLocalPoint *)lp Angle:(double)angle WithNewStart:(BOOL)newStart
+{
+    //    BRTMethod
+    lastPoint = currentPoint;
+    currentPoint = lp;
+    
+    AGSPoint *newAgs = [AGSPoint pointWithX:lp.x y:lp.y spatialReference:nil];
+    AGSMarkerSymbol *ms = [self.markSymbol copy];
+    self.markSymbol.angle = angle;
+    
+    if (lastPoint && currentPoint && !newStart) {
+        AGSPoint *lastAgs = [AGSPoint pointWithX:lastPoint.x y:lastPoint.y spatialReference:nil];
+        [ArcGISHelper drawLineFrom:lastAgs To:newAgs AtLayer:self WithSymbol:self.lineSymbol];
+    }
+    [self addGraphic:[AGSGraphic graphicWithGeometry:newAgs symbol:ms attributes:nil]];
+}
+
 - (void)addTracePoint:(TYLocalPoint *)lp Angle:(double)angle
 {
 //    BRTMethod

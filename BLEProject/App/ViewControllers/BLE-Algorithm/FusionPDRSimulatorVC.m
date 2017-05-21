@@ -22,6 +22,7 @@
     
     AGSGraphic *refGraphic;
     AGSGraphic *fanGraphic;
+    AGSGraphic *testFanGraphic;
     
     double currentHeading;
 
@@ -34,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataID = @"RawData-0511-16:48:21";
+//    self.dataID = @"RawData-0511-16:48:21";
     
     collection = [TYRawDataManager getData:self.dataID];
     simulator = [[TYPDRSimulator alloc] initWithData:collection];
@@ -45,7 +46,7 @@
     [self.mapView zoomToEnvelope:[AGSEnvelope envelopeWithXmin:13523497.578848 ymin:3642439.640312 xmax:13523524.595785 ymax:3642484.472765 spatialReference:self.mapView.spatialReference] animated:NO];
     
     pdrFusionController = [[TYFusionPDRController alloc] initWithAngle:0];
-    [simulator setReplaySpeed:5.0];
+    [simulator setReplaySpeed:2.0];
     //    [simulator start];
     
     
@@ -64,17 +65,18 @@
     //    self.fusionStepReplayLayer.visible = NO;
     
     refGraphic = [AGSGraphic graphicWithGeometry:nil symbol:[AGSSimpleMarkerSymbol simpleMarkerSymbol] attributes:nil];
-//    AGSSimpleFillSymbol *fanFill = [AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithRed:70 green:70 blue:70 alpha:0.5] outlineColor:[UIColor whiteColor]];
     AGSSimpleFillSymbol *fanFill = [AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithRed:128/255.0f green:128/255.0f blue:128/255.0f alpha:0.5] outlineColor:[UIColor whiteColor]];
     fanGraphic = [AGSGraphic graphicWithGeometry:nil symbol:fanFill attributes:nil];
+    testFanGraphic = [AGSGraphic graphicWithGeometry:nil symbol:fanFill attributes:nil];
+
     [self.fusionStepReplayLayer addGraphic:refGraphic];
     [self.fusionStepReplayLayer addGraphic:fanGraphic];
-
+    [self.fusionStepReplayLayer addGraphic:testFanGraphic];
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
-    BRTLog(@"%@", self.mapView.visibleAreaEnvelope);
+//    BRTLog(@"%@", self.mapView.visibleAreaEnvelope);
     isPaused = !isPaused;
     
 //        if (isPaused) {
@@ -90,14 +92,11 @@
     }
 }
 
-
 - (void)simulator:(id)sender replaySignal:(TYRawSignalEvent *)signal
 {
     //    BRTLog(@"replaySignal");
     TYLocalPoint *newLocation = [signal.location toLocalPoint];
     TYLocalPoint *newImmediateLocation = [signal.immediateLocation toLocalPoint];
-    
-
     
     [self.mapView showLocation:newLocation];
     
@@ -110,9 +109,9 @@
     refGraphic.geometry = [AGSPoint pointWithX:newImmediateLocation.x y:newImmediateLocation.y spatialReference:nil];
     [self.fusionStepReplayLayer removeGraphic:refGraphic];
     [self.fusionStepReplayLayer addGraphic:refGraphic];
-    
-    TYFanRange *fan = [[TYFanRange alloc] initWithCenter:pdrFusionController.currentLocation Heading:currentHeading];
-    fanGraphic.geometry = [fan toFanGeometry];
+        
+    [self updateGraphicSymbol:pdrFusionController.currentRangeStatus];
+    fanGraphic.geometry = [pdrFusionController.currentFanRange toFanGeometry];
     [self.fusionStepReplayLayer removeGraphic:fanGraphic];
     [self.fusionStepReplayLayer addGraphic:fanGraphic];
     
@@ -122,7 +121,7 @@
 - (void)simulator:(id)sender replayStep:(TYRawStepEvent *)step
 {
     [pdrFusionController addStepEvent];
-    [self.fusionStepReplayLayer addTracePoint:pdrFusionController.currentLocation Angle:currentHeading];
+    [self.fusionStepReplayLayer addTracePoint:pdrFusionController.currentLocation Angle:currentHeading WithNewStart:pdrFusionController.stepReseting];
 }
 
 - (void)simulator:(id)sender replayHeading:(TYRawHeadingEvent *)heading
@@ -158,6 +157,27 @@
 {
     [super viewWillDisappear:animated];
     [simulator cancel];
+}
+
+- (void)updateGraphicSymbol:(LocationRangeStatus)status
+{
+    switch (status) {
+        case IP_Contain:
+            fanGraphic.symbol.color = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.5];
+            break;
+            
+        case IP_Forward:
+            fanGraphic.symbol.color = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
+            break;
+            
+        case IP_Backward:
+            fanGraphic.symbol.color = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.5];
+            break;
+            
+        default:
+            fanGraphic.symbol.color = [UIColor colorWithRed:128/255.0f green:128/255.0f blue:128/255.0f alpha:0.5];
+            break;
+    }
 }
 
 @end

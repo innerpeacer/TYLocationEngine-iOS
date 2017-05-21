@@ -9,6 +9,7 @@
 #import "RawDataTableVC.h"
 #import "TYRawDataManager.h"
 #import "PDRSimulatorVC.h"
+#import "FusionPDRSimulatorVC.h"
 
 @interface RawDataTableVC ()
 {
@@ -33,7 +34,10 @@
     NSString *dataID = dataArray[indexPath.row];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BLE-Algorithm" bundle:nil];
-    PDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"PDRSimulatorVC"];
+//    PDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"PDRSimulatorVC"];
+//    controller.dataID = dataID;
+    
+    FusionPDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"FusionPDRSimulatorVC"];
     controller.dataID = dataID;
     [self.navigationController pushViewController:controller animated:NO];
 }

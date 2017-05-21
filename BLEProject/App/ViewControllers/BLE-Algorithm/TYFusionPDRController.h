@@ -9,12 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "TYRawDataCollection.h"
 #import "TYFanRange.h"
+#import "TYStatusObject.h"
 
 @interface TYFusionPDRController : NSObject
 
 - (id)initWithAngle:(double)angle;
 
 @property (nonatomic, strong) TYLocalPoint *currentLocation;
+@property (nonatomic, strong) TYFanRange *currentFanRange;
+@property (nonatomic, readonly) LocationRangeStatus currentRangeStatus;
+@property (nonatomic, readonly) double currentHeading;
+@property (nonatomic, readonly) BOOL stepReseting;
+
+@property (nonatomic, strong) TYStatusObject *statusObject;
 
 - (void)setStartLocation:(TYLocalPoint *)start;
 - (void)updateRawSignalEvent:(TYRawSignalEvent *)signal;
