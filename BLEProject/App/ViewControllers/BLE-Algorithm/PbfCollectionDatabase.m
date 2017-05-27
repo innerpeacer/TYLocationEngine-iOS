@@ -187,6 +187,7 @@
             record.dataID = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(statement, 0)];
             record.dataType = sqlite3_column_int(statement, 1);
             record.pbfData = [NSData dataWithBytes:(const char *)sqlite3_column_blob(statement, 2) length:(int)sqlite3_column_bytes(statement, 2)];
+            BRTLog(@"ObjC Length: %d", (int)record.pbfData.length);
             if (sqlite3_column_type(statement, 3) != SQLITE_NULL) {
                 record.dataDescription = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(statement, 3)];
             }

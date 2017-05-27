@@ -15,11 +15,15 @@
 {
     double halfAngle;
     double range;
+    
+    TYLocalPoint *center;
+    NSNumber *heading;
 }
 
 @end
 
 @implementation TYFanRange
+@synthesize center = center;
 
 - (id)init
 {
@@ -31,12 +35,12 @@
     return self;
 }
 
-- (id)initWithCenter:(TYLocalPoint *)center Heading:(NSNumber *)heading
+- (id)initWithCenter:(TYLocalPoint *)c Heading:(NSNumber *)h
 {
     self = [super init];
     if (self) {
-        _center = center;
-        _heading = heading;
+        center = c;
+        heading = h;
         
         halfAngle = DEFAULT_HALF_ANGLE;
         range = DEFAULT_FAN_RANGE;
@@ -44,13 +48,23 @@
     return self;
 }
 
+- (void)updateCenter:(TYLocalPoint *)c
+{
+    center = c;
+}
+
+- (void)updateHeading:(double)h
+{
+    heading = @(h);
+}
+
 - (BOOL)containPoint:(TYLocalPoint *)lp
 {
-    if (_center == nil || _heading == nil) {
+    if (center == nil || heading == nil) {
         return NO;
     }
     
-    double distance = [_center distanceWith:lp];
+    double distance = [center distanceWith:lp];
     if (distance < 0.1) {
         return YES;
     }
@@ -59,10 +73,10 @@
         return NO;
     }
     
-    TYLocalPoint *headingPoint = [self getLocalPoint:_heading.doubleValue];
+    TYLocalPoint *headingPoint = [self getLocalPoint:heading.doubleValue];
     
-    CGVector vecHeading = CGVectorMake(headingPoint.x - _center.x, headingPoint.y - _center.y);
-    CGVector vecTarget = CGVectorMake(lp.x - _center.x, lp.y - _center.y);
+    CGVector vecHeading = CGVectorMake(headingPoint.x - center.x, headingPoint.y - center.y);
+    CGVector vecTarget = CGVectorMake(lp.x - center.x, lp.y - center.y);
     
     double lengthOfHeading = sqrt(vecHeading.dx * vecHeading.dx + vecHeading.dy * vecHeading.dy);
     double lengthOfPoint = sqrt(vecTarget.dx * vecTarget.dx + vecTarget.dy * vecTarget.dy);
@@ -79,19 +93,19 @@
 
 - (LocationRangeStatus)getStatus:(TYLocalPoint *)lp
 {
-    if (_center == nil || _heading == nil) {
+    if (center == nil || heading == nil) {
         return IP_Unknown;
     }
     
-    double distance = [_center distanceWith:lp];
+    double distance = [center distanceWith:lp];
     if (distance < 0.1) {
         return IP_Contain;
     }
     
-    TYLocalPoint *headingPoint = [self getLocalPoint:_heading.doubleValue];
+    TYLocalPoint *headingPoint = [self getLocalPoint:heading.doubleValue];
     
-    CGVector vecHeading = CGVectorMake(headingPoint.x - _center.x, headingPoint.y - _center.y);
-    CGVector vecTarget = CGVectorMake(lp.x - _center.x, lp.y - _center.y);
+    CGVector vecHeading = CGVectorMake(headingPoint.x - center.x, headingPoint.y - center.y);
+    CGVector vecTarget = CGVectorMake(lp.x - center.x, lp.y - center.y);
     
     double lengthOfHeading = sqrt(vecHeading.dx * vecHeading.dx + vecHeading.dy * vecHeading.dy);
     double lengthOfPoint = sqrt(vecTarget.dx * vecTarget.dx + vecTarget.dy * vecTarget.dy);
@@ -106,17 +120,17 @@
 
 - (AGSGeometry *)toFanGeometry
 {
-    if (_center == nil || _heading == nil) {
+    if (center == nil || heading == nil) {
         return nil;
     }
     
     AGSMutablePolygon *polygon = [[AGSMutablePolygon alloc] init];
     [polygon addRingToPolygon];
-    [polygon addPointToRing:[AGSPoint pointWithX:_center.x y:_center.y spatialReference:nil]];
+    [polygon addPointToRing:[AGSPoint pointWithX:center.x y:center.y spatialReference:nil]];
     
     double angleStep = 2;
-    double startAngle = _heading.doubleValue - halfAngle;
-    double endAngle = _heading.doubleValue + halfAngle;
+    double startAngle = heading.doubleValue - halfAngle;
+    double endAngle = heading.doubleValue + halfAngle;
     
     [polygon addPointToRing:[self getPoint:startAngle]];
     for (double angle = startAngle + angleStep; angle < endAngle; angle += angleStep) {
@@ -129,15 +143,15 @@
 
 - (TYLocalPoint *)getLocalPoint:(double)angle
 {
-    double x = _center.x + sin(BRT_ANGLE_TO_RAD(angle)) * range;
-    double y = _center.y + cos(BRT_ANGLE_TO_RAD(angle)) * range;
-    return [TYLocalPoint pointWithX:x Y:y Floor:_center.floor];
+    double x = center.x + sin(BRT_ANGLE_TO_RAD(angle)) * range;
+    double y = center.y + cos(BRT_ANGLE_TO_RAD(angle)) * range;
+    return [TYLocalPoint pointWithX:x Y:y Floor:center.floor];
 }
 
 - (AGSPoint *)getPoint:(double)angle
 {
-    double x = _center.x + sin(BRT_ANGLE_TO_RAD(angle)) * range;
-    double y = _center.y + cos(BRT_ANGLE_TO_RAD(angle)) * range;
+    double x = center.x + sin(BRT_ANGLE_TO_RAD(angle)) * range;
+    double y = center.y + cos(BRT_ANGLE_TO_RAD(angle)) * range;
     return [AGSPoint pointWithX:x y:y spatialReference:nil];
 }
 

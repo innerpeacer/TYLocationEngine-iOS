@@ -8,9 +8,6 @@
 
 #import "TYFusionPDRController.h"
 
-#define DEFAULT_STRIDE_SCALE 0.2
-
-#define DEFAULT_STRIDE_LENGTH 0.5
 
 #define DEFAULT_ACCUMULATE_STEPS 5
 
@@ -20,19 +17,17 @@
 {
     double initAngle;
     
-    double currentHeading;
-    
-    double strideLength;
-    
     BOOL headingReady;
     
     int cumulatedSteps;
+    
+    TYStatusObject *statusObject;
 }
 
 @end
 
 @implementation TYFusionPDRController
-@synthesize currentHeading = currentHeading;
+@synthesize statusObject = statusObject;
 
 - (id)initWithAngle:(double)angle
 {
@@ -40,12 +35,8 @@
     if (self) {
         initAngle = 0;
         headingReady = NO;
-        strideLength = DEFAULT_STRIDE_LENGTH;
-        
-        _currentFanRange = [[TYFanRange alloc] init];
-        _currentRangeStatus = IP_Unknown;
-        
         _stepReseting = NO;
+        statusObject = [[TYStatusObject alloc] init];
     }
     return self;
 }
@@ -53,8 +44,7 @@
 - (void)setStartLocation:(TYLocalPoint *)start
 {
     _currentLocation = start;
-    _currentFanRange.center = start;
-    BRTLog(@"Set: %@", _currentLocation);
+    [statusObject updateCenter:start];
 
     cumulatedSteps = 1;
     _stepReseting = NO;
@@ -66,7 +56,7 @@
     double distance = [_currentLocation distanceWith:location];
     if (distance > DEFAULT_TOLERANCE_DISTANCE) {
         _currentLocation = location;
-        _currentFanRange.center = location;
+        [statusObject updateCenter:location];
         _stepReseting = YES;
     } else {
         _stepReseting = NO;
@@ -76,44 +66,18 @@
 //        //        BRTLog(@"Contain");
 //        //        _currentLocation = location;
 //        //        _currentFanRange.center = location;
-//        strideLength = DEFAULT_STRIDE_LENGTH;
 //        cumulatedSteps = 1;
 //    } else {
 ////        BRTLog(@"Not Contain");
-//        strideLength = DEFAULT_STRIDE_LENGTH * (1 - DEFAULT_STRIDE_SCALE);
 //        cumulatedSteps++;
-//        
 //        if (cumulatedSteps >= DEFAULT_ACCUMULATE_STEPS) {
 //            _currentLocation = location;
-//            _currentFanRange.center = location;
 //            cumulatedSteps = 1;
 //        }
 //    }
-//    
-    switch ([_currentFanRange getStatus:[signal.immediateLocation toLocalPoint]]) {
-        case IP_Contain:
-            BRTLog(@"Contain");
-            _currentRangeStatus = IP_Contain;
-            strideLength = DEFAULT_STRIDE_LENGTH;
-            break;
-            
-        case IP_Forward:
-            BRTLog(@"Forward");
-            _currentRangeStatus = IP_Forward;
-            strideLength = DEFAULT_STRIDE_LENGTH * 0.5;
-            break;
-            
-        case IP_Backward:
-            BRTLog(@"Backward");
-            _currentRangeStatus = IP_Backward;
-            strideLength = DEFAULT_STRIDE_LENGTH * 1.5;
-            break;
-            
-        default:
-            BRTLog(@"Unknown");
-            _currentRangeStatus = IP_Unknown;
-            break;
-    }
+
+    [statusObject updateRangeStatus:[signal.immediateLocation toLocalPoint]];
+    [statusObject updateSignal:signal];
 }
 
 - (void)addStepEvent
@@ -122,16 +86,16 @@
         return;
     }
     
-    double headingInRad = PI * currentHeading / 180.0;
+    double headingInRad = PI * statusObject.currentHeading / 180.0;
+    double strideLength = statusObject.currentStrideLength;
     _currentLocation = [TYLocalPoint pointWithX:_currentLocation.x + strideLength * sin(headingInRad) Y:_currentLocation.y + strideLength * cos(headingInRad)];
-    _currentFanRange.center = _currentLocation;
+    [statusObject updateCenter:_currentLocation];
 }
 
 - (void)updateHeading:(double)newHeading
 {
     headingReady = YES;
-    currentHeading = newHeading;
-    _currentFanRange.heading = @(currentHeading);
+    [statusObject updateHeading:newHeading];
 }
 
 - (void)reset

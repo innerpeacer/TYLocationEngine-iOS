@@ -7,6 +7,7 @@
 //
 
 #import "ArcGISHelper.h"
+#import "TYStatusObject.h"
 
 @interface TYReplayTraceLayer : AGSGraphicsLayer
 
@@ -19,4 +20,10 @@
 + (TYReplayTraceLayer *)newLayer:(AGSMapView *)mapView;
 
 - (void)reset;
+
+- (void)showRef:(TYLocalPoint *)lp;
+- (void)showFan:(TYStatusObject *)status;
+- (void)showSignalLine:(TYStatusObject *)status;
+- (void)showVectorLine:(TYVectorLine *)line;
+
 @end

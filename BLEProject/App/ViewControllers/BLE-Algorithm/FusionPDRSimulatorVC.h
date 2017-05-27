@@ -12,7 +12,5 @@
 
 @interface FusionPDRSimulatorVC : BaseMapVC
 @property (nonatomic, strong) NSString *dataID;
-
 @property (nonatomic, strong) TYReplayTraceLayer *fusionStepReplayLayer;
-
 @end

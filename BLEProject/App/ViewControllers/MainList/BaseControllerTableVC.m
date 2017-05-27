@@ -95,6 +95,8 @@
     self.title = @"BLE工具";
     self.storyboardName = @"BLE-Tool";
     self.controllerObjects = [ControllerCollections bleToolControllers];
+    
+    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
 @end

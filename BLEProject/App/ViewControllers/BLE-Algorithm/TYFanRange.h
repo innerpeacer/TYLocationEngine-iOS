@@ -17,15 +17,15 @@ typedef enum {
 } LocationRangeStatus;
 
 @interface TYFanRange : NSObject
-@property (nonatomic, strong) NSNumber *heading;
+//@property (nonatomic, strong) NSNumber *heading;
 @property (nonatomic, strong) TYLocalPoint *center;
 
 - (id)initWithCenter:(TYLocalPoint *)center Heading:(NSNumber *)heading;
+- (void)updateCenter:(TYLocalPoint *)center;
+- (void)updateHeading:(double)heading;
 
 - (BOOL)containPoint:(TYLocalPoint *)lp;
-
 - (LocationRangeStatus)getStatus:(TYLocalPoint *)lp;
-
 - (AGSGeometry *)toFanGeometry;
 
 @end

@@ -10,6 +10,7 @@
 #import "TYRawDataManager.h"
 #import "PDRSimulatorVC.h"
 #import "FusionPDRSimulatorVC.h"
+#import "TestCppPbfVC.h"
 
 @interface RawDataTableVC ()
 {
@@ -26,7 +27,7 @@
     self.title = @"原始数据列表";
     dataArray = [NSMutableArray arrayWithArray:[TYRawDataManager getAllDataID]];
     
-    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+//    [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -37,7 +38,8 @@
 //    PDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"PDRSimulatorVC"];
 //    controller.dataID = dataID;
     
-    FusionPDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"FusionPDRSimulatorVC"];
+//    FusionPDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"FusionPDRSimulatorVC"];
+    TestCppPbfVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"TestCppPbfVC"];
     controller.dataID = dataID;
     [self.navigationController pushViewController:controller animated:NO];
 }
