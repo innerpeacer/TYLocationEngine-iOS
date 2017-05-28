@@ -8,7 +8,7 @@
 
 #import "RawDataCollectionVC.h"
 #import "TYRawDataCollection.h"
-#import "TYRawDataCollection+Protobuf.h"
+#import "TYRawDataCollection+CppProtobuf.h"
 #import "TYMotionDetector.h"
 #import "TYRawDataManager.h"
 

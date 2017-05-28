@@ -35,7 +35,6 @@ namespace innerpeacer {
             IPXRawHeadingEvent(double time) : IPXRawEvent(time) {}
             IPXRawHeadingEvent(TYRawHeadingEventPbf pbf) : IPXRawEvent(pbf.timestamp()) {}
             
-//            TYRawHeadingEventPbf toPbf();
             void toPbf(TYRawHeadingEventPbf *pbf);
         };
         
@@ -44,7 +43,6 @@ namespace innerpeacer {
             IPXRawStepEvent(double time) : IPXRawEvent(time) {}
             IPXRawStepEvent(TYRawStepEventPbf pbf) : IPXRawEvent(pbf.timestamp()) {}
             
-//            TYRawStepEventPbf toPbf();
             void toPbf(TYRawStepEventPbf *pbf);
         };
         
@@ -64,7 +62,6 @@ namespace innerpeacer {
             IPXRawBeaconSignal(std::string uuid, int major, int minor, double x, double y, int floor, int rssi, double accuracy): uuid(uuid), major(major), minor(minor), x(x), y(y), floor(floor), rssi(rssi), accuracy(accuracy){};
             IPXRawBeaconSignal(TYRawBeaconSignalPbf pbf): uuid(pbf.uuid()), major(pbf.major()), minor(pbf.minor()), x(pbf.x()), y(pbf.y()), floor(pbf.floor()), rssi(pbf.rssi()), accuracy(pbf.accuracy()){};
             
-//            TYRawBeaconSignalPbf *toPbf();
             void toPbf(TYRawBeaconSignalPbf *pbf);
         };
         
@@ -78,7 +75,6 @@ namespace innerpeacer {
             IPXRawLocation(double x, double y, int floor): x(x), y(y), floor(floor) {}
             IPXRawLocation(TYRawLocationPbf pbf): x(pbf.x()), y(pbf.y()), floor(pbf.floor()) {}
             
-//            TYRawLocationPbf *toPbf();
             void toPbf(TYRawLocationPbf *pbf);
         };
         
@@ -93,7 +89,6 @@ namespace innerpeacer {
             IPXRawSignalEvent(double time, IPXRawLocation location, IPXRawLocation immeLocation, std::vector<IPXRawBeaconSignal> &beaconSignal) : IPXRawEvent(time), location(location), immediateLocation(immeLocation), beaconSignalArray(beaconSignal) {}
             IPXRawSignalEvent(TYRawSignalEventPbf pbf);
 
-//            TYRawSignalEventPbf toPbf();
             void toPbf(TYRawSignalEventPbf *pbf);
         };
         

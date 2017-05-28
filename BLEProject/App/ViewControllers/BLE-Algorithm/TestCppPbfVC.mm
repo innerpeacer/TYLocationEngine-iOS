@@ -27,12 +27,12 @@ using namespace std;
     NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"MyCollection" ofType:@"db"];
     IPXPbfDBAdapter *db = new IPXPbfDBAdapter([dbPath UTF8String]);
     db->open();
-    std::vector<IPXPbfDBRecord> pbfVector = db->getRecords(IPX_PBF_RAW_DATA);
+    std::vector<IPXPbfDBRecord *> pbfVector = db->getRecords(IPX_PBF_RAW_DATA);
     cout << pbfVector.size() << " Records" << endl;
     
     TYRawDataCollectionPbf dataCollection;
-    IPXPbfDBRecord record = db->getRecord([self.dataID UTF8String]);
-    dataCollection.ParseFromArray(record.data, record.dataLength);
+    IPXPbfDBRecord *record = db->getRecord([self.dataID UTF8String]);
+    dataCollection.ParseFromArray(record->data, record->dataLength);
     
     IPXRawDataCollection rd(dataCollection);
     cout << rd.toString() << endl;

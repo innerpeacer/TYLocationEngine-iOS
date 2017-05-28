@@ -50,51 +50,53 @@ static TYTrace *sharedTrace = nil;
 
 + (void)saveTrace:(TYTrace *)trace
 {
-    PbfDBRecord *record = [trace toPbfDBRecord];
-    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-    [db open];
-    [db insertRecord:record];
-    [db close];
+//    PbfDBRecord *record = [trace toPbfDBRecord];
+//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
+//    [db open];
+//    [db insertRecord:record];
+//    [db close];
 }
 
 + (void)deleteTrace:(NSString *)traceID
 {
-    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-    [db open];
-    [db deleteRecord:traceID];
-    [db close];
+//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
+//    [db open];
+//    [db deleteRecord:traceID];
+//    [db close];
 }
 
 + (void)deleteAllTraces
 {
-    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-    [db open];
-    [db deleteRecords:PBF_TRACE_DATA];
-    [db close];
+//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
+//    [db open];
+//    [db deleteRecords:PBF_TRACE_DATA];
+//    [db close];
 }
 
 + (TYTrace *)getTrace:(NSString *)traceID
 {
-    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-    [db open];
-    PbfDBRecord *record = [db getRecord:traceID];
-    [db close];
-    return [TYTrace fromPbfDBRecord:record];
+//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
+//    [db open];
+//    PbfDBRecord *record = [db getRecord:traceID];
+//    [db close];
+//    return [TYTrace fromPbfDBRecord:record];
+    return nil;
 }
 
 + (NSArray *)getTraces
 {
-    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-    [db open];
-    NSArray *array = [db getRecords:PBF_TRACE_DATA];
-    [db close];
-    
-    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i < array.count; ++i) {
-        PbfDBRecord *record = array[i];
-        [resultArray addObject:[TYTrace fromPbfDBRecord:record]];
-    }
-    return resultArray;
+//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
+//    [db open];
+//    NSArray *array = [db getRecords:PBF_TRACE_DATA];
+//    [db close];
+//    
+//    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
+//    for (int i = 0; i < array.count; ++i) {
+//        PbfDBRecord *record = array[i];
+//        [resultArray addObject:[TYTrace fromPbfDBRecord:record]];
+//    }
+//    return resultArray;
+    return nil;
 }
 
 @end

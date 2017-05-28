@@ -47,14 +47,14 @@ using namespace std;
     NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"MyCollection" ofType:@"db"];
     IPXPbfDBAdapter *db = new IPXPbfDBAdapter([dbPath UTF8String]);
     db->open();
-    std::vector<IPXPbfDBRecord> pbfVector = db->getRecords(IPX_PBF_RAW_DATA);
+    std::vector<IPXPbfDBRecord *> pbfVector = db->getRecords(IPX_PBF_RAW_DATA);
     cout << pbfVector.size() << " Records" << endl;
     
     TYRawDataCollectionPbf dataCollection;
-    IPXPbfDBRecord record = db->getRecord([self.dataID UTF8String]);
+    IPXPbfDBRecord *record = db->getRecord([self.dataID UTF8String]);
 //    cout << "Record " << record.toString() << endl;
 //    dataCollection.ParseFromString(record.pbfData);
-    dataCollection.ParseFromArray(record.data, record.dataLength);
+    dataCollection.ParseFromArray(record->data, record->dataLength);
 //    cout << "dataCollection: " << endl;
 //    cout << "\tStep: " << dataCollection.stepevents_size() << endl;
 //    cout << "\tHeading: " << dataCollection.headingevents_size() << endl;
@@ -70,6 +70,10 @@ using namespace std;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.dataID == nil) {
+        self.dataID = @"RawData-0511-16:48:21";
+    }
     
     [self testCppPbf];
     
@@ -89,7 +93,7 @@ using namespace std;
     //    [simulator start];
     
     
-//    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_START_REPLAY]];
+    [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_START_REPLAY]];
 //    for (DebugItem *item in self.debugItems) {
 //        if (item.on) {
 //            [self performSelector:item.selector withObject:item afterDelay:0];

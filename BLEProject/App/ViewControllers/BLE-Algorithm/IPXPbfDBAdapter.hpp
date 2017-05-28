@@ -25,10 +25,20 @@ namespace innerpeacer {
             bool open();
             bool close();
             
-            std::vector<IPXPbfDBRecord> getRecords(IPXPbfDataType type);
-            IPXPbfDBRecord getRecord(std::string recordID);
+            bool eraseDatabase();
+            
+            bool insertRecord(IPXPbfDBRecord *record);
+            bool deleteRecord(std::string recordID);
+            bool deleteRecords(int dataType);
+            
+            std::vector<IPXPbfDBRecord *> getRecords(IPXPbfDataType type);
+            IPXPbfDBRecord *getRecord(std::string recordID);
             
         private:
+            bool insertNewRecord(IPXPbfDBRecord *record);
+            bool updateRecord(IPXPbfDBRecord *record);
+            bool existRecord(std::string recordID);
+            
             std::string m_path;
             sqlite3 *m_database;
         };

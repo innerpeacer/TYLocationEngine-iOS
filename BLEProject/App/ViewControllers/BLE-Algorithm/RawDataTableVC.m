@@ -38,8 +38,8 @@
 //    PDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"PDRSimulatorVC"];
 //    controller.dataID = dataID;
     
-//    FusionPDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"FusionPDRSimulatorVC"];
-    TestCppPbfVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"TestCppPbfVC"];
+    FusionPDRSimulatorVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"FusionPDRSimulatorVC"];
+//    TestCppPbfVC *controller = [storyboard instantiateViewControllerWithIdentifier:@"TestCppPbfVC"];
     controller.dataID = dataID;
     [self.navigationController pushViewController:controller animated:NO];
 }

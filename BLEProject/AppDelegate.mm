@@ -48,13 +48,14 @@ using namespace std;
     NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"MyCollection" ofType:@"db"];
     IPXPbfDBAdapter *db = new IPXPbfDBAdapter([dbPath UTF8String]);
     db->open();
-    std::vector<IPXPbfDBRecord> pbfVector = db->getRecords(IPX_PBF_RAW_DATA);
+    std::vector<IPXPbfDBRecord *> pbfVector = db->getRecords(IPX_PBF_RAW_DATA);
     cout << pbfVector.size() << " Records" << endl;
     
     TYRawDataCollectionPbf dataCollection;
-    IPXPbfDBRecord record = db->getRecord("RawData-0519-16:48:25");
-    cout << "Record " << record.toString() << endl;
-    dataCollection.ParseFromString(record.pbfData);
+    IPXPbfDBRecord *record = db->getRecord("RawData-0519-16:48:25");
+    cout << "Record " << record->toString() << endl;
+//    dataCollection.ParseFromString(record.pbfData);
+    dataCollection.ParseFromArray(record->data, record->dataLength);
     cout << "dataCollection: " << endl;
     cout << "\tStep: " << dataCollection.stepevents_size() << endl;
     cout << "\tHeading: " << dataCollection.headingevents_size() << endl;

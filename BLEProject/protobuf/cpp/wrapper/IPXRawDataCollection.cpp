@@ -12,48 +12,16 @@
 using namespace std;
 using namespace innerpeacer::rawdata;
 
-//TYRawHeadingEventPbf IPXRawHeadingEvent::toPbf()
-//{
-//    TYRawHeadingEventPbf pbf;
-//    pbf.set_timestamp(timestamp);
-//    pbf.set_heading(heading);
-//    return pbf;
-//}
-
 void IPXRawHeadingEvent::toPbf(innerpeacer::rawdata::TYRawHeadingEventPbf *pbf)
 {
     pbf->set_timestamp(timestamp);
     pbf->set_heading(heading);
 }
 
-//TYRawStepEventPbf IPXRawStepEvent::toPbf()
-//{
-//    TYRawStepEventPbf pbf;
-//    pbf.set_timestamp(timestamp);
-//    return pbf;
-//}
-
-
 void IPXRawStepEvent::toPbf(innerpeacer::rawdata::TYRawStepEventPbf *pbf)
 {
     pbf->set_timestamp(timestamp);
 }
-
-//TYRawBeaconSignalPbf * IPXRawBeaconSignal::toPbf()
-//{
-//    TYRawBeaconSignalPbf *pbf = new TYRawBeaconSignalPbf();
-//    pbf->set_uuid(uuid);
-//    pbf->set_major(major);
-//    pbf->set_minor(minor);
-//    
-//    pbf->set_x(x);
-//    pbf->set_y(y);
-//    pbf->set_floor(floor);
-//    
-//    pbf->set_rssi(rssi);
-//    pbf->set_accuracy(accuracy);
-//    return pbf;
-//}
 
 void IPXRawBeaconSignal::toPbf(innerpeacer::rawdata::TYRawBeaconSignalPbf *pbf)
 {
@@ -68,15 +36,6 @@ void IPXRawBeaconSignal::toPbf(innerpeacer::rawdata::TYRawBeaconSignalPbf *pbf)
     pbf->set_rssi(rssi);
     pbf->set_accuracy(accuracy);
 }
-
-//TYRawLocationPbf * IPXRawLocation::toPbf()
-//{
-//    TYRawLocationPbf *pbf = new TYRawLocationPbf();
-//    pbf->set_x(x);
-//    pbf->set_y(y);
-//    pbf->set_floor(floor);
-//    return pbf;
-//}
 
 void IPXRawLocation::toPbf(innerpeacer::rawdata::TYRawLocationPbf *pbf)
 {
@@ -110,20 +69,6 @@ void IPXRawSignalEvent::toPbf(innerpeacer::rawdata::TYRawSignalEventPbf *pbf)
         bs.toPbf(bsPbf);
     }
 }
-
-//TYRawSignalEventPbf IPXRawSignalEvent::toPbf()
-//{
-//    TYRawSignalEventPbf pbf;
-//    pbf.set_timestamp(timestamp);
-//    pbf.set_allocated_location(location.toPbf());
-//    pbf.set_allocated_immediatelocation(immediateLocation.toPbf());
-//    for (int i = 0; i < beaconSignalArray.size(); ++i) {
-//        IPXRawBeaconSignal bs = beaconSignalArray.at(i);
-//        TYRawBeaconSignalPbf *bsPbf = pbf.add_beacons();
-//        bs.toPbf(bsPbf);
-//    }
-//    return pbf;
-//}
 
 IPXRawDataCollection::IPXRawDataCollection(TYRawDataCollectionPbf pbf) : IPXRawEvent(pbf.timestamp()), dataID(pbf.dataid())
 {
