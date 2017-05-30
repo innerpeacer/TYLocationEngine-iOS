@@ -46,7 +46,7 @@ bool IPXPbfDBAdapter::insertRecord(innerpeacer::rawdata::IPXPbfDBRecord *record)
     if (existRecord(record->dataID)) {
        return updateRecord(record);
     } else {
-       return insertRecord(record);
+       return insertNewRecord(record);
     }
 }
 
@@ -115,7 +115,7 @@ bool IPXPbfDBAdapter::existRecord(std::string recordID)
 {
     sqlite3_stmt *stmt = NULL;
     ostringstream ostr;
-    ostr << "SELECT distinct dataID from DATA_COLLECTION where dataID = " << recordID;
+    ostr << "SELECT distinct dataID from DATA_COLLECTION where dataID = '" << recordID << "'";
     string sql = ostr.str();
     
     bool exist = false;
@@ -135,7 +135,7 @@ bool IPXPbfDBAdapter::deleteRecord(std::string recordID)
     sqlite3_stmt *stmt = NULL;
 
     ostringstream ostr;
-    ostr << "delete from DATA_COLLECTION where dataID = " << recordID;
+    ostr << "delete from DATA_COLLECTION where dataID = '" << recordID << "'";
     string sql = ostr.str();
 
     int success = sqlite3_prepare(m_database, sql.c_str(), (int)sql.length(), &stmt, NULL);

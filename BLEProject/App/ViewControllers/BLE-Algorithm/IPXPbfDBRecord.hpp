@@ -35,7 +35,7 @@ namespace innerpeacer {
             std::string dataDescription;
             
             IPXPbfDBRecord() {
-                printf("IPXPbfDBRecord constructor\n");
+//                printf("IPXPbfDBRecord constructor\n");
                 dataType = IPX_PBF_UNKNOWN_DATA;
                 data = NULL;
             }
@@ -45,7 +45,7 @@ namespace innerpeacer {
             }
             
             ~IPXPbfDBRecord() {
-                printf("IPXPbfDBRecord destructor\n");
+//                printf("IPXPbfDBRecord destructor\n");
                 if (data) {
                     delete [] data;
                 }

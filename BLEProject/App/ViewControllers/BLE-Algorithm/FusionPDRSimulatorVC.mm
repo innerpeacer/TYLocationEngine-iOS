@@ -51,15 +51,8 @@ using namespace std;
     cout << pbfVector.size() << " Records" << endl;
     
     TYRawDataCollectionPbf dataCollection;
-    IPXPbfDBRecord *record = db->getRecord([self.dataID UTF8String]);
-//    cout << "Record " << record.toString() << endl;
-//    dataCollection.ParseFromString(record.pbfData);
+    IPXPbfDBRecord *record = db->getRecord([@"RawData-0511-16:48:21" UTF8String]);
     dataCollection.ParseFromArray(record->data, record->dataLength);
-//    cout << "dataCollection: " << endl;
-//    cout << "\tStep: " << dataCollection.stepevents_size() << endl;
-//    cout << "\tHeading: " << dataCollection.headingevents_size() << endl;
-//    cout << "\tSignal: " << dataCollection.signalevents_size() << endl;
-    //    cout << dataCollection.DebugString() << endl;
     
     IPXRawDataCollection rd(dataCollection);
     cout << rd.toString() << endl;
@@ -75,7 +68,7 @@ using namespace std;
         self.dataID = @"RawData-0511-16:48:21";
     }
     
-    [self testCppPbf];
+//    [self testCppPbf];
     
     collection = [TYRawDataManager getData:self.dataID];
     BRTLog(@"%@", collection);

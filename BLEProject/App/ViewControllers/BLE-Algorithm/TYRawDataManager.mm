@@ -51,16 +51,9 @@ static TYRawDataCollection *sharedData = nil;
 
 + (void)saveData:(TYRawDataCollection *)data
 {
-//    PbfDBRecord *record = [data toPbfDBRecord];
-//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-//    [db open];
-//    [db insertRecord:record];
-//    [db close];
-    
-    IPXPbfDBRecord *record = new IPXPbfDBRecord;
+    IPXPbfDBRecord *record = new IPXPbfDBRecord();
     [data toPbfRecord:record];
 
-//    IPXPbfDBRecord record = [data toPbfRecord];
     IPXPbfDBAdapter db([[TYRawDataManager collectionDBPath] UTF8String]);
     db.open();
     db.insertRecord(record);
@@ -71,11 +64,6 @@ static TYRawDataCollection *sharedData = nil;
 
 + (void)deleteData:(NSString *)dataID
 {
-//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-//    [db open];
-//    [db deleteRecord:dataID];
-//    [db close];
-
     IPXPbfDBAdapter db([[TYRawDataManager collectionDBPath] UTF8String]);
     db.open();
     db.deleteRecord([dataID UTF8String]);
@@ -84,11 +72,6 @@ static TYRawDataCollection *sharedData = nil;
 
 + (void)deleteAllData
 {
-//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-//    [db open];
-//    [db deleteRecords:PBF_RAW_DATA];
-//    [db close];
-    
     IPXPbfDBAdapter db([[TYRawDataManager collectionDBPath] UTF8String]);
     db.open();
     db.deleteRecords(IPX_PBF_RAW_DATA);
@@ -97,12 +80,6 @@ static TYRawDataCollection *sharedData = nil;
 
 + (TYRawDataCollection *)getData:(NSString *)dataID
 {
-//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-//    [db open];
-//    PbfDBRecord *record = [db getRecord:dataID];
-//    [db close];
-//    return [TYRawDataCollection fromPbfDBRecord:record];
-    
     IPXPbfDBAdapter db([[TYRawDataManager collectionDBPath] UTF8String]);
     db.open();
     IPXPbfDBRecord *record = db.getRecord([dataID UTF8String]);
@@ -115,18 +92,6 @@ static TYRawDataCollection *sharedData = nil;
 
 + (NSArray *)getAllDataID
 {
-//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-//    [db open];
-//    NSArray *array = [db getRecords:PBF_RAW_DATA];
-//    [db close];
-//    
-//    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
-//    for (int i = 0; i < array.count; ++i) {
-//        PbfDBRecord *record = array[i];
-//        [resultArray addObject:record.dataID];
-//    }
-//    return resultArray;
-    
     IPXPbfDBAdapter db([[TYRawDataManager collectionDBPath] UTF8String]);
     db.open();
     std::vector<IPXPbfDBRecord *> array = db.getRecords(IPX_PBF_RAW_DATA);
@@ -137,23 +102,15 @@ static TYRawDataCollection *sharedData = nil;
         IPXPbfDBRecord *record = array.at(i);
         [resultArray addObject:[NSString stringWithUTF8String:record->dataID.c_str()]];
     }
+    
+    for (int i = 0; i < array.size(); ++i) {
+        delete array.at(i);
+    }
     return resultArray;
 }
 
 + (NSArray *)getAllData
 {
-//    PbfCollectionDatabase *db = [[PbfCollectionDatabase alloc] init];
-//    [db open];
-//    NSArray *array = [db getRecords:PBF_RAW_DATA];
-//    [db close];
-//    
-//    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
-//    for (int i = 0; i < array.count; ++i) {
-//        PbfDBRecord *record = array[i];
-//        [resultArray addObject:[TYRawDataCollection fromPbfDBRecord:record]];
-//    }
-//    return resultArray;
-    
     IPXPbfDBAdapter db([[TYRawDataManager collectionDBPath] UTF8String]);
     db.open();
     std::vector<IPXPbfDBRecord *> array = db.getRecords(IPX_PBF_RAW_DATA);
@@ -163,6 +120,10 @@ static TYRawDataCollection *sharedData = nil;
     for (int i = 0; i < array.size(); ++i) {
         IPXPbfDBRecord *record = array.at(i);
         [resultArray addObject:[TYRawDataCollection fromCppPbfDBRecord:record]];
+    }
+    
+    for (int i = 0; i < array.size(); ++i) {
+        delete array.at(i);
     }
     return resultArray;
 }

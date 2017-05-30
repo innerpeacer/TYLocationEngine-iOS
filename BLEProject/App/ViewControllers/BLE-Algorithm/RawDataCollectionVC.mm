@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     self.name = @"原始数据";
-
+    
     [super viewDidLoad];
     
     motionDetector = [[TYMotionDetector alloc] init];
@@ -36,35 +36,36 @@
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_START_RAW_DATA]];
     [self.debugItems addObject:[DebugItem itemWithID:IP_DEBUG_ITEM_SAVE_RAW_DATA]];
     
-//    [self startRawData:nil];
+    //    [self startRawData:nil];
 }
 
 - (void)motionDetector:(TYMotionDetector *)detector onStepEvent:(TYStepEvent *)stepEvent
 {
-//        BRTLog(@"StepEvent");
+    BRTLog(@"StepEvent");
     [collection addStepEvent:[TYRawStepEvent newStepEvent]];
 }
 
 
 - (void)motionDetector:(TYMotionDetector *)detector onHeadingChanged:(double)heading
 {
-//        BRTLog(@"Heading: %f", heading);
+    BRTLog(@"Heading: %f", heading);
     [collection addHeadingEvent:[TYRawHeadingEvent newHeadingEvent:heading]];
 }
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation
 {
     [super TYLocationManager:manager didUpdateLocation:newLocation];
-//        NSLog(@"didUpdateLocation: %@", [newLocation description]);
+//    NSLog(@"didUpdateLocation: %@", [newLocation description]);
     currentLocation = newLocation;
 }
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation
 {
+    [super TYLocationManager:manager didUpdateImmediateLocation:newImmediateLocation];
+    
 //    NSLog(@"didUpdateImmediateLocation: %@", [newImmediateLocation description]);
     currentImmediateLocation = newImmediateLocation;
     
-//    TYRawSignalEvent *singalEvent = [[TYRawSignalEvent alloc] init];
     TYRawLocation *location = [TYRawLocation rawLocationWithX:currentLocation.x Y:currentLocation.y Floor:currentLocation.floor];
     TYRawLocation *immediatelocation = [TYRawLocation rawLocationWithX:currentImmediateLocation.x Y:currentImmediateLocation.y Floor:currentImmediateLocation.floor];
     
@@ -73,7 +74,7 @@
         TYRawBeaconSignal *beaconSingal = [TYRawBeaconSignal rawBeaconSignalWithPublicBeacon:pb];
         [beaconSignalArray addObject:beaconSingal];
     }
-
+    
     TYRawSignalEvent *signalEvent = [TYRawSignalEvent newRawSingalEvent:BRTNow Location:location ImmediateLocation:immediatelocation SingalEvent:beaconSignalArray];
     [collection addSignalEvent:signalEvent];
 }
@@ -81,30 +82,21 @@
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons
 {
     [super TYLocationManager:manager didRangedLocationBeacons:beacons];
-//    NSLog(@"didRangedLocationBeacons:");
+    NSLog(@"didRangedLocationBeacons:");
     currentBeacons = beacons;
 }
 
 - (void)startRawData:(id)sender
 {
     BRTLog(@"startRawData");
-//    collection = [[TYRawDataCollection alloc] initWithDataID:@"RawDataID"];
     collection = [TYRawDataManager createNewData];
-    
-//    NSData *data = [NSData dataWithContentsOfFile:[BRTDocumentDir stringByAppendingPathComponent:@"rawData.pbf"]];
-//    TYRawDataCollection *dataCollection = [TYRawDataCollection withData:data error:nil];
-//    BRTLog(@"%@", [dataCollection detailedDescription]);
-//    BRTLog(@"%@", dataCollection);
 }
 
 - (void)saveRawData:(id)sender
 {
     BRTLog(@"saveRawData:");
-//    dataCollection
-//    collection = nil;
-//    NSData *data = [collection data];
+    BRTLog(@"%@", collection);
     [TYRawDataManager saveData:collection];
-//    [data writeToFile:[BRTDocumentDir stringByAppendingPathComponent:@"rawData.pbf"] atomically:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated

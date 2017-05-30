@@ -84,7 +84,7 @@
     int currentIndex = 0;
     if (self.points.count > 0) {
         TYTracePoint *tp = [self.points lastObject];
-        currentIndex = tp.index;
+        currentIndex = tp.index + 1;
     }
     [self.points addObject:[TYTracePoint pointWithX:x Y:y Floor:floor Index:currentIndex]];
 }
