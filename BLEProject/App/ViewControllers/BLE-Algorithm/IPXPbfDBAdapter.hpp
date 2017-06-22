@@ -29,7 +29,7 @@ namespace innerpeacer {
             
             bool insertRecord(IPXPbfDBRecord *record);
             bool deleteRecord(std::string recordID);
-            bool deleteRecords(int dataType);
+            bool deleteRecords(IPXPbfDataType dataType);
             
             std::vector<IPXPbfDBRecord *> getRecords(IPXPbfDataType type);
             IPXPbfDBRecord *getRecord(std::string recordID);

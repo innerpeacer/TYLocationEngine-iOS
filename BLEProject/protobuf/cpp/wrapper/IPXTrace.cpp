@@ -8,10 +8,22 @@
 
 #include "IPXTrace.hpp"
 
-using namespace innerpeacer::rawdata;
+using namespace innerpeacer::trace;
 using namespace std;
 
-void IPXTrace::addTracePoint(innerpeacer::rawdata::IPXTracePoint p)
+IPXTrace::IPXTrace(innerpeacer::rawdata::IPXPbfDBRecord record)
+{
+    TYTracePbf pbf;
+    pbf.ParseFromArray(record.data, record.dataLength);
+    traceID = pbf.traceid();
+    timestamp = pbf.timestamp();
+    for (int i = 0; i < pbf.points_size(); ++i) {
+        TYTracePointPbf p = pbf.points(i);
+        points.push_back(IPXTracePoint(p.x(), p.y(), p.floor(), p.timestamp(), p.index()));
+    }
+}
+
+void IPXTrace::addTracePoint(innerpeacer::trace::IPXTracePoint p)
 {
     points.push_back(p);
 }

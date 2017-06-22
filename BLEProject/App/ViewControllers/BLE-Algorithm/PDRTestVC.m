@@ -13,7 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "TYSimplePDRController.h"
 #import "TYTrace.h"
-#import "TYTrace+Protobuf.h"
+//#import "TYTrace+Protobuf.h"
 #import "PbfCollectionDatabase.h"
 #import "TraceManager.h"
 #import "TraceTableVC.h"

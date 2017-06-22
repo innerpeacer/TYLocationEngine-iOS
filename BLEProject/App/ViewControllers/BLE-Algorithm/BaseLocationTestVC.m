@@ -85,7 +85,7 @@
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
-//    NSLog(@"didClickAtPoint: %f, %f", mappoint.x, mappoint.y);
+    NSLog(@"didClickAtPoint: %f, %f", mappoint.x, mappoint.y);
 //    NSLog(@"%f", self.mapView.mapScale);
 }
 

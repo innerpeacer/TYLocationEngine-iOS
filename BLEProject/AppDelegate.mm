@@ -88,6 +88,7 @@ using namespace std;
         
 //        [TYUserDefaults setDefaultCity:@"0021"];
         [TYUserDefaults setDefaultBuilding:@"00210024"];
+//        [TYUserDefaults setDefaultBuilding:@"00250002"];
     }
 }
 

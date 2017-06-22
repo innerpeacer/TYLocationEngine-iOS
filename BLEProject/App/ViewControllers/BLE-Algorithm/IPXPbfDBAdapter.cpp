@@ -156,7 +156,7 @@ bool IPXPbfDBAdapter::deleteRecord(std::string recordID)
     return true;
 }
 
-bool IPXPbfDBAdapter::deleteRecords(int dataType)
+bool IPXPbfDBAdapter::deleteRecords(IPXPbfDataType dataType)
 {
     string errorString = "Error: failed to delete data";
     
@@ -219,7 +219,7 @@ std::vector<IPXPbfDBRecord *> IPXPbfDBAdapter::getRecords(IPXPbfDataType type)
 
 IPXPbfDBRecord * IPXPbfDBAdapter::getRecord(std::string recordID)
 {
-    IPXPbfDBRecord *record = new IPXPbfDBRecord();
+    IPXPbfDBRecord *record = NULL;
     sqlite3_stmt *stmt = NULL;
     
     ostringstream ostr;
@@ -229,6 +229,7 @@ IPXPbfDBRecord * IPXPbfDBAdapter::getRecord(std::string recordID)
     int ret = sqlite3_prepare_v2(m_database, sql.c_str(), (int)sql.length(), &stmt, NULL);
     if (ret == SQLITE_OK) {
         if (sqlite3_step(stmt) == SQLITE_ROW) {
+            record = new IPXPbfDBRecord();
             record->dataID = (const char *)sqlite3_column_blob(stmt, 0);
             record->dataType = sqlite3_column_int(stmt, 1);
             

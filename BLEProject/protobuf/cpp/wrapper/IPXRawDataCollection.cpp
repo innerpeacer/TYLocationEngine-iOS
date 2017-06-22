@@ -61,7 +61,7 @@ void IPXRawSignalEvent::toPbf(innerpeacer::rawdata::TYRawSignalEventPbf *pbf)
     
     TYRawLocationPbf *immeLocationPbf = new TYRawLocationPbf();
     immediateLocation.toPbf(immeLocationPbf);
-    pbf->set_allocated_location(immeLocationPbf);
+    pbf->set_allocated_immediatelocation(immeLocationPbf);
     
     for (int i = 0; i < beaconSignalArray.size(); ++i) {
         IPXRawBeaconSignal bs = beaconSignalArray.at(i);
@@ -83,6 +83,41 @@ IPXRawDataCollection::IPXRawDataCollection(TYRawDataCollectionPbf pbf) : IPXRawE
     for (int i = 0; i < pbf.signalevents_size(); ++i) {
         signalEventArray.push_back(IPXRawSignalEvent(pbf.signalevents(i)));
     }
+}
+
+void IPXRawDataCollection::addStepEvent(innerpeacer::rawdata::IPXRawStepEvent step)
+{
+    stepEventArray.push_back(step);
+}
+
+void IPXRawDataCollection::addHeadingEvent(innerpeacer::rawdata::IPXRawHeadingEvent heading)
+{
+    headingEventArray.push_back(heading);
+}
+
+void IPXRawDataCollection::addSignalEvent(innerpeacer::rawdata::IPXRawSignalEvent signal)
+{
+    signalEventArray.push_back(signal);
+}
+
+IPXPbfDBRecord *IPXRawDataCollection::toPbfDBRecord()
+{
+    IPXPbfDBRecord *record = new IPXPbfDBRecord();
+    record->dataType = IPX_PBF_RAW_DATA;
+    record->dataID = dataID;
+    TYRawDataCollectionPbf pbf = toPbf();
+    record->dataLength = pbf.ByteSizeLong();
+    record->data = new char[record->dataLength];
+    pbf.SerializeToArray(record->data, record->dataLength);
+    record->dataDescription = dataID;
+    return record;
+}
+
+IPXRawDataCollection * IPXRawDataCollection::fromPbfDBRecord(IPXPbfDBRecord *record)
+{
+    TYRawDataCollectionPbf pbf;;
+    pbf.ParseFromArray(record->data, record->dataLength);
+    return new IPXRawDataCollection(pbf);
 }
 
 TYRawDataCollectionPbf IPXRawDataCollection::toPbf()

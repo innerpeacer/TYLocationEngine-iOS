@@ -78,7 +78,7 @@ using namespace std;
     
     [self initMapSettings];
     self.mapView.allowRotationByPinching = NO;
-    [self.mapView zoomToEnvelope:[AGSEnvelope envelopeWithXmin:13523497.578848 ymin:3642439.640312 xmax:13523524.595785 ymax:3642484.472765 spatialReference:self.mapView.spatialReference] animated:NO];
+//    [self.mapView zoomToEnvelope:[AGSEnvelope envelopeWithXmin:13523497.578848 ymin:3642439.640312 xmax:13523524.595785 ymax:3642484.472765 spatialReference:self.mapView.spatialReference] animated:NO];
     
     pdrFusionController = [[TYFusionPDRController alloc] initWithAngle:0];
     statusObject = pdrFusionController.statusObject;

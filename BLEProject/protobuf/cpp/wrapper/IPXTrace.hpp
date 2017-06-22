@@ -13,9 +13,10 @@
 #include <string>
 #include <vector>
 #include "t_y_trace_pbf.pb.h"
+#include "IPXPbfDBRecord.hpp"
 
 namespace innerpeacer {
-    namespace rawdata {
+    namespace trace {
         
         class IPXTracePoint {
         public:
@@ -36,9 +37,12 @@ namespace innerpeacer {
             
             IPXTrace(std::string tID, double time) : traceID(tID), timestamp(time) {}
             IPXTrace(std::string tID, double time, std::vector<IPXTracePoint> points) : traceID(tID), timestamp(time), points(points) {}
+            IPXTrace(innerpeacer::rawdata::IPXPbfDBRecord record);
             
             void addTracePoint(IPXTracePoint p);
             void addTracePoint(double x, double y, int floor, double timestamp);
+            
+            
         };
     }
 }

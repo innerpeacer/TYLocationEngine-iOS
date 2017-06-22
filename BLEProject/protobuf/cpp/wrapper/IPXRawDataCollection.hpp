@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 #include "t_y_raw_data_collection_pbf.pb.h"
+#include "IPXPbfDBRecord.hpp"
 
 namespace innerpeacer {
     namespace rawdata {
@@ -33,7 +34,7 @@ namespace innerpeacer {
             double heading;
             
             IPXRawHeadingEvent(double time) : IPXRawEvent(time) {}
-            IPXRawHeadingEvent(TYRawHeadingEventPbf pbf) : IPXRawEvent(pbf.timestamp()) {}
+            IPXRawHeadingEvent(TYRawHeadingEventPbf pbf) : IPXRawEvent(pbf.timestamp()), heading(pbf.heading()) {}
             
             void toPbf(TYRawHeadingEventPbf *pbf);
         };
@@ -102,6 +103,13 @@ namespace innerpeacer {
             IPXRawDataCollection(double time, std::string dataID): IPXRawEvent(time), dataID(dataID) {}
             IPXRawDataCollection(double time, std::string dataID, std::vector<IPXRawStepEvent> &steps, std::vector<IPXRawHeadingEvent> &headings, std::vector<IPXRawSignalEvent> &signals): IPXRawEvent(time), dataID(dataID), stepEventArray(steps), headingEventArray(headings), signalEventArray(signals) {}
             IPXRawDataCollection(TYRawDataCollectionPbf pbf);
+            
+            void addStepEvent(innerpeacer::rawdata::IPXRawStepEvent step);
+            void addHeadingEvent(innerpeacer::rawdata::IPXRawHeadingEvent heading);
+            void addSignalEvent(innerpeacer::rawdata::IPXRawSignalEvent signal);
+
+            innerpeacer::rawdata::IPXPbfDBRecord *toPbfDBRecord();
+            static IPXRawDataCollection *fromPbfDBRecord(innerpeacer::rawdata::IPXPbfDBRecord *record);
             
             TYRawDataCollectionPbf toPbf();
             std::string toString();

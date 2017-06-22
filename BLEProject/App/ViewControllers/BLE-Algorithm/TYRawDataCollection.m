@@ -74,6 +74,7 @@
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setObject:self.dataID forKey:@"DataID"];
+    [dict setObject:@(self.timestamp) forKey:@"Time"];
     
     {
         NSMutableArray *stepArray = [NSMutableArray array];
